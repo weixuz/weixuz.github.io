@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="1.web概念概述123456789101112131415161718* JavaWeb：	* 使用Java语言开发基于互联网的项目* 软件架构：	1. C&#x2F;S: Client&#x2F;Server 客户端&#x2F;服务器端		* 在用户本地有一个客户端程序，在远程有一个服务器端程序		* 如：QQ，迅雷...		* 优点：			1. 用户体验好		* 缺点：			1. 开发、安装">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HTML">
+<meta property="og:url" content="http://yoursite.com/2019/09/17/190917HTML/index.html">
+<meta property="og:site_name" content="维旭的博客">
+<meta property="og:description" content="1.web概念概述123456789101112131415161718* JavaWeb：	* 使用Java语言开发基于互联网的项目* 软件架构：	1. C&#x2F;S: Client&#x2F;Server 客户端&#x2F;服务器端		* 在用户本地有一个客户端程序，在远程有一个服务器端程序		* 如：QQ，迅雷...		* 优点：			1. 用户体验好		* 缺点：			1. 开发、安装">
+<meta property="og:locale">
+<meta property="article:published_time" content="2019-09-17T13:21:41.000Z">
+<meta property="article:modified_time" content="2020-10-25T04:35:02.755Z">
+<meta property="article:author" content="维旭">
+<meta name="twitter:card" content="summary">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/09/17/190917HTML/"/>
+
+
+
+
+
+  <title>HTML | 维旭的博客</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">维旭的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">WeiXuZ's blog</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/schedule/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br />
+            
+            日程表
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
+            
+            站点地图
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            公益404
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/17/190917HTML/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="维旭的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">HTML</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-17T21:21:41+08:00">
+                2019-09-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/JavaWeb/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaWeb</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="1-web概念概述"><a href="#1-web概念概述" class="headerlink" title="1.web概念概述"></a>1.web概念概述</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">* JavaWeb：</span><br><span class="line">	* 使用Java语言开发基于互联网的项目</span><br><span class="line"></span><br><span class="line">* 软件架构：</span><br><span class="line">	1. C&#x2F;S: Client&#x2F;Server 客户端&#x2F;服务器端</span><br><span class="line">		* 在用户本地有一个客户端程序，在远程有一个服务器端程序</span><br><span class="line">		* 如：QQ，迅雷...</span><br><span class="line">		* 优点：</span><br><span class="line">			1. 用户体验好</span><br><span class="line">		* 缺点：</span><br><span class="line">			1. 开发、安装，部署，维护 麻烦</span><br><span class="line">	2. B&#x2F;S: Browser&#x2F;Server 浏览器&#x2F;服务器端</span><br><span class="line">		* 只需要一个浏览器，用户通过不同的网址(URL)，客户访问不同的服务器端程序</span><br><span class="line">		* 优点：</span><br><span class="line">			1. 开发、安装，部署，维护 简单</span><br><span class="line">		* 缺点：</span><br><span class="line">			1. 如果应用过大，用户的体验可能会受到影响</span><br><span class="line">			2. 对硬件要求过高</span><br></pre></td></tr></table></figure>
+
+<a id="more"></a>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">* B&#x2F;S架构详解</span><br><span class="line">	* 资源分类：</span><br><span class="line">		1. 静态资源：</span><br><span class="line">			* 使用静态网页开发技术发布的资源。</span><br><span class="line">			* 特点：</span><br><span class="line">				* 所有用户访问，得到的结果是一样的。</span><br><span class="line">				* 如：文本，图片，音频、视频, HTML,CSS,JavaScript</span><br><span class="line">				* 如果用户请求的是静态资源，那么服务器会直接将静态资源发送给浏览器。浏览器中内置了静态资源的解析引擎，可以展示静态资源</span><br><span class="line">		2. 动态资源：</span><br><span class="line">			* 使用动态网页及时发布的资源。</span><br><span class="line">			* 特点：</span><br><span class="line">				* 所有用户访问，得到的结果可能不一样。</span><br><span class="line">				* 如：jsp&#x2F;servlet,php,asp...</span><br><span class="line">				* 如果用户请求的是动态资源，那么服务器会执行动态资源，转换为静态资源，再发送给浏览器</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">* 我们要学习动态资源，必须先学习静态资源！</span><br><span class="line"></span><br><span class="line">* 静态资源：</span><br><span class="line">	* HTML：用于搭建基础网页，展示页面的内容</span><br><span class="line">	* CSS：用于美化页面，布局页面</span><br><span class="line">	* JavaScript：控制页面的元素，让页面有一些动态的效果</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-HTML"><a href="#2-HTML" class="headerlink" title="2.HTML"></a>2.HTML</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br></pre></td><td class="code"><pre><span class="line">1. 概念：是最基础的网页开发语言</span><br><span class="line">	* Hyper Text Markup Language 超文本标记语言</span><br><span class="line">		* 超文本:</span><br><span class="line">			* 超文本是用超链接的方法，将各种不同空间的文字信息组织在一起的网状文本.</span><br><span class="line">		* 标记语言:</span><br><span class="line">			* 由标签构成的语言。&lt;标签名称&gt; 如 html，xml</span><br><span class="line">			* 标记语言不是编程语言</span><br><span class="line"></span><br><span class="line">2. 快速入门：</span><br><span class="line">	* 语法：</span><br><span class="line">		1. html文档后缀名 .html 或者 .htm</span><br><span class="line">		2. 标签分为</span><br><span class="line">			1. 围堵标签：有开始标签和结束标签。如 &lt;html&gt; &lt;&#x2F;html&gt;</span><br><span class="line">			2. 自闭和标签：开始标签和结束标签在一起。如 &lt;br&#x2F;&gt;</span><br><span class="line"></span><br><span class="line">		3. 标签可以嵌套：</span><br><span class="line">			需要正确嵌套，不能你中有我，我中有你</span><br><span class="line">			错误：&lt;a&gt;&lt;b&gt;&lt;&#x2F;a&gt;&lt;&#x2F;b&gt;</span><br><span class="line">			正确：&lt;a&gt;&lt;b&gt;&lt;&#x2F;b&gt;&lt;&#x2F;a&gt;</span><br><span class="line"></span><br><span class="line">		4. 在开始标签中可以定义属性。属性是由键值对构成，值需要用引号(单双都可)引起来</span><br><span class="line">		5. html的标签不区分大小写，但是建议使用小写。</span><br><span class="line"></span><br><span class="line">	* 代码：</span><br><span class="line">		&lt;html&gt;</span><br><span class="line">		</span><br><span class="line">			&lt;head&gt;</span><br><span class="line">				&lt;title&gt;title&lt;&#x2F;title&gt;</span><br><span class="line">			&lt;&#x2F;head&gt;</span><br><span class="line">			</span><br><span class="line">			&lt;body&gt;</span><br><span class="line">				&lt;FONT color&#x3D;&#39;red&#39;&gt;Hello World&lt;&#x2F;font&gt;&lt;br&#x2F;&gt;</span><br><span class="line">				</span><br><span class="line">				&lt;font color&#x3D;&#39;green&#39;&gt;Hello World&lt;&#x2F;font&gt;</span><br><span class="line">			</span><br><span class="line">			&lt;&#x2F;body&gt;</span><br><span class="line">	</span><br><span class="line">		&lt;&#x2F;html&gt;</span><br><span class="line">3. 标签学习：</span><br><span class="line">	1. 文件标签：构成html最基本的标签</span><br><span class="line">		* html:html文档的根标签</span><br><span class="line">		* head：头标签。用于指定html文档的一些属性。引入外部的资源</span><br><span class="line">		* title：标题标签。</span><br><span class="line">		* body：体标签</span><br><span class="line">		* &lt;!DOCTYPE html&gt;：html5中定义该文档是html文档</span><br><span class="line">	2. 文本标签：和文本有关的标签</span><br><span class="line">		* 注释：&lt;!-- 注释内容 --&gt;</span><br><span class="line">		* &lt;h1&gt; to &lt;h6&gt;：标题标签</span><br><span class="line">			* h1~h6:字体大小逐渐递减</span><br><span class="line">		* &lt;p&gt;：段落标签</span><br><span class="line">		* &lt;br&gt;：换行标签</span><br><span class="line">		* &lt;hr&gt;：展示一条水平线</span><br><span class="line">			* 属性：</span><br><span class="line">				* color：颜色</span><br><span class="line">				* width：宽度</span><br><span class="line">				* size：高度</span><br><span class="line">				* align：对其方式</span><br><span class="line">					* center：居中</span><br><span class="line">					* left：左对齐</span><br><span class="line">					* right：右对齐</span><br><span class="line">		* &lt;b&gt;：字体加粗</span><br><span class="line">		* &lt;i&gt;：字体斜体</span><br><span class="line">		* &lt;font&gt;:字体标签</span><br><span class="line">		* &lt;center&gt;:文本居中</span><br><span class="line">			* 属性：</span><br><span class="line">				* color：颜色</span><br><span class="line">				* size：大小</span><br><span class="line">				* face：字体</span><br><span class="line"></span><br><span class="line">		* 属性定义：</span><br><span class="line">			* color：</span><br><span class="line">				1. 英文单词：red,green,blue</span><br><span class="line">				2. rgb(值1，值2，值3)：值的范围：0~255  如  rgb(0,0,255)</span><br><span class="line">				3. #值1值2值3：值的范围：00~FF之间。如： #FF00FF</span><br><span class="line">			* width：</span><br><span class="line">				1. 数值：width&#x3D;&#39;20&#39; ,数值的单位，默认是 px(像素)</span><br><span class="line">				2. 数值%：占比相对于父元素的比例</span><br></pre></td></tr></table></figure>
+
+<p>​<br>​                </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line">3. 图片标签：</span><br><span class="line">	* img：展示图片</span><br><span class="line">		* 属性：</span><br><span class="line">			* src：指定图片的位置</span><br><span class="line"></span><br><span class="line">	* 代码：</span><br><span class="line">		 &lt;!--展示一张图片 img--&gt;</span><br><span class="line"></span><br><span class="line">	    &lt;img src&#x3D;&quot;image&#x2F;jingxuan_2.jpg&quot; align&#x3D;&quot;right&quot; alt&#x3D;&quot;古镇&quot; width&#x3D;&quot;500&quot; height&#x3D;&quot;500&quot;&#x2F;&gt;</span><br><span class="line">	</span><br><span class="line">	    &lt;!--</span><br><span class="line">	        相对路径</span><br><span class="line">	            * 以.开头的路径</span><br><span class="line">	                * .&#x2F;：代表当前目录  .&#x2F;image&#x2F;1.jpg</span><br><span class="line">	                * ..&#x2F;:代表上一级目录</span><br><span class="line">	     --&gt;</span><br><span class="line">	</span><br><span class="line">	    &lt;img src&#x3D;&quot;.&#x2F;image&#x2F;jiangwai_1.jpg&quot;&gt;</span><br><span class="line">	</span><br><span class="line">	    &lt;img src&#x3D;&quot;..&#x2F;image&#x2F;jiangwai_1.jpg&quot;&gt;</span><br><span class="line">4. 列表标签：</span><br><span class="line">	* 有序列表：</span><br><span class="line">		* ol:</span><br><span class="line">		* li:</span><br><span class="line">	* 无序列表：</span><br><span class="line">		* ul:</span><br><span class="line">		* li:</span><br><span class="line">5. 链接标签：</span><br><span class="line">	* a:定义一个超链接</span><br><span class="line">		* 属性：</span><br><span class="line">			* href：指定访问资源的URL(统一资源定位符)</span><br><span class="line">			* target：指定打开资源的方式</span><br><span class="line">				* _self:默认值，在当前页面打开</span><br><span class="line">				* _blank：在空白页面打开</span><br><span class="line"></span><br><span class="line">	* 代码：</span><br><span class="line">		 &lt;!--超链接  a--&gt;</span><br><span class="line"></span><br><span class="line">	    &lt;a href&#x3D;&quot;http:&#x2F;&#x2F;zhaoweixu.com&quot;&gt;点我&lt;&#x2F;a&gt;</span><br><span class="line">	    &lt;br&gt;</span><br><span class="line">	</span><br><span class="line">	    &lt;a href&#x3D;&quot;http:&#x2F;&#x2F;zhaoweixu.com&quot; target&#x3D;&quot;_self&quot;&gt;点我&lt;&#x2F;a&gt;</span><br><span class="line">	    &lt;br&gt;</span><br><span class="line">	    &lt;a href&#x3D;&quot;http:&#x2F;&#x2F;zhaoweixu.com&quot; target&#x3D;&quot;_blank&quot;&gt;点我&lt;&#x2F;a&gt;</span><br><span class="line">	</span><br><span class="line">	    &lt;br&gt;</span><br><span class="line">	</span><br><span class="line">	    &lt;a href&#x3D;&quot;.&#x2F;5_列表标签.html&quot;&gt;列表标签&lt;&#x2F;a&gt;&lt;br&gt;</span><br><span class="line">	    &lt;a href&#x3D;&quot;zhaoweixu.com&quot;&gt;联系我&lt;&#x2F;a&gt;</span><br><span class="line">	</span><br><span class="line">	    &lt;br&gt;</span><br><span class="line">	    &lt;a href&#x3D;&quot;http:&#x2F;&#x2F;zhaoweixu.com&quot;&gt;&lt;img src&#x3D;&quot;image&#x2F;win_1.jpg&quot;&gt;&lt;&#x2F;a&gt;</span><br><span class="line">6. div和span：</span><br><span class="line">	* div:每一个div占满一整行。块级标签</span><br><span class="line">   	* span：文本信息在一行展示，行内标签 内联标签</span><br><span class="line"></span><br><span class="line">7. 语义化标签：html5中为了提高程序的可读性，提供了一些标签。</span><br><span class="line">	1. &lt;header&gt;：页眉</span><br><span class="line">	2. &lt;footer&gt;：页脚</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">8. 表格标签：</span><br><span class="line">	* table：定义表格</span><br><span class="line">		* width：宽度</span><br><span class="line">		* border：边框</span><br><span class="line">		* cellpadding：定义内容和单元格的距离</span><br><span class="line">		* cellspacing：定义单元格之间的距离。如果指定为0，则单元格的线会合为一条、</span><br><span class="line">		* bgcolor：背景色</span><br><span class="line">		* align：对齐方式</span><br><span class="line">	* tr：定义行</span><br><span class="line">		* bgcolor：背景色</span><br><span class="line">		* align：对齐方式</span><br><span class="line">	* td：定义单元格</span><br><span class="line">		* colspan：合并列</span><br><span class="line">		* rowspan：合并行</span><br><span class="line">	* th：定义表头单元格</span><br><span class="line">	* &lt;caption&gt;：表格标题</span><br><span class="line">	* &lt;thead&gt;：表示表格的头部分</span><br><span class="line">	* &lt;tbody&gt;：表示表格的体部分</span><br><span class="line">	* &lt;tfoot&gt;：表示表格的脚部分</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/09/01/190901IO%E6%B5%81%E5%92%8CProperties%E9%9B%86%E5%90%88/" rel="next" title="IO流和Properties集合">
+                <i class="fa fa-chevron-left"></i> IO流和Properties集合
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/10/08/191008markdown%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95/" rel="prev" title="markdown常用语法">
+                markdown常用语法 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name"></p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/%20%7C%7C%20archive">
+              
+                  <span class="site-state-item-count">34</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-web%E6%A6%82%E5%BF%B5%E6%A6%82%E8%BF%B0"><span class="nav-number">1.</span> <span class="nav-text">1.web概念概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-HTML"><span class="nav-number">2.</span> <span class="nav-text">2.HTML</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2019 &mdash; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">weixuz</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

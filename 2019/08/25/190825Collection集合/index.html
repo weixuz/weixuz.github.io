@@ -1,0 +1,1039 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="1.Collection集合1.1集合体系结构【记忆】 集合类的特点 ​    提供一种存储空间可变的存储模型，存储的数据容量可以随时发生改变  集合类的体系图 ​">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Collection集合">
+<meta property="og:url" content="http://yoursite.com/2019/08/25/190825Collection%E9%9B%86%E5%90%88/index.html">
+<meta property="og:site_name" content="维旭的博客">
+<meta property="og:description" content="1.Collection集合1.1集合体系结构【记忆】 集合类的特点 ​    提供一种存储空间可变的存储模型，存储的数据容量可以随时发生改变  集合类的体系图 ​">
+<meta property="og:locale">
+<meta property="og:image" content="http://yoursite.com/2019/08/25/190825Collection%E9%9B%86%E5%90%88/190825Collection%E9%9B%86%E5%90%88/1%E9%9B%86%E5%90%88%E4%BD%93%E7%B3%BB%E5%9B%BE.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/25/190825Collection%E9%9B%86%E5%90%88/190825Collection%E9%9B%86%E5%90%88/2%E4%BD%BF%E7%94%A8%E6%AD%A5%E9%AA%A4.png">
+<meta property="article:published_time" content="2019-08-25T07:19:36.000Z">
+<meta property="article:modified_time" content="2020-10-25T04:35:02.323Z">
+<meta property="article:author" content="维旭">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/2019/08/25/190825Collection%E9%9B%86%E5%90%88/190825Collection%E9%9B%86%E5%90%88/1%E9%9B%86%E5%90%88%E4%BD%93%E7%B3%BB%E5%9B%BE.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/08/25/190825Collection集合/"/>
+
+
+
+
+
+  <title>Collection集合 | 维旭的博客</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">维旭的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">WeiXuZ's blog</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/schedule/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br />
+            
+            日程表
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
+            
+            站点地图
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            公益404
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/25/190825Collection%E9%9B%86%E5%90%88/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="维旭的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Collection集合</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-25T15:19:36+08:00">
+                2019-08-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/JavaSE/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaSE</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="1-Collection集合"><a href="#1-Collection集合" class="headerlink" title="1.Collection集合"></a>1.Collection集合</h2><h3 id="1-1集合体系结构【记忆】"><a href="#1-1集合体系结构【记忆】" class="headerlink" title="1.1集合体系结构【记忆】"></a>1.1集合体系结构【记忆】</h3><ul>
+<li><p>集合类的特点</p>
+<p>​    提供一种存储空间可变的存储模型，存储的数据容量可以随时发生改变</p>
+</li>
+<li><p>集合类的体系图</p>
+<p>​    <img src="190825Collection%E9%9B%86%E5%90%88/1%E9%9B%86%E5%90%88%E4%BD%93%E7%B3%BB%E5%9B%BE.png" alt="01"></p>
+</li>
+</ul>
+<a id="more"></a>
+
+<h3 id="1-2Collection集合概述和基本使用【应用】"><a href="#1-2Collection集合概述和基本使用【应用】" class="headerlink" title="1.2Collection集合概述和基本使用【应用】"></a>1.2Collection集合概述和基本使用【应用】</h3><ul>
+<li><p>Collection集合概述</p>
+<ul>
+<li>是单列集合的顶层接口，它表示一组对象，这些对象也称为Collection的元素</li>
+<li>JDK 不提供此接口的任何直接实现，它提供更具体的子接口（如Set和List）实现</li>
+</ul>
+</li>
+<li><p>Collection集合基本使用</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CollectionDemo01</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//创建Collection集合的对象</span></span><br><span class="line">        Collection&lt;String&gt; c = <span class="keyword">new</span> ArrayList&lt;String&gt;();</span><br><span class="line"></span><br><span class="line">        <span class="comment">//添加元素：boolean add(E e)</span></span><br><span class="line">        c.add(<span class="string">&quot;hello&quot;</span>);</span><br><span class="line">        c.add(<span class="string">&quot;world&quot;</span>);</span><br><span class="line">        c.add(<span class="string">&quot;java&quot;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//输出集合对象</span></span><br><span class="line">        System.out.println(c);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="1-3Collection集合的常用方法【应用】"><a href="#1-3Collection集合的常用方法【应用】" class="headerlink" title="1.3Collection集合的常用方法【应用】"></a>1.3Collection集合的常用方法【应用】</h3><table>
+<thead>
+<tr>
+<th>方法名</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>boolean add(E e)</td>
+<td>添加元素</td>
+</tr>
+<tr>
+<td>boolean remove(Object o)</td>
+<td>从集合中移除指定的元素</td>
+</tr>
+<tr>
+<td>void   clear()</td>
+<td>清空集合中的元素</td>
+</tr>
+<tr>
+<td>boolean contains(Object o)</td>
+<td>判断集合中是否存在指定的元素</td>
+</tr>
+<tr>
+<td>boolean isEmpty()</td>
+<td>判断集合是否为空</td>
+</tr>
+<tr>
+<td>int   size()</td>
+<td>集合的长度，也就是集合中元素的个数</td>
+</tr>
+</tbody></table>
+<h3 id="1-4Collection集合的遍历【应用】"><a href="#1-4Collection集合的遍历【应用】" class="headerlink" title="1.4Collection集合的遍历【应用】"></a>1.4Collection集合的遍历【应用】</h3><ul>
+<li>迭代器的介绍<ul>
+<li>迭代器，集合的专用遍历方式</li>
+<li>Iterator<E> iterator()：返回此集合中元素的迭代器，通过集合的iterator()方法得到</li>
+<li>迭代器是通过集合的iterator()方法得到的，所以我们说它是依赖于集合而存在的</li>
+</ul>
+</li>
+<li>Collection集合的遍历</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">IteratorDemo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//创建集合对象</span></span><br><span class="line">        Collection&lt;String&gt; c = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line"></span><br><span class="line">        <span class="comment">//添加元素</span></span><br><span class="line">        c.add(<span class="string">&quot;hello&quot;</span>);</span><br><span class="line">        c.add(<span class="string">&quot;world&quot;</span>);</span><br><span class="line">        c.add(<span class="string">&quot;java&quot;</span>);</span><br><span class="line">        c.add(<span class="string">&quot;javaee&quot;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//Iterator&lt;E&gt; iterator()：返回此集合中元素的迭代器，通过集合的iterator()方法得到</span></span><br><span class="line">        Iterator&lt;String&gt; it = c.iterator();</span><br><span class="line"></span><br><span class="line">        <span class="comment">//用while循环改进元素的判断和获取</span></span><br><span class="line">        <span class="keyword">while</span> (it.hasNext()) &#123;</span><br><span class="line">            String s = it.next();</span><br><span class="line">            System.out.println(s);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="1-5集合使用步骤图解【理解】"><a href="#1-5集合使用步骤图解【理解】" class="headerlink" title="1.5集合使用步骤图解【理解】"></a>1.5集合使用步骤图解【理解】</h3><ul>
+<li>使用步骤</li>
+</ul>
+<p><img src="190825Collection%E9%9B%86%E5%90%88/2%E4%BD%BF%E7%94%A8%E6%AD%A5%E9%AA%A4.png" alt="02"></p>
+<h3 id="1-6集合的案例-Collection集合存储学生对象并遍历【应用】"><a href="#1-6集合的案例-Collection集合存储学生对象并遍历【应用】" class="headerlink" title="1.6集合的案例-Collection集合存储学生对象并遍历【应用】"></a>1.6集合的案例-Collection集合存储学生对象并遍历【应用】</h3><ul>
+<li><p>案例需求</p>
+<p>​    创建一个存储学生对象的集合，存储3个学生对象，使用程序实现在控制台遍历该集合</p>
+</li>
+<li><p>代码实现</p>
+<ul>
+<li>学生类</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Student</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> age;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Student</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Student</span><span class="params">(String name, <span class="keyword">int</span> age)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">        <span class="keyword">this</span>.age = age;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setName</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getAge</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> age;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setAge</span><span class="params">(<span class="keyword">int</span> age)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.age = age;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>测试类</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CollectionDemo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//创建Collection集合对象</span></span><br><span class="line">        Collection&lt;Student&gt; c = <span class="keyword">new</span> ArrayList&lt;Student&gt;();</span><br><span class="line"></span><br><span class="line">        <span class="comment">//创建学生对象</span></span><br><span class="line">        Student s1 = <span class="keyword">new</span> Student(<span class="string">&quot;林青霞&quot;</span>, <span class="number">30</span>);</span><br><span class="line">        Student s2 = <span class="keyword">new</span> Student(<span class="string">&quot;张曼玉&quot;</span>, <span class="number">35</span>);</span><br><span class="line">        Student s3 = <span class="keyword">new</span> Student(<span class="string">&quot;王祖贤&quot;</span>, <span class="number">33</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//把学生添加到集合</span></span><br><span class="line">        c.add(s1);</span><br><span class="line">        c.add(s2);</span><br><span class="line">        c.add(s3);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//遍历集合(迭代器方式)</span></span><br><span class="line">        Iterator&lt;Student&gt; it = c.iterator();</span><br><span class="line">        <span class="keyword">while</span> (it.hasNext()) &#123;</span><br><span class="line">            Student s = it.next();</span><br><span class="line">            System.out.println(s.getName() + <span class="string">&quot;,&quot;</span> + s.getAge());</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="2-List集合"><a href="#2-List集合" class="headerlink" title="2.List集合"></a>2.List集合</h2><h3 id="2-1List集合概述和特点【记忆】"><a href="#2-1List集合概述和特点【记忆】" class="headerlink" title="2.1List集合概述和特点【记忆】"></a>2.1List集合概述和特点【记忆】</h3><ul>
+<li>List集合概述<ul>
+<li>有序集合(也称为序列)，用户可以精确控制列表中每个元素的插入位置。用户可以通过整数索引访问元素，并搜索列表中的元素</li>
+<li>与Set集合不同，列表通常允许重复的元素</li>
+</ul>
+</li>
+<li>List集合特点<ul>
+<li>有索引</li>
+<li>可以存储重复元素</li>
+<li>元素存取有序</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-2List集合的特有方法【应用】"><a href="#2-2List集合的特有方法【应用】" class="headerlink" title="2.2List集合的特有方法【应用】"></a>2.2List集合的特有方法【应用】</h3><table>
+<thead>
+<tr>
+<th>方法名</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>void add(int index,E   element)</td>
+<td>在此集合中的指定位置插入指定的元素</td>
+</tr>
+<tr>
+<td>E remove(int   index)</td>
+<td>删除指定索引处的元素，返回被删除的元素</td>
+</tr>
+<tr>
+<td>E set(int index,E   element)</td>
+<td>修改指定索引处的元素，返回被修改的元素</td>
+</tr>
+<tr>
+<td>E get(int   index)</td>
+<td>返回指定索引处的元素</td>
+</tr>
+</tbody></table>
+<h3 id="2-3集合的案例-List集合存储学生对象并遍历【应用】"><a href="#2-3集合的案例-List集合存储学生对象并遍历【应用】" class="headerlink" title="2.3集合的案例-List集合存储学生对象并遍历【应用】"></a>2.3集合的案例-List集合存储学生对象并遍历【应用】</h3><ul>
+<li><p>案例需求</p>
+<p>​    创建一个存储学生对象的集合，存储3个学生对象，使用程序实现在控制台遍历该集合</p>
+</li>
+<li><p>代码实现</p>
+<ul>
+<li><p>学生类</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Student</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> age;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Student</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Student</span><span class="params">(String name, <span class="keyword">int</span> age)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">        <span class="keyword">this</span>.age = age;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setName</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getAge</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> age;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setAge</span><span class="params">(<span class="keyword">int</span> age)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.age = age;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>测试类</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ListDemo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//创建List集合对象</span></span><br><span class="line">        List&lt;Student&gt; list = <span class="keyword">new</span> ArrayList&lt;Student&gt;();</span><br><span class="line"></span><br><span class="line">        <span class="comment">//创建学生对象</span></span><br><span class="line">        Student s1 = <span class="keyword">new</span> Student(<span class="string">&quot;林青霞&quot;</span>, <span class="number">30</span>);</span><br><span class="line">        Student s2 = <span class="keyword">new</span> Student(<span class="string">&quot;张曼玉&quot;</span>, <span class="number">35</span>);</span><br><span class="line">        Student s3 = <span class="keyword">new</span> Student(<span class="string">&quot;王祖贤&quot;</span>, <span class="number">33</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//把学生添加到集合</span></span><br><span class="line">        list.add(s1);</span><br><span class="line">        list.add(s2);</span><br><span class="line">        list.add(s3);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//迭代器方式</span></span><br><span class="line">        Iterator&lt;Student&gt; it = list.iterator();</span><br><span class="line">        <span class="keyword">while</span> (it.hasNext()) &#123;</span><br><span class="line">            Student s = it.next();</span><br><span class="line">            System.out.println(s.getName() + <span class="string">&quot;,&quot;</span> + s.getAge());</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        System.out.println(<span class="string">&quot;--------&quot;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//for循环方式</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;list.size(); i++) &#123;</span><br><span class="line">            Student s = list.get(i);</span><br><span class="line">            System.out.println(s.getName() + <span class="string">&quot;,&quot;</span> + s.getAge());</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-4并发修改异常【应用】"><a href="#2-4并发修改异常【应用】" class="headerlink" title="2.4并发修改异常【应用】"></a>2.4并发修改异常【应用】</h3><ul>
+<li><p>出现的原因</p>
+<p>​    迭代器遍历的过程中，通过集合对象修改了集合中的元素，造成了迭代器获取元素中判断预期修改值和实际修改值不一致，则会出现：ConcurrentModificationException</p>
+</li>
+<li><p>解决的方案</p>
+<p>​    用for循环遍历，然后用集合对象做对应的操作即可</p>
+</li>
+<li><p>示例代码</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ListDemo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//创建集合对象</span></span><br><span class="line">        List&lt;String&gt; list = <span class="keyword">new</span> ArrayList&lt;String&gt;();</span><br><span class="line"></span><br><span class="line">        <span class="comment">//添加元素</span></span><br><span class="line">        list.add(<span class="string">&quot;hello&quot;</span>);</span><br><span class="line">        list.add(<span class="string">&quot;world&quot;</span>);</span><br><span class="line">        list.add(<span class="string">&quot;java&quot;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//遍历集合，得到每一个元素，看有没有&quot;world&quot;这个元素，如果有，我就添加一个&quot;javaee&quot;元素，请写代码实现</span></span><br><span class="line"><span class="comment">//        Iterator&lt;String&gt; it = list.iterator();</span></span><br><span class="line"><span class="comment">//        while (it.hasNext()) &#123;</span></span><br><span class="line"><span class="comment">//            String s = it.next();</span></span><br><span class="line"><span class="comment">//            if(s.equals(&quot;world&quot;)) &#123;</span></span><br><span class="line"><span class="comment">//                list.add(&quot;javaee&quot;);</span></span><br><span class="line"><span class="comment">//            &#125;</span></span><br><span class="line"><span class="comment">//        &#125;</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;list.size(); i++) &#123;</span><br><span class="line">            String s = list.get(i);</span><br><span class="line">            <span class="keyword">if</span>(s.equals(<span class="string">&quot;world&quot;</span>)) &#123;</span><br><span class="line">                list.add(<span class="string">&quot;javaee&quot;</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//输出集合对象</span></span><br><span class="line">        System.out.println(list);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="2-5列表迭代器【应用】"><a href="#2-5列表迭代器【应用】" class="headerlink" title="2.5列表迭代器【应用】"></a>2.5列表迭代器【应用】</h3><ul>
+<li><p>ListIterator介绍</p>
+<ul>
+<li>通过List集合的listIterator()方法得到，所以说它是List集合特有的迭代器</li>
+<li>用于允许程序员沿任一方向遍历的列表迭代器，在迭代期间修改列表，并获取列表中迭代器的当前位置</li>
+</ul>
+</li>
+<li><p>示例代码</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ListIteratorDemo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//创建集合对象</span></span><br><span class="line">        List&lt;String&gt; list = <span class="keyword">new</span> ArrayList&lt;String&gt;();</span><br><span class="line"></span><br><span class="line">        <span class="comment">//添加元素</span></span><br><span class="line">        list.add(<span class="string">&quot;hello&quot;</span>);</span><br><span class="line">        list.add(<span class="string">&quot;world&quot;</span>);</span><br><span class="line">        list.add(<span class="string">&quot;java&quot;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//获取列表迭代器</span></span><br><span class="line">        ListIterator&lt;String&gt; lit = list.listIterator();</span><br><span class="line">        <span class="keyword">while</span> (lit.hasNext()) &#123;</span><br><span class="line">            String s = lit.next();</span><br><span class="line">            <span class="keyword">if</span>(s.equals(<span class="string">&quot;world&quot;</span>)) &#123;</span><br><span class="line">                lit.add(<span class="string">&quot;javaee&quot;</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        System.out.println(list);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="2-6增强for循环【应用】"><a href="#2-6增强for循环【应用】" class="headerlink" title="2.6增强for循环【应用】"></a>2.6增强for循环【应用】</h3><ul>
+<li><p>定义格式</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(元素数据类型 变量名 : 数组/集合对象名) &#123;</span><br><span class="line">    循环体;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>示例代码</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ForDemo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span>[] arr = &#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>&#125;;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i : arr) &#123;</span><br><span class="line">            System.out.println(i);</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        System.out.println(<span class="string">&quot;--------&quot;</span>);</span><br><span class="line"></span><br><span class="line">        String[] strArray = &#123;<span class="string">&quot;hello&quot;</span>,<span class="string">&quot;world&quot;</span>,<span class="string">&quot;java&quot;</span>&#125;;</span><br><span class="line">        <span class="keyword">for</span>(String s : strArray) &#123;</span><br><span class="line">            System.out.println(s);</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        System.out.println(<span class="string">&quot;--------&quot;</span>);</span><br><span class="line"></span><br><span class="line">        List&lt;String&gt; list = <span class="keyword">new</span> ArrayList&lt;String&gt;();</span><br><span class="line">        list.add(<span class="string">&quot;hello&quot;</span>);</span><br><span class="line">        list.add(<span class="string">&quot;world&quot;</span>);</span><br><span class="line">        list.add(<span class="string">&quot;java&quot;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span>(String s : list) &#123;</span><br><span class="line">            System.out.println(s);</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        System.out.println(<span class="string">&quot;--------&quot;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//内部原理是一个Iterator迭代器</span></span><br><span class="line">        <span class="comment">/*</span></span><br><span class="line"><span class="comment">        for(String s : list) &#123;</span></span><br><span class="line"><span class="comment">            if(s.equals(&quot;world&quot;)) &#123;</span></span><br><span class="line"><span class="comment">                list.add(&quot;javaee&quot;); //ConcurrentModificationException</span></span><br><span class="line"><span class="comment">            &#125;</span></span><br><span class="line"><span class="comment">        &#125;</span></span><br><span class="line"><span class="comment">        */</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="2-7集合的案例-List集合存储学生对象三种方式遍历【应用】"><a href="#2-7集合的案例-List集合存储学生对象三种方式遍历【应用】" class="headerlink" title="2.7集合的案例-List集合存储学生对象三种方式遍历【应用】"></a>2.7集合的案例-List集合存储学生对象三种方式遍历【应用】</h3><ul>
+<li><p>案例需求</p>
+<p>​    创建一个存储学生对象的集合，存储3个学生对象，使用程序实现在控制台遍历该集合</p>
+</li>
+<li><p>代码实现</p>
+<ul>
+<li><p>学生类</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Student</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> age;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Student</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Student</span><span class="params">(String name, <span class="keyword">int</span> age)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">        <span class="keyword">this</span>.age = age;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setName</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getAge</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> age;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setAge</span><span class="params">(<span class="keyword">int</span> age)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.age = age;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>测试类</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ListDemo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//创建List集合对象</span></span><br><span class="line">        List&lt;Student&gt; list = <span class="keyword">new</span> ArrayList&lt;Student&gt;();</span><br><span class="line"></span><br><span class="line">        <span class="comment">//创建学生对象</span></span><br><span class="line">        Student s1 = <span class="keyword">new</span> Student(<span class="string">&quot;林青霞&quot;</span>, <span class="number">30</span>);</span><br><span class="line">        Student s2 = <span class="keyword">new</span> Student(<span class="string">&quot;张曼玉&quot;</span>, <span class="number">35</span>);</span><br><span class="line">        Student s3 = <span class="keyword">new</span> Student(<span class="string">&quot;王祖贤&quot;</span>, <span class="number">33</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//把学生添加到集合</span></span><br><span class="line">        list.add(s1);</span><br><span class="line">        list.add(s2);</span><br><span class="line">        list.add(s3);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//迭代器：集合特有的遍历方式</span></span><br><span class="line">        Iterator&lt;Student&gt; it = list.iterator();</span><br><span class="line">        <span class="keyword">while</span> (it.hasNext()) &#123;</span><br><span class="line">            Student s = it.next();</span><br><span class="line">            System.out.println(s.getName()+<span class="string">&quot;,&quot;</span>+s.getAge());</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(<span class="string">&quot;--------&quot;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//普通for：带有索引的遍历方式</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;list.size(); i++) &#123;</span><br><span class="line">            Student s = list.get(i);</span><br><span class="line">            System.out.println(s.getName()+<span class="string">&quot;,&quot;</span>+s.getAge());</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(<span class="string">&quot;--------&quot;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//增强for：最方便的遍历方式</span></span><br><span class="line">        <span class="keyword">for</span>(Student s : list) &#123;</span><br><span class="line">            System.out.println(s.getName()+<span class="string">&quot;,&quot;</span>+s.getAge());</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="3-数据结构"><a href="#3-数据结构" class="headerlink" title="3.数据结构"></a>3.数据结构</h2><h3 id="3-1数据结构之栈和队列【记忆】"><a href="#3-1数据结构之栈和队列【记忆】" class="headerlink" title="3.1数据结构之栈和队列【记忆】"></a>3.1数据结构之栈和队列【记忆】</h3><ul>
+<li><p>栈结构</p>
+<p>​    先进后出</p>
+</li>
+<li><p>队列结构</p>
+<p>​    先进先出</p>
+</li>
+</ul>
+<h3 id="3-2数据结构之数组和链表【记忆】"><a href="#3-2数据结构之数组和链表【记忆】" class="headerlink" title="3.2数据结构之数组和链表【记忆】"></a>3.2数据结构之数组和链表【记忆】</h3><ul>
+<li><p>数组结构</p>
+<p>​    查询快、增删慢</p>
+</li>
+<li><p>队列结构</p>
+<p>​    查询慢、增删快</p>
+</li>
+</ul>
+<h2 id="4-List集合的实现类"><a href="#4-List集合的实现类" class="headerlink" title="4.List集合的实现类"></a>4.List集合的实现类</h2><h3 id="4-1List集合子类的特点【记忆】"><a href="#4-1List集合子类的特点【记忆】" class="headerlink" title="4.1List集合子类的特点【记忆】"></a>4.1List集合子类的特点【记忆】</h3><ul>
+<li><p>ArrayList集合</p>
+<p>​    底层是数组结构实现，查询快、增删慢</p>
+</li>
+<li><p>LinkedList集合</p>
+<p>​    底层是链表结构实现，查询慢、增删快</p>
+</li>
+</ul>
+<h3 id="4-2集合的案例-ArrayList集合存储学生对象三种方式遍历【应用】"><a href="#4-2集合的案例-ArrayList集合存储学生对象三种方式遍历【应用】" class="headerlink" title="4.2集合的案例-ArrayList集合存储学生对象三种方式遍历【应用】"></a>4.2集合的案例-ArrayList集合存储学生对象三种方式遍历【应用】</h3><ul>
+<li><p>案例需求</p>
+<p>​    创建一个存储学生对象的集合，存储3个学生对象，使用程序实现在控制台遍历该集合</p>
+</li>
+<li><p>代码实现</p>
+<ul>
+<li><p>学生类</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Student</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> age;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Student</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Student</span><span class="params">(String name, <span class="keyword">int</span> age)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">        <span class="keyword">this</span>.age = age;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setName</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getAge</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> age;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setAge</span><span class="params">(<span class="keyword">int</span> age)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.age = age;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>测试类</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ArrayListDemo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//创建ArrayList集合对象</span></span><br><span class="line">        ArrayList&lt;Student&gt; array = <span class="keyword">new</span> ArrayList&lt;Student&gt;();</span><br><span class="line"></span><br><span class="line">        <span class="comment">//创建学生对象</span></span><br><span class="line">        Student s1 = <span class="keyword">new</span> Student(<span class="string">&quot;林青霞&quot;</span>, <span class="number">30</span>);</span><br><span class="line">        Student s2 = <span class="keyword">new</span> Student(<span class="string">&quot;张曼玉&quot;</span>, <span class="number">35</span>);</span><br><span class="line">        Student s3 = <span class="keyword">new</span> Student(<span class="string">&quot;王祖贤&quot;</span>, <span class="number">33</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//把学生添加到集合</span></span><br><span class="line">        array.add(s1);</span><br><span class="line">        array.add(s2);</span><br><span class="line">        array.add(s3);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//迭代器：集合特有的遍历方式</span></span><br><span class="line">        Iterator&lt;Student&gt; it = array.iterator();</span><br><span class="line">        <span class="keyword">while</span> (it.hasNext()) &#123;</span><br><span class="line">            Student s = it.next();</span><br><span class="line">            System.out.println(s.getName() + <span class="string">&quot;,&quot;</span> + s.getAge());</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(<span class="string">&quot;--------&quot;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//普通for：带有索引的遍历方式</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;array.size(); i++) &#123;</span><br><span class="line">            Student s = array.get(i);</span><br><span class="line">            System.out.println(s.getName() + <span class="string">&quot;,&quot;</span> + s.getAge());</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(<span class="string">&quot;--------&quot;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//增强for：最方便的遍历方式</span></span><br><span class="line">        <span class="keyword">for</span>(Student s : array) &#123;</span><br><span class="line">            System.out.println(s.getName() + <span class="string">&quot;,&quot;</span> + s.getAge());</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="4-3LinkedList集合的特有功能【应用】"><a href="#4-3LinkedList集合的特有功能【应用】" class="headerlink" title="4.3LinkedList集合的特有功能【应用】"></a>4.3LinkedList集合的特有功能【应用】</h3><ul>
+<li><p>特有方法</p>
+<table>
+<thead>
+<tr>
+<th>方法名</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>public void addFirst(E e)</td>
+<td>在该列表开头插入指定的元素</td>
+</tr>
+<tr>
+<td>public void addLast(E e)</td>
+<td>将指定的元素追加到此列表的末尾</td>
+</tr>
+<tr>
+<td>public E getFirst()</td>
+<td>返回此列表中的第一个元素</td>
+</tr>
+<tr>
+<td>public   E getLast()</td>
+<td>返回此列表中的最后一个元素</td>
+</tr>
+<tr>
+<td>public E removeFirst()</td>
+<td>从此列表中删除并返回第一个元素</td>
+</tr>
+<tr>
+<td>public   E removeLast()</td>
+<td>从此列表中删除并返回最后一个元素</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/08/23/190823%E5%BC%82%E5%B8%B8/" rel="next" title="异常">
+                <i class="fa fa-chevron-left"></i> 异常
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/08/26/190826Set%E9%9B%86%E5%90%88/" rel="prev" title="Set集合">
+                Set集合 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name"></p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/%20%7C%7C%20archive">
+              
+                  <span class="site-state-item-count">34</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-Collection%E9%9B%86%E5%90%88"><span class="nav-number">1.</span> <span class="nav-text">1.Collection集合</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1%E9%9B%86%E5%90%88%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%E3%80%90%E8%AE%B0%E5%BF%86%E3%80%91"><span class="nav-number">1.1.</span> <span class="nav-text">1.1集合体系结构【记忆】</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2Collection%E9%9B%86%E5%90%88%E6%A6%82%E8%BF%B0%E5%92%8C%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8%E3%80%90%E5%BA%94%E7%94%A8%E3%80%91"><span class="nav-number">1.2.</span> <span class="nav-text">1.2Collection集合概述和基本使用【应用】</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3Collection%E9%9B%86%E5%90%88%E7%9A%84%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95%E3%80%90%E5%BA%94%E7%94%A8%E3%80%91"><span class="nav-number">1.3.</span> <span class="nav-text">1.3Collection集合的常用方法【应用】</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-4Collection%E9%9B%86%E5%90%88%E7%9A%84%E9%81%8D%E5%8E%86%E3%80%90%E5%BA%94%E7%94%A8%E3%80%91"><span class="nav-number">1.4.</span> <span class="nav-text">1.4Collection集合的遍历【应用】</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-5%E9%9B%86%E5%90%88%E4%BD%BF%E7%94%A8%E6%AD%A5%E9%AA%A4%E5%9B%BE%E8%A7%A3%E3%80%90%E7%90%86%E8%A7%A3%E3%80%91"><span class="nav-number">1.5.</span> <span class="nav-text">1.5集合使用步骤图解【理解】</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-6%E9%9B%86%E5%90%88%E7%9A%84%E6%A1%88%E4%BE%8B-Collection%E9%9B%86%E5%90%88%E5%AD%98%E5%82%A8%E5%AD%A6%E7%94%9F%E5%AF%B9%E8%B1%A1%E5%B9%B6%E9%81%8D%E5%8E%86%E3%80%90%E5%BA%94%E7%94%A8%E3%80%91"><span class="nav-number">1.6.</span> <span class="nav-text">1.6集合的案例-Collection集合存储学生对象并遍历【应用】</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-List%E9%9B%86%E5%90%88"><span class="nav-number">2.</span> <span class="nav-text">2.List集合</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1List%E9%9B%86%E5%90%88%E6%A6%82%E8%BF%B0%E5%92%8C%E7%89%B9%E7%82%B9%E3%80%90%E8%AE%B0%E5%BF%86%E3%80%91"><span class="nav-number">2.1.</span> <span class="nav-text">2.1List集合概述和特点【记忆】</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2List%E9%9B%86%E5%90%88%E7%9A%84%E7%89%B9%E6%9C%89%E6%96%B9%E6%B3%95%E3%80%90%E5%BA%94%E7%94%A8%E3%80%91"><span class="nav-number">2.2.</span> <span class="nav-text">2.2List集合的特有方法【应用】</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3%E9%9B%86%E5%90%88%E7%9A%84%E6%A1%88%E4%BE%8B-List%E9%9B%86%E5%90%88%E5%AD%98%E5%82%A8%E5%AD%A6%E7%94%9F%E5%AF%B9%E8%B1%A1%E5%B9%B6%E9%81%8D%E5%8E%86%E3%80%90%E5%BA%94%E7%94%A8%E3%80%91"><span class="nav-number">2.3.</span> <span class="nav-text">2.3集合的案例-List集合存储学生对象并遍历【应用】</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-4%E5%B9%B6%E5%8F%91%E4%BF%AE%E6%94%B9%E5%BC%82%E5%B8%B8%E3%80%90%E5%BA%94%E7%94%A8%E3%80%91"><span class="nav-number">2.4.</span> <span class="nav-text">2.4并发修改异常【应用】</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-5%E5%88%97%E8%A1%A8%E8%BF%AD%E4%BB%A3%E5%99%A8%E3%80%90%E5%BA%94%E7%94%A8%E3%80%91"><span class="nav-number">2.5.</span> <span class="nav-text">2.5列表迭代器【应用】</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-6%E5%A2%9E%E5%BC%BAfor%E5%BE%AA%E7%8E%AF%E3%80%90%E5%BA%94%E7%94%A8%E3%80%91"><span class="nav-number">2.6.</span> <span class="nav-text">2.6增强for循环【应用】</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-7%E9%9B%86%E5%90%88%E7%9A%84%E6%A1%88%E4%BE%8B-List%E9%9B%86%E5%90%88%E5%AD%98%E5%82%A8%E5%AD%A6%E7%94%9F%E5%AF%B9%E8%B1%A1%E4%B8%89%E7%A7%8D%E6%96%B9%E5%BC%8F%E9%81%8D%E5%8E%86%E3%80%90%E5%BA%94%E7%94%A8%E3%80%91"><span class="nav-number">2.7.</span> <span class="nav-text">2.7集合的案例-List集合存储学生对象三种方式遍历【应用】</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84"><span class="nav-number">3.</span> <span class="nav-text">3.数据结构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B9%8B%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97%E3%80%90%E8%AE%B0%E5%BF%86%E3%80%91"><span class="nav-number">3.1.</span> <span class="nav-text">3.1数据结构之栈和队列【记忆】</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B9%8B%E6%95%B0%E7%BB%84%E5%92%8C%E9%93%BE%E8%A1%A8%E3%80%90%E8%AE%B0%E5%BF%86%E3%80%91"><span class="nav-number">3.2.</span> <span class="nav-text">3.2数据结构之数组和链表【记忆】</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-List%E9%9B%86%E5%90%88%E7%9A%84%E5%AE%9E%E7%8E%B0%E7%B1%BB"><span class="nav-number">4.</span> <span class="nav-text">4.List集合的实现类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1List%E9%9B%86%E5%90%88%E5%AD%90%E7%B1%BB%E7%9A%84%E7%89%B9%E7%82%B9%E3%80%90%E8%AE%B0%E5%BF%86%E3%80%91"><span class="nav-number">4.1.</span> <span class="nav-text">4.1List集合子类的特点【记忆】</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2%E9%9B%86%E5%90%88%E7%9A%84%E6%A1%88%E4%BE%8B-ArrayList%E9%9B%86%E5%90%88%E5%AD%98%E5%82%A8%E5%AD%A6%E7%94%9F%E5%AF%B9%E8%B1%A1%E4%B8%89%E7%A7%8D%E6%96%B9%E5%BC%8F%E9%81%8D%E5%8E%86%E3%80%90%E5%BA%94%E7%94%A8%E3%80%91"><span class="nav-number">4.2.</span> <span class="nav-text">4.2集合的案例-ArrayList集合存储学生对象三种方式遍历【应用】</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-3LinkedList%E9%9B%86%E5%90%88%E7%9A%84%E7%89%B9%E6%9C%89%E5%8A%9F%E8%83%BD%E3%80%90%E5%BA%94%E7%94%A8%E3%80%91"><span class="nav-number">4.3.</span> <span class="nav-text">4.3LinkedList集合的特有功能【应用】</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2019 &mdash; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">weixuz</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
