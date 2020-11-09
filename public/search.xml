@@ -628,6 +628,129 @@
       </categories>
   </entry>
   <entry>
+    <title>修饰符</title>
+    <url>/2019/08/19/190819.2%E4%BF%AE%E9%A5%B0%E7%AC%A6/</url>
+    <content><![CDATA[<h2 id="修饰符"><a href="#修饰符" class="headerlink" title="修饰符"></a>修饰符</h2><h3 id="1-1-package（了解）"><a href="#1-1-package（了解）" class="headerlink" title="1.1 package（了解）"></a>1.1 package（了解）</h3><ul>
+<li><p>1、包的概念</p>
+<ul>
+<li>包就是文件夹，用来管理类文件的</li>
+</ul>
+</li>
+<li><p>2、包的定义格式</p>
+<ul>
+<li>package 包名; (多级包用.分开)</li>
+<li>例如：package com.heima.demo;</li>
+</ul>
+</li>
+<li><p>3、带包编译&amp;带包运行</p>
+<ul>
+<li><p>带包编译：javac –d . 类名.java</p>
+<ul>
+<li>例如：javac  -d  . com.heima.demo.HelloWorld.java</li>
+</ul>
+</li>
+<li><p>带包运行：java 包名+类名</p>
+<ul>
+<li><p>例如：java com.heima.demo.HelloWorld</p>
+<a id="more"></a>
+
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="1-2-import（理解）"><a href="#1-2-import（理解）" class="headerlink" title="1.2 import（理解）"></a>1.2 import（理解）</h3><ul>
+<li><p>导包的意义</p>
+<p>使用不同包下的类时，使用的时候要写类的全路径，写起来太麻烦了</p>
+<p>为了简化带包的操作，Java就提供了导包的功能</p>
+</li>
+<li><p>导包的格式</p>
+<p>格式：import 包名;</p>
+<p>范例：import java.util.Scanner;</p>
+</li>
+<li><p>示例代码（没有使用导包，创建的Scanner对象）</p>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> com.heima;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 1. 没有导包，创建Scnaner对象</span></span><br><span class="line">        java.util.Scanner sc = <span class="keyword">new</span> java.util.Scanner(System.in);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>示例代码（使用导包后，创建的Scanner对象）</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> com.heima;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 1. 没有导包，创建Scnaner对象</span></span><br><span class="line">        Scanner sc = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="1-3-权限修饰符（理解）"><a href="#1-3-权限修饰符（理解）" class="headerlink" title="1.3 权限修饰符（理解）"></a>1.3 权限修饰符（理解）</h3><p><img src="190819.2%E4%BF%AE%E9%A5%B0%E7%AC%A6/1.%E4%BF%AE%E9%A5%B0%E7%AC%A6.png"></p>
+<h3 id="1-4-final（应用）"><a href="#1-4-final（应用）" class="headerlink" title="1.4 final（应用）"></a>1.4 final（应用）</h3><ul>
+<li>fianl关键字的作用<ul>
+<li>final代表最终的意思，可以修饰成员方法，成员变量，类</li>
+</ul>
+</li>
+<li>final修饰类、方法、变量的效果  <ul>
+<li>fianl修饰类：该类不能被继承（不能有子类，但是可以有父类）</li>
+<li>final修饰方法：该方法不能被重写</li>
+<li>final修饰变量：表明该变量是一个常量，不能再次赋值</li>
+</ul>
+</li>
+</ul>
+<h3 id="1-5-final修饰局部变量（理解）"><a href="#1-5-final修饰局部变量（理解）" class="headerlink" title="1.5 final修饰局部变量（理解）"></a>1.5 final修饰局部变量（理解）</h3><ul>
+<li><p>fianl修饰基本数据类型变量</p>
+<ul>
+<li>final 修饰指的是基本类型的数据值不能发生改变</li>
+</ul>
+</li>
+<li><p>final修饰引用数据类型变量  </p>
+<ul>
+<li><p>final 修饰指的是引用类型的地址值不能发生改变，但是地址里面的内容是可以发生改变的</p>
+</li>
+<li><p>举例：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">    <span class="keyword">final</span> Student s = <span class="keyword">new</span> Student(<span class="number">23</span>);</span><br><span class="line">  	s = <span class="keyword">new</span> Student(<span class="number">24</span>);  <span class="comment">// 错误</span></span><br><span class="line"> 	s.setAge(<span class="number">24</span>);  <span class="comment">// 正确</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="1-6-static（应用）"><a href="#1-6-static（应用）" class="headerlink" title="1.6 static（应用）"></a>1.6 static（应用）</h3><ul>
+<li>static的概念<ul>
+<li>static关键字是静态的意思，可以修饰【成员方法】，【成员变量】</li>
+</ul>
+</li>
+<li>static修饰的特点 <ol>
+<li>被类的所有对象共享，这也是我们判断是否使用静态关键字的条件</li>
+<li>可以通过类名调用当然，也可以通过对象名调用<strong>【推荐使用类名调用】</strong></li>
+</ol>
+</li>
+<li>示例代码：</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> String name; <span class="comment">//姓名</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span> age; <span class="comment">//年龄</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> String university; <span class="comment">//学校	共享数据！所以设计为静态！</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">show</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(name + <span class="string">&quot;,&quot;</span> + age + <span class="string">&quot;,&quot;</span> + university);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">StaticDemo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">	    <span class="comment">// 为对象的共享数据赋值</span></span><br><span class="line">        Student.university = <span class="string">&quot;传智大学&quot;</span>;</span><br><span class="line"></span><br><span class="line">        Student s1 = <span class="keyword">new</span> Student();</span><br><span class="line">        s1.name = <span class="string">&quot;林青霞&quot;</span>;</span><br><span class="line">        s1.age = <span class="number">30</span>;</span><br><span class="line">        s1.show();</span><br><span class="line"></span><br><span class="line">        Student s2 = <span class="keyword">new</span> Student();</span><br><span class="line">        s2.name = <span class="string">&quot;风清扬&quot;</span>;</span><br><span class="line">        s2.age = <span class="number">33</span>;</span><br><span class="line">        s2.show();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="1-7-static访问特点（掌握）"><a href="#1-7-static访问特点（掌握）" class="headerlink" title="1.7 static访问特点（掌握）"></a>1.7 static访问特点（掌握）</h3><ul>
+<li>static的访问特点<ul>
+<li>非静态的成员方法<ul>
+<li>能访问静态的成员变量</li>
+<li>能访问非静态的成员变量</li>
+<li>能访问静态的成员方法</li>
+<li>能访问非静态的成员方法</li>
+</ul>
+</li>
+<li>静态的成员方法<ul>
+<li>能访问静态的成员变量</li>
+<li>能访问静态的成员方法</li>
+</ul>
+</li>
+<li>总结成一句话就是：<ul>
+<li><strong>静态成员方法只能访问静态成员</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Java</category>
+        <category>JavaSE</category>
+      </categories>
+  </entry>
+  <entry>
     <title>继承</title>
     <url>/2019/08/19/190819.1%E7%BB%A7%E6%89%BF/</url>
     <content><![CDATA[<h2 id="1-继承"><a href="#1-继承" class="headerlink" title="1. 继承"></a>1. 继承</h2><h3 id="1-1-继承的实现（掌握）"><a href="#1-1-继承的实现（掌握）" class="headerlink" title="1.1 继承的实现（掌握）"></a>1.1 继承的实现（掌握）</h3><ul>
@@ -817,129 +940,6 @@
 </li>
 <li><p>示例代码：</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Animal</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> age;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Animal</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Animal</span><span class="params">(String name, <span class="keyword">int</span> age)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">        <span class="keyword">this</span>.age = age;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setName</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getAge</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> age;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setAge</span><span class="params">(<span class="keyword">int</span> age)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.age = age;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Cat</span> <span class="keyword">extends</span> <span class="title">Animal</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Cat</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Cat</span><span class="params">(String name, <span class="keyword">int</span> age)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>(name, age);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">catchMouse</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;猫抓老鼠&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Dog</span> <span class="keyword">extends</span> <span class="title">Animal</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Dog</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Dog</span><span class="params">(String name, <span class="keyword">int</span> age)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>(name, age);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">lookDoor</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;狗看门&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">    测试类</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AnimalDemo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//创建猫类对象并进行测试</span></span><br><span class="line">        Cat c1 = <span class="keyword">new</span> Cat();</span><br><span class="line">        c1.setName(<span class="string">&quot;加菲猫&quot;</span>);</span><br><span class="line">        c1.setAge(<span class="number">5</span>);</span><br><span class="line">        System.out.println(c1.getName() + <span class="string">&quot;,&quot;</span> + c1.getAge());</span><br><span class="line">        c1.catchMouse();</span><br><span class="line"></span><br><span class="line">        Cat c2 = <span class="keyword">new</span> Cat(<span class="string">&quot;加菲猫&quot;</span>, <span class="number">5</span>);</span><br><span class="line">        System.out.println(c2.getName() + <span class="string">&quot;,&quot;</span> + c2.getAge());</span><br><span class="line">        c2.catchMouse();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Java</category>
-        <category>JavaSE</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>修饰符</title>
-    <url>/2019/08/19/190819.2%E4%BF%AE%E9%A5%B0%E7%AC%A6/</url>
-    <content><![CDATA[<h2 id="修饰符"><a href="#修饰符" class="headerlink" title="修饰符"></a>修饰符</h2><h3 id="1-1-package（了解）"><a href="#1-1-package（了解）" class="headerlink" title="1.1 package（了解）"></a>1.1 package（了解）</h3><ul>
-<li><p>1、包的概念</p>
-<ul>
-<li>包就是文件夹，用来管理类文件的</li>
-</ul>
-</li>
-<li><p>2、包的定义格式</p>
-<ul>
-<li>package 包名; (多级包用.分开)</li>
-<li>例如：package com.heima.demo;</li>
-</ul>
-</li>
-<li><p>3、带包编译&amp;带包运行</p>
-<ul>
-<li><p>带包编译：javac –d . 类名.java</p>
-<ul>
-<li>例如：javac  -d  . com.heima.demo.HelloWorld.java</li>
-</ul>
-</li>
-<li><p>带包运行：java 包名+类名</p>
-<ul>
-<li><p>例如：java com.heima.demo.HelloWorld</p>
-<a id="more"></a>
-
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="1-2-import（理解）"><a href="#1-2-import（理解）" class="headerlink" title="1.2 import（理解）"></a>1.2 import（理解）</h3><ul>
-<li><p>导包的意义</p>
-<p>使用不同包下的类时，使用的时候要写类的全路径，写起来太麻烦了</p>
-<p>为了简化带包的操作，Java就提供了导包的功能</p>
-</li>
-<li><p>导包的格式</p>
-<p>格式：import 包名;</p>
-<p>范例：import java.util.Scanner;</p>
-</li>
-<li><p>示例代码（没有使用导包，创建的Scanner对象）</p>
-</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> com.heima;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 1. 没有导包，创建Scnaner对象</span></span><br><span class="line">        java.util.Scanner sc = <span class="keyword">new</span> java.util.Scanner(System.in);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>示例代码（使用导包后，创建的Scanner对象）</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> com.heima;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 1. 没有导包，创建Scnaner对象</span></span><br><span class="line">        Scanner sc = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="1-3-权限修饰符（理解）"><a href="#1-3-权限修饰符（理解）" class="headerlink" title="1.3 权限修饰符（理解）"></a>1.3 权限修饰符（理解）</h3><p><img src="190819.2%E4%BF%AE%E9%A5%B0%E7%AC%A6/1.%E4%BF%AE%E9%A5%B0%E7%AC%A6.png"></p>
-<h3 id="1-4-final（应用）"><a href="#1-4-final（应用）" class="headerlink" title="1.4 final（应用）"></a>1.4 final（应用）</h3><ul>
-<li>fianl关键字的作用<ul>
-<li>final代表最终的意思，可以修饰成员方法，成员变量，类</li>
-</ul>
-</li>
-<li>final修饰类、方法、变量的效果  <ul>
-<li>fianl修饰类：该类不能被继承（不能有子类，但是可以有父类）</li>
-<li>final修饰方法：该方法不能被重写</li>
-<li>final修饰变量：表明该变量是一个常量，不能再次赋值</li>
-</ul>
-</li>
-</ul>
-<h3 id="1-5-final修饰局部变量（理解）"><a href="#1-5-final修饰局部变量（理解）" class="headerlink" title="1.5 final修饰局部变量（理解）"></a>1.5 final修饰局部变量（理解）</h3><ul>
-<li><p>fianl修饰基本数据类型变量</p>
-<ul>
-<li>final 修饰指的是基本类型的数据值不能发生改变</li>
-</ul>
-</li>
-<li><p>final修饰引用数据类型变量  </p>
-<ul>
-<li><p>final 修饰指的是引用类型的地址值不能发生改变，但是地址里面的内容是可以发生改变的</p>
-</li>
-<li><p>举例：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">    <span class="keyword">final</span> Student s = <span class="keyword">new</span> Student(<span class="number">23</span>);</span><br><span class="line">  	s = <span class="keyword">new</span> Student(<span class="number">24</span>);  <span class="comment">// 错误</span></span><br><span class="line"> 	s.setAge(<span class="number">24</span>);  <span class="comment">// 正确</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="1-6-static（应用）"><a href="#1-6-static（应用）" class="headerlink" title="1.6 static（应用）"></a>1.6 static（应用）</h3><ul>
-<li>static的概念<ul>
-<li>static关键字是静态的意思，可以修饰【成员方法】，【成员变量】</li>
-</ul>
-</li>
-<li>static修饰的特点 <ol>
-<li>被类的所有对象共享，这也是我们判断是否使用静态关键字的条件</li>
-<li>可以通过类名调用当然，也可以通过对象名调用<strong>【推荐使用类名调用】</strong></li>
-</ol>
-</li>
-<li>示例代码：</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> String name; <span class="comment">//姓名</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span> age; <span class="comment">//年龄</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> String university; <span class="comment">//学校	共享数据！所以设计为静态！</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">show</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(name + <span class="string">&quot;,&quot;</span> + age + <span class="string">&quot;,&quot;</span> + university);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">StaticDemo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">	    <span class="comment">// 为对象的共享数据赋值</span></span><br><span class="line">        Student.university = <span class="string">&quot;传智大学&quot;</span>;</span><br><span class="line"></span><br><span class="line">        Student s1 = <span class="keyword">new</span> Student();</span><br><span class="line">        s1.name = <span class="string">&quot;林青霞&quot;</span>;</span><br><span class="line">        s1.age = <span class="number">30</span>;</span><br><span class="line">        s1.show();</span><br><span class="line"></span><br><span class="line">        Student s2 = <span class="keyword">new</span> Student();</span><br><span class="line">        s2.name = <span class="string">&quot;风清扬&quot;</span>;</span><br><span class="line">        s2.age = <span class="number">33</span>;</span><br><span class="line">        s2.show();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="1-7-static访问特点（掌握）"><a href="#1-7-static访问特点（掌握）" class="headerlink" title="1.7 static访问特点（掌握）"></a>1.7 static访问特点（掌握）</h3><ul>
-<li>static的访问特点<ul>
-<li>非静态的成员方法<ul>
-<li>能访问静态的成员变量</li>
-<li>能访问非静态的成员变量</li>
-<li>能访问静态的成员方法</li>
-<li>能访问非静态的成员方法</li>
-</ul>
-</li>
-<li>静态的成员方法<ul>
-<li>能访问静态的成员变量</li>
-<li>能访问静态的成员方法</li>
-</ul>
-</li>
-<li>总结成一句话就是：<ul>
-<li><strong>静态成员方法只能访问静态成员</strong></li>
-</ul>
-</li>
-</ul>
 </li>
 </ul>
 ]]></content>
