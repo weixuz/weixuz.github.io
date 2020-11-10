@@ -3,22 +3,21 @@
   <entry>
     <title>Java基础入门</title>
     <url>/2019/08/02/190802Java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/</url>
-    <content><![CDATA[<h2 id="1-Java概述"><a href="#1-Java概述" class="headerlink" title="1. Java概述"></a>1. Java概述</h2><h3 id="1-1-Java语言发展史（了解）"><a href="#1-1-Java语言发展史（了解）" class="headerlink" title="1.1 Java语言发展史（了解）"></a>1.1 Java语言发展史（了解）</h3><p>语言：人与人交流沟通的表达方式</p>
+    <content><![CDATA[<h2 id="1-Java概述"><a href="#1-Java概述" class="headerlink" title="1. Java概述"></a>1. Java概述</h2><h3 id="1-1-Java语言发展史"><a href="#1-1-Java语言发展史" class="headerlink" title="1.1 Java语言发展史"></a>1.1 Java语言发展史</h3><p>语言：人与人交流沟通的表达方式</p>
 <p>计算机语言：人与计算机之间进行信息交流沟通的一种特殊语言</p>
 <p>Java语言是美国Sun公司（Stanford University Network）在1995年推出的计算机语言</p>
 <p>Java之父：詹姆斯·高斯林（James Gosling）</p>
 <p>2009年，Sun公司被甲骨文公司收购，所以现在访问oracle官网即可：<a href="https://www.oracle.com/">https://www.oracle.com</a> </p>
 <a id="more"></a>
 
-<h3 id="1-2-Java语言跨平台原理（理解）"><a href="#1-2-Java语言跨平台原理（理解）" class="headerlink" title="1.2 Java语言跨平台原理（理解）"></a>1.2 Java语言跨平台原理（理解）</h3><p>Java程序并非是直接运行的，Java编译器将Java源程序编译成与平台无关的字节码文件(class文件)，然后由Java虚拟机（JVM）对字节码文件解释执行。所以在不同的操作系统下，只需安装不同的Java虚拟机即可实现java程序的跨平台。</p>
-<h3 id="1-3-JRE和JDK（记忆）"><a href="#1-3-JRE和JDK（记忆）" class="headerlink" title="1.3 JRE和JDK（记忆）"></a>1.3 JRE和JDK（记忆）</h3><p>JVM（Java Virtual Machine），Java虚拟机</p>
+<h3 id="1-2-Java语言跨平台原理"><a href="#1-2-Java语言跨平台原理" class="headerlink" title="1.2 Java语言跨平台原理"></a>1.2 Java语言跨平台原理</h3><p>Java程序并非是直接运行的，Java编译器将Java源程序编译成与平台无关的字节码文件(class文件)，然后由Java虚拟机（JVM）对字节码文件解释执行。所以在不同的操作系统下，只需安装不同的Java虚拟机即可实现java程序的跨平台。</p>
+<h3 id="1-3-JRE和JDK"><a href="#1-3-JRE和JDK" class="headerlink" title="1.3 JRE和JDK"></a>1.3 JRE和JDK</h3><p>JVM（Java Virtual Machine），Java虚拟机</p>
 <p>JRE（Java Runtime Environment），Java运行环境，包含了JVM和Java的核心类库（Java API）</p>
 <p>JDK（Java Development Kit）称为Java开发工具，包含了JRE和开发工具</p>
 <p>总结：我们只需安装JDK即可，它包含了java的运行环境和虚拟机。</p>
-<h3 id="1-4-JDK的下载和安装（应用）"><a href="#1-4-JDK的下载和安装（应用）" class="headerlink" title="1.4 JDK的下载和安装（应用）"></a>1.4 JDK的下载和安装（应用）</h3><h4 id="1-4-1-下载"><a href="#1-4-1-下载" class="headerlink" title="1.4.1 下载"></a>1.4.1 下载</h4><p><a href="http://www.oracle.com/">Oracle官网</a></p>
+<h3 id="1-4-JDK的下载和安装"><a href="#1-4-JDK的下载和安装" class="headerlink" title="1.4 JDK的下载和安装"></a>1.4 JDK的下载和安装</h3><h4 id="1-4-1-下载"><a href="#1-4-1-下载" class="headerlink" title="1.4.1 下载"></a>1.4.1 下载</h4><p><a href="http://www.oracle.com/">Oracle官网</a></p>
 <p><strong>注意</strong>：针对不同的操作系统，需要下载对应版本的JDK。</p>
-<h4 id="1-4-2-安装"><a href="#1-4-2-安装" class="headerlink" title="1.4.2 安装"></a>1.4.2 安装</h4><p>傻瓜式安装，下一步即可。但默认的安装路径是在C:\Program Files下，为方便统一管理建议修改安装路径，将与开发相关的软件都安装到一个目录下，例如：E:\develop。</p>
-<p><strong>注意</strong>：安装路径不要包含中文或者空格等特殊字符（使用纯英文目录）。</p>
+<h4 id="1-4-2-安装"><a href="#1-4-2-安装" class="headerlink" title="1.4.2 安装"></a>1.4.2 安装</h4><p><strong>注意</strong>：安装路径不要包含中文或者空格等特殊字符（使用纯英文目录）。</p>
 <h4 id="1-4-3-JDK的安装目录介绍"><a href="#1-4-3-JDK的安装目录介绍" class="headerlink" title="1.4.3 JDK的安装目录介绍"></a>1.4.3 JDK的安装目录介绍</h4><table>
 <thead>
 <tr>
@@ -51,7 +50,7 @@
 <td>该路径下存放了JDK工具的一些补充JAR包。</td>
 </tr>
 </tbody></table>
-<h2 id="2-第一个演示程序"><a href="#2-第一个演示程序" class="headerlink" title="2. 第一个演示程序"></a>2. 第一个演示程序</h2><h3 id="2-1-常用DOS命令（应用）"><a href="#2-1-常用DOS命令（应用）" class="headerlink" title="2.1 常用DOS命令（应用）"></a>2.1 常用DOS命令（应用）</h3><p>在接触集成开发环境之前，我们需要使用命令行窗口对java程序进行编译和运行，所以需要知道一些常用DOS命令。</p>
+<h3 id="1-5-常用DOS命令"><a href="#1-5-常用DOS命令" class="headerlink" title="1.5 常用DOS命令"></a>1.5 常用DOS命令</h3><p>在接触集成开发环境之前，我们需要使用命令行窗口对java程序进行编译和运行，所以需要知道一些常用DOS命令。</p>
 <p>1、打开命令行窗口的方式：win + r打开运行窗口，输入cmd，回车。</p>
 <p>2、常用命令及其作用</p>
 <table>
@@ -94,36 +93,8 @@
 <td>退出命令提示符窗口。</td>
 </tr>
 </tbody></table>
-<h3 id="2-2-Path环境变量的配置（应用）"><a href="#2-2-Path环境变量的配置（应用）" class="headerlink" title="2.2 Path环境变量的配置（应用）"></a>2.2 Path环境变量的配置（应用）</h3><h4 id="2-2-1-为什么配置环境变量"><a href="#2-2-1-为什么配置环境变量" class="headerlink" title="2.2.1 为什么配置环境变量"></a>2.2.1 为什么配置环境变量</h4><p>开发Java程序，需要使用JDK提供的开发工具（比如javac.exe、java.exe等命令），而这些工具在JDK的安装目录的bin目录下，如果不配置环境变量，那么这些命令只可以在该目录下执行。我们不可能把所有的java文件都放到JDK的bin目录下，所以配置环境变量的作用就是可以使bin目录下的java相关命令可以在任意目录下使用。</p>
-<h4 id="2-2-2-配置环境变量步骤"><a href="#2-2-2-配置环境变量步骤" class="headerlink" title="2.2.2 配置环境变量步骤"></a>2.2.2 配置环境变量步骤</h4><p>具体配置步骤请参见《Java环境变量配置说明》文档。    </p>
-<h3 id="2-3-HelloWorld案例（应用）"><a href="#2-3-HelloWorld案例（应用）" class="headerlink" title="2.3 HelloWorld案例（应用）"></a>2.3 HelloWorld案例（应用）</h3><p>HelloWorld案例是指在计算机屏幕上输出“HelloWorld”这行文字。各种计算机语言都习惯使用该案例作为第一个演示案例。</p>
-<h4 id="2-3-1-Java程序开发运行流程"><a href="#2-3-1-Java程序开发运行流程" class="headerlink" title="2.3.1 Java程序开发运行流程"></a>2.3.1 Java程序开发运行流程</h4><p>开发Java程序，需要三个步骤：编写程序，编译程序，运行程序。</p>
-<h4 id="2-3-2-HelloWorld案例的编写"><a href="#2-3-2-HelloWorld案例的编写" class="headerlink" title="2.3.2 HelloWorld案例的编写"></a>2.3.2 HelloWorld案例的编写</h4><p>1、新建文本文档文件，修改名称为HelloWorld.java。</p>
-<p>2、用记事本打开HelloWorld.java文件，输写程序内容。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloWorld</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">&quot;HelloWorld&quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="2-3-3-HelloWorld案例的编译和运行"><a href="#2-3-3-HelloWorld案例的编译和运行" class="headerlink" title="2.3.3 HelloWorld案例的编译和运行"></a>2.3.3 HelloWorld案例的编译和运行</h4><p>存文件，打开命令行窗口，将目录切换至java文件所在目录，编译java文件生成class文件，运行class文件。</p>
-<blockquote>
-<p>编译：javac 文件名.java</p>
-<p>范例：javac HelloWorld.java</p>
-<p>执行：java 类名</p>
-<p>范例：java HelloWorld</p>
-</blockquote>
-<h3 id="2-4-HelloWorld案例常见问题（理解）"><a href="#2-4-HelloWorld案例常见问题（理解）" class="headerlink" title="2.4 HelloWorld案例常见问题（理解）"></a>2.4 HelloWorld案例常见问题（理解）</h3><h4 id="2-4-1-BUG"><a href="#2-4-1-BUG" class="headerlink" title="2.4.1 BUG"></a>2.4.1 BUG</h4><p>在电脑系统或程序中，隐藏着的一些未被发现的缺陷或问题统称为bug（漏洞）。</p>
-<h4 id="2-4-2-BUG的解决"><a href="#2-4-2-BUG的解决" class="headerlink" title="2.4.2 BUG的解决"></a>2.4.2 BUG的解决</h4><p>1、具备识别BUG的能力：多看</p>
-<p>2、具备分析BUG的能力：多思考，多查资料</p>
-<p>3、具备解决BUG的能力：多尝试，多总结</p>
-<h4 id="2-4-3-HelloWorld案例常见问题"><a href="#2-4-3-HelloWorld案例常见问题" class="headerlink" title="2.4.3 HelloWorld案例常见问题"></a>2.4.3 HelloWorld案例常见问题</h4><p>1、非法字符问题。Java中的符号都是英文格式的。</p>
-<p>2、大小写问题。Java语言对大小写敏感（区分大小写）。</p>
-<p>3、在系统中显示文件的扩展名，避免出现HelloWorld.java.txt文件。</p>
-<p>4、编译命令后的java文件名需要带文件后缀.java</p>
-<p>5、运行命令后的class文件名（类名）不带文件后缀.class</p>
-<p>…</p>
-<h3 id="2-5-Notepad-软件的安装和使用（应用）"><a href="#2-5-Notepad-软件的安装和使用（应用）" class="headerlink" title="2.5 Notepad++软件的安装和使用（应用）"></a>2.5 Notepad++软件的安装和使用（应用）</h3><h4 id="2-5-1-什么要使用Notepad-软件"><a href="#2-5-1-什么要使用Notepad-软件" class="headerlink" title="2.5.1 什么要使用Notepad++软件"></a>2.5.1 什么要使用Notepad++软件</h4><p>Notepad++功能比windows中的自带记事本功能强大，除了可以用来制作一般的纯文字说明文件，也十分适合编写计算机程序代码。Notepad++有行号，能够快速定位问题位置，还有语法高亮度显示、代码折叠等功能。而且它是免费的。</p>
-<h4 id="2-5-2-Notepad-软件安装"><a href="#2-5-2-Notepad-软件安装" class="headerlink" title="2.5.2 Notepad++软件安装"></a>2.5.2 Notepad++软件安装</h4><p>安装：傻瓜式安装，一直下一步即可。建议也安装到统一的开发软件目录下，比如E:\develop。</p>
-<p>具体安装步骤请参见《Nodepad++软件安装及配置说明》文档。</p>
-<h4 id="2-5-3Notepad-软件配置"><a href="#2-5-3Notepad-软件配置" class="headerlink" title="2.5.3Notepad++软件配置"></a>2.5.3Notepad++软件配置</h4><p>安装完毕之后，为了使用方便，做一个简单的配置：修改默认语言和编码。</p>
-<h2 id="3-java基础语法"><a href="#3-java基础语法" class="headerlink" title="3. java基础语法"></a>3. java基础语法</h2><h4 id="3-1-注释（理解）"><a href="#3-1-注释（理解）" class="headerlink" title="3.1 注释（理解）"></a>3.1 注释（理解）</h4><p>注释是对代码的解释和说明文字，可以提高程序的可读性，因此在程序中添加必要的注释文字十分重要。Java中的注释分为三种：</p>
+<h3 id="1-6-为什么配置环境变量"><a href="#1-6-为什么配置环境变量" class="headerlink" title="1.6 为什么配置环境变量"></a>1.6 为什么配置环境变量</h3><p>开发Java程序，需要使用JDK提供的开发工具（比如javac.exe、java.exe等命令），而这些工具在JDK的安装目录的bin目录下，如果不配置环境变量，那么这些命令只可以在该目录下执行。我们不可能把所有的java文件都放到JDK的bin目录下，所以配置环境变量的作用就是可以使bin目录下的java相关命令可以在任意目录下使用。  </p>
+<h2 id="2-java基础语法"><a href="#2-java基础语法" class="headerlink" title="2. java基础语法"></a>2. java基础语法</h2><h4 id="2-1-注释"><a href="#2-1-注释" class="headerlink" title="2.1 注释"></a>2.1 注释</h4><p>注释是对代码的解释和说明文字，可以提高程序的可读性，因此在程序中添加必要的注释文字十分重要。Java中的注释分为三种：</p>
 <p>单行注释。单行注释的格式是使用//，从//开始至本行结尾的文字将作为注释文字。</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 这是单行注释文字</span></span><br></pre></td></tr></table></figure>
 
@@ -131,11 +102,11 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">这是多行注释文字</span></span><br><span class="line"><span class="comment">这是多行注释文字</span></span><br><span class="line"><span class="comment">这是多行注释文字</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line">注意：多行注释不能嵌套使用。</span><br></pre></td></tr></table></figure>
 
 <p>文档注释。文档注释以<code>/**</code>开始，以<code>*/</code>结束。（以后讲）</p>
-<h4 id="3-2-关键字（理解）"><a href="#3-2-关键字（理解）" class="headerlink" title="3.2 关键字（理解）"></a>3.2 关键字（理解）</h4><p>关键字是指被java语言赋予了特殊含义的单词。</p>
+<h4 id="2-2-关键字"><a href="#2-2-关键字" class="headerlink" title="2.2 关键字"></a>2.2 关键字</h4><p>关键字是指被java语言赋予了特殊含义的单词。</p>
 <p>关键字的特点：</p>
 <p>​    关键字的字母全部小写。</p>
 <p>​    常用的代码编辑器对关键字都有高亮显示，比如现在我们能看到的public、class、static等。</p>
-<h4 id="3-3-常量（应用）"><a href="#3-3-常量（应用）" class="headerlink" title="3.3 常量（应用）"></a>3.3 常量（应用）</h4><p>常量：在程序运行过程中，其值不可以发生改变的量。</p>
+<h4 id="2-3-常量"><a href="#2-3-常量" class="headerlink" title="2.3 常量"></a>2.3 常量</h4><p>常量：在程序运行过程中，其值不可以发生改变的量。</p>
 <p>Java中的常量分类：</p>
 <p>​    字符串常量  用双引号括起来的多个字符（可以包含0个、一个或多个），例如”a”、”abc”、”中国”等</p>
 <p>​    整数常量  整数，例如：-10、0、88等</p>
@@ -146,7 +117,7 @@
 <p>除空常量外，其他常量均可使用输出语句直接输出。</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="number">10</span>); <span class="comment">// 输出一个整数</span></span><br><span class="line">        System.out.println(<span class="number">5.5</span>); <span class="comment">// 输出一个小数</span></span><br><span class="line">        System.out.println(<span class="string">&#x27;a&#x27;</span>); <span class="comment">// 输出一个字符</span></span><br><span class="line">        System.out.println(<span class="keyword">true</span>); <span class="comment">// 输出boolean值true</span></span><br><span class="line">        System.out.println(<span class="string">&quot;你好&quot;</span>); <span class="comment">// 输出字符串</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h4 id="3-4-数据类型（记忆、应用）"><a href="#3-4-数据类型（记忆、应用）" class="headerlink" title="3.4 数据类型（记忆、应用）"></a>3.4 数据类型（记忆、应用）</h4><h5 id="3-4-1-计算机存储单元"><a href="#3-4-1-计算机存储单元" class="headerlink" title="3.4.1 计算机存储单元"></a>3.4.1 计算机存储单元</h5><p>我们知道计算机是可以用来存储数据的，但是无论是内存还是硬盘，计算机存储设备的最小信息单元叫“位（bit）”，我们又称之为“比特位”，通常用小写的字母”b”表示。而计算机中最基本的存储单元叫“字节（byte）”，</p>
+<h4 id="2-4-数据类型"><a href="#2-4-数据类型" class="headerlink" title="2.4 数据类型"></a>2.4 数据类型</h4><h5 id="2-4-1-计算机存储单元"><a href="#2-4-1-计算机存储单元" class="headerlink" title="2.4.1 计算机存储单元"></a>2.4.1 计算机存储单元</h5><p>我们知道计算机是可以用来存储数据的，但是无论是内存还是硬盘，计算机存储设备的最小信息单元叫“位（bit）”，我们又称之为“比特位”，通常用小写的字母”b”表示。而计算机中最基本的存储单元叫“字节（byte）”，</p>
 <p>通常用大写字母”B”表示，字节是由连续的8个位组成。</p>
 <p>除了字节外还有一些常用的存储单位，其换算单位如下：</p>
 <p>1B（字节） = 8bit</p>
@@ -154,7 +125,7 @@
 <p>1MB = 1024KB</p>
 <p>1GB = 1024MB</p>
 <p>1TB = 1024GB</p>
-<h5 id="3-4-2-Java中的数据类型"><a href="#3-4-2-Java中的数据类型" class="headerlink" title="3.4.2 Java中的数据类型"></a>3.4.2 Java中的数据类型</h5><p>Java是一个强类型语言，Java中的数据必须明确数据类型。在Java中的数据类型包括基本数据类型和引用数据类型两种。</p>
+<h5 id="2-4-2-Java中的数据类型"><a href="#2-4-2-Java中的数据类型" class="headerlink" title="2.4.2 Java中的数据类型"></a>2.4.2 Java中的数据类型</h5><p>Java是一个强类型语言，Java中的数据必须明确数据类型。在Java中的数据类型包括基本数据类型和引用数据类型两种。</p>
 <p>Java中的基本数据类型：</p>
 <table>
 <thead>
@@ -217,7 +188,7 @@
 <p>说明：</p>
 <p>​    e+38表示是乘以10的38次方，同样，e-45表示乘以10的负45次方。</p>
 <p>​    在java中整数默认是int类型，浮点数默认是double类型。</p>
-<h4 id="3-5-变量（应用）"><a href="#3-5-变量（应用）" class="headerlink" title="3.5 变量（应用）"></a>3.5 变量（应用）</h4><h5 id="3-5-1-变量的定义"><a href="#3-5-1-变量的定义" class="headerlink" title="3.5.1 变量的定义"></a>3.5.1 变量的定义</h5><p>变量：在程序运行过程中，其值可以发生改变的量。</p>
+<h4 id="2-5-变量"><a href="#2-5-变量" class="headerlink" title="2.5 变量"></a>2.5 变量</h4><h5 id="2-5-1-变量的定义"><a href="#2-5-1-变量的定义" class="headerlink" title="2.5.1 变量的定义"></a>2.5.1 变量的定义</h5><p>变量：在程序运行过程中，其值可以发生改变的量。</p>
 <p>从本质上讲，变量是内存中的一小块区域，其值可以在一定范围内变化。</p>
 <p>变量的定义格式：</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">数据类型 变量名 = 初始化值; <span class="comment">// 声明变量并赋值</span></span><br><span class="line"><span class="keyword">int</span> age = <span class="number">18</span>;</span><br><span class="line">System.out.println(age);</span><br></pre></td></tr></table></figure>
@@ -229,13 +200,13 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> a = <span class="number">10</span>, b = <span class="number">20</span>; <span class="comment">// 定义int类型的变量a和b，中间使用逗号隔开</span></span><br><span class="line">System.out.println(a);</span><br><span class="line">System.out.println(b);</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> c,d; <span class="comment">// 声明int类型的变量c和d，中间使用逗号隔开</span></span><br><span class="line">c = <span class="number">30</span>;</span><br><span class="line">d = <span class="number">40</span>;</span><br><span class="line">System.out.println(c);</span><br><span class="line">System.out.println(d);</span><br></pre></td></tr></table></figure>
 
 <p>变量的使用：通过变量名访问即可。</p>
-<h5 id="3-5-2-使用变量时的注意事项"><a href="#3-5-2-使用变量时的注意事项" class="headerlink" title="3.5.2 使用变量时的注意事项"></a>3.5.2 使用变量时的注意事项</h5><ol>
+<h5 id="2-5-2-使用变量时的注意事项"><a href="#2-5-2-使用变量时的注意事项" class="headerlink" title="2.5.2 使用变量时的注意事项"></a>2.5.2 使用变量时的注意事项</h5><ol>
 <li>在同一对花括号中，变量名不能重复。</li>
 <li>变量在使用之前，必须初始化（赋值）。</li>
 <li>定义long类型的变量时，需要在整数的后面加L（大小写均可，建议大写）。因为整数默认是int类型，整数太大可能超出int范围。</li>
 <li>定义float类型的变量时，需要在小数的后面加F（大小写均可，建议大写）。因为浮点数的默认类型是double， double的取值范围是大于float的，类型不兼容。</li>
 </ol>
-<h4 id="3-6-标识符（记忆、理解）"><a href="#3-6-标识符（记忆、理解）" class="headerlink" title="3.6 标识符（记忆、理解）"></a>3.6 标识符（记忆、理解）</h4><p>标识符是用户编程时使用的名字，用于给类、方法、变量、常量等命名。</p>
+<h4 id="2-6-标识符"><a href="#2-6-标识符" class="headerlink" title="2.6 标识符"></a>2.6 标识符</h4><p>标识符是用户编程时使用的名字，用于给类、方法、变量、常量等命名。</p>
 <p>Java中标识符的组成规则：</p>
 <p>​    由字母、数字、下划线“_”、美元符号“$”组成，第一个字符不能是数字。</p>
 <p>​    不能使用java中的关键字作为标识符。    </p>
@@ -247,7 +218,7 @@
 <p>​        每个单词的首字母都大写。</p>
 <p>​    另外，标识符的命名最好可以做到见名知意</p>
 <p>​        例如：username、studentNumber等。</p>
-<h4 id="3-7-类型转换（理解）"><a href="#3-7-类型转换（理解）" class="headerlink" title="3.7 类型转换（理解）"></a>3.7 类型转换（理解）</h4><p>在Java中，一些数据类型之间是可以相互转换的。分为两种情况：自动类型转换和强制类型转换。</p>
+<h4 id="2-7-类型转换"><a href="#2-7-类型转换" class="headerlink" title="2.7 类型转换"></a>2.7 类型转换</h4><p>在Java中，一些数据类型之间是可以相互转换的。分为两种情况：自动类型转换和强制类型转换。</p>
 <p>自动类型转换：</p>
 <p>​    把一个表示数据范围小的数值或者变量赋值给另一个表示数据范围大的变量。这种转换方式是自动的，直接书写即可。例如：</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">double</span> num = <span class="number">10</span>; <span class="comment">// 将int类型的10直接赋值给double类型</span></span><br><span class="line">System.out.println(num); <span class="comment">// 输出10.0</span></span><br></pre></td></tr></table></figure>
@@ -258,7 +229,7 @@
 <p>​    例如：</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">double</span> num1 = <span class="number">5.5</span>;</span><br><span class="line"><span class="keyword">int</span> num2 = (<span class="keyword">int</span>) num1; <span class="comment">// 将double类型的num1强制转换为int类型</span></span><br><span class="line">System.out.println(num2); <span class="comment">// 输出5（小数位直接舍弃）</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-<p><img src="190802Java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/1.png"></p>
+<p><img src="C:\Users\WeiXu\blog\source_posts\190802Java基础入门\1.png"></p>
 <p>说明：</p>
 <ol>
 <li>char类型的数据转换为int类型是按照码表中对应的int值进行计算的。比如在ASCII码表中，’a’对应97。</li>
@@ -2235,12 +2206,13 @@
       </categories>
   </entry>
   <entry>
-    <title>谷歌云服务器免费使用一年</title>
-    <url>/2019/11/09/191109%E8%B0%B7%E6%AD%8C%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%85%8D%E8%B4%B9%E4%BD%BF%E7%94%A8%E4%B8%80%E5%B9%B4/</url>
+    <title>Debian允许root用户登录</title>
+    <url>/2019/11/11/191111Debian%E5%85%81%E8%AE%B8root%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95/</url>
     <content><![CDATA[]]></content>
       <categories>
         <category>Server</category>
-        <category>VPS</category>
+        <category>Linux</category>
+        <category>Debian9</category>
       </categories>
   </entry>
   <entry>
@@ -2248,7 +2220,6 @@
     <url>/2019/11/10/191110%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BAVPN/</url>
     <content><![CDATA[<p>如何搭建属于自己的SS服务</p>
 <h3 id="1-准备"><a href="#1-准备" class="headerlink" title="1.准备:"></a>1.准备:</h3><p>&emsp;&emsp;首先要有自己的服务器(国外的),谷歌有免费使用一年活动,不限时间</p>
-<p><a href="zhaoweixu.com">谷歌免费使用一年方法</a></p>
 <a id="more"></a>
 
 <h3 id="2-搭建"><a href="#2-搭建" class="headerlink" title="2.搭建"></a>2.搭建</h3><p>&emsp;&emsp;在VM实例页面，找到创建好的实例，点击后面的SSH，远程连接到该VPS服务器上。可以理解为在公司远程控制家里的电脑，只不过这里控制的是你的VPS服务器。</p>
@@ -2273,22 +2244,12 @@
 <h3 id="4-防火墙设置"><a href="#4-防火墙设置" class="headerlink" title="4.防火墙设置"></a>4.防火墙设置</h3><p>　　由于防火墙的原因，现在你肯定还是连接不上去的，这里就需要设置防火墙。Debian 9的默认防火墙是允许所有端口访问的，但是它上面还有一层谷歌云的防火墙(阿里云管这个叫安全组),所以我们需要设置谷歌云的防火墙。在左侧菜单依次点击“VPC网络–防火墙规则”。</p>
 <p>&emsp;&emsp;进到防火墙规则页面，点击“创建防火墙规则”。设置防火墙规则时，有几个地方需要注意，目标修改为“网络中所有实例”，来源IP地址范围填写“0.0.0.0/0”，协议和端口勾选“指定的协议和端口”。勾选tcp,填入自己在第3步中设置的端口号,我设置的是8080,填入之后点击”创建”,防火墙设置就完成了。</p>
 <p><img src="191110%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BAVPN/6.%E9%98%B2%E7%81%AB%E5%A2%99%E8%A7%84%E5%88%99.png" alt="防火墙规则"></p>
-<h3 id="5-配置Shadowsocks"><a href="#5-配置Shadowsocks" class="headerlink" title="5.配置Shadowsocks"></a>5.配置Shadowsocks</h3><p>&emsp;&emsp;最后在Shadowsocks客户端中配置自己的信息就可以开心的玩耍了哈哈</p>
+<h3 id="5-配置Shadowsocks"><a href="#5-配置Shadowsocks" class="headerlink" title="5.配置Shadowsocks"></a>5.配置Shadowsocks</h3><p>&emsp;&emsp;最后在Shadowsocks客户端中配置自己的信息就可以开心的玩耍了</p>
 <p><img src="191110%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BAVPN/7.SS.png" alt="SS"></p>
 ]]></content>
       <categories>
         <category>Server</category>
         <category>VPS</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Debian允许root用户登录</title>
-    <url>/2019/11/11/191111Debian%E5%85%81%E8%AE%B8root%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>Server</category>
-        <category>Linux</category>
-        <category>Debian9</category>
       </categories>
   </entry>
   <entry>
@@ -2338,11 +2299,16 @@
   <entry>
     <title>更换next主题后访问报错</title>
     <url>/2020/06/15/200615%E6%9B%B4%E6%8D%A2next%E4%B8%BB%E9%A2%98%E5%90%8E%E8%AE%BF%E9%97%AE%E6%8A%A5%E9%94%99/</url>
-    <content><![CDATA[<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">	hexo博客更换next主题后访问显示报错&#123;% extends ‘_layout.swig‘ %&#125; &#123;% import ‘_macro&#x2F;post.swig‘ as post_template %&#125;</span><br><span class="line"></span><br><span class="line">原因是hexo在5.0之后把swig给删除了需要自己手动安装</span><br><span class="line"></span><br><span class="line">在博客目录下右键“Git Bash Here”输入以下命令即可：</span><br><span class="line">npm i hexo-renderer-swig</span><br></pre></td></tr></table></figure>
+    <content><![CDATA[<p>hexo博客更换next主题后访问显示报错:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;% extends ‘_layout.swig‘ %&#125; &#123;% import ‘_macro&#x2F;post.swig‘ as post</span><br><span class="line">_template %&#125;</span><br></pre></td></tr></table></figure>
 
+<p>原因是hexo在5.0之后把swig给删除了需要自己手动安装</p>
+<p>在博客目录下右键“Git Bash Here”输入以下命令即可:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm i hexo-renderer-swig</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>Server</category>
+        <category>Hexo</category>
       </categories>
   </entry>
   <entry>
