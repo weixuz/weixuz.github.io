@@ -381,45 +381,16 @@
 
       
         
-          
-            <h3 id="1-下载"><a href="#1-下载" class="headerlink" title="1.下载"></a>1.下载</h3><p><a target="_blank" rel="noopener" href="https://cmder.net/">官网下载</a></p>
+          <h3 id="1-下载"><a href="#1-下载" class="headerlink" title="1.下载"></a>1.下载</h3><p><a target="_blank" rel="noopener" href="https://cmder.net/">官网下载</a></p>
 <p><img src="/2020/11/22/201122Cmder%E7%9A%84%E4%BD%BF%E7%94%A8/1.png"></p>
 <p>下载分为mini版和完整版，完整版功能更为全面，可运行linux下的所有命令</p>
-<p><img src="/2020/11/22/201122Cmder%E7%9A%84%E4%BD%BF%E7%94%A8/2.png"></p>
-<p>不需要安装，解压后可直接使用。</p>
-<p>首次打开会有个警告弹窗，选择第一个即可：</p>
-<p><img src="/2020/11/22/201122Cmder%E7%9A%84%E4%BD%BF%E7%94%A8/4.png"></p>
-<h3 id="2-配置"><a href="#2-配置" class="headerlink" title="2.配置"></a>2.配置</h3><ul>
-<li>配置环境变量</li>
-</ul>
-<p>下载解压后将cmder.exe的所在目录添加到环境变量path中。</p>
-<p><img src="/2020/11/22/201122Cmder%E7%9A%84%E4%BD%BF%E7%94%A8/3.path.png"></p>
-<ul>
-<li>配置右键快捷启动</li>
-</ul>
-<p>管理员身份运行cmd，执行以下命令：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Cmder.exe &#x2F;REGISTER ALL  &#x2F;&#x2F; 设置任意地方鼠标右键启动Cmder</span><br></pre></td></tr></table></figure>
-
-<p>之后可在任意地方点击右键使用cmder，会直接跳转到该路径下，而无需cd</p>
-<p><img src="/2020/11/22/201122Cmder%E7%9A%84%E4%BD%BF%E7%94%A8/6.png"></p>
-<ul>
-<li><p>语言设置</p>
-<p>Setting–&gt;General–&gt;Interface language</p>
-</li>
-</ul>
-<p><img src="/2020/11/22/201122Cmder%E7%9A%84%E4%BD%BF%E7%94%A8/Users\WeiXu\blog\source_posts\201122Cmder的使用\9.png"></p>
-<ul>
-<li>命令提示符”λ”改为”$”</li>
-</ul>
-<p>cmder的光标是以”λ”开始的，我们可以修改为常用的$，找到cmder目录下的vendor文件夹中的clink.lua文件，修改local lambda值即可。</p>
-<p><img src="/2020/11/22/201122Cmder%E7%9A%84%E4%BD%BF%E7%94%A8/7.png"></p>
-<ul>
-<li>设置中文编码</li>
-</ul>
-<p>打开setting，在Start-up下的environment中加入: <code>set LANG=zh_CN.UTF8</code></p>
-<p><img src="/2020/11/22/201122Cmder%E7%9A%84%E4%BD%BF%E7%94%A8/8.png"></p>
-<h3 id="3-快捷键"><a href="#3-快捷键" class="headerlink" title="3.快捷键"></a>3.快捷键</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">Tab       自动路径补全</span><br><span class="line">Ctrl+T    建立新页签</span><br><span class="line">Ctrl+W    关闭页签</span><br><span class="line">Ctrl+Tab  切换页签</span><br><span class="line">Alt+F4    关闭所有页签</span><br><span class="line">Alt+Shift+<span class="number">1</span> 开启cmd.exe</span><br><span class="line">Alt+Shift+<span class="number">2</span> 开启powershell.exe</span><br><span class="line">Alt+Shift+<span class="number">3</span> 开启powershell.exe (系统管理员权限)</span><br><span class="line">Ctrl+<span class="number">1</span>      快速切换到第<span class="number">1</span>个页签</span><br><span class="line">Ctrl+n      快速切换到第n个页签(n值无上限)</span><br><span class="line">Alt + enter 切换到全屏状态</span><br><span class="line">Ctr+r       历史命令搜索</span><br><span class="line">Tab         自动路径补全</span><br><span class="line">Ctrl+T      建立新页签</span><br><span class="line">Ctrl+W      关闭页签</span><br><span class="line">Ctrl+Tab    切换页签</span><br><span class="line">Alt+F4      关闭所有页签</span><br><span class="line">Alt+Shift+<span class="number">1</span> 开启cmd.exe</span><br><span class="line">Alt+Shift+<span class="number">2</span> 开启powershell.exe</span><br><span class="line">Alt+Shift+<span class="number">3</span> 开启powershell.exe (系统管理员权限)</span><br><span class="line">Ctrl+<span class="number">1</span>      快速切换到第<span class="number">1</span>个页签</span><br><span class="line">Ctrl+n      快速切换到第n个页签(n值无上限)</span><br><span class="line">Alt + enter 切换到全屏状态</span><br><span class="line">Ctr+r       历史命令搜索</span><br><span class="line">Win+Alt+P   开启工具选项视窗</span><br></pre></td></tr></table></figure>
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/11/22/201122Cmder%E7%9A%84%E4%BD%BF%E7%94%A8/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -520,19 +491,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Server/" itemprop="url" rel="index">
-                    <span itemprop="name">Server</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Server/VPS/" itemprop="url" rel="index">
-                    <span itemprop="name">VPS</span>
+                  <a href="/categories/Soft/" itemprop="url" rel="index">
+                    <span itemprop="name">Soft</span>
                   </a>
                 </span>
 
