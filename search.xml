@@ -810,6 +810,117 @@
       </categories>
   </entry>
   <entry>
+    <title>多态</title>
+    <url>/2019/08/20/190820.1%E5%A4%9A%E6%80%81/</url>
+    <content><![CDATA[<h2 id="1-多态"><a href="#1-多态" class="headerlink" title="1.多态"></a>1.多态</h2><h3 id="1-1多态的概述（记忆）"><a href="#1-1多态的概述（记忆）" class="headerlink" title="1.1多态的概述（记忆）"></a>1.1多态的概述（记忆）</h3><ul>
+<li><p>什么是多态</p>
+<p>​    同一个对象，在不同时刻表现出来的不同形态</p>
+</li>
+<li><p>多态的前提</p>
+<ul>
+<li><p>要有继承或实现关系</p>
+</li>
+<li><p>要有方法的重写</p>
+</li>
+<li><p>要有父类引用指向子类对象</p>
+<a id="more"></a>
+
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="1-2多态中的成员访问特点（记忆）"><a href="#1-2多态中的成员访问特点（记忆）" class="headerlink" title="1.2多态中的成员访问特点（记忆）"></a>1.2多态中的成员访问特点（记忆）</h3><ul>
+<li><p>成员访问特点</p>
+<ul>
+<li><p>成员变量</p>
+<p>​    编译看父类，运行看父类</p>
+</li>
+<li><p>成员方法</p>
+<p>​    编译看父类，运行看子类</p>
+</li>
+</ul>
+</li>
+<li><p>代码演示</p>
+<ul>
+<li><p>动物类</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Animal</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span> age = <span class="number">40</span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">eat</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;动物吃东西&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>猫类</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Cat</span> <span class="keyword">extends</span> <span class="title">Animal</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span> age = <span class="number">20</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span> weight = <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">eat</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;猫吃鱼&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">playGame</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;猫捉迷藏&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>测试类</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AnimalDemo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//有父类引用指向子类对象</span></span><br><span class="line">        Animal a = <span class="keyword">new</span> Cat();</span><br><span class="line"></span><br><span class="line">        System.out.println(a.age);</span><br><span class="line"><span class="comment">//        System.out.println(a.weight);</span></span><br><span class="line"></span><br><span class="line">        a.eat();</span><br><span class="line"><span class="comment">//        a.playGame();</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="1-3多态的好处和弊端（记忆）"><a href="#1-3多态的好处和弊端（记忆）" class="headerlink" title="1.3多态的好处和弊端（记忆）"></a>1.3多态的好处和弊端（记忆）</h3><ul>
+<li><p>好处</p>
+<p>​    提高程序的扩展性。定义方法时候，使用父类型作为参数，在使用的时候，使用具体的子类型参与操作</p>
+</li>
+<li><p>弊端</p>
+<p>​    不能使用子类的特有成员</p>
+</li>
+</ul>
+<h3 id="1-4多态中的转型（应用）"><a href="#1-4多态中的转型（应用）" class="headerlink" title="1.4多态中的转型（应用）"></a>1.4多态中的转型（应用）</h3><ul>
+<li><p>向上转型</p>
+<p>​    父类引用指向子类对象就是向上转型</p>
+</li>
+<li><p>向下转型</p>
+<p>​    格式：子类型 对象名 = (子类型)父类引用;</p>
+</li>
+<li><p>代码演示</p>
+<ul>
+<li>动物类</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Animal</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">eat</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;动物吃东西&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>猫类</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Cat</span> <span class="keyword">extends</span> <span class="title">Animal</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">eat</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;猫吃鱼&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">playGame</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;猫捉迷藏&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>测试类</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AnimalDemo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//多态</span></span><br><span class="line">        <span class="comment">//向上转型</span></span><br><span class="line">        Animal a = <span class="keyword">new</span> Cat();</span><br><span class="line">        a.eat();</span><br><span class="line"><span class="comment">//      a.playGame();</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="comment">//向下转型</span></span><br><span class="line">        Cat c = (Cat)a;</span><br><span class="line">        c.eat();</span><br><span class="line">        c.playGame();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="1-5多态的案例（应用）"><a href="#1-5多态的案例（应用）" class="headerlink" title="1.5多态的案例（应用）"></a>1.5多态的案例（应用）</h3><ul>
+<li><p>案例需求</p>
+<p>​    请采用多态的思想实现猫和狗的案例，并在测试类中进行测试</p>
+</li>
+<li><p>代码实现</p>
+<ul>
+<li>动物类</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Animal</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> age;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Animal</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Animal</span><span class="params">(String name, <span class="keyword">int</span> age)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">        <span class="keyword">this</span>.age = age;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setName</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getAge</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> age;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setAge</span><span class="params">(<span class="keyword">int</span> age)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.age = age;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">eat</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;动物吃东西&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>猫类</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Cat</span> <span class="keyword">extends</span> <span class="title">Animal</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Cat</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Cat</span><span class="params">(String name, <span class="keyword">int</span> age)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>(name, age);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">eat</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;猫吃鱼&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>狗类</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Dog</span> <span class="keyword">extends</span> <span class="title">Animal</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Dog</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Dog</span><span class="params">(String name, <span class="keyword">int</span> age)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>(name, age);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">eat</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;狗吃骨头&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>测试类</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AnimalDemo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//创建猫类对象进行测试</span></span><br><span class="line">        Animal a = <span class="keyword">new</span> Cat();</span><br><span class="line">        a.setName(<span class="string">&quot;加菲&quot;</span>);</span><br><span class="line">        a.setAge(<span class="number">5</span>);</span><br><span class="line">        System.out.println(a.getName() + <span class="string">&quot;,&quot;</span> + a.getAge());</span><br><span class="line">        a.eat();</span><br><span class="line"></span><br><span class="line">        a = <span class="keyword">new</span> Cat(<span class="string">&quot;加菲&quot;</span>, <span class="number">5</span>);</span><br><span class="line">        System.out.println(a.getName() + <span class="string">&quot;,&quot;</span> + a.getAge());</span><br><span class="line">        a.eat();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Java</category>
+        <category>JavaSE</category>
+      </categories>
+  </entry>
+  <entry>
     <title>修饰符</title>
     <url>/2019/08/19/190819.2%E4%BF%AE%E9%A5%B0%E7%AC%A6/</url>
     <content><![CDATA[<h2 id="修饰符"><a href="#修饰符" class="headerlink" title="修饰符"></a>修饰符</h2><h3 id="1-1-package（了解）"><a href="#1-1-package（了解）" class="headerlink" title="1.1 package（了解）"></a>1.1 package（了解）</h3><ul>
@@ -924,117 +1035,6 @@
 </ul>
 </li>
 </ul>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Java</category>
-        <category>JavaSE</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>多态</title>
-    <url>/2019/08/20/190820.1%E5%A4%9A%E6%80%81/</url>
-    <content><![CDATA[<h2 id="1-多态"><a href="#1-多态" class="headerlink" title="1.多态"></a>1.多态</h2><h3 id="1-1多态的概述（记忆）"><a href="#1-1多态的概述（记忆）" class="headerlink" title="1.1多态的概述（记忆）"></a>1.1多态的概述（记忆）</h3><ul>
-<li><p>什么是多态</p>
-<p>​    同一个对象，在不同时刻表现出来的不同形态</p>
-</li>
-<li><p>多态的前提</p>
-<ul>
-<li><p>要有继承或实现关系</p>
-</li>
-<li><p>要有方法的重写</p>
-</li>
-<li><p>要有父类引用指向子类对象</p>
-<a id="more"></a>
-
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="1-2多态中的成员访问特点（记忆）"><a href="#1-2多态中的成员访问特点（记忆）" class="headerlink" title="1.2多态中的成员访问特点（记忆）"></a>1.2多态中的成员访问特点（记忆）</h3><ul>
-<li><p>成员访问特点</p>
-<ul>
-<li><p>成员变量</p>
-<p>​    编译看父类，运行看父类</p>
-</li>
-<li><p>成员方法</p>
-<p>​    编译看父类，运行看子类</p>
-</li>
-</ul>
-</li>
-<li><p>代码演示</p>
-<ul>
-<li><p>动物类</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Animal</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span> age = <span class="number">40</span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">eat</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;动物吃东西&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>猫类</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Cat</span> <span class="keyword">extends</span> <span class="title">Animal</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span> age = <span class="number">20</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span> weight = <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">eat</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;猫吃鱼&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">playGame</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;猫捉迷藏&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>测试类</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AnimalDemo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//有父类引用指向子类对象</span></span><br><span class="line">        Animal a = <span class="keyword">new</span> Cat();</span><br><span class="line"></span><br><span class="line">        System.out.println(a.age);</span><br><span class="line"><span class="comment">//        System.out.println(a.weight);</span></span><br><span class="line"></span><br><span class="line">        a.eat();</span><br><span class="line"><span class="comment">//        a.playGame();</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="1-3多态的好处和弊端（记忆）"><a href="#1-3多态的好处和弊端（记忆）" class="headerlink" title="1.3多态的好处和弊端（记忆）"></a>1.3多态的好处和弊端（记忆）</h3><ul>
-<li><p>好处</p>
-<p>​    提高程序的扩展性。定义方法时候，使用父类型作为参数，在使用的时候，使用具体的子类型参与操作</p>
-</li>
-<li><p>弊端</p>
-<p>​    不能使用子类的特有成员</p>
-</li>
-</ul>
-<h3 id="1-4多态中的转型（应用）"><a href="#1-4多态中的转型（应用）" class="headerlink" title="1.4多态中的转型（应用）"></a>1.4多态中的转型（应用）</h3><ul>
-<li><p>向上转型</p>
-<p>​    父类引用指向子类对象就是向上转型</p>
-</li>
-<li><p>向下转型</p>
-<p>​    格式：子类型 对象名 = (子类型)父类引用;</p>
-</li>
-<li><p>代码演示</p>
-<ul>
-<li>动物类</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Animal</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">eat</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;动物吃东西&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>猫类</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Cat</span> <span class="keyword">extends</span> <span class="title">Animal</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">eat</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;猫吃鱼&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">playGame</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;猫捉迷藏&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>测试类</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AnimalDemo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//多态</span></span><br><span class="line">        <span class="comment">//向上转型</span></span><br><span class="line">        Animal a = <span class="keyword">new</span> Cat();</span><br><span class="line">        a.eat();</span><br><span class="line"><span class="comment">//      a.playGame();</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="comment">//向下转型</span></span><br><span class="line">        Cat c = (Cat)a;</span><br><span class="line">        c.eat();</span><br><span class="line">        c.playGame();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<h3 id="1-5多态的案例（应用）"><a href="#1-5多态的案例（应用）" class="headerlink" title="1.5多态的案例（应用）"></a>1.5多态的案例（应用）</h3><ul>
-<li><p>案例需求</p>
-<p>​    请采用多态的思想实现猫和狗的案例，并在测试类中进行测试</p>
-</li>
-<li><p>代码实现</p>
-<ul>
-<li>动物类</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Animal</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> age;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Animal</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Animal</span><span class="params">(String name, <span class="keyword">int</span> age)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">        <span class="keyword">this</span>.age = age;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setName</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getAge</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> age;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setAge</span><span class="params">(<span class="keyword">int</span> age)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.age = age;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">eat</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;动物吃东西&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>猫类</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Cat</span> <span class="keyword">extends</span> <span class="title">Animal</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Cat</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Cat</span><span class="params">(String name, <span class="keyword">int</span> age)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>(name, age);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">eat</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;猫吃鱼&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>狗类</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Dog</span> <span class="keyword">extends</span> <span class="title">Animal</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Dog</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Dog</span><span class="params">(String name, <span class="keyword">int</span> age)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>(name, age);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">eat</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;狗吃骨头&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>测试类</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AnimalDemo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//创建猫类对象进行测试</span></span><br><span class="line">        Animal a = <span class="keyword">new</span> Cat();</span><br><span class="line">        a.setName(<span class="string">&quot;加菲&quot;</span>);</span><br><span class="line">        a.setAge(<span class="number">5</span>);</span><br><span class="line">        System.out.println(a.getName() + <span class="string">&quot;,&quot;</span> + a.getAge());</span><br><span class="line">        a.eat();</span><br><span class="line"></span><br><span class="line">        a = <span class="keyword">new</span> Cat(<span class="string">&quot;加菲&quot;</span>, <span class="number">5</span>);</span><br><span class="line">        System.out.println(a.getName() + <span class="string">&quot;,&quot;</span> + a.getAge());</span><br><span class="line">        a.eat();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 ]]></content>
@@ -1849,6 +1849,30 @@
       </categories>
   </entry>
   <entry>
+    <title>HTML</title>
+    <url>/2019/09/17/190917HTML/</url>
+    <content><![CDATA[<h2 id="1-web概念概述"><a href="#1-web概念概述" class="headerlink" title="1.web概念概述"></a>1.web概念概述</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">* JavaWeb：</span><br><span class="line">	* 使用Java语言开发基于互联网的项目</span><br><span class="line"></span><br><span class="line">* 软件架构：</span><br><span class="line">	1. C&#x2F;S: Client&#x2F;Server 客户端&#x2F;服务器端</span><br><span class="line">		* 在用户本地有一个客户端程序，在远程有一个服务器端程序</span><br><span class="line">		* 如：QQ，迅雷...</span><br><span class="line">		* 优点：</span><br><span class="line">			1. 用户体验好</span><br><span class="line">		* 缺点：</span><br><span class="line">			1. 开发、安装，部署，维护 麻烦</span><br><span class="line">	2. B&#x2F;S: Browser&#x2F;Server 浏览器&#x2F;服务器端</span><br><span class="line">		* 只需要一个浏览器，用户通过不同的网址(URL)，客户访问不同的服务器端程序</span><br><span class="line">		* 优点：</span><br><span class="line">			1. 开发、安装，部署，维护 简单</span><br><span class="line">		* 缺点：</span><br><span class="line">			1. 如果应用过大，用户的体验可能会受到影响</span><br><span class="line">			2. 对硬件要求过高</span><br></pre></td></tr></table></figure>
+
+<a id="more"></a>
+
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">* B&#x2F;S架构详解</span><br><span class="line">	* 资源分类：</span><br><span class="line">		1. 静态资源：</span><br><span class="line">			* 使用静态网页开发技术发布的资源。</span><br><span class="line">			* 特点：</span><br><span class="line">				* 所有用户访问，得到的结果是一样的。</span><br><span class="line">				* 如：文本，图片，音频、视频, HTML,CSS,JavaScript</span><br><span class="line">				* 如果用户请求的是静态资源，那么服务器会直接将静态资源发送给浏览器。浏览器中内置了静态资源的解析引擎，可以展示静态资源</span><br><span class="line">		2. 动态资源：</span><br><span class="line">			* 使用动态网页及时发布的资源。</span><br><span class="line">			* 特点：</span><br><span class="line">				* 所有用户访问，得到的结果可能不一样。</span><br><span class="line">				* 如：jsp&#x2F;servlet,php,asp...</span><br><span class="line">				* 如果用户请求的是动态资源，那么服务器会执行动态资源，转换为静态资源，再发送给浏览器</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">* 我们要学习动态资源，必须先学习静态资源！</span><br><span class="line"></span><br><span class="line">* 静态资源：</span><br><span class="line">	* HTML：用于搭建基础网页，展示页面的内容</span><br><span class="line">	* CSS：用于美化页面，布局页面</span><br><span class="line">	* JavaScript：控制页面的元素，让页面有一些动态的效果</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-HTML"><a href="#2-HTML" class="headerlink" title="2.HTML"></a>2.HTML</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1. 概念：是最基础的网页开发语言</span><br><span class="line">	* Hyper Text Markup Language 超文本标记语言</span><br><span class="line">		* 超文本:</span><br><span class="line">			* 超文本是用超链接的方法，将各种不同空间的文字信息组织在一起的网状文本.</span><br><span class="line">		* 标记语言:</span><br><span class="line">			* 由标签构成的语言。&lt;标签名称&gt; 如 html，xml</span><br><span class="line">			* 标记语言不是编程语言</span><br><span class="line"></span><br><span class="line">2. 快速入门：</span><br><span class="line">	* 语法：</span><br><span class="line">		1. html文档后缀名 .html 或者 .htm</span><br><span class="line">		2. 标签分为</span><br><span class="line">			1. 围堵标签：有开始标签和结束标签。如 &lt;html&gt; &lt;&#x2F;html&gt;</span><br><span class="line">			2. 自闭和标签：开始标签和结束标签在一起。如 &lt;br&#x2F;&gt;</span><br><span class="line"></span><br><span class="line">		3. 标签可以嵌套：</span><br><span class="line">			需要正确嵌套，不能你中有我，我中有你</span><br><span class="line">			错误：&lt;a&gt;&lt;b&gt;&lt;&#x2F;a&gt;&lt;&#x2F;b&gt;</span><br><span class="line">			正确：&lt;a&gt;&lt;b&gt;&lt;&#x2F;b&gt;&lt;&#x2F;a&gt;</span><br><span class="line"></span><br><span class="line">		4. 在开始标签中可以定义属性。属性是由键值对构成，值需要用引号(单双都可)引起来</span><br><span class="line">		5. html的标签不区分大小写，但是建议使用小写。</span><br><span class="line"></span><br><span class="line">	* 代码：</span><br><span class="line">		&lt;html&gt;</span><br><span class="line">		</span><br><span class="line">			&lt;head&gt;</span><br><span class="line">				&lt;title&gt;title&lt;&#x2F;title&gt;</span><br><span class="line">			&lt;&#x2F;head&gt;</span><br><span class="line">			</span><br><span class="line">			&lt;body&gt;</span><br><span class="line">				&lt;FONT color&#x3D;&#39;red&#39;&gt;Hello World&lt;&#x2F;font&gt;&lt;br&#x2F;&gt;</span><br><span class="line">				</span><br><span class="line">				&lt;font color&#x3D;&#39;green&#39;&gt;Hello World&lt;&#x2F;font&gt;</span><br><span class="line">			</span><br><span class="line">			&lt;&#x2F;body&gt;</span><br><span class="line">	</span><br><span class="line">		&lt;&#x2F;html&gt;</span><br><span class="line">3. 标签学习：</span><br><span class="line">	1. 文件标签：构成html最基本的标签</span><br><span class="line">		* html:html文档的根标签</span><br><span class="line">		* head：头标签。用于指定html文档的一些属性。引入外部的资源</span><br><span class="line">		* title：标题标签。</span><br><span class="line">		* body：体标签</span><br><span class="line">		* &lt;!DOCTYPE html&gt;：html5中定义该文档是html文档</span><br><span class="line">	2. 文本标签：和文本有关的标签</span><br><span class="line">		* 注释：&lt;!-- 注释内容 --&gt;</span><br><span class="line">		* &lt;h1&gt; to &lt;h6&gt;：标题标签</span><br><span class="line">			* h1~h6:字体大小逐渐递减</span><br><span class="line">		* &lt;p&gt;：段落标签</span><br><span class="line">		* &lt;br&gt;：换行标签</span><br><span class="line">		* &lt;hr&gt;：展示一条水平线</span><br><span class="line">			* 属性：</span><br><span class="line">				* color：颜色</span><br><span class="line">				* width：宽度</span><br><span class="line">				* size：高度</span><br><span class="line">				* align：对其方式</span><br><span class="line">					* center：居中</span><br><span class="line">					* left：左对齐</span><br><span class="line">					* right：右对齐</span><br><span class="line">		* &lt;b&gt;：字体加粗</span><br><span class="line">		* &lt;i&gt;：字体斜体</span><br><span class="line">		* &lt;font&gt;:字体标签</span><br><span class="line">		* &lt;center&gt;:文本居中</span><br><span class="line">			* 属性：</span><br><span class="line">				* color：颜色</span><br><span class="line">				* size：大小</span><br><span class="line">				* face：字体</span><br><span class="line"></span><br><span class="line">		* 属性定义：</span><br><span class="line">			* color：</span><br><span class="line">				1. 英文单词：red,green,blue</span><br><span class="line">				2. rgb(值1，值2，值3)：值的范围：0~255  如  rgb(0,0,255)</span><br><span class="line">				3. #值1值2值3：值的范围：00~FF之间。如： #FF00FF</span><br><span class="line">			* width：</span><br><span class="line">				1. 数值：width&#x3D;&#39;20&#39; ,数值的单位，默认是 px(像素)</span><br><span class="line">				2. 数值%：占比相对于父元素的比例</span><br></pre></td></tr></table></figure>
+
+<p>​<br>​                </p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">3. 图片标签：</span><br><span class="line">	* img：展示图片</span><br><span class="line">		* 属性：</span><br><span class="line">			* src：指定图片的位置</span><br><span class="line"></span><br><span class="line">	* 代码：</span><br><span class="line">		 &lt;!--展示一张图片 img--&gt;</span><br><span class="line"></span><br><span class="line">	    &lt;img src&#x3D;&quot;image&#x2F;jingxuan_2.jpg&quot; align&#x3D;&quot;right&quot; alt&#x3D;&quot;古镇&quot; width&#x3D;&quot;500&quot; height&#x3D;&quot;500&quot;&#x2F;&gt;</span><br><span class="line">	</span><br><span class="line">	    &lt;!--</span><br><span class="line">	        相对路径</span><br><span class="line">	            * 以.开头的路径</span><br><span class="line">	                * .&#x2F;：代表当前目录  .&#x2F;image&#x2F;1.jpg</span><br><span class="line">	                * ..&#x2F;:代表上一级目录</span><br><span class="line">	     --&gt;</span><br><span class="line">	</span><br><span class="line">	    &lt;img src&#x3D;&quot;.&#x2F;image&#x2F;jiangwai_1.jpg&quot;&gt;</span><br><span class="line">	</span><br><span class="line">	    &lt;img src&#x3D;&quot;..&#x2F;image&#x2F;jiangwai_1.jpg&quot;&gt;</span><br><span class="line">4. 列表标签：</span><br><span class="line">	* 有序列表：</span><br><span class="line">		* ol:</span><br><span class="line">		* li:</span><br><span class="line">	* 无序列表：</span><br><span class="line">		* ul:</span><br><span class="line">		* li:</span><br><span class="line">5. 链接标签：</span><br><span class="line">	* a:定义一个超链接</span><br><span class="line">		* 属性：</span><br><span class="line">			* href：指定访问资源的URL(统一资源定位符)</span><br><span class="line">			* target：指定打开资源的方式</span><br><span class="line">				* _self:默认值，在当前页面打开</span><br><span class="line">				* _blank：在空白页面打开</span><br><span class="line"></span><br><span class="line">	* 代码：</span><br><span class="line">		 &lt;!--超链接  a--&gt;</span><br><span class="line"></span><br><span class="line">	    &lt;a href&#x3D;&quot;http:&#x2F;&#x2F;zhaoweixu.com&quot;&gt;点我&lt;&#x2F;a&gt;</span><br><span class="line">	    &lt;br&gt;</span><br><span class="line">	</span><br><span class="line">	    &lt;a href&#x3D;&quot;http:&#x2F;&#x2F;zhaoweixu.com&quot; target&#x3D;&quot;_self&quot;&gt;点我&lt;&#x2F;a&gt;</span><br><span class="line">	    &lt;br&gt;</span><br><span class="line">	    &lt;a href&#x3D;&quot;http:&#x2F;&#x2F;zhaoweixu.com&quot; target&#x3D;&quot;_blank&quot;&gt;点我&lt;&#x2F;a&gt;</span><br><span class="line">	</span><br><span class="line">	    &lt;br&gt;</span><br><span class="line">	</span><br><span class="line">	    &lt;a href&#x3D;&quot;.&#x2F;5_列表标签.html&quot;&gt;列表标签&lt;&#x2F;a&gt;&lt;br&gt;</span><br><span class="line">	    &lt;a href&#x3D;&quot;zhaoweixu.com&quot;&gt;联系我&lt;&#x2F;a&gt;</span><br><span class="line">	</span><br><span class="line">	    &lt;br&gt;</span><br><span class="line">	    &lt;a href&#x3D;&quot;http:&#x2F;&#x2F;zhaoweixu.com&quot;&gt;&lt;img src&#x3D;&quot;image&#x2F;win_1.jpg&quot;&gt;&lt;&#x2F;a&gt;</span><br><span class="line">6. div和span：</span><br><span class="line">	* div:每一个div占满一整行。块级标签</span><br><span class="line">   	* span：文本信息在一行展示，行内标签 内联标签</span><br><span class="line"></span><br><span class="line">7. 语义化标签：html5中为了提高程序的可读性，提供了一些标签。</span><br><span class="line">	1. &lt;header&gt;：页眉</span><br><span class="line">	2. &lt;footer&gt;：页脚</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">8. 表格标签：</span><br><span class="line">	* table：定义表格</span><br><span class="line">		* width：宽度</span><br><span class="line">		* border：边框</span><br><span class="line">		* cellpadding：定义内容和单元格的距离</span><br><span class="line">		* cellspacing：定义单元格之间的距离。如果指定为0，则单元格的线会合为一条、</span><br><span class="line">		* bgcolor：背景色</span><br><span class="line">		* align：对齐方式</span><br><span class="line">	* tr：定义行</span><br><span class="line">		* bgcolor：背景色</span><br><span class="line">		* align：对齐方式</span><br><span class="line">	* td：定义单元格</span><br><span class="line">		* colspan：合并列</span><br><span class="line">		* rowspan：合并行</span><br><span class="line">	* th：定义表头单元格</span><br><span class="line">	* &lt;caption&gt;：表格标题</span><br><span class="line">	* &lt;thead&gt;：表示表格的头部分</span><br><span class="line">	* &lt;tbody&gt;：表示表格的体部分</span><br><span class="line">	* &lt;tfoot&gt;：表示表格的脚部分</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>Java</category>
+        <category>JavaWeb</category>
+      </categories>
+  </entry>
+  <entry>
     <title>markdown常用语法</title>
     <url>/2019/10/08/191008markdown%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95/</url>
     <content><![CDATA[<h2 id="1-标题"><a href="#1-标题" class="headerlink" title="1.标题"></a>1.标题</h2><ul>
@@ -1943,30 +1967,6 @@
         <tag>资源文件夹</tag>
         <tag>图片标签插件</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>HTML</title>
-    <url>/2019/09/17/190917HTML/</url>
-    <content><![CDATA[<h2 id="1-web概念概述"><a href="#1-web概念概述" class="headerlink" title="1.web概念概述"></a>1.web概念概述</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">* JavaWeb：</span><br><span class="line">	* 使用Java语言开发基于互联网的项目</span><br><span class="line"></span><br><span class="line">* 软件架构：</span><br><span class="line">	1. C&#x2F;S: Client&#x2F;Server 客户端&#x2F;服务器端</span><br><span class="line">		* 在用户本地有一个客户端程序，在远程有一个服务器端程序</span><br><span class="line">		* 如：QQ，迅雷...</span><br><span class="line">		* 优点：</span><br><span class="line">			1. 用户体验好</span><br><span class="line">		* 缺点：</span><br><span class="line">			1. 开发、安装，部署，维护 麻烦</span><br><span class="line">	2. B&#x2F;S: Browser&#x2F;Server 浏览器&#x2F;服务器端</span><br><span class="line">		* 只需要一个浏览器，用户通过不同的网址(URL)，客户访问不同的服务器端程序</span><br><span class="line">		* 优点：</span><br><span class="line">			1. 开发、安装，部署，维护 简单</span><br><span class="line">		* 缺点：</span><br><span class="line">			1. 如果应用过大，用户的体验可能会受到影响</span><br><span class="line">			2. 对硬件要求过高</span><br></pre></td></tr></table></figure>
-
-<a id="more"></a>
-
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">* B&#x2F;S架构详解</span><br><span class="line">	* 资源分类：</span><br><span class="line">		1. 静态资源：</span><br><span class="line">			* 使用静态网页开发技术发布的资源。</span><br><span class="line">			* 特点：</span><br><span class="line">				* 所有用户访问，得到的结果是一样的。</span><br><span class="line">				* 如：文本，图片，音频、视频, HTML,CSS,JavaScript</span><br><span class="line">				* 如果用户请求的是静态资源，那么服务器会直接将静态资源发送给浏览器。浏览器中内置了静态资源的解析引擎，可以展示静态资源</span><br><span class="line">		2. 动态资源：</span><br><span class="line">			* 使用动态网页及时发布的资源。</span><br><span class="line">			* 特点：</span><br><span class="line">				* 所有用户访问，得到的结果可能不一样。</span><br><span class="line">				* 如：jsp&#x2F;servlet,php,asp...</span><br><span class="line">				* 如果用户请求的是动态资源，那么服务器会执行动态资源，转换为静态资源，再发送给浏览器</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">* 我们要学习动态资源，必须先学习静态资源！</span><br><span class="line"></span><br><span class="line">* 静态资源：</span><br><span class="line">	* HTML：用于搭建基础网页，展示页面的内容</span><br><span class="line">	* CSS：用于美化页面，布局页面</span><br><span class="line">	* JavaScript：控制页面的元素，让页面有一些动态的效果</span><br></pre></td></tr></table></figure>
-
-<h2 id="2-HTML"><a href="#2-HTML" class="headerlink" title="2.HTML"></a>2.HTML</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1. 概念：是最基础的网页开发语言</span><br><span class="line">	* Hyper Text Markup Language 超文本标记语言</span><br><span class="line">		* 超文本:</span><br><span class="line">			* 超文本是用超链接的方法，将各种不同空间的文字信息组织在一起的网状文本.</span><br><span class="line">		* 标记语言:</span><br><span class="line">			* 由标签构成的语言。&lt;标签名称&gt; 如 html，xml</span><br><span class="line">			* 标记语言不是编程语言</span><br><span class="line"></span><br><span class="line">2. 快速入门：</span><br><span class="line">	* 语法：</span><br><span class="line">		1. html文档后缀名 .html 或者 .htm</span><br><span class="line">		2. 标签分为</span><br><span class="line">			1. 围堵标签：有开始标签和结束标签。如 &lt;html&gt; &lt;&#x2F;html&gt;</span><br><span class="line">			2. 自闭和标签：开始标签和结束标签在一起。如 &lt;br&#x2F;&gt;</span><br><span class="line"></span><br><span class="line">		3. 标签可以嵌套：</span><br><span class="line">			需要正确嵌套，不能你中有我，我中有你</span><br><span class="line">			错误：&lt;a&gt;&lt;b&gt;&lt;&#x2F;a&gt;&lt;&#x2F;b&gt;</span><br><span class="line">			正确：&lt;a&gt;&lt;b&gt;&lt;&#x2F;b&gt;&lt;&#x2F;a&gt;</span><br><span class="line"></span><br><span class="line">		4. 在开始标签中可以定义属性。属性是由键值对构成，值需要用引号(单双都可)引起来</span><br><span class="line">		5. html的标签不区分大小写，但是建议使用小写。</span><br><span class="line"></span><br><span class="line">	* 代码：</span><br><span class="line">		&lt;html&gt;</span><br><span class="line">		</span><br><span class="line">			&lt;head&gt;</span><br><span class="line">				&lt;title&gt;title&lt;&#x2F;title&gt;</span><br><span class="line">			&lt;&#x2F;head&gt;</span><br><span class="line">			</span><br><span class="line">			&lt;body&gt;</span><br><span class="line">				&lt;FONT color&#x3D;&#39;red&#39;&gt;Hello World&lt;&#x2F;font&gt;&lt;br&#x2F;&gt;</span><br><span class="line">				</span><br><span class="line">				&lt;font color&#x3D;&#39;green&#39;&gt;Hello World&lt;&#x2F;font&gt;</span><br><span class="line">			</span><br><span class="line">			&lt;&#x2F;body&gt;</span><br><span class="line">	</span><br><span class="line">		&lt;&#x2F;html&gt;</span><br><span class="line">3. 标签学习：</span><br><span class="line">	1. 文件标签：构成html最基本的标签</span><br><span class="line">		* html:html文档的根标签</span><br><span class="line">		* head：头标签。用于指定html文档的一些属性。引入外部的资源</span><br><span class="line">		* title：标题标签。</span><br><span class="line">		* body：体标签</span><br><span class="line">		* &lt;!DOCTYPE html&gt;：html5中定义该文档是html文档</span><br><span class="line">	2. 文本标签：和文本有关的标签</span><br><span class="line">		* 注释：&lt;!-- 注释内容 --&gt;</span><br><span class="line">		* &lt;h1&gt; to &lt;h6&gt;：标题标签</span><br><span class="line">			* h1~h6:字体大小逐渐递减</span><br><span class="line">		* &lt;p&gt;：段落标签</span><br><span class="line">		* &lt;br&gt;：换行标签</span><br><span class="line">		* &lt;hr&gt;：展示一条水平线</span><br><span class="line">			* 属性：</span><br><span class="line">				* color：颜色</span><br><span class="line">				* width：宽度</span><br><span class="line">				* size：高度</span><br><span class="line">				* align：对其方式</span><br><span class="line">					* center：居中</span><br><span class="line">					* left：左对齐</span><br><span class="line">					* right：右对齐</span><br><span class="line">		* &lt;b&gt;：字体加粗</span><br><span class="line">		* &lt;i&gt;：字体斜体</span><br><span class="line">		* &lt;font&gt;:字体标签</span><br><span class="line">		* &lt;center&gt;:文本居中</span><br><span class="line">			* 属性：</span><br><span class="line">				* color：颜色</span><br><span class="line">				* size：大小</span><br><span class="line">				* face：字体</span><br><span class="line"></span><br><span class="line">		* 属性定义：</span><br><span class="line">			* color：</span><br><span class="line">				1. 英文单词：red,green,blue</span><br><span class="line">				2. rgb(值1，值2，值3)：值的范围：0~255  如  rgb(0,0,255)</span><br><span class="line">				3. #值1值2值3：值的范围：00~FF之间。如： #FF00FF</span><br><span class="line">			* width：</span><br><span class="line">				1. 数值：width&#x3D;&#39;20&#39; ,数值的单位，默认是 px(像素)</span><br><span class="line">				2. 数值%：占比相对于父元素的比例</span><br></pre></td></tr></table></figure>
-
-<p>​<br>​                </p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">3. 图片标签：</span><br><span class="line">	* img：展示图片</span><br><span class="line">		* 属性：</span><br><span class="line">			* src：指定图片的位置</span><br><span class="line"></span><br><span class="line">	* 代码：</span><br><span class="line">		 &lt;!--展示一张图片 img--&gt;</span><br><span class="line"></span><br><span class="line">	    &lt;img src&#x3D;&quot;image&#x2F;jingxuan_2.jpg&quot; align&#x3D;&quot;right&quot; alt&#x3D;&quot;古镇&quot; width&#x3D;&quot;500&quot; height&#x3D;&quot;500&quot;&#x2F;&gt;</span><br><span class="line">	</span><br><span class="line">	    &lt;!--</span><br><span class="line">	        相对路径</span><br><span class="line">	            * 以.开头的路径</span><br><span class="line">	                * .&#x2F;：代表当前目录  .&#x2F;image&#x2F;1.jpg</span><br><span class="line">	                * ..&#x2F;:代表上一级目录</span><br><span class="line">	     --&gt;</span><br><span class="line">	</span><br><span class="line">	    &lt;img src&#x3D;&quot;.&#x2F;image&#x2F;jiangwai_1.jpg&quot;&gt;</span><br><span class="line">	</span><br><span class="line">	    &lt;img src&#x3D;&quot;..&#x2F;image&#x2F;jiangwai_1.jpg&quot;&gt;</span><br><span class="line">4. 列表标签：</span><br><span class="line">	* 有序列表：</span><br><span class="line">		* ol:</span><br><span class="line">		* li:</span><br><span class="line">	* 无序列表：</span><br><span class="line">		* ul:</span><br><span class="line">		* li:</span><br><span class="line">5. 链接标签：</span><br><span class="line">	* a:定义一个超链接</span><br><span class="line">		* 属性：</span><br><span class="line">			* href：指定访问资源的URL(统一资源定位符)</span><br><span class="line">			* target：指定打开资源的方式</span><br><span class="line">				* _self:默认值，在当前页面打开</span><br><span class="line">				* _blank：在空白页面打开</span><br><span class="line"></span><br><span class="line">	* 代码：</span><br><span class="line">		 &lt;!--超链接  a--&gt;</span><br><span class="line"></span><br><span class="line">	    &lt;a href&#x3D;&quot;http:&#x2F;&#x2F;zhaoweixu.com&quot;&gt;点我&lt;&#x2F;a&gt;</span><br><span class="line">	    &lt;br&gt;</span><br><span class="line">	</span><br><span class="line">	    &lt;a href&#x3D;&quot;http:&#x2F;&#x2F;zhaoweixu.com&quot; target&#x3D;&quot;_self&quot;&gt;点我&lt;&#x2F;a&gt;</span><br><span class="line">	    &lt;br&gt;</span><br><span class="line">	    &lt;a href&#x3D;&quot;http:&#x2F;&#x2F;zhaoweixu.com&quot; target&#x3D;&quot;_blank&quot;&gt;点我&lt;&#x2F;a&gt;</span><br><span class="line">	</span><br><span class="line">	    &lt;br&gt;</span><br><span class="line">	</span><br><span class="line">	    &lt;a href&#x3D;&quot;.&#x2F;5_列表标签.html&quot;&gt;列表标签&lt;&#x2F;a&gt;&lt;br&gt;</span><br><span class="line">	    &lt;a href&#x3D;&quot;zhaoweixu.com&quot;&gt;联系我&lt;&#x2F;a&gt;</span><br><span class="line">	</span><br><span class="line">	    &lt;br&gt;</span><br><span class="line">	    &lt;a href&#x3D;&quot;http:&#x2F;&#x2F;zhaoweixu.com&quot;&gt;&lt;img src&#x3D;&quot;image&#x2F;win_1.jpg&quot;&gt;&lt;&#x2F;a&gt;</span><br><span class="line">6. div和span：</span><br><span class="line">	* div:每一个div占满一整行。块级标签</span><br><span class="line">   	* span：文本信息在一行展示，行内标签 内联标签</span><br><span class="line"></span><br><span class="line">7. 语义化标签：html5中为了提高程序的可读性，提供了一些标签。</span><br><span class="line">	1. &lt;header&gt;：页眉</span><br><span class="line">	2. &lt;footer&gt;：页脚</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">8. 表格标签：</span><br><span class="line">	* table：定义表格</span><br><span class="line">		* width：宽度</span><br><span class="line">		* border：边框</span><br><span class="line">		* cellpadding：定义内容和单元格的距离</span><br><span class="line">		* cellspacing：定义单元格之间的距离。如果指定为0，则单元格的线会合为一条、</span><br><span class="line">		* bgcolor：背景色</span><br><span class="line">		* align：对齐方式</span><br><span class="line">	* tr：定义行</span><br><span class="line">		* bgcolor：背景色</span><br><span class="line">		* align：对齐方式</span><br><span class="line">	* td：定义单元格</span><br><span class="line">		* colspan：合并列</span><br><span class="line">		* rowspan：合并行</span><br><span class="line">	* th：定义表头单元格</span><br><span class="line">	* &lt;caption&gt;：表格标题</span><br><span class="line">	* &lt;thead&gt;：表示表格的头部分</span><br><span class="line">	* &lt;tbody&gt;：表示表格的体部分</span><br><span class="line">	* &lt;tfoot&gt;：表示表格的脚部分</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>Java</category>
-        <category>JavaWeb</category>
-      </categories>
   </entry>
   <entry>
     <title>黑阀使用方法</title>
