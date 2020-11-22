@@ -83,18 +83,18 @@
 
 
 
-<meta name="description" content="1.实现多线程1.1进程和线程【理解】 进程：是正在运行的程序 ​    是系统进行资源分配和调用的独立单位 ​    每一个进程都有它自己的内存空间和系统资源  线程：是进程中的单个顺序控制流，是一条执行路径 ​    单线程：一个进程如果只有一条执行路径，则称为单线程程序 ​    多线程：一个进程如果有多条执行路径，则称为多线程程序   1.2实现多线程方式一：继承Thread类【应用】 方">
+<meta name="description" content="1.实现多线程1.1进程和线程【理解】 进程：是正在运行的程序 ​    是系统进行资源分配和调用的独立单位 ​    每一个进程都有它自己的内存空间和系统资源  线程：是进程中的单个顺序控制流，是一条执行路径 ​    单线程：一个进程如果只有一条执行路径，则称为单线程程序 ​    多线程：一个进程如果有多条执行路径，则称为多线程程序">
 <meta property="og:type" content="article">
 <meta property="og:title" content="多线程">
 <meta property="og:url" content="http://yoursite.com/2019/09/02/190902%E5%A4%9A%E7%BA%BF%E7%A8%8B/index.html">
 <meta property="og:site_name" content="维旭的博客">
-<meta property="og:description" content="1.实现多线程1.1进程和线程【理解】 进程：是正在运行的程序 ​    是系统进行资源分配和调用的独立单位 ​    每一个进程都有它自己的内存空间和系统资源  线程：是进程中的单个顺序控制流，是一条执行路径 ​    单线程：一个进程如果只有一条执行路径，则称为单线程程序 ​    多线程：一个进程如果有多条执行路径，则称为多线程程序   1.2实现多线程方式一：继承Thread类【应用】 方">
+<meta property="og:description" content="1.实现多线程1.1进程和线程【理解】 进程：是正在运行的程序 ​    是系统进行资源分配和调用的独立单位 ​    每一个进程都有它自己的内存空间和系统资源  线程：是进程中的单个顺序控制流，是一条执行路径 ​    单线程：一个进程如果只有一条执行路径，则称为单线程程序 ​    多线程：一个进程如果有多条执行路径，则称为多线程程序">
 <meta property="og:locale">
 <meta property="og:image" content="http://yoursite.com/2019/09/02/190902%E5%A4%9A%E7%BA%BF%E7%A8%8B/Java%E8%B5%84%E6%96%99/2.JavaEE/day11(%E5%A4%9A%E7%BA%BF%E7%A8%8B)/%E7%AC%94%E8%AE%B0/img/%E7%BA%BF%E7%A8%8B%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F.jpg">
 <meta property="og:image" content="http://yoursite.com/2019/09/02/190902%E5%A4%9A%E7%BA%BF%E7%A8%8B/Java%E8%B5%84%E6%96%99/2.JavaEE/day11(%E5%A4%9A%E7%BA%BF%E7%A8%8B)/%E7%AC%94%E8%AE%B0/img/%E5%8D%96%E7%A5%A81.jpg">
 <meta property="og:image" content="http://yoursite.com/2019/09/02/190902%E5%A4%9A%E7%BA%BF%E7%A8%8B/Java%E8%B5%84%E6%96%99/2.JavaEE/day11(%E5%A4%9A%E7%BA%BF%E7%A8%8B)/%E7%AC%94%E8%AE%B0/img/%E7%94%9F%E4%BA%A7%E6%B6%88%E8%B4%B9.jpg">
 <meta property="article:published_time" content="2019-09-01T18:57:38.000Z">
-<meta property="article:modified_time" content="2020-11-22T19:03:09.367Z">
+<meta property="article:modified_time" content="2020-11-22T19:12:44.720Z">
 <meta property="article:author" content="维旭">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://yoursite.com/2019/09/02/190902%E5%A4%9A%E7%BA%BF%E7%A8%8B/Java%E8%B5%84%E6%96%99/2.JavaEE/day11(%E5%A4%9A%E7%BA%BF%E7%A8%8B)/%E7%AC%94%E8%AE%B0/img/%E7%BA%BF%E7%A8%8B%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F.jpg">
@@ -409,6 +409,8 @@
 <p>​    多线程：一个进程如果有多条执行路径，则称为多线程程序</p>
 </li>
 </ul>
+<a id="more"></a>
+
 <h3 id="1-2实现多线程方式一：继承Thread类【应用】"><a href="#1-2实现多线程方式一：继承Thread类【应用】" class="headerlink" title="1.2实现多线程方式一：继承Thread类【应用】"></a>1.2实现多线程方式一：继承Thread类【应用】</h3><ul>
 <li><p>方法介绍</p>
 <table>
