@@ -289,6 +289,186 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/01/190901IO%E6%B5%81%E5%92%8CProperties%E9%9B%86%E5%90%88/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="维旭的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/09/01/190901IO%E6%B5%81%E5%92%8CProperties%E9%9B%86%E5%90%88/" itemprop="url">IO流和Properties集合</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-01T21:32:59+08:00">
+                2019-09-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/JavaSE/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaSE</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h2 id="1-IO流案例"><a href="#1-IO流案例" class="headerlink" title="1.IO流案例"></a>1.IO流案例</h2><h3 id="1-1集合到文件数据排序改进版【应用】"><a href="#1-1集合到文件数据排序改进版【应用】" class="headerlink" title="1.1集合到文件数据排序改进版【应用】"></a>1.1集合到文件数据排序改进版【应用】</h3><h4 id="1-1-1案例需求"><a href="#1-1-1案例需求" class="headerlink" title="1.1.1案例需求"></a>1.1.1案例需求</h4><ul>
+<li>键盘录入5个学生信息(姓名,语文成绩,数学成绩,英语成绩)。要求按照成绩总分从高到低写入文本文件</li>
+<li>格式：姓名,语文成绩,数学成绩,英语成绩  举例：林青霞,98,99,100</li>
+</ul>
+<h4 id="1-1-2分析步骤"><a href="#1-1-2分析步骤" class="headerlink" title="1.1.2分析步骤"></a>1.1.2分析步骤</h4><ol>
+<li><p>定义学生类</p>
+</li>
+<li><p>创建TreeSet集合，通过比较器排序进行排序</p>
+</li>
+<li><p>键盘录入学生数据</p>
+</li>
+<li><p>创建学生对象，把键盘录入的数据对应赋值给学生对象的成员变量</p>
+</li>
+<li><p>把学生对象添加到TreeSet集合</p>
+</li>
+<li><p>创建字符缓冲输出流对象</p>
+</li>
+<li><p>遍历集合，得到每一个学生对象</p>
+</li>
+<li><p>把学生对象的数据拼接成指定格式的字符串</p>
+</li>
+<li><p>调用字符缓冲输出流对象的方法写数据</p>
+</li>
+<li><p>释放资源</p></li></ol>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/09/01/190901IO%E6%B5%81%E5%92%8CProperties%E9%9B%86%E5%90%88/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/30/190830%E5%AD%97%E8%8A%82%E7%BC%93%E5%86%B2%E6%B5%81%E5%AD%97%E7%AC%A6%E6%B5%81/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1764,176 +1944,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/20/190820.2%E6%8A%BD%E8%B1%A1%E7%B1%BB/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="维旭的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/08/20/190820.2%E6%8A%BD%E8%B1%A1%E7%B1%BB/" itemprop="url">抽象类</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-20T21:39:13+08:00">
-                2019-08-20
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java/" itemprop="url" rel="index">
-                    <span itemprop="name">Java</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java/JavaSE/" itemprop="url" rel="index">
-                    <span itemprop="name">JavaSE</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="抽象类"><a href="#抽象类" class="headerlink" title="抽象类"></a>抽象类</h2><h3 id="1-1抽象类的概述（理解）"><a href="#1-1抽象类的概述（理解）" class="headerlink" title="1.1抽象类的概述（理解）"></a>1.1抽象类的概述（理解）</h3><p>​    当我们在做子类共性功能抽取时，有些方法在父类中并没有具体的体现，这个时候就需要抽象类了！</p>
-<p>​    在Java中，一个没有方法体的方法应该定义为抽象方法，而类中如果有抽象方法，该类必须定义为抽象类！</p>
-<h3 id="1-2抽象类的特点（记忆）"><a href="#1-2抽象类的特点（记忆）" class="headerlink" title="1.2抽象类的特点（记忆）"></a>1.2抽象类的特点（记忆）</h3><ul>
-<li><p>抽象类和抽象方法必须使用 abstract 关键字修饰</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//抽象类的定义</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> 类名 </span>&#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//抽象方法的定义</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">eat</span><span class="params">()</span></span>;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>抽象类中不一定有抽象方法，有抽象方法的类一定是抽象类</p>
-</li>
-<li><p>抽象类不能实例化</p>
-<p>​    抽象类如何实例化呢？参照多态的方式，通过子类对象实例化，这叫抽象类多态</p>
-</li>
-<li><p>抽象类的子类</p>
-<p>​    要么重写抽象类中的所有抽象方法</p>
-<p>​    要么是抽象类</p></li></ul>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/08/20/190820.2%E6%8A%BD%E8%B1%A1%E7%B1%BB/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1988,7 +1998,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">36</span>
+                  <span class="site-state-item-count">37</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
