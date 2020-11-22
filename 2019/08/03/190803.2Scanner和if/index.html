@@ -90,15 +90,15 @@
 <meta property="og:site_name" content="维旭的博客">
 <meta property="og:description" content="1. 数据输入（应用）我们可以通过 Scanner 类来获取用户的输入。使用步骤如下： 1、导包。Scanner 类在java.util包下，所以需要将该类导入。导包的语句需要定义在类的上面。 1import java.util.Scanner;   2、创建Scanner对象。 1Scanner sc &#x3D; new Scanner(System.in);&#x2F;&#x2F; 创建Scanner对象，sc表示变量名">
 <meta property="og:locale">
-<meta property="og:image" content="http://yoursite.com/2019/08/03/190803.2Scanner%E5%92%8Cif/190803.2Scanner%E5%92%8Cif/1908031.png">
-<meta property="og:image" content="http://yoursite.com/2019/08/03/190803.2Scanner%E5%92%8Cif/190803.2Scanner%E5%92%8Cif/1908032.png">
-<meta property="og:image" content="http://yoursite.com/2019/08/03/190803.2Scanner%E5%92%8Cif/190803.2Scanner%E5%92%8Cif/1908033.png">
-<meta property="og:image" content="http://yoursite.com/2019/08/03/190803.2Scanner%E5%92%8Cif/190803.2Scanner%E5%92%8Cif/1908034.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/03/190803.2Scanner%E5%92%8Cif/1908031.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/03/190803.2Scanner%E5%92%8Cif/1908032.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/03/190803.2Scanner%E5%92%8Cif/1908033.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/03/190803.2Scanner%E5%92%8Cif/1908034.png">
 <meta property="article:published_time" content="2019-08-03T13:11:17.000Z">
 <meta property="article:modified_time" content="2020-10-25T04:35:01.184Z">
 <meta property="article:author" content="维旭">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://yoursite.com/2019/08/03/190803.2Scanner%E5%92%8Cif/190803.2Scanner%E5%92%8Cif/1908031.png">
+<meta name="twitter:image" content="http://yoursite.com/2019/08/03/190803.2Scanner%E5%92%8Cif/1908031.png">
 
 
 
@@ -424,7 +424,7 @@
 <p>​    循环结构(for, while, do…while)</p>
 <h3 id="2-2-顺序结构"><a href="#2-2-顺序结构" class="headerlink" title="2.2 顺序结构"></a>2.2 顺序结构</h3><p>顺序结构是程序中最简单最基本的流程控制，没有特定的语法结构，按照代码的先后顺序，依次执行，程序中大多数的代码都是这样执行的。</p>
 <p>顺序结构执行流程图：</p>
-<p><img src="190803.2Scanner%E5%92%8Cif/1908031.png"></p>
+<p><img src="/2019/08/03/190803.2Scanner%E5%92%8Cif/1908031.png"></p>
 <h3 id="2-3-分支结构之if语"><a href="#2-3-分支结构之if语" class="headerlink" title="2.3 分支结构之if语"></a>2.3 分支结构之if语</h3><h4 id="if语句格式1"><a href="#if语句格式1" class="headerlink" title="if语句格式1"></a>if语句格式1</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">格式：</span><br><span class="line"><span class="keyword">if</span> (关系表达式) &#123;</span><br><span class="line">    语句体;	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>执行流程：</p>
@@ -432,7 +432,7 @@
 <p>②如果关系表达式的值为true就执行语句体</p>
 <p>③如果关系表达式的值为false就不执行语句体</p>
 <p>④继续执行后面的语句内容</p>
-<p><img src="190803.2Scanner%E5%92%8Cif/1908032.png"></p>
+<p><img src="/2019/08/03/190803.2Scanner%E5%92%8Cif/1908032.png"></p>
 <p>示例：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">IfDemo</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">&quot;开始&quot;</span>);	</span><br><span class="line">		<span class="comment">//定义两个变量</span></span><br><span class="line">		<span class="keyword">int</span> a = <span class="number">10</span>;</span><br><span class="line">		<span class="keyword">int</span> b = <span class="number">20</span>;	</span><br><span class="line">		<span class="comment">//需求：判断a和b的值是否相等，如果相等，就在控制台输出：a等于b</span></span><br><span class="line">		<span class="keyword">if</span>(a == b) &#123;</span><br><span class="line">			System.out.println(<span class="string">&quot;a等于b&quot;</span>);</span><br><span class="line">		&#125;		</span><br><span class="line">		<span class="comment">//需求：判断a和c的值是否相等，如果相等，就在控制台输出：a等于c</span></span><br><span class="line">		<span class="keyword">int</span> c = <span class="number">10</span>;</span><br><span class="line">		<span class="keyword">if</span>(a == c) &#123;</span><br><span class="line">			System.out.println(<span class="string">&quot;a等于c&quot;</span>);</span><br><span class="line">		&#125;		</span><br><span class="line">		System.out.println(<span class="string">&quot;结束&quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -443,7 +443,7 @@
 <p>②如果关系表达式的值为true就执行语句体1</p>
 <p>③如果关系表达式的值为false就执行语句体2</p>
 <p>④继续执行后面的语句内容</p>
-<p><img src="190803.2Scanner%E5%92%8Cif/1908033.png"></p>
+<p><img src="/2019/08/03/190803.2Scanner%E5%92%8Cif/1908033.png"></p>
 <p>示例：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">IfDemo02</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">&quot;开始&quot;</span>);		</span><br><span class="line">		<span class="comment">//定义两个变量</span></span><br><span class="line">		<span class="keyword">int</span> a = <span class="number">10</span>;</span><br><span class="line">		<span class="keyword">int</span> b = <span class="number">20</span>;</span><br><span class="line">		b = <span class="number">5</span>;	</span><br><span class="line">		<span class="comment">//需求：判断a是否大于b，如果是，在控制台输出：a的值大于b，否则，在控制台输出：a的值不大于b</span></span><br><span class="line">		<span class="keyword">if</span>(a &gt; b) &#123;</span><br><span class="line">			System.out.println(<span class="string">&quot;a的值大于b&quot;</span>);</span><br><span class="line">		&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">			System.out.println(<span class="string">&quot;a的值不大于b&quot;</span>);</span><br><span class="line">		&#125;		</span><br><span class="line">		System.out.println(<span class="string">&quot;结束&quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -464,7 +464,7 @@
 <p>③如果值为true就执行语句体2；如果值为false就计算关系表达式3的值</p>
 <p>④…</p>
 <p>⑤如果没有任何关系表达式为true，就执行语句体n+1。</p>
-<p><img src="190803.2Scanner%E5%92%8Cif/1908034.png"></p>
+<p><img src="/2019/08/03/190803.2Scanner%E5%92%8Cif/1908034.png"></p>
 <p>示例：键盘录入一个星期数(1,2,…7)，输出对应的星期一，星期二，…星期日</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">IfDemo03</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">&quot;开始&quot;</span>);</span><br><span class="line">		<span class="comment">// 需求：键盘录入一个星期数(1,2,...7)，输出对应的星期一，星期二，...星期日</span></span><br><span class="line">		Scanner sc = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">		System.out.println(<span class="string">&quot;请输入一个星期数(1-7)：&quot;</span>);</span><br><span class="line">		<span class="keyword">int</span> week = sc.nextInt();</span><br><span class="line">		<span class="keyword">if</span>(week == <span class="number">1</span>) &#123;</span><br><span class="line">			System.out.println(<span class="string">&quot;星期一&quot;</span>);</span><br><span class="line">		&#125; <span class="keyword">else</span> <span class="keyword">if</span>(week == <span class="number">2</span>) &#123;</span><br><span class="line">			System.out.println(<span class="string">&quot;星期二&quot;</span>);</span><br><span class="line">		&#125; <span class="keyword">else</span> <span class="keyword">if</span>(week == <span class="number">3</span>) &#123;</span><br><span class="line">			System.out.println(<span class="string">&quot;星期三&quot;</span>);</span><br><span class="line">		&#125; <span class="keyword">else</span> <span class="keyword">if</span>(week == <span class="number">4</span>) &#123;</span><br><span class="line">			System.out.println(<span class="string">&quot;星期四&quot;</span>);</span><br><span class="line">		&#125; <span class="keyword">else</span> <span class="keyword">if</span>(week == <span class="number">5</span>) &#123;</span><br><span class="line">			System.out.println(<span class="string">&quot;星期五&quot;</span>);</span><br><span class="line">		&#125; <span class="keyword">else</span> <span class="keyword">if</span>(week == <span class="number">6</span>) &#123;</span><br><span class="line">			System.out.println(<span class="string">&quot;星期六&quot;</span>);</span><br><span class="line">		&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">			System.out.println(<span class="string">&quot;星期日&quot;</span>);</span><br><span class="line">		&#125;	</span><br><span class="line">		System.out.println(<span class="string">&quot;结束&quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -590,7 +590,7 @@
             
               <div class="site-state-item site-state-posts">
               
-                <a href="/archives/%7C%7C%20archive">
+                <a href="/archives/">
               
                   <span class="site-state-item-count">34</span>
                   <span class="site-state-item-name">日志</span>
