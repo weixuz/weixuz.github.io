@@ -933,6 +933,97 @@
       </categories>
   </entry>
   <entry>
+    <title>抽象类</title>
+    <url>/2019/08/20/190820.2%E6%8A%BD%E8%B1%A1%E7%B1%BB/</url>
+    <content><![CDATA[<h2 id="抽象类"><a href="#抽象类" class="headerlink" title="抽象类"></a>抽象类</h2><h3 id="1-1抽象类的概述（理解）"><a href="#1-1抽象类的概述（理解）" class="headerlink" title="1.1抽象类的概述（理解）"></a>1.1抽象类的概述（理解）</h3><p>​    当我们在做子类共性功能抽取时，有些方法在父类中并没有具体的体现，这个时候就需要抽象类了！</p>
+<p>​    在Java中，一个没有方法体的方法应该定义为抽象方法，而类中如果有抽象方法，该类必须定义为抽象类！</p>
+<h3 id="1-2抽象类的特点（记忆）"><a href="#1-2抽象类的特点（记忆）" class="headerlink" title="1.2抽象类的特点（记忆）"></a>1.2抽象类的特点（记忆）</h3><ul>
+<li><p>抽象类和抽象方法必须使用 abstract 关键字修饰</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//抽象类的定义</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> 类名 </span>&#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//抽象方法的定义</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">eat</span><span class="params">()</span></span>;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>抽象类中不一定有抽象方法，有抽象方法的类一定是抽象类</p>
+</li>
+<li><p>抽象类不能实例化</p>
+<p>​    抽象类如何实例化呢？参照多态的方式，通过子类对象实例化，这叫抽象类多态</p>
+</li>
+<li><p>抽象类的子类</p>
+<p>​    要么重写抽象类中的所有抽象方法</p>
+<p>​    要么是抽象类</p>
+<a id="more"></a>
+
+</li>
+</ul>
+<h3 id="1-3抽象类的成员特点（记忆）"><a href="#1-3抽象类的成员特点（记忆）" class="headerlink" title="1.3抽象类的成员特点（记忆）"></a>1.3抽象类的成员特点（记忆）</h3><ul>
+<li><p>成员的特点</p>
+<ul>
+<li>成员变量<ul>
+<li>既可以是变量</li>
+<li>也可以是常量</li>
+</ul>
+</li>
+<li>构造方法<ul>
+<li>空参构造</li>
+<li>有参构造</li>
+</ul>
+</li>
+<li>成员方法<ul>
+<li>抽象方法</li>
+<li>普通方法</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>代码演示</p>
+<ul>
+<li>动物类</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">Animal</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> age = <span class="number">20</span>;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> String city = <span class="string">&quot;北京&quot;</span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Animal</span><span class="params">()</span> </span>&#123;&#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Animal</span><span class="params">(<span class="keyword">int</span> age)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.age = age;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">show</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        age = <span class="number">40</span>;</span><br><span class="line">        System.out.println(age);</span><br><span class="line"><span class="comment">//        city = &quot;上海&quot;;</span></span><br><span class="line">        System.out.println(city);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">eat</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>猫类</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Cat</span> <span class="keyword">extends</span> <span class="title">Animal</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">eat</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;猫吃鱼&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>测试类</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AnimalDemo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Animal a = <span class="keyword">new</span> Cat();</span><br><span class="line">        a.eat();</span><br><span class="line">        a.show();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="1-4抽象类的案例（应用）"><a href="#1-4抽象类的案例（应用）" class="headerlink" title="1.4抽象类的案例（应用）"></a>1.4抽象类的案例（应用）</h3><ul>
+<li><p>案例需求</p>
+<p>​    请采用抽象类的思想实现猫和狗的案例，并在测试类中进行测试</p>
+</li>
+<li><p>代码实现</p>
+<ul>
+<li>动物类</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">Animal</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> age;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Animal</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Animal</span><span class="params">(String name, <span class="keyword">int</span> age)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">        <span class="keyword">this</span>.age = age;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setName</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getAge</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> age;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setAge</span><span class="params">(<span class="keyword">int</span> age)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.age = age;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">eat</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>猫类</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Cat</span> <span class="keyword">extends</span> <span class="title">Animal</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Cat</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Cat</span><span class="params">(String name, <span class="keyword">int</span> age)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>(name, age);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">eat</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;猫吃鱼&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>狗类</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Dog</span> <span class="keyword">extends</span> <span class="title">Animal</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Dog</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Dog</span><span class="params">(String name, <span class="keyword">int</span> age)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>(name, age);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">eat</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;狗吃骨头&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>测试类</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AnimalDemo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//创建对象，按照多态的方式</span></span><br><span class="line">        Animal a = <span class="keyword">new</span> Cat();</span><br><span class="line">        a.setName(<span class="string">&quot;加菲&quot;</span>);</span><br><span class="line">        a.setAge(<span class="number">5</span>);</span><br><span class="line">        System.out.println(a.getName()+<span class="string">&quot;,&quot;</span>+a.getAge());</span><br><span class="line">        a.eat();</span><br><span class="line">        System.out.println(<span class="string">&quot;--------&quot;</span>);</span><br><span class="line"></span><br><span class="line">        a = <span class="keyword">new</span> Cat(<span class="string">&quot;加菲&quot;</span>,<span class="number">5</span>);</span><br><span class="line">        System.out.println(a.getName()+<span class="string">&quot;,&quot;</span>+a.getAge());</span><br><span class="line">        a.eat();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Java</category>
+        <category>JavaSE</category>
+      </categories>
+  </entry>
+  <entry>
     <title>多态</title>
     <url>/2019/08/20/190820.1%E5%A4%9A%E6%80%81/</url>
     <content><![CDATA[<h2 id="1-多态"><a href="#1-多态" class="headerlink" title="1.多态"></a>1.多态</h2><h3 id="1-1多态的概述（记忆）"><a href="#1-1多态的概述（记忆）" class="headerlink" title="1.1多态的概述（记忆）"></a>1.1多态的概述（记忆）</h3><ul>
@@ -1035,97 +1126,6 @@
 <li>测试类</li>
 </ul>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AnimalDemo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//创建猫类对象进行测试</span></span><br><span class="line">        Animal a = <span class="keyword">new</span> Cat();</span><br><span class="line">        a.setName(<span class="string">&quot;加菲&quot;</span>);</span><br><span class="line">        a.setAge(<span class="number">5</span>);</span><br><span class="line">        System.out.println(a.getName() + <span class="string">&quot;,&quot;</span> + a.getAge());</span><br><span class="line">        a.eat();</span><br><span class="line"></span><br><span class="line">        a = <span class="keyword">new</span> Cat(<span class="string">&quot;加菲&quot;</span>, <span class="number">5</span>);</span><br><span class="line">        System.out.println(a.getName() + <span class="string">&quot;,&quot;</span> + a.getAge());</span><br><span class="line">        a.eat();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Java</category>
-        <category>JavaSE</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>抽象类</title>
-    <url>/2019/08/20/190820.2%E6%8A%BD%E8%B1%A1%E7%B1%BB/</url>
-    <content><![CDATA[<h2 id="抽象类"><a href="#抽象类" class="headerlink" title="抽象类"></a>抽象类</h2><h3 id="1-1抽象类的概述（理解）"><a href="#1-1抽象类的概述（理解）" class="headerlink" title="1.1抽象类的概述（理解）"></a>1.1抽象类的概述（理解）</h3><p>​    当我们在做子类共性功能抽取时，有些方法在父类中并没有具体的体现，这个时候就需要抽象类了！</p>
-<p>​    在Java中，一个没有方法体的方法应该定义为抽象方法，而类中如果有抽象方法，该类必须定义为抽象类！</p>
-<h3 id="1-2抽象类的特点（记忆）"><a href="#1-2抽象类的特点（记忆）" class="headerlink" title="1.2抽象类的特点（记忆）"></a>1.2抽象类的特点（记忆）</h3><ul>
-<li><p>抽象类和抽象方法必须使用 abstract 关键字修饰</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//抽象类的定义</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> 类名 </span>&#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//抽象方法的定义</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">eat</span><span class="params">()</span></span>;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>抽象类中不一定有抽象方法，有抽象方法的类一定是抽象类</p>
-</li>
-<li><p>抽象类不能实例化</p>
-<p>​    抽象类如何实例化呢？参照多态的方式，通过子类对象实例化，这叫抽象类多态</p>
-</li>
-<li><p>抽象类的子类</p>
-<p>​    要么重写抽象类中的所有抽象方法</p>
-<p>​    要么是抽象类</p>
-<a id="more"></a>
-
-</li>
-</ul>
-<h3 id="1-3抽象类的成员特点（记忆）"><a href="#1-3抽象类的成员特点（记忆）" class="headerlink" title="1.3抽象类的成员特点（记忆）"></a>1.3抽象类的成员特点（记忆）</h3><ul>
-<li><p>成员的特点</p>
-<ul>
-<li>成员变量<ul>
-<li>既可以是变量</li>
-<li>也可以是常量</li>
-</ul>
-</li>
-<li>构造方法<ul>
-<li>空参构造</li>
-<li>有参构造</li>
-</ul>
-</li>
-<li>成员方法<ul>
-<li>抽象方法</li>
-<li>普通方法</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>代码演示</p>
-<ul>
-<li>动物类</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">Animal</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> age = <span class="number">20</span>;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> String city = <span class="string">&quot;北京&quot;</span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Animal</span><span class="params">()</span> </span>&#123;&#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Animal</span><span class="params">(<span class="keyword">int</span> age)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.age = age;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">show</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        age = <span class="number">40</span>;</span><br><span class="line">        System.out.println(age);</span><br><span class="line"><span class="comment">//        city = &quot;上海&quot;;</span></span><br><span class="line">        System.out.println(city);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">eat</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>猫类</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Cat</span> <span class="keyword">extends</span> <span class="title">Animal</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">eat</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;猫吃鱼&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>测试类</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AnimalDemo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Animal a = <span class="keyword">new</span> Cat();</span><br><span class="line">        a.eat();</span><br><span class="line">        a.show();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<h3 id="1-4抽象类的案例（应用）"><a href="#1-4抽象类的案例（应用）" class="headerlink" title="1.4抽象类的案例（应用）"></a>1.4抽象类的案例（应用）</h3><ul>
-<li><p>案例需求</p>
-<p>​    请采用抽象类的思想实现猫和狗的案例，并在测试类中进行测试</p>
-</li>
-<li><p>代码实现</p>
-<ul>
-<li>动物类</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">Animal</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> age;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Animal</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Animal</span><span class="params">(String name, <span class="keyword">int</span> age)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">        <span class="keyword">this</span>.age = age;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setName</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getAge</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> age;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setAge</span><span class="params">(<span class="keyword">int</span> age)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.age = age;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">eat</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>猫类</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Cat</span> <span class="keyword">extends</span> <span class="title">Animal</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Cat</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Cat</span><span class="params">(String name, <span class="keyword">int</span> age)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>(name, age);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">eat</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;猫吃鱼&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>狗类</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Dog</span> <span class="keyword">extends</span> <span class="title">Animal</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Dog</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Dog</span><span class="params">(String name, <span class="keyword">int</span> age)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>(name, age);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">eat</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;狗吃骨头&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>测试类</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AnimalDemo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//创建对象，按照多态的方式</span></span><br><span class="line">        Animal a = <span class="keyword">new</span> Cat();</span><br><span class="line">        a.setName(<span class="string">&quot;加菲&quot;</span>);</span><br><span class="line">        a.setAge(<span class="number">5</span>);</span><br><span class="line">        System.out.println(a.getName()+<span class="string">&quot;,&quot;</span>+a.getAge());</span><br><span class="line">        a.eat();</span><br><span class="line">        System.out.println(<span class="string">&quot;--------&quot;</span>);</span><br><span class="line"></span><br><span class="line">        a = <span class="keyword">new</span> Cat(<span class="string">&quot;加菲&quot;</span>,<span class="number">5</span>);</span><br><span class="line">        System.out.println(a.getName()+<span class="string">&quot;,&quot;</span>+a.getAge());</span><br><span class="line">        a.eat();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 ]]></content>
@@ -1873,6 +1873,29 @@
       </categories>
   </entry>
   <entry>
+    <title>Hexo文章插入图片</title>
+    <url>/2019/10/11/191011hexo%E6%96%87%E7%AB%A0%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87/</url>
+    <content><![CDATA[<h2 id="方法一"><a href="#方法一" class="headerlink" title="方法一:"></a>方法一:</h2><h4 id="images文件夹"><a href="#images文件夹" class="headerlink" title="images文件夹"></a>images文件夹</h4><p>如果你的Hexo项目中只有少量图片，那最简单的方法就是将它们放在 <code>source/images</code> 文件夹中,然后通过类似于 <code>![](/images/image.jpg)</code> 的方法访问它们。</p>
+<p>例如:</p>
+<p><code>![1.png](/images/1.png)</code></p>
+<a id="more"></a>
+
+<h2 id="方法二-推荐使用"><a href="#方法二-推荐使用" class="headerlink" title="方法二:(推荐使用)"></a>方法二:(推荐使用)</h2><h4 id="1-将-config-yml-文件中的-post-asset-folder-选项设为-“true”-。"><a href="#1-将-config-yml-文件中的-post-asset-folder-选项设为-“true”-。" class="headerlink" title="1.将 config.yml 文件中的 post_asset_folder 选项设为 “true” 。"></a>1.将 <code>config.yml</code> 文件中的 <code>post_asset_folder</code> 选项设为 “true” 。</h4><p>&emsp;&emsp;之后在你每次通过 <code>hexo new [layout] &lt;title&gt;</code> 命令创建xxx.md时会自动创建一个同名资源文件夹xxx,你可以把跟这篇文章有关的图片资源放在关联文件夹中。</p>
+<p><code>_config.ymlpost_asset_folder: true</code></p>
+<h4 id="2-安装插件-在blog目录下输入下边的命令安装插件"><a href="#2-安装插件-在blog目录下输入下边的命令安装插件" class="headerlink" title="2.安装插件:在blog目录下输入下边的命令安装插件:"></a>2.安装插件:在blog目录下输入下边的命令安装插件:</h4><p><code>npm install https://github.com/CodeFalling/hexo-asset-image -- save</code></p>
+<h4 id="3-添加图片"><a href="#3-添加图片" class="headerlink" title="3.添加图片:"></a>3.添加图片:</h4><p>在想添加的位置写入<code>![](资源文件夹名字/图片名字.图片格式)</code>,例如:</p>
+<p><code>![](xxx/1.png)</code></p>
+]]></content>
+      <categories>
+        <category>Server</category>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>资源文件夹</tag>
+        <tag>图片标签插件</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>markdown常用语法</title>
     <url>/2019/10/08/191008markdown%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95/</url>
     <content><![CDATA[<h2 id="1-标题"><a href="#1-标题" class="headerlink" title="1.标题"></a>1.标题</h2><ul>
@@ -1943,29 +1966,6 @@
       </categories>
       <tags>
         <tag>markdown常用语法</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hexo文章插入图片</title>
-    <url>/2019/10/11/191011hexo%E6%96%87%E7%AB%A0%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87/</url>
-    <content><![CDATA[<h2 id="方法一"><a href="#方法一" class="headerlink" title="方法一:"></a>方法一:</h2><h4 id="images文件夹"><a href="#images文件夹" class="headerlink" title="images文件夹"></a>images文件夹</h4><p>如果你的Hexo项目中只有少量图片，那最简单的方法就是将它们放在 <code>source/images</code> 文件夹中,然后通过类似于 <code>![](/images/image.jpg)</code> 的方法访问它们。</p>
-<p>例如:</p>
-<p><code>![1.png](/images/1.png)</code></p>
-<a id="more"></a>
-
-<h2 id="方法二-推荐使用"><a href="#方法二-推荐使用" class="headerlink" title="方法二:(推荐使用)"></a>方法二:(推荐使用)</h2><h4 id="1-将-config-yml-文件中的-post-asset-folder-选项设为-“true”-。"><a href="#1-将-config-yml-文件中的-post-asset-folder-选项设为-“true”-。" class="headerlink" title="1.将 config.yml 文件中的 post_asset_folder 选项设为 “true” 。"></a>1.将 <code>config.yml</code> 文件中的 <code>post_asset_folder</code> 选项设为 “true” 。</h4><p>&emsp;&emsp;之后在你每次通过 <code>hexo new [layout] &lt;title&gt;</code> 命令创建xxx.md时会自动创建一个同名资源文件夹xxx,你可以把跟这篇文章有关的图片资源放在关联文件夹中。</p>
-<p><code>_config.ymlpost_asset_folder: true</code></p>
-<h4 id="2-安装插件-在blog目录下输入下边的命令安装插件"><a href="#2-安装插件-在blog目录下输入下边的命令安装插件" class="headerlink" title="2.安装插件:在blog目录下输入下边的命令安装插件:"></a>2.安装插件:在blog目录下输入下边的命令安装插件:</h4><p><code>npm install https://github.com/CodeFalling/hexo-asset-image -- save</code></p>
-<h4 id="3-添加图片"><a href="#3-添加图片" class="headerlink" title="3.添加图片:"></a>3.添加图片:</h4><p>在想添加的位置写入<code>![](资源文件夹名字/图片名字.图片格式)</code>,例如:</p>
-<p><code>![](xxx/1.png)</code></p>
-]]></content>
-      <categories>
-        <category>Server</category>
-        <category>Hexo</category>
-      </categories>
-      <tags>
-        <tag>资源文件夹</tag>
-        <tag>图片标签插件</tag>
       </tags>
   </entry>
   <entry>
@@ -2301,6 +2301,21 @@
       </categories>
   </entry>
   <entry>
+    <title>更换NexT主题后访问报错</title>
+    <url>/2020/01/15/200115%E6%9B%B4%E6%8D%A2NexT%E4%B8%BB%E9%A2%98%E5%90%8E%E8%AE%BF%E9%97%AE%E6%8A%A5%E9%94%99/</url>
+    <content><![CDATA[<p>hexo博客更换NexT主题后访问显示报错:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;% extends ‘_layout.swig‘ %&#125; &#123;% import ‘_macro&#x2F;post.swig‘ as post</span><br><span class="line">_template %&#125;</span><br></pre></td></tr></table></figure>
+
+<p>原因是hexo在5.0之后把swig给删除了需要自己手动安装</p>
+<p>在博客目录下右键“Git Bash Here”输入以下命令即可:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm i hexo-renderer-swig</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Server</category>
+        <category>Hexo</category>
+      </categories>
+  </entry>
+  <entry>
     <title>Ubuntu设置root用户登录</title>
     <url>/2019/12/02/191202Ubuntu%E8%AE%BE%E7%BD%AEroot%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95/</url>
     <content><![CDATA[]]></content>
@@ -2310,14 +2325,18 @@
       </categories>
   </entry>
   <entry>
-    <title>更换next主题后访问报错</title>
-    <url>/2020/01/15/200115%E6%9B%B4%E6%8D%A2next%E4%B8%BB%E9%A2%98%E5%90%8E%E8%AE%BF%E9%97%AE%E6%8A%A5%E9%94%99/</url>
-    <content><![CDATA[<p>hexo博客更换next主题后访问显示报错:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;% extends ‘_layout.swig‘ %&#125; &#123;% import ‘_macro&#x2F;post.swig‘ as post</span><br><span class="line">_template %&#125;</span><br></pre></td></tr></table></figure>
+    <title>NexT主题点击日志报错</title>
+    <url>/2020/01/16/200116NexT%E4%B8%BB%E9%A2%98%E7%82%B9%E5%87%BB%E6%97%A5%E5%BF%97%E6%8A%A5%E9%94%99-md/</url>
+    <content><![CDATA[<p>NexT主题点击日志时报错：</p>
+<p><img src="/2020/01/16/200116NexT%E4%B8%BB%E9%A2%98%E7%82%B9%E5%87%BB%E6%97%A5%E5%BF%97%E6%8A%A5%E9%94%99-md/%E6%97%A5%E5%BF%97404.png"></p>
+<p>打开主题目录下/layout/_macro/sidebar.swig</p>
+<p>找到：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;a href&#x3D;&quot;&#123;&#123; url_for(theme.menu.archives).split(&#39;||&#39;)[0] | trim &#125;&#125;&quot;&gt;</span><br></pre></td></tr></table></figure>
 
-<p>原因是hexo在5.0之后把swig给删除了需要自己手动安装</p>
-<p>在博客目录下右键“Git Bash Here”输入以下命令即可:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm i hexo-renderer-swig</span><br></pre></td></tr></table></figure>
+<p>修改为：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;a href&#x3D;&quot;&#123;&#123;url_for(theme.menu.archives.split(&#39;||&#39;)[0])| trim&#125;&#125;&quot;&gt;</span><br></pre></td></tr></table></figure>
+
+<p>记得清除浏览器缓存</p>
 ]]></content>
       <categories>
         <category>Server</category>
@@ -2359,6 +2378,50 @@
       <categories>
         <category>Server</category>
         <category>VPS</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Cmder的使用</title>
+    <url>/2020/11/22/201122Cmder%E7%9A%84%E4%BD%BF%E7%94%A8/</url>
+    <content><![CDATA[<h3 id="1-下载"><a href="#1-下载" class="headerlink" title="1.下载"></a>1.下载</h3><p><a href="https://cmder.net/">官网下载</a></p>
+<p><img src="/2020/11/22/201122Cmder%E7%9A%84%E4%BD%BF%E7%94%A8/1.png"></p>
+<p>下载分为mini版和完整版，完整版功能更为全面，可运行linux下的所有命令</p>
+<p><img src="/2020/11/22/201122Cmder%E7%9A%84%E4%BD%BF%E7%94%A8/2.png"></p>
+<p>不需要安装，解压后可直接使用。</p>
+<p>首次打开会有个警告弹窗，选择第一个即可：</p>
+<p><img src="/2020/11/22/201122Cmder%E7%9A%84%E4%BD%BF%E7%94%A8/4.png"></p>
+<h3 id="2-配置"><a href="#2-配置" class="headerlink" title="2.配置"></a>2.配置</h3><ul>
+<li>配置环境变量</li>
+</ul>
+<p>下载解压后将cmder.exe的所在目录添加到环境变量path中。</p>
+<p><img src="/2020/11/22/201122Cmder%E7%9A%84%E4%BD%BF%E7%94%A8/3.path.png"></p>
+<ul>
+<li>配置右键快捷启动</li>
+</ul>
+<p>管理员身份运行cmd，执行以下命令：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Cmder.exe &#x2F;REGISTER ALL  &#x2F;&#x2F; 设置任意地方鼠标右键启动Cmder</span><br></pre></td></tr></table></figure>
+
+<p>之后可在任意地方点击右键使用cmder，会直接跳转到该路径下，而无需cd</p>
+<p><img src="/2020/11/22/201122Cmder%E7%9A%84%E4%BD%BF%E7%94%A8/6.png"></p>
+<ul>
+<li><p>语言设置</p>
+<p>Setting–&gt;General–&gt;Interface language</p>
+</li>
+</ul>
+<p><img src="/2020/11/22/201122Cmder%E7%9A%84%E4%BD%BF%E7%94%A8/Users\WeiXu\blog\source_posts\201122Cmder的使用\9.png"></p>
+<ul>
+<li>命令提示符”λ”改为”$”</li>
+</ul>
+<p>cmder的光标是以”λ”开始的，我们可以修改为常用的$，找到cmder目录下的vendor文件夹中的clink.lua文件，修改local lambda值即可。</p>
+<p><img src="/2020/11/22/201122Cmder%E7%9A%84%E4%BD%BF%E7%94%A8/7.png"></p>
+<ul>
+<li>设置中文编码</li>
+</ul>
+<p>打开setting，在Start-up下的environment中加入: <code>set LANG=zh_CN.UTF8</code></p>
+<p><img src="/2020/11/22/201122Cmder%E7%9A%84%E4%BD%BF%E7%94%A8/8.png"></p>
+<h3 id="3-快捷键"><a href="#3-快捷键" class="headerlink" title="3.快捷键"></a>3.快捷键</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Tab       自动路径补全</span><br><span class="line">Ctrl+T    建立新页签</span><br><span class="line">Ctrl+W    关闭页签</span><br><span class="line">Ctrl+Tab  切换页签</span><br><span class="line">Alt+F4    关闭所有页签</span><br><span class="line">Alt+Shift+<span class="number">1</span> 开启cmd.exe</span><br><span class="line">Alt+Shift+<span class="number">2</span> 开启powershell.exe</span><br><span class="line">Alt+Shift+<span class="number">3</span> 开启powershell.exe (系统管理员权限)</span><br><span class="line">Ctrl+<span class="number">1</span>      快速切换到第<span class="number">1</span>个页签</span><br><span class="line">Ctrl+n      快速切换到第n个页签(n值无上限)</span><br><span class="line">Alt + enter 切换到全屏状态</span><br><span class="line">Ctr+r       历史命令搜索</span><br><span class="line">Tab         自动路径补全</span><br><span class="line">Ctrl+T      建立新页签</span><br><span class="line">Ctrl+W      关闭页签</span><br><span class="line">Ctrl+Tab    切换页签</span><br><span class="line">Alt+F4      关闭所有页签</span><br><span class="line">Alt+Shift+<span class="number">1</span> 开启cmd.exe</span><br><span class="line">Alt+Shift+<span class="number">2</span> 开启powershell.exe</span><br><span class="line">Alt+Shift+<span class="number">3</span> 开启powershell.exe (系统管理员权限)</span><br><span class="line">Ctrl+<span class="number">1</span>      快速切换到第<span class="number">1</span>个页签</span><br><span class="line">Ctrl+n      快速切换到第n个页签(n值无上限)</span><br><span class="line">Alt + enter 切换到全屏状态</span><br><span class="line">Ctr+r       历史命令搜索</span><br><span class="line">Win+Alt+P   开启工具选项视窗</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Soft</category>
       </categories>
   </entry>
   <entry>
@@ -4924,17 +4987,15 @@
   <entry>
     <title>Git</title>
     <url>/2019/11/18/191118Git/</url>
-    <content><![CDATA[<p><img src="/2019/11/18/191118Git/gitlogo.png"></p>
-<h1 id="1-版本控制工具概念"><a href="#1-版本控制工具概念" class="headerlink" title="1.版本控制工具概念"></a>1.版本控制工具概念</h1><p>大学毕业写好论文了导师不满意让修改,改好了,导师又觉得第一版不错,改回来吧,此时内心一脸懵,第一版长啥样没存档啊</p>
+    <content><![CDATA[<h1 id="1-版本控制工具概念"><a href="#1-版本控制工具概念" class="headerlink" title="1.版本控制工具概念"></a>1.版本控制工具概念</h1><p>毕业论文写好了导师不满意让修改,改好了,导师又觉得第一版不错,改回来吧,此时内心一脸懵,第一版长啥样没存档啊</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;&lt;毕业论文第一版.doc&gt;&gt;</span><br><span class="line">&lt;&lt;毕业论文第二版.doc&gt;&gt;</span><br><span class="line">&lt;&lt;毕业论文第三版.doc&gt;&gt;</span><br><span class="line">&lt;&lt;毕业论文最终版.doc&gt;&gt;</span><br><span class="line">&lt;&lt;毕业论文最终版2.doc&gt;&gt;</span><br></pre></td></tr></table></figure>
 
-<p>实际上,代码开发中也需要这样的软件来管理我们的代码. 例如我们经常会碰到如下的现象:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">改之前好好的,改完就报错了,也没怎么修改啊</span><br></pre></td></tr></table></figure>
-
-<p>在这种情况下如果不能查看修改之前的代码,查找问题是非常困难的.</p>
-<p>如果有一个软件能记录我们对文档的所有修改,所有版本,那么上面的问题讲迎刃而解.而这类软件我们一般叫做版本控制工具</p>
+<p>代码开发中经常会碰到这种现象:改之前好好的,改完就报错了,也没怎么修改啊,这种情况下如果不能查看修改之前的代码,查找问题是非常困难的.</p>
+<p>如果有一个软件能记录我们对文档的所有修改,所有版本,那么上面的问题讲迎刃而解.而这类软件我们一般叫做版本控制工具.</p>
 <p>版本控制工具一般具有如下特性:</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1) 能够记录历史版本</span><br><span class="line">2) 能后回退历史版本</span><br><span class="line">3) 能够满足团队协作开发的要求</span><br></pre></td></tr></table></figure>
+
+<a id="more"></a>
 
 <h1 id="2-版本管理工具介绍"><a href="#2-版本管理工具介绍" class="headerlink" title="2. 版本管理工具介绍"></a>2. 版本管理工具介绍</h1><p>现在比较流行的版本控制工具是git ,但是实际上git 是近几年才发展起来的,可能有一些老的项目,还在用一些老的软件,比如svn</p>
 <h2 id="2-1版本控制发展简史-维基百科"><a href="#2-1版本控制发展简史-维基百科" class="headerlink" title="2.1版本控制发展简史(维基百科)"></a>2.1版本控制发展简史(维基百科)</h2><p><img src="/2019/11/18/191118Git/1571983065236.png" alt="1571983065236"> </p>

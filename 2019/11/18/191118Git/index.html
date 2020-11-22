@@ -83,14 +83,13 @@
 
 
 
-<meta name="description" content="1.版本控制工具概念大学毕业写好论文了导师不满意让修改,改好了,导师又觉得第一版不错,改回来吧,此时内心一脸懵,第一版长啥样没存档啊 12345&lt;&lt;毕业论文第一版.doc&gt;&gt;&lt;&lt;毕业论文第二版.doc&gt;&gt;&lt;&lt;毕业论文第三版.doc&gt;&gt;&lt;&lt;毕业论文最终版.doc&gt;&gt;&lt;&lt;毕业论文最终版2.do">
+<meta name="description" content="1.版本控制工具概念毕业论文写好了导师不满意让修改,改好了,导师又觉得第一版不错,改回来吧,此时内心一脸懵,第一版长啥样没存档啊 12345&lt;&lt;毕业论文第一版.doc&gt;&gt;&lt;&lt;毕业论文第二版.doc&gt;&gt;&lt;&lt;毕业论文第三版.doc&gt;&gt;&lt;&lt;毕业论文最终版.doc&gt;&gt;&lt;&lt;毕业论文最终版2.doc&amp;g">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Git">
 <meta property="og:url" content="http://yoursite.com/2019/11/18/191118Git/index.html">
 <meta property="og:site_name" content="维旭的博客">
-<meta property="og:description" content="1.版本控制工具概念大学毕业写好论文了导师不满意让修改,改好了,导师又觉得第一版不错,改回来吧,此时内心一脸懵,第一版长啥样没存档啊 12345&lt;&lt;毕业论文第一版.doc&gt;&gt;&lt;&lt;毕业论文第二版.doc&gt;&gt;&lt;&lt;毕业论文第三版.doc&gt;&gt;&lt;&lt;毕业论文最终版.doc&gt;&gt;&lt;&lt;毕业论文最终版2.do">
+<meta property="og:description" content="1.版本控制工具概念毕业论文写好了导师不满意让修改,改好了,导师又觉得第一版不错,改回来吧,此时内心一脸懵,第一版长啥样没存档啊 12345&lt;&lt;毕业论文第一版.doc&gt;&gt;&lt;&lt;毕业论文第二版.doc&gt;&gt;&lt;&lt;毕业论文第三版.doc&gt;&gt;&lt;&lt;毕业论文最终版.doc&gt;&gt;&lt;&lt;毕业论文最终版2.doc&amp;g">
 <meta property="og:locale">
-<meta property="og:image" content="http://yoursite.com/2019/11/18/191118Git/gitlogo.png">
 <meta property="og:image" content="http://yoursite.com/2019/11/18/191118Git/1571983065236.png">
 <meta property="og:image" content="http://yoursite.com/2019/11/18/191118Git/svn.jpg">
 <meta property="og:image" content="http://yoursite.com/2019/11/18/191118Git/git.png">
@@ -161,10 +160,10 @@
 <meta property="og:image" content="http://yoursite.com/2019/11/18/191118Git/Java%E8%B5%84%E6%96%99/4.%E6%A1%86%E6%9E%B6/6.git/%E8%AF%A6%E7%BB%86%E8%AE%B2%E4%B9%89/%E8%AE%B2%E4%B9%89/assets/1572526097257.png">
 <meta property="og:image" content="http://yoursite.com/2019/11/18/191118Git/1572526136074.png">
 <meta property="article:published_time" content="2019-11-18T06:46:21.000Z">
-<meta property="article:modified_time" content="2020-11-19T09:31:17.867Z">
+<meta property="article:modified_time" content="2020-11-22T08:46:59.367Z">
 <meta property="article:author" content="维旭">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://yoursite.com/2019/11/18/191118Git/gitlogo.png">
+<meta name="twitter:image" content="http://yoursite.com/2019/11/18/191118Git/1571983065236.png">
 
 
 
@@ -466,17 +465,15 @@
       
 
       
-        <p><img src="/2019/11/18/191118Git/gitlogo.png"></p>
-<h1 id="1-版本控制工具概念"><a href="#1-版本控制工具概念" class="headerlink" title="1.版本控制工具概念"></a>1.版本控制工具概念</h1><p>大学毕业写好论文了导师不满意让修改,改好了,导师又觉得第一版不错,改回来吧,此时内心一脸懵,第一版长啥样没存档啊</p>
+        <h1 id="1-版本控制工具概念"><a href="#1-版本控制工具概念" class="headerlink" title="1.版本控制工具概念"></a>1.版本控制工具概念</h1><p>毕业论文写好了导师不满意让修改,改好了,导师又觉得第一版不错,改回来吧,此时内心一脸懵,第一版长啥样没存档啊</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;&lt;毕业论文第一版.doc&gt;&gt;</span><br><span class="line">&lt;&lt;毕业论文第二版.doc&gt;&gt;</span><br><span class="line">&lt;&lt;毕业论文第三版.doc&gt;&gt;</span><br><span class="line">&lt;&lt;毕业论文最终版.doc&gt;&gt;</span><br><span class="line">&lt;&lt;毕业论文最终版2.doc&gt;&gt;</span><br></pre></td></tr></table></figure>
 
-<p>实际上,代码开发中也需要这样的软件来管理我们的代码. 例如我们经常会碰到如下的现象:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">改之前好好的,改完就报错了,也没怎么修改啊</span><br></pre></td></tr></table></figure>
-
-<p>在这种情况下如果不能查看修改之前的代码,查找问题是非常困难的.</p>
-<p>如果有一个软件能记录我们对文档的所有修改,所有版本,那么上面的问题讲迎刃而解.而这类软件我们一般叫做版本控制工具</p>
+<p>代码开发中经常会碰到这种现象:改之前好好的,改完就报错了,也没怎么修改啊,这种情况下如果不能查看修改之前的代码,查找问题是非常困难的.</p>
+<p>如果有一个软件能记录我们对文档的所有修改,所有版本,那么上面的问题讲迎刃而解.而这类软件我们一般叫做版本控制工具.</p>
 <p>版本控制工具一般具有如下特性:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1) 能够记录历史版本</span><br><span class="line">2) 能后回退历史版本</span><br><span class="line">3) 能够满足团队协作开发的要求</span><br></pre></td></tr></table></figure>
+
+<a id="more"></a>
 
 <h1 id="2-版本管理工具介绍"><a href="#2-版本管理工具介绍" class="headerlink" title="2. 版本管理工具介绍"></a>2. 版本管理工具介绍</h1><p>现在比较流行的版本控制工具是git ,但是实际上git 是近几年才发展起来的,可能有一些老的项目,还在用一些老的软件,比如svn</p>
 <h2 id="2-1版本控制发展简史-维基百科"><a href="#2-1版本控制发展简史-维基百科" class="headerlink" title="2.1版本控制发展简史(维基百科)"></a>2.1版本控制发展简史(维基百科)</h2><p><img src="/2019/11/18/191118Git/1571983065236.png" alt="1571983065236"> </p>
@@ -869,7 +866,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">34</span>
+                  <span class="site-state-item-count">36</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -880,7 +877,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
