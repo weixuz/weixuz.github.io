@@ -2355,6 +2355,8 @@
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Target iteration (skip:unlimited&#x2F;default) :</span><br></pre></td></tr></table></figure>
 
 <p>翻译：训练次数，推荐默认设置。<br>默认无限训练，开启此功能可以输入想要的数字。</p>
+<a id="more"></a>
+
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Batch_size (?:help skip:0&#x2F;default) :</span><br></pre></td></tr></table></figure>
 
 <p>翻译：Batch_size数值，大概可以理解为一次有多少图像被发送到神经网络训练。<br>取决于你的硬件性能，建议取大于4的数值，训练伊始可以设置低数值，收敛困难时增加数值。</p>
