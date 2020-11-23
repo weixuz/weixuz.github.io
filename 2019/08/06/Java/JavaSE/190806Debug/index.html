@@ -1,0 +1,1297 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+  <link rel="manifest" href="/images/manifest.json">
+
+
+  <meta name="msapplication-config" content="/images/browserconfig.xml" />
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="1.Debug模式1.1什么是Debug模式【理解】是供程序员使用的程序调试工具，它可以用于查看程序的执行流程，也可以用于追踪程序执行过程来调试程序。 1.2Debug模式操作流程【应用】 如何加断点  选择要设置断点的代码行，在行号的区域后面单击鼠标左键即可    如何运行加了断点的程序  在代码区域右键Debug执行    看哪里  看Debugger窗口    看Console窗口    点">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Debug">
+<meta property="og:url" content="http://yoursite.com/2019/08/06/Java/JavaSE/190806Debug/index.html">
+<meta property="og:site_name" content="维旭的博客">
+<meta property="og:description" content="1.Debug模式1.1什么是Debug模式【理解】是供程序员使用的程序调试工具，它可以用于查看程序的执行流程，也可以用于追踪程序执行过程来调试程序。 1.2Debug模式操作流程【应用】 如何加断点  选择要设置断点的代码行，在行号的区域后面单击鼠标左键即可    如何运行加了断点的程序  在代码区域右键Debug执行    看哪里  看Debugger窗口    看Console窗口    点">
+<meta property="og:locale">
+<meta property="og:image" content="http://yoursite.com/2019/08/06/Java/JavaSE/190806Debug/Java%E8%B5%84%E6%96%99/1.JavaSE/day06(Java%E5%9F%BA%E7%A1%80%E7%BB%BC%E5%90%88%E7%BB%83%E4%B9%A0)/%E7%AC%94%E8%AE%B0/img/01.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/06/Java/JavaSE/190806Debug/Java%E8%B5%84%E6%96%99/1.JavaSE/day06(Java%E5%9F%BA%E7%A1%80%E7%BB%BC%E5%90%88%E7%BB%83%E4%B9%A0)/%E7%AC%94%E8%AE%B0/img/02.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/06/Java/JavaSE/190806Debug/Java%E8%B5%84%E6%96%99/1.JavaSE/day06(Java%E5%9F%BA%E7%A1%80%E7%BB%BC%E5%90%88%E7%BB%83%E4%B9%A0)/%E7%AC%94%E8%AE%B0/img/03.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/06/Java/JavaSE/190806Debug/Java%E8%B5%84%E6%96%99/1.JavaSE/day06(Java%E5%9F%BA%E7%A1%80%E7%BB%BC%E5%90%88%E7%BB%83%E4%B9%A0)/%E7%AC%94%E8%AE%B0/img/04.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/06/Java/JavaSE/190806Debug/Java%E8%B5%84%E6%96%99/1.JavaSE/day06(Java%E5%9F%BA%E7%A1%80%E7%BB%BC%E5%90%88%E7%BB%83%E4%B9%A0)/%E7%AC%94%E8%AE%B0/img/05.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/06/Java/JavaSE/190806Debug/Java%E8%B5%84%E6%96%99/1.JavaSE/day06(Java%E5%9F%BA%E7%A1%80%E7%BB%BC%E5%90%88%E7%BB%83%E4%B9%A0)/%E7%AC%94%E8%AE%B0/img/06.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/06/Java/JavaSE/190806Debug/Java%E8%B5%84%E6%96%99/1.JavaSE/day06(Java%E5%9F%BA%E7%A1%80%E7%BB%BC%E5%90%88%E7%BB%83%E4%B9%A0)/%E7%AC%94%E8%AE%B0/img/07.png">
+<meta property="article:published_time" content="2019-08-06T13:18:48.000Z">
+<meta property="article:modified_time" content="2020-11-23T05:49:36.640Z">
+<meta property="article:author" content="维旭">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/2019/08/06/Java/JavaSE/190806Debug/Java%E8%B5%84%E6%96%99/1.JavaSE/day06(Java%E5%9F%BA%E7%A1%80%E7%BB%BC%E5%90%88%E7%BB%83%E4%B9%A0)/%E7%AC%94%E8%AE%B0/img/01.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/08/06/Java/JavaSE/190806Debug/"/>
+
+
+
+
+
+  <title>Debug | 维旭的博客</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">维旭的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/06/Java/JavaSE/190806Debug/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="维旭的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Debug</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-06T21:18:48+08:00">
+                2019-08-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index">
+                    <span itemprop="name">Java学习笔记</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/JavaSE/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaSE</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="1-Debug模式"><a href="#1-Debug模式" class="headerlink" title="1.Debug模式"></a>1.Debug模式</h2><h3 id="1-1什么是Debug模式【理解】"><a href="#1-1什么是Debug模式【理解】" class="headerlink" title="1.1什么是Debug模式【理解】"></a>1.1什么是Debug模式【理解】</h3><p>是供程序员使用的程序调试工具，它可以用于查看程序的执行流程，也可以用于追踪程序执行过程来调试程序。</p>
+<h3 id="1-2Debug模式操作流程【应用】"><a href="#1-2Debug模式操作流程【应用】" class="headerlink" title="1.2Debug模式操作流程【应用】"></a>1.2Debug模式操作流程【应用】</h3><ul>
+<li><p>如何加断点</p>
+<ul>
+<li>选择要设置断点的代码行，在行号的区域后面单击鼠标左键即可</li>
+</ul>
+<p><img src="/2019/08/06/Java/JavaSE/190806Debug/Java%E8%B5%84%E6%96%99/1.JavaSE/day06(Java%E5%9F%BA%E7%A1%80%E7%BB%BC%E5%90%88%E7%BB%83%E4%B9%A0)/%E7%AC%94%E8%AE%B0/img/01.png" alt="01"></p>
+</li>
+<li><p>如何运行加了断点的程序</p>
+<ul>
+<li>在代码区域右键Debug执行</li>
+</ul>
+<p><img src="/2019/08/06/Java/JavaSE/190806Debug/Java%E8%B5%84%E6%96%99/1.JavaSE/day06(Java%E5%9F%BA%E7%A1%80%E7%BB%BC%E5%90%88%E7%BB%83%E4%B9%A0)/%E7%AC%94%E8%AE%B0/img/02.png" alt="02"></p>
+</li>
+<li><p>看哪里</p>
+<ul>
+<li>看Debugger窗口</li>
+</ul>
+<p><img src="/2019/08/06/Java/JavaSE/190806Debug/Java%E8%B5%84%E6%96%99/1.JavaSE/day06(Java%E5%9F%BA%E7%A1%80%E7%BB%BC%E5%90%88%E7%BB%83%E4%B9%A0)/%E7%AC%94%E8%AE%B0/img/03.png" alt="03"></p>
+<ul>
+<li>看Console窗口</li>
+</ul>
+<p><img src="/2019/08/06/Java/JavaSE/190806Debug/Java%E8%B5%84%E6%96%99/1.JavaSE/day06(Java%E5%9F%BA%E7%A1%80%E7%BB%BC%E5%90%88%E7%BB%83%E4%B9%A0)/%E7%AC%94%E8%AE%B0/img/04.png" alt="04"></p>
+</li>
+<li><p>点哪里</p>
+<ul>
+<li>点Step Into (F7)这个箭头，也可以直接按F7</li>
+</ul>
+<p><img src="/2019/08/06/Java/JavaSE/190806Debug/Java%E8%B5%84%E6%96%99/1.JavaSE/day06(Java%E5%9F%BA%E7%A1%80%E7%BB%BC%E5%90%88%E7%BB%83%E4%B9%A0)/%E7%AC%94%E8%AE%B0/img/05.png" alt="05"></p>
+</li>
+<li><p>如何删除断点</p>
+<ul>
+<li>选择要删除的断点，单击鼠标左键即可</li>
+</ul>
+<p><img src="/2019/08/06/Java/JavaSE/190806Debug/Java%E8%B5%84%E6%96%99/1.JavaSE/day06(Java%E5%9F%BA%E7%A1%80%E7%BB%BC%E5%90%88%E7%BB%83%E4%B9%A0)/%E7%AC%94%E8%AE%B0/img/06.png" alt="06"></p>
+<ul>
+<li>如果是多个断点，可以每一个再点击一次。也可以一次性全部删除</li>
+</ul>
+<p><img src="/2019/08/06/Java/JavaSE/190806Debug/Java%E8%B5%84%E6%96%99/1.JavaSE/day06(Java%E5%9F%BA%E7%A1%80%E7%BB%BC%E5%90%88%E7%BB%83%E4%B9%A0)/%E7%AC%94%E8%AE%B0/img/07.png" alt="07"></p>
+</li>
+</ul>
+<h2 id="2-基础练习"><a href="#2-基础练习" class="headerlink" title="2.基础练习"></a>2.基础练习</h2><h3 id="2-1减肥计划if版本【应用】"><a href="#2-1减肥计划if版本【应用】" class="headerlink" title="2.1减肥计划if版本【应用】"></a>2.1减肥计划if版本【应用】</h3><h4 id="2-1-1案例需求"><a href="#2-1-1案例需求" class="headerlink" title="2.1.1案例需求"></a>2.1.1案例需求</h4><p>​    输入星期数，显示今天的减肥活动<br>​          周一：跑步<br>​          周二：游泳<br>​          周三：慢走<br>​          周四：动感单车<br>​          周五：拳击<br>​          周六：爬山<br>​          周日：好好吃一顿</p>
+<h4 id="2-1-2代码实现"><a href="#2-1-2代码实现" class="headerlink" title="2.1.2代码实现"></a>2.1.2代码实现</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">    思路：</span></span><br><span class="line"><span class="comment">        1:键盘录入一个星期数，用一个变量接收</span></span><br><span class="line"><span class="comment">        2:对星期数进行判断，这里用 if 语句实现</span></span><br><span class="line"><span class="comment">        3:在对应的语句控制中输出对应的减肥活动</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test01</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//键盘录入一个星期数，用一个变量接收</span></span><br><span class="line">        Scanner sc = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line"></span><br><span class="line">        System.out.println(<span class="string">&quot;请输入一个星期数：&quot;</span>);</span><br><span class="line">        <span class="keyword">int</span> week = sc.nextInt();</span><br><span class="line"></span><br><span class="line">        <span class="comment">//对星期数进行判断，这里用 if 语句实现</span></span><br><span class="line">        <span class="keyword">if</span> (week &lt; <span class="number">1</span> || week &gt; <span class="number">7</span>) &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;你输入的星期数有误&quot;</span>);</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (week == <span class="number">1</span>) &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;跑步&quot;</span>);</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (week == <span class="number">2</span>) &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;游泳&quot;</span>);</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (week == <span class="number">3</span>) &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;慢走&quot;</span>);</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (week == <span class="number">4</span>) &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;动感单车&quot;</span>);</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (week == <span class="number">5</span>) &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;拳击&quot;</span>);</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (week == <span class="number">6</span>) &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;爬山&quot;</span>);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;好好吃一顿&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-2减肥计划switch版本【应用】"><a href="#2-2减肥计划switch版本【应用】" class="headerlink" title="2.2减肥计划switch版本【应用】"></a>2.2减肥计划switch版本【应用】</h3><h4 id="2-2-1案例需求"><a href="#2-2-1案例需求" class="headerlink" title="2.2.1案例需求"></a>2.2.1案例需求</h4><p>​    输入星期数，显示今天的减肥活动<br>​          周一：跑步<br>​          周二：游泳<br>​          周三：慢走<br>​          周四：动感单车<br>​          周五：拳击<br>​          周六：爬山<br>​          周日：好好吃一顿</p>
+<h4 id="2-2-2代码实现"><a href="#2-2-2代码实现" class="headerlink" title="2.2.2代码实现"></a>2.2.2代码实现</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">    思路：</span></span><br><span class="line"><span class="comment">        1:键盘录入一个星期数，用一个变量接收</span></span><br><span class="line"><span class="comment">        2:对星期数进行判断，这里用 switch 语句实现</span></span><br><span class="line"><span class="comment">        3:在对应的语句控制中输出对应的减肥活动</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">    导包：</span></span><br><span class="line"><span class="comment">        1:手动导包  import java.util.Scanner;</span></span><br><span class="line"><span class="comment">        2:快捷键导包 Alt+Enter</span></span><br><span class="line"><span class="comment">        3:自动导包</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test02</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//键盘录入一个星期数，用一个变量接收</span></span><br><span class="line">        Scanner sc = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line"></span><br><span class="line">        System.out.println(<span class="string">&quot;请输入一个星期数：&quot;</span>);</span><br><span class="line">        <span class="keyword">int</span> week = sc.nextInt();</span><br><span class="line"></span><br><span class="line">        <span class="comment">//对星期数进行判断，这里用 switch 语句实现</span></span><br><span class="line">        <span class="keyword">switch</span> (week) &#123;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">                System.out.println(<span class="string">&quot;跑步&quot;</span>);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">                System.out.println(<span class="string">&quot;游泳&quot;</span>);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">3</span>:</span><br><span class="line">                System.out.println(<span class="string">&quot;慢走&quot;</span>);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">4</span>:</span><br><span class="line">                System.out.println(<span class="string">&quot;动感单车&quot;</span>);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">5</span>:</span><br><span class="line">                System.out.println(<span class="string">&quot;拳击&quot;</span>);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">6</span>:</span><br><span class="line">                System.out.println(<span class="string">&quot;爬山&quot;</span>);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">7</span>:</span><br><span class="line">                System.out.println(<span class="string">&quot;好好吃一顿&quot;</span>);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">default</span>:</span><br><span class="line">                System.out.println(<span class="string">&quot;你输入的星期数有误&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-3逢七跳过【应用】"><a href="#2-3逢七跳过【应用】" class="headerlink" title="2.3逢七跳过【应用】"></a>2.3逢七跳过【应用】</h3><h4 id="2-3-1案例需求"><a href="#2-3-1案例需求" class="headerlink" title="2.3.1案例需求"></a>2.3.1案例需求</h4><p>​    朋友聚会的时候可能会玩一个游戏：逢七过。<br>​        规则是：从任意一个数字开始报数，当你要报的数字包含7或者是7的倍数时都要说：过。<br>​        为了帮助大家更好的玩这个游戏，这里我们直接在控制台打印出1-100之间的满足逢七必过规则的数据。<br>​        这样，大家将来在玩游戏的时候，就知道哪些数据要说：过。    </p>
+<h4 id="2-3-2代码实现"><a href="#2-3-2代码实现" class="headerlink" title="2.3.2代码实现"></a>2.3.2代码实现</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">    思路：</span></span><br><span class="line"><span class="comment">        1:数据在1-100之间，用for循环实现数据的获取</span></span><br><span class="line"><span class="comment">        2:根据规则，用if语句实现数据的判断：要么个位是7，要么十位是7，要么能够被7整除</span></span><br><span class="line"><span class="comment">        3:在控制台输出满足规则的数据</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test03</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//数据在1-100之间，用for循环实现数据的获取</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> x=<span class="number">1</span>; x&lt;=<span class="number">100</span>; x++) &#123;</span><br><span class="line">            <span class="comment">//根据规则，用if语句实现数据的判断：要么个位是7，要么十位是7，要么能够被7整除</span></span><br><span class="line">            <span class="keyword">if</span>(x%<span class="number">10</span>==<span class="number">7</span> || x/<span class="number">10</span>%<span class="number">10</span>==<span class="number">7</span> || x%<span class="number">7</span>==<span class="number">0</span>) &#123;</span><br><span class="line">                <span class="comment">//在控制台输出满足规则的数据</span></span><br><span class="line">                System.out.println(x);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-4不死神兔【应用】"><a href="#2-4不死神兔【应用】" class="headerlink" title="2.4不死神兔【应用】"></a>2.4不死神兔【应用】</h3><h4 id="2-4-1案例需求"><a href="#2-4-1案例需求" class="headerlink" title="2.4.1案例需求"></a>2.4.1案例需求</h4><p>​    有一对兔子，从出生后第3个月起每个月都生一对兔子，小兔子长到第三个月后每个月又生一对兔子，<br>​        假如兔子都不死，问第二十个月的兔子对数为多少？    </p>
+<h4 id="2-4-2代码实现"><a href="#2-4-2代码实现" class="headerlink" title="2.4.2代码实现"></a>2.4.2代码实现</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">   思路：</span></span><br><span class="line"><span class="comment">        1:为了存储多个月的兔子对数，定义一个数组，用动态初始化完成数组元素的初始化，长度为20</span></span><br><span class="line"><span class="comment">        2:因为第1个月，第2个月兔子的对数是已知的，都是1，所以数组的第1个元素，第2个元素值也都是1</span></span><br><span class="line"><span class="comment">        3:用循环实现计算每个月的兔子对数</span></span><br><span class="line"><span class="comment">        4:输出数组中最后一个元素的值，就是第20个月的兔子对数</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test04</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//为了存储多个月的兔子对数，定义一个数组，用动态初始化完成数组元素的初始化，长度为20</span></span><br><span class="line">        <span class="keyword">int</span>[] arr = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">20</span>];</span><br><span class="line"></span><br><span class="line">        <span class="comment">//因为第1个月，第2个月兔子的对数是已知的，都是1，所以数组的第1个元素，第2个元素值也都是1</span></span><br><span class="line">        arr[<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">        arr[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//用循环实现计算每个月的兔子对数</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> x=<span class="number">2</span>; x&lt;arr.length; x++) &#123;</span><br><span class="line">            arr[x] = arr[x-<span class="number">2</span>] + arr[x-<span class="number">1</span>];</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//输出数组中最后一个元素的值，就是第20个月的兔子对数</span></span><br><span class="line">        System.out.println(<span class="string">&quot;第二十个月兔子的对数是：&quot;</span> + arr[<span class="number">19</span>]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-5百钱白鸡【应用】"><a href="#2-5百钱白鸡【应用】" class="headerlink" title="2.5百钱白鸡【应用】"></a>2.5百钱白鸡【应用】</h3><h4 id="2-5-1案例需求"><a href="#2-5-1案例需求" class="headerlink" title="2.5.1案例需求"></a>2.5.1案例需求</h4><p>​    我国古代数学家张丘建在《算经》一书中提出的数学问题：鸡翁一值钱五，鸡母一值钱三，鸡雏三值钱一。<br>​        百钱买百鸡，问鸡翁、鸡母、鸡雏各几何？</p>
+<h4 id="2-5-2代码实现"><a href="#2-5-2代码实现" class="headerlink" title="2.5.2代码实现"></a>2.5.2代码实现</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">    思路：</span></span><br><span class="line"><span class="comment">        1:第1层循环，用于表示鸡翁的范围，初始化表达式的变量定义为 x=0，判断条件是x&lt;=20</span></span><br><span class="line"><span class="comment">        2:第2层循环，用于表示鸡母的范围，初始化表达式的变量定义为 y=0，判断条件是y&lt;=33</span></span><br><span class="line"><span class="comment">        3:这个时候，用于表示鸡雏的变量 z = 100 – x – y</span></span><br><span class="line"><span class="comment">        4:判断表达式 z%3==0 和表达式 5*x + 3*y + z/3 = 100 是否同时成立，如果成立，输出对应的 x，y，z 的值，就是对应的鸡翁，鸡母，鸡雏的值</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test05</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//第1层循环，用于表示鸡翁的范围，初始化表达式的变量定义为 x=0，判断条件是x&lt;=20</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> x=<span class="number">0</span>; x&lt;=<span class="number">20</span>; x++) &#123;</span><br><span class="line">            <span class="comment">//第2层循环，用于表示鸡母的范围，初始化表达式的变量定义为 y=0，判断条件是y&lt;=33</span></span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> y=<span class="number">0</span>; y&lt;=<span class="number">33</span>; y++) &#123;</span><br><span class="line">                <span class="comment">//这个时候，用于表示鸡雏的变量 z = 100 – x – y</span></span><br><span class="line">                <span class="keyword">int</span> z = <span class="number">100</span> - x - y;</span><br><span class="line"></span><br><span class="line">                <span class="comment">//判断表达式 z%3==0 和表达式 5*x + 3*y + z/3 = 100 是否同时成立</span></span><br><span class="line">                <span class="keyword">if</span>(z%<span class="number">3</span>==<span class="number">0</span> &amp;&amp; <span class="number">5</span>*x+<span class="number">3</span>*y+z/<span class="number">3</span>==<span class="number">100</span>) &#123;</span><br><span class="line">                    System.out.println(x+<span class="string">&quot;,&quot;</span>+y+<span class="string">&quot;,&quot;</span>+z);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-6数组元素求和【应用】"><a href="#2-6数组元素求和【应用】" class="headerlink" title="2.6数组元素求和【应用】"></a>2.6数组元素求和【应用】</h3><h4 id="2-6-1案例需求"><a href="#2-6-1案例需求" class="headerlink" title="2.6.1案例需求"></a>2.6.1案例需求</h4><p>​    有这样的一个数组，元素是{68,27,95,88,171,996,51,210}。求出该数组中满足要求的元素和，<br>​        要求是：求和的元素个位和十位都不能是7，并且只能是偶数</p>
+<h4 id="2-6-2代码实现"><a href="#2-6-2代码实现" class="headerlink" title="2.6.2代码实现"></a>2.6.2代码实现</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">   思路：</span></span><br><span class="line"><span class="comment">        1:定义一个数组，用静态初始化完成数组元素的初始化</span></span><br><span class="line"><span class="comment">        2:定义一个求和变量，初始值是0</span></span><br><span class="line"><span class="comment">        3:遍历数组，获取到数组中的每一个元素</span></span><br><span class="line"><span class="comment">        4:判断该元素是否满足条件，如果满足条件就累加</span></span><br><span class="line"><span class="comment">        5:输出求和变量的值</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test06</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//定义一个数组，用静态初始化完成数组元素的初始化</span></span><br><span class="line">        <span class="keyword">int</span>[] arr = &#123;<span class="number">68</span>, <span class="number">27</span>, <span class="number">95</span>, <span class="number">88</span>, <span class="number">171</span>, <span class="number">996</span>, <span class="number">51</span>, <span class="number">210</span>&#125;;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//定义一个求和变量，初始值是0</span></span><br><span class="line">        <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//遍历数组，获取到数组中的每一个元素</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> x=<span class="number">0</span>; x&lt;arr.length; x++) &#123;</span><br><span class="line">            <span class="comment">//判断该元素是否满足条件，如果满足条件就累加</span></span><br><span class="line">            <span class="keyword">if</span>(arr[x]%<span class="number">10</span>!=<span class="number">7</span> &amp;&amp; arr[x]/<span class="number">10</span>%<span class="number">10</span>!=<span class="number">7</span> &amp;&amp; arr[x]%<span class="number">2</span>==<span class="number">0</span>) &#123;</span><br><span class="line">                sum += arr[x];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//输出求和变量的值</span></span><br><span class="line">        System.out.println(<span class="string">&quot;sum:&quot;</span> + sum);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-7判断两个数组是否相同【应用】"><a href="#2-7判断两个数组是否相同【应用】" class="headerlink" title="2.7判断两个数组是否相同【应用】"></a>2.7判断两个数组是否相同【应用】</h3><h4 id="2-7-1案例需求"><a href="#2-7-1案例需求" class="headerlink" title="2.7.1案例需求"></a>2.7.1案例需求</h4><p>​    定义一个方法，用于比较两个数组的内容是否相同</p>
+<h4 id="2-7-2代码实现"><a href="#2-7-2代码实现" class="headerlink" title="2.7.2代码实现"></a>2.7.2代码实现</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">    思路：</span></span><br><span class="line"><span class="comment">        1:定义两个数组，分别使用静态初始化完成数组元素的初始化</span></span><br><span class="line"><span class="comment">        2:定义一个方法，用于比较两个数组的内容是否相同</span></span><br><span class="line"><span class="comment">        3:比较两个数组的内容是否相同，按照下面的步骤实现就可以了</span></span><br><span class="line"><span class="comment">            首先比较数组长度，如果长度不相同，数组内容肯定不相同，返回false</span></span><br><span class="line"><span class="comment">            其次遍历，比较两个数组中的每一个元素，只要有元素不相同，返回false</span></span><br><span class="line"><span class="comment">            最后循环遍历结束后，返回true</span></span><br><span class="line"><span class="comment">        4:调用方法，用变量接收</span></span><br><span class="line"><span class="comment">        5:输出结果</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test07</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//定义两个数组，分别使用静态初始化完成数组元素的初始化</span></span><br><span class="line">        <span class="keyword">int</span>[] arr = &#123;<span class="number">11</span>, <span class="number">22</span>, <span class="number">33</span>, <span class="number">44</span>, <span class="number">55</span>&#125;;</span><br><span class="line">        <span class="comment">//int[] arr2 = &#123;11, 22, 33, 44, 55&#125;;</span></span><br><span class="line">        <span class="keyword">int</span>[] arr2 = &#123;<span class="number">11</span>, <span class="number">22</span>, <span class="number">33</span>, <span class="number">44</span>, <span class="number">5</span>&#125;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="comment">//调用方法，用变量接收</span></span><br><span class="line">        <span class="keyword">boolean</span> flag = compare(arr,arr2);</span><br><span class="line">        <span class="comment">//输出结果</span></span><br><span class="line">        System.out.println(flag);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//定义一个方法，用于比较两个数组的内容是否相同</span></span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">        两个明确：</span></span><br><span class="line"><span class="comment">            返回值类型：boolean</span></span><br><span class="line"><span class="comment">            参数：int[] arr, int[] arr2</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">compare</span><span class="params">(<span class="keyword">int</span>[] arr, <span class="keyword">int</span>[] arr2)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//首先比较数组长度，如果长度不相同，数组内容肯定不相同，返回false</span></span><br><span class="line">        <span class="keyword">if</span>(arr.length != arr2.length) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//其次遍历，比较两个数组中的每一个元素，只要有元素不相同，返回false</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> x=<span class="number">0</span>; x&lt;arr.length; x++) &#123;</span><br><span class="line">            <span class="keyword">if</span>(arr[x] != arr2[x]) &#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//最后循环遍历结束后，返回true</span></span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-8查找元素在数组中出现的索引位置【应用】"><a href="#2-8查找元素在数组中出现的索引位置【应用】" class="headerlink" title="2.8查找元素在数组中出现的索引位置【应用】"></a>2.8查找元素在数组中出现的索引位置【应用】</h3><h4 id="2-8-1案例需求"><a href="#2-8-1案例需求" class="headerlink" title="2.8.1案例需求"></a>2.8.1案例需求</h4><p>​    已知一个数组 arr = {19, 28, 37, 46, 50}; 键盘录入一个数据，查找该数据在数组中的索引。</p>
+<p>​    并在控制台输出找到的索引值。如果没有查找到，则输出-1</p>
+<h4 id="2-8-2代码实现"><a href="#2-8-2代码实现" class="headerlink" title="2.8.2代码实现"></a>2.8.2代码实现</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">    思路：</span></span><br><span class="line"><span class="comment">        1:定义一个数组，用静态初始化完成数组元素的初始化</span></span><br><span class="line"><span class="comment">        2:键盘录入要查找的数据，用一个变量接收</span></span><br><span class="line"><span class="comment">        3:定义一个索引变量，初始值为-1</span></span><br><span class="line"><span class="comment">        4:遍历数组，获取到数组中的每一个元素</span></span><br><span class="line"><span class="comment">        5:拿键盘录入的数据和数组中的每一个元素进行比较，如果值相同，就把该值对应的索引赋值给索引变量,并结束循环</span></span><br><span class="line"><span class="comment">        6:输出索引变量</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test08</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//定义一个数组，用静态初始化完成数组元素的初始化</span></span><br><span class="line">        <span class="keyword">int</span>[] arr = &#123;<span class="number">19</span>, <span class="number">28</span>, <span class="number">37</span>, <span class="number">46</span>, <span class="number">50</span>&#125;;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//键盘录入要查找的数据，用一个变量接收</span></span><br><span class="line">        Scanner sc = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">        System.out.println(<span class="string">&quot;请输入要查找的数据：&quot;</span>);</span><br><span class="line">        <span class="keyword">int</span> number = sc.nextInt();</span><br><span class="line"></span><br><span class="line">        <span class="comment">//调用方法</span></span><br><span class="line">        <span class="keyword">int</span> index = getIndex(arr, number);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//输出索引变量</span></span><br><span class="line">        System.out.println(<span class="string">&quot;index: &quot;</span> + index);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//查找指定的数据在数组中的索引</span></span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">        两个明确：</span></span><br><span class="line"><span class="comment">            返回值类型：int</span></span><br><span class="line"><span class="comment">            参数：int[] arr, int number</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">getIndex</span><span class="params">(<span class="keyword">int</span>[] arr, <span class="keyword">int</span> number)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//定义一个索引变量，初始值为-1</span></span><br><span class="line">        <span class="keyword">int</span> index = -<span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//遍历数组，获取到数组中的每一个元素</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> x=<span class="number">0</span>; x&lt;arr.length; x++) &#123;</span><br><span class="line">            <span class="comment">//拿键盘录入的数据和数组中的每一个元素进行比较，如果值相同，就把该值对应的索引赋值给索引变量,并结束循环</span></span><br><span class="line">            <span class="keyword">if</span>(arr[x] == number) &#123;</span><br><span class="line">                index = x;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//返回索引</span></span><br><span class="line">        <span class="keyword">return</span> index;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-9数组元素反转【应用】"><a href="#2-9数组元素反转【应用】" class="headerlink" title="2.9数组元素反转【应用】"></a>2.9数组元素反转【应用】</h3><h4 id="2-9-1案例需求"><a href="#2-9-1案例需求" class="headerlink" title="2.9.1案例需求"></a>2.9.1案例需求</h4><p>​    已知一个数组 arr = {19, 28, 37, 46, 50}; 用程序实现把数组中的元素值交换，<br>​        交换后的数组 arr = {50, 46, 37, 28, 19}; 并在控制台输出交换后的数组元素。</p>
+<h4 id="2-9-2代码实现"><a href="#2-9-2代码实现" class="headerlink" title="2.9.2代码实现"></a>2.9.2代码实现</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">    思路：</span></span><br><span class="line"><span class="comment">        1:定义一个数组，用静态初始化完成数组元素的初始化</span></span><br><span class="line"><span class="comment">        2:循环遍历数组，这一次初始化语句定义两个索引变量，判断条件是开始索引小于等于结束索引</span></span><br><span class="line"><span class="comment">        3:变量交换</span></span><br><span class="line"><span class="comment">        4:遍历数组</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test09</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//定义一个数组，用静态初始化完成数组元素的初始化</span></span><br><span class="line">        <span class="keyword">int</span>[] arr = &#123;<span class="number">19</span>, <span class="number">28</span>, <span class="number">37</span>, <span class="number">46</span>, <span class="number">50</span>&#125;;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//调用反转的方法</span></span><br><span class="line">        reverse(arr);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//遍历数组</span></span><br><span class="line">        printArray(arr);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">        两个明确：</span></span><br><span class="line"><span class="comment">            返回值类型：void</span></span><br><span class="line"><span class="comment">            参数：int[] arr</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">reverse</span><span class="params">(<span class="keyword">int</span>[] arr)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//循环遍历数组，这一次初始化语句定义两个索引变量，判断条件是开始索引小于等于结束索引</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> start = <span class="number">0</span>, end = arr.length - <span class="number">1</span>; start &lt;= end; start++, end--) &#123;</span><br><span class="line">            <span class="comment">//变量交换</span></span><br><span class="line">            <span class="keyword">int</span> temp = arr[start];</span><br><span class="line">            arr[start] = arr[end];</span><br><span class="line">            arr[end] = temp;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">        两个明确：</span></span><br><span class="line"><span class="comment">            返回值类型：void</span></span><br><span class="line"><span class="comment">            参数：int[] arr</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">printArray</span><span class="params">(<span class="keyword">int</span>[] arr)</span> </span>&#123;</span><br><span class="line">        System.out.print(<span class="string">&quot;[&quot;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> x = <span class="number">0</span>; x &lt; arr.length; x++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (x == arr.length - <span class="number">1</span>) &#123;</span><br><span class="line">                System.out.print(arr[x]);</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                System.out.print(arr[x] + <span class="string">&quot;, &quot;</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        System.out.println(<span class="string">&quot;]&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-10评委打分【应用】"><a href="#2-10评委打分【应用】" class="headerlink" title="2.10评委打分【应用】"></a>2.10评委打分【应用】</h3><h4 id="2-10-1案例需求"><a href="#2-10-1案例需求" class="headerlink" title="2.10.1案例需求"></a>2.10.1案例需求</h4><p>​    在编程竞赛中，有6个评委为参赛的选手打分，分数为0-100的整数分。<br>​        选手的最后得分为：去掉一个最高分和一个最低分后 的4个评委平均值 (不考虑小数部分)。</p>
+<h4 id="2-10-2代码实现"><a href="#2-10-2代码实现" class="headerlink" title="2.10.2代码实现"></a>2.10.2代码实现</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">    思路：</span></span><br><span class="line"><span class="comment">        1:定义一个数组，用动态初始化完成数组元素的初始化，长度为6</span></span><br><span class="line"><span class="comment">        2:键盘录入评委分数</span></span><br><span class="line"><span class="comment">        3:由于是6个评委打分，所以，接收评委分数的操作，用循环改进</span></span><br><span class="line"><span class="comment">        4:定义方法实现获取数组中的最高分(数组最大值)，调用方法</span></span><br><span class="line"><span class="comment">        5:定义方法实现获取数组中的最低分(数组最小值) ，调用方法</span></span><br><span class="line"><span class="comment">        6:定义方法实现获取数组中的所有元素的和(数组元素求和) ，调用方法</span></span><br><span class="line"><span class="comment">        7:按照计算规则进行计算得到平均分</span></span><br><span class="line"><span class="comment">        8:输出平均分</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test10</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//定义一个数组，用动态初始化完成数组元素的初始化，长度为6</span></span><br><span class="line">        <span class="keyword">int</span>[] arr = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">6</span>];</span><br><span class="line"></span><br><span class="line">        <span class="comment">//键盘录入评委分数</span></span><br><span class="line">        Scanner sc = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//由于是6个评委打分，所以，接收评委分数的操作，用循环改进</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> x=<span class="number">0</span>; x&lt;arr.length; x++) &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;请输入第&quot;</span> + (x + <span class="number">1</span>) + <span class="string">&quot;个评委的打分：&quot;</span>);</span><br><span class="line">            arr[x] = sc.nextInt();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//printArray(arr);</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">//定义方法实现获取数组中的最高分(数组最大值)，调用方法</span></span><br><span class="line">        <span class="keyword">int</span> max = getMax(arr);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//定义方法实现获取数组中的最低分(数组最小值) ，调用方法</span></span><br><span class="line">        <span class="keyword">int</span> min = getMin(arr);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//定义方法实现获取数组中的所有元素的和(数组元素求和) ，调用方法</span></span><br><span class="line">        <span class="keyword">int</span> sum = getSum(arr);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//按照计算规则进行计算得到平均分</span></span><br><span class="line">        <span class="keyword">int</span> avg = (sum - max - min) / (arr.length - <span class="number">2</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//输出平均分</span></span><br><span class="line">        System.out.println(<span class="string">&quot;选手的最终得分是：&quot;</span> + avg);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">        两个明确：</span></span><br><span class="line"><span class="comment">            返回值类型：int</span></span><br><span class="line"><span class="comment">            参数：int[] arr</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">getSum</span><span class="params">(<span class="keyword">int</span>[] arr)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> x=<span class="number">0</span>; x&lt;arr.length; x++) &#123;</span><br><span class="line">            sum += arr[x];</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> sum;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">        两个明确：</span></span><br><span class="line"><span class="comment">            返回值类型：int</span></span><br><span class="line"><span class="comment">            参数：int[] arr</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">getMin</span><span class="params">(<span class="keyword">int</span>[] arr)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> min = arr[<span class="number">0</span>];</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> x=<span class="number">1</span>; x&lt;arr.length; x++) &#123;</span><br><span class="line">            <span class="keyword">if</span>(arr[x] &lt; min) &#123;</span><br><span class="line">                min = arr[x];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> min;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">        两个明确：</span></span><br><span class="line"><span class="comment">            返回值类型：int</span></span><br><span class="line"><span class="comment">            参数：int[] arr</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">getMax</span><span class="params">(<span class="keyword">int</span>[] arr)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> max = arr[<span class="number">0</span>];</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> x=<span class="number">1</span>; x&lt;arr.length; x++) &#123;</span><br><span class="line">            <span class="keyword">if</span>(arr[x] &gt; max) &#123;</span><br><span class="line">                max = arr[x];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> max;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//遍历数组</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">printArray</span><span class="params">(<span class="keyword">int</span>[] arr)</span> </span>&#123;</span><br><span class="line">        System.out.print(<span class="string">&quot;[&quot;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> x = <span class="number">0</span>; x &lt; arr.length; x++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (x == arr.length - <span class="number">1</span>) &#123;</span><br><span class="line">                System.out.print(arr[x]);</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                System.out.print(arr[x] + <span class="string">&quot;, &quot;</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        System.out.println(<span class="string">&quot;]&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/08/05/Java/JavaSE/190805%E6%96%B9%E6%B3%95/" rel="next" title="方法">
+                <i class="fa fa-chevron-left"></i> 方法
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/08/12/Java/JavaSE/190812%E5%AD%97%E7%AC%A6%E4%B8%B2/" rel="prev" title="字符串">
+                字符串 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="" />
+            
+              <p class="site-author-name" itemprop="name"></p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">54</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/weixuz" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                查阅链接
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.runoob.com/" title="菜鸟教程" target="_blank">菜鸟教程</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://jingzhunyun.com/" title="精准云工具" target="_blank">精准云工具</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.toolnb.com/" title="爱资料工具" target="_blank">爱资料工具</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.getitfree.cn/" title="正版中国" target="_blank">正版中国</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://bbs.pediy.com/" title="看雪安全论坛" target="_blank">看雪安全论坛</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://24mail.chacuo.net/" title="临时邮箱" target="_blank">临时邮箱</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.w3school.com.cn/" title="w3c在线教程" target="_blank">w3c在线教程</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://developer.mozilla.org/zh-CN/" title="MDN web文档" target="_blank">MDN web文档</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://cn.vuejs.org/v2/guide/" title="Vue.js在线教程" target="_blank">Vue.js在线教程</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.jq22.com/" title="jquery插件库" target="_blank">jquery插件库</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.htmleaf.com/" title="jquery之家" target="_blank">jquery之家</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.nowcoder.com/ta/coding-interviews" title="牛客网-剑指offer编程题" target="_blank">牛客网-剑指offer编程题</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://getbootstrap.com" title="bootstrap" target="_blank">bootstrap</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://v3.bootcss.com/components/" title="bootstrap中文" target="_blank">bootstrap中文</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://icomoon.io/" title="文字图标" target="_blank">文字图标</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-Debug%E6%A8%A1%E5%BC%8F"><span class="nav-text">1.Debug模式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1%E4%BB%80%E4%B9%88%E6%98%AFDebug%E6%A8%A1%E5%BC%8F%E3%80%90%E7%90%86%E8%A7%A3%E3%80%91"><span class="nav-text">1.1什么是Debug模式【理解】</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2Debug%E6%A8%A1%E5%BC%8F%E6%93%8D%E4%BD%9C%E6%B5%81%E7%A8%8B%E3%80%90%E5%BA%94%E7%94%A8%E3%80%91"><span class="nav-text">1.2Debug模式操作流程【应用】</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E5%9F%BA%E7%A1%80%E7%BB%83%E4%B9%A0"><span class="nav-text">2.基础练习</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1%E5%87%8F%E8%82%A5%E8%AE%A1%E5%88%92if%E7%89%88%E6%9C%AC%E3%80%90%E5%BA%94%E7%94%A8%E3%80%91"><span class="nav-text">2.1减肥计划if版本【应用】</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-1%E6%A1%88%E4%BE%8B%E9%9C%80%E6%B1%82"><span class="nav-text">2.1.1案例需求</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-2%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0"><span class="nav-text">2.1.2代码实现</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2%E5%87%8F%E8%82%A5%E8%AE%A1%E5%88%92switch%E7%89%88%E6%9C%AC%E3%80%90%E5%BA%94%E7%94%A8%E3%80%91"><span class="nav-text">2.2减肥计划switch版本【应用】</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-1%E6%A1%88%E4%BE%8B%E9%9C%80%E6%B1%82"><span class="nav-text">2.2.1案例需求</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-2%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0"><span class="nav-text">2.2.2代码实现</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3%E9%80%A2%E4%B8%83%E8%B7%B3%E8%BF%87%E3%80%90%E5%BA%94%E7%94%A8%E3%80%91"><span class="nav-text">2.3逢七跳过【应用】</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3-1%E6%A1%88%E4%BE%8B%E9%9C%80%E6%B1%82"><span class="nav-text">2.3.1案例需求</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3-2%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0"><span class="nav-text">2.3.2代码实现</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-4%E4%B8%8D%E6%AD%BB%E7%A5%9E%E5%85%94%E3%80%90%E5%BA%94%E7%94%A8%E3%80%91"><span class="nav-text">2.4不死神兔【应用】</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-4-1%E6%A1%88%E4%BE%8B%E9%9C%80%E6%B1%82"><span class="nav-text">2.4.1案例需求</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-4-2%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0"><span class="nav-text">2.4.2代码实现</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-5%E7%99%BE%E9%92%B1%E7%99%BD%E9%B8%A1%E3%80%90%E5%BA%94%E7%94%A8%E3%80%91"><span class="nav-text">2.5百钱白鸡【应用】</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-5-1%E6%A1%88%E4%BE%8B%E9%9C%80%E6%B1%82"><span class="nav-text">2.5.1案例需求</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-5-2%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0"><span class="nav-text">2.5.2代码实现</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-6%E6%95%B0%E7%BB%84%E5%85%83%E7%B4%A0%E6%B1%82%E5%92%8C%E3%80%90%E5%BA%94%E7%94%A8%E3%80%91"><span class="nav-text">2.6数组元素求和【应用】</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-6-1%E6%A1%88%E4%BE%8B%E9%9C%80%E6%B1%82"><span class="nav-text">2.6.1案例需求</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-6-2%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0"><span class="nav-text">2.6.2代码实现</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-7%E5%88%A4%E6%96%AD%E4%B8%A4%E4%B8%AA%E6%95%B0%E7%BB%84%E6%98%AF%E5%90%A6%E7%9B%B8%E5%90%8C%E3%80%90%E5%BA%94%E7%94%A8%E3%80%91"><span class="nav-text">2.7判断两个数组是否相同【应用】</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-7-1%E6%A1%88%E4%BE%8B%E9%9C%80%E6%B1%82"><span class="nav-text">2.7.1案例需求</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-7-2%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0"><span class="nav-text">2.7.2代码实现</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-8%E6%9F%A5%E6%89%BE%E5%85%83%E7%B4%A0%E5%9C%A8%E6%95%B0%E7%BB%84%E4%B8%AD%E5%87%BA%E7%8E%B0%E7%9A%84%E7%B4%A2%E5%BC%95%E4%BD%8D%E7%BD%AE%E3%80%90%E5%BA%94%E7%94%A8%E3%80%91"><span class="nav-text">2.8查找元素在数组中出现的索引位置【应用】</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-8-1%E6%A1%88%E4%BE%8B%E9%9C%80%E6%B1%82"><span class="nav-text">2.8.1案例需求</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-8-2%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0"><span class="nav-text">2.8.2代码实现</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-9%E6%95%B0%E7%BB%84%E5%85%83%E7%B4%A0%E5%8F%8D%E8%BD%AC%E3%80%90%E5%BA%94%E7%94%A8%E3%80%91"><span class="nav-text">2.9数组元素反转【应用】</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-9-1%E6%A1%88%E4%BE%8B%E9%9C%80%E6%B1%82"><span class="nav-text">2.9.1案例需求</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-9-2%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0"><span class="nav-text">2.9.2代码实现</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-10%E8%AF%84%E5%A7%94%E6%89%93%E5%88%86%E3%80%90%E5%BA%94%E7%94%A8%E3%80%91"><span class="nav-text">2.10评委打分【应用】</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-10-1%E6%A1%88%E4%BE%8B%E9%9C%80%E6%B1%82"><span class="nav-text">2.10.1案例需求</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-10-2%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0"><span class="nav-text">2.10.2代码实现</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2019 &mdash; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">weixuz</span>
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three-waves.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  	
+<!-- ҳ����С���� -->
+<script type="text/javascript" src="/js/src/clicklove.js"></script>
+</body>
+</html>

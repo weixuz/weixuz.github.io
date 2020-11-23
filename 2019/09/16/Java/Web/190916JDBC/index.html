@@ -1,0 +1,1245 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+  <link rel="manifest" href="/images/manifest.json">
+
+
+  <meta name="msapplication-config" content="/images/browserconfig.xml" />
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="JDBC：123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100101">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JDBC">
+<meta property="og:url" content="http://yoursite.com/2019/09/16/Java/Web/190916JDBC/index.html">
+<meta property="og:site_name" content="维旭的博客">
+<meta property="og:description" content="JDBC：123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100101">
+<meta property="og:locale">
+<meta property="article:published_time" content="2019-09-16T06:32:23.000Z">
+<meta property="article:modified_time" content="2020-11-23T06:45:32.198Z">
+<meta property="article:author" content="维旭">
+<meta name="twitter:card" content="summary">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/09/16/Java/Web/190916JDBC/"/>
+
+
+
+
+
+  <title>JDBC | 维旭的博客</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">维旭的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/16/Java/Web/190916JDBC/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="维旭的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">JDBC</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-16T14:32:23+08:00">
+                2019-09-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index">
+                    <span itemprop="name">Java学习笔记</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/Web/" itemprop="url" rel="index">
+                    <span itemprop="name">Web</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="JDBC："><a href="#JDBC：" class="headerlink" title="JDBC："></a>JDBC：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br></pre></td><td class="code"><pre><span class="line">1. 概念：Java DataBase Connectivity  Java 数据库连接， Java语言操作数据库</span><br><span class="line">	* JDBC本质：其实是官方（sun公司）定义的一套操作所有关系型数据库的规则，即接口。各个数据库厂商去实现这套接口，提供数据库驱动jar包。我们可以使用这套接口（JDBC）编程，真正执行的代码是驱动jar包中的实现类。</span><br><span class="line"></span><br><span class="line">2. 快速入门：</span><br><span class="line">	* 步骤：</span><br><span class="line">		1. 导入驱动jar包 mysql-connector-java-5.1.37-bin.jar</span><br><span class="line">			1.复制mysql-connector-java-5.1.37-bin.jar到项目的libs目录下</span><br><span class="line">			2.右键--&gt;Add As Library</span><br><span class="line">		2. 注册驱动</span><br><span class="line">		3. 获取数据库连接对象 Connection</span><br><span class="line">		4. 定义sql</span><br><span class="line">		5. 获取执行sql语句的对象 Statement</span><br><span class="line">		6. 执行sql，接受返回结果</span><br><span class="line">		7. 处理结果</span><br><span class="line">		8. 释放资源</span><br><span class="line"></span><br><span class="line">	* 代码实现：</span><br><span class="line">	  	&#x2F;&#x2F;1. 导入驱动jar包</span><br><span class="line">        &#x2F;&#x2F;2.注册驱动</span><br><span class="line">        Class.forName(&quot;com.mysql.jdbc.Driver&quot;);</span><br><span class="line">        &#x2F;&#x2F;3.获取数据库连接对象</span><br><span class="line">        Connection conn &#x3D; DriverManager.getConnection(&quot;jdbc:mysql:&#x2F;&#x2F;localhost:3306&#x2F;db3&quot;, &quot;root&quot;, &quot;root&quot;);</span><br><span class="line">        &#x2F;&#x2F;4.定义sql语句</span><br><span class="line">        String sql &#x3D; &quot;update account set balance &#x3D; 500 where id &#x3D; 1&quot;;</span><br><span class="line">        &#x2F;&#x2F;5.获取执行sql的对象 Statement</span><br><span class="line">        Statement stmt &#x3D; conn.createStatement();</span><br><span class="line">        &#x2F;&#x2F;6.执行sql</span><br><span class="line">        int count &#x3D; stmt.executeUpdate(sql);</span><br><span class="line">        &#x2F;&#x2F;7.处理结果</span><br><span class="line">        System.out.println(count);</span><br><span class="line">        &#x2F;&#x2F;8.释放资源</span><br><span class="line">        stmt.close();</span><br><span class="line">        conn.close();</span><br><span class="line"></span><br><span class="line">3. 详解各个对象：</span><br><span class="line">	1. DriverManager：驱动管理对象</span><br><span class="line">		* 功能：</span><br><span class="line">			1. 注册驱动：告诉程序该使用哪一个数据库驱动jar</span><br><span class="line">				static void registerDriver(Driver driver) :注册与给定的驱动程序 DriverManager 。 </span><br><span class="line">				写代码使用：  Class.forName(&quot;com.mysql.jdbc.Driver&quot;);</span><br><span class="line">				通过查看源码发现：在com.mysql.jdbc.Driver类中存在静态代码块</span><br><span class="line">				 static &#123;</span><br><span class="line">				        try &#123;</span><br><span class="line">				            java.sql.DriverManager.registerDriver(new Driver());</span><br><span class="line">				        &#125; catch (SQLException E) &#123;</span><br><span class="line">				            throw new RuntimeException(&quot;Can&#39;t register driver!&quot;);</span><br><span class="line">				        &#125;</span><br><span class="line">					&#125;</span><br><span class="line"></span><br><span class="line">				注意：mysql5之后的驱动jar包可以省略注册驱动的步骤。</span><br><span class="line">			2. 获取数据库连接：</span><br><span class="line">				* 方法：static Connection getConnection(String url, String user, String password) </span><br><span class="line">				* 参数：</span><br><span class="line">					* url：指定连接的路径</span><br><span class="line">						* 语法：jdbc:mysql:&#x2F;&#x2F;ip地址(域名):端口号&#x2F;数据库名称</span><br><span class="line">						* 例子：jdbc:mysql:&#x2F;&#x2F;localhost:3306&#x2F;db3</span><br><span class="line">						* 细节：如果连接的是本机mysql服务器，并且mysql服务默认端口是3306，则url可以简写为：jdbc:mysql:&#x2F;&#x2F;&#x2F;数据库名称</span><br><span class="line">					* user：用户名</span><br><span class="line">					* password：密码 </span><br><span class="line">	2. Connection：数据库连接对象</span><br><span class="line">		1. 功能：</span><br><span class="line">			1. 获取执行sql 的对象</span><br><span class="line">				* Statement createStatement()</span><br><span class="line">				* PreparedStatement prepareStatement(String sql)  </span><br><span class="line">			2. 管理事务：</span><br><span class="line">				* 开启事务：setAutoCommit(boolean autoCommit) ：调用该方法设置参数为false，即开启事务</span><br><span class="line">				* 提交事务：commit() </span><br><span class="line">				* 回滚事务：rollback() </span><br><span class="line">	3. Statement：执行sql的对象</span><br><span class="line">		1. 执行sql</span><br><span class="line">			1. boolean execute(String sql) ：可以执行任意的sql 了解 </span><br><span class="line">			2. int executeUpdate(String sql) ：执行DML（insert、update、delete）语句、DDL(create，alter、drop)语句</span><br><span class="line">				* 返回值：影响的行数，可以通过这个影响的行数判断DML语句是否执行成功 返回值&gt;0的则执行成功，反之，则失败。</span><br><span class="line">			3. ResultSet executeQuery(String sql)  ：执行DQL（select)语句</span><br><span class="line">		2. 练习：</span><br><span class="line">			1. account表 添加一条记录</span><br><span class="line">			2. account表 修改记录</span><br><span class="line">			3. account表 删除一条记录</span><br><span class="line"></span><br><span class="line">			代码：</span><br><span class="line">				Statement stmt &#x3D; null;</span><br><span class="line">		        Connection conn &#x3D; null;</span><br><span class="line">		        try &#123;</span><br><span class="line">		            &#x2F;&#x2F;1. 注册驱动</span><br><span class="line">		            Class.forName(&quot;com.mysql.jdbc.Driver&quot;);</span><br><span class="line">		            &#x2F;&#x2F;2. 定义sql</span><br><span class="line">		            String sql &#x3D; &quot;insert into account values(null,&#39;王五&#39;,3000)&quot;;</span><br><span class="line">		            &#x2F;&#x2F;3.获取Connection对象</span><br><span class="line">		            conn &#x3D; DriverManager.getConnection(&quot;jdbc:mysql:&#x2F;&#x2F;&#x2F;db3&quot;, &quot;root&quot;, &quot;root&quot;);</span><br><span class="line">		            &#x2F;&#x2F;4.获取执行sql的对象 Statement</span><br><span class="line">		            stmt &#x3D; conn.createStatement();</span><br><span class="line">		            &#x2F;&#x2F;5.执行sql</span><br><span class="line">		            int count &#x3D; stmt.executeUpdate(sql);&#x2F;&#x2F;影响的行数</span><br><span class="line">		            &#x2F;&#x2F;6.处理结果</span><br><span class="line">		            System.out.println(count);</span><br><span class="line">		            if(count &gt; 0)&#123;</span><br><span class="line">		                System.out.println(&quot;添加成功！&quot;);</span><br><span class="line">		            &#125;else&#123;</span><br><span class="line">		                System.out.println(&quot;添加失败！&quot;);</span><br><span class="line">		            &#125;</span><br><span class="line">		</span><br><span class="line">		        &#125; catch (ClassNotFoundException e) &#123;</span><br><span class="line">		            e.printStackTrace();</span><br><span class="line">		        &#125; catch (SQLException e) &#123;</span><br><span class="line">		            e.printStackTrace();</span><br><span class="line">		        &#125;finally &#123;</span><br><span class="line">		            &#x2F;&#x2F;stmt.close();</span><br><span class="line">		            &#x2F;&#x2F;7. 释放资源</span><br><span class="line">		            &#x2F;&#x2F;避免空指针异常</span><br><span class="line">		            if(stmt !&#x3D; null)&#123;</span><br><span class="line">		                try &#123;</span><br><span class="line">		                    stmt.close();</span><br><span class="line">		                &#125; catch (SQLException e) &#123;</span><br><span class="line">		                    e.printStackTrace();</span><br><span class="line">		                &#125;</span><br><span class="line">		            &#125;</span><br><span class="line">		</span><br><span class="line">		            if(conn !&#x3D; null)&#123;</span><br><span class="line">		                try &#123;</span><br><span class="line">		                    conn.close();</span><br><span class="line">		                &#125; catch (SQLException e) &#123;</span><br><span class="line">		                    e.printStackTrace();</span><br><span class="line">		                &#125;</span><br><span class="line">		            &#125;</span><br><span class="line">		        &#125;</span><br><span class="line">			</span><br><span class="line">	4. ResultSet：结果集对象,封装查询结果</span><br><span class="line">		* boolean next(): 游标向下移动一行，判断当前行是否是最后一行末尾(是否有数据)，如果是，则返回false，如果不是则返回true</span><br><span class="line">		* getXxx(参数):获取数据</span><br><span class="line">			* Xxx：代表数据类型   如： int getInt() ,	String getString()</span><br><span class="line">			* 参数：</span><br><span class="line">				1. int：代表列的编号,从1开始   如： getString(1)</span><br><span class="line">				2. String：代表列名称。 如： getDouble(&quot;balance&quot;)</span><br><span class="line">		</span><br><span class="line">		* 注意：</span><br><span class="line">			* 使用步骤：</span><br><span class="line">				1. 游标向下移动一行</span><br><span class="line">				2. 判断是否有数据</span><br><span class="line">				3. 获取数据</span><br><span class="line"></span><br><span class="line">			   &#x2F;&#x2F;循环判断游标是否是最后一行末尾。</span><br><span class="line">	            while(rs.next())&#123;</span><br><span class="line">	                &#x2F;&#x2F;获取数据</span><br><span class="line">	                &#x2F;&#x2F;6.2 获取数据</span><br><span class="line">	                int id &#x3D; rs.getInt(1);</span><br><span class="line">	                String name &#x3D; rs.getString(&quot;name&quot;);</span><br><span class="line">	                double balance &#x3D; rs.getDouble(3);</span><br><span class="line">	</span><br><span class="line">	                System.out.println(id + &quot;---&quot; + name + &quot;---&quot; + balance);</span><br><span class="line">	            &#125;</span><br><span class="line"></span><br><span class="line">		* 练习：</span><br><span class="line">			* 定义一个方法，查询emp表的数据将其封装为对象，然后装载集合，返回。</span><br><span class="line">				1. 定义Emp类</span><br><span class="line">				2. 定义方法 public List&lt;Emp&gt; findAll()&#123;&#125;</span><br><span class="line">				3. 实现方法 select * from emp;</span><br><span class="line">					</span><br><span class="line">	5. PreparedStatement：执行sql的对象</span><br><span class="line">		1. SQL注入问题：在拼接sql时，有一些sql的特殊关键字参与字符串的拼接。会造成安全性问题</span><br><span class="line">			1. 输入用户随便，输入密码：a&#39; or &#39;a&#39; &#x3D; &#39;a</span><br><span class="line">			2. sql：select * from user where username &#x3D; &#39;fhdsjkf&#39; and password &#x3D; &#39;a&#39; or &#39;a&#39; &#x3D; &#39;a&#39; </span><br><span class="line"></span><br><span class="line">		2. 解决sql注入问题：使用PreparedStatement对象来解决</span><br><span class="line">		3. 预编译的SQL：参数使用?作为占位符</span><br><span class="line">		4. 步骤：</span><br><span class="line">			1. 导入驱动jar包 mysql-connector-java-5.1.37-bin.jar</span><br><span class="line">			2. 注册驱动</span><br><span class="line">			3. 获取数据库连接对象 Connection</span><br><span class="line">			4. 定义sql</span><br><span class="line">				* 注意：sql的参数使用？作为占位符。 如：select * from user where username &#x3D; ? and password &#x3D; ?;</span><br><span class="line">			5. 获取执行sql语句的对象 PreparedStatement  Connection.prepareStatement(String sql) </span><br><span class="line">			6. 给？赋值：</span><br><span class="line">				* 方法： setXxx(参数1,参数2)</span><br><span class="line">					* 参数1：？的位置编号 从1 开始</span><br><span class="line">					* 参数2：？的值</span><br><span class="line">			7. 执行sql，接受返回结果，不需要传递sql语句</span><br><span class="line">			8. 处理结果</span><br><span class="line">			9. 释放资源</span><br><span class="line"></span><br><span class="line">		5. 注意：后期都会使用PreparedStatement来完成增删改查的所有操作</span><br><span class="line">			1. 可以防止SQL注入</span><br><span class="line">			2. 效率更高</span><br></pre></td></tr></table></figure>
+
+<h2 id="抽取JDBC工具类-：-JDBCUtils"><a href="#抽取JDBC工具类-：-JDBCUtils" class="headerlink" title="抽取JDBC工具类 ： JDBCUtils"></a>抽取JDBC工具类 ： JDBCUtils</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">* 目的：简化书写</span><br><span class="line">* 分析：</span><br><span class="line">	1. 注册驱动也抽取</span><br><span class="line">	2. 抽取一个方法获取连接对象</span><br><span class="line">		* 需求：不想传递参数（麻烦），还得保证工具类的通用性。</span><br><span class="line">		* 解决：配置文件</span><br><span class="line">			jdbc.properties</span><br><span class="line">				url&#x3D;</span><br><span class="line">				user&#x3D;</span><br><span class="line">				password&#x3D;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">	3. 抽取一个方法释放资源</span><br><span class="line"></span><br><span class="line">* 代码实现：</span><br><span class="line">	public class JDBCUtils &#123;</span><br><span class="line">    private static String url;</span><br><span class="line">    private static String user;</span><br><span class="line">    private static String password;</span><br><span class="line">    private static String driver;</span><br><span class="line">    &#x2F;**</span><br><span class="line">     * 文件的读取，只需要读取一次即可拿到这些值。使用静态代码块</span><br><span class="line">     *&#x2F;</span><br><span class="line">    static&#123;</span><br><span class="line">        &#x2F;&#x2F;读取资源文件，获取值。</span><br><span class="line"></span><br><span class="line">        try &#123;</span><br><span class="line">            &#x2F;&#x2F;1. 创建Properties集合类。</span><br><span class="line">            Properties pro &#x3D; new Properties();</span><br><span class="line"></span><br><span class="line">            &#x2F;&#x2F;获取src路径下的文件的方式---&gt;ClassLoader 类加载器</span><br><span class="line">            ClassLoader classLoader &#x3D; JDBCUtils.class.getClassLoader();</span><br><span class="line">            URL res  &#x3D; classLoader.getResource(&quot;jdbc.properties&quot;);</span><br><span class="line">            String path &#x3D; res.getPath();</span><br><span class="line">            System.out.println(path);&#x2F;&#x2F;&#x2F;D:&#x2F;IdeaProjects&#x2F;itcast&#x2F;out&#x2F;production&#x2F;day04_jdbc&#x2F;jdbc.properties</span><br><span class="line">            &#x2F;&#x2F;2. 加载文件</span><br><span class="line">           &#x2F;&#x2F; pro.load(new FileReader(&quot;D:\\IdeaProjects\\itcast\\day04_jdbc\\src\\jdbc.properties&quot;));</span><br><span class="line">            pro.load(new FileReader(path));</span><br><span class="line"></span><br><span class="line">            &#x2F;&#x2F;3. 获取数据，赋值</span><br><span class="line">            url &#x3D; pro.getProperty(&quot;url&quot;);</span><br><span class="line">            user &#x3D; pro.getProperty(&quot;user&quot;);</span><br><span class="line">            password &#x3D; pro.getProperty(&quot;password&quot;);</span><br><span class="line">            driver &#x3D; pro.getProperty(&quot;driver&quot;);</span><br><span class="line">            &#x2F;&#x2F;4. 注册驱动</span><br><span class="line">            Class.forName(driver);</span><br><span class="line">        &#125; catch (IOException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125; catch (ClassNotFoundException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p>​    </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;**</span><br><span class="line"> * 获取连接</span><br><span class="line"> * @return 连接对象</span><br><span class="line"> *&#x2F;</span><br><span class="line">public static Connection getConnection() throws SQLException &#123;</span><br><span class="line"></span><br><span class="line">    return DriverManager.getConnection(url, user, password);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;**</span><br><span class="line"> * 释放资源</span><br><span class="line"> * @param stmt</span><br><span class="line"> * @param conn</span><br><span class="line"> *&#x2F;</span><br><span class="line">public static void close(Statement stmt,Connection conn)&#123;</span><br><span class="line">    if( stmt !&#x3D; null)&#123;</span><br><span class="line">        try &#123;</span><br><span class="line">            stmt.close();</span><br><span class="line">        &#125; catch (SQLException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    if( conn !&#x3D; null)&#123;</span><br><span class="line">        try &#123;</span><br><span class="line">            conn.close();</span><br><span class="line">        &#125; catch (SQLException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>​    </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br></pre></td><td class="code"><pre><span class="line">    &#x2F;**</span><br><span class="line">     * 释放资源</span><br><span class="line">     * @param stmt</span><br><span class="line">     * @param conn</span><br><span class="line">     *&#x2F;</span><br><span class="line">    public static void close(ResultSet rs,Statement stmt, Connection conn)&#123;</span><br><span class="line">        if( rs !&#x3D; null)&#123;</span><br><span class="line">            try &#123;</span><br><span class="line">                rs.close();</span><br><span class="line">            &#125; catch (SQLException e) &#123;</span><br><span class="line">                e.printStackTrace();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        if( stmt !&#x3D; null)&#123;</span><br><span class="line">            try &#123;</span><br><span class="line">                stmt.close();</span><br><span class="line">            &#125; catch (SQLException e) &#123;</span><br><span class="line">                e.printStackTrace();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        if( conn !&#x3D; null)&#123;</span><br><span class="line">            try &#123;</span><br><span class="line">                conn.close();</span><br><span class="line">            &#125; catch (SQLException e) &#123;</span><br><span class="line">                e.printStackTrace();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">* 练习：</span><br><span class="line">	* 需求：</span><br><span class="line">		1. 通过键盘录入用户名和密码</span><br><span class="line">		2. 判断用户是否登录成功</span><br><span class="line">			* select * from user where username &#x3D; &quot;&quot; and password &#x3D; &quot;&quot;;</span><br><span class="line">			* 如果这个sql有查询结果，则成功，反之，则失败</span><br><span class="line"></span><br><span class="line">	* 步骤：</span><br><span class="line">		1. 创建数据库表 user</span><br><span class="line">			CREATE TABLE USER(</span><br><span class="line">				id INT PRIMARY KEY AUTO_INCREMENT,</span><br><span class="line">				username VARCHAR(32),</span><br><span class="line">				PASSWORD VARCHAR(32)</span><br><span class="line">			</span><br><span class="line">			);</span><br><span class="line"></span><br><span class="line">			INSERT INTO USER VALUES(NULL,&#39;zhangsan&#39;,&#39;123&#39;);</span><br><span class="line">			INSERT INTO USER VALUES(NULL,&#39;lisi&#39;,&#39;234&#39;);</span><br><span class="line"></span><br><span class="line">		2. 代码实现：</span><br><span class="line">			public class JDBCDemo9 &#123;</span><br><span class="line"></span><br><span class="line">			    public static void main(String[] args) &#123;</span><br><span class="line">			        &#x2F;&#x2F;1.键盘录入，接受用户名和密码</span><br><span class="line">			        Scanner sc &#x3D; new Scanner(System.in);</span><br><span class="line">			        System.out.println(&quot;请输入用户名：&quot;);</span><br><span class="line">			        String username &#x3D; sc.nextLine();</span><br><span class="line">			        System.out.println(&quot;请输入密码：&quot;);</span><br><span class="line">			        String password &#x3D; sc.nextLine();</span><br><span class="line">			        &#x2F;&#x2F;2.调用方法</span><br><span class="line">			        boolean flag &#x3D; new JDBCDemo9().login(username, password);</span><br><span class="line">			        &#x2F;&#x2F;3.判断结果，输出不同语句</span><br><span class="line">			        if(flag)&#123;</span><br><span class="line">			            &#x2F;&#x2F;登录成功</span><br><span class="line">			            System.out.println(&quot;登录成功！&quot;);</span><br><span class="line">			        &#125;else&#123;</span><br><span class="line">			            System.out.println(&quot;用户名或密码错误！&quot;);</span><br><span class="line">			        &#125;</span><br></pre></td></tr></table></figure>
+
+<p>​                </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>​<br>​                </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;**</span><br><span class="line"> * 登录方法</span><br><span class="line"> *&#x2F;</span><br><span class="line">public boolean login(String username ,String password)&#123;</span><br><span class="line">    if(username &#x3D;&#x3D; null || password &#x3D;&#x3D; null)&#123;</span><br><span class="line">        return false;</span><br><span class="line">    &#125;</span><br><span class="line">    &#x2F;&#x2F;连接数据库判断是否登录成功</span><br><span class="line">    Connection conn &#x3D; null;</span><br><span class="line">    Statement stmt &#x3D;  null;</span><br><span class="line">    ResultSet rs &#x3D; null;</span><br><span class="line">    &#x2F;&#x2F;1.获取连接</span><br><span class="line">    try &#123;</span><br><span class="line">        conn &#x3D;  JDBCUtils.getConnection();</span><br><span class="line">        &#x2F;&#x2F;2.定义sql</span><br><span class="line">        String sql &#x3D; &quot;select * from user where username &#x3D; &#39;&quot;+username+&quot;&#39; and password &#x3D; &#39;&quot;+password+&quot;&#39; &quot;;</span><br><span class="line">        &#x2F;&#x2F;3.获取执行sql的对象</span><br><span class="line">        stmt &#x3D; conn.createStatement();</span><br><span class="line">        &#x2F;&#x2F;4.执行查询</span><br><span class="line">        rs &#x3D; stmt.executeQuery(sql);</span><br><span class="line">        &#x2F;&#x2F;5.判断</span><br><span class="line">       &#x2F;* if(rs.next())&#123;&#x2F;&#x2F;如果有下一行，则返回true</span><br><span class="line">            return true;</span><br><span class="line">        &#125;else&#123;</span><br><span class="line">            return false;</span><br><span class="line">        &#125;*&#x2F;</span><br><span class="line">       return rs.next();&#x2F;&#x2F;如果有下一行，则返回true</span><br><span class="line">			</span><br><span class="line">    &#125; catch (SQLException e) &#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">    &#125;finally &#123;</span><br><span class="line">        JDBCUtils.close(rs,stmt,conn);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p>​                </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">        return false;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="JDBC控制事务："><a href="#JDBC控制事务：" class="headerlink" title="JDBC控制事务："></a>JDBC控制事务：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br></pre></td><td class="code"><pre><span class="line">1. 事务：一个包含多个步骤的业务操作。如果这个业务操作被事务管理，则这多个步骤要么同时成功，要么同时失败。</span><br><span class="line">2. 操作：</span><br><span class="line">	1. 开启事务</span><br><span class="line">	2. 提交事务</span><br><span class="line">	3. 回滚事务</span><br><span class="line">3. 使用Connection对象来管理事务</span><br><span class="line">	* 开启事务：setAutoCommit(boolean autoCommit) ：调用该方法设置参数为false，即开启事务</span><br><span class="line">		* 在执行sql之前开启事务</span><br><span class="line">	* 提交事务：commit() </span><br><span class="line">		* 当所有sql都执行完提交事务</span><br><span class="line">	* 回滚事务：rollback() </span><br><span class="line">		* 在catch中回滚事务</span><br><span class="line"></span><br><span class="line">4. 代码：</span><br><span class="line">	public class JDBCDemo10 &#123;</span><br><span class="line"></span><br><span class="line">	    public static void main(String[] args) &#123;</span><br><span class="line">	        Connection conn &#x3D; null;</span><br><span class="line">	        PreparedStatement pstmt1 &#x3D; null;</span><br><span class="line">	        PreparedStatement pstmt2 &#x3D; null;</span><br><span class="line">	</span><br><span class="line">	        try &#123;</span><br><span class="line">	            &#x2F;&#x2F;1.获取连接</span><br><span class="line">	            conn &#x3D; JDBCUtils.getConnection();</span><br><span class="line">	            &#x2F;&#x2F;开启事务</span><br><span class="line">	            conn.setAutoCommit(false);</span><br><span class="line">	</span><br><span class="line">	            &#x2F;&#x2F;2.定义sql</span><br><span class="line">	            &#x2F;&#x2F;2.1 张三 - 500</span><br><span class="line">	            String sql1 &#x3D; &quot;update account set balance &#x3D; balance - ? where id &#x3D; ?&quot;;</span><br><span class="line">	            &#x2F;&#x2F;2.2 李四 + 500</span><br><span class="line">	            String sql2 &#x3D; &quot;update account set balance &#x3D; balance + ? where id &#x3D; ?&quot;;</span><br><span class="line">	            &#x2F;&#x2F;3.获取执行sql对象</span><br><span class="line">	            pstmt1 &#x3D; conn.prepareStatement(sql1);</span><br><span class="line">	            pstmt2 &#x3D; conn.prepareStatement(sql2);</span><br><span class="line">	            &#x2F;&#x2F;4. 设置参数</span><br><span class="line">	            pstmt1.setDouble(1,500);</span><br><span class="line">	            pstmt1.setInt(2,1);</span><br><span class="line">	</span><br><span class="line">	            pstmt2.setDouble(1,500);</span><br><span class="line">	            pstmt2.setInt(2,2);</span><br><span class="line">	            &#x2F;&#x2F;5.执行sql</span><br><span class="line">	            pstmt1.executeUpdate();</span><br><span class="line">	            &#x2F;&#x2F; 手动制造异常</span><br><span class="line">	            int i &#x3D; 3&#x2F;0;</span><br><span class="line">	</span><br><span class="line">	            pstmt2.executeUpdate();</span><br><span class="line">	            &#x2F;&#x2F;提交事务</span><br><span class="line">	            conn.commit();</span><br><span class="line">	        &#125; catch (Exception e) &#123;</span><br><span class="line">	            &#x2F;&#x2F;事务回滚</span><br><span class="line">	            try &#123;</span><br><span class="line">	                if(conn !&#x3D; null) &#123;</span><br><span class="line">	                    conn.rollback();</span><br><span class="line">	                &#125;</span><br><span class="line">	            &#125; catch (SQLException e1) &#123;</span><br><span class="line">	                e1.printStackTrace();</span><br><span class="line">	            &#125;</span><br><span class="line">	            e.printStackTrace();</span><br><span class="line">	        &#125;finally &#123;</span><br><span class="line">	            JDBCUtils.close(pstmt1,conn);</span><br><span class="line">	            JDBCUtils.close(pstmt2,null);</span><br><span class="line">	        &#125;</span><br><span class="line">	    &#125;	</span><br><span class="line">	&#125;	       </span><br></pre></td></tr></table></figure>
+
+<h3 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line">JDBC</span><br><span class="line">	他是一套接口, java提供的, 数据库厂商去实现</span><br><span class="line">快速入门</span><br><span class="line">	1.导入驱动jar包</span><br><span class="line">	2.注册驱动</span><br><span class="line">	3.获取连接</span><br><span class="line">	4.获取执行者对象</span><br><span class="line">	5.执行sql语句得到结果</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line"></span><br><span class="line">1.DriverManager</span><br><span class="line">	1.注册驱动</span><br><span class="line">		static registerDriver(Driver driver);</span><br><span class="line">		开发过程中:采用 Class.forName(&quot;com.mysql.jdbc.Driver&quot;);因为这里有静态代码块,静态代码块中已经注册了驱动</span><br><span class="line">		registerDriver(new Driver());采用传统方式会注册两次,没有必要</span><br><span class="line">	2.获取连接</span><br><span class="line">		static getConnection(url,username,password);</span><br><span class="line">		url ----&gt;  jdbc:mysql:&#x2F;&#x2F;IP地址:端口&#x2F;数据库</span><br><span class="line">			注意: 如果连接的是本机的3306的数据库可以简写成&quot;  jdbc:mysql:&#x2F;&#x2F;&#x2F;数据库&quot;</span><br><span class="line">2.Connection</span><br><span class="line">	1.获取执行者对象</span><br><span class="line">		Statement createStatement()</span><br><span class="line">		preparedStatement preparedStatement()</span><br><span class="line">	2.管理事务</span><br><span class="line">		&#x2F;&#x2F;开启事务</span><br><span class="line">		start transaction ----&gt; setAutoCommit(false);更改的不是整个数据库的提交方式,而且是这一次的提交方式!!!!!!</span><br><span class="line">		&#x2F;&#x2F;提交事务</span><br><span class="line">		commit()</span><br><span class="line">		&#x2F;&#x2F;回滚事务</span><br><span class="line">		rollback();</span><br><span class="line">		注意: &quot;当需要大量操作要不同时成功,或者同时失败&quot;,需要&quot;开启事务&quot;, &quot;当出现异常的时候需要回滚&quot;, 当try里面所有代码都执行完毕么有错误,需要提交</span><br><span class="line">		举例:</span><br><span class="line">			try&#123;</span><br><span class="line">				&#x2F;&#x2F;开启事务</span><br><span class="line">				1.操作1</span><br><span class="line">				2.操作2</span><br><span class="line">				...</span><br><span class="line">				&#x2F;&#x2F;提交事务</span><br><span class="line">			</span><br><span class="line">			&#125;catch()&#123;</span><br><span class="line">				&#x2F;&#x2F;回滚操作</span><br><span class="line">			&#125;</span><br><span class="line">3.Statement</span><br><span class="line">	boolean excute(String sql) ---&gt;用的不多,可以忘了, 因为DQL,没有办法得到结果集</span><br><span class="line">	int excuteUpdate(String sql) ----&gt;执行DML语句</span><br><span class="line">	ResultSet excuteQuery(String sql) ----&gt;执行DQL语句</span><br><span class="line">4.ResultSet</span><br><span class="line">	boolean next() ----&gt; 将游标向下移动一行,并且返回是否有数据</span><br><span class="line">	Xxx getXxx(参数) ----&gt;获取数据</span><br><span class="line">		Xxx:代表数据类型 , 例如: getString  getDouble getInt.....</span><br><span class="line">		参数:</span><br><span class="line">			int: 列的编号,从1开始(不推荐,开发没有用, 因为编号会根据查询的列的变化而变化,不通用)</span><br><span class="line">				select sid,sname  from student</span><br><span class="line">			String:(推荐使用, 因为列名比较通用)</span><br><span class="line">				select sname,sid  from student</span><br><span class="line">				getString(&quot;sname&quot;);</span><br><span class="line">	注意:</span><br><span class="line">		1.以后再定义数据库对应的实体类时,所有的基本数据类型建议全部变成引用数据类型,因为数据库的int可以赋值为null</span><br></pre></td></tr></table></figure>
+
+
+
+<p>​            </p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/09/15/Java/Web/190915%E5%A4%9A%E8%A1%A8&%E4%BA%8B%E5%8A%A1/" rel="next" title="多表&事务">
+                <i class="fa fa-chevron-left"></i> 多表&事务
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/09/17/Java/Web/190917JDBC%E8%BF%9E%E6%8E%A5%E6%B1%A0&JDBCTemplate/" rel="prev" title="JDBC连接池&JDBCTemplate">
+                JDBC连接池&JDBCTemplate <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="" />
+            
+              <p class="site-author-name" itemprop="name"></p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">54</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/weixuz" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                查阅链接
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.runoob.com/" title="菜鸟教程" target="_blank">菜鸟教程</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://jingzhunyun.com/" title="精准云工具" target="_blank">精准云工具</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.toolnb.com/" title="爱资料工具" target="_blank">爱资料工具</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.getitfree.cn/" title="正版中国" target="_blank">正版中国</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://bbs.pediy.com/" title="看雪安全论坛" target="_blank">看雪安全论坛</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://24mail.chacuo.net/" title="临时邮箱" target="_blank">临时邮箱</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.w3school.com.cn/" title="w3c在线教程" target="_blank">w3c在线教程</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://developer.mozilla.org/zh-CN/" title="MDN web文档" target="_blank">MDN web文档</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://cn.vuejs.org/v2/guide/" title="Vue.js在线教程" target="_blank">Vue.js在线教程</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.jq22.com/" title="jquery插件库" target="_blank">jquery插件库</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.htmleaf.com/" title="jquery之家" target="_blank">jquery之家</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.nowcoder.com/ta/coding-interviews" title="牛客网-剑指offer编程题" target="_blank">牛客网-剑指offer编程题</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://getbootstrap.com" title="bootstrap" target="_blank">bootstrap</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://v3.bootcss.com/components/" title="bootstrap中文" target="_blank">bootstrap中文</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://icomoon.io/" title="文字图标" target="_blank">文字图标</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#JDBC%EF%BC%9A"><span class="nav-text">JDBC：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8A%BD%E5%8F%96JDBC%E5%B7%A5%E5%85%B7%E7%B1%BB-%EF%BC%9A-JDBCUtils"><span class="nav-text">抽取JDBC工具类 ： JDBCUtils</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JDBC%E6%8E%A7%E5%88%B6%E4%BA%8B%E5%8A%A1%EF%BC%9A"><span class="nav-text">JDBC控制事务：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%BB%E7%BB%93%EF%BC%9A"><span class="nav-text">总结：</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2019 &mdash; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">weixuz</span>
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three-waves.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  	
+<!-- ҳ����С���� -->
+<script type="text/javascript" src="/js/src/clicklove.js"></script>
+</body>
+</html>
