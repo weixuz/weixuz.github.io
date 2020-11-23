@@ -1,8 +1,222 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>markdown常用语法</title>
+    <url>/2019/10/08/Hexo/191008markdown%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95/</url>
+    <content><![CDATA[<h2 id="1-标题"><a href="#1-标题" class="headerlink" title="1.标题"></a>1.标题</h2><ul>
+<li><p># 一级标题</p>
+<h1 id="一级标题"><a href="#一级标题" class="headerlink" title="一级标题"></a>一级标题</h1></li>
+<li><p>## 二级标题</p>
+<h2 id="二级标题"><a href="#二级标题" class="headerlink" title="二级标题"></a>二级标题</h2></li>
+<li><p>### 三级标题</p>
+<h3 id="三级标题"><a href="#三级标题" class="headerlink" title="三级标题"></a>三级标题</h3><a id="more"></a></li>
+<li><p>#### 四级标题</p>
+<h4 id="四级标题"><a href="#四级标题" class="headerlink" title="四级标题"></a>四级标题</h4></li>
+<li><p>##### 五级标题</p>
+<h5 id="五级标题"><a href="#五级标题" class="headerlink" title="五级标题"></a>五级标题</h5></li>
+<li><p>###### 六级标题</p>
+<h6 id="六级标题"><a href="#六级标题" class="headerlink" title="六级标题"></a>六级标题</h6></li>
+</ul>
+<h2 id="2-列表-注意空格"><a href="#2-列表-注意空格" class="headerlink" title="2.列表(注意空格)"></a>2.列表(注意空格)</h2><ul>
+<li>* ：无序列表</li>
+<li>+ ：无序列表</li>
+<li>- ：无序列表</li>
+</ul>
+<ol>
+<li>：有序列表</li>
+<li>：有序列表</li>
+<li>：有序列表<h2 id="3-换行"><a href="#3-换行" class="headerlink" title="3.换行"></a>3.换行</h2></li>
+</ol>
+<ul>
+<li>按两次回车</li>
+<li>html中的标签br</li>
+<li>&lt;可识别的内容&gt;<h2 id="4-分割线"><a href="#4-分割线" class="headerlink" title="4.分割线"></a>4.分割线</h2></li>
+<li>--- 连续输入三个-</li>
+</ul>
+<hr>
+<ul>
+<li>*** 连续输入三个*</li>
+</ul>
+<hr>
+<h2 id="5-超链接"><a href="#5-超链接" class="headerlink" title="5.超链接"></a>5.超链接</h2><ul>
+<li><p>[超链接名字](超链接的地址src)</p>
+<p> <a href="zhaoweixu.com">WeiXu’blog</a></p>
+<h2 id="6-粗体和斜体"><a href="#6-粗体和斜体" class="headerlink" title="6.粗体和斜体"></a>6.粗体和斜体</h2></li>
+<li><p>*内容* ：一个*号代表 斜体</p>
+<p> <em>这是斜体文字</em></p>
+</li>
+<li><p>**内容** ：两个*号代表 粗体</p>
+<p> <strong>这是粗体文字</strong></p>
+</li>
+<li><p>***内容*** ：三个*号代表 斜体+粗体</p>
+<p> <strong><em>这是斜体+粗体文字</em></strong></p>
+<h2 id="7-引用"><a href="#7-引用" class="headerlink" title="7.引用"></a>7.引用</h2></li>
+<li><p>&gt; 引用一段话</p>
+</li>
+</ul>
+<blockquote>
+<p>这是引用的话的示例</p>
+</blockquote>
+<ul>
+<li>```代码``` 引用代码<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ul&#123;</span><br><span class="line">    list-style: none;</span><br><span class="line">&#125;</span><br><span class="line">ul li&#123;</span><br><span class="line">    margin-top: 15px; </span><br><span class="line">    font:12px 宋体;</span><br><span class="line">&#125;</span><br><span class="line">ul li a&#123;</span><br><span class="line">    text-decoration: none; </span><br><span class="line">    color: black; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="8-空格"><a href="#8-空格" class="headerlink" title="8.空格"></a>8.空格</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&amp;emsp;   &#x2F;&#x2F;敲一次就是缩进一个汉字的位置,两次就是两个</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>Server</category>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>markdown常用语法</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo文章插入图片</title>
+    <url>/2019/10/11/Hexo/191011hexo%E6%96%87%E7%AB%A0%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87/</url>
+    <content><![CDATA[<h2 id="方法一"><a href="#方法一" class="headerlink" title="方法一:"></a>方法一:</h2><h4 id="images文件夹"><a href="#images文件夹" class="headerlink" title="images文件夹"></a>images文件夹</h4><p>如果你的Hexo项目中只有少量图片，那最简单的方法就是将它们放在 <code>source/images</code> 文件夹中,然后通过类似于 <code>![](/images/image.jpg)</code> 的方法访问它们。</p>
+<p>例如:</p>
+<p><code>![1.png](/images/1.png)</code></p>
+<a id="more"></a>
+
+<h2 id="方法二-推荐使用"><a href="#方法二-推荐使用" class="headerlink" title="方法二:(推荐使用)"></a>方法二:(推荐使用)</h2><h4 id="1-将-config-yml-文件中的-post-asset-folder-选项设为-“true”-。"><a href="#1-将-config-yml-文件中的-post-asset-folder-选项设为-“true”-。" class="headerlink" title="1.将 config.yml 文件中的 post_asset_folder 选项设为 “true” 。"></a>1.将 <code>config.yml</code> 文件中的 <code>post_asset_folder</code> 选项设为 “true” 。</h4><p>&emsp;&emsp;之后在你每次通过 <code>hexo new [layout] &lt;title&gt;</code> 命令创建xxx.md时会自动创建一个同名资源文件夹xxx,你可以把跟这篇文章有关的图片资源放在关联文件夹中。</p>
+<p><code>_config.ymlpost_asset_folder: true</code></p>
+<h4 id="2-安装插件-在blog目录下输入下边的命令安装插件"><a href="#2-安装插件-在blog目录下输入下边的命令安装插件" class="headerlink" title="2.安装插件:在blog目录下输入下边的命令安装插件:"></a>2.安装插件:在blog目录下输入下边的命令安装插件:</h4><p><code>npm install https://github.com/CodeFalling/hexo-asset-image -- save</code></p>
+<h4 id="3-添加图片"><a href="#3-添加图片" class="headerlink" title="3.添加图片:"></a>3.添加图片:</h4><p>在想添加的位置写入<code>![](资源文件夹名字/图片名字.图片格式)</code>,例如:</p>
+<p><code>![](xxx/1.png)</code></p>
+]]></content>
+      <categories>
+        <category>Server</category>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>资源文件夹</tag>
+        <tag>图片标签插件</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>更换NexT主题后访问报错</title>
+    <url>/2020/01/15/Hexo/200115%E6%9B%B4%E6%8D%A2NexT%E4%B8%BB%E9%A2%98%E5%90%8E%E8%AE%BF%E9%97%AE%E6%8A%A5%E9%94%99/</url>
+    <content><![CDATA[<p>hexo博客更换NexT主题后访问显示报错:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;% extends ‘_layout.swig‘ %&#125; &#123;% import ‘_macro&#x2F;post.swig‘ as post</span><br><span class="line">_template %&#125;</span><br></pre></td></tr></table></figure>
+
+<p>原因是hexo在5.0之后把swig给删除了需要自己手动安装</p>
+<p>在博客目录下右键“Git Bash Here”输入以下命令即可:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm i hexo-renderer-swig</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Server</category>
+        <category>Hexo</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>NexT主题点击日志报错</title>
+    <url>/2020/01/16/Hexo/200116NexT%E4%B8%BB%E9%A2%98%E7%82%B9%E5%87%BB%E6%97%A5%E5%BF%97%E6%8A%A5%E9%94%99-md/</url>
+    <content><![CDATA[<p>NexT主题点击日志时报错：</p>
+<p><img src="/2020/01/16/Hexo/200116NexT%E4%B8%BB%E9%A2%98%E7%82%B9%E5%87%BB%E6%97%A5%E5%BF%97%E6%8A%A5%E9%94%99-md/%E6%97%A5%E5%BF%97404.png"></p>
+<p>打开主题目录下/layout/_macro/sidebar.swig</p>
+<p>找到：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;a href&#x3D;&quot;&#123;&#123; url_for(theme.menu.archives).split(&#39;||&#39;)[0] | trim &#125;&#125;&quot;&gt;</span><br></pre></td></tr></table></figure>
+
+<p>修改为：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;a href&#x3D;&quot;&#123;&#123;url_for(theme.menu.archives.split(&#39;||&#39;)[0])| trim&#125;&#125;&quot;&gt;</span><br></pre></td></tr></table></figure>
+
+<p>记得清除浏览器缓存</p>
+]]></content>
+      <categories>
+        <category>Server</category>
+        <category>Hexo</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>DeepFaceLab</title>
+    <url>/2020/05/11/Soft/200511DeepFaceLab/</url>
+    <content><![CDATA[<h2 id="训练参数设置："><a href="#训练参数设置：" class="headerlink" title="训练参数设置："></a>训练参数设置：</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Enable autobackup? (y&#x2F;n ?:help skip:n) :</span><br></pre></td></tr></table></figure>
+
+<p>翻译：自动备份模型，一小时备份一次，开启会自动备份最近15次模型。<br>默认不开启 n 开启输入 y</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Write preview history? (y&#x2F;n ?:help skip:n) :</span><br></pre></td></tr></table></figure>
+
+<p>翻译：每10秒自动在model / history文件夹生成一张预览图。<br>默认不开启 n 开启输入 y</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Target iteration (skip:unlimited&#x2F;default) :</span><br></pre></td></tr></table></figure>
+
+<p>翻译：训练次数，推荐默认设置。<br>默认无限训练，开启此功能可以输入想要的数字。</p>
+<a id="more"></a>
+
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Batch_size (?:help skip:0&#x2F;default) :</span><br></pre></td></tr></table></figure>
+
+<p>翻译：Batch_size数值，大概可以理解为一次有多少图像被发送到神经网络训练。<br>取决于你的硬件性能，建议取大于4的数值，训练伊始可以设置低数值，收敛困难时增加数值。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Feed faces to network sorted by yaw? (y&#x2F;n ?:help skip:n) :</span><br></pre></td></tr></table></figure>
+
+<p>翻译：偏航排序，data_dst和data_src素材种类一致可以开启。<br>默认开启，建议不开启。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Flip faces randomly? (y&#x2F;n ?:help skip:y) :</span><br></pre></td></tr></table></figure>
+
+<p>翻译：随机翻转脸部，data_src素材丰富时关闭会更自然，反之效果很差。<br>默认开启，建议开启。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Src face scale modifier % ( -30…30, ?:help skip:0) :</span><br></pre></td></tr></table></figure>
+
+<p>翻译：data_src面部比例大小，输入数值会改变data_src脸部大小。<br>默认为不开启，建议不开启。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Use lightweight autoencoder? (y&#x2F;n, ?:help skip:n) :</span><br></pre></td></tr></table></figure>
+
+<p>翻译：是否使用轻量级编码模式，配置较低时使用，牺牲部分质量。<br>默认开启，建议不开启。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Use pixel loss? (y&#x2F;n, ?:help skip: n&#x2F;default ) :</span><br></pre></td></tr></table></figure>
+
+
+<p>翻译：是否使用像素丢失。开启后能增强细节，比如牙齿或其它需要增强的细节，但不宜过量，可以在合成之前开启一段时间。否则将有可能使模型损坏。<br>默认不开启，建议后期开启。</p>
+]]></content>
+      <categories>
+        <category>Soft</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Cmder的使用</title>
+    <url>/2020/11/22/Soft/201122Cmder%E7%9A%84%E4%BD%BF%E7%94%A8/</url>
+    <content><![CDATA[<h3 id="1-下载"><a href="#1-下载" class="headerlink" title="1.下载"></a>1.下载</h3><p><a href="https://cmder.net/">官网下载</a></p>
+<p><img src="/2020/11/22/Soft/201122Cmder%E7%9A%84%E4%BD%BF%E7%94%A8/1.png"></p>
+<p>下载分为mini版和完整版，完整版功能更为全面，可运行linux下的所有命令</p>
+<a id="more"></a>
+
+<p><img src="/2020/11/22/Soft/201122Cmder%E7%9A%84%E4%BD%BF%E7%94%A8/2.png"></p>
+<p>不需要安装，解压后可直接使用。</p>
+<p>首次打开会有个警告弹窗，选择第一个即可：</p>
+<p><img src="/2020/11/22/Soft/201122Cmder%E7%9A%84%E4%BD%BF%E7%94%A8/4.png"></p>
+<h3 id="2-配置"><a href="#2-配置" class="headerlink" title="2.配置"></a>2.配置</h3><ul>
+<li>配置环境变量</li>
+</ul>
+<p>下载解压后将cmder.exe的所在目录添加到环境变量path中。</p>
+<p><img src="/2020/11/22/Soft/201122Cmder%E7%9A%84%E4%BD%BF%E7%94%A8/3.path.png"></p>
+<ul>
+<li>配置右键快捷启动</li>
+</ul>
+<p>管理员身份运行cmd，执行以下命令：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Cmder.exe &#x2F;REGISTER ALL  &#x2F;&#x2F; 设置任意地方鼠标右键启动Cmder</span><br></pre></td></tr></table></figure>
+
+<p>之后可在任意地方点击右键使用cmder，会直接跳转到该路径下，而无需cd</p>
+<p><img src="/2020/11/22/Soft/201122Cmder%E7%9A%84%E4%BD%BF%E7%94%A8/6.png"></p>
+<ul>
+<li><p>语言设置</p>
+<p>Setting–&gt;General–&gt;Interface language</p>
+</li>
+</ul>
+<p><img src="/2020/11/22/Soft/201122Cmder%E7%9A%84%E4%BD%BF%E7%94%A8/Users\WeiXu\blog\source_posts\201122Cmder的使用\9.png"></p>
+<ul>
+<li>命令提示符”λ”改为”$”</li>
+</ul>
+<p>cmder的光标是以”λ”开始的，我们可以修改为常用的$，找到cmder目录下的vendor文件夹中的clink.lua文件，修改local lambda值即可。</p>
+<p><img src="/2020/11/22/Soft/201122Cmder%E7%9A%84%E4%BD%BF%E7%94%A8/7.png"></p>
+<ul>
+<li>设置中文编码</li>
+</ul>
+<p>打开setting，在Start-up下的environment中加入: <code>set LANG=zh_CN.UTF8</code></p>
+<p><img src="/2020/11/22/Soft/201122Cmder%E7%9A%84%E4%BD%BF%E7%94%A8/8.png"></p>
+<h3 id="3-快捷键"><a href="#3-快捷键" class="headerlink" title="3.快捷键"></a>3.快捷键</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Tab       自动路径补全</span><br><span class="line">Ctrl+T    建立新页签</span><br><span class="line">Ctrl+W    关闭页签</span><br><span class="line">Ctrl+Tab  切换页签</span><br><span class="line">Alt+F4    关闭所有页签</span><br><span class="line">Alt+Shift+<span class="number">1</span> 开启cmd.exe</span><br><span class="line">Alt+Shift+<span class="number">2</span> 开启powershell.exe</span><br><span class="line">Alt+Shift+<span class="number">3</span> 开启powershell.exe (系统管理员权限)</span><br><span class="line">Ctrl+<span class="number">1</span>      快速切换到第<span class="number">1</span>个页签</span><br><span class="line">Ctrl+n      快速切换到第n个页签(n值无上限)</span><br><span class="line">Alt + enter 切换到全屏状态</span><br><span class="line">Ctr+r       历史命令搜索</span><br><span class="line">Tab         自动路径补全</span><br><span class="line">Ctrl+T      建立新页签</span><br><span class="line">Ctrl+W      关闭页签</span><br><span class="line">Ctrl+Tab    切换页签</span><br><span class="line">Alt+F4      关闭所有页签</span><br><span class="line">Alt+Shift+<span class="number">1</span> 开启cmd.exe</span><br><span class="line">Alt+Shift+<span class="number">2</span> 开启powershell.exe</span><br><span class="line">Alt+Shift+<span class="number">3</span> 开启powershell.exe (系统管理员权限)</span><br><span class="line">Ctrl+<span class="number">1</span>      快速切换到第<span class="number">1</span>个页签</span><br><span class="line">Ctrl+n      快速切换到第n个页签(n值无上限)</span><br><span class="line">Alt + enter 切换到全屏状态</span><br><span class="line">Ctr+r       历史命令搜索</span><br><span class="line">Win+Alt+P   开启工具选项视窗</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Soft</category>
+      </categories>
+  </entry>
+  <entry>
     <title>Java基础入门</title>
-    <url>/2019/08/02/190802Java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/</url>
+    <url>/2019/08/02/Java/JavaSE/190802Java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/</url>
     <content><![CDATA[<h2 id="1-Java概述"><a href="#1-Java概述" class="headerlink" title="1. Java概述"></a>1. Java概述</h2><h3 id="1-1-Java语言发展史"><a href="#1-1-Java语言发展史" class="headerlink" title="1.1 Java语言发展史"></a>1.1 Java语言发展史</h3><p>语言：人与人交流沟通的表达方式</p>
 <p>计算机语言：人与计算机之间进行信息交流沟通的一种特殊语言</p>
 <p>Java语言是美国Sun公司（Stanford University Network）在1995年推出的计算机语言</p>
@@ -243,7 +457,7 @@
 <p>&emsp;&emsp;例如：</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">double</span> num1 = <span class="number">5.5</span>;</span><br><span class="line"><span class="keyword">int</span> num2 = (<span class="keyword">int</span>) num1; <span class="comment">// 将double类型的num1强制转换为int类型</span></span><br><span class="line">System.out.println(num2); <span class="comment">// 输出5（小数位直接舍弃）</span></span><br></pre></td></tr></table></figure>
 
-<p><img src="/2019/08/02/190802Java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/1.png">说明：</p>
+<p><img src="/2019/08/02/Java/JavaSE/190802Java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/1.png">说明：</p>
 <ol>
 <li>char类型的数据转换为int类型是按照码表中对应的int值进行计算的。比如在ASCII码表中，‘a’对应97。</li>
 </ol>
@@ -265,7 +479,7 @@
   </entry>
   <entry>
     <title>运算符</title>
-    <url>/2019/08/03/190803.1%E8%BF%90%E7%AE%97%E7%AC%A6/</url>
+    <url>/2019/08/03/Java/JavaSE/190803.1%E8%BF%90%E7%AE%97%E7%AC%A6/</url>
     <content><![CDATA[<h2 id="1-运算符"><a href="#1-运算符" class="headerlink" title="1. 运算符"></a>1. 运算符</h2><h3 id="1-1-算术运算符（理解）"><a href="#1-1-算术运算符（理解）" class="headerlink" title="1.1 算术运算符（理解）"></a>1.1 算术运算符（理解）</h3><h4 id="1-1-1-运算符和表达式"><a href="#1-1-1-运算符和表达式" class="headerlink" title="1.1.1 运算符和表达式"></a>1.1.1 运算符和表达式</h4><p>运算符：对常量或者变量进行操作的符号</p>
 <p>表达式：用运算符把常量或者变量连接起来符合java语法的式子就可以称为表达式。</p>
 <p>​                    不同运算符连接的表达式体现的是不同类型的表达式。</p>
@@ -528,92 +742,8 @@
       </categories>
   </entry>
   <entry>
-    <title>Scanner和if</title>
-    <url>/2019/08/03/190803.2Scanner%E5%92%8Cif/</url>
-    <content><![CDATA[<h2 id="1-数据输入（应用）"><a href="#1-数据输入（应用）" class="headerlink" title="1. 数据输入（应用）"></a>1. 数据输入（应用）</h2><p>我们可以通过 Scanner 类来获取用户的输入。使用步骤如下：</p>
-<p>1、导包。Scanner 类在java.util包下，所以需要将该类导入。导包的语句需要定义在类的上面。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Scanner; </span><br></pre></td></tr></table></figure>
-
-<p>2、创建Scanner对象。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Scanner sc = <span class="keyword">new</span> Scanner(System.in);<span class="comment">// 创建Scanner对象，sc表示变量名，其他均不可变</span></span><br></pre></td></tr></table></figure>
-
-<p>3、接收数据</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> i = sc.nextInt(); <span class="comment">// 表示将键盘录入的值作为int数返回。</span></span><br></pre></td></tr></table></figure>
-
-<a id="more"></a>
-
-<p>示例：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ScannerDemo</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="comment">//创建对象</span></span><br><span class="line">		Scanner sc = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">		<span class="comment">//接收数据</span></span><br><span class="line">		<span class="keyword">int</span> x = sc.nextInt();</span><br><span class="line">		<span class="comment">//输出数据</span></span><br><span class="line">		System.out.println(<span class="string">&quot;x:&quot;</span> + x);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>改写三个和尚案例，数据使用键盘录入。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ScannerTest</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="comment">//身高未知，采用键盘录入实现。首先导包，然后创建对象。</span></span><br><span class="line">		Scanner sc = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">		<span class="comment">//键盘录入三个身高分别赋值给三个变量。</span></span><br><span class="line">		System.out.println(<span class="string">&quot;请输入第一个和尚的身高：&quot;</span>);</span><br><span class="line">		<span class="keyword">int</span> height1 = sc.nextInt();</span><br><span class="line">		System.out.println(<span class="string">&quot;请输入第二个和尚的身高：&quot;</span>);</span><br><span class="line">		<span class="keyword">int</span> height2 = sc.nextInt();</span><br><span class="line">		System.out.println(<span class="string">&quot;请输入第三个和尚的身高：&quot;</span>);</span><br><span class="line">		<span class="keyword">int</span> height3 = sc.nextInt();</span><br><span class="line">		<span class="comment">//用三元运算符获取前两个和尚的较高身高值，并用临时身高变量保存起来。</span></span><br><span class="line">		<span class="keyword">int</span> tempHeight = height1 &gt; height2 ? height1 : height2;</span><br><span class="line">		<span class="comment">//用三元运算符获取临时身高值和第三个和尚身高较高值，并用最大身高变量保存。</span></span><br><span class="line">		<span class="keyword">int</span> maxHeight = tempHeight &gt; height3 ? tempHeight : height3;</span><br><span class="line">		<span class="comment">//输出结果。</span></span><br><span class="line">		System.out.println(<span class="string">&quot;这三个和尚中身高最高的是：&quot;</span> + maxHeight +<span class="string">&quot;cm&quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="2-流程控制语句（应用）"><a href="#2-流程控制语句（应用）" class="headerlink" title="2. 流程控制语句（应用）"></a>2. 流程控制语句（应用）</h2><p>在一个程序执行的过程中，各条语句的执行顺序对程序的结果是有直接影响的。所以，我们必须清楚每条语句的执行流程。而且，很多时候要通过控制语句的执行顺序来实现我们想要的功能。</p>
-<h3 id="2-1-流程控制语句分类"><a href="#2-1-流程控制语句分类" class="headerlink" title="2.1 流程控制语句分类"></a>2.1 流程控制语句分类</h3><p>​    顺序结构</p>
-<p>​    分支结构(if, switch)</p>
-<p>​    循环结构(for, while, do…while)</p>
-<h3 id="2-2-顺序结构"><a href="#2-2-顺序结构" class="headerlink" title="2.2 顺序结构"></a>2.2 顺序结构</h3><p>顺序结构是程序中最简单最基本的流程控制，没有特定的语法结构，按照代码的先后顺序，依次执行，程序中大多数的代码都是这样执行的。</p>
-<p>顺序结构执行流程图：</p>
-<p><img src="/2019/08/03/190803.2Scanner%E5%92%8Cif/1908031.png"></p>
-<h3 id="2-3-分支结构之if语"><a href="#2-3-分支结构之if语" class="headerlink" title="2.3 分支结构之if语"></a>2.3 分支结构之if语</h3><h4 id="if语句格式1"><a href="#if语句格式1" class="headerlink" title="if语句格式1"></a>if语句格式1</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">格式：</span><br><span class="line"><span class="keyword">if</span> (关系表达式) &#123;</span><br><span class="line">    语句体;	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>执行流程：</p>
-<p>①首先计算关系表达式的值</p>
-<p>②如果关系表达式的值为true就执行语句体</p>
-<p>③如果关系表达式的值为false就不执行语句体</p>
-<p>④继续执行后面的语句内容</p>
-<p><img src="/2019/08/03/190803.2Scanner%E5%92%8Cif/1908032.png"></p>
-<p>示例：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">IfDemo</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">&quot;开始&quot;</span>);	</span><br><span class="line">		<span class="comment">//定义两个变量</span></span><br><span class="line">		<span class="keyword">int</span> a = <span class="number">10</span>;</span><br><span class="line">		<span class="keyword">int</span> b = <span class="number">20</span>;	</span><br><span class="line">		<span class="comment">//需求：判断a和b的值是否相等，如果相等，就在控制台输出：a等于b</span></span><br><span class="line">		<span class="keyword">if</span>(a == b) &#123;</span><br><span class="line">			System.out.println(<span class="string">&quot;a等于b&quot;</span>);</span><br><span class="line">		&#125;		</span><br><span class="line">		<span class="comment">//需求：判断a和c的值是否相等，如果相等，就在控制台输出：a等于c</span></span><br><span class="line">		<span class="keyword">int</span> c = <span class="number">10</span>;</span><br><span class="line">		<span class="keyword">if</span>(a == c) &#123;</span><br><span class="line">			System.out.println(<span class="string">&quot;a等于c&quot;</span>);</span><br><span class="line">		&#125;		</span><br><span class="line">		System.out.println(<span class="string">&quot;结束&quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="if语句格式2"><a href="#if语句格式2" class="headerlink" title="if语句格式2"></a>if语句格式2</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">格式：</span><br><span class="line"><span class="keyword">if</span> (关系表达式) &#123;</span><br><span class="line">    语句体<span class="number">1</span>;	</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    语句体<span class="number">2</span>;	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>执行流程：</p>
-<p>①首先计算关系表达式的值</p>
-<p>②如果关系表达式的值为true就执行语句体1</p>
-<p>③如果关系表达式的值为false就执行语句体2</p>
-<p>④继续执行后面的语句内容</p>
-<p><img src="/2019/08/03/190803.2Scanner%E5%92%8Cif/1908033.png"></p>
-<p>示例：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">IfDemo02</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">&quot;开始&quot;</span>);		</span><br><span class="line">		<span class="comment">//定义两个变量</span></span><br><span class="line">		<span class="keyword">int</span> a = <span class="number">10</span>;</span><br><span class="line">		<span class="keyword">int</span> b = <span class="number">20</span>;</span><br><span class="line">		b = <span class="number">5</span>;	</span><br><span class="line">		<span class="comment">//需求：判断a是否大于b，如果是，在控制台输出：a的值大于b，否则，在控制台输出：a的值不大于b</span></span><br><span class="line">		<span class="keyword">if</span>(a &gt; b) &#123;</span><br><span class="line">			System.out.println(<span class="string">&quot;a的值大于b&quot;</span>);</span><br><span class="line">		&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">			System.out.println(<span class="string">&quot;a的值不大于b&quot;</span>);</span><br><span class="line">		&#125;		</span><br><span class="line">		System.out.println(<span class="string">&quot;结束&quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>if语句案例：奇偶数</p>
-<p>需求：任意给出一个整数，请用程序实现判断该整数是奇数还是偶数，并在控制台输出该整数是奇数还是偶数。</p>
-<p>分析：</p>
-<p>​    ①为了体现任意给出一个整数，采用键盘录入一个数据</p>
-<p>​    ②判断整数是偶数还是奇数要分两种情况进行判断，使用if..else结构</p>
-<p>​    ③判断是否偶数需要使用取余运算符实现该功能 number % 2 == 0</p>
-<p>​    ④根据判定情况，在控制台输出对应的内容</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">IfTest01</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="comment">//为了体现任意给出一个整数，采用键盘录入一个数据。(导包，创建对象，接收数据)</span></span><br><span class="line">		Scanner sc = <span class="keyword">new</span> Scanner(System.in);		</span><br><span class="line">		System.out.println(<span class="string">&quot;请输入一个整数：&quot;</span>);</span><br><span class="line">		<span class="keyword">int</span> number = sc.nextInt();	</span><br><span class="line">		<span class="comment">//判断整数是偶数还是奇数要分两种情况进行判断，使用if..else结构		</span></span><br><span class="line">		<span class="comment">//判断是否偶数需要使用取余运算符实现该功能 number % 2 == 0</span></span><br><span class="line">		<span class="comment">//根据判定情况，在控制台输出对应的内容</span></span><br><span class="line">		<span class="keyword">if</span>(number%<span class="number">2</span> == <span class="number">0</span>) &#123;</span><br><span class="line">			System.out.println(number + <span class="string">&quot;是偶数&quot;</span>);</span><br><span class="line">		&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">			System.out.println(number + <span class="string">&quot;是奇数&quot;</span>);</span><br><span class="line">		&#125;	</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="if语句格式3"><a href="#if语句格式3" class="headerlink" title="if语句格式3"></a>if语句格式3</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">格式：</span><br><span class="line"><span class="keyword">if</span> (关系表达式<span class="number">1</span>) &#123;</span><br><span class="line">    语句体<span class="number">1</span>;	</span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> (关系表达式<span class="number">2</span>) &#123;</span><br><span class="line">    语句体<span class="number">2</span>;	</span><br><span class="line">&#125; </span><br><span class="line">…</span><br><span class="line"><span class="keyword">else</span> &#123;</span><br><span class="line">    语句体n+<span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>执行流程：</p>
-<p>①首先计算关系表达式1的值</p>
-<p>②如果值为true就执行语句体1；如果值为false就计算关系表达式2的值</p>
-<p>③如果值为true就执行语句体2；如果值为false就计算关系表达式3的值</p>
-<p>④…</p>
-<p>⑤如果没有任何关系表达式为true，就执行语句体n+1。</p>
-<p><img src="/2019/08/03/190803.2Scanner%E5%92%8Cif/1908034.png"></p>
-<p>示例：键盘录入一个星期数(1,2,…7)，输出对应的星期一，星期二，…星期日</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">IfDemo03</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">&quot;开始&quot;</span>);</span><br><span class="line">		<span class="comment">// 需求：键盘录入一个星期数(1,2,...7)，输出对应的星期一，星期二，...星期日</span></span><br><span class="line">		Scanner sc = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">		System.out.println(<span class="string">&quot;请输入一个星期数(1-7)：&quot;</span>);</span><br><span class="line">		<span class="keyword">int</span> week = sc.nextInt();</span><br><span class="line">		<span class="keyword">if</span>(week == <span class="number">1</span>) &#123;</span><br><span class="line">			System.out.println(<span class="string">&quot;星期一&quot;</span>);</span><br><span class="line">		&#125; <span class="keyword">else</span> <span class="keyword">if</span>(week == <span class="number">2</span>) &#123;</span><br><span class="line">			System.out.println(<span class="string">&quot;星期二&quot;</span>);</span><br><span class="line">		&#125; <span class="keyword">else</span> <span class="keyword">if</span>(week == <span class="number">3</span>) &#123;</span><br><span class="line">			System.out.println(<span class="string">&quot;星期三&quot;</span>);</span><br><span class="line">		&#125; <span class="keyword">else</span> <span class="keyword">if</span>(week == <span class="number">4</span>) &#123;</span><br><span class="line">			System.out.println(<span class="string">&quot;星期四&quot;</span>);</span><br><span class="line">		&#125; <span class="keyword">else</span> <span class="keyword">if</span>(week == <span class="number">5</span>) &#123;</span><br><span class="line">			System.out.println(<span class="string">&quot;星期五&quot;</span>);</span><br><span class="line">		&#125; <span class="keyword">else</span> <span class="keyword">if</span>(week == <span class="number">6</span>) &#123;</span><br><span class="line">			System.out.println(<span class="string">&quot;星期六&quot;</span>);</span><br><span class="line">		&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">			System.out.println(<span class="string">&quot;星期日&quot;</span>);</span><br><span class="line">		&#125;	</span><br><span class="line">		System.out.println(<span class="string">&quot;结束&quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>if语句格式3案例：</p>
-<p>需求：小明快要期末考试了，小明爸爸对他说，会根据他不同的考试成绩，送他不同的礼物，假如你可以控制小明的得分，请用程序实现小明到底该获得什么样的礼物，并在控制台输出。</p>
-<p>分析：</p>
-<p>​    ①小明的考试成绩未知，可以使用键盘录入的方式获取值</p>
-<p>​    ②由于奖励种类较多，属于多种判断，采用if…else…if格式实现</p>
-<p>​    ③为每种判断设置对应的条件</p>
-<p>​    ④为每种判断设置对应的奖励</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">IfTest02</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="comment">//小明的考试成绩未知，可以使用键盘录入的方式获取值</span></span><br><span class="line">		Scanner sc = <span class="keyword">new</span> Scanner(System.in);	</span><br><span class="line">		System.out.println(<span class="string">&quot;请输入一个分数：&quot;</span>);</span><br><span class="line">		<span class="keyword">int</span> score = sc.nextInt();</span><br><span class="line">		<span class="comment">//由于奖励种类较多，属于多种判断，采用if...else...if格式实现</span></span><br><span class="line">		<span class="comment">//为每种判断设置对应的条件</span></span><br><span class="line">		<span class="comment">//为每种判断设置对应的奖励	</span></span><br><span class="line">		<span class="comment">//数据测试：正确数据，边界数据，错误数据</span></span><br><span class="line">		<span class="keyword">if</span>(score&gt;<span class="number">100</span> || score&lt;<span class="number">0</span>) &#123;</span><br><span class="line">			System.out.println(<span class="string">&quot;你输入的分数有误&quot;</span>);</span><br><span class="line">		&#125; <span class="keyword">else</span> <span class="keyword">if</span>(score&gt;=<span class="number">95</span> &amp;&amp; score&lt;=<span class="number">100</span>) &#123;</span><br><span class="line">			System.out.println(<span class="string">&quot;山地自行车一辆&quot;</span>);</span><br><span class="line">		&#125; <span class="keyword">else</span> <span class="keyword">if</span>(score&gt;=<span class="number">90</span> &amp;&amp; score&lt;=<span class="number">94</span>) &#123;</span><br><span class="line">			System.out.println(<span class="string">&quot;游乐场玩一次&quot;</span>);</span><br><span class="line">		&#125; <span class="keyword">else</span> <span class="keyword">if</span>(score&gt;=<span class="number">80</span> &amp;&amp; score&lt;=<span class="number">89</span>) &#123;</span><br><span class="line">			System.out.println(<span class="string">&quot;变形金刚玩具一个&quot;</span>);</span><br><span class="line">		&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">			System.out.println(<span class="string">&quot;胖揍一顿&quot;</span>);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>Java</category>
-        <category>JavaSE</category>
-      </categories>
-  </entry>
-  <entry>
     <title>继承</title>
-    <url>/2019/08/19/190819.1%E7%BB%A7%E6%89%BF/</url>
+    <url>/2019/08/19/Java/JavaSE/190819.1%E7%BB%A7%E6%89%BF/</url>
     <content><![CDATA[<h2 id="1-继承"><a href="#1-继承" class="headerlink" title="1. 继承"></a>1. 继承</h2><h3 id="1-1-继承的实现（掌握）"><a href="#1-1-继承的实现（掌握）" class="headerlink" title="1.1 继承的实现（掌握）"></a>1.1 继承的实现（掌握）</h3><ul>
 <li><p>继承的概念</p>
 <ul>
@@ -714,7 +844,7 @@
 </ol>
 <h3 id="2-5-super内存图（理解）"><a href="#2-5-super内存图（理解）" class="headerlink" title="2.5 super内存图（理解）"></a>2.5 super内存图（理解）</h3><ul>
 <li><p>对象在堆内存中，会单独存在一块super区域，用来存放父类的数据 </p>
-<p><img src="/2019/08/19/190819.1%E7%BB%A7%E6%89%BF/1.%E7%BB%A7%E6%89%BF.png"></p>
+<p><img src="/2019/08/19/Java/JavaSE/190819.1%E7%BB%A7%E6%89%BF/1.%E7%BB%A7%E6%89%BF.png"></p>
 </li>
 </ul>
 <h3 id="2-6-方法重写（掌握）"><a href="#2-6-方法重写（掌握）" class="headerlink" title="2.6 方法重写（掌握）"></a>2.6 方法重写（掌握）</h3><ul>
@@ -810,8 +940,92 @@
       </categories>
   </entry>
   <entry>
+    <title>Scanner和if</title>
+    <url>/2019/08/03/Java/JavaSE/190803.2Scanner%E5%92%8Cif/</url>
+    <content><![CDATA[<h2 id="1-数据输入（应用）"><a href="#1-数据输入（应用）" class="headerlink" title="1. 数据输入（应用）"></a>1. 数据输入（应用）</h2><p>我们可以通过 Scanner 类来获取用户的输入。使用步骤如下：</p>
+<p>1、导包。Scanner 类在java.util包下，所以需要将该类导入。导包的语句需要定义在类的上面。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Scanner; </span><br></pre></td></tr></table></figure>
+
+<p>2、创建Scanner对象。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Scanner sc = <span class="keyword">new</span> Scanner(System.in);<span class="comment">// 创建Scanner对象，sc表示变量名，其他均不可变</span></span><br></pre></td></tr></table></figure>
+
+<p>3、接收数据</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> i = sc.nextInt(); <span class="comment">// 表示将键盘录入的值作为int数返回。</span></span><br></pre></td></tr></table></figure>
+
+<a id="more"></a>
+
+<p>示例：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ScannerDemo</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="comment">//创建对象</span></span><br><span class="line">		Scanner sc = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">		<span class="comment">//接收数据</span></span><br><span class="line">		<span class="keyword">int</span> x = sc.nextInt();</span><br><span class="line">		<span class="comment">//输出数据</span></span><br><span class="line">		System.out.println(<span class="string">&quot;x:&quot;</span> + x);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>改写三个和尚案例，数据使用键盘录入。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ScannerTest</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="comment">//身高未知，采用键盘录入实现。首先导包，然后创建对象。</span></span><br><span class="line">		Scanner sc = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">		<span class="comment">//键盘录入三个身高分别赋值给三个变量。</span></span><br><span class="line">		System.out.println(<span class="string">&quot;请输入第一个和尚的身高：&quot;</span>);</span><br><span class="line">		<span class="keyword">int</span> height1 = sc.nextInt();</span><br><span class="line">		System.out.println(<span class="string">&quot;请输入第二个和尚的身高：&quot;</span>);</span><br><span class="line">		<span class="keyword">int</span> height2 = sc.nextInt();</span><br><span class="line">		System.out.println(<span class="string">&quot;请输入第三个和尚的身高：&quot;</span>);</span><br><span class="line">		<span class="keyword">int</span> height3 = sc.nextInt();</span><br><span class="line">		<span class="comment">//用三元运算符获取前两个和尚的较高身高值，并用临时身高变量保存起来。</span></span><br><span class="line">		<span class="keyword">int</span> tempHeight = height1 &gt; height2 ? height1 : height2;</span><br><span class="line">		<span class="comment">//用三元运算符获取临时身高值和第三个和尚身高较高值，并用最大身高变量保存。</span></span><br><span class="line">		<span class="keyword">int</span> maxHeight = tempHeight &gt; height3 ? tempHeight : height3;</span><br><span class="line">		<span class="comment">//输出结果。</span></span><br><span class="line">		System.out.println(<span class="string">&quot;这三个和尚中身高最高的是：&quot;</span> + maxHeight +<span class="string">&quot;cm&quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-流程控制语句（应用）"><a href="#2-流程控制语句（应用）" class="headerlink" title="2. 流程控制语句（应用）"></a>2. 流程控制语句（应用）</h2><p>在一个程序执行的过程中，各条语句的执行顺序对程序的结果是有直接影响的。所以，我们必须清楚每条语句的执行流程。而且，很多时候要通过控制语句的执行顺序来实现我们想要的功能。</p>
+<h3 id="2-1-流程控制语句分类"><a href="#2-1-流程控制语句分类" class="headerlink" title="2.1 流程控制语句分类"></a>2.1 流程控制语句分类</h3><p>​    顺序结构</p>
+<p>​    分支结构(if, switch)</p>
+<p>​    循环结构(for, while, do…while)</p>
+<h3 id="2-2-顺序结构"><a href="#2-2-顺序结构" class="headerlink" title="2.2 顺序结构"></a>2.2 顺序结构</h3><p>顺序结构是程序中最简单最基本的流程控制，没有特定的语法结构，按照代码的先后顺序，依次执行，程序中大多数的代码都是这样执行的。</p>
+<p>顺序结构执行流程图：</p>
+<p><img src="/2019/08/03/Java/JavaSE/190803.2Scanner%E5%92%8Cif/1908031.png"></p>
+<h3 id="2-3-分支结构之if语"><a href="#2-3-分支结构之if语" class="headerlink" title="2.3 分支结构之if语"></a>2.3 分支结构之if语</h3><h4 id="if语句格式1"><a href="#if语句格式1" class="headerlink" title="if语句格式1"></a>if语句格式1</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">格式：</span><br><span class="line"><span class="keyword">if</span> (关系表达式) &#123;</span><br><span class="line">    语句体;	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>执行流程：</p>
+<p>①首先计算关系表达式的值</p>
+<p>②如果关系表达式的值为true就执行语句体</p>
+<p>③如果关系表达式的值为false就不执行语句体</p>
+<p>④继续执行后面的语句内容</p>
+<p><img src="/2019/08/03/Java/JavaSE/190803.2Scanner%E5%92%8Cif/1908032.png"></p>
+<p>示例：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">IfDemo</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">&quot;开始&quot;</span>);	</span><br><span class="line">		<span class="comment">//定义两个变量</span></span><br><span class="line">		<span class="keyword">int</span> a = <span class="number">10</span>;</span><br><span class="line">		<span class="keyword">int</span> b = <span class="number">20</span>;	</span><br><span class="line">		<span class="comment">//需求：判断a和b的值是否相等，如果相等，就在控制台输出：a等于b</span></span><br><span class="line">		<span class="keyword">if</span>(a == b) &#123;</span><br><span class="line">			System.out.println(<span class="string">&quot;a等于b&quot;</span>);</span><br><span class="line">		&#125;		</span><br><span class="line">		<span class="comment">//需求：判断a和c的值是否相等，如果相等，就在控制台输出：a等于c</span></span><br><span class="line">		<span class="keyword">int</span> c = <span class="number">10</span>;</span><br><span class="line">		<span class="keyword">if</span>(a == c) &#123;</span><br><span class="line">			System.out.println(<span class="string">&quot;a等于c&quot;</span>);</span><br><span class="line">		&#125;		</span><br><span class="line">		System.out.println(<span class="string">&quot;结束&quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="if语句格式2"><a href="#if语句格式2" class="headerlink" title="if语句格式2"></a>if语句格式2</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">格式：</span><br><span class="line"><span class="keyword">if</span> (关系表达式) &#123;</span><br><span class="line">    语句体<span class="number">1</span>;	</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    语句体<span class="number">2</span>;	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>执行流程：</p>
+<p>①首先计算关系表达式的值</p>
+<p>②如果关系表达式的值为true就执行语句体1</p>
+<p>③如果关系表达式的值为false就执行语句体2</p>
+<p>④继续执行后面的语句内容</p>
+<p><img src="/2019/08/03/Java/JavaSE/190803.2Scanner%E5%92%8Cif/1908033.png"></p>
+<p>示例：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">IfDemo02</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">&quot;开始&quot;</span>);		</span><br><span class="line">		<span class="comment">//定义两个变量</span></span><br><span class="line">		<span class="keyword">int</span> a = <span class="number">10</span>;</span><br><span class="line">		<span class="keyword">int</span> b = <span class="number">20</span>;</span><br><span class="line">		b = <span class="number">5</span>;	</span><br><span class="line">		<span class="comment">//需求：判断a是否大于b，如果是，在控制台输出：a的值大于b，否则，在控制台输出：a的值不大于b</span></span><br><span class="line">		<span class="keyword">if</span>(a &gt; b) &#123;</span><br><span class="line">			System.out.println(<span class="string">&quot;a的值大于b&quot;</span>);</span><br><span class="line">		&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">			System.out.println(<span class="string">&quot;a的值不大于b&quot;</span>);</span><br><span class="line">		&#125;		</span><br><span class="line">		System.out.println(<span class="string">&quot;结束&quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>if语句案例：奇偶数</p>
+<p>需求：任意给出一个整数，请用程序实现判断该整数是奇数还是偶数，并在控制台输出该整数是奇数还是偶数。</p>
+<p>分析：</p>
+<p>​    ①为了体现任意给出一个整数，采用键盘录入一个数据</p>
+<p>​    ②判断整数是偶数还是奇数要分两种情况进行判断，使用if..else结构</p>
+<p>​    ③判断是否偶数需要使用取余运算符实现该功能 number % 2 == 0</p>
+<p>​    ④根据判定情况，在控制台输出对应的内容</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">IfTest01</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="comment">//为了体现任意给出一个整数，采用键盘录入一个数据。(导包，创建对象，接收数据)</span></span><br><span class="line">		Scanner sc = <span class="keyword">new</span> Scanner(System.in);		</span><br><span class="line">		System.out.println(<span class="string">&quot;请输入一个整数：&quot;</span>);</span><br><span class="line">		<span class="keyword">int</span> number = sc.nextInt();	</span><br><span class="line">		<span class="comment">//判断整数是偶数还是奇数要分两种情况进行判断，使用if..else结构		</span></span><br><span class="line">		<span class="comment">//判断是否偶数需要使用取余运算符实现该功能 number % 2 == 0</span></span><br><span class="line">		<span class="comment">//根据判定情况，在控制台输出对应的内容</span></span><br><span class="line">		<span class="keyword">if</span>(number%<span class="number">2</span> == <span class="number">0</span>) &#123;</span><br><span class="line">			System.out.println(number + <span class="string">&quot;是偶数&quot;</span>);</span><br><span class="line">		&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">			System.out.println(number + <span class="string">&quot;是奇数&quot;</span>);</span><br><span class="line">		&#125;	</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="if语句格式3"><a href="#if语句格式3" class="headerlink" title="if语句格式3"></a>if语句格式3</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">格式：</span><br><span class="line"><span class="keyword">if</span> (关系表达式<span class="number">1</span>) &#123;</span><br><span class="line">    语句体<span class="number">1</span>;	</span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> (关系表达式<span class="number">2</span>) &#123;</span><br><span class="line">    语句体<span class="number">2</span>;	</span><br><span class="line">&#125; </span><br><span class="line">…</span><br><span class="line"><span class="keyword">else</span> &#123;</span><br><span class="line">    语句体n+<span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>执行流程：</p>
+<p>①首先计算关系表达式1的值</p>
+<p>②如果值为true就执行语句体1；如果值为false就计算关系表达式2的值</p>
+<p>③如果值为true就执行语句体2；如果值为false就计算关系表达式3的值</p>
+<p>④…</p>
+<p>⑤如果没有任何关系表达式为true，就执行语句体n+1。</p>
+<p><img src="/2019/08/03/Java/JavaSE/190803.2Scanner%E5%92%8Cif/1908034.png"></p>
+<p>示例：键盘录入一个星期数(1,2,…7)，输出对应的星期一，星期二，…星期日</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">IfDemo03</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">&quot;开始&quot;</span>);</span><br><span class="line">		<span class="comment">// 需求：键盘录入一个星期数(1,2,...7)，输出对应的星期一，星期二，...星期日</span></span><br><span class="line">		Scanner sc = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">		System.out.println(<span class="string">&quot;请输入一个星期数(1-7)：&quot;</span>);</span><br><span class="line">		<span class="keyword">int</span> week = sc.nextInt();</span><br><span class="line">		<span class="keyword">if</span>(week == <span class="number">1</span>) &#123;</span><br><span class="line">			System.out.println(<span class="string">&quot;星期一&quot;</span>);</span><br><span class="line">		&#125; <span class="keyword">else</span> <span class="keyword">if</span>(week == <span class="number">2</span>) &#123;</span><br><span class="line">			System.out.println(<span class="string">&quot;星期二&quot;</span>);</span><br><span class="line">		&#125; <span class="keyword">else</span> <span class="keyword">if</span>(week == <span class="number">3</span>) &#123;</span><br><span class="line">			System.out.println(<span class="string">&quot;星期三&quot;</span>);</span><br><span class="line">		&#125; <span class="keyword">else</span> <span class="keyword">if</span>(week == <span class="number">4</span>) &#123;</span><br><span class="line">			System.out.println(<span class="string">&quot;星期四&quot;</span>);</span><br><span class="line">		&#125; <span class="keyword">else</span> <span class="keyword">if</span>(week == <span class="number">5</span>) &#123;</span><br><span class="line">			System.out.println(<span class="string">&quot;星期五&quot;</span>);</span><br><span class="line">		&#125; <span class="keyword">else</span> <span class="keyword">if</span>(week == <span class="number">6</span>) &#123;</span><br><span class="line">			System.out.println(<span class="string">&quot;星期六&quot;</span>);</span><br><span class="line">		&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">			System.out.println(<span class="string">&quot;星期日&quot;</span>);</span><br><span class="line">		&#125;	</span><br><span class="line">		System.out.println(<span class="string">&quot;结束&quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>if语句格式3案例：</p>
+<p>需求：小明快要期末考试了，小明爸爸对他说，会根据他不同的考试成绩，送他不同的礼物，假如你可以控制小明的得分，请用程序实现小明到底该获得什么样的礼物，并在控制台输出。</p>
+<p>分析：</p>
+<p>​    ①小明的考试成绩未知，可以使用键盘录入的方式获取值</p>
+<p>​    ②由于奖励种类较多，属于多种判断，采用if…else…if格式实现</p>
+<p>​    ③为每种判断设置对应的条件</p>
+<p>​    ④为每种判断设置对应的奖励</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">IfTest02</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="comment">//小明的考试成绩未知，可以使用键盘录入的方式获取值</span></span><br><span class="line">		Scanner sc = <span class="keyword">new</span> Scanner(System.in);	</span><br><span class="line">		System.out.println(<span class="string">&quot;请输入一个分数：&quot;</span>);</span><br><span class="line">		<span class="keyword">int</span> score = sc.nextInt();</span><br><span class="line">		<span class="comment">//由于奖励种类较多，属于多种判断，采用if...else...if格式实现</span></span><br><span class="line">		<span class="comment">//为每种判断设置对应的条件</span></span><br><span class="line">		<span class="comment">//为每种判断设置对应的奖励	</span></span><br><span class="line">		<span class="comment">//数据测试：正确数据，边界数据，错误数据</span></span><br><span class="line">		<span class="keyword">if</span>(score&gt;<span class="number">100</span> || score&lt;<span class="number">0</span>) &#123;</span><br><span class="line">			System.out.println(<span class="string">&quot;你输入的分数有误&quot;</span>);</span><br><span class="line">		&#125; <span class="keyword">else</span> <span class="keyword">if</span>(score&gt;=<span class="number">95</span> &amp;&amp; score&lt;=<span class="number">100</span>) &#123;</span><br><span class="line">			System.out.println(<span class="string">&quot;山地自行车一辆&quot;</span>);</span><br><span class="line">		&#125; <span class="keyword">else</span> <span class="keyword">if</span>(score&gt;=<span class="number">90</span> &amp;&amp; score&lt;=<span class="number">94</span>) &#123;</span><br><span class="line">			System.out.println(<span class="string">&quot;游乐场玩一次&quot;</span>);</span><br><span class="line">		&#125; <span class="keyword">else</span> <span class="keyword">if</span>(score&gt;=<span class="number">80</span> &amp;&amp; score&lt;=<span class="number">89</span>) &#123;</span><br><span class="line">			System.out.println(<span class="string">&quot;变形金刚玩具一个&quot;</span>);</span><br><span class="line">		&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">			System.out.println(<span class="string">&quot;胖揍一顿&quot;</span>);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Java</category>
+        <category>JavaSE</category>
+      </categories>
+  </entry>
+  <entry>
     <title>修饰符</title>
-    <url>/2019/08/19/190819.2%E4%BF%AE%E9%A5%B0%E7%AC%A6/</url>
+    <url>/2019/08/19/Java/JavaSE/190819.2%E4%BF%AE%E9%A5%B0%E7%AC%A6/</url>
     <content><![CDATA[<h2 id="修饰符"><a href="#修饰符" class="headerlink" title="修饰符"></a>修饰符</h2><h3 id="1-1-package（了解）"><a href="#1-1-package（了解）" class="headerlink" title="1.1 package（了解）"></a>1.1 package（了解）</h3><ul>
 <li><p>1、包的概念</p>
 <ul>
@@ -861,7 +1075,7 @@
 </ul>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> com.heima;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 1. 没有导包，创建Scnaner对象</span></span><br><span class="line">        Scanner sc = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h3 id="1-3-权限修饰符（理解）"><a href="#1-3-权限修饰符（理解）" class="headerlink" title="1.3 权限修饰符（理解）"></a>1.3 权限修饰符（理解）</h3><p><img src="/2019/08/19/190819.2%E4%BF%AE%E9%A5%B0%E7%AC%A6/1.%E4%BF%AE%E9%A5%B0%E7%AC%A6.png"></p>
+<h3 id="1-3-权限修饰符（理解）"><a href="#1-3-权限修饰符（理解）" class="headerlink" title="1.3 权限修饰符（理解）"></a>1.3 权限修饰符（理解）</h3><p><img src="/2019/08/19/Java/JavaSE/190819.2%E4%BF%AE%E9%A5%B0%E7%AC%A6/1.%E4%BF%AE%E9%A5%B0%E7%AC%A6.png"></p>
 <h3 id="1-4-final（应用）"><a href="#1-4-final（应用）" class="headerlink" title="1.4 final（应用）"></a>1.4 final（应用）</h3><ul>
 <li>fianl关键字的作用<ul>
 <li>final代表最终的意思，可以修饰成员方法，成员变量，类</li>
@@ -934,7 +1148,7 @@
   </entry>
   <entry>
     <title>多态</title>
-    <url>/2019/08/20/190820.1%E5%A4%9A%E6%80%81/</url>
+    <url>/2019/08/20/Java/JavaSE/190820.1%E5%A4%9A%E6%80%81/</url>
     <content><![CDATA[<h2 id="1-多态"><a href="#1-多态" class="headerlink" title="1.多态"></a>1.多态</h2><h3 id="1-1多态的概述（记忆）"><a href="#1-1多态的概述（记忆）" class="headerlink" title="1.1多态的概述（记忆）"></a>1.1多态的概述（记忆）</h3><ul>
 <li><p>什么是多态</p>
 <p>​    同一个对象，在不同时刻表现出来的不同形态</p>
@@ -1045,7 +1259,7 @@
   </entry>
   <entry>
     <title>抽象类</title>
-    <url>/2019/08/20/190820.2%E6%8A%BD%E8%B1%A1%E7%B1%BB/</url>
+    <url>/2019/08/20/Java/JavaSE/190820.2%E6%8A%BD%E8%B1%A1%E7%B1%BB/</url>
     <content><![CDATA[<h2 id="抽象类"><a href="#抽象类" class="headerlink" title="抽象类"></a>抽象类</h2><h3 id="1-1抽象类的概述（理解）"><a href="#1-1抽象类的概述（理解）" class="headerlink" title="1.1抽象类的概述（理解）"></a>1.1抽象类的概述（理解）</h3><p>​    当我们在做子类共性功能抽取时，有些方法在父类中并没有具体的体现，这个时候就需要抽象类了！</p>
 <p>​    在Java中，一个没有方法体的方法应该定义为抽象方法，而类中如果有抽象方法，该类必须定义为抽象类！</p>
 <h3 id="1-2抽象类的特点（记忆）"><a href="#1-2抽象类的特点（记忆）" class="headerlink" title="1.2抽象类的特点（记忆）"></a>1.2抽象类的特点（记忆）</h3><ul>
@@ -1136,7 +1350,7 @@
   </entry>
   <entry>
     <title>接口</title>
-    <url>/2019/08/20/190820.3%E6%8E%A5%E5%8F%A3/</url>
+    <url>/2019/08/20/Java/JavaSE/190820.3%E6%8E%A5%E5%8F%A3/</url>
     <content><![CDATA[<h2 id="1-接口"><a href="#1-接口" class="headerlink" title="1.接口"></a>1.接口</h2><h3 id="1-1接口的概述（理解）"><a href="#1-1接口的概述（理解）" class="headerlink" title="1.1接口的概述（理解）"></a>1.1接口的概述（理解）</h3><p>​    接口就是一种公共的规范标准，只要符合规范标准，大家都可以通用。</p>
 <p>​    Java中的接口更多的体现在对行为的抽象！</p>
 <h3 id="1-2接口的特点（记忆）"><a href="#1-2接口的特点（记忆）" class="headerlink" title="1.2接口的特点（记忆）"></a>1.2接口的特点（记忆）</h3><ul>
@@ -1268,7 +1482,7 @@
 <h2 id="2-综合案例"><a href="#2-综合案例" class="headerlink" title="2.综合案例"></a>2.综合案例</h2><h3 id="2-1案例需求（理解）"><a href="#2-1案例需求（理解）" class="headerlink" title="2.1案例需求（理解）"></a>2.1案例需求（理解）</h3><p>​    我们现在有乒乓球运动员和篮球运动员，乒乓球教练和篮球教练。</p>
 <p>​    为了出国交流，跟乒乓球相关的人员都需要学习英语。</p>
 <p>​    请用所学知识分析，这个案例中有哪些具体类，哪些抽象类，哪些接口，并用代码实现。</p>
-<p><img src="/2019/08/20/190820.3%E6%8E%A5%E5%8F%A3/1.%E6%8E%A5%E5%8F%A3%E8%BF%90%E5%8A%A8%E5%91%98.png"></p>
+<p><img src="/2019/08/20/Java/JavaSE/190820.3%E6%8E%A5%E5%8F%A3/1.%E6%8E%A5%E5%8F%A3%E8%BF%90%E5%8A%A8%E5%91%98.png"></p>
 <h3 id="2-2代码实现（应用）"><a href="#2-2代码实现（应用）" class="headerlink" title="2.2代码实现（应用）"></a>2.2代码实现（应用）</h3><ul>
 <li>抽象人类</li>
 </ul>
@@ -1317,7 +1531,7 @@
   </entry>
   <entry>
     <title>内部类</title>
-    <url>/2019/08/22/190822.1%E5%86%85%E9%83%A8%E7%B1%BB/</url>
+    <url>/2019/08/22/Java/JavaSE/190822.1%E5%86%85%E9%83%A8%E7%B1%BB/</url>
     <content><![CDATA[<h2 id="1-参数传递"><a href="#1-参数传递" class="headerlink" title="1. 参数传递"></a>1. 参数传递</h2><h3 id="1-1-类名作为形参和返回值（应用）"><a href="#1-1-类名作为形参和返回值（应用）" class="headerlink" title="1.1 类名作为形参和返回值（应用）"></a>1.1 类名作为形参和返回值（应用）</h3><ul>
 <li><p>1、类名作为方法的形参</p>
 <p>方法的形参是类名，其实需要的是该类的对象</p>
@@ -1470,7 +1684,7 @@
   </entry>
   <entry>
     <title>异常</title>
-    <url>/2019/08/23/190823%E5%BC%82%E5%B8%B8/</url>
+    <url>/2019/08/23/Java/JavaSE/190823%E5%BC%82%E5%B8%B8/</url>
     <content><![CDATA[<h2 id="异常"><a href="#异常" class="headerlink" title="异常"></a>异常</h2><h3 id="1-异常（记忆）"><a href="#1-异常（记忆）" class="headerlink" title="1.异常（记忆）"></a>1.异常（记忆）</h3><ul>
 <li>异常的概述</li>
 </ul>
@@ -1478,7 +1692,7 @@
 <ul>
 <li>异常的体系结构</li>
 </ul>
-<p>​    <img src="/2019/08/23/190823%E5%BC%82%E5%B8%B8/1%E5%BC%82%E5%B8%B8%E4%BD%93%E7%B3%BB.png"></p>
+<p>​    <img src="/2019/08/23/Java/JavaSE/190823%E5%BC%82%E5%B8%B8/1%E5%BC%82%E5%B8%B8%E4%BD%93%E7%B3%BB.png"></p>
 <a id="more"></a>
 
 <h3 id="2-JVM默认处理异常的方式（理解）"><a href="#2-JVM默认处理异常的方式（理解）" class="headerlink" title="2.JVM默认处理异常的方式（理解）"></a>2.JVM默认处理异常的方式（理解）</h3><ul>
@@ -1577,13 +1791,13 @@
   </entry>
   <entry>
     <title>Collection集合</title>
-    <url>/2019/08/25/190825Collection%E9%9B%86%E5%90%88/</url>
+    <url>/2019/08/25/Java/JavaSE/190825Collection%E9%9B%86%E5%90%88/</url>
     <content><![CDATA[<h2 id="1-Collection集合"><a href="#1-Collection集合" class="headerlink" title="1.Collection集合"></a>1.Collection集合</h2><h3 id="1-1集合体系结构【记忆】"><a href="#1-1集合体系结构【记忆】" class="headerlink" title="1.1集合体系结构【记忆】"></a>1.1集合体系结构【记忆】</h3><ul>
 <li><p>集合类的特点</p>
 <p>​    提供一种存储空间可变的存储模型，存储的数据容量可以随时发生改变</p>
 </li>
 <li><p>集合类的体系图</p>
-<p>​    <img src="/2019/08/25/190825Collection%E9%9B%86%E5%90%88/1%E9%9B%86%E5%90%88%E4%BD%93%E7%B3%BB%E5%9B%BE.png" alt="01"></p>
+<p>​    <img src="/2019/08/25/Java/JavaSE/190825Collection%E9%9B%86%E5%90%88/1%E9%9B%86%E5%90%88%E4%BD%93%E7%B3%BB%E5%9B%BE.png" alt="01"></p>
 </li>
 </ul>
 <a id="more"></a>
@@ -1646,7 +1860,7 @@
 <h3 id="1-5集合使用步骤图解【理解】"><a href="#1-5集合使用步骤图解【理解】" class="headerlink" title="1.5集合使用步骤图解【理解】"></a>1.5集合使用步骤图解【理解】</h3><ul>
 <li>使用步骤</li>
 </ul>
-<p><img src="/2019/08/25/190825Collection%E9%9B%86%E5%90%88/2%E4%BD%BF%E7%94%A8%E6%AD%A5%E9%AA%A4.png" alt="02"></p>
+<p><img src="/2019/08/25/Java/JavaSE/190825Collection%E9%9B%86%E5%90%88/2%E4%BD%BF%E7%94%A8%E6%AD%A5%E9%AA%A4.png" alt="02"></p>
 <h3 id="1-6集合的案例-Collection集合存储学生对象并遍历【应用】"><a href="#1-6集合的案例-Collection集合存储学生对象并遍历【应用】" class="headerlink" title="1.6集合的案例-Collection集合存储学生对象并遍历【应用】"></a>1.6集合的案例-Collection集合存储学生对象并遍历【应用】</h3><ul>
 <li><p>案例需求</p>
 <p>​    创建一个存储学生对象的集合，存储3个学生对象，使用程序实现在控制台遍历该集合</p>
@@ -1850,7 +2064,7 @@
   </entry>
   <entry>
     <title>HTML</title>
-    <url>/2019/09/17/190917HTML/</url>
+    <url>/2019/09/17/Java/Web/190917HTML/</url>
     <content><![CDATA[<h2 id="1-web概念概述"><a href="#1-web概念概述" class="headerlink" title="1.web概念概述"></a>1.web概念概述</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">* JavaWeb：</span><br><span class="line">	* 使用Java语言开发基于互联网的项目</span><br><span class="line"></span><br><span class="line">* 软件架构：</span><br><span class="line">	1. C&#x2F;S: Client&#x2F;Server 客户端&#x2F;服务器端</span><br><span class="line">		* 在用户本地有一个客户端程序，在远程有一个服务器端程序</span><br><span class="line">		* 如：QQ，迅雷...</span><br><span class="line">		* 优点：</span><br><span class="line">			1. 用户体验好</span><br><span class="line">		* 缺点：</span><br><span class="line">			1. 开发、安装，部署，维护 麻烦</span><br><span class="line">	2. B&#x2F;S: Browser&#x2F;Server 浏览器&#x2F;服务器端</span><br><span class="line">		* 只需要一个浏览器，用户通过不同的网址(URL)，客户访问不同的服务器端程序</span><br><span class="line">		* 优点：</span><br><span class="line">			1. 开发、安装，部署，维护 简单</span><br><span class="line">		* 缺点：</span><br><span class="line">			1. 如果应用过大，用户的体验可能会受到影响</span><br><span class="line">			2. 对硬件要求过高</span><br></pre></td></tr></table></figure>
 
 <a id="more"></a>
@@ -1873,168 +2087,20 @@
       </categories>
   </entry>
   <entry>
-    <title>markdown常用语法</title>
-    <url>/2019/10/08/191008markdown%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95/</url>
-    <content><![CDATA[<h2 id="1-标题"><a href="#1-标题" class="headerlink" title="1.标题"></a>1.标题</h2><ul>
-<li><p># 一级标题</p>
-<h1 id="一级标题"><a href="#一级标题" class="headerlink" title="一级标题"></a>一级标题</h1></li>
-<li><p>## 二级标题</p>
-<h2 id="二级标题"><a href="#二级标题" class="headerlink" title="二级标题"></a>二级标题</h2></li>
-<li><p>### 三级标题</p>
-<h3 id="三级标题"><a href="#三级标题" class="headerlink" title="三级标题"></a>三级标题</h3><a id="more"></a></li>
-<li><p>#### 四级标题</p>
-<h4 id="四级标题"><a href="#四级标题" class="headerlink" title="四级标题"></a>四级标题</h4></li>
-<li><p>##### 五级标题</p>
-<h5 id="五级标题"><a href="#五级标题" class="headerlink" title="五级标题"></a>五级标题</h5></li>
-<li><p>###### 六级标题</p>
-<h6 id="六级标题"><a href="#六级标题" class="headerlink" title="六级标题"></a>六级标题</h6></li>
-</ul>
-<h2 id="2-列表-注意空格"><a href="#2-列表-注意空格" class="headerlink" title="2.列表(注意空格)"></a>2.列表(注意空格)</h2><ul>
-<li>* ：无序列表</li>
-<li>+ ：无序列表</li>
-<li>- ：无序列表</li>
-</ul>
-<ol>
-<li>：有序列表</li>
-<li>：有序列表</li>
-<li>：有序列表<h2 id="3-换行"><a href="#3-换行" class="headerlink" title="3.换行"></a>3.换行</h2></li>
-</ol>
-<ul>
-<li>按两次回车</li>
-<li>html中的标签br</li>
-<li>&lt;可识别的内容&gt;<h2 id="4-分割线"><a href="#4-分割线" class="headerlink" title="4.分割线"></a>4.分割线</h2></li>
-<li>--- 连续输入三个-</li>
-</ul>
-<hr>
-<ul>
-<li>*** 连续输入三个*</li>
-</ul>
-<hr>
-<h2 id="5-超链接"><a href="#5-超链接" class="headerlink" title="5.超链接"></a>5.超链接</h2><ul>
-<li><p>[超链接名字](超链接的地址src)</p>
-<p> <a href="zhaoweixu.com">WeiXu’blog</a></p>
-<h2 id="6-粗体和斜体"><a href="#6-粗体和斜体" class="headerlink" title="6.粗体和斜体"></a>6.粗体和斜体</h2></li>
-<li><p>*内容* ：一个*号代表 斜体</p>
-<p> <em>这是斜体文字</em></p>
-</li>
-<li><p>**内容** ：两个*号代表 粗体</p>
-<p> <strong>这是粗体文字</strong></p>
-</li>
-<li><p>***内容*** ：三个*号代表 斜体+粗体</p>
-<p> <strong><em>这是斜体+粗体文字</em></strong></p>
-<h2 id="7-引用"><a href="#7-引用" class="headerlink" title="7.引用"></a>7.引用</h2></li>
-<li><p>&gt; 引用一段话</p>
-</li>
-</ul>
-<blockquote>
-<p>这是引用的话的示例</p>
-</blockquote>
-<ul>
-<li>```代码``` 引用代码<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ul&#123;</span><br><span class="line">    list-style: none;</span><br><span class="line">&#125;</span><br><span class="line">ul li&#123;</span><br><span class="line">    margin-top: 15px; </span><br><span class="line">    font:12px 宋体;</span><br><span class="line">&#125;</span><br><span class="line">ul li a&#123;</span><br><span class="line">    text-decoration: none; </span><br><span class="line">    color: black; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<h2 id="8-空格"><a href="#8-空格" class="headerlink" title="8.空格"></a>8.空格</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&amp;emsp;   &#x2F;&#x2F;敲一次就是缩进一个汉字的位置,两次就是两个</span><br></pre></td></tr></table></figure>
-
-]]></content>
+    <title>Tomcat</title>
+    <url>/2019/10/17/Java/Web/191017Web_tomcat/</url>
+    <content><![CDATA[<h3 id="Tomcat：Web服务器软件"><a href="#Tomcat：Web服务器软件" class="headerlink" title="Tomcat：Web服务器软件"></a>Tomcat：Web服务器软件</h3><h4 id="1-下载-http-tomcat-apache-org"><a href="#1-下载-http-tomcat-apache-org" class="headerlink" title="1.下载:http://tomcat.apache.org/"></a>1.下载:<a href="http://tomcat.apache.org/">http://tomcat.apache.org/</a></h4>]]></content>
       <categories>
-        <category>Server</category>
-        <category>Hexo</category>
+        <category>Java</category>
+        <category>JavaWeb</category>
       </categories>
       <tags>
-        <tag>markdown常用语法</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hexo文章插入图片</title>
-    <url>/2019/10/11/191011hexo%E6%96%87%E7%AB%A0%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87/</url>
-    <content><![CDATA[<h2 id="方法一"><a href="#方法一" class="headerlink" title="方法一:"></a>方法一:</h2><h4 id="images文件夹"><a href="#images文件夹" class="headerlink" title="images文件夹"></a>images文件夹</h4><p>如果你的Hexo项目中只有少量图片，那最简单的方法就是将它们放在 <code>source/images</code> 文件夹中,然后通过类似于 <code>![](/images/image.jpg)</code> 的方法访问它们。</p>
-<p>例如:</p>
-<p><code>![1.png](/images/1.png)</code></p>
-<a id="more"></a>
-
-<h2 id="方法二-推荐使用"><a href="#方法二-推荐使用" class="headerlink" title="方法二:(推荐使用)"></a>方法二:(推荐使用)</h2><h4 id="1-将-config-yml-文件中的-post-asset-folder-选项设为-“true”-。"><a href="#1-将-config-yml-文件中的-post-asset-folder-选项设为-“true”-。" class="headerlink" title="1.将 config.yml 文件中的 post_asset_folder 选项设为 “true” 。"></a>1.将 <code>config.yml</code> 文件中的 <code>post_asset_folder</code> 选项设为 “true” 。</h4><p>&emsp;&emsp;之后在你每次通过 <code>hexo new [layout] &lt;title&gt;</code> 命令创建xxx.md时会自动创建一个同名资源文件夹xxx,你可以把跟这篇文章有关的图片资源放在关联文件夹中。</p>
-<p><code>_config.ymlpost_asset_folder: true</code></p>
-<h4 id="2-安装插件-在blog目录下输入下边的命令安装插件"><a href="#2-安装插件-在blog目录下输入下边的命令安装插件" class="headerlink" title="2.安装插件:在blog目录下输入下边的命令安装插件:"></a>2.安装插件:在blog目录下输入下边的命令安装插件:</h4><p><code>npm install https://github.com/CodeFalling/hexo-asset-image -- save</code></p>
-<h4 id="3-添加图片"><a href="#3-添加图片" class="headerlink" title="3.添加图片:"></a>3.添加图片:</h4><p>在想添加的位置写入<code>![](资源文件夹名字/图片名字.图片格式)</code>,例如:</p>
-<p><code>![](xxx/1.png)</code></p>
-]]></content>
-      <categories>
-        <category>Server</category>
-        <category>Hexo</category>
-      </categories>
-      <tags>
-        <tag>资源文件夹</tag>
-        <tag>图片标签插件</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>黑阀使用方法</title>
-    <url>/2019/10/23/191023%E9%BB%91%E9%98%80%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/</url>
-    <content><![CDATA[<h3 id="1-安装"><a href="#1-安装" class="headerlink" title="1.安装"></a>1.安装</h3><p>&emsp;&emsp;在手机中安装“黑阀”APP，然后在电脑中下载好ADB工具，并解压到电脑里面。<br>电脑ADB下载地址:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">https:&#x2F;&#x2F;developer.android.google.cn&#x2F;studio&#x2F;releases&#x2F;platform-tools#downloads</span><br></pre></td></tr></table></figure>
-
-<p>&emsp;&emsp;手机点击向导,在“使用”项目卡中点击“进入黑域”按钮,“开发者选项”打开手机的“USB调试”，手机会弹出一个小窗口点击“允许”按钮即可。</p>
-<a id="more"></a>
-
-<h3 id="2-查看命令"><a href="#2-查看命令" class="headerlink" title="2.查看命令"></a>2.查看命令</h3><p>&emsp;&emsp;打开电脑中ADB文件目录（进入platform-tools），在空白处按着键盘上的“shift键”然后点击鼠标的右键,点击“在此处打开命令窗口”项目,在弹出的命令窗口中输入下边命令，查看我们已经连接到电脑的手机</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">“.\adb devices”</span><br></pre></td></tr></table></figure>
-
-<h3 id="3-授权命令"><a href="#3-授权命令" class="headerlink" title="3.授权命令"></a>3.授权命令</h3><p>&emsp;&emsp;待我们的设备列举出来后，输入下边命令,从而完成我们对黑域手机端的授权。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">“.\adb -d shell sh &#x2F;data&#x2F;data&#x2F;me.piebridge.brevent&#x2F;brevent.sh”</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-]]></content>
-      <categories>
-        <category>Server</category>
-        <category>Android</category>
-      </categories>
-      <tags>
-        <tag>黑阀</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>CentOS7设置防火墙</title>
-    <url>/2019/10/26/191026CentOS7%E8%AE%BE%E7%BD%AE%E9%98%B2%E7%81%AB%E5%A2%99/</url>
-    <content><![CDATA[<h4 id="1-查看防火墙的状态的命令为："><a href="#1-查看防火墙的状态的命令为：" class="headerlink" title="1.查看防火墙的状态的命令为："></a>1.查看防火墙的状态的命令为：</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo systemctl status firewalld</span><br></pre></td></tr></table></figure>
-
-<h4 id="2-打开防火墙的方式有两种"><a href="#2-打开防火墙的方式有两种" class="headerlink" title="2.打开防火墙的方式有两种:"></a>2.打开防火墙的方式有两种:</h4><h6 id="一种是打开后重启会恢复回原来的状态，命令为："><a href="#一种是打开后重启会恢复回原来的状态，命令为：" class="headerlink" title="一种是打开后重启会恢复回原来的状态，命令为："></a>一种是打开后重启会恢复回原来的状态，命令为：</h6><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo systemctl start firewalld；</span><br></pre></td></tr></table></figure>
-
-<h6 id="另一种是打开后重启不会恢复到原来的状态，命令为："><a href="#另一种是打开后重启不会恢复到原来的状态，命令为：" class="headerlink" title="另一种是打开后重启不会恢复到原来的状态，命令为："></a>另一种是打开后重启不会恢复到原来的状态，命令为：</h6><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo systemctl enable firewalld;</span><br></pre></td></tr></table></figure>
-
-<p>这种方式输入命令后要重启系统才会生效。</p>
-<a id="more"></a>
-
-<h4 id="3-关闭防火墙的方式也有两种"><a href="#3-关闭防火墙的方式也有两种" class="headerlink" title="3.关闭防火墙的方式也有两种:"></a>3.关闭防火墙的方式也有两种:</h4><h6 id="一种是打开后重启会恢复回原来的状态，命令为：-1"><a href="#一种是打开后重启会恢复回原来的状态，命令为：-1" class="headerlink" title="一种是打开后重启会恢复回原来的状态，命令为："></a>一种是打开后重启会恢复回原来的状态，命令为：</h6><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo systemctl stop firewalld;</span><br></pre></td></tr></table></figure>
-
-<h6 id="另一种是打开后重启不会恢复到原来的状态，命令为：-1"><a href="#另一种是打开后重启不会恢复到原来的状态，命令为：-1" class="headerlink" title="另一种是打开后重启不会恢复到原来的状态，命令为："></a>另一种是打开后重启不会恢复到原来的状态，命令为：</h6><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo systemctl disable firewalld;</span><br></pre></td></tr></table></figure>
-
-<p>这种方式输入命令后要重启系统才会生效。</p>
-<h4 id="4-开启某个特定的端口"><a href="#4-开启某个特定的端口" class="headerlink" title="4.开启某个特定的端口:"></a>4.开启某个特定的端口:</h4><p>例如下边代码是开放80端口:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">firewall-cmd --zone&#x3D;public --add-port&#x3D;80&#x2F;tcp --permanent;</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
-]]></content>
-      <categories>
-        <category>Server</category>
-        <category>Linux</category>
-        <category>CentOS7</category>
-      </categories>
-      <tags>
-        <tag>Linux Firewalld</tag>
+        <tag>Tomcat</tag>
       </tags>
   </entry>
   <entry>
     <title>Spring</title>
-    <url>/2019/10/28/191028Spring/</url>
+    <url>/2019/10/28/Java/Web/191028Spring/</url>
     <content><![CDATA[<h2 id="1-spring概述"><a href="#1-spring概述" class="headerlink" title="1. spring概述"></a>1. spring概述</h2><h3 id="1-1-Spring是什么（理解）"><a href="#1-1-Spring是什么（理解）" class="headerlink" title="1.1 Spring是什么（理解）"></a>1.1 Spring是什么（理解）</h3><p>Spring是分层的 Java SE/EE应用 full-stack 轻量级开源框架，以 IoC（Inverse Of Control：反转控制）和 AOP（Aspect Oriented Programming：面向切面编程）为内核。</p>
 <p>提供了展现层 SpringMVC和持久层 Spring JDBCTemplate以及业务层事务管理等众多的企业级应用技术，还能整合开源世界众多著名的第三方框架和类库，逐渐成为使用最多的Java EE 企业应用开源框架</p>
 <a id="more"></a>
@@ -2045,7 +2111,7 @@
 <p>AOP 编程的支持</p>
 <p>声明式事务的支持</p>
 <p>方便程序的测试</p>
-<h3 id="1-4-Spring的体系结构（了解）"><a href="#1-4-Spring的体系结构（了解）" class="headerlink" title="1.4 Spring的体系结构（了解）"></a>1.4 Spring的体系结构（了解）</h3><p><img src="/2019/10/28/191028Spring/1.Spring.png"></p>
+<h3 id="1-4-Spring的体系结构（了解）"><a href="#1-4-Spring的体系结构（了解）" class="headerlink" title="1.4 Spring的体系结构（了解）"></a>1.4 Spring的体系结构（了解）</h3><p><img src="/2019/10/28/Java/Web/191028Spring/1.Spring.png"></p>
 <h2 id="2-spring快速入门"><a href="#2-spring快速入门" class="headerlink" title="2. spring快速入门"></a>2. spring快速入门</h2><h3 id="2-1-Spring程序开发步骤"><a href="#2-1-Spring程序开发步骤" class="headerlink" title="2.1 Spring程序开发步骤"></a>2.1 Spring程序开发步骤</h3><p>①导入 Spring 开发的基本包坐标</p>
 <p>②编写 Dao 接口和实现类</p>
 <p>③创建 Spring 核心配置文件</p>
@@ -2219,45 +2285,72 @@
       </categories>
   </entry>
   <entry>
-    <title>搭建个人VPN</title>
-    <url>/2019/11/10/191110%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BAVPN/</url>
-    <content><![CDATA[<p>如何搭建属于自己的SS服务</p>
-<h3 id="1-准备"><a href="#1-准备" class="headerlink" title="1.准备:"></a>1.准备:</h3><p>&emsp;&emsp;首先要有自己的服务器(国外的),谷歌有免费使用一年活动,不限时间</p>
+    <title>黑阀使用方法</title>
+    <url>/2019/10/23/Server/Android/191023%E9%BB%91%E9%98%80%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/</url>
+    <content><![CDATA[<h3 id="1-安装"><a href="#1-安装" class="headerlink" title="1.安装"></a>1.安装</h3><p>&emsp;&emsp;在手机中安装“黑阀”APP，然后在电脑中下载好ADB工具，并解压到电脑里面。<br>电脑ADB下载地址:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">https:&#x2F;&#x2F;developer.android.google.cn&#x2F;studio&#x2F;releases&#x2F;platform-tools#downloads</span><br></pre></td></tr></table></figure>
+
+<p>&emsp;&emsp;手机点击向导,在“使用”项目卡中点击“进入黑域”按钮,“开发者选项”打开手机的“USB调试”，手机会弹出一个小窗口点击“允许”按钮即可。</p>
 <a id="more"></a>
 
-<h3 id="2-搭建"><a href="#2-搭建" class="headerlink" title="2.搭建"></a>2.搭建</h3><p>&emsp;&emsp;在VM实例页面，找到创建好的实例，点击后面的SSH，远程连接到该VPS服务器上。可以理解为在公司远程控制家里的电脑，只不过这里控制的是你的VPS服务器。</p>
-<p><img src="/2019/11/10/191110%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BAVPN/1.SSH%E8%BF%9E%E6%8E%A5.png" alt="SSH连接"></p>
-<p>&emsp;&emsp;SSH连接成功后，依次输入下面命令：</p>
-<h5 id="1-获取管理员权限"><a href="#1-获取管理员权限" class="headerlink" title="1.获取管理员权限"></a>1.获取管理员权限</h5><p><code>sudo -i</code>  </p>
-<h5 id="2-安装SS服务"><a href="#2-安装SS服务" class="headerlink" title="2.安装SS服务"></a>2.安装SS服务</h5><p><code>wget --no-check-certificatehttps://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocksR.sh &amp;&amp; chmod +x shadowsocksR.sh </code>  </p>
-<h5 id="3-对SS进行配置"><a href="#3-对SS进行配置" class="headerlink" title="3.对SS进行配置"></a>3.对SS进行配置</h5><p><code>./shadowsocksR.sh</code>　</p>
-<h3 id="3-配置"><a href="#3-配置" class="headerlink" title="3.配置"></a>3.配置</h3><p>&emsp;&emsp;执行完步骤2中命令后，会进入下面的配置界面,提示的是设置SS密码，输入后回车；(输入密码的时候不显示,不是没输进去,只是不显示,默认密码为teddysun.com)</p>
-<p><img src="/2019/11/10/191110%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BAVPN/2.%E8%AE%BE%E7%BD%AE%E5%AF%86%E7%A0%81.png" alt="设置密码"></p>
-<p>&emsp;&emsp;然后是设置SS端口，输入一个1-65536之间的数字后回车，我这里输入8080；(默认为9895)</p>
-<p><img src="/2019/11/10/191110%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BAVPN/3.%E7%AB%AF%E5%8F%A3.png" alt="端口"></p>
-<p>&emsp;&emsp;加密方式选择aes-256-cfb,输入方式前的序号即可</p>
-<p><img src="/2019/11/10/191110%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BAVPN/4.%E9%80%89%E6%8B%A9%E5%8A%A0%E5%AF%86%E6%96%B9%E5%BC%8F.png" alt="选择加密方式"></p>
-<p>&emsp;&emsp;剩下的其他配置一直按回车(选择默认方式)就行，直到出现下图所示账号信息就安装成功了,这个过程大概需要2分钟。</p>
-<p><img src="/2019/11/10/191110%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BAVPN/5.%E6%90%AD%E5%BB%BA%E6%88%90%E5%8A%9F.png" alt="搭建成功"></p>
-<p>账号信息中需要用到的有:</p>
-<p>IP</p>
-<p>Port(端口)</p>
-<p>Password(密码)</p>
-<p>Encryption Method(加密方式)</p>
-<h3 id="4-防火墙设置"><a href="#4-防火墙设置" class="headerlink" title="4.防火墙设置"></a>4.防火墙设置</h3><p>　　由于防火墙的原因，现在你肯定还是连接不上去的，这里就需要设置防火墙。Debian 9的默认防火墙是允许所有端口访问的，但是它上面还有一层谷歌云的防火墙(阿里云管这个叫安全组),所以我们需要设置谷歌云的防火墙。在左侧菜单依次点击“VPC网络–防火墙规则”。</p>
-<p>&emsp;&emsp;进到防火墙规则页面，点击“创建防火墙规则”。设置防火墙规则时，有几个地方需要注意，目标修改为“网络中所有实例”，来源IP地址范围填写“0.0.0.0/0”，协议和端口勾选“指定的协议和端口”。勾选tcp,填入自己在第3步中设置的端口号,我设置的是8080,填入之后点击”创建”,防火墙设置就完成了。</p>
-<p><img src="/2019/11/10/191110%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BAVPN/6.%E9%98%B2%E7%81%AB%E5%A2%99%E8%A7%84%E5%88%99.png" alt="防火墙规则"></p>
-<h3 id="5-配置Shadowsocks"><a href="#5-配置Shadowsocks" class="headerlink" title="5.配置Shadowsocks"></a>5.配置Shadowsocks</h3><p>&emsp;&emsp;最后在Shadowsocks客户端中配置自己的信息就可以开心的玩耍了</p>
-<p><img src="/2019/11/10/191110%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BAVPN/7.SS.png" alt="SS"></p>
+<h3 id="2-查看命令"><a href="#2-查看命令" class="headerlink" title="2.查看命令"></a>2.查看命令</h3><p>&emsp;&emsp;打开电脑中ADB文件目录（进入platform-tools），在空白处按着键盘上的“shift键”然后点击鼠标的右键,点击“在此处打开命令窗口”项目,在弹出的命令窗口中输入下边命令，查看我们已经连接到电脑的手机</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">“.\adb devices”</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-授权命令"><a href="#3-授权命令" class="headerlink" title="3.授权命令"></a>3.授权命令</h3><p>&emsp;&emsp;待我们的设备列举出来后，输入下边命令,从而完成我们对黑域手机端的授权。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">“.\adb -d shell sh &#x2F;data&#x2F;data&#x2F;me.piebridge.brevent&#x2F;brevent.sh”</span><br></pre></td></tr></table></figure>
+
+
+
+
+
 ]]></content>
       <categories>
         <category>Server</category>
-        <category>VPS</category>
+        <category>Android</category>
       </categories>
+      <tags>
+        <tag>黑阀</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>CentOS7设置防火墙</title>
+    <url>/2019/10/26/Server/Linux/191026CentOS7%E8%AE%BE%E7%BD%AE%E9%98%B2%E7%81%AB%E5%A2%99/</url>
+    <content><![CDATA[<h4 id="1-查看防火墙的状态的命令为："><a href="#1-查看防火墙的状态的命令为：" class="headerlink" title="1.查看防火墙的状态的命令为："></a>1.查看防火墙的状态的命令为：</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo systemctl status firewalld</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-打开防火墙的方式有两种"><a href="#2-打开防火墙的方式有两种" class="headerlink" title="2.打开防火墙的方式有两种:"></a>2.打开防火墙的方式有两种:</h4><h6 id="一种是打开后重启会恢复回原来的状态，命令为："><a href="#一种是打开后重启会恢复回原来的状态，命令为：" class="headerlink" title="一种是打开后重启会恢复回原来的状态，命令为："></a>一种是打开后重启会恢复回原来的状态，命令为：</h6><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo systemctl start firewalld；</span><br></pre></td></tr></table></figure>
+
+<h6 id="另一种是打开后重启不会恢复到原来的状态，命令为："><a href="#另一种是打开后重启不会恢复到原来的状态，命令为：" class="headerlink" title="另一种是打开后重启不会恢复到原来的状态，命令为："></a>另一种是打开后重启不会恢复到原来的状态，命令为：</h6><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo systemctl enable firewalld;</span><br></pre></td></tr></table></figure>
+
+<p>这种方式输入命令后要重启系统才会生效。</p>
+<a id="more"></a>
+
+<h4 id="3-关闭防火墙的方式也有两种"><a href="#3-关闭防火墙的方式也有两种" class="headerlink" title="3.关闭防火墙的方式也有两种:"></a>3.关闭防火墙的方式也有两种:</h4><h6 id="一种是打开后重启会恢复回原来的状态，命令为：-1"><a href="#一种是打开后重启会恢复回原来的状态，命令为：-1" class="headerlink" title="一种是打开后重启会恢复回原来的状态，命令为："></a>一种是打开后重启会恢复回原来的状态，命令为：</h6><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo systemctl stop firewalld;</span><br></pre></td></tr></table></figure>
+
+<h6 id="另一种是打开后重启不会恢复到原来的状态，命令为：-1"><a href="#另一种是打开后重启不会恢复到原来的状态，命令为：-1" class="headerlink" title="另一种是打开后重启不会恢复到原来的状态，命令为："></a>另一种是打开后重启不会恢复到原来的状态，命令为：</h6><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo systemctl disable firewalld;</span><br></pre></td></tr></table></figure>
+
+<p>这种方式输入命令后要重启系统才会生效。</p>
+<h4 id="4-开启某个特定的端口"><a href="#4-开启某个特定的端口" class="headerlink" title="4.开启某个特定的端口:"></a>4.开启某个特定的端口:</h4><p>例如下边代码是开放80端口:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">firewall-cmd --zone&#x3D;public --add-port&#x3D;80&#x2F;tcp --permanent;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+]]></content>
+      <categories>
+        <category>Server</category>
+        <category>Linux</category>
+        <category>CentOS7</category>
+      </categories>
+      <tags>
+        <tag>Linux Firewalld</tag>
+      </tags>
   </entry>
   <entry>
     <title>Debian允许root用户登录</title>
-    <url>/2019/11/11/191111Debian%E5%85%81%E8%AE%B8root%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95/</url>
+    <url>/2019/11/11/Server/Linux/191111Debian%E5%85%81%E8%AE%B8root%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95/</url>
     <content><![CDATA[]]></content>
       <categories>
         <category>Server</category>
@@ -2267,7 +2360,7 @@
   </entry>
   <entry>
     <title>Linux添加root权限</title>
-    <url>/2019/11/16/191116Linux%E6%B7%BB%E5%8A%A0root%E6%9D%83%E9%99%90/</url>
+    <url>/2019/11/16/Server/Linux/191116Linux%E6%B7%BB%E5%8A%A0root%E6%9D%83%E9%99%90/</url>
     <content><![CDATA[<h3 id="1-添加用户"><a href="#1-添加用户" class="headerlink" title="1.添加用户"></a>1.添加用户</h3><ul>
 <li><p>使用adduser或者useradd添加一个名为ying的用户: <code>adduser ying</code></p>
 </li>
@@ -2286,14 +2379,14 @@
 
 <h5 id="2-在下边添加"><a href="#2-在下边添加" class="headerlink" title="2.在下边添加:"></a>2.在下边添加:</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ying    ALL&#x3D;(ALL)     ALL</span><br></pre></td></tr></table></figure>
 
-<p><img src="/2019/11/16/191116Linux%E6%B7%BB%E5%8A%A0root%E6%9D%83%E9%99%90/root%E6%9D%83%E9%99%90.png"></p>
+<p><img src="/2019/11/16/Server/Linux/191116Linux%E6%B7%BB%E5%8A%A0root%E6%9D%83%E9%99%90/root%E6%9D%83%E9%99%90.png"></p>
 <h5 id="3-添加完之后按ESC-输入以下命令强制保存并退出"><a href="#3-添加完之后按ESC-输入以下命令强制保存并退出" class="headerlink" title="3.添加完之后按ESC,输入以下命令强制保存并退出"></a>3.添加完之后按ESC,输入以下命令<strong>强制保存</strong>并退出</h5><p><code>:wq!</code></p>
 <p>必须<strong>强制</strong>保存退出,否则会报以下错误:</p>
-<p><img src="/2019/11/16/191116Linux%E6%B7%BB%E5%8A%A0root%E6%9D%83%E9%99%90/%E4%BF%9D%E5%AD%98%E9%80%80%E5%87%BA%E6%8A%A5%E9%94%99.png"></p>
+<p><img src="/2019/11/16/Server/Linux/191116Linux%E6%B7%BB%E5%8A%A0root%E6%9D%83%E9%99%90/%E4%BF%9D%E5%AD%98%E9%80%80%E5%87%BA%E6%8A%A5%E9%94%99.png"></p>
 <h5 id="4-输入sudo-i就可以切换到root角色"><a href="#4-输入sudo-i就可以切换到root角色" class="headerlink" title="4.输入sudo -i就可以切换到root角色"></a>4.输入<code>sudo -i</code>就可以切换到root角色</h5><p>查看自己所在组用以下命令: <code>id</code></p>
-<p><img src="/2019/11/16/191116Linux%E6%B7%BB%E5%8A%A0root%E6%9D%83%E9%99%90/id.png"></p>
+<p><img src="/2019/11/16/Server/Linux/191116Linux%E6%B7%BB%E5%8A%A0root%E6%9D%83%E9%99%90/id.png"></p>
 <p>查看自己是否是管理员:whoami</p>
-<p><img src="/2019/11/16/191116Linux%E6%B7%BB%E5%8A%A0root%E6%9D%83%E9%99%90/whoami.png"></p>
+<p><img src="/2019/11/16/Server/Linux/191116Linux%E6%B7%BB%E5%8A%A0root%E6%9D%83%E9%99%90/whoami.png"></p>
 ]]></content>
       <categories>
         <category>Server</category>
@@ -2302,7 +2395,7 @@
   </entry>
   <entry>
     <title>Ubuntu设置root用户登录</title>
-    <url>/2019/12/02/191202Ubuntu%E8%AE%BE%E7%BD%AEroot%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95/</url>
+    <url>/2019/12/02/Server/Linux/191202Ubuntu%E8%AE%BE%E7%BD%AEroot%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95/</url>
     <content><![CDATA[]]></content>
       <categories>
         <category>Server</category>
@@ -2310,138 +2403,45 @@
       </categories>
   </entry>
   <entry>
-    <title>更换NexT主题后访问报错</title>
-    <url>/2020/01/15/200115%E6%9B%B4%E6%8D%A2NexT%E4%B8%BB%E9%A2%98%E5%90%8E%E8%AE%BF%E9%97%AE%E6%8A%A5%E9%94%99/</url>
-    <content><![CDATA[<p>hexo博客更换NexT主题后访问显示报错:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;% extends ‘_layout.swig‘ %&#125; &#123;% import ‘_macro&#x2F;post.swig‘ as post</span><br><span class="line">_template %&#125;</span><br></pre></td></tr></table></figure>
+    <title>搭建个人VPN</title>
+    <url>/2019/11/10/Server/VPS/191110%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BAVPN/</url>
+    <content><![CDATA[<p>如何搭建属于自己的SS服务</p>
+<h3 id="1-准备"><a href="#1-准备" class="headerlink" title="1.准备:"></a>1.准备:</h3><p>&emsp;&emsp;首先要有自己的服务器(国外的),谷歌有免费使用一年活动,不限时间</p>
+<a id="more"></a>
 
-<p>原因是hexo在5.0之后把swig给删除了需要自己手动安装</p>
-<p>在博客目录下右键“Git Bash Here”输入以下命令即可:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm i hexo-renderer-swig</span><br></pre></td></tr></table></figure>
+<h3 id="2-搭建"><a href="#2-搭建" class="headerlink" title="2.搭建"></a>2.搭建</h3><p>&emsp;&emsp;在VM实例页面，找到创建好的实例，点击后面的SSH，远程连接到该VPS服务器上。可以理解为在公司远程控制家里的电脑，只不过这里控制的是你的VPS服务器。</p>
+<p><img src="/2019/11/10/Server/VPS/191110%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BAVPN/1.SSH%E8%BF%9E%E6%8E%A5.png" alt="SSH连接"></p>
+<p>&emsp;&emsp;SSH连接成功后，依次输入下面命令：</p>
+<h5 id="1-获取管理员权限"><a href="#1-获取管理员权限" class="headerlink" title="1.获取管理员权限"></a>1.获取管理员权限</h5><p><code>sudo -i</code>  </p>
+<h5 id="2-安装SS服务"><a href="#2-安装SS服务" class="headerlink" title="2.安装SS服务"></a>2.安装SS服务</h5><p><code>wget --no-check-certificatehttps://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocksR.sh &amp;&amp; chmod +x shadowsocksR.sh </code>  </p>
+<h5 id="3-对SS进行配置"><a href="#3-对SS进行配置" class="headerlink" title="3.对SS进行配置"></a>3.对SS进行配置</h5><p><code>./shadowsocksR.sh</code>　</p>
+<h3 id="3-配置"><a href="#3-配置" class="headerlink" title="3.配置"></a>3.配置</h3><p>&emsp;&emsp;执行完步骤2中命令后，会进入下面的配置界面,提示的是设置SS密码，输入后回车；(输入密码的时候不显示,不是没输进去,只是不显示,默认密码为teddysun.com)</p>
+<p><img src="/2019/11/10/Server/VPS/191110%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BAVPN/2.%E8%AE%BE%E7%BD%AE%E5%AF%86%E7%A0%81.png" alt="设置密码"></p>
+<p>&emsp;&emsp;然后是设置SS端口，输入一个1-65536之间的数字后回车，我这里输入8080；(默认为9895)</p>
+<p><img src="/2019/11/10/Server/VPS/191110%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BAVPN/3.%E7%AB%AF%E5%8F%A3.png" alt="端口"></p>
+<p>&emsp;&emsp;加密方式选择aes-256-cfb,输入方式前的序号即可</p>
+<p><img src="/2019/11/10/Server/VPS/191110%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BAVPN/4.%E9%80%89%E6%8B%A9%E5%8A%A0%E5%AF%86%E6%96%B9%E5%BC%8F.png" alt="选择加密方式"></p>
+<p>&emsp;&emsp;剩下的其他配置一直按回车(选择默认方式)就行，直到出现下图所示账号信息就安装成功了,这个过程大概需要2分钟。</p>
+<p><img src="/2019/11/10/Server/VPS/191110%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BAVPN/5.%E6%90%AD%E5%BB%BA%E6%88%90%E5%8A%9F.png" alt="搭建成功"></p>
+<p>账号信息中需要用到的有:</p>
+<p>IP</p>
+<p>Port(端口)</p>
+<p>Password(密码)</p>
+<p>Encryption Method(加密方式)</p>
+<h3 id="4-防火墙设置"><a href="#4-防火墙设置" class="headerlink" title="4.防火墙设置"></a>4.防火墙设置</h3><p>　　由于防火墙的原因，现在你肯定还是连接不上去的，这里就需要设置防火墙。Debian 9的默认防火墙是允许所有端口访问的，但是它上面还有一层谷歌云的防火墙(阿里云管这个叫安全组),所以我们需要设置谷歌云的防火墙。在左侧菜单依次点击“VPC网络–防火墙规则”。</p>
+<p>&emsp;&emsp;进到防火墙规则页面，点击“创建防火墙规则”。设置防火墙规则时，有几个地方需要注意，目标修改为“网络中所有实例”，来源IP地址范围填写“0.0.0.0/0”，协议和端口勾选“指定的协议和端口”。勾选tcp,填入自己在第3步中设置的端口号,我设置的是8080,填入之后点击”创建”,防火墙设置就完成了。</p>
+<p><img src="/2019/11/10/Server/VPS/191110%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BAVPN/6.%E9%98%B2%E7%81%AB%E5%A2%99%E8%A7%84%E5%88%99.png" alt="防火墙规则"></p>
+<h3 id="5-配置Shadowsocks"><a href="#5-配置Shadowsocks" class="headerlink" title="5.配置Shadowsocks"></a>5.配置Shadowsocks</h3><p>&emsp;&emsp;最后在Shadowsocks客户端中配置自己的信息就可以开心的玩耍了</p>
+<p><img src="/2019/11/10/Server/VPS/191110%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BAVPN/7.SS.png" alt="SS"></p>
 ]]></content>
       <categories>
         <category>Server</category>
-        <category>Hexo</category>
+        <category>VPS</category>
       </categories>
-  </entry>
-  <entry>
-    <title>NexT主题点击日志报错</title>
-    <url>/2020/01/16/200116NexT%E4%B8%BB%E9%A2%98%E7%82%B9%E5%87%BB%E6%97%A5%E5%BF%97%E6%8A%A5%E9%94%99-md/</url>
-    <content><![CDATA[<p>NexT主题点击日志时报错：</p>
-<p><img src="/2020/01/16/200116NexT%E4%B8%BB%E9%A2%98%E7%82%B9%E5%87%BB%E6%97%A5%E5%BF%97%E6%8A%A5%E9%94%99-md/%E6%97%A5%E5%BF%97404.png"></p>
-<p>打开主题目录下/layout/_macro/sidebar.swig</p>
-<p>找到：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;a href&#x3D;&quot;&#123;&#123; url_for(theme.menu.archives).split(&#39;||&#39;)[0] | trim &#125;&#125;&quot;&gt;</span><br></pre></td></tr></table></figure>
-
-<p>修改为：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;a href&#x3D;&quot;&#123;&#123;url_for(theme.menu.archives.split(&#39;||&#39;)[0])| trim&#125;&#125;&quot;&gt;</span><br></pre></td></tr></table></figure>
-
-<p>记得清除浏览器缓存</p>
-]]></content>
-      <categories>
-        <category>Server</category>
-        <category>Hexo</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>DeepFaceLab</title>
-    <url>/2020/05/11/200511DeepFaceLab/</url>
-    <content><![CDATA[<h2 id="训练参数设置："><a href="#训练参数设置：" class="headerlink" title="训练参数设置："></a>训练参数设置：</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Enable autobackup? (y&#x2F;n ?:help skip:n) :</span><br></pre></td></tr></table></figure>
-
-<p>翻译：自动备份模型，一小时备份一次，开启会自动备份最近15次模型。<br>默认不开启 n 开启输入 y</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Write preview history? (y&#x2F;n ?:help skip:n) :</span><br></pre></td></tr></table></figure>
-
-<p>翻译：每10秒自动在model / history文件夹生成一张预览图。<br>默认不开启 n 开启输入 y</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Target iteration (skip:unlimited&#x2F;default) :</span><br></pre></td></tr></table></figure>
-
-<p>翻译：训练次数，推荐默认设置。<br>默认无限训练，开启此功能可以输入想要的数字。</p>
-<a id="more"></a>
-
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Batch_size (?:help skip:0&#x2F;default) :</span><br></pre></td></tr></table></figure>
-
-<p>翻译：Batch_size数值，大概可以理解为一次有多少图像被发送到神经网络训练。<br>取决于你的硬件性能，建议取大于4的数值，训练伊始可以设置低数值，收敛困难时增加数值。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Feed faces to network sorted by yaw? (y&#x2F;n ?:help skip:n) :</span><br></pre></td></tr></table></figure>
-
-<p>翻译：偏航排序，data_dst和data_src素材种类一致可以开启。<br>默认开启，建议不开启。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Flip faces randomly? (y&#x2F;n ?:help skip:y) :</span><br></pre></td></tr></table></figure>
-
-<p>翻译：随机翻转脸部，data_src素材丰富时关闭会更自然，反之效果很差。<br>默认开启，建议开启。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Src face scale modifier % ( -30…30, ?:help skip:0) :</span><br></pre></td></tr></table></figure>
-
-<p>翻译：data_src面部比例大小，输入数值会改变data_src脸部大小。<br>默认为不开启，建议不开启。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Use lightweight autoencoder? (y&#x2F;n, ?:help skip:n) :</span><br></pre></td></tr></table></figure>
-
-<p>翻译：是否使用轻量级编码模式，配置较低时使用，牺牲部分质量。<br>默认开启，建议不开启。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Use pixel loss? (y&#x2F;n, ?:help skip: n&#x2F;default ) :</span><br></pre></td></tr></table></figure>
-
-
-<p>翻译：是否使用像素丢失。开启后能增强细节，比如牙齿或其它需要增强的细节，但不宜过量，可以在合成之前开启一段时间。否则将有可能使模型损坏。<br>默认不开启，建议后期开启。</p>
-]]></content>
-      <categories>
-        <category>Soft</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Cmder的使用</title>
-    <url>/2020/11/22/201122Cmder%E7%9A%84%E4%BD%BF%E7%94%A8/</url>
-    <content><![CDATA[<h3 id="1-下载"><a href="#1-下载" class="headerlink" title="1.下载"></a>1.下载</h3><p><a href="https://cmder.net/">官网下载</a></p>
-<p><img src="/2020/11/22/201122Cmder%E7%9A%84%E4%BD%BF%E7%94%A8/1.png"></p>
-<p>下载分为mini版和完整版，完整版功能更为全面，可运行linux下的所有命令</p>
-<a id="more"></a>
-
-<p><img src="/2020/11/22/201122Cmder%E7%9A%84%E4%BD%BF%E7%94%A8/2.png"></p>
-<p>不需要安装，解压后可直接使用。</p>
-<p>首次打开会有个警告弹窗，选择第一个即可：</p>
-<p><img src="/2020/11/22/201122Cmder%E7%9A%84%E4%BD%BF%E7%94%A8/4.png"></p>
-<h3 id="2-配置"><a href="#2-配置" class="headerlink" title="2.配置"></a>2.配置</h3><ul>
-<li>配置环境变量</li>
-</ul>
-<p>下载解压后将cmder.exe的所在目录添加到环境变量path中。</p>
-<p><img src="/2020/11/22/201122Cmder%E7%9A%84%E4%BD%BF%E7%94%A8/3.path.png"></p>
-<ul>
-<li>配置右键快捷启动</li>
-</ul>
-<p>管理员身份运行cmd，执行以下命令：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Cmder.exe &#x2F;REGISTER ALL  &#x2F;&#x2F; 设置任意地方鼠标右键启动Cmder</span><br></pre></td></tr></table></figure>
-
-<p>之后可在任意地方点击右键使用cmder，会直接跳转到该路径下，而无需cd</p>
-<p><img src="/2020/11/22/201122Cmder%E7%9A%84%E4%BD%BF%E7%94%A8/6.png"></p>
-<ul>
-<li><p>语言设置</p>
-<p>Setting–&gt;General–&gt;Interface language</p>
-</li>
-</ul>
-<p><img src="/2020/11/22/201122Cmder%E7%9A%84%E4%BD%BF%E7%94%A8/Users\WeiXu\blog\source_posts\201122Cmder的使用\9.png"></p>
-<ul>
-<li>命令提示符”λ”改为”$”</li>
-</ul>
-<p>cmder的光标是以”λ”开始的，我们可以修改为常用的$，找到cmder目录下的vendor文件夹中的clink.lua文件，修改local lambda值即可。</p>
-<p><img src="/2020/11/22/201122Cmder%E7%9A%84%E4%BD%BF%E7%94%A8/7.png"></p>
-<ul>
-<li>设置中文编码</li>
-</ul>
-<p>打开setting，在Start-up下的environment中加入: <code>set LANG=zh_CN.UTF8</code></p>
-<p><img src="/2020/11/22/201122Cmder%E7%9A%84%E4%BD%BF%E7%94%A8/8.png"></p>
-<h3 id="3-快捷键"><a href="#3-快捷键" class="headerlink" title="3.快捷键"></a>3.快捷键</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Tab       自动路径补全</span><br><span class="line">Ctrl+T    建立新页签</span><br><span class="line">Ctrl+W    关闭页签</span><br><span class="line">Ctrl+Tab  切换页签</span><br><span class="line">Alt+F4    关闭所有页签</span><br><span class="line">Alt+Shift+<span class="number">1</span> 开启cmd.exe</span><br><span class="line">Alt+Shift+<span class="number">2</span> 开启powershell.exe</span><br><span class="line">Alt+Shift+<span class="number">3</span> 开启powershell.exe (系统管理员权限)</span><br><span class="line">Ctrl+<span class="number">1</span>      快速切换到第<span class="number">1</span>个页签</span><br><span class="line">Ctrl+n      快速切换到第n个页签(n值无上限)</span><br><span class="line">Alt + enter 切换到全屏状态</span><br><span class="line">Ctr+r       历史命令搜索</span><br><span class="line">Tab         自动路径补全</span><br><span class="line">Ctrl+T      建立新页签</span><br><span class="line">Ctrl+W      关闭页签</span><br><span class="line">Ctrl+Tab    切换页签</span><br><span class="line">Alt+F4      关闭所有页签</span><br><span class="line">Alt+Shift+<span class="number">1</span> 开启cmd.exe</span><br><span class="line">Alt+Shift+<span class="number">2</span> 开启powershell.exe</span><br><span class="line">Alt+Shift+<span class="number">3</span> 开启powershell.exe (系统管理员权限)</span><br><span class="line">Ctrl+<span class="number">1</span>      快速切换到第<span class="number">1</span>个页签</span><br><span class="line">Ctrl+n      快速切换到第n个页签(n值无上限)</span><br><span class="line">Alt + enter 切换到全屏状态</span><br><span class="line">Ctr+r       历史命令搜索</span><br><span class="line">Win+Alt+P   开启工具选项视窗</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>Soft</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Tomcat</title>
-    <url>/2019/10/17/Server/191017Web_tomcat/</url>
-    <content><![CDATA[<h3 id="Tomcat：Web服务器软件"><a href="#Tomcat：Web服务器软件" class="headerlink" title="Tomcat：Web服务器软件"></a>Tomcat：Web服务器软件</h3><h4 id="1-下载-http-tomcat-apache-org"><a href="#1-下载-http-tomcat-apache-org" class="headerlink" title="1.下载:http://tomcat.apache.org/"></a>1.下载:<a href="http://tomcat.apache.org/">http://tomcat.apache.org/</a></h4>]]></content>
-      <categories>
-        <category>Java</category>
-        <category>JavaWeb</category>
-      </categories>
-      <tags>
-        <tag>Tomcat</tag>
-      </tags>
   </entry>
   <entry>
     <title>API</title>
-    <url>/2019/08/22/190822.2API/</url>
+    <url>/2019/08/22/Java/JavaSE/190822.2API/</url>
     <content><![CDATA[<h2 id="1-API"><a href="#1-API" class="headerlink" title="1.API"></a>1.API</h2><h3 id="1-1-Math（应用）"><a href="#1-1-Math（应用）" class="headerlink" title="1.1 Math（应用）"></a>1.1 Math（应用）</h3><ul>
 <li><p>1、Math类概述</p>
 <ul>
@@ -2918,7 +2918,7 @@
   </entry>
   <entry>
     <title>Set集合</title>
-    <url>/2019/08/26/190826Set%E9%9B%86%E5%90%88/</url>
+    <url>/2019/08/26/Java/JavaSE/190826Set%E9%9B%86%E5%90%88/</url>
     <content><![CDATA[<h2 id="1-Set集合"><a href="#1-Set集合" class="headerlink" title="1.Set集合"></a>1.Set集合</h2><h3 id="1-1Set集合概述和特点【应用】"><a href="#1-1Set集合概述和特点【应用】" class="headerlink" title="1.1Set集合概述和特点【应用】"></a>1.1Set集合概述和特点【应用】</h3><ul>
 <li><p>Set集合的特点</p>
 <ul>
@@ -2988,10 +2988,10 @@
 <p>​            如果内容相同，则不存储当前元素</p>
 </li>
 <li><p>HashSet集合保证元素唯一性的图解</p>
-<p><img src="/2019/08/26/190826Set%E9%9B%86%E5%90%88/1HashSet%E9%9B%86%E5%90%88%E4%BF%9D%E8%AF%81%E5%85%83%E7%B4%A0%E5%94%AF%E4%B8%80%E6%80%A7.png" alt="01"></p>
+<p><img src="/2019/08/26/Java/JavaSE/190826Set%E9%9B%86%E5%90%88/1HashSet%E9%9B%86%E5%90%88%E4%BF%9D%E8%AF%81%E5%85%83%E7%B4%A0%E5%94%AF%E4%B8%80%E6%80%A7.png" alt="01"></p>
 </li>
 </ul>
-<h3 id="1-5常见数据结构之哈希表【理解】"><a href="#1-5常见数据结构之哈希表【理解】" class="headerlink" title="1.5常见数据结构之哈希表【理解】"></a>1.5常见数据结构之哈希表【理解】</h3><p><img src="/2019/08/26/190826Set%E9%9B%86%E5%90%88/2.png" alt="02"></p>
+<h3 id="1-5常见数据结构之哈希表【理解】"><a href="#1-5常见数据结构之哈希表【理解】" class="headerlink" title="1.5常见数据结构之哈希表【理解】"></a>1.5常见数据结构之哈希表【理解】</h3><p><img src="/2019/08/26/Java/JavaSE/190826Set%E9%9B%86%E5%90%88/2.png" alt="02"></p>
 <h3 id="1-6HashSet集合存储学生对象并遍历【应用】"><a href="#1-6HashSet集合存储学生对象并遍历【应用】" class="headerlink" title="1.6HashSet集合存储学生对象并遍历【应用】"></a>1.6HashSet集合存储学生对象并遍历【应用】</h3><ul>
 <li><p>案例需求</p>
 <ul>
@@ -3268,7 +3268,7 @@
   </entry>
   <entry>
     <title>Map集合</title>
-    <url>/2019/08/27/190827Map%E9%9B%86%E5%90%88/</url>
+    <url>/2019/08/27/Java/JavaSE/190827Map%E9%9B%86%E5%90%88/</url>
     <content><![CDATA[<h2 id="1-Map集合"><a href="#1-Map集合" class="headerlink" title="1.Map集合"></a>1.Map集合</h2><h3 id="1-1Map集合概述和特点【理解】"><a href="#1-1Map集合概述和特点【理解】" class="headerlink" title="1.1Map集合概述和特点【理解】"></a>1.1Map集合概述和特点【理解】</h3><ul>
 <li><p>Map集合概述</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">Map</span>&lt;<span class="title">K</span>,<span class="title">V</span>&gt;  <span class="title">K</span>：键的类型；<span class="title">V</span>：值的类型</span></span><br></pre></td></tr></table></figure>
@@ -3570,7 +3570,7 @@
   </entry>
   <entry>
     <title>File类递归字节流</title>
-    <url>/2019/08/29/190829File%E7%B1%BB%E9%80%92%E5%BD%92%E5%AD%97%E8%8A%82%E6%B5%81/</url>
+    <url>/2019/08/29/Java/JavaSE/190829File%E7%B1%BB%E9%80%92%E5%BD%92%E5%AD%97%E8%8A%82%E6%B5%81/</url>
     <content><![CDATA[<h2 id="1-File类"><a href="#1-File类" class="headerlink" title="1.File类"></a>1.File类</h2><h3 id="1-1File类概述和构造方法【应用】"><a href="#1-1File类概述和构造方法【应用】" class="headerlink" title="1.1File类概述和构造方法【应用】"></a>1.1File类概述和构造方法【应用】</h3><ul>
 <li><p>File类介绍</p>
 <ul>
@@ -3956,7 +3956,7 @@
   </entry>
   <entry>
     <title>字节缓冲流字符流</title>
-    <url>/2019/08/30/190830%E5%AD%97%E8%8A%82%E7%BC%93%E5%86%B2%E6%B5%81%E5%AD%97%E7%AC%A6%E6%B5%81/</url>
+    <url>/2019/08/30/Java/JavaSE/190830%E5%AD%97%E8%8A%82%E7%BC%93%E5%86%B2%E6%B5%81%E5%AD%97%E7%AC%A6%E6%B5%81/</url>
     <content><![CDATA[<h2 id="1-字节缓冲流"><a href="#1-字节缓冲流" class="headerlink" title="1.字节缓冲流"></a>1.字节缓冲流</h2><h3 id="1-1字节缓冲流构造方法【应用】"><a href="#1-1字节缓冲流构造方法【应用】" class="headerlink" title="1.1字节缓冲流构造方法【应用】"></a>1.1字节缓冲流构造方法【应用】</h3><ul>
 <li><p>字节缓冲流介绍</p>
 <ul>
@@ -4330,10 +4330,10 @@
 </ul>
 <h3 id="2-13IO流小结【理解】"><a href="#2-13IO流小结【理解】" class="headerlink" title="2.13IO流小结【理解】"></a>2.13IO流小结【理解】</h3><ul>
 <li><p>字节流</p>
-<p><img src="/2019/08/30/190830%E5%AD%97%E8%8A%82%E7%BC%93%E5%86%B2%E6%B5%81%E5%AD%97%E7%AC%A6%E6%B5%81/1.png"></p>
+<p><img src="/2019/08/30/Java/JavaSE/190830%E5%AD%97%E8%8A%82%E7%BC%93%E5%86%B2%E6%B5%81%E5%AD%97%E7%AC%A6%E6%B5%81/1.png"></p>
 </li>
 <li><p>字符流</p>
-<p><img src="/2019/08/30/190830%E5%AD%97%E8%8A%82%E7%BC%93%E5%86%B2%E6%B5%81%E5%AD%97%E7%AC%A6%E6%B5%81/2.png"></p>
+<p><img src="/2019/08/30/Java/JavaSE/190830%E5%AD%97%E8%8A%82%E7%BC%93%E5%86%B2%E6%B5%81%E5%AD%97%E7%AC%A6%E6%B5%81/2.png"></p>
 </li>
 </ul>
 <h3 id="3练习案例"><a href="#3练习案例" class="headerlink" title="3练习案例"></a>3练习案例</h3><h3 id="3-1集合到文件【应用】"><a href="#3-1集合到文件【应用】" class="headerlink" title="3.1集合到文件【应用】"></a>3.1集合到文件【应用】</h3><ul>
@@ -4460,7 +4460,7 @@
   </entry>
   <entry>
     <title>多线程</title>
-    <url>/2019/09/02/190902%E5%A4%9A%E7%BA%BF%E7%A8%8B/</url>
+    <url>/2019/09/02/Java/JavaSE/190902%E5%A4%9A%E7%BA%BF%E7%A8%8B/</url>
     <content><![CDATA[<h2 id="1-实现多线程"><a href="#1-实现多线程" class="headerlink" title="1.实现多线程"></a>1.实现多线程</h2><h3 id="1-1进程和线程【理解】"><a href="#1-1进程和线程【理解】" class="headerlink" title="1.1进程和线程【理解】"></a>1.1进程和线程【理解】</h3><ul>
 <li><p>进程：是正在运行的程序</p>
 <p>​    是系统进行资源分配和调用的独立单位</p>
@@ -4611,7 +4611,7 @@
 </li>
 </ul>
 <h3 id="1-6线程的生命周期【理解】"><a href="#1-6线程的生命周期【理解】" class="headerlink" title="1.6线程的生命周期【理解】"></a>1.6线程的生命周期【理解】</h3><p>​    线程一共有五种状态，线程在各种状态之间转换。</p>
-<p><img src="/2019/09/02/190902%E5%A4%9A%E7%BA%BF%E7%A8%8B/Java%E8%B5%84%E6%96%99/2.JavaEE/day11(%E5%A4%9A%E7%BA%BF%E7%A8%8B)/%E7%AC%94%E8%AE%B0/img/%E7%BA%BF%E7%A8%8B%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F.jpg"></p>
+<p><img src="/2019/09/02/Java/JavaSE/190902%E5%A4%9A%E7%BA%BF%E7%A8%8B/Java%E8%B5%84%E6%96%99/2.JavaEE/day11(%E5%A4%9A%E7%BA%BF%E7%A8%8B)/%E7%AC%94%E8%AE%B0/img/%E7%BA%BF%E7%A8%8B%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F.jpg"></p>
 <h3 id="1-7实现多线程方式二：实现Runnable接口【应用】"><a href="#1-7实现多线程方式二：实现Runnable接口【应用】" class="headerlink" title="1.7实现多线程方式二：实现Runnable接口【应用】"></a>1.7实现多线程方式二：实现Runnable接口【应用】</h3><ul>
 <li><p>Thread构造方法</p>
 <table>
@@ -4677,7 +4677,7 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SellTicket</span> <span class="keyword">implements</span> <span class="title">Runnable</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> tickets = <span class="number">100</span>;</span><br><span class="line">    <span class="comment">//在SellTicket类中重写run()方法实现卖票，代码步骤如下</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">while</span> (<span class="keyword">true</span>) &#123;</span><br><span class="line">            <span class="keyword">if</span> (tickets &gt; <span class="number">0</span>) &#123;</span><br><span class="line">                System.out.println(Thread.currentThread().getName() + <span class="string">&quot;正在出售第&quot;</span> + tickets + <span class="string">&quot;张票&quot;</span>);</span><br><span class="line">                tickets--;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SellTicketDemo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//创建SellTicket类的对象</span></span><br><span class="line">        SellTicket st = <span class="keyword">new</span> SellTicket();</span><br><span class="line"></span><br><span class="line">        <span class="comment">//创建三个Thread类的对象，把SellTicket对象作为构造方法的参数，并给出对应的窗口名称</span></span><br><span class="line">        Thread t1 = <span class="keyword">new</span> Thread(st,<span class="string">&quot;窗口1&quot;</span>);</span><br><span class="line">        Thread t2 = <span class="keyword">new</span> Thread(st,<span class="string">&quot;窗口2&quot;</span>);</span><br><span class="line">        Thread t3 = <span class="keyword">new</span> Thread(st,<span class="string">&quot;窗口3&quot;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//启动线程</span></span><br><span class="line">        t1.start();</span><br><span class="line">        t2.start();</span><br><span class="line">        t3.start();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>执行结果</p>
-<p><img src="/2019/09/02/190902%E5%A4%9A%E7%BA%BF%E7%A8%8B/Java%E8%B5%84%E6%96%99/2.JavaEE/day11(%E5%A4%9A%E7%BA%BF%E7%A8%8B)/%E7%AC%94%E8%AE%B0/img/%E5%8D%96%E7%A5%A81.jpg"></p>
+<p><img src="/2019/09/02/Java/JavaSE/190902%E5%A4%9A%E7%BA%BF%E7%A8%8B/Java%E8%B5%84%E6%96%99/2.JavaEE/day11(%E5%A4%9A%E7%BA%BF%E7%A8%8B)/%E7%AC%94%E8%AE%B0/img/%E5%8D%96%E7%A5%A81.jpg"></p>
 </li>
 </ul>
 <h3 id="2-2卖票案例的问题【理解】"><a href="#2-2卖票案例的问题【理解】" class="headerlink" title="2.2卖票案例的问题【理解】"></a>2.2卖票案例的问题【理解】</h3><ul>
@@ -4813,7 +4813,7 @@
 <p>为了解耦生产者和消费者的关系，通常会采用共享的数据区域，就像是一个仓库</p>
 <p>生产者生产数据之后直接放置在共享数据区中，并不需要关心消费者的行为</p>
 <p>消费者只需要从共享数据区中去获取数据，并不需要关心生产者的行为</p>
-<p><img src="/2019/09/02/190902%E5%A4%9A%E7%BA%BF%E7%A8%8B/Java%E8%B5%84%E6%96%99/2.JavaEE/day11(%E5%A4%9A%E7%BA%BF%E7%A8%8B)/%E7%AC%94%E8%AE%B0/img/%E7%94%9F%E4%BA%A7%E6%B6%88%E8%B4%B9.jpg"></p>
+<p><img src="/2019/09/02/Java/JavaSE/190902%E5%A4%9A%E7%BA%BF%E7%A8%8B/Java%E8%B5%84%E6%96%99/2.JavaEE/day11(%E5%A4%9A%E7%BA%BF%E7%A8%8B)/%E7%AC%94%E8%AE%B0/img/%E7%94%9F%E4%BA%A7%E6%B6%88%E8%B4%B9.jpg"></p>
 </li>
 <li><p>Object类的等待和唤醒方法</p>
 <table>
@@ -4862,7 +4862,7 @@
   </entry>
   <entry>
     <title>Nodejs&amp;ES6</title>
-    <url>/2019/11/12/191112Nodejs&amp;ES6/</url>
+    <url>/2019/11/12/Java/%E6%A1%86%E6%9E%B6/191112Nodejs&amp;ES6/</url>
     <content><![CDATA[<h2 id="1-Node-js"><a href="#1-Node-js" class="headerlink" title="1. Node.js"></a>1. Node.js</h2><h4 id="1-1Node-js安装"><a href="#1-1Node-js安装" class="headerlink" title="1.1Node.js安装"></a>1.1Node.js安装</h4><ul>
 <li>下载对应你系统的Node.js版本,推荐下载LTS版本。</li>
 </ul>
@@ -5028,7 +5028,7 @@
 <p>Idea 默认只支持ES5 语法,需要设置ES6</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">File--&gt;OtherSettings--&gt;Settings for New Projects--&gt;Languages&amp;Framworks--&gt;JavaScript</span><br></pre></td></tr></table></figure>
 
-<p><img src="/2019/11/12/191112Nodejs&ES6/IDEA%E8%AE%BE%E7%BD%AEES6.png" alt="设置ES6"></p>
+<p><img src="/2019/11/12/Java/%E6%A1%86%E6%9E%B6/191112Nodejs&ES6/IDEA%E8%AE%BE%E7%BD%AEES6.png" alt="设置ES6"></p>
 <h2 id="11-let和const命令及模板字符串"><a href="#11-let和const命令及模板字符串" class="headerlink" title="11. let和const命令及模板字符串"></a>11. let和const命令及模板字符串</h2><p><strong>目标</strong>：使用let和const定义变量说出区别；模板字符串的好处以及对象初始化简写</p>
 <p><strong>小结</strong>：</p>
 <ul>
@@ -5128,9 +5128,9 @@
   </entry>
   <entry>
     <title>Dubbo</title>
-    <url>/2019/11/16/191116Dubbo/</url>
+    <url>/2019/11/16/Java/%E6%A1%86%E6%9E%B6/191116Dubbo/</url>
     <content><![CDATA[<h1 id="分布式RPC框架Apache-Dubbo"><a href="#分布式RPC框架Apache-Dubbo" class="headerlink" title="分布式RPC框架Apache Dubbo"></a>分布式RPC框架Apache Dubbo</h1><h2 id="1-软件架构的演进过程"><a href="#1-软件架构的演进过程" class="headerlink" title="1. 软件架构的演进过程"></a>1. 软件架构的演进过程</h2><p>软件架构的发展经历了由单体架构、垂直架构、SOA架构到微服务架构的演进过程，下面我们分别了解一下这几个架构。</p>
-<h3 id="1-1-单体架构"><a href="#1-1-单体架构" class="headerlink" title="1.1 单体架构"></a>1.1 单体架构</h3><p><img src="/2019/11/16/191116Dubbo/1.png" alt="1"></p>
+<h3 id="1-1-单体架构"><a href="#1-1-单体架构" class="headerlink" title="1.1 单体架构"></a>1.1 单体架构</h3><p><img src="/2019/11/16/Java/%E6%A1%86%E6%9E%B6/191116Dubbo/1.png" alt="1"></p>
 <p>架构说明：</p>
 <p>​      全部功能集中在一个项目内（All in one）。</p>
 <p>架构优点：</p>
@@ -5141,7 +5141,7 @@
 <p>​       全部功能集成在一个工程中，对于大型项目不易开发、扩展和维护。</p>
 <p>​       技术栈受限，只能使用一种语言开发。</p>
 <p>​       系统性能扩展只能通过扩展集群节点，成本高。</p>
-<h3 id="1-2-垂直架构"><a href="#1-2-垂直架构" class="headerlink" title="1.2 垂直架构"></a>1.2 垂直架构</h3><p><img src="/2019/11/16/191116Dubbo/18.png" alt="18"></p>
+<h3 id="1-2-垂直架构"><a href="#1-2-垂直架构" class="headerlink" title="1.2 垂直架构"></a>1.2 垂直架构</h3><p><img src="/2019/11/16/Java/%E6%A1%86%E6%9E%B6/191116Dubbo/18.png" alt="18"></p>
 <p>架构说明：       </p>
 <p>​      按照业务进行切割，形成小的单体项目。</p>
 <p>架构优点：</p>
@@ -5152,7 +5152,7 @@
 <p>​       项目之间功能冗余、数据冗余、耦合性强。</p>
 <h3 id="1-3-SOA架构"><a href="#1-3-SOA架构" class="headerlink" title="1.3 SOA架构"></a>1.3 SOA架构</h3><p>SOA全称为Service-Oriented Architecture，即面向服务的架构。它可以根据需求通过网络对松散耦合的粗粒度应用组件(服务)进行分布式部署、组合和使用。一个服务通常以独立的形式存在于操作系统进程中。</p>
 <p>站在功能的角度，把业务逻辑抽象成可复用的服务，通过服务的编排实现业务的快速再生，目的：把原先固有的业务功能转变为通用的业务服务，实现业务逻辑的快速复用。</p>
-<p><img src="/2019/11/16/191116Dubbo/19.png" alt="19"></p>
+<p><img src="/2019/11/16/Java/%E6%A1%86%E6%9E%B6/191116Dubbo/19.png" alt="19"></p>
 <p>架构说明：</p>
 <p>​      将重复功能或模块抽取成组件的形式，对外提供服务，在项目与服务之间使用ESB（企业服务总线）的形式作为通信的桥梁。</p>
 <p>架构优点：</p>
@@ -5163,7 +5163,7 @@
 <p>​       各系统之间业务不同，很难确认功能或模块是重复的。(设计难度增大)</p>
 <p>​       抽取服务的粒度大。</p>
 <p>​       系统和服务之间耦合度高。</p>
-<h3 id="1-4-微服务架构"><a href="#1-4-微服务架构" class="headerlink" title="1.4 微服务架构"></a>1.4 微服务架构</h3><p><img src="/2019/11/16/191116Dubbo/20.png" alt="20"></p>
+<h3 id="1-4-微服务架构"><a href="#1-4-微服务架构" class="headerlink" title="1.4 微服务架构"></a>1.4 微服务架构</h3><p><img src="/2019/11/16/Java/%E6%A1%86%E6%9E%B6/191116Dubbo/20.png" alt="20"></p>
 <p>架构说明：</p>
 <p>​       将系统服务层完全独立出来，抽取为一个一个的微服务。</p>
 <p>​       抽取的粒度更细，遵循单一原则。</p>
@@ -5183,7 +5183,7 @@
 <p><a href="http://dubbo.apache.org/">Dubbo官网地址</a></p>
 <p>Dubbo提供了三大核心能力：面向接口的远程方法调用，智能容错和负载均衡，以及服务自动注册和发现。</p>
 <h3 id="2-2-Dubbo架构"><a href="#2-2-Dubbo架构" class="headerlink" title="2.2 Dubbo架构"></a>2.2 Dubbo架构</h3><p>Dubbo架构图（Dubbo官方提供）如下：</p>
-<p><img src="/2019/11/16/191116Dubbo/2.png" alt="2"></p>
+<p><img src="/2019/11/16/Java/%E6%A1%86%E6%9E%B6/191116Dubbo/2.png" alt="2"></p>
 <p>节点角色说明：</p>
 <table>
 <thead>
@@ -5228,10 +5228,10 @@
 
 <h3 id="3-1-Zookeeper介绍"><a href="#3-1-Zookeeper介绍" class="headerlink" title="3.1 Zookeeper介绍"></a>3.1 Zookeeper介绍</h3><p>Zookeeper 是 Apache Hadoop 的子项目，是一个树型的目录服务，支持变更推送，适合作为 Dubbo 服务的注册中心，工业强度较高，可用于生产环境，并推荐使用 。</p>
 <p>为了便于理解Zookeeper的树型目录服务，我们先来看一下我们电脑的文件系统(也是一个树型目录结构)：</p>
-<p><img src="/2019/11/16/191116Dubbo/img/4.png" alt="4"></p>
+<p><img src="/2019/11/16/Java/%E6%A1%86%E6%9E%B6/191116Dubbo/img/4.png" alt="4"></p>
 <p>我的电脑可以分为多个盘符（例如C、D、E等），每个盘符下可以创建多个目录，每个目录下面可以创建文件，也可以创建子目录，最终构成了一个树型结构。通过这种树型结构的目录，我们可以将文件分门别类的进行存放，方便我们后期查找。而且磁盘上的每个文件都有一个唯一的访问路径，例如：C:\Windows\itcast\hello.txt。</p>
 <p>Zookeeper树型目录服务：</p>
-<p><img src="/2019/11/16/191116Dubbo/3.png" alt="3"></p>
+<p><img src="/2019/11/16/Java/%E6%A1%86%E6%9E%B6/191116Dubbo/3.png" alt="3"></p>
 <p>流程说明：</p>
 <ul>
 <li>服务提供者(Provider)启动时: 向 <code>/dubbo/com.foo.BarService/providers</code> 目录下写入自己的 URL 地址</li>
@@ -5250,7 +5250,7 @@
 <p>停止服务命令<br>./zkServer.sh stop</p>
 <p>查看服务状态：<br>./zkServer.sh status</p>
 <h2 id="4-Dubbo快速入门"><a href="#4-Dubbo快速入门" class="headerlink" title="4. Dubbo快速入门"></a>4. Dubbo快速入门</h2><p>Dubbo作为一个RPC框架，其最核心的功能就是要实现跨网络的远程调用。本小节就是要创建两个应用，一个作为服务的提供方，一个作为服务的消费方。通过Dubbo来实现服务消费方远程调用服务提供方的方法。</p>
-<h3 id="4-1-服务提供方开发"><a href="#4-1-服务提供方开发" class="headerlink" title="4.1 服务提供方开发"></a>4.1 服务提供方开发</h3><p><img src="/2019/11/16/191116Dubbo/Java%E8%B5%84%E6%96%99/4.%E6%A1%86%E6%9E%B6/5.dubbo/%E7%AC%94%E8%AE%B0/assets/1569123691384.png" alt="1569123691384"></p>
+<h3 id="4-1-服务提供方开发"><a href="#4-1-服务提供方开发" class="headerlink" title="4.1 服务提供方开发"></a>4.1 服务提供方开发</h3><p><img src="/2019/11/16/Java/%E6%A1%86%E6%9E%B6/191116Dubbo/Java%E8%B5%84%E6%96%99/4.%E6%A1%86%E6%9E%B6/5.dubbo/%E7%AC%94%E8%AE%B0/assets/1569123691384.png" alt="1569123691384"></p>
 <p>开发步骤：</p>
 <p>（1）创建maven工程（打包方式为war）dubbodemo_provider，在pom.xml文件中导入如下坐标</p>
 <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">properties</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">project.build.sourceEncoding</span>&gt;</span>UTF-8<span class="tag">&lt;/<span class="name">project.build.sourceEncoding</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">maven.compiler.source</span>&gt;</span>1.8<span class="tag">&lt;/<span class="name">maven.compiler.source</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">maven.compiler.target</span>&gt;</span>1.8<span class="tag">&lt;/<span class="name">maven.compiler.target</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">spring.version</span>&gt;</span>5.0.5.RELEASE<span class="tag">&lt;/<span class="name">spring.version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">properties</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-context<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>$&#123;spring.version&#125;<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-beans<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>$&#123;spring.version&#125;<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-webmvc<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>$&#123;spring.version&#125;<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-jdbc<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>$&#123;spring.version&#125;<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-aspects<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>$&#123;spring.version&#125;<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-jms<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>$&#123;spring.version&#125;<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-context-support<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>$&#123;spring.version&#125;<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- dubbo相关 --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.alibaba<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>dubbo<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.6.0<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.zookeeper<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>zookeeper<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>3.4.7<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.github.sgroschupf<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>zkclient<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>0.1<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>javassist<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>javassist<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>3.12.1.GA<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.alibaba<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>fastjson<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.2.47<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">build</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">plugins</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">plugin</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.maven.plugins<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>maven-compiler-plugin<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.3.2<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">source</span>&gt;</span>1.8<span class="tag">&lt;/<span class="name">source</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">target</span>&gt;</span>1.8<span class="tag">&lt;/<span class="name">target</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">plugin</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">plugin</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.tomcat.maven<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>tomcat7-maven-plugin<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- 指定端口 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">port</span>&gt;</span>8081<span class="tag">&lt;/<span class="name">port</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- 请求路径 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">path</span>&gt;</span>/<span class="tag">&lt;/<span class="name">path</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">plugin</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">plugins</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">build</span>&gt;</span></span><br></pre></td></tr></table></figure>
@@ -5307,12 +5307,12 @@
 <p>（4）重启tomcat</p>
 <h3 id="5-2-使用"><a href="#5-2-使用" class="headerlink" title="5.2 使用"></a>5.2 使用</h3><p>操作步骤：</p>
 <p>（1）访问<a href="http://localhost:8080/dubbo-admin-2.6.0/%EF%BC%8C%E8%BE%93%E5%85%A5%E7%94%A8%E6%88%B7%E5%90%8D(root)%E5%92%8C%E5%AF%86%E7%A0%81(root)">http://localhost:8080/dubbo-admin-2.6.0/，输入用户名(root)和密码(root)</a></p>
-<p><img src="/2019/11/16/191116Dubbo/5.png" alt="5"></p>
+<p><img src="/2019/11/16/Java/%E6%A1%86%E6%9E%B6/191116Dubbo/5.png" alt="5"></p>
 <p>（2）启动服务提供者工程和服务消费者工程，可以在查看到对应的信息</p>
-<p><img src="/2019/11/16/191116Dubbo/6.png" alt="6"></p>
-<p><img src="/2019/11/16/191116Dubbo/7.png" alt="7"></p>
-<p><img src="/2019/11/16/191116Dubbo/8.png" alt="8"></p>
-<p><img src="/2019/11/16/191116Dubbo/9.png" alt="9"></p>
+<p><img src="/2019/11/16/Java/%E6%A1%86%E6%9E%B6/191116Dubbo/6.png" alt="6"></p>
+<p><img src="/2019/11/16/Java/%E6%A1%86%E6%9E%B6/191116Dubbo/7.png" alt="7"></p>
+<p><img src="/2019/11/16/Java/%E6%A1%86%E6%9E%B6/191116Dubbo/8.png" alt="8"></p>
+<p><img src="/2019/11/16/Java/%E6%A1%86%E6%9E%B6/191116Dubbo/9.png" alt="9"></p>
 <h2 id="6-Dubbo相关配置说明"><a href="#6-Dubbo相关配置说明" class="headerlink" title="6. Dubbo相关配置说明"></a>6. Dubbo相关配置说明</h2><h3 id="6-1-包扫描"><a href="#6-1-包扫描" class="headerlink" title="6.1 包扫描"></a>6.1 包扫描</h3><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dubbo:annotation</span> <span class="attr">package</span>=<span class="string">&quot;com.itheima.service&quot;</span> /&gt;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 <p>服务提供者和服务消费者都需要配置，表示包扫描，作用是扫描指定包(包括子包)下的类。</p>
@@ -5365,24 +5365,24 @@
 <p>上面连接的数据库可以自行创建</p>
 <p>（3）在HelloServiceImpl类上加入@Transactional注解</p>
 <p>（4）启动服务提供者和服务消费者，并访问</p>
-<p><img src="/2019/11/16/191116Dubbo/12.png" alt="12"></p>
+<p><img src="/2019/11/16/Java/%E6%A1%86%E6%9E%B6/191116Dubbo/12.png" alt="12"></p>
 <p>上面的错误为没有可用的服务提供者</p>
 <p>查看dubbo管理控制台发现服务并没有发布，如下：</p>
-<p><img src="/2019/11/16/191116Dubbo/13.png" alt="13"></p>
+<p><img src="/2019/11/16/Java/%E6%A1%86%E6%9E%B6/191116Dubbo/13.png" alt="13"></p>
 <p>可以通过断点调试的方式查看Dubbo执行过程，Dubbo通过AnnotationBean的postProcessAfterInitialization方法进行处理</p>
-<p><img src="/2019/11/16/191116Dubbo/14.png" alt="14"></p>
-<p><img src="/2019/11/16/191116Dubbo/15.png" alt="15"></p>
+<p><img src="/2019/11/16/Java/%E6%A1%86%E6%9E%B6/191116Dubbo/14.png" alt="14"></p>
+<p><img src="/2019/11/16/Java/%E6%A1%86%E6%9E%B6/191116Dubbo/15.png" alt="15"></p>
 <h3 id="7-2-解决方案"><a href="#7-2-解决方案" class="headerlink" title="7.2 解决方案"></a>7.2 解决方案</h3><p>通过上面的断点调试可以看到，在HelloServiceImpl类上加入事务注解后，Spring会为此类基于JDK动态代理技术创建代理对象，创建的代理对象完整类名为com.sun.proxy.$Proxy35，导致Dubbo在进行包匹配时没有成功（因为我们在发布服务时扫描的包为com.itheima.service），所以后面真正发布服务的代码没有执行。</p>
 <p>解决方式操作步骤：</p>
 <p>（1）修改applicationContext-service.xml配置文件，开启事务控制注解支持时指定proxy-target-class属性，值为true。其作用是使用cglib代理方式为Service类创建代理对象</p>
 <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!--开启事务控制的注解支持--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">tx:annotation-driven</span> <span class="attr">transaction-manager</span>=<span class="string">&quot;transactionManager&quot;</span> <span class="attr">proxy-target-class</span>=<span class="string">&quot;true&quot;</span>/&gt;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-<p><img src="/2019/11/16/191116Dubbo/17.png" alt="17"></p>
+<p><img src="/2019/11/16/Java/%E6%A1%86%E6%9E%B6/191116Dubbo/17.png" alt="17"></p>
 <p>（2）修改HelloServiceImpl类，在Service注解中加入interfaceClass属性，值为HelloService.class，作用是指定服务的接口类型</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Service(interfaceClass = HelloService.class)</span></span><br><span class="line"><span class="meta">@Transactional</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloServiceImpl</span> <span class="keyword">implements</span> <span class="title">HelloService</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">sayHello</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;hello &quot;</span> + name;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 <p>此处也是必须要修改的，否则会导致发布的服务接口为SpringProxy，而不是HelloService接口，如下：</p>
-<p><img src="/2019/11/16/191116Dubbo/16.png" alt="16"></p>
+<p><img src="/2019/11/16/Java/%E6%A1%86%E6%9E%B6/191116Dubbo/16.png" alt="16"></p>
 ]]></content>
       <categories>
         <category>Java</category>
@@ -5391,7 +5391,7 @@
   </entry>
   <entry>
     <title>Git</title>
-    <url>/2019/11/18/191118Git/</url>
+    <url>/2019/11/18/Java/%E6%A1%86%E6%9E%B6/191118Git/</url>
     <content><![CDATA[<h1 id="1-版本控制工具概念"><a href="#1-版本控制工具概念" class="headerlink" title="1.版本控制工具概念"></a>1.版本控制工具概念</h1><p>毕业论文写好了导师不满意让修改,改好了,导师又觉得第一版不错,改回来吧,此时内心一脸懵,第一版长啥样没存档啊</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;&lt;毕业论文第一版.doc&gt;&gt;</span><br><span class="line">&lt;&lt;毕业论文第二版.doc&gt;&gt;</span><br><span class="line">&lt;&lt;毕业论文第三版.doc&gt;&gt;</span><br><span class="line">&lt;&lt;毕业论文最终版.doc&gt;&gt;</span><br><span class="line">&lt;&lt;毕业论文最终版2.doc&gt;&gt;</span><br></pre></td></tr></table></figure>
 
@@ -5403,7 +5403,7 @@
 <a id="more"></a>
 
 <h1 id="2-版本管理工具介绍"><a href="#2-版本管理工具介绍" class="headerlink" title="2. 版本管理工具介绍"></a>2. 版本管理工具介绍</h1><p>现在比较流行的版本控制工具是git ,但是实际上git 是近几年才发展起来的,可能有一些老的项目,还在用一些老的软件,比如svn</p>
-<h2 id="2-1版本控制发展简史-维基百科"><a href="#2-1版本控制发展简史-维基百科" class="headerlink" title="2.1版本控制发展简史(维基百科)"></a>2.1版本控制发展简史(维基百科)</h2><p><img src="/2019/11/18/191118Git/1571983065236.png" alt="1571983065236"> </p>
+<h2 id="2-1版本控制发展简史-维基百科"><a href="#2-1版本控制发展简史-维基百科" class="headerlink" title="2.1版本控制发展简史(维基百科)"></a>2.1版本控制发展简史(维基百科)</h2><p><img src="/2019/11/18/Java/%E6%A1%86%E6%9E%B6/191118Git/1571983065236.png" alt="1571983065236"> </p>
 <h2 id="2-2-SVN-和GIT-的区别"><a href="#2-2-SVN-和GIT-的区别" class="headerlink" title="2.2 SVN 和GIT 的区别"></a>2.2 SVN 和GIT 的区别</h2><h3 id="2-1-1-SVN-SubVersion"><a href="#2-1-1-SVN-SubVersion" class="headerlink" title="2.1.1 SVN(SubVersion)"></a>2.1.1 SVN(SubVersion)</h3><p>工作流程</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">SVN是集中式版本控制系统，版本库是集中放在中央服务器的.</span><br><span class="line">工作流程如下:</span><br><span class="line">	1.从远程仓库下载代码</span><br><span class="line">	2.修改后将代码提交到远程仓库</span><br></pre></td></tr></table></figure>
 
@@ -5411,15 +5411,15 @@
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">优点: 简单,易操作</span><br><span class="line">缺点:所有代码必须放在服务器  </span><br><span class="line"> 	   1.服务器一旦宕机无法提交代码,即容错性较差</span><br><span class="line">      2.离线无法提交代码,无法及时记录我们的提交行为</span><br></pre></td></tr></table></figure>
 
 <p>svn流程图</p>
-<p><img src="/2019/11/18/191118Git/svn.jpg"></p>
+<p><img src="/2019/11/18/Java/%E6%A1%86%E6%9E%B6/191118Git/svn.jpg"></p>
 <h3 id="2-1-2-Git"><a href="#2-1-2-Git" class="headerlink" title="2.1.2 Git"></a>2.1.2 Git</h3><p>工作流程</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Git是分布式版本控制系统（Distributed Version Control System，简称 DVCS），分为两种类型的仓库：</span><br><span class="line">本地仓库和远程仓库</span><br><span class="line">工作流程如下</span><br><span class="line">    1．从远程仓库中克隆代码到本地仓库(pull)</span><br><span class="line">    2．从本地仓库中checkout代码然后进行代码修改</span><br><span class="line">    3．在提交前先将代码提交到暂存区</span><br><span class="line">    4．提交到本地仓库。本地仓库中保存修改的各个历史版本</span><br><span class="line">    5．修改完成后，需要和团队成员共享代码时，将代码push到远程仓库</span><br></pre></td></tr></table></figure>
 
-<p><img src="/2019/11/18/191118Git/git.png"></p>
+<p><img src="/2019/11/18/Java/%E6%A1%86%E6%9E%B6/191118Git/git.png"></p>
 <h3 id="2-1-3-svn-和git-的区别"><a href="#2-1-3-svn-和git-的区别" class="headerlink" title="2.1.3 svn 和git 的区别"></a>2.1.3 svn 和git 的区别</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1. svn 是集中式版本控制工具,git 是分布式版本控制工具</span><br><span class="line">2. svn 不支持离线提交,git 支持离线提交代码</span><br></pre></td></tr></table></figure>
 
 <h1 id="3-Git-发展简史"><a href="#3-Git-发展简史" class="headerlink" title="3. Git 发展简史"></a>3. Git 发展简史</h1><p> 林纳斯·本纳第克特·托瓦兹（Linus Benedict Torvalds, 1969年~ ） </p>
-<p><img src="/2019/11/18/191118Git/1571987252740.png" alt="1571987252740"></p>
+<p><img src="/2019/11/18/Java/%E6%A1%86%E6%9E%B6/191118Git/1571987252740.png" alt="1571987252740"></p>
 <p>很多人都知道，Linus在1991年创建了开源的Linux，从此，Linux系统不断发展，已经成为最大的服务器系统软件了。</p>
 <p>Linus虽然创建了Linux，但Linux的壮大是靠全世界热心的志愿者参与的，这么多人在世界各地为Linux编写代码，那Linux的代码是如何管理的呢？</p>
 <p>事实是，在2002年以前，世界各地的志愿者把源代码文件通过diff的方式发给Linus，然后由Linus本人通过<strong>手工方式合并代码！</strong></p>
@@ -5429,13 +5429,13 @@
 <p>典型的就是 1  (Samba 开发服务的创造者) 非常不满.偷偷违反了和 BitKeeper 的协议,反编译 BitKeeper 的源代码,开发了个爬虫,然后爬取信息被人发现了. BitKeeper 公司的领导非常不满意,然后开始发布消息说,(下个版本)不再为Linux 提供免费的服务. </p>
 <p>Linus  本人就出面协调(几周或者几个月),但是不管用, 没办法. 估计谈判的过程感觉到了憋屈–”吃人嘴短,拿人手软”</p>
 <p>Linus  本人 花了10天的时间Git 出来了,一个月之内，Linux系统的源码已经由Git管理了！</p>
-<p> <img src="/2019/11/18/191118Git/Java%E8%B5%84%E6%96%99/4.%E6%A1%86%E6%9E%B6/6.git/%E8%AF%A6%E7%BB%86%E8%AE%B2%E4%B9%89/%E8%AE%B2%E4%B9%89/assets/1571988966446.png" alt="Linus 采访记录"></p>
+<p> <img src="/2019/11/18/Java/%E6%A1%86%E6%9E%B6/191118Git/Java%E8%B5%84%E6%96%99/4.%E6%A1%86%E6%9E%B6/6.git/%E8%AF%A6%E7%BB%86%E8%AE%B2%E4%B9%89/%E8%AE%B2%E4%B9%89/assets/1571988966446.png" alt="Linus 采访记录"></p>
 <p>Git 出来以后毕竟是一个人做的,开始并不好用(刚开始只能用勉强可以用来形容), 还是很多人抱怨,发展了很多年都没有干过其他软件.</p>
 <p>直到 2008年，GitHub网站上线了，它为开源项目免费提供Git存储，无数开源项目开始迁移至GitHub,从此git 迎来了飞速发展,当下git 已经成为了最流行的版本控制工具</p>
 <h1 id="4-Git-的安装"><a href="#4-Git-的安装" class="headerlink" title="4. Git 的安装"></a>4. Git 的安装</h1><h2 id="4-1-git-的下载"><a href="#4-1-git-的下载" class="headerlink" title="4.1 git 的下载"></a>4.1 git 的下载</h2><p>下载地址： <a href="https://git-scm.com/download">https://git-scm.com/download</a></p>
-<p><img src="/2019/11/18/191118Git/1571990833074.png" alt="1571990833074"></p>
+<p><img src="/2019/11/18/Java/%E6%A1%86%E6%9E%B6/191118Git/1571990833074.png" alt="1571990833074"></p>
 <p>附件</p>
-<p><img src="/2019/11/18/191118Git/1571991253594.png" alt="1571991253594"></p>
+<p><img src="/2019/11/18/Java/%E6%A1%86%E6%9E%B6/191118Git/1571991253594.png" alt="1571991253594"></p>
 <hr>
 
 <h2 id="4-2-安装"><a href="#4-2-安装" class="headerlink" title="4.2 安装"></a>4.2 安装</h2><ol>
@@ -5444,82 +5444,82 @@
 <li><p>其中安装的过程中需要填写一个邮箱和用户名(任意即可)</p>
 </li>
 </ol>
-<p><img src="/2019/11/18/191118Git/1572001054551.png" alt="1572001054551"></p>
+<p><img src="/2019/11/18/Java/%E6%A1%86%E6%9E%B6/191118Git/1572001054551.png" alt="1572001054551"></p>
 <ol start="3">
 <li><p> $\color{red}{注意: 安装完毕请重启资源管理器,或者重启电脑!!!}$ </p>
 </li>
 <li><p>更改语言</p>
 </li>
 </ol>
-<p><img src="/2019/11/18/191118Git/1571992521110.png" alt="1571992521110"></p>
+<p><img src="/2019/11/18/Java/%E6%A1%86%E6%9E%B6/191118Git/1571992521110.png" alt="1571992521110"></p>
 <h1 id="5-Git-工作流程"><a href="#5-Git-工作流程" class="headerlink" title="5. Git 工作流程"></a>5. Git 工作流程</h1><h2 id="5-1-Git-初始化"><a href="#5-1-Git-初始化" class="headerlink" title="5.1 Git 初始化"></a>5.1 Git 初始化</h2><p>我们先初始化一个本地仓</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1) 新建测试文件夹</span><br><span class="line">2) 进入文件夹,然后右键创建版本库</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-<p><img src="/2019/11/18/191118Git/1571993852280.png" alt="1571993852280"></p>
+<p><img src="/2019/11/18/Java/%E6%A1%86%E6%9E%B6/191118Git/1571993852280.png" alt="1571993852280"></p>
 <p>此时 我们看到 </p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1) 文件夹上多了一个绿色图标(如果没有请看本章节 5.3小节说明)</span><br><span class="line">2) 文件夹内部生成了一个.git 隐藏文件夹(需要设置隐藏文件夹可见)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-<h2 id="5-2-git-流程"><a href="#5-2-git-流程" class="headerlink" title="5.2  git 流程"></a>5.2  git 流程</h2><h3 id="5-2-1-流程图"><a href="#5-2-1-流程图" class="headerlink" title="5.2.1 流程图"></a>5.2.1 流程图</h3><p><img src="/2019/11/18/191118Git/git%E6%B5%81%E7%A8%8B.png"></p>
+<h2 id="5-2-git-流程"><a href="#5-2-git-流程" class="headerlink" title="5.2  git 流程"></a>5.2  git 流程</h2><h3 id="5-2-1-流程图"><a href="#5-2-1-流程图" class="headerlink" title="5.2.1 流程图"></a>5.2.1 流程图</h3><p><img src="/2019/11/18/Java/%E6%A1%86%E6%9E%B6/191118Git/git%E6%B5%81%E7%A8%8B.png"></p>
 <h3 id="5-2-2概念及详解"><a href="#5-2-2概念及详解" class="headerlink" title="5.2.2概念及详解"></a>5.2.2概念及详解</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">本地仓库：是在开发人员自己电脑上的Git仓库,存放我们的代码(.git 隐藏文件夹就是我们的本地仓库)		</span><br><span class="line">远程仓库：是在远程服务器上的Git仓库,存放代码(可以是github.com或者gitee.com 上的仓库,或者自己该公司的服务器)</span><br><span class="line">工作区: 我们自己写代码(文档)的地方</span><br><span class="line">暂存区: 在 本地仓库中的一个特殊的文件(index) 叫做暂存区,临时存储我们即将要提交的文件</span><br><span class="line">------------</span><br><span class="line">Clone：克隆，就是将远程仓库复制到本地仓库</span><br><span class="line">Push：推送，就是将本地仓库代码上传到远程仓库</span><br><span class="line">Pull：拉取，就是将远程仓库代码下载到本地仓库,并将代码 克隆到本地工作区</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-<p><img src="/2019/11/18/191118Git/git%E6%B5%81%E7%A8%8B_%E8%AF%A6%E8%A7%A3.png"></p>
+<p><img src="/2019/11/18/Java/%E6%A1%86%E6%9E%B6/191118Git/git%E6%B5%81%E7%A8%8B_%E8%AF%A6%E8%A7%A3.png"></p>
 <h2 id="5-3-图标不显示问题处理"><a href="#5-3-图标不显示问题处理" class="headerlink" title="5.3 图标不显示问题处理"></a>5.3 图标不显示问题处理</h2><p>如果 TortoiseGit  安装完毕后 图标不正常显示 则需要进行如下处理</p>
 <p>修复TortoiseGit文件夹和文件状态图标不显示问题</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1) win +r  输入  regedit</span><br><span class="line">2) 进入目录</span><br><span class="line">\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\ShellIconOverlayIdentifiers\</span><br><span class="line">3) 将如下图目录前加两个空格</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-<p><img src="/2019/11/18/191118Git/1571993045835.png" alt="1571993045835"></p>
+<p><img src="/2019/11/18/Java/%E6%A1%86%E6%9E%B6/191118Git/1571993045835.png" alt="1571993045835"></p>
 <h1 id="6-Git-的基本使用01-TortoiseGit-操作本地仓库"><a href="#6-Git-的基本使用01-TortoiseGit-操作本地仓库" class="headerlink" title="6.Git 的基本使用01-TortoiseGit 操作本地仓库"></a>6.Git 的基本使用01-TortoiseGit 操作本地仓库</h1><h2 id="6-1-初始化仓库"><a href="#6-1-初始化仓库" class="headerlink" title="6.1  初始化仓库"></a>6.1  初始化仓库</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">方法一: </span><br><span class="line">新建一个文件夹,进入文件夹内部操作</span><br><span class="line">1)右键--&gt; 在这里创建Git 版本库 </span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-<p><img src="/2019/11/18/191118Git/1572161580344.png" alt="1572161580344"></p>
+<p><img src="/2019/11/18/Java/%E6%A1%86%E6%9E%B6/191118Git/1572161580344.png" alt="1572161580344"></p>
 <p>  注意: 不要直接在桌面上操作,否则桌面就是一个仓库</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">方法二:</span><br><span class="line">2) 右键--&gt;Git GUI here</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-<p><img src="/2019/11/18/191118Git/1572162906623.png" alt="1572162906623"></p>
+<p><img src="/2019/11/18/Java/%E6%A1%86%E6%9E%B6/191118Git/1572162906623.png" alt="1572162906623"></p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">方法三: 命令行模式</span><br><span class="line">2) git init </span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-<p><img src="/2019/11/18/191118Git/1572163015102.png" alt="1572163015102"></p>
+<p><img src="/2019/11/18/Java/%E6%A1%86%E6%9E%B6/191118Git/1572163015102.png" alt="1572163015102"></p>
 <p>创建完毕仓库,我们发现,此时我们创建的文件夹下有一个.git 文件已经生成了</p>
 <p>并且仓库文件夹上多了一个 绿色图标</p>
-<p><img src="/2019/11/18/191118Git/1572164583708.png" alt="1572164583708"></p>
+<p><img src="/2019/11/18/Java/%E6%A1%86%E6%9E%B6/191118Git/1572164583708.png" alt="1572164583708"></p>
 <h2 id="6-2-添加文件"><a href="#6-2-添加文件" class="headerlink" title="6.2 添加文件"></a>6.2 添加文件</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1)在仓库中新建一个文件</span><br><span class="line">2)选中新建的文件--&gt;右键--&gt; TortoiseGit--&gt; 添加</span><br><span class="line">3)此时我们看到文件夹上多了一个 &quot;加号&quot;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-<p><img src="/2019/11/18/191118Git/1572164475555.png" alt="1572164475555"></p>
-<p><img src="/2019/11/18/191118Git/Java%E8%B5%84%E6%96%99/4.%E6%A1%86%E6%9E%B6/6.git/%E8%AF%A6%E7%BB%86%E8%AE%B2%E4%B9%89/%E8%AE%B2%E4%B9%89/assets/1572165109016.png" alt="1572165109016"></p>
+<p><img src="/2019/11/18/Java/%E6%A1%86%E6%9E%B6/191118Git/1572164475555.png" alt="1572164475555"></p>
+<p><img src="/2019/11/18/Java/%E6%A1%86%E6%9E%B6/191118Git/Java%E8%B5%84%E6%96%99/4.%E6%A1%86%E6%9E%B6/6.git/%E8%AF%A6%E7%BB%86%E8%AE%B2%E4%B9%89/%E8%AE%B2%E4%B9%89/assets/1572165109016.png" alt="1572165109016"></p>
 <h2 id="6-3-提交文件至本地仓库"><a href="#6-3-提交文件至本地仓库" class="headerlink" title="6.3 提交文件至本地仓库"></a>6.3 提交文件至本地仓库</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1)选中文件</span><br><span class="line">2) 右键--git提交</span><br></pre></td></tr></table></figure>
 
-<p><img src="/2019/11/18/191118Git/1572165471421.png" alt="1572165471421"></p>
+<p><img src="/2019/11/18/Java/%E6%A1%86%E6%9E%B6/191118Git/1572165471421.png" alt="1572165471421"></p>
 <h2 id="6-4-修改文件-与再次提交文件"><a href="#6-4-修改文件-与再次提交文件" class="headerlink" title="6.4 修改文件,与再次提交文件"></a>6.4 修改文件,与再次提交文件</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">当我们修改文件以后,文件上多了一个红色感叹号,表示我们上次提交后该文件被修改过</span><br><span class="line">提交后文件图标又变成绿色</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-<p><img src="/2019/11/18/191118Git/1572165676716.png" alt="1572165676716"></p>
+<p><img src="/2019/11/18/Java/%E6%A1%86%E6%9E%B6/191118Git/1572165676716.png" alt="1572165676716"></p>
 <h2 id="6-5-文件状态"><a href="#6-5-文件状态" class="headerlink" title="6.5 文件状态"></a>6.5 文件状态</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Git工作目录下的文件存在两种状态：</span><br><span class="line">1 untracked 未跟踪（未被纳入版本控制） :  比如新建的文件(此时文件夹上没有图标或者有一个&quot;问号&quot;)</span><br><span class="line">2 tracked 已跟踪（被纳入版本控制）     </span><br><span class="line">    2.1 Staged 已暂存状态            : 添加 但未提交状态(此时文件夹上有一个&quot;加号&quot;)</span><br><span class="line">	2.2 Unmodified 未修改状态        : 已提交(此时文件夹上有一个&quot;对号&quot;)</span><br><span class="line">	2.3 Modified 已修改状态          : 修改了,但是还没有提交 (此时文件夹上有一个&quot;红色感叹号&quot;)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-<p><img src="/2019/11/18/191118Git/1569293793902.png"></p>
+<p><img src="/2019/11/18/Java/%E6%A1%86%E6%9E%B6/191118Git/1569293793902.png"></p>
 <p>这些文件的状态会随着我们执行Git的命令发生变化</p>
-<p><img src="/2019/11/18/191118Git/1566627767390.png"></p>
+<p><img src="/2019/11/18/Java/%E6%A1%86%E6%9E%B6/191118Git/1566627767390.png"></p>
 <h2 id="6-6-修改文件-不提交和上一个版本比较差异-diff"><a href="#6-6-修改文件-不提交和上一个版本比较差异-diff" class="headerlink" title="6.6 修改文件,不提交和上一个版本比较差异(diff)"></a>6.6 修改文件,不提交和上一个版本比较差异(diff)</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">修改文件,此时不要提交</span><br><span class="line">选中文件--&gt;右键--&gt; TortoiseGit--&gt; 比较差异</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-<p><img src="/2019/11/18/191118Git/1572167540734.png" alt="1572167540734"></p>
+<p><img src="/2019/11/18/Java/%E6%A1%86%E6%9E%B6/191118Git/1572167540734.png" alt="1572167540734"></p>
 <h2 id="6-7-查看提交历史记录"><a href="#6-7-查看提交历史记录" class="headerlink" title="6.7 查看提交历史记录"></a>6.7 查看提交历史记录</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">选中文件</span><br><span class="line">右键--&gt; TortoiseGit--&gt; 显示日志</span><br><span class="line">此时我们可以看到所有的历史提交记录</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-<p><img src="/2019/11/18/191118Git/1572167842481.png" alt="1572167842481"></p>
+<p><img src="/2019/11/18/Java/%E6%A1%86%E6%9E%B6/191118Git/1572167842481.png" alt="1572167842481"></p>
 <p>##6.8 回退至历史版本</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">右键--&gt; TortoiseGit--&gt; 显示日志</span><br><span class="line">选中某个版本--&gt; 进行如下操作</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-<p><img src="/2019/11/18/191118Git/1572171034508.png" alt="1572171034508"></p>
+<p><img src="/2019/11/18/Java/%E6%A1%86%E6%9E%B6/191118Git/1572171034508.png" alt="1572171034508"></p>
 <h2 id="6-9-文件删除"><a href="#6-9-文件删除" class="headerlink" title="6.9 文件删除"></a>6.9 文件删除</h2><p>###6.9.1本地删除与恢复</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1) 直接选中文件删除的话,其实只是删除了本地工作区的文件,并没有删除 仓库中的文件</span><br><span class="line">   此时时可以回退的, 比如我们进行如下操作</span><br><span class="line">   1)文件删除</span><br><span class="line">   2)右键--&gt; TortoiseGit--&gt; 还原</span><br><span class="line">   此时我们发现文件又被恢复了</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-<p><img src="/2019/11/18/191118Git/1572169387835.png" alt="1572169387835"></p>
+<p><img src="/2019/11/18/Java/%E6%A1%86%E6%9E%B6/191118Git/1572169387835.png" alt="1572169387835"></p>
 <h3 id="6-9-2从服务器删除"><a href="#6-9-2从服务器删除" class="headerlink" title="6.9.2从服务器删除"></a>6.9.2从服务器删除</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">2) 我们如果真的想要将某个文件从服务器删除,需要进行如下操作</span><br><span class="line">   1) 删除文件,和上面的操作一样</span><br><span class="line">   2) 提交,此时服务文件已经删除了(历史版本还在,还是可以恢复)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 <h3 id="6-9-3从服务器删除-但是不删除本地"><a href="#6-9-3从服务器删除-但是不删除本地" class="headerlink" title="6.9.3从服务器删除,但是不删除本地"></a>6.9.3从服务器删除,但是不删除本地</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">我们可以如下操作,只删除服务器上的文件,但是本地文件并不删除</span><br><span class="line">备注: 删除之后需要提交,才会真正的从服务器删除</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 
 
-<p><img src="/2019/11/18/191118Git/1572171572963.png" alt="1572171572963"></p>
+<p><img src="/2019/11/18/Java/%E6%A1%86%E6%9E%B6/191118Git/1572171572963.png" alt="1572171572963"></p>
 <h2 id="6-10-忽略提交"><a href="#6-10-忽略提交" class="headerlink" title="6.10 忽略提交"></a>6.10 忽略提交</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">有时候我们一些文件是不需要提交的比如说idea&#x2F;eclipse 开发的代码自动生成的配置文件</span><br><span class="line">如何配置不提交呢</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-<p><img src="/2019/11/18/191118Git/1572172137494.png" alt="1572172137494"></p>
+<p><img src="/2019/11/18/Java/%E6%A1%86%E6%9E%B6/191118Git/1572172137494.png" alt="1572172137494"></p>
 <p>此时我们的根目录下会生成一个.gitignore 文件</p>
 <p>忽略文件如何阅读,常见格式</p>
 <figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 所有以.a 结尾的文件讲被忽略(递归)</span></span><br><span class="line"><span class="string">*.a</span></span><br><span class="line"><span class="comment"># 不管其他规则怎样,强制不忽略  lib.a</span></span><br><span class="line"><span class="type">!lib.a</span></span><br><span class="line"><span class="comment"># 只忽略 文件 TODO (注意这里是文件)</span></span><br><span class="line"><span class="string">/TODO</span></span><br><span class="line"><span class="comment"># 忽略 build文件夹下所有内容(递归) 这里是文件夹</span></span><br><span class="line"><span class="string">build/</span></span><br><span class="line"><span class="comment"># 忽略 doc 目录下以 *.txt 结尾的文件 (不递归)</span></span><br><span class="line"><span class="string">doc/*.txt</span></span><br><span class="line"><span class="comment"># 忽略 doc 目录下以 *.pdf 结尾的文件 (递归)</span></span><br><span class="line"><span class="string">doc/**/*.pdf</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
@@ -5528,76 +5528,76 @@
 <h1 id="7-Git-的基本使用02-TortoiseGit-操作本地仓库-分支"><a href="#7-Git-的基本使用02-TortoiseGit-操作本地仓库-分支" class="headerlink" title="7. Git 的基本使用02-TortoiseGit 操作本地仓库(分支)"></a>7. Git 的基本使用02-TortoiseGit 操作本地仓库(分支)</h1><h2 id="7-1-分支的概念"><a href="#7-1-分支的概念" class="headerlink" title="7.1 分支的概念"></a>7.1 分支的概念</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">几乎所有的版本控制系统都以某种形式支持分支。 使用分支意味着你可以把你的工作从开发主线上分离开来，以免影响开发主线。</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 <h2 id="7-2-为何要使用分支"><a href="#7-2-为何要使用分支" class="headerlink" title="7.2 为何要使用分支"></a>7.2 为何要使用分支</h2><p>先看单线程开发</p>
-<p><img src="/2019/11/18/191118Git/1572173978185.png" alt="1572173978185"></p>
+<p><img src="/2019/11/18/Java/%E6%A1%86%E6%9E%B6/191118Git/1572173978185.png" alt="1572173978185"></p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">思考如下现象</span><br><span class="line">    10.1 日 业务部门提出需求 : 明年 元旦3天做2个促销活动</span><br><span class="line">	1) 12.31 号上线活动1, </span><br><span class="line">	2) 1.4 号上线活动2 ,同时 要求撤销 活动1</span><br><span class="line">    你所在 部门领导 为了保证能顺利完成,要求 11.15 号完成 上述两个功能的开发工作</span><br><span class="line">此时作为开发人员:我要面临两个文件, 活动1 的代码,即要存在(12.31 要用)又要不存在(1.4 号要求删除) ,我们怎么做?</span><br><span class="line">显然比较棘手,如果使用分支(可以理解为将代码复制一份)将很好解决</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-<p><img src="/2019/11/18/191118Git/1572174740013.png" alt="1572174740013"></p>
+<p><img src="/2019/11/18/Java/%E6%A1%86%E6%9E%B6/191118Git/1572174740013.png" alt="1572174740013"></p>
 <h2 id="7-3-创建分支"><a href="#7-3-创建分支" class="headerlink" title="7.3 创建分支"></a>7.3 创建分支</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">到现在为止,我们一直使用的时主分支(master)</span><br><span class="line">在主分支上操作创建分支</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-<p><img src="/2019/11/18/191118Git/1572178189980.png" alt="1572178189980"></p>
+<p><img src="/2019/11/18/Java/%E6%A1%86%E6%9E%B6/191118Git/1572178189980.png" alt="1572178189980"></p>
 <h2 id="7-4-分支的查看切换"><a href="#7-4-分支的查看切换" class="headerlink" title="7.4 分支的查看切换"></a>7.4 分支的查看切换</h2><h3 id="7-4-1查看分支"><a href="#7-4-1查看分支" class="headerlink" title="7.4.1查看分支"></a>7.4.1查看分支</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">查看版本分支图,此时我们看到有两个分支</span><br><span class="line">当然,我们可以创建多个分支</span><br><span class="line">可以看到多个分支的图形</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-<p><img src="/2019/11/18/191118Git/1572179420706.png" alt="1572179420706"></p>
+<p><img src="/2019/11/18/Java/%E6%A1%86%E6%9E%B6/191118Git/1572179420706.png" alt="1572179420706"></p>
 <h3 id="7-4-2切换分支"><a href="#7-4-2切换分支" class="headerlink" title="7.4.2切换分支"></a>7.4.2切换分支</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">右键--&gt; 检出</span><br></pre></td></tr></table></figure>
 
 
 
-<p><img src="/2019/11/18/191118Git/1572180057481.png" alt="1572180057481"></p>
+<p><img src="/2019/11/18/Java/%E6%A1%86%E6%9E%B6/191118Git/1572180057481.png" alt="1572180057481"></p>
 <p>##7.5 分支的合并与删除</p>
 <h3 id="7-5-1合并"><a href="#7-5-1合并" class="headerlink" title="7.5.1合并"></a>7.5.1合并</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">我们将代码切换到分支1,然后写属于需求1 的代码并提交</span><br><span class="line">当我们把需求1 开发完毕如何把需求1 的代码合并到主分支呢?</span><br><span class="line">--&gt;1 切换到 主版本</span><br><span class="line">--&gt;2 右键 合并即可将需求1 写的代码合并至主分支</span><br><span class="line">-----此时我们看到代码自动合并到了master分支</span><br></pre></td></tr></table></figure>
 
-<p><img src="/2019/11/18/191118Git/1572180623156.png" alt="1572180623156"></p>
-<h3 id="7-5-2删除分支"><a href="#7-5-2删除分支" class="headerlink" title="7.5.2删除分支"></a>7.5.2删除分支</h3><p><img src="/2019/11/18/191118Git/1572183670465.png" alt="1572183670465"></p>
+<p><img src="/2019/11/18/Java/%E6%A1%86%E6%9E%B6/191118Git/1572180623156.png" alt="1572180623156"></p>
+<h3 id="7-5-2删除分支"><a href="#7-5-2删除分支" class="headerlink" title="7.5.2删除分支"></a>7.5.2删除分支</h3><p><img src="/2019/11/18/Java/%E6%A1%86%E6%9E%B6/191118Git/1572183670465.png" alt="1572183670465"></p>
 <p>5,冲突的处理<br>    5.1)冲突的概念</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">现象演示	</span><br><span class="line">	开发人员A 开发需求1,开发了一个工具类 MathUtil,里面第一行写了一个方法 add(int [] args)</span><br><span class="line"> 同时开发人员B 开发需求2,开发了一个工具类 MathUtil,里面第一行写了一个方法 add(int a int b)</span><br><span class="line">他们在互相不知道对方需求的情况下同时提交了代码到自己的分支</span><br><span class="line">   思考此时如果我们把需求1 和需求2 同时都合并到主分支上, 主分支的 工具类 MathUtil 的第一行应该使用谁的代码? </span><br><span class="line">   此时主分支是不能智能判断第一行使用谁的代码,合并时会报错,我们叫做冲突.</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-<p><img src="/2019/11/18/191118Git/1572181403239.png" alt="1572181403239"></p>
+<p><img src="/2019/11/18/Java/%E6%A1%86%E6%9E%B6/191118Git/1572181403239.png" alt="1572181403239"></p>
 <p>​    5.2) 如何处理冲突</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">分析一下冲突的原因:</span><br><span class="line">	开发人员之间彼此没有沟通导致的同一个时间节点修改了同一个地方的代码,合并是冲突</span><br><span class="line">思考:</span><br><span class="line">	我们能直接把某个开发人员开发的代码删除吗?</span><br><span class="line">显然不能</span><br><span class="line">	所以在处理冲突时,第一步应该时找开发另一个需求的人员沟通,之后才是处理冲突</span><br><span class="line">-----</span><br><span class="line">--&gt; 选中冲突的文件(带黄色感叹号的文件都是冲突的文件,如果有多个需要逐一处理)</span><br><span class="line">--&gt; 右键--&gt; 编辑冲突,</span><br><span class="line">--&gt;处理完毕后.标记已解决</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-<p><img src="/2019/11/18/191118Git/1572182565594.png" alt="1572182565594"></p>
-<p><img src="/2019/11/18/191118Git/1572182727568.png" alt="1572182727568"></p>
+<p><img src="/2019/11/18/Java/%E6%A1%86%E6%9E%B6/191118Git/1572182565594.png" alt="1572182565594"></p>
+<p><img src="/2019/11/18/Java/%E6%A1%86%E6%9E%B6/191118Git/1572182727568.png" alt="1572182727568"></p>
 <p>#8. tag  标签</p>
 <h2 id="8-1-标签的概念"><a href="#8-1-标签的概念" class="headerlink" title="8.1 标签的概念"></a>8.1 标签的概念</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">如果你的项目达到一个重要的阶段，并希望永远记住那个特别的提交快照，你可以给它打上标签(tag)</span><br><span class="line">比如说，我们想为我们的项目发布一个&quot;1.0&quot;版本。 我们给最新一次提交打上（HEAD）&quot;v1.0&quot;的标签。</span><br><span class="line">标签可以理解为项目里程碑的一个标记,一旦打上了这个标记则,表示当前的代码将不允许提交</span><br></pre></td></tr></table></figure>
 
 <h2 id="8-2-标签的创建-tag"><a href="#8-2-标签的创建-tag" class="headerlink" title="8.2  标签的创建(tag)"></a>8.2  标签的创建(tag)</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">标签的创建和分支的创建操作几乎一样</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-<p><img src="/2019/11/18/191118Git/1572183849972.png" alt="1572183849972"></p>
-<h2 id="8-3-标签的切换与删除"><a href="#8-3-标签的切换与删除" class="headerlink" title="8.3 标签的切换与删除"></a>8.3 标签的切换与删除</h2><p><img src="/2019/11/18/191118Git/1572184030612.png" alt="1572184030612"></p>
-<p><img src="/2019/11/18/191118Git/1572184109746.png" alt="1572184109746"></p>
+<p><img src="/2019/11/18/Java/%E6%A1%86%E6%9E%B6/191118Git/1572183849972.png" alt="1572183849972"></p>
+<h2 id="8-3-标签的切换与删除"><a href="#8-3-标签的切换与删除" class="headerlink" title="8.3 标签的切换与删除"></a>8.3 标签的切换与删除</h2><p><img src="/2019/11/18/Java/%E6%A1%86%E6%9E%B6/191118Git/1572184030612.png" alt="1572184030612"></p>
+<p><img src="/2019/11/18/Java/%E6%A1%86%E6%9E%B6/191118Git/1572184109746.png" alt="1572184109746"></p>
 <h1 id="9-远程仓库"><a href="#9-远程仓库" class="headerlink" title="9. 远程仓库"></a>9. 远程仓库</h1><p>我们的代码不能总是放在本地,因为总是放在本地,一旦电脑出现故障,数据将丢失,怎么共享呢,这里我们需要一个服务器, 我们可以把代码放到服务器上,然后让别人下载,这样我峨嵋你既可以备份代码,也可以进行团队协作开发</p>
 <h2 id="9-0-局域网仓库"><a href="#9-0-局域网仓库" class="headerlink" title="9.0 局域网仓库"></a>9.0 局域网仓库</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">实际上我们可以搭建一个简单的局域网服务器共享我们的代码</span><br></pre></td></tr></table></figure>
 
-<h3 id="9-0-1本地相对路径-多个文件夹之间共享代码"><a href="#9-0-1本地相对路径-多个文件夹之间共享代码" class="headerlink" title="9.0.1本地相对路径,多个文件夹之间共享代码"></a>9.0.1本地相对路径,多个文件夹之间共享代码</h3><p><img src="/2019/11/18/191118Git/1572535798760.png" alt="1572535798760"></p>
-<h3 id="9-0-2开启局域网共享代码"><a href="#9-0-2开启局域网共享代码" class="headerlink" title="9.0.2开启局域网共享代码"></a>9.0.2开启局域网共享代码</h3><p><img src="/2019/11/18/191118Git/1572535921581.png" alt="1572535921581"></p>
-<p><img src="/2019/11/18/191118Git/1572536029899.png" alt="1572536029899"></p>
+<h3 id="9-0-1本地相对路径-多个文件夹之间共享代码"><a href="#9-0-1本地相对路径-多个文件夹之间共享代码" class="headerlink" title="9.0.1本地相对路径,多个文件夹之间共享代码"></a>9.0.1本地相对路径,多个文件夹之间共享代码</h3><p><img src="/2019/11/18/Java/%E6%A1%86%E6%9E%B6/191118Git/1572535798760.png" alt="1572535798760"></p>
+<h3 id="9-0-2开启局域网共享代码"><a href="#9-0-2开启局域网共享代码" class="headerlink" title="9.0.2开启局域网共享代码"></a>9.0.2开启局域网共享代码</h3><p><img src="/2019/11/18/Java/%E6%A1%86%E6%9E%B6/191118Git/1572535921581.png" alt="1572535921581"></p>
+<p><img src="/2019/11/18/Java/%E6%A1%86%E6%9E%B6/191118Git/1572536029899.png" alt="1572536029899"></p>
 <p>局域网这种共享是没有安全控制的,都可以访问,如果想要搭建一个可以控制权限的服务器需要借助第三方软件</p>
 <p>gitblit,可以自行搜索搭建</p>
 <h2 id="9-1-常用远程仓库托管服务"><a href="#9-1-常用远程仓库托管服务" class="headerlink" title="9.1 常用远程仓库托管服务"></a>9.1 常用远程仓库托管服务</h2><p>除了自己搭建服务器,其实我们可以使用一些免费的远程仓库,远程仓库有很多,常见的免费互联网远程仓库托管服务如下:</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">www.github.com</span><br><span class="line">www.gitee.com</span><br><span class="line">www.gitlab.com</span><br><span class="line"></span><br><span class="line">github  是一个基于git实现在线代码托管的仓库，向互联网开放，企业版要收钱。</span><br><span class="line">gitee    即码云，是 oschina 免费给企业用的，不用自己搭建环境。</span><br><span class="line">gitlab   类似 github，一般用于在企业内搭建git私服，要自己搭环境。</span><br><span class="line"></span><br><span class="line">GitHub(gitee)、GitLab 不同点：</span><br><span class="line">1、GitHub如果使用私有仓库是需要付费的，(2019年开始私有仓库也是免费的但是只能3个人协同开发,想要更多需要收费)，GitLab可以在上面搭建私人的免费仓库。</span><br><span class="line">2、GitLab让开发团队对他们的代码仓库拥有更多的控制，相对于GitHub，它有不少的特色：</span><br><span class="line">    (1)允许免费设置仓库权限</span><br><span class="line">    (2)允许用户选择分享一个project的部分代码</span><br><span class="line">    (3)允许用户设置project的获取权限，进一步提升安全性</span><br><span class="line">    (4)可以设置获取到团队整体的改进进度</span><br><span class="line">    (5)通过innersourcing让不在权限范围内的人访问不到该资源</span><br></pre></td></tr></table></figure>
 
 <p>鉴于国内用户可能网络不好,这里我们使用gitee(码云) 来讲解我们的课程,其他可自行找资料学习非常类似</p>
-<h2 id="9-2-码云账号注册"><a href="#9-2-码云账号注册" class="headerlink" title="9.2  码云账号注册"></a>9.2  码云账号注册</h2><p><img src="/2019/11/18/191118Git/1572267659865.png" alt="1572267659865"></p>
+<h2 id="9-2-码云账号注册"><a href="#9-2-码云账号注册" class="headerlink" title="9.2  码云账号注册"></a>9.2  码云账号注册</h2><p><img src="/2019/11/18/Java/%E6%A1%86%E6%9E%B6/191118Git/1572267659865.png" alt="1572267659865"></p>
 <p>填写邮箱发送验证码,然后可以注册账号,主页如下</p>
-<p><img src="/2019/11/18/191118Git/1572268091948.png" alt="1572268091948"></p>
-<h2 id="9-3-创建远程仓库"><a href="#9-3-创建远程仓库" class="headerlink" title="9.3 创建远程仓库"></a>9.3 创建远程仓库</h2><p><img src="/2019/11/18/191118Git/1572274044100.png" alt="1572274044100"></p>
-<p><img src="/2019/11/18/191118Git/224637.png"></p>
+<p><img src="/2019/11/18/Java/%E6%A1%86%E6%9E%B6/191118Git/1572268091948.png" alt="1572268091948"></p>
+<h2 id="9-3-创建远程仓库"><a href="#9-3-创建远程仓库" class="headerlink" title="9.3 创建远程仓库"></a>9.3 创建远程仓库</h2><p><img src="/2019/11/18/Java/%E6%A1%86%E6%9E%B6/191118Git/1572274044100.png" alt="1572274044100"></p>
+<p><img src="/2019/11/18/Java/%E6%A1%86%E6%9E%B6/191118Git/224637.png"></p>
 <p>各个类型仓库之间的区别</p>
-<p><img src="/2019/11/18/191118Git/1572274100802.png" alt="1572274100802"></p>
-<p><img src="/2019/11/18/191118Git/1572274406371.png" alt="1572274406371"></p>
-<h2 id="9-4-把本地代码推送到远端"><a href="#9-4-把本地代码推送到远端" class="headerlink" title="9.4  把本地代码推送到远端"></a>9.4  把本地代码推送到远端</h2><p><img src="/2019/11/18/191118Git/1572275202869.png" alt="1572275202869"></p>
-<p><img src="/2019/11/18/191118Git/1572275492670.png" alt="1572275492670"></p>
-<p><img src="/2019/11/18/191118Git/1572275546739.png" alt="1572275546739"></p>
+<p><img src="/2019/11/18/Java/%E6%A1%86%E6%9E%B6/191118Git/1572274100802.png" alt="1572274100802"></p>
+<p><img src="/2019/11/18/Java/%E6%A1%86%E6%9E%B6/191118Git/1572274406371.png" alt="1572274406371"></p>
+<h2 id="9-4-把本地代码推送到远端"><a href="#9-4-把本地代码推送到远端" class="headerlink" title="9.4  把本地代码推送到远端"></a>9.4  把本地代码推送到远端</h2><p><img src="/2019/11/18/Java/%E6%A1%86%E6%9E%B6/191118Git/1572275202869.png" alt="1572275202869"></p>
+<p><img src="/2019/11/18/Java/%E6%A1%86%E6%9E%B6/191118Git/1572275492670.png" alt="1572275492670"></p>
+<p><img src="/2019/11/18/Java/%E6%A1%86%E6%9E%B6/191118Git/1572275546739.png" alt="1572275546739"></p>
 <p>此时我们刷新仓库发现代码已经存在了</p>
 <p>我们填写的用户信息,会被保存在本地,下次提交无需填写用户名和密码</p>
-<p><img src="/2019/11/18/191118Git/1572277483698.png" alt="1572277483698"></p>
+<p><img src="/2019/11/18/Java/%E6%A1%86%E6%9E%B6/191118Git/1572277483698.png" alt="1572277483698"></p>
 <h2 id="9-5-从远程仓库更新代码"><a href="#9-5-从远程仓库更新代码" class="headerlink" title="9.5  从远程仓库更新代码"></a>9.5  从远程仓库更新代码</h2><p>我们同样可以从库下载代码,</p>
 <p>新建一个文件夹 repo2 ,进入然后进行如下操作</p>
-<p><img src="/2019/11/18/191118Git/1572275958701.png" alt="1572275958701"></p>
+<p><img src="/2019/11/18/Java/%E6%A1%86%E6%9E%B6/191118Git/1572275958701.png" alt="1572275958701"></p>
 <p>此时我们发现我们的代码已经被下载下来了</p>
 <h2 id="9-6-代码的修改与提交-查看历史"><a href="#9-6-代码的修改与提交-查看历史" class="headerlink" title="9.6  代码的修改与提交,查看历史"></a>9.6  代码的修改与提交,查看历史</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1)此时我们修改代码就不能仅仅是提交到本地了,提交完毕应该推送到远端服务器</span><br><span class="line">2)此时如果别人从远端仓库下载最新的代码其实是可以看到我们的代码修改记录的</span><br><span class="line">   git --&gt;显示日志</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-<p><img src="/2019/11/18/191118Git/1572277139243.png" alt="1572277139243"></p>
+<p><img src="/2019/11/18/Java/%E6%A1%86%E6%9E%B6/191118Git/1572277139243.png" alt="1572277139243"></p>
 <h2 id="9-7-ssh-连接概述"><a href="#9-7-ssh-连接概述" class="headerlink" title="9.7 ssh 连接概述"></a>9.7 ssh 连接概述</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">实际上git 不仅仅支持用户名密码方式的配置,可以有另外一种相对更加安全的配置即ssh 方式配置</span><br></pre></td></tr></table></figure>
 
 <p> ssh 方式的底层原理</p>
@@ -5605,18 +5605,18 @@
 
 <h2 id="9-8-ssh-密钥的生成"><a href="#9-8-ssh-密钥的生成" class="headerlink" title="9.8 ssh 密钥的生成"></a>9.8 ssh 密钥的生成</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#生成公钥私钥</span><br><span class="line"> ssh-keygen -t rsa</span><br><span class="line"> 一直回车即可</span><br><span class="line"> 会默认用户目录 .ssh 目录生成一个默认的id_rsa文件 和id_rsa.pub</span><br></pre></td></tr></table></figure>
 
-<p><img src="/2019/11/18/191118Git/1572520139221.png" alt="1572520139221"></p>
-<p><img src="/2019/11/18/191118Git/1572520293700.png" alt="1572520293700"></p>
-<h2 id="9-9-ssh-密钥配置"><a href="#9-9-ssh-密钥配置" class="headerlink" title="9.9 ssh 密钥配置"></a>9.9 ssh 密钥配置</h2><p><img src="/2019/11/18/191118Git/1572520396806.png" alt="1572520396806"></p>
+<p><img src="/2019/11/18/Java/%E6%A1%86%E6%9E%B6/191118Git/1572520139221.png" alt="1572520139221"></p>
+<p><img src="/2019/11/18/Java/%E6%A1%86%E6%9E%B6/191118Git/1572520293700.png" alt="1572520293700"></p>
+<h2 id="9-9-ssh-密钥配置"><a href="#9-9-ssh-密钥配置" class="headerlink" title="9.9 ssh 密钥配置"></a>9.9 ssh 密钥配置</h2><p><img src="/2019/11/18/Java/%E6%A1%86%E6%9E%B6/191118Git/1572520396806.png" alt="1572520396806"></p>
 <h2 id="9-10-ssh-方式克隆-提交代码"><a href="#9-10-ssh-方式克隆-提交代码" class="headerlink" title="9.10 ssh 方式克隆/提交代码:"></a>9.10 ssh 方式克隆/提交代码:</h2><p>  配置完成之后我们克隆我们之前的项目</p>
-<p><img src="/2019/11/18/191118Git/1572522118610.png" alt="1572522118610"></p>
+<p><img src="/2019/11/18/Java/%E6%A1%86%E6%9E%B6/191118Git/1572522118610.png" alt="1572522118610"></p>
 <p>修改后直接提交推送即可成功,,git 会自动去.ssh 目录找我们的私钥进行匹配</p>
 <h2 id="9-11-远程仓库的其他操作"><a href="#9-11-远程仓库的其他操作" class="headerlink" title="9.11. 远程仓库的其他操作"></a>9.11. 远程仓库的其他操作</h2><p>概念</p>
-<p><img src="/2019/11/18/191118Git/1572522822946.png" alt="1572522822946"></p>
+<p><img src="/2019/11/18/Java/%E6%A1%86%E6%9E%B6/191118Git/1572522822946.png" alt="1572522822946"></p>
 <p>当我们从 gitee 上查看别人的项目的时候我们可能会看到上图中的按钮</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">指数:</span><br><span class="line">	是gitee 网站根据当前项目的各项指标计算出来的一个值</span><br></pre></td></tr></table></figure>
 
-<p><img src="/2019/11/18/191118Git/1572523045267.png" alt="1572523045267"></p>
+<p><img src="/2019/11/18/Java/%E6%A1%86%E6%9E%B6/191118Git/1572523045267.png" alt="1572523045267"></p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Star:</span><br><span class="line">	点赞, 注意这里的并不像朋友圈那样容易获得点赞,圈内人还是很克制的</span><br><span class="line">Watch:</span><br><span class="line">   如果你watch 了某个开源项目,那么这个项目后续所有的改动你将收到通知</span><br><span class="line">Fork :</span><br><span class="line">	将别人的代码克隆到你自己的仓库</span><br><span class="line">	作用一: 如果担心某个优秀的项目别人突然有一天不开源了,你可以fork到自己的仓库</span><br><span class="line">    作用二: 修改别人的代码</span><br><span class="line">	  以linux 为例,你其实不是linux 社区的开发人员,但是你 又想为linux 开发做贡献(维护代码)</span><br><span class="line">	   你并没有权限,怎们办?</span><br><span class="line">	   你可以先把linux 开源的代码 fork 到你自己的仓库,此时你就可以操作自己的仓库进行修改代码了</span><br><span class="line">	   如何让别人合并你修改好的代码呢? </span><br><span class="line">	    我们注意项目的上方有一个 &quot; Pull Request&quot; 这个按钮的意思是 &quot;请求求别人合并你修改的代码&quot;</span><br><span class="line">	    当我们发起一个 Pull Request 时 , 项目的拥有者将收到 Pull Request请求,然后将根据你提交代码的质量决定是否合并</span><br></pre></td></tr></table></figure>
 
 <p>项目操作</p>
@@ -5624,18 +5624,18 @@
 <ol start="2">
 <li>我们可以邀请其他人成为项目的开发人员或者管理人员</li>
 </ol>
-<p><img src="/2019/11/18/191118Git/1572523819666.png" alt="1572523819666"></p>
+<p><img src="/2019/11/18/Java/%E6%A1%86%E6%9E%B6/191118Git/1572523819666.png" alt="1572523819666"></p>
 <p>我们可以删除修改我们自己仓库的基本信息</p>
-<p><img src="/2019/11/18/191118Git/1572523928774.png" alt="1572523928774"></p>
-<p><img src="/2019/11/18/191118Git/1572523968992.png" alt="1572523968992"></p>
+<p><img src="/2019/11/18/Java/%E6%A1%86%E6%9E%B6/191118Git/1572523928774.png" alt="1572523928774"></p>
+<p><img src="/2019/11/18/Java/%E6%A1%86%E6%9E%B6/191118Git/1572523968992.png" alt="1572523968992"></p>
 <h2 id="9-12-利用-gitee-搭建个人主页"><a href="#9-12-利用-gitee-搭建个人主页" class="headerlink" title="9.12 利用 gitee 搭建个人主页"></a>9.12 利用 gitee 搭建个人主页</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1)将静态资源上传至仓库</span><br><span class="line">2) 选择服务 pages 即可部署</span><br><span class="line">注意 1)必须有个index.html 文件</span><br><span class="line">注意 2) 只能搭建静态网站,动态网站请租赁服务器搭建提供服务</span><br><span class="line">注意 3) gitee 要求必须绑定手机号</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-<p><img src="/2019/11/18/191118Git/1572525575923.png" alt="1572525575923"></p>
+<p><img src="/2019/11/18/Java/%E6%A1%86%E6%9E%B6/191118Git/1572525575923.png" alt="1572525575923"></p>
 <p>点击开启后gitee 会自动生成一个域名</p>
-<p><img src="/2019/11/18/191118Git/Java%E8%B5%84%E6%96%99/4.%E6%A1%86%E6%9E%B6/6.git/%E8%AF%A6%E7%BB%86%E8%AE%B2%E4%B9%89/%E8%AE%B2%E4%B9%89/assets/1572526097257.png" alt="1572526097257"></p>
+<p><img src="/2019/11/18/Java/%E6%A1%86%E6%9E%B6/191118Git/Java%E8%B5%84%E6%96%99/4.%E6%A1%86%E6%9E%B6/6.git/%E8%AF%A6%E7%BB%86%E8%AE%B2%E4%B9%89/%E8%AE%B2%E4%B9%89/assets/1572526097257.png" alt="1572526097257"></p>
 <p>直接访问即可</p>
 <p>此时我们已经在git 上部署了一个静态的网站</p>
-<p><img src="/2019/11/18/191118Git/1572526136074.png" alt="1572526136074"></p>
+<p><img src="/2019/11/18/Java/%E6%A1%86%E6%9E%B6/191118Git/1572526136074.png" alt="1572526136074"></p>
 <h1 id="10-命令行–-git基本操作"><a href="#10-命令行–-git基本操作" class="headerlink" title="10.命令行– git基本操作"></a>10.命令行– git基本操作</h1><h2 id="10-1-介绍"><a href="#10-1-介绍" class="headerlink" title="10.1  介绍"></a>10.1  介绍</h2><p>​    上述我们的操作 使用的 是客户端TortoiseGit 操作的git ,实际上底层依旧是使用的命令行帮我们执行, 在早期 git 并没有窗口化工具,开发人员只能使用命令行模式</p>
 <p>  实际上,如果你掌握并熟练使用了命令行模式操作git 的话,你会发现某些操作命令行比窗口化操作要简单</p>
 <p>所有你在工作中会发现高深的技术人员可能会喜欢命令行模式提交git</p>
@@ -5684,7 +5684,7 @@
   </entry>
   <entry>
     <title>IO流和Properties集合</title>
-    <url>/2019/09/01/190901IO%E6%B5%81%E5%92%8CProperties%E9%9B%86%E5%90%88/</url>
+    <url>/2019/09/01/Java/JavaSE/190901IO%E6%B5%81%E5%92%8CProperties%E9%9B%86%E5%90%88/</url>
     <content><![CDATA[<h2 id="1-IO流案例"><a href="#1-IO流案例" class="headerlink" title="1.IO流案例"></a>1.IO流案例</h2><h3 id="1-1集合到文件数据排序改进版【应用】"><a href="#1-1集合到文件数据排序改进版【应用】" class="headerlink" title="1.1集合到文件数据排序改进版【应用】"></a>1.1集合到文件数据排序改进版【应用】</h3><h4 id="1-1-1案例需求"><a href="#1-1-1案例需求" class="headerlink" title="1.1.1案例需求"></a>1.1.1案例需求</h4><ul>
 <li>键盘录入5个学生信息(姓名,语文成绩,数学成绩,英语成绩)。要求按照成绩总分从高到低写入文本文件</li>
 <li>格式：姓名,语文成绩,数学成绩,英语成绩  举例：林青霞,98,99,100</li>
@@ -6124,11 +6124,11 @@
   </entry>
   <entry>
     <title>Maven高级</title>
-    <url>/2019/11/15/191115Maven%E9%AB%98%E7%BA%A7/</url>
+    <url>/2019/11/15/Java/%E6%A1%86%E6%9E%B6/191115Maven%E9%AB%98%E7%BA%A7/</url>
     <content><![CDATA[<h2 id="Maven高级"><a href="#Maven高级" class="headerlink" title="Maven高级"></a>Maven高级</h2><h2 id="1-maven基础知识回顾"><a href="#1-maven基础知识回顾" class="headerlink" title="1.maven基础知识回顾"></a>1.maven基础知识回顾</h2><h3 id="1-1-maven介绍"><a href="#1-1-maven介绍" class="headerlink" title="1.1 maven介绍"></a>1.1 maven介绍</h3><p>maven 是一个项目管理工具，主要作用是在项目开发阶段对Java项目进行依赖管理和项目构建。</p>
 <p>依赖管理：就是对jar包的管理。通过导入maven坐标，就相当于将仓库中的jar包导入了当前项目中。</p>
 <p>项目构建：通过maven的一个命令就可以完成项目从清理、编译、测试、报告、打包，部署整个过程。</p>
-<p>​              <img src="/2019/11/15/191115Maven%E9%AB%98%E7%BA%A7/%E5%9B%BE%E7%89%871.png"></p>
+<p>​              <img src="/2019/11/15/Java/%E6%A1%86%E6%9E%B6/191115Maven%E9%AB%98%E7%BA%A7/%E5%9B%BE%E7%89%871.png"></p>
 <a id="more"></a>
 
 <h3 id="1-2-maven的仓库类型"><a href="#1-2-maven的仓库类型" class="headerlink" title="1.2 maven的仓库类型"></a>1.2 maven的仓库类型</h3><p>1.本地仓库 </p>
@@ -6141,7 +6141,7 @@
 <p>test：        测试</p>
 <p>package：打包</p>
 <p>install：    安装</p>
-<h3 id="1-4-maven坐标书写规范"><a href="#1-4-maven坐标书写规范" class="headerlink" title="1.4 maven坐标书写规范"></a>1.4 maven坐标书写规范</h3><p><img src="/2019/11/15/191115Maven%E9%AB%98%E7%BA%A7/%E5%9B%BE%E7%89%872.png"></p>
+<h3 id="1-4-maven坐标书写规范"><a href="#1-4-maven坐标书写规范" class="headerlink" title="1.4 maven坐标书写规范"></a>1.4 maven坐标书写规范</h3><p><img src="/2019/11/15/Java/%E6%A1%86%E6%9E%B6/191115Maven%E9%AB%98%E7%BA%A7/%E5%9B%BE%E7%89%872.png"></p>
 <h3 id="1-5-maven的依赖范围"><a href="#1-5-maven的依赖范围" class="headerlink" title="1.5 maven的依赖范围"></a>1.5 maven的依赖范围</h3><table>
 <thead>
 <tr>
@@ -6189,33 +6189,33 @@
 </tr>
 </tbody></table>
 <h2 id="2-maven的依赖传递"><a href="#2-maven的依赖传递" class="headerlink" title="2. maven的依赖传递"></a>2. maven的依赖传递</h2><h3 id="2-1-什么是依赖传递"><a href="#2-1-什么是依赖传递" class="headerlink" title="2.1 什么是依赖传递"></a>2.1 什么是依赖传递</h3><p>在maven中，依赖是可以传递的，假设存在三个项目，分别是项目A，项目B以及项目C。假设C依赖B，B依赖A，那么我们可以根据maven项目依赖的特征不难推出项目C也依赖A。</p>
-<p><img src="/2019/11/15/191115Maven%E9%AB%98%E7%BA%A7/%E5%9B%BE%E7%89%873.png"></p>
-<p>​                         <img src="/2019/11/15/191115Maven%E9%AB%98%E7%BA%A7/%E5%9B%BE%E7%89%874.png"></p>
+<p><img src="/2019/11/15/Java/%E6%A1%86%E6%9E%B6/191115Maven%E9%AB%98%E7%BA%A7/%E5%9B%BE%E7%89%873.png"></p>
+<p>​                         <img src="/2019/11/15/Java/%E6%A1%86%E6%9E%B6/191115Maven%E9%AB%98%E7%BA%A7/%E5%9B%BE%E7%89%874.png"></p>
 <p>通过上面的图可以看到，我们的web项目直接依赖了spring-webmvc，而spring-webmvc依赖了sping-aop、spring-beans等。最终的结果就是在我们的web项目中间接依赖了spring-aop、spring-beans等。</p>
 <h3 id="2-2-什么是依赖冲突"><a href="#2-2-什么是依赖冲突" class="headerlink" title="2.2 什么是依赖冲突"></a>2.2 什么是依赖冲突</h3><p>由于依赖传递现象的存在， spring-webmvc 依赖 spirng-beans-4.2.4，spring-aop 依赖 spring-beans-5.0.2，但是发现 spirng-beans-4.2.4 加入到了工程中，而我们希望 spring-beans-5.0.2 加入工程。这就造成了依赖冲突。</p>
-<p><img src="/2019/11/15/191115Maven%E9%AB%98%E7%BA%A7/%E5%9B%BE%E7%89%875.png"></p>
+<p><img src="/2019/11/15/Java/%E6%A1%86%E6%9E%B6/191115Maven%E9%AB%98%E7%BA%A7/%E5%9B%BE%E7%89%875.png"></p>
 <h3 id="2-3-如何解决依赖冲突"><a href="#2-3-如何解决依赖冲突" class="headerlink" title="2.3 如何解决依赖冲突"></a>2.3 如何解决依赖冲突</h3><p>1.使用maven提供的依赖调解原则 </p>
 <pre><code>    第一声明者优先原则</code></pre>
 <p>​     路径近者优先原则</p>
 <p>2.排除依赖</p>
 <p>3.锁定版本 </p>
 <h3 id="2-4-依赖调节原则——第一声明者优先原则"><a href="#2-4-依赖调节原则——第一声明者优先原则" class="headerlink" title="2.4 依赖调节原则——第一声明者优先原则"></a>2.4 依赖调节原则——第一声明者优先原则</h3><p>在 pom 文件中定义依赖，以先声明的依赖为准。其实就是根据坐标导入的顺序来确定最终使用哪个传递过来的依赖。</p>
-<p><img src="/2019/11/15/191115Maven%E9%AB%98%E7%BA%A7/%E5%9B%BE%E7%89%876.png"></p>
+<p><img src="/2019/11/15/Java/%E6%A1%86%E6%9E%B6/191115Maven%E9%AB%98%E7%BA%A7/%E5%9B%BE%E7%89%876.png"></p>
 <p>结论：通过上图可以看到，spring-aop和spring-webmvc都传递过来了spring-beans，但是因为spring-aop在前面，所以最终使用的spring-beans是由spring-aop传递过来的，而spring-webmvc传递过来的spring-beans则被忽略了。</p>
 <h3 id="2-5-排除依赖"><a href="#2-5-排除依赖" class="headerlink" title="2.5 排除依赖"></a>2.5 排除依赖</h3><p>可以使用exclusions标签将传递过来的依赖排除出去。</p>
-<p><img src="/2019/11/15/191115Maven%E9%AB%98%E7%BA%A7/%E5%9B%BE%E7%89%877.png"></p>
+<p><img src="/2019/11/15/Java/%E6%A1%86%E6%9E%B6/191115Maven%E9%AB%98%E7%BA%A7/%E5%9B%BE%E7%89%877.png"></p>
 <h3 id="2-6-版本锁定"><a href="#2-6-版本锁定" class="headerlink" title="2.6 版本锁定"></a>2.6 版本锁定</h3><p>采用直接锁定版本的方法确定依赖jar包的版本，版本锁定后则不考虑依赖的声明顺序或依赖的路径，以锁定的版本为准添加到工程中，此方法在企业开发中经常使用。</p>
 <p>版本锁定的使用方式：</p>
 <p>第一步：在dependencyManagement标签中锁定依赖的版本</p>
 <p>第二步：在dependencies标签中声明需要导入的maven坐标</p>
 <p>①在dependencyManagement标签中锁定依赖的版本</p>
-<p><img src="/2019/11/15/191115Maven%E9%AB%98%E7%BA%A7/%E5%9B%BE%E7%89%878.png"></p>
+<p><img src="/2019/11/15/Java/%E6%A1%86%E6%9E%B6/191115Maven%E9%AB%98%E7%BA%A7/%E5%9B%BE%E7%89%878.png"></p>
 <p>②在dependencies标签中声明需要导入的maven坐标</p>
-<p><img src="/2019/11/15/191115Maven%E9%AB%98%E7%BA%A7/%E5%9B%BE%E7%89%879.png"></p>
+<p><img src="/2019/11/15/Java/%E6%A1%86%E6%9E%B6/191115Maven%E9%AB%98%E7%BA%A7/%E5%9B%BE%E7%89%879.png"></p>
 <h2 id="3-基于maven构建SSM工程案例"><a href="#3-基于maven构建SSM工程案例" class="headerlink" title="3.基于maven构建SSM工程案例"></a>3.基于maven构建SSM工程案例</h2><h3 id="3-1-需求描述"><a href="#3-1-需求描述" class="headerlink" title="3.1 需求描述"></a>3.1 需求描述</h3><p>本案例基于maven构建 SSM（Spring+SpringMVC+Mybatis）工程，通过maven坐标进行依赖管理。最终实现根据 id 查询商品信息的功能。</p>
 <h3 id="3-2-构建maven工程"><a href="#3-2-构建maven工程" class="headerlink" title="3.2 构建maven工程"></a>3.2 构建maven工程</h3><p>1.数据库环境搭建 </p>
 <p>​    ①创建数据库ssmtest</p>
-<p><img src="/2019/11/15/191115Maven%E9%AB%98%E7%BA%A7/%E5%9B%BE%E7%89%8710.png"></p>
+<p><img src="/2019/11/15/Java/%E6%A1%86%E6%9E%B6/191115Maven%E9%AB%98%E7%BA%A7/%E5%9B%BE%E7%89%8710.png"></p>
 <p>​    ②创建商品表item</p>
 <figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> <span class="string">`item`</span> (</span><br><span class="line">  <span class="string">`id`</span> <span class="built_in">int</span>(<span class="number">11</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span> auto_increment,</span><br><span class="line">  <span class="string">`name`</span> <span class="built_in">varchar</span>(<span class="number">255</span>) <span class="keyword">default</span> <span class="literal">NULL</span>,</span><br><span class="line">  <span class="string">`price`</span> <span class="built_in">float</span> <span class="keyword">default</span> <span class="literal">NULL</span>,</span><br><span class="line">  <span class="string">`createtime`</span> datetime <span class="keyword">default</span> <span class="literal">NULL</span>,</span><br><span class="line">  <span class="string">`detail`</span> <span class="built_in">varchar</span>(<span class="number">255</span>) <span class="keyword">default</span> <span class="literal">NULL</span>,</span><br><span class="line">  PRIMARY <span class="keyword">KEY</span>  (<span class="string">`id`</span>)</span><br><span class="line">) <span class="keyword">ENGINE</span>=<span class="keyword">InnoDB</span> <span class="keyword">DEFAULT</span> <span class="keyword">CHARSET</span>=utf8</span><br></pre></td></tr></table></figure>
 
@@ -6250,15 +6250,15 @@
 
 <p>jsp页面编写</p>
 <p>配置web.xml文件</p>
-<p><img src="/2019/11/15/191115Maven%E9%AB%98%E7%BA%A7/%E5%9B%BE%E7%89%8711.png"></p>
+<p><img src="/2019/11/15/Java/%E6%A1%86%E6%9E%B6/191115Maven%E9%AB%98%E7%BA%A7/%E5%9B%BE%E7%89%8711.png"></p>
 <h2 id="4-分模块构建maven工程"><a href="#4-分模块构建maven工程" class="headerlink" title="4.分模块构建maven工程"></a>4.分模块构建maven工程</h2><h3 id="4-1-分模块构建maven工程分析"><a href="#4-1-分模块构建maven工程分析" class="headerlink" title="4.1 分模块构建maven工程分析"></a>4.1 分模块构建maven工程分析</h3><p>在现实生活中，汽车厂家进行汽车生产时，由于整个生产过程非常复杂和繁琐，工作量非常大，所以车场都会将整个汽车的部件分开生产，最终再将生产好的部件进行组装，形成一台完整的汽车。</p>
-<p><img src="/2019/11/15/191115Maven%E9%AB%98%E7%BA%A7/%E5%9B%BE%E7%89%8712.png"></p>
-<p><img src="/2019/11/15/191115Maven%E9%AB%98%E7%BA%A7/Java%E8%B5%84%E6%96%99/4.framwork/4.maven%E9%AB%98%E7%BA%A7/%E7%AC%94%E8%AE%B0/img/%E5%9B%BE%E7%89%8713.png" alt="1559550904100"></p>
+<p><img src="/2019/11/15/Java/%E6%A1%86%E6%9E%B6/191115Maven%E9%AB%98%E7%BA%A7/%E5%9B%BE%E7%89%8712.png"></p>
+<p><img src="/2019/11/15/Java/%E6%A1%86%E6%9E%B6/191115Maven%E9%AB%98%E7%BA%A7/Java%E8%B5%84%E6%96%99/4.framwork/4.maven%E9%AB%98%E7%BA%A7/%E7%AC%94%E8%AE%B0/img/%E5%9B%BE%E7%89%8713.png" alt="1559550904100"></p>
 <h3 id="4-2-maven工程的继承"><a href="#4-2-maven工程的继承" class="headerlink" title="4.2 maven工程的继承"></a>4.2 maven工程的继承</h3><p>在Java语言中，类之间是可以继承的，通过继承，子类就可以引用父类中非private的属性和方法。同样，在maven工程之间也可以继承，子工程继承父工程后，就可以使用在父工程中引入的依赖。继承的目的是为了消除重复代码。</p>
-<p><img src="/2019/11/15/191115Maven%E9%AB%98%E7%BA%A7/%E5%9B%BE%E7%89%8714.png"></p>
+<p><img src="/2019/11/15/Java/%E6%A1%86%E6%9E%B6/191115Maven%E9%AB%98%E7%BA%A7/%E5%9B%BE%E7%89%8714.png"></p>
 <h3 id="4-3-maven工程的聚合"><a href="#4-3-maven工程的聚合" class="headerlink" title="4.3 maven工程的聚合"></a>4.3 maven工程的聚合</h3><p>在maven工程的pom.xml文件中可以使用<modules>标签将其他maven工程聚合到一起，聚合的目的是为了进行统一操作。</modules></p>
 <p>例如拆分后的maven工程有多个，如果要进行打包，就需要针对每个工程分别执行打包命令，操作起来非常繁琐。这时就可以使用<modules>标签将这些工程统一聚合到maven工程中，需要打包的时候，只需要在此工程中执行一次打包命令，其下被聚合的工程就都会被打包了。</modules></p>
-<p><img src="/2019/11/15/191115Maven%E9%AB%98%E7%BA%A7/%E5%9B%BE%E7%89%8715.png"></p>
+<p><img src="/2019/11/15/Java/%E6%A1%86%E6%9E%B6/191115Maven%E9%AB%98%E7%BA%A7/%E5%9B%BE%E7%89%8715.png"></p>
 <h3 id="4-4-分模块构建maven工程具体实现"><a href="#4-4-分模块构建maven工程具体实现" class="headerlink" title="4.4 分模块构建maven工程具体实现"></a>4.4 分模块构建maven工程具体实现</h3><p>①父工程maven_parent构建</p>
 <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">properties</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">spring.version</span>&gt;</span>5.0.5.RELEASE<span class="tag">&lt;/<span class="name">spring.version</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">springmvc.version</span>&gt;</span>5.0.5.RELEASE<span class="tag">&lt;/<span class="name">springmvc.version</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">mybatis.version</span>&gt;</span>3.4.5<span class="tag">&lt;/<span class="name">mybatis.version</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;/<span class="name">properties</span>&gt;</span></span><br><span class="line">   <span class="comment">&lt;!--锁定jar版本--&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">dependencyManagement</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span><br><span class="line">           <span class="comment">&lt;!-- Mybatis --&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">               <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.mybatis<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">               <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mybatis<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">               <span class="tag">&lt;<span class="name">version</span>&gt;</span>$&#123;mybatis.version&#125;<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">           <span class="comment">&lt;!-- springMVC --&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">               <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">               <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-webmvc<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">               <span class="tag">&lt;<span class="name">version</span>&gt;</span>$&#123;springmvc.version&#125;<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">           <span class="comment">&lt;!-- spring --&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">               <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">               <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-context<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">               <span class="tag">&lt;<span class="name">version</span>&gt;</span>$&#123;spring.version&#125;<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">               <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">               <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-core<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">               <span class="tag">&lt;<span class="name">version</span>&gt;</span>$&#123;spring.version&#125;<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">               <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">               <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-aop<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">               <span class="tag">&lt;<span class="name">version</span>&gt;</span>$&#123;spring.version&#125;<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">               <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">               <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-web<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">               <span class="tag">&lt;<span class="name">version</span>&gt;</span>$&#123;spring.version&#125;<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">               <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">               <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-expression<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">               <span class="tag">&lt;<span class="name">version</span>&gt;</span>$&#123;spring.version&#125;<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">               <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">               <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-beans<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">               <span class="tag">&lt;<span class="name">version</span>&gt;</span>$&#123;spring.version&#125;<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">               <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">               <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-aspects<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">               <span class="tag">&lt;<span class="name">version</span>&gt;</span>$&#123;spring.version&#125;<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">               <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">               <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-context-support<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">               <span class="tag">&lt;<span class="name">version</span>&gt;</span>$&#123;spring.version&#125;<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">               <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">               <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-test<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">               <span class="tag">&lt;<span class="name">version</span>&gt;</span>$&#123;spring.version&#125;<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">               <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">               <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-jdbc<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">               <span class="tag">&lt;<span class="name">version</span>&gt;</span>$&#123;spring.version&#125;<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">               <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">               <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-tx<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">               <span class="tag">&lt;<span class="name">version</span>&gt;</span>$&#123;spring.version&#125;<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;/<span class="name">dependencyManagement</span>&gt;</span></span><br><span class="line"></span><br><span class="line">   <span class="tag">&lt;<span class="name">build</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">plugins</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">plugin</span>&gt;</span></span><br><span class="line">               <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.maven.plugins<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">               <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>maven-compiler-plugin<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">               <span class="tag">&lt;<span class="name">version</span>&gt;</span>3.1<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">               <span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line">                   <span class="tag">&lt;<span class="name">source</span>&gt;</span>1.8<span class="tag">&lt;/<span class="name">source</span>&gt;</span></span><br><span class="line">                   <span class="tag">&lt;<span class="name">target</span>&gt;</span>1.8<span class="tag">&lt;/<span class="name">target</span>&gt;</span></span><br><span class="line">                   <span class="tag">&lt;<span class="name">encoding</span>&gt;</span>UTF-8<span class="tag">&lt;/<span class="name">encoding</span>&gt;</span></span><br><span class="line">               <span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;/<span class="name">plugin</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;/<span class="name">plugins</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;/<span class="name">build</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
@@ -6324,29 +6324,29 @@
 <p><a href="https://help.sonatype.com/repomanager2/download/download-archives---repository-manager-oss">https://help.sonatype.com/repomanager2/download/download-archives---repository-manager-oss</a></p>
 <p>②安装nexus</p>
 <p>将下载的压缩包进行解压，进入bin目录</p>
-<p><img src="/2019/11/15/191115Maven%E9%AB%98%E7%BA%A7/%E5%9B%BE%E7%89%8717.png"></p>
+<p><img src="/2019/11/15/Java/%E6%A1%86%E6%9E%B6/191115Maven%E9%AB%98%E7%BA%A7/%E5%9B%BE%E7%89%8717.png"></p>
 <p>打开cmd窗口并进入上面bin目录下，执行nexus.bat install命令安装服务（注意需要以管理员身份运行cmd命令）</p>
-<p><img src="/2019/11/15/191115Maven%E9%AB%98%E7%BA%A7/%E5%9B%BE%E7%89%8718.png"></p>
+<p><img src="/2019/11/15/Java/%E6%A1%86%E6%9E%B6/191115Maven%E9%AB%98%E7%BA%A7/%E5%9B%BE%E7%89%8718.png"></p>
 <p>③启动nexus</p>
 <p>经过前面命令已经完成nexus的安装，可以通过如下两种方式启动nexus服务：</p>
 <p>在Windows系统服务中启动nexus</p>
-<p><img src="/2019/11/15/191115Maven%E9%AB%98%E7%BA%A7/%E5%9B%BE%E7%89%8719.png"></p>
+<p><img src="/2019/11/15/Java/%E6%A1%86%E6%9E%B6/191115Maven%E9%AB%98%E7%BA%A7/%E5%9B%BE%E7%89%8719.png"></p>
 <p>在命令行执行nexus.bat start命令启动nexus</p>
-<p><img src="/2019/11/15/191115Maven%E9%AB%98%E7%BA%A7/%E5%9B%BE%E7%89%8720.png"></p>
+<p><img src="/2019/11/15/Java/%E6%A1%86%E6%9E%B6/191115Maven%E9%AB%98%E7%BA%A7/%E5%9B%BE%E7%89%8720.png"></p>
 <p>④访问nexus</p>
 <p>启动nexus服务后，访问<a href="http://localhost:8081/nexus">http://localhost:8081/nexus</a></p>
 <p>点击右上角LogIn按钮，进行登录。使用默认用户名admin和密码admin123登录系统</p>
 <p>登录成功后点击左侧菜单Repositories可以看到nexus内置的仓库列表（如下图）</p>
-<p><img src="/2019/11/15/191115Maven%E9%AB%98%E7%BA%A7/%E5%9B%BE%E7%89%87.png"></p>
+<p><img src="/2019/11/15/Java/%E6%A1%86%E6%9E%B6/191115Maven%E9%AB%98%E7%BA%A7/%E5%9B%BE%E7%89%87.png"></p>
 <p>nexus仓库类型</p>
 <p>通过前面的仓库列表可以看到，nexus默认内置了很多仓库，这些仓库可以划分为4种类型，每种类型的仓库用于存放特定的jar包，具体说明如下：</p>
 <p>①hosted，宿主仓库，部署自己的jar到这个类型的仓库，包括Releases和Snapshots两部分，Releases为公司内部发布版本仓库、 Snapshots为公司内部测试版本仓库 </p>
 <p>②proxy，代理仓库，用于代理远程的公共仓库，如maven中央仓库，用户连接私服，私服自动去中央仓库下载jar包或者插件</p>
 <p>③group，仓库组，用来合并多个hosted/proxy仓库，通常我们配置自己的maven连接仓库组</p>
 <p>④virtual(虚拟)：兼容Maven1版本的jar或者插件</p>
-<p><img src="/2019/11/15/191115Maven%E9%AB%98%E7%BA%A7/%E5%9B%BE%E7%89%8721.png"></p>
+<p><img src="/2019/11/15/Java/%E6%A1%86%E6%9E%B6/191115Maven%E9%AB%98%E7%BA%A7/%E5%9B%BE%E7%89%8721.png"></p>
 <p>nexus仓库类型与安装目录对应关系</p>
-<p><img src="/2019/11/15/191115Maven%E9%AB%98%E7%BA%A7/%E5%9B%BE%E7%89%8722.png"></p>
+<p><img src="/2019/11/15/Java/%E6%A1%86%E6%9E%B6/191115Maven%E9%AB%98%E7%BA%A7/%E5%9B%BE%E7%89%8722.png"></p>
 <h3 id="5-3-将项目发布到maven私服"><a href="#5-3-将项目发布到maven私服" class="headerlink" title="5.3 将项目发布到maven私服"></a>5.3 将项目发布到maven私服</h3><p>maven私服是搭建在公司局域网内的maven仓库，公司内的所有开发团队都可以使用。例如技术研发团队开发了一个基础组件，就可以将这个基础组件打成jar包发布到私服，其他团队成员就可以从私服下载这个jar包到本地仓库并在项目中使用。</p>
 <p>将项目发布到maven私服操作步骤如下：</p>
 <ol>
@@ -6363,7 +6363,7 @@
 <ol start="3">
 <li>执行mvn deploy命令</li>
 </ol>
-<p><img src="/2019/11/15/191115Maven%E9%AB%98%E7%BA%A7/%E5%9B%BE%E7%89%8723.png"></p>
+<p><img src="/2019/11/15/Java/%E6%A1%86%E6%9E%B6/191115Maven%E9%AB%98%E7%BA%A7/%E5%9B%BE%E7%89%8723.png"></p>
 <h3 id="5-4-从私服下载jar到本地仓库"><a href="#5-4-从私服下载jar到本地仓库" class="headerlink" title="5.4 从私服下载jar到本地仓库"></a>5.4 从私服下载jar到本地仓库</h3><p>前面我们已经完成了将本地项目打成jar包发布到maven私服，下面我们就需要从maven私服下载jar包到本地仓库。</p>
 <p>具体操作步骤如下：</p>
 <p>在maven的settings.xml文件中配置下载模板</p>
@@ -6379,7 +6379,7 @@
 <p>​      mvn install:install-file -Dfile=ojdbc14-10.2.0.4.0.jar -DgroupId=com.oracle -DartifactId=ojdbc14 – </p>
 <p>​      Dversion=10.2.0.4.0 -Dpackaging=jar</p>
 <p>③查看本地maven仓库，确认安装是否成功</p>
-<p><img src="/2019/11/15/191115Maven%E9%AB%98%E7%BA%A7/%E5%9B%BE%E7%89%8724.png"></p>
+<p><img src="/2019/11/15/Java/%E6%A1%86%E6%9E%B6/191115Maven%E9%AB%98%E7%BA%A7/%E5%9B%BE%E7%89%8724.png"></p>
 <h3 id="6-2-将第三方jar安装到maven私服"><a href="#6-2-将第三方jar安装到maven私服" class="headerlink" title="6.2 将第三方jar安装到maven私服"></a>6.2 将第三方jar安装到maven私服</h3><p>①下载Oracle的jar包（略）</p>
 <p>②在maven的settings.xml配置文件中配置第三方仓库的server信息</p>
 <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">server</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">id</span>&gt;</span>thirdparty<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">username</span>&gt;</span>admin<span class="tag">&lt;/<span class="name">username</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">password</span>&gt;</span>admin123<span class="tag">&lt;/<span class="name">password</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">server</span>&gt;</span></span><br></pre></td></tr></table></figure>
