@@ -1,42 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Hexo文章插入图片</title>
-    <url>/2019/10/11/Hexo/191011hexo%E6%96%87%E7%AB%A0%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87/</url>
-    <content><![CDATA[<h2 id="方法一"><a href="#方法一" class="headerlink" title="方法一:"></a>方法一:</h2><h4 id="images文件夹"><a href="#images文件夹" class="headerlink" title="images文件夹"></a>images文件夹</h4><p>如果你的Hexo项目中只有少量图片，那最简单的方法就是将它们放在 <code>source/images</code> 文件夹中,然后通过类似于 <code>![](/images/image.jpg)</code> 的方法访问它们。</p>
-<p>例如:</p>
-<p><code>![1.png](/images/1.png)</code></p>
-<a id="more"></a>
-
-<h2 id="方法二-推荐使用"><a href="#方法二-推荐使用" class="headerlink" title="方法二:(推荐使用)"></a>方法二:(推荐使用)</h2><h4 id="1-将-config-yml-文件中的-post-asset-folder-选项设为-“true”-。"><a href="#1-将-config-yml-文件中的-post-asset-folder-选项设为-“true”-。" class="headerlink" title="1.将 config.yml 文件中的 post_asset_folder 选项设为 “true” 。"></a>1.将 <code>config.yml</code> 文件中的 <code>post_asset_folder</code> 选项设为 “true” 。</h4><p>&emsp;&emsp;之后在你每次通过 <code>hexo new [layout] &lt;title&gt;</code> 命令创建xxx.md时会自动创建一个同名资源文件夹xxx,你可以把跟这篇文章有关的图片资源放在关联文件夹中。</p>
-<p><code>_config.ymlpost_asset_folder: true</code></p>
-<h4 id="2-安装插件-在blog目录下输入下边的命令安装插件"><a href="#2-安装插件-在blog目录下输入下边的命令安装插件" class="headerlink" title="2.安装插件:在blog目录下输入下边的命令安装插件:"></a>2.安装插件:在blog目录下输入下边的命令安装插件:</h4><p><code>npm install https://github.com/CodeFalling/hexo-asset-image -- save</code></p>
-<h4 id="3-添加图片"><a href="#3-添加图片" class="headerlink" title="3.添加图片:"></a>3.添加图片:</h4><p>在想添加的位置写入<code>![](资源文件夹名字/图片名字.图片格式)</code>,例如:</p>
-<p><code>![](xxx/1.png)</code></p>
-]]></content>
-      <categories>
-        <category>Hexo</category>
-      </categories>
-      <tags>
-        <tag>资源文件夹</tag>
-        <tag>图片标签插件</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>更换NexT主题后访问报错</title>
-    <url>/2020/01/15/Hexo/200115%E6%9B%B4%E6%8D%A2NexT%E4%B8%BB%E9%A2%98%E5%90%8E%E8%AE%BF%E9%97%AE%E6%8A%A5%E9%94%99/</url>
-    <content><![CDATA[<p>hexo博客更换NexT主题后访问显示报错:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;% extends ‘_layout.swig‘ %&#125; &#123;% import ‘_macro&#x2F;post.swig‘ as post</span><br><span class="line">_template %&#125;</span><br></pre></td></tr></table></figure>
-
-<p>原因是hexo在5.0之后把swig给删除了需要自己手动安装</p>
-<p>在博客目录下右键“Git Bash Here”输入以下命令即可:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm i hexo-renderer-swig</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>Hexo</category>
-      </categories>
-  </entry>
-  <entry>
     <title>markdown常用语法</title>
     <url>/2019/10/08/Hexo/191008markdown%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95/</url>
     <content><![CDATA[<h2 id="1-标题"><a href="#1-标题" class="headerlink" title="1.标题"></a>1.标题</h2><ul>
@@ -106,6 +70,42 @@
       </categories>
       <tags>
         <tag>markdown常用语法</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>更换NexT主题后访问报错</title>
+    <url>/2020/01/15/Hexo/200115%E6%9B%B4%E6%8D%A2NexT%E4%B8%BB%E9%A2%98%E5%90%8E%E8%AE%BF%E9%97%AE%E6%8A%A5%E9%94%99/</url>
+    <content><![CDATA[<p>hexo博客更换NexT主题后访问显示报错:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;% extends ‘_layout.swig‘ %&#125; &#123;% import ‘_macro&#x2F;post.swig‘ as post</span><br><span class="line">_template %&#125;</span><br></pre></td></tr></table></figure>
+
+<p>原因是hexo在5.0之后把swig给删除了需要自己手动安装</p>
+<p>在博客目录下右键“Git Bash Here”输入以下命令即可:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm i hexo-renderer-swig</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Hexo文章插入图片</title>
+    <url>/2019/10/11/Hexo/191011hexo%E6%96%87%E7%AB%A0%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87/</url>
+    <content><![CDATA[<h2 id="方法一"><a href="#方法一" class="headerlink" title="方法一:"></a>方法一:</h2><h4 id="images文件夹"><a href="#images文件夹" class="headerlink" title="images文件夹"></a>images文件夹</h4><p>如果你的Hexo项目中只有少量图片，那最简单的方法就是将它们放在 <code>source/images</code> 文件夹中,然后通过类似于 <code>![](/images/image.jpg)</code> 的方法访问它们。</p>
+<p>例如:</p>
+<p><code>![1.png](/images/1.png)</code></p>
+<a id="more"></a>
+
+<h2 id="方法二-推荐使用"><a href="#方法二-推荐使用" class="headerlink" title="方法二:(推荐使用)"></a>方法二:(推荐使用)</h2><h4 id="1-将-config-yml-文件中的-post-asset-folder-选项设为-“true”-。"><a href="#1-将-config-yml-文件中的-post-asset-folder-选项设为-“true”-。" class="headerlink" title="1.将 config.yml 文件中的 post_asset_folder 选项设为 “true” 。"></a>1.将 <code>config.yml</code> 文件中的 <code>post_asset_folder</code> 选项设为 “true” 。</h4><p>&emsp;&emsp;之后在你每次通过 <code>hexo new [layout] &lt;title&gt;</code> 命令创建xxx.md时会自动创建一个同名资源文件夹xxx,你可以把跟这篇文章有关的图片资源放在关联文件夹中。</p>
+<p><code>_config.ymlpost_asset_folder: true</code></p>
+<h4 id="2-安装插件-在blog目录下输入下边的命令安装插件"><a href="#2-安装插件-在blog目录下输入下边的命令安装插件" class="headerlink" title="2.安装插件:在blog目录下输入下边的命令安装插件:"></a>2.安装插件:在blog目录下输入下边的命令安装插件:</h4><p><code>npm install https://github.com/CodeFalling/hexo-asset-image -- save</code></p>
+<h4 id="3-添加图片"><a href="#3-添加图片" class="headerlink" title="3.添加图片:"></a>3.添加图片:</h4><p>在想添加的位置写入<code>![](资源文件夹名字/图片名字.图片格式)</code>,例如:</p>
+<p><code>![](xxx/1.png)</code></p>
+]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>资源文件夹</tag>
+        <tag>图片标签插件</tag>
       </tags>
   </entry>
   <entry>
@@ -208,161 +208,6 @@
 <h3 id="3-快捷键"><a href="#3-快捷键" class="headerlink" title="3.快捷键"></a>3.快捷键</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Tab       自动路径补全</span><br><span class="line">Ctrl+T    建立新页签</span><br><span class="line">Ctrl+W    关闭页签</span><br><span class="line">Ctrl+Tab  切换页签</span><br><span class="line">Alt+F4    关闭所有页签</span><br><span class="line">Alt+Shift+<span class="number">1</span> 开启cmd.exe</span><br><span class="line">Alt+Shift+<span class="number">2</span> 开启powershell.exe</span><br><span class="line">Alt+Shift+<span class="number">3</span> 开启powershell.exe (系统管理员权限)</span><br><span class="line">Ctrl+<span class="number">1</span>      快速切换到第<span class="number">1</span>个页签</span><br><span class="line">Ctrl+n      快速切换到第n个页签(n值无上限)</span><br><span class="line">Alt + enter 切换到全屏状态</span><br><span class="line">Ctr+r       历史命令搜索</span><br><span class="line">Tab         自动路径补全</span><br><span class="line">Ctrl+T      建立新页签</span><br><span class="line">Ctrl+W      关闭页签</span><br><span class="line">Ctrl+Tab    切换页签</span><br><span class="line">Alt+F4      关闭所有页签</span><br><span class="line">Alt+Shift+<span class="number">1</span> 开启cmd.exe</span><br><span class="line">Alt+Shift+<span class="number">2</span> 开启powershell.exe</span><br><span class="line">Alt+Shift+<span class="number">3</span> 开启powershell.exe (系统管理员权限)</span><br><span class="line">Ctrl+<span class="number">1</span>      快速切换到第<span class="number">1</span>个页签</span><br><span class="line">Ctrl+n      快速切换到第n个页签(n值无上限)</span><br><span class="line">Alt + enter 切换到全屏状态</span><br><span class="line">Ctr+r       历史命令搜索</span><br><span class="line">Win+Alt+P   开启工具选项视窗</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>Soft</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>黑阀使用方法</title>
-    <url>/2019/10/23/Server/Android/191023%E9%BB%91%E9%98%80%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/</url>
-    <content><![CDATA[<h3 id="1-安装"><a href="#1-安装" class="headerlink" title="1.安装"></a>1.安装</h3><p>&emsp;&emsp;手机安装“黑阀”APP，电脑下载并解压ADB工具。<br>ADB下载地址:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">https:&#x2F;&#x2F;developer.android.google.cn&#x2F;studio&#x2F;releases&#x2F;platform-tools#downloads</span><br></pre></td></tr></table></figure>
-
-<p>&emsp;&emsp;手机点击向导,在“使用”项目卡中点击“进入黑域”按钮,“开发者选项”打开手机的“USB调试”，手机会弹出一个小窗口点击“允许”按钮即可。</p>
-<a id="more"></a>
-
-<h3 id="2-查看命令"><a href="#2-查看命令" class="headerlink" title="2.查看命令"></a>2.查看命令</h3><p>&emsp;&emsp;打开电脑中ADB文件目录（进入platform-tools），在空白处按着键盘上的“shift键”然后点击鼠标的右键,点击“在此处打开命令窗口”项目,在弹出的命令窗口中输入下边命令，查看我们已经连接到电脑的手机</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">“.\adb devices”</span><br></pre></td></tr></table></figure>
-
-<h3 id="3-授权命令"><a href="#3-授权命令" class="headerlink" title="3.授权命令"></a>3.授权命令</h3><p>&emsp;&emsp;待我们的设备列举出来后，输入下边命令,从而完成我们对黑域手机端的授权。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">“.\adb -d shell sh &#x2F;data&#x2F;data&#x2F;me.piebridge.brevent&#x2F;brevent.sh”</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-]]></content>
-      <categories>
-        <category>Server</category>
-        <category>Android</category>
-      </categories>
-      <tags>
-        <tag>黑阀</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>CentOS7设置防火墙</title>
-    <url>/2019/10/26/Server/Linux/191026CentOS7%E8%AE%BE%E7%BD%AE%E9%98%B2%E7%81%AB%E5%A2%99/</url>
-    <content><![CDATA[<h4 id="1-查看防火墙的状态的命令为："><a href="#1-查看防火墙的状态的命令为：" class="headerlink" title="1.查看防火墙的状态的命令为："></a>1.查看防火墙的状态的命令为：</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo systemctl status firewalld</span><br></pre></td></tr></table></figure>
-
-<h4 id="2-打开防火墙的方式有两种"><a href="#2-打开防火墙的方式有两种" class="headerlink" title="2.打开防火墙的方式有两种:"></a>2.打开防火墙的方式有两种:</h4><h6 id="一种是打开后重启会恢复回原来的状态，命令为："><a href="#一种是打开后重启会恢复回原来的状态，命令为：" class="headerlink" title="一种是打开后重启会恢复回原来的状态，命令为："></a>一种是打开后重启会恢复回原来的状态，命令为：</h6><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo systemctl start firewalld；</span><br></pre></td></tr></table></figure>
-
-<h6 id="另一种是打开后重启不会恢复到原来的状态，命令为："><a href="#另一种是打开后重启不会恢复到原来的状态，命令为：" class="headerlink" title="另一种是打开后重启不会恢复到原来的状态，命令为："></a>另一种是打开后重启不会恢复到原来的状态，命令为：</h6><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo systemctl enable firewalld;</span><br></pre></td></tr></table></figure>
-
-<p>这种方式输入命令后要重启系统才会生效。</p>
-<a id="more"></a>
-
-<h4 id="3-关闭防火墙的方式也有两种"><a href="#3-关闭防火墙的方式也有两种" class="headerlink" title="3.关闭防火墙的方式也有两种:"></a>3.关闭防火墙的方式也有两种:</h4><h6 id="一种是打开后重启会恢复回原来的状态，命令为：-1"><a href="#一种是打开后重启会恢复回原来的状态，命令为：-1" class="headerlink" title="一种是打开后重启会恢复回原来的状态，命令为："></a>一种是打开后重启会恢复回原来的状态，命令为：</h6><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo systemctl stop firewalld;</span><br></pre></td></tr></table></figure>
-
-<h6 id="另一种是打开后重启不会恢复到原来的状态，命令为：-1"><a href="#另一种是打开后重启不会恢复到原来的状态，命令为：-1" class="headerlink" title="另一种是打开后重启不会恢复到原来的状态，命令为："></a>另一种是打开后重启不会恢复到原来的状态，命令为：</h6><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo systemctl disable firewalld;</span><br></pre></td></tr></table></figure>
-
-<p>这种方式输入命令后要重启系统才会生效。</p>
-<h4 id="4-开启某个特定的端口"><a href="#4-开启某个特定的端口" class="headerlink" title="4.开启某个特定的端口:"></a>4.开启某个特定的端口:</h4><p>例如下边代码是开放80端口:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">firewall-cmd --zone&#x3D;public --add-port&#x3D;80&#x2F;tcp --permanent;</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
-]]></content>
-      <categories>
-        <category>Server</category>
-        <category>Linux</category>
-        <category>CentOS7</category>
-      </categories>
-      <tags>
-        <tag>Linux Firewalld</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Debian允许root用户登录</title>
-    <url>/2019/11/11/Server/Linux/191111Debian%E5%85%81%E8%AE%B8root%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>Server</category>
-        <category>Linux</category>
-        <category>Debian9</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Linux添加root权限</title>
-    <url>/2019/11/16/Server/Linux/191116Linux%E6%B7%BB%E5%8A%A0root%E6%9D%83%E9%99%90/</url>
-    <content><![CDATA[<h3 id="1-添加用户"><a href="#1-添加用户" class="headerlink" title="1.添加用户"></a>1.添加用户</h3><ul>
-<li><p>使用adduser或者useradd添加一个名为ying的用户: <code>adduser ying</code></p>
-</li>
-<li><p>修改密码:输入 <code>passwd ying</code></p>
-</li>
-<li><p>会看到以下提示,按提示输入两次密码:</p>
-<p>Changing password for user ying.<br>New UNIX password:     //在这里输入新密码<br>Retype new UNIX password:  //再次输入新密码</p>
-<p>看到下边这行提示就说明添加成功了:</p>
-<p>passwd: all authentication tokens updated successfully.</p>
-<a id="more"></a>
-
-</li>
-</ul>
-<h3 id="2-删除用户"><a href="#2-删除用户" class="headerlink" title="2.删除用户"></a>2.删除用户</h3><p><code>userdel -r ying</code></p>
-<h3 id="3-给-ying赋予root权限"><a href="#3-给-ying赋予root权限" class="headerlink" title="3.给 ying赋予root权限"></a>3.给 ying赋予root权限</h3><h5 id="1-修改-etc-sudoers-文件，找到"><a href="#1-修改-etc-sudoers-文件，找到" class="headerlink" title="1.修改 /etc/sudoers 文件，找到:"></a>1.修改 /etc/sudoers 文件，找到:</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Allow root to run any commands anywhere</span><br><span class="line"></span><br><span class="line">root    ALL&#x3D;(ALL)     ALL</span><br></pre></td></tr></table></figure>
-
-<h5 id="2-在下边添加"><a href="#2-在下边添加" class="headerlink" title="2.在下边添加:"></a>2.在下边添加:</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ying    ALL&#x3D;(ALL)     ALL</span><br></pre></td></tr></table></figure>
-
-<p><img src="/2019/11/16/Server/Linux/191116Linux%E6%B7%BB%E5%8A%A0root%E6%9D%83%E9%99%90/root%E6%9D%83%E9%99%90.png"></p>
-<h5 id="3-添加完之后按ESC-输入以下命令强制保存并退出"><a href="#3-添加完之后按ESC-输入以下命令强制保存并退出" class="headerlink" title="3.添加完之后按ESC,输入以下命令强制保存并退出"></a>3.添加完之后按ESC,输入以下命令<strong>强制保存</strong>并退出</h5><p><code>:wq!</code></p>
-<p>必须<strong>强制</strong>保存退出,否则会报以下错误:</p>
-<p><img src="/2019/11/16/Server/Linux/191116Linux%E6%B7%BB%E5%8A%A0root%E6%9D%83%E9%99%90/%E4%BF%9D%E5%AD%98%E9%80%80%E5%87%BA%E6%8A%A5%E9%94%99.png"></p>
-<h5 id="4-输入sudo-i就可以切换到root角色"><a href="#4-输入sudo-i就可以切换到root角色" class="headerlink" title="4.输入sudo -i就可以切换到root角色"></a>4.输入<code>sudo -i</code>就可以切换到root角色</h5><p>查看自己所在组用以下命令: <code>id</code></p>
-<p><img src="/2019/11/16/Server/Linux/191116Linux%E6%B7%BB%E5%8A%A0root%E6%9D%83%E9%99%90/id.png"></p>
-<p>查看自己是否是管理员:whoami</p>
-<p><img src="/2019/11/16/Server/Linux/191116Linux%E6%B7%BB%E5%8A%A0root%E6%9D%83%E9%99%90/whoami.png"></p>
-]]></content>
-      <categories>
-        <category>Server</category>
-        <category>Linux</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Ubuntu设置root用户登录</title>
-    <url>/2019/12/02/Server/Linux/191202Ubuntu%E8%AE%BE%E7%BD%AEroot%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>Server</category>
-        <category>Linux</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>搭建个人VPN</title>
-    <url>/2019/11/10/Server/VPS/191110%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BAVPN/</url>
-    <content><![CDATA[<p>如何搭建属于自己的SS服务</p>
-<h3 id="1-准备"><a href="#1-准备" class="headerlink" title="1.准备:"></a>1.准备:</h3><p>&emsp;&emsp;首先要有自己的服务器(国外的),谷歌有免费使用一年活动,不限时间</p>
-<a id="more"></a>
-
-<h3 id="2-搭建"><a href="#2-搭建" class="headerlink" title="2.搭建"></a>2.搭建</h3><p>&emsp;&emsp;在VM实例页面，找到创建好的实例，点击后面的SSH，远程连接到该VPS服务器上。可以理解为在公司远程控制家里的电脑，只不过这里控制的是你的VPS服务器。</p>
-<p><img src="/2019/11/10/Server/VPS/191110%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BAVPN/1.SSH%E8%BF%9E%E6%8E%A5.png" alt="SSH连接"></p>
-<p>&emsp;&emsp;SSH连接成功后，依次输入下面命令：</p>
-<h5 id="1-获取管理员权限"><a href="#1-获取管理员权限" class="headerlink" title="1.获取管理员权限"></a>1.获取管理员权限</h5><p><code>sudo -i</code>  </p>
-<h5 id="2-安装SS服务"><a href="#2-安装SS服务" class="headerlink" title="2.安装SS服务"></a>2.安装SS服务</h5><p><code>wget --no-check-certificatehttps://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocksR.sh &amp;&amp; chmod +x shadowsocksR.sh </code>  </p>
-<h5 id="3-对SS进行配置"><a href="#3-对SS进行配置" class="headerlink" title="3.对SS进行配置"></a>3.对SS进行配置</h5><p><code>./shadowsocksR.sh</code>　</p>
-<h3 id="3-配置"><a href="#3-配置" class="headerlink" title="3.配置"></a>3.配置</h3><p>&emsp;&emsp;执行完步骤2中命令后，会进入下面的配置界面,提示的是设置SS密码，输入后回车；(输入密码的时候不显示,不是没输进去,只是不显示,默认密码为teddysun.com)</p>
-<p><img src="/2019/11/10/Server/VPS/191110%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BAVPN/2.%E8%AE%BE%E7%BD%AE%E5%AF%86%E7%A0%81.png" alt="设置密码"></p>
-<p>&emsp;&emsp;然后是设置SS端口，输入一个1-65536之间的数字后回车，我这里输入8080；(默认为9895)</p>
-<p><img src="/2019/11/10/Server/VPS/191110%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BAVPN/3.%E7%AB%AF%E5%8F%A3.png" alt="端口"></p>
-<p>&emsp;&emsp;加密方式选择aes-256-cfb,输入方式前的序号即可</p>
-<p><img src="/2019/11/10/Server/VPS/191110%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BAVPN/4.%E9%80%89%E6%8B%A9%E5%8A%A0%E5%AF%86%E6%96%B9%E5%BC%8F.png" alt="选择加密方式"></p>
-<p>&emsp;&emsp;剩下的其他配置一直按回车(选择默认方式)就行，直到出现下图所示账号信息就安装成功了,这个过程大概需要2分钟。</p>
-<p><img src="/2019/11/10/Server/VPS/191110%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BAVPN/5.%E6%90%AD%E5%BB%BA%E6%88%90%E5%8A%9F.png" alt="搭建成功"></p>
-<p>账号信息中需要用到的有:</p>
-<p>IP</p>
-<p>Port(端口)</p>
-<p>Password(密码)</p>
-<p>Encryption Method(加密方式)</p>
-<h3 id="4-防火墙设置"><a href="#4-防火墙设置" class="headerlink" title="4.防火墙设置"></a>4.防火墙设置</h3><p>　　由于防火墙的原因，现在你肯定还是连接不上去的，这里就需要设置防火墙。Debian 9的默认防火墙是允许所有端口访问的，但是它上面还有一层谷歌云的防火墙(阿里云管这个叫安全组),所以我们需要设置谷歌云的防火墙。在左侧菜单依次点击“VPC网络–防火墙规则”。</p>
-<p>&emsp;&emsp;进到防火墙规则页面，点击“创建防火墙规则”。设置防火墙规则时，有几个地方需要注意，目标修改为“网络中所有实例”，来源IP地址范围填写“0.0.0.0/0”，协议和端口勾选“指定的协议和端口”。勾选tcp,填入自己在第3步中设置的端口号,我设置的是8080,填入之后点击”创建”,防火墙设置就完成了。</p>
-<p><img src="/2019/11/10/Server/VPS/191110%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BAVPN/6.%E9%98%B2%E7%81%AB%E5%A2%99%E8%A7%84%E5%88%99.png" alt="防火墙规则"></p>
-<h3 id="5-配置Shadowsocks"><a href="#5-配置Shadowsocks" class="headerlink" title="5.配置Shadowsocks"></a>5.配置Shadowsocks</h3><p>&emsp;&emsp;最后在Shadowsocks客户端中配置自己的信息就可以开心的玩耍了</p>
-<p><img src="/2019/11/10/Server/VPS/191110%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BAVPN/7.SS.png" alt="SS"></p>
-]]></content>
-      <categories>
-        <category>Server</category>
-        <category>VPS</category>
       </categories>
   </entry>
   <entry>
@@ -3364,6 +3209,52 @@
       </categories>
   </entry>
   <entry>
+    <title>JQuery高级</title>
+    <url>/2019/10/03/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/Web/191003JQuery%E9%AB%98%E7%BA%A7/</url>
+    <content><![CDATA[<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1. JQuery 高级</span><br><span class="line">	1. 动画</span><br><span class="line">	2. 遍历</span><br><span class="line">	3. 事件绑定</span><br><span class="line">	4. 案例</span><br><span class="line">	5. 插件</span><br></pre></td></tr></table></figure>
+
+<a id="more"></a>
+
+<h2 id="JQuery-高级"><a href="#JQuery-高级" class="headerlink" title="JQuery 高级"></a>JQuery 高级</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1. 动画</span><br><span class="line">	1. 三种方式显示和隐藏元素</span><br><span class="line">		1. 默认显示和隐藏方式</span><br><span class="line">			1. show([speed,[easing],[fn]])</span><br><span class="line">				1. 参数：</span><br><span class="line">					1. speed：动画的速度。三个预定义的值(&quot;slow&quot;,&quot;normal&quot;, &quot;fast&quot;)或表示动画时长的毫秒数值(如：1000)</span><br><span class="line">					2. easing：用来指定切换效果，默认是&quot;swing&quot;，可用参数&quot;linear&quot;</span><br><span class="line">						* swing：动画执行时效果是 先慢，中间快，最后又慢</span><br><span class="line">						* linear：动画执行时速度是匀速的</span><br><span class="line">					3. fn：在动画完成时执行的函数，每个元素执行一次。</span><br><span class="line"></span><br><span class="line">			2. hide([speed,[easing],[fn]])</span><br><span class="line">			3. toggle([speed],[easing],[fn])</span><br><span class="line">		</span><br><span class="line">		2. 滑动显示和隐藏方式</span><br><span class="line">			1. slideDown([speed],[easing],[fn])</span><br><span class="line">			2. slideUp([speed,[easing],[fn]])</span><br><span class="line">			3. slideToggle([speed],[easing],[fn])</span><br><span class="line"></span><br><span class="line">		3. 淡入淡出显示和隐藏方式</span><br><span class="line">			1. fadeIn([speed],[easing],[fn])</span><br><span class="line">			2. fadeOut([speed],[easing],[fn])</span><br><span class="line">			3. fadeToggle([speed,[easing],[fn]])</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">2. 遍历</span><br><span class="line">	1. js的遍历方式</span><br><span class="line">		* for(初始化值;循环结束条件;步长)</span><br><span class="line">	2. jq的遍历方式</span><br><span class="line">		1. jq对象.each(callback)</span><br><span class="line">			1. 语法：</span><br><span class="line">				jquery对象.each(function(index,element)&#123;&#125;);</span><br><span class="line">					* index:就是元素在集合中的索引</span><br><span class="line">					* element：就是集合中的每一个元素对象</span><br><span class="line"></span><br><span class="line">					* this：集合中的每一个元素对象</span><br><span class="line">			2. 回调函数返回值：</span><br><span class="line">				* true:如果当前function返回为false，则结束循环(break)。</span><br><span class="line">				* false:如果当前function返回为true，则结束本次循环，继续下次循环(continue)</span><br><span class="line">		2. $.each(object, [callback])</span><br><span class="line">		3. for..of: jquery 3.0 版本之后提供的方式</span><br><span class="line">			for(元素对象 of 容器对象)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">3. 事件绑定</span><br><span class="line">	1. jquery标准的绑定方式</span><br><span class="line">		* jq对象.事件方法(回调函数)；</span><br><span class="line">		* 注：如果调用事件方法，不传递回调函数，则会触发浏览器默认行为。</span><br><span class="line">			* 表单对象.submit();&#x2F;&#x2F;让表单提交</span><br><span class="line">	2. on绑定事件&#x2F;off解除绑定</span><br><span class="line">		* jq对象.on(&quot;事件名称&quot;,回调函数)</span><br><span class="line">		* jq对象.off(&quot;事件名称&quot;)</span><br><span class="line">			* 如果off方法不传递任何参数，则将组件上的所有事件全部解绑</span><br><span class="line">	3. 事件切换：toggle</span><br><span class="line">		* jq对象.toggle(fn1,fn2...)</span><br><span class="line">			* 当单击jq对象对应的组件后，会执行fn1.第二次点击会执行fn2.....</span><br><span class="line">			</span><br><span class="line">		* 注意：1.9版本 .toggle() 方法删除,jQuery Migrate（迁移）插件可以恢复此功能。</span><br><span class="line">			 &lt;script src&#x3D;&quot;..&#x2F;js&#x2F;jquery-migrate-1.0.0.js&quot; type&#x3D;&quot;text&#x2F;javascript&quot; charset&#x3D;&quot;utf-8&quot;&gt;&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">4. 案例</span><br><span class="line">	1. 广告显示和隐藏</span><br><span class="line">		&lt;!DOCTYPE html&gt;</span><br><span class="line">		&lt;html&gt;</span><br><span class="line">		&lt;head&gt;</span><br><span class="line">		    &lt;meta charset&#x3D;&quot;UTF-8&quot;&gt;</span><br><span class="line">		    &lt;title&gt;广告的自动显示与隐藏&lt;&#x2F;title&gt;</span><br><span class="line">		    &lt;style&gt;</span><br><span class="line">		        #content&#123;width:100%;height:500px;background:#999&#125;</span><br><span class="line">		    &lt;&#x2F;style&gt;</span><br><span class="line">		</span><br><span class="line">		    &lt;!--引入jquery--&gt;</span><br><span class="line">		    &lt;script type&#x3D;&quot;text&#x2F;javascript&quot; src&#x3D;&quot;..&#x2F;js&#x2F;jquery-3.3.1.min.js&quot;&gt;&lt;&#x2F;script&gt;</span><br><span class="line">		    &lt;script&gt;</span><br><span class="line">		        &#x2F;*</span><br><span class="line">		            需求：</span><br><span class="line">		                1. 当页面加载完，3秒后。自动显示广告</span><br><span class="line">		                2. 广告显示5秒后，自动消失。</span><br><span class="line">		</span><br><span class="line">		            分析：</span><br><span class="line">		                1. 使用定时器来完成。setTimeout (执行一次定时器)</span><br><span class="line">		                2. 分析发现JQuery的显示和隐藏动画效果其实就是控制display</span><br><span class="line">		                3. 使用  show&#x2F;hide方法来完成广告的显示</span><br><span class="line">		         *&#x2F;</span><br><span class="line">		</span><br><span class="line">		        &#x2F;&#x2F;入口函数，在页面加载完成之后，定义定时器，调用这两个方法</span><br><span class="line">		        $(function () &#123;</span><br><span class="line">		           &#x2F;&#x2F;定义定时器，调用adShow方法 3秒后执行一次</span><br><span class="line">		           setTimeout(adShow,3000);</span><br><span class="line">		           &#x2F;&#x2F;定义定时器，调用adHide方法，8秒后执行一次</span><br><span class="line">		            setTimeout(adHide,8000);</span><br><span class="line">		        &#125;);</span><br><span class="line">		        &#x2F;&#x2F;显示广告</span><br><span class="line">		        function adShow() &#123;</span><br><span class="line">		            &#x2F;&#x2F;获取广告div，调用显示方法</span><br><span class="line">		            $(&quot;#ad&quot;).show(&quot;slow&quot;);</span><br><span class="line">		        &#125;</span><br><span class="line">		        &#x2F;&#x2F;隐藏广告</span><br><span class="line">		        function adHide() &#123;</span><br><span class="line">		            &#x2F;&#x2F;获取广告div，调用隐藏方法</span><br><span class="line">		            $(&quot;#ad&quot;).hide(&quot;slow&quot;);</span><br><span class="line">		        &#125;</span><br><span class="line">		    &lt;&#x2F;script&gt;</span><br><span class="line">		&lt;&#x2F;head&gt;</span><br><span class="line">		&lt;body&gt;</span><br><span class="line">		&lt;!-- 整体的DIV --&gt;</span><br><span class="line">		&lt;div&gt;</span><br><span class="line">		    &lt;!-- 广告DIV --&gt;</span><br><span class="line">		    &lt;div id&#x3D;&quot;ad&quot; style&#x3D;&quot;display: none;&quot;&gt;</span><br><span class="line">		        &lt;img style&#x3D;&quot;width:100%&quot; src&#x3D;&quot;..&#x2F;img&#x2F;adv.jpg&quot; &#x2F;&gt;</span><br><span class="line">		    &lt;&#x2F;div&gt;</span><br><span class="line">		</span><br><span class="line">		    &lt;!-- 下方正文部分 --&gt;</span><br><span class="line">		    &lt;div id&#x3D;&quot;content&quot;&gt;</span><br><span class="line">		        正文部分</span><br><span class="line">		    &lt;&#x2F;div&gt;</span><br><span class="line">		&lt;&#x2F;div&gt;</span><br><span class="line">		&lt;&#x2F;body&gt;</span><br><span class="line">		&lt;&#x2F;html&gt;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">2. 抽奖</span><br><span class="line">	&lt;!DOCTYPE html&gt;</span><br><span class="line">	&lt;html&gt;</span><br><span class="line">	&lt;head&gt;</span><br><span class="line">	    &lt;meta charset&#x3D;&quot;UTF-8&quot;&gt;</span><br><span class="line">	    &lt;title&gt;jquery案例之抽奖&lt;&#x2F;title&gt;</span><br><span class="line">	    &lt;script type&#x3D;&quot;text&#x2F;javascript&quot; src&#x3D;&quot;..&#x2F;js&#x2F;jquery-3.3.1.min.js&quot;&gt;&lt;&#x2F;script&gt;</span><br><span class="line">	</span><br><span class="line">	    &lt;script language&#x3D;&#39;javascript&#39; type&#x3D;&#39;text&#x2F;javascript&#39;&gt;</span><br><span class="line">	</span><br><span class="line">	        &#x2F;*</span><br><span class="line">	            分析：</span><br><span class="line">	                1. 给开始按钮绑定单击事件</span><br><span class="line">	                    1.1 定义循环定时器</span><br><span class="line">	                    1.2 切换小相框的src属性</span><br><span class="line">	                        * 定义数组，存放图片资源路径</span><br><span class="line">	                        * 生成随机数。数组索引</span><br><span class="line">					2. 给结束按钮绑定单击事件</span><br><span class="line">	                    1.1 停止定时器</span><br><span class="line">	                    1.2 给大相框设置src属性</span><br><span class="line">	</span><br><span class="line">	         *&#x2F;</span><br><span class="line">	        var imgs &#x3D; [&quot;..&#x2F;img&#x2F;man00.jpg&quot;,</span><br><span class="line">	                    &quot;..&#x2F;img&#x2F;man01.jpg&quot;,</span><br><span class="line">	                    &quot;..&#x2F;img&#x2F;man02.jpg&quot;,</span><br><span class="line">	                    &quot;..&#x2F;img&#x2F;man03.jpg&quot;,</span><br><span class="line">	                    &quot;..&#x2F;img&#x2F;man04.jpg&quot;,</span><br><span class="line">	                    &quot;..&#x2F;img&#x2F;man05.jpg&quot;,</span><br><span class="line">	                    &quot;..&#x2F;img&#x2F;man06.jpg&quot;,</span><br><span class="line">	                    ];</span><br><span class="line">	        var startId;&#x2F;&#x2F;开始定时器的id</span><br><span class="line">	        var index;&#x2F;&#x2F;随机角标</span><br><span class="line">	        $(function () &#123;</span><br><span class="line">	            &#x2F;&#x2F;处理按钮是否可以使用的效果</span><br><span class="line">	            $(&quot;#startID&quot;).prop(&quot;disabled&quot;,false);</span><br><span class="line">	            $(&quot;#stopID&quot;).prop(&quot;disabled&quot;,true);    	     </span><br><span class="line">	           &#x2F;&#x2F;1. 给开始按钮绑定单击事件</span><br><span class="line">	            $(&quot;#startID&quot;).click(function () &#123;</span><br><span class="line">	                &#x2F;&#x2F; 1.1 定义循环定时器 20毫秒执行一次</span><br><span class="line">	                startId &#x3D; setInterval(function () &#123;</span><br><span class="line">	                    &#x2F;&#x2F;处理按钮是否可以使用的效果</span><br><span class="line">	                    $(&quot;#startID&quot;).prop(&quot;disabled&quot;,true);</span><br><span class="line">	                    $(&quot;#stopID&quot;).prop(&quot;disabled&quot;,false);</span><br><span class="line">	                    &#x2F;&#x2F;1.2生成随机角标 0-6</span><br><span class="line">	                    index &#x3D; Math.floor(Math.random() * 7);&#x2F;&#x2F;0.000--0.999 --&gt; * 7 --&gt; 0.0-----6.9999</span><br><span class="line">	                    &#x2F;&#x2F;1.3设置小相框的src属性</span><br><span class="line">	                    $(&quot;#img1ID&quot;).prop(&quot;src&quot;,imgs[index]);</span><br><span class="line">	</span><br><span class="line">	                &#125;,20);</span><br><span class="line">	            &#125;);</span><br><span class="line">	            &#x2F;&#x2F;2. 给结束按钮绑定单击事件</span><br><span class="line">	            $(&quot;#stopID&quot;).click(function () &#123;</span><br><span class="line">	                &#x2F;&#x2F;处理按钮是否可以使用的效果</span><br><span class="line">	                $(&quot;#startID&quot;).prop(&quot;disabled&quot;,false);</span><br><span class="line">	                $(&quot;#stopID&quot;).prop(&quot;disabled&quot;,true);</span><br><span class="line">	               &#x2F;&#x2F; 1.1 停止定时器</span><br><span class="line">	                clearInterval(startId);</span><br><span class="line">	               &#x2F;&#x2F; 1.2 给大相框设置src属性</span><br><span class="line">	                $(&quot;#img2ID&quot;).prop(&quot;src&quot;,imgs[index]).hide();</span><br><span class="line">	                &#x2F;&#x2F;显示1秒之后</span><br><span class="line">	                $(&quot;#img2ID&quot;).show(1000);</span><br><span class="line">	            &#125;);</span><br><span class="line">	        &#125;);</span><br><span class="line">	    &lt;&#x2F;script&gt;</span><br><span class="line">	</span><br><span class="line">	&lt;&#x2F;head&gt;</span><br><span class="line">	&lt;body&gt;</span><br><span class="line">	</span><br><span class="line">	&lt;!-- 小像框 --&gt;</span><br><span class="line">	&lt;div style&#x3D;&quot;border-style:dotted;width:160px;height:100px&quot;&gt;</span><br><span class="line">	    &lt;img id&#x3D;&quot;img1ID&quot; src&#x3D;&quot;..&#x2F;img&#x2F;man00.jpg&quot; style&#x3D;&quot;width:160px;height:100px&quot;&#x2F;&gt;</span><br><span class="line">	&lt;&#x2F;div&gt;</span><br><span class="line">	</span><br><span class="line">	&lt;!-- 大像框 --&gt;</span><br><span class="line">	&lt;div</span><br><span class="line">	        style&#x3D;&quot;border-style:double;width:800px;height:500px;position:absolute;left:500px;top:10px&quot;&gt;</span><br><span class="line">	    &lt;img id&#x3D;&quot;img2ID&quot; src&#x3D;&quot;..&#x2F;img&#x2F;man00.jpg&quot; width&#x3D;&quot;800px&quot; height&#x3D;&quot;500px&quot;&#x2F;&gt;</span><br><span class="line">	&lt;&#x2F;div&gt;</span><br><span class="line">	</span><br><span class="line">	&lt;!-- 开始按钮 --&gt;</span><br><span class="line">	&lt;input</span><br><span class="line">	        id&#x3D;&quot;startID&quot;</span><br><span class="line">	        type&#x3D;&quot;button&quot;</span><br><span class="line">	        value&#x3D;&quot;点击开始&quot;</span><br><span class="line">	        style&#x3D;&quot;width:150px;height:150px;font-size:22px&quot;&gt;</span><br><span class="line">	</span><br><span class="line">	&lt;!-- 停止按钮 --&gt;</span><br><span class="line">	&lt;input</span><br><span class="line">	        id&#x3D;&quot;stopID&quot;</span><br><span class="line">	        type&#x3D;&quot;button&quot;</span><br><span class="line">	        value&#x3D;&quot;点击停止&quot;</span><br><span class="line">	        style&#x3D;&quot;width:150px;height:150px;font-size:22px&quot;&gt;</span><br><span class="line">	&lt;&#x2F;body&gt;</span><br><span class="line">	&lt;&#x2F;html&gt;		</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">5. 插件：增强JQuery的功能</span><br><span class="line">	1. 实现方式：</span><br><span class="line">		1. $.fn.extend(object) </span><br><span class="line">			* 增强通过Jquery获取的对象的功能  $(&quot;#id&quot;)</span><br><span class="line">		2. $.extend(object)</span><br><span class="line">			* 增强JQeury对象自身的功能  $&#x2F;jQuery</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>Java学习笔记</category>
+        <category>Web</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Ajax&amp;Json</title>
+    <url>/2019/10/05/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/Web/191005Ajax&amp;Json/</url>
+    <content><![CDATA[<h1 id="AJAX："><a href="#AJAX：" class="headerlink" title="AJAX："></a>AJAX：</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1. 概念： ASynchronous JavaScript And XML	异步的JavaScript 和 XML</span><br><span class="line">	1. 异步和同步：客户端和服务器端相互通信的基础上</span><br><span class="line">		* 客户端必须等待服务器端的响应。在等待的期间客户端不能做其他操作。</span><br><span class="line">		* 客户端不需要等待服务器端的响应。在服务器处理请求的过程中，客户端可以进行其他的操作。</span><br><span class="line"></span><br><span class="line">		Ajax 是一种在无需重新加载整个网页的情况下，能够更新部分网页的技术。 [1] </span><br><span class="line">		通过在后台与服务器进行少量数据交换，Ajax 可以使网页实现异步更新。这意味着可以在不重新加载整个网页的情况下，对网页的某部分进行更新。</span><br><span class="line">		传统的网页（不使用 Ajax）如果需要更新内容，必须重载整个网页页面。</span><br><span class="line"></span><br><span class="line">		提升用户的体验</span><br></pre></td></tr></table></figure>
+
+<a id="more"></a>
+
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">2. 实现方式：</span><br><span class="line">	1. 原生的JS实现方式（了解）</span><br><span class="line">				 &#x2F;&#x2F;1.创建核心对象</span><br><span class="line">	            var xmlhttp;</span><br><span class="line">	            if (window.XMLHttpRequest)</span><br><span class="line">	            &#123;&#x2F;&#x2F; code for IE7+, Firefox, Chrome, Opera, Safari</span><br><span class="line">	                xmlhttp&#x3D;new XMLHttpRequest();</span><br><span class="line">	            &#125;</span><br><span class="line">	            else</span><br><span class="line">	            &#123;&#x2F;&#x2F; code for IE6, IE5</span><br><span class="line">	                xmlhttp&#x3D;new ActiveXObject(&quot;Microsoft.XMLHTTP&quot;);</span><br><span class="line">	            &#125;</span><br><span class="line">	</span><br><span class="line">	            &#x2F;&#x2F;2. 建立连接</span><br><span class="line">	            &#x2F;*</span><br><span class="line">	                参数：</span><br><span class="line">	                    1. 请求方式：GET、POST</span><br><span class="line">	                        * get方式，请求参数在URL后边拼接。send方法为空参</span><br><span class="line">	                        * post方式，请求参数在send方法中定义</span><br><span class="line">	                    2. 请求的URL：</span><br><span class="line">	                    3. 同步或异步请求：true（异步）或 false（同步）</span><br><span class="line">	</span><br><span class="line">	             *&#x2F;</span><br><span class="line">	            xmlhttp.open(&quot;GET&quot;,&quot;ajaxServlet?username&#x3D;tom&quot;,true);</span><br><span class="line">	</span><br><span class="line">	            &#x2F;&#x2F;3.发送请求</span><br><span class="line">	            xmlhttp.send();</span><br><span class="line">	</span><br><span class="line">	            &#x2F;&#x2F;4.接受并处理来自服务器的响应结果</span><br><span class="line">	            &#x2F;&#x2F;获取方式 ：xmlhttp.responseText</span><br><span class="line">	            &#x2F;&#x2F;什么时候获取？当服务器响应成功后再获取</span><br><span class="line">	</span><br><span class="line">	            &#x2F;&#x2F;当xmlhttp对象的就绪状态改变时，触发事件onreadystatechange。</span><br><span class="line">	            xmlhttp.onreadystatechange&#x3D;function()</span><br><span class="line">	            &#123;</span><br><span class="line">	                &#x2F;&#x2F;判断readyState就绪状态是否为4，判断status响应状态码是否为200</span><br><span class="line">	                if (xmlhttp.readyState&#x3D;&#x3D;4 &amp;&amp; xmlhttp.status&#x3D;&#x3D;200)</span><br><span class="line">	                &#123;</span><br><span class="line">	                   &#x2F;&#x2F;获取服务器的响应结果</span><br><span class="line">	                    var responseText &#x3D; xmlhttp.responseText;</span><br><span class="line">	                    alert(responseText);</span><br><span class="line">	                &#125;</span><br><span class="line">	            &#125;</span><br><span class="line">	2. JQeury实现方式</span><br><span class="line">		1. $.ajax()</span><br><span class="line">			* 语法：$.ajax(&#123;键值对&#125;);</span><br><span class="line">			 &#x2F;&#x2F;使用$.ajax()发送异步请求</span><br><span class="line">	            $.ajax(&#123;</span><br><span class="line">	                url:&quot;ajaxServlet1111&quot; , &#x2F;&#x2F; 请求路径</span><br><span class="line">	                type:&quot;POST&quot; , &#x2F;&#x2F;请求方式</span><br><span class="line">	                &#x2F;&#x2F;data: &quot;username&#x3D;jack&amp;age&#x3D;23&quot;,&#x2F;&#x2F;请求参数</span><br><span class="line">	                data:&#123;&quot;username&quot;:&quot;jack&quot;,&quot;age&quot;:23&#125;,</span><br><span class="line">	                success:function (data) &#123;</span><br><span class="line">	                    alert(data);</span><br><span class="line">	                &#125;,&#x2F;&#x2F;响应成功后的回调函数</span><br><span class="line">	                error:function () &#123;</span><br><span class="line">	                    alert(&quot;出错啦...&quot;)</span><br><span class="line">	                &#125;,&#x2F;&#x2F;表示如果请求响应出现错误，会执行的回调函数</span><br><span class="line">	</span><br><span class="line">	                dataType:&quot;text&quot;&#x2F;&#x2F;设置接受到的响应数据的格式</span><br><span class="line">	            &#125;);</span><br><span class="line">		2. $.get()：发送get请求</span><br><span class="line">			* 语法：$.get(url, [data], [callback], [type])</span><br><span class="line">				* 参数：</span><br><span class="line">					* url：请求路径</span><br><span class="line">					* data：请求参数</span><br><span class="line">					* callback：回调函数</span><br><span class="line">					* type：响应结果的类型</span><br><span class="line"></span><br><span class="line">		3. $.post()：发送post请求</span><br><span class="line">			* 语法：$.post(url, [data], [callback], [type])</span><br><span class="line">				* 参数：</span><br><span class="line">					* url：请求路径</span><br><span class="line">					* data：请求参数</span><br><span class="line">					* callback：回调函数</span><br><span class="line">					* type：响应结果的类型</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="JSON："><a href="#JSON：" class="headerlink" title="JSON："></a>JSON：</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1. 概念： JavaScript Object Notation		JavaScript对象表示法</span><br><span class="line">	Person p &#x3D; new Person();</span><br><span class="line">	p.setName(&quot;张三&quot;);</span><br><span class="line">	p.setAge(23);</span><br><span class="line">	p.setGender(&quot;男&quot;);</span><br><span class="line"></span><br><span class="line">	var p &#x3D; &#123;&quot;name&quot;:&quot;张三&quot;,&quot;age&quot;:23,&quot;gender&quot;:&quot;男&quot;&#125;;</span><br><span class="line"></span><br><span class="line">	* json现在多用于存储和交换文本信息的语法</span><br><span class="line">	* 进行数据的传输</span><br><span class="line">	* JSON 比 XML 更小、更快，更易解析。</span><br><span class="line"></span><br><span class="line">2. 语法：</span><br><span class="line">	1. 基本规则</span><br><span class="line">		* 数据在名称&#x2F;值对中：json数据是由键值对构成的</span><br><span class="line">			* 键用引号(单双都行)引起来，也可以不使用引号</span><br><span class="line">			* 值得取值类型：</span><br><span class="line">				1. 数字（整数或浮点数）</span><br><span class="line">				2. 字符串（在双引号中）</span><br><span class="line">				3. 逻辑值（true 或 false）</span><br><span class="line">				4. 数组（在方括号中）	&#123;&quot;persons&quot;:[&#123;&#125;,&#123;&#125;]&#125;</span><br><span class="line">				5. 对象（在花括号中） &#123;&quot;address&quot;:&#123;&quot;province&quot;：&quot;陕西&quot;....&#125;&#125;</span><br><span class="line">				6. null</span><br><span class="line">		* 数据由逗号分隔：多个键值对由逗号分隔</span><br><span class="line">		* 花括号保存对象：使用&#123;&#125;定义json 格式</span><br><span class="line">		* 方括号保存数组：[]</span><br><span class="line">	2. 获取数据:</span><br><span class="line">		1. json对象.键名</span><br><span class="line">		2. json对象[&quot;键名&quot;]</span><br><span class="line">		3. 数组对象[索引]</span><br><span class="line">		4. 遍历</span><br><span class="line">				 &#x2F;&#x2F;1.定义基本格式</span><br><span class="line">		        var person &#x3D; &#123;&quot;name&quot;: &quot;张三&quot;, age: 23, &#39;gender&#39;: true&#125;;</span><br><span class="line">		</span><br><span class="line">		        var ps &#x3D; [&#123;&quot;name&quot;: &quot;张三&quot;, &quot;age&quot;: 23, &quot;gender&quot;: true&#125;,</span><br><span class="line">		            &#123;&quot;name&quot;: &quot;李四&quot;, &quot;age&quot;: 24, &quot;gender&quot;: true&#125;,</span><br><span class="line">		            &#123;&quot;name&quot;: &quot;王五&quot;, &quot;age&quot;: 25, &quot;gender&quot;: false&#125;];</span><br><span class="line">		        &#x2F;&#x2F;获取person对象中所有的键和值</span><br><span class="line">		        &#x2F;&#x2F;for in 循环</span><br><span class="line">		       &#x2F;* for(var key in person)&#123;</span><br><span class="line">		            &#x2F;&#x2F;这样的方式获取不行。因为相当于  person.&quot;name&quot;</span><br><span class="line">		            &#x2F;&#x2F;alert(key + &quot;:&quot; + person.key);</span><br><span class="line">		            alert(key+&quot;:&quot;+person[key]);</span><br><span class="line">		        &#125;*&#x2F;</span><br><span class="line">		</span><br><span class="line">		       &#x2F;&#x2F;获取ps中的所有值</span><br><span class="line">		        for (var i &#x3D; 0; i &lt; ps.length; i++) &#123;</span><br><span class="line">		            var p &#x3D; ps[i];</span><br><span class="line">		            for(var key in p)&#123;</span><br><span class="line">		                alert(key+&quot;:&quot;+p[key]);</span><br><span class="line">		            &#125;</span><br><span class="line">		        &#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">3. JSON数据和Java对象的相互转换</span><br><span class="line"></span><br><span class="line">	* JSON解析器：</span><br><span class="line">		* 常见的解析器：Jsonlib，Gson，fastjson，jackson</span><br><span class="line">	</span><br><span class="line">	1. JSON转为Java对象</span><br><span class="line">		1. 导入jackson的相关jar包</span><br><span class="line">		2. 创建Jackson核心对象 ObjectMapper</span><br><span class="line">		3. 调用ObjectMapper的相关方法进行转换</span><br><span class="line">			1. readValue(json字符串数据,Class)</span><br><span class="line">	2. Java对象转换JSON</span><br><span class="line">		1. 使用步骤：</span><br><span class="line">			1. 导入jackson的相关jar包</span><br><span class="line">			2. 创建Jackson核心对象 ObjectMapper</span><br><span class="line">			3. 调用ObjectMapper的相关方法进行转换</span><br><span class="line">				1. 转换方法：</span><br><span class="line">					* writeValue(参数1，obj):</span><br><span class="line">	                    参数1：</span><br><span class="line">	                        File：将obj对象转换为JSON字符串，并保存到指定的文件中</span><br><span class="line">	                        Writer：将obj对象转换为JSON字符串，并将json数据填充到字符输出流中</span><br><span class="line">	                        OutputStream：将obj对象转换为JSON字符串，并将json数据填充到字节输出流中</span><br><span class="line">	                * writeValueAsString(obj):将对象转为json字符串</span><br><span class="line"></span><br><span class="line">				2. 注解：</span><br><span class="line">					1. @JsonIgnore：排除属性。</span><br><span class="line">					2. @JsonFormat：属性值得格式化</span><br><span class="line">						* @JsonFormat(pattern &#x3D; &quot;yyyy-MM-dd&quot;)</span><br><span class="line"></span><br><span class="line">				3. 复杂java对象转换</span><br><span class="line">					1. List：数组</span><br><span class="line">					2. Map：对象格式一致</span><br></pre></td></tr></table></figure>
+
+<h1 id="案例："><a href="#案例：" class="headerlink" title="案例："></a>案例：</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">* 校验用户名是否存在</span><br><span class="line">	1. 服务器响应的数据，在客户端使用时，要想当做json数据格式使用。有两种解决方案：</span><br><span class="line">		1. $.get(type):将最后一个参数type指定为&quot;json&quot;</span><br><span class="line">		2. 在服务器端设置MIME类型</span><br><span class="line">			response.setContentType(&quot;application&#x2F;json;charset&#x3D;utf-8&quot;);</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Java学习笔记</category>
+        <category>Web</category>
+      </categories>
+  </entry>
+  <entry>
     <title>redis</title>
     <url>/2019/10/06/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/Web/191006redis/</url>
     <content><![CDATA[<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1. redis</span><br><span class="line">	1. 概念</span><br><span class="line">	2. 下载安装</span><br><span class="line">	3. 命令操作</span><br><span class="line">		1. 数据结构</span><br><span class="line">	4. 持久化操作</span><br><span class="line">	5. 使用Java客户端操作redis</span><br></pre></td></tr></table></figure>
@@ -3767,52 +3658,6 @@
       <categories>
         <category>Java学习笔记</category>
         <category>框架</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>JQuery高级</title>
-    <url>/2019/10/03/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/Web/191003JQuery%E9%AB%98%E7%BA%A7/</url>
-    <content><![CDATA[<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1. JQuery 高级</span><br><span class="line">	1. 动画</span><br><span class="line">	2. 遍历</span><br><span class="line">	3. 事件绑定</span><br><span class="line">	4. 案例</span><br><span class="line">	5. 插件</span><br></pre></td></tr></table></figure>
-
-<a id="more"></a>
-
-<h2 id="JQuery-高级"><a href="#JQuery-高级" class="headerlink" title="JQuery 高级"></a>JQuery 高级</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1. 动画</span><br><span class="line">	1. 三种方式显示和隐藏元素</span><br><span class="line">		1. 默认显示和隐藏方式</span><br><span class="line">			1. show([speed,[easing],[fn]])</span><br><span class="line">				1. 参数：</span><br><span class="line">					1. speed：动画的速度。三个预定义的值(&quot;slow&quot;,&quot;normal&quot;, &quot;fast&quot;)或表示动画时长的毫秒数值(如：1000)</span><br><span class="line">					2. easing：用来指定切换效果，默认是&quot;swing&quot;，可用参数&quot;linear&quot;</span><br><span class="line">						* swing：动画执行时效果是 先慢，中间快，最后又慢</span><br><span class="line">						* linear：动画执行时速度是匀速的</span><br><span class="line">					3. fn：在动画完成时执行的函数，每个元素执行一次。</span><br><span class="line"></span><br><span class="line">			2. hide([speed,[easing],[fn]])</span><br><span class="line">			3. toggle([speed],[easing],[fn])</span><br><span class="line">		</span><br><span class="line">		2. 滑动显示和隐藏方式</span><br><span class="line">			1. slideDown([speed],[easing],[fn])</span><br><span class="line">			2. slideUp([speed,[easing],[fn]])</span><br><span class="line">			3. slideToggle([speed],[easing],[fn])</span><br><span class="line"></span><br><span class="line">		3. 淡入淡出显示和隐藏方式</span><br><span class="line">			1. fadeIn([speed],[easing],[fn])</span><br><span class="line">			2. fadeOut([speed],[easing],[fn])</span><br><span class="line">			3. fadeToggle([speed,[easing],[fn]])</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">2. 遍历</span><br><span class="line">	1. js的遍历方式</span><br><span class="line">		* for(初始化值;循环结束条件;步长)</span><br><span class="line">	2. jq的遍历方式</span><br><span class="line">		1. jq对象.each(callback)</span><br><span class="line">			1. 语法：</span><br><span class="line">				jquery对象.each(function(index,element)&#123;&#125;);</span><br><span class="line">					* index:就是元素在集合中的索引</span><br><span class="line">					* element：就是集合中的每一个元素对象</span><br><span class="line"></span><br><span class="line">					* this：集合中的每一个元素对象</span><br><span class="line">			2. 回调函数返回值：</span><br><span class="line">				* true:如果当前function返回为false，则结束循环(break)。</span><br><span class="line">				* false:如果当前function返回为true，则结束本次循环，继续下次循环(continue)</span><br><span class="line">		2. $.each(object, [callback])</span><br><span class="line">		3. for..of: jquery 3.0 版本之后提供的方式</span><br><span class="line">			for(元素对象 of 容器对象)</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">3. 事件绑定</span><br><span class="line">	1. jquery标准的绑定方式</span><br><span class="line">		* jq对象.事件方法(回调函数)；</span><br><span class="line">		* 注：如果调用事件方法，不传递回调函数，则会触发浏览器默认行为。</span><br><span class="line">			* 表单对象.submit();&#x2F;&#x2F;让表单提交</span><br><span class="line">	2. on绑定事件&#x2F;off解除绑定</span><br><span class="line">		* jq对象.on(&quot;事件名称&quot;,回调函数)</span><br><span class="line">		* jq对象.off(&quot;事件名称&quot;)</span><br><span class="line">			* 如果off方法不传递任何参数，则将组件上的所有事件全部解绑</span><br><span class="line">	3. 事件切换：toggle</span><br><span class="line">		* jq对象.toggle(fn1,fn2...)</span><br><span class="line">			* 当单击jq对象对应的组件后，会执行fn1.第二次点击会执行fn2.....</span><br><span class="line">			</span><br><span class="line">		* 注意：1.9版本 .toggle() 方法删除,jQuery Migrate（迁移）插件可以恢复此功能。</span><br><span class="line">			 &lt;script src&#x3D;&quot;..&#x2F;js&#x2F;jquery-migrate-1.0.0.js&quot; type&#x3D;&quot;text&#x2F;javascript&quot; charset&#x3D;&quot;utf-8&quot;&gt;&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">4. 案例</span><br><span class="line">	1. 广告显示和隐藏</span><br><span class="line">		&lt;!DOCTYPE html&gt;</span><br><span class="line">		&lt;html&gt;</span><br><span class="line">		&lt;head&gt;</span><br><span class="line">		    &lt;meta charset&#x3D;&quot;UTF-8&quot;&gt;</span><br><span class="line">		    &lt;title&gt;广告的自动显示与隐藏&lt;&#x2F;title&gt;</span><br><span class="line">		    &lt;style&gt;</span><br><span class="line">		        #content&#123;width:100%;height:500px;background:#999&#125;</span><br><span class="line">		    &lt;&#x2F;style&gt;</span><br><span class="line">		</span><br><span class="line">		    &lt;!--引入jquery--&gt;</span><br><span class="line">		    &lt;script type&#x3D;&quot;text&#x2F;javascript&quot; src&#x3D;&quot;..&#x2F;js&#x2F;jquery-3.3.1.min.js&quot;&gt;&lt;&#x2F;script&gt;</span><br><span class="line">		    &lt;script&gt;</span><br><span class="line">		        &#x2F;*</span><br><span class="line">		            需求：</span><br><span class="line">		                1. 当页面加载完，3秒后。自动显示广告</span><br><span class="line">		                2. 广告显示5秒后，自动消失。</span><br><span class="line">		</span><br><span class="line">		            分析：</span><br><span class="line">		                1. 使用定时器来完成。setTimeout (执行一次定时器)</span><br><span class="line">		                2. 分析发现JQuery的显示和隐藏动画效果其实就是控制display</span><br><span class="line">		                3. 使用  show&#x2F;hide方法来完成广告的显示</span><br><span class="line">		         *&#x2F;</span><br><span class="line">		</span><br><span class="line">		        &#x2F;&#x2F;入口函数，在页面加载完成之后，定义定时器，调用这两个方法</span><br><span class="line">		        $(function () &#123;</span><br><span class="line">		           &#x2F;&#x2F;定义定时器，调用adShow方法 3秒后执行一次</span><br><span class="line">		           setTimeout(adShow,3000);</span><br><span class="line">		           &#x2F;&#x2F;定义定时器，调用adHide方法，8秒后执行一次</span><br><span class="line">		            setTimeout(adHide,8000);</span><br><span class="line">		        &#125;);</span><br><span class="line">		        &#x2F;&#x2F;显示广告</span><br><span class="line">		        function adShow() &#123;</span><br><span class="line">		            &#x2F;&#x2F;获取广告div，调用显示方法</span><br><span class="line">		            $(&quot;#ad&quot;).show(&quot;slow&quot;);</span><br><span class="line">		        &#125;</span><br><span class="line">		        &#x2F;&#x2F;隐藏广告</span><br><span class="line">		        function adHide() &#123;</span><br><span class="line">		            &#x2F;&#x2F;获取广告div，调用隐藏方法</span><br><span class="line">		            $(&quot;#ad&quot;).hide(&quot;slow&quot;);</span><br><span class="line">		        &#125;</span><br><span class="line">		    &lt;&#x2F;script&gt;</span><br><span class="line">		&lt;&#x2F;head&gt;</span><br><span class="line">		&lt;body&gt;</span><br><span class="line">		&lt;!-- 整体的DIV --&gt;</span><br><span class="line">		&lt;div&gt;</span><br><span class="line">		    &lt;!-- 广告DIV --&gt;</span><br><span class="line">		    &lt;div id&#x3D;&quot;ad&quot; style&#x3D;&quot;display: none;&quot;&gt;</span><br><span class="line">		        &lt;img style&#x3D;&quot;width:100%&quot; src&#x3D;&quot;..&#x2F;img&#x2F;adv.jpg&quot; &#x2F;&gt;</span><br><span class="line">		    &lt;&#x2F;div&gt;</span><br><span class="line">		</span><br><span class="line">		    &lt;!-- 下方正文部分 --&gt;</span><br><span class="line">		    &lt;div id&#x3D;&quot;content&quot;&gt;</span><br><span class="line">		        正文部分</span><br><span class="line">		    &lt;&#x2F;div&gt;</span><br><span class="line">		&lt;&#x2F;div&gt;</span><br><span class="line">		&lt;&#x2F;body&gt;</span><br><span class="line">		&lt;&#x2F;html&gt;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">2. 抽奖</span><br><span class="line">	&lt;!DOCTYPE html&gt;</span><br><span class="line">	&lt;html&gt;</span><br><span class="line">	&lt;head&gt;</span><br><span class="line">	    &lt;meta charset&#x3D;&quot;UTF-8&quot;&gt;</span><br><span class="line">	    &lt;title&gt;jquery案例之抽奖&lt;&#x2F;title&gt;</span><br><span class="line">	    &lt;script type&#x3D;&quot;text&#x2F;javascript&quot; src&#x3D;&quot;..&#x2F;js&#x2F;jquery-3.3.1.min.js&quot;&gt;&lt;&#x2F;script&gt;</span><br><span class="line">	</span><br><span class="line">	    &lt;script language&#x3D;&#39;javascript&#39; type&#x3D;&#39;text&#x2F;javascript&#39;&gt;</span><br><span class="line">	</span><br><span class="line">	        &#x2F;*</span><br><span class="line">	            分析：</span><br><span class="line">	                1. 给开始按钮绑定单击事件</span><br><span class="line">	                    1.1 定义循环定时器</span><br><span class="line">	                    1.2 切换小相框的src属性</span><br><span class="line">	                        * 定义数组，存放图片资源路径</span><br><span class="line">	                        * 生成随机数。数组索引</span><br><span class="line">					2. 给结束按钮绑定单击事件</span><br><span class="line">	                    1.1 停止定时器</span><br><span class="line">	                    1.2 给大相框设置src属性</span><br><span class="line">	</span><br><span class="line">	         *&#x2F;</span><br><span class="line">	        var imgs &#x3D; [&quot;..&#x2F;img&#x2F;man00.jpg&quot;,</span><br><span class="line">	                    &quot;..&#x2F;img&#x2F;man01.jpg&quot;,</span><br><span class="line">	                    &quot;..&#x2F;img&#x2F;man02.jpg&quot;,</span><br><span class="line">	                    &quot;..&#x2F;img&#x2F;man03.jpg&quot;,</span><br><span class="line">	                    &quot;..&#x2F;img&#x2F;man04.jpg&quot;,</span><br><span class="line">	                    &quot;..&#x2F;img&#x2F;man05.jpg&quot;,</span><br><span class="line">	                    &quot;..&#x2F;img&#x2F;man06.jpg&quot;,</span><br><span class="line">	                    ];</span><br><span class="line">	        var startId;&#x2F;&#x2F;开始定时器的id</span><br><span class="line">	        var index;&#x2F;&#x2F;随机角标</span><br><span class="line">	        $(function () &#123;</span><br><span class="line">	            &#x2F;&#x2F;处理按钮是否可以使用的效果</span><br><span class="line">	            $(&quot;#startID&quot;).prop(&quot;disabled&quot;,false);</span><br><span class="line">	            $(&quot;#stopID&quot;).prop(&quot;disabled&quot;,true);    	     </span><br><span class="line">	           &#x2F;&#x2F;1. 给开始按钮绑定单击事件</span><br><span class="line">	            $(&quot;#startID&quot;).click(function () &#123;</span><br><span class="line">	                &#x2F;&#x2F; 1.1 定义循环定时器 20毫秒执行一次</span><br><span class="line">	                startId &#x3D; setInterval(function () &#123;</span><br><span class="line">	                    &#x2F;&#x2F;处理按钮是否可以使用的效果</span><br><span class="line">	                    $(&quot;#startID&quot;).prop(&quot;disabled&quot;,true);</span><br><span class="line">	                    $(&quot;#stopID&quot;).prop(&quot;disabled&quot;,false);</span><br><span class="line">	                    &#x2F;&#x2F;1.2生成随机角标 0-6</span><br><span class="line">	                    index &#x3D; Math.floor(Math.random() * 7);&#x2F;&#x2F;0.000--0.999 --&gt; * 7 --&gt; 0.0-----6.9999</span><br><span class="line">	                    &#x2F;&#x2F;1.3设置小相框的src属性</span><br><span class="line">	                    $(&quot;#img1ID&quot;).prop(&quot;src&quot;,imgs[index]);</span><br><span class="line">	</span><br><span class="line">	                &#125;,20);</span><br><span class="line">	            &#125;);</span><br><span class="line">	            &#x2F;&#x2F;2. 给结束按钮绑定单击事件</span><br><span class="line">	            $(&quot;#stopID&quot;).click(function () &#123;</span><br><span class="line">	                &#x2F;&#x2F;处理按钮是否可以使用的效果</span><br><span class="line">	                $(&quot;#startID&quot;).prop(&quot;disabled&quot;,false);</span><br><span class="line">	                $(&quot;#stopID&quot;).prop(&quot;disabled&quot;,true);</span><br><span class="line">	               &#x2F;&#x2F; 1.1 停止定时器</span><br><span class="line">	                clearInterval(startId);</span><br><span class="line">	               &#x2F;&#x2F; 1.2 给大相框设置src属性</span><br><span class="line">	                $(&quot;#img2ID&quot;).prop(&quot;src&quot;,imgs[index]).hide();</span><br><span class="line">	                &#x2F;&#x2F;显示1秒之后</span><br><span class="line">	                $(&quot;#img2ID&quot;).show(1000);</span><br><span class="line">	            &#125;);</span><br><span class="line">	        &#125;);</span><br><span class="line">	    &lt;&#x2F;script&gt;</span><br><span class="line">	</span><br><span class="line">	&lt;&#x2F;head&gt;</span><br><span class="line">	&lt;body&gt;</span><br><span class="line">	</span><br><span class="line">	&lt;!-- 小像框 --&gt;</span><br><span class="line">	&lt;div style&#x3D;&quot;border-style:dotted;width:160px;height:100px&quot;&gt;</span><br><span class="line">	    &lt;img id&#x3D;&quot;img1ID&quot; src&#x3D;&quot;..&#x2F;img&#x2F;man00.jpg&quot; style&#x3D;&quot;width:160px;height:100px&quot;&#x2F;&gt;</span><br><span class="line">	&lt;&#x2F;div&gt;</span><br><span class="line">	</span><br><span class="line">	&lt;!-- 大像框 --&gt;</span><br><span class="line">	&lt;div</span><br><span class="line">	        style&#x3D;&quot;border-style:double;width:800px;height:500px;position:absolute;left:500px;top:10px&quot;&gt;</span><br><span class="line">	    &lt;img id&#x3D;&quot;img2ID&quot; src&#x3D;&quot;..&#x2F;img&#x2F;man00.jpg&quot; width&#x3D;&quot;800px&quot; height&#x3D;&quot;500px&quot;&#x2F;&gt;</span><br><span class="line">	&lt;&#x2F;div&gt;</span><br><span class="line">	</span><br><span class="line">	&lt;!-- 开始按钮 --&gt;</span><br><span class="line">	&lt;input</span><br><span class="line">	        id&#x3D;&quot;startID&quot;</span><br><span class="line">	        type&#x3D;&quot;button&quot;</span><br><span class="line">	        value&#x3D;&quot;点击开始&quot;</span><br><span class="line">	        style&#x3D;&quot;width:150px;height:150px;font-size:22px&quot;&gt;</span><br><span class="line">	</span><br><span class="line">	&lt;!-- 停止按钮 --&gt;</span><br><span class="line">	&lt;input</span><br><span class="line">	        id&#x3D;&quot;stopID&quot;</span><br><span class="line">	        type&#x3D;&quot;button&quot;</span><br><span class="line">	        value&#x3D;&quot;点击停止&quot;</span><br><span class="line">	        style&#x3D;&quot;width:150px;height:150px;font-size:22px&quot;&gt;</span><br><span class="line">	&lt;&#x2F;body&gt;</span><br><span class="line">	&lt;&#x2F;html&gt;		</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">5. 插件：增强JQuery的功能</span><br><span class="line">	1. 实现方式：</span><br><span class="line">		1. $.fn.extend(object) </span><br><span class="line">			* 增强通过Jquery获取的对象的功能  $(&quot;#id&quot;)</span><br><span class="line">		2. $.extend(object)</span><br><span class="line">			* 增强JQeury对象自身的功能  $&#x2F;jQuery</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>Java学习笔记</category>
-        <category>Web</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Ajax&amp;Json</title>
-    <url>/2019/10/05/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/Web/191005Ajax&amp;Json/</url>
-    <content><![CDATA[<h1 id="AJAX："><a href="#AJAX：" class="headerlink" title="AJAX："></a>AJAX：</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1. 概念： ASynchronous JavaScript And XML	异步的JavaScript 和 XML</span><br><span class="line">	1. 异步和同步：客户端和服务器端相互通信的基础上</span><br><span class="line">		* 客户端必须等待服务器端的响应。在等待的期间客户端不能做其他操作。</span><br><span class="line">		* 客户端不需要等待服务器端的响应。在服务器处理请求的过程中，客户端可以进行其他的操作。</span><br><span class="line"></span><br><span class="line">		Ajax 是一种在无需重新加载整个网页的情况下，能够更新部分网页的技术。 [1] </span><br><span class="line">		通过在后台与服务器进行少量数据交换，Ajax 可以使网页实现异步更新。这意味着可以在不重新加载整个网页的情况下，对网页的某部分进行更新。</span><br><span class="line">		传统的网页（不使用 Ajax）如果需要更新内容，必须重载整个网页页面。</span><br><span class="line"></span><br><span class="line">		提升用户的体验</span><br></pre></td></tr></table></figure>
-
-<a id="more"></a>
-
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">2. 实现方式：</span><br><span class="line">	1. 原生的JS实现方式（了解）</span><br><span class="line">				 &#x2F;&#x2F;1.创建核心对象</span><br><span class="line">	            var xmlhttp;</span><br><span class="line">	            if (window.XMLHttpRequest)</span><br><span class="line">	            &#123;&#x2F;&#x2F; code for IE7+, Firefox, Chrome, Opera, Safari</span><br><span class="line">	                xmlhttp&#x3D;new XMLHttpRequest();</span><br><span class="line">	            &#125;</span><br><span class="line">	            else</span><br><span class="line">	            &#123;&#x2F;&#x2F; code for IE6, IE5</span><br><span class="line">	                xmlhttp&#x3D;new ActiveXObject(&quot;Microsoft.XMLHTTP&quot;);</span><br><span class="line">	            &#125;</span><br><span class="line">	</span><br><span class="line">	            &#x2F;&#x2F;2. 建立连接</span><br><span class="line">	            &#x2F;*</span><br><span class="line">	                参数：</span><br><span class="line">	                    1. 请求方式：GET、POST</span><br><span class="line">	                        * get方式，请求参数在URL后边拼接。send方法为空参</span><br><span class="line">	                        * post方式，请求参数在send方法中定义</span><br><span class="line">	                    2. 请求的URL：</span><br><span class="line">	                    3. 同步或异步请求：true（异步）或 false（同步）</span><br><span class="line">	</span><br><span class="line">	             *&#x2F;</span><br><span class="line">	            xmlhttp.open(&quot;GET&quot;,&quot;ajaxServlet?username&#x3D;tom&quot;,true);</span><br><span class="line">	</span><br><span class="line">	            &#x2F;&#x2F;3.发送请求</span><br><span class="line">	            xmlhttp.send();</span><br><span class="line">	</span><br><span class="line">	            &#x2F;&#x2F;4.接受并处理来自服务器的响应结果</span><br><span class="line">	            &#x2F;&#x2F;获取方式 ：xmlhttp.responseText</span><br><span class="line">	            &#x2F;&#x2F;什么时候获取？当服务器响应成功后再获取</span><br><span class="line">	</span><br><span class="line">	            &#x2F;&#x2F;当xmlhttp对象的就绪状态改变时，触发事件onreadystatechange。</span><br><span class="line">	            xmlhttp.onreadystatechange&#x3D;function()</span><br><span class="line">	            &#123;</span><br><span class="line">	                &#x2F;&#x2F;判断readyState就绪状态是否为4，判断status响应状态码是否为200</span><br><span class="line">	                if (xmlhttp.readyState&#x3D;&#x3D;4 &amp;&amp; xmlhttp.status&#x3D;&#x3D;200)</span><br><span class="line">	                &#123;</span><br><span class="line">	                   &#x2F;&#x2F;获取服务器的响应结果</span><br><span class="line">	                    var responseText &#x3D; xmlhttp.responseText;</span><br><span class="line">	                    alert(responseText);</span><br><span class="line">	                &#125;</span><br><span class="line">	            &#125;</span><br><span class="line">	2. JQeury实现方式</span><br><span class="line">		1. $.ajax()</span><br><span class="line">			* 语法：$.ajax(&#123;键值对&#125;);</span><br><span class="line">			 &#x2F;&#x2F;使用$.ajax()发送异步请求</span><br><span class="line">	            $.ajax(&#123;</span><br><span class="line">	                url:&quot;ajaxServlet1111&quot; , &#x2F;&#x2F; 请求路径</span><br><span class="line">	                type:&quot;POST&quot; , &#x2F;&#x2F;请求方式</span><br><span class="line">	                &#x2F;&#x2F;data: &quot;username&#x3D;jack&amp;age&#x3D;23&quot;,&#x2F;&#x2F;请求参数</span><br><span class="line">	                data:&#123;&quot;username&quot;:&quot;jack&quot;,&quot;age&quot;:23&#125;,</span><br><span class="line">	                success:function (data) &#123;</span><br><span class="line">	                    alert(data);</span><br><span class="line">	                &#125;,&#x2F;&#x2F;响应成功后的回调函数</span><br><span class="line">	                error:function () &#123;</span><br><span class="line">	                    alert(&quot;出错啦...&quot;)</span><br><span class="line">	                &#125;,&#x2F;&#x2F;表示如果请求响应出现错误，会执行的回调函数</span><br><span class="line">	</span><br><span class="line">	                dataType:&quot;text&quot;&#x2F;&#x2F;设置接受到的响应数据的格式</span><br><span class="line">	            &#125;);</span><br><span class="line">		2. $.get()：发送get请求</span><br><span class="line">			* 语法：$.get(url, [data], [callback], [type])</span><br><span class="line">				* 参数：</span><br><span class="line">					* url：请求路径</span><br><span class="line">					* data：请求参数</span><br><span class="line">					* callback：回调函数</span><br><span class="line">					* type：响应结果的类型</span><br><span class="line"></span><br><span class="line">		3. $.post()：发送post请求</span><br><span class="line">			* 语法：$.post(url, [data], [callback], [type])</span><br><span class="line">				* 参数：</span><br><span class="line">					* url：请求路径</span><br><span class="line">					* data：请求参数</span><br><span class="line">					* callback：回调函数</span><br><span class="line">					* type：响应结果的类型</span><br></pre></td></tr></table></figure>
-
-
-
-<h1 id="JSON："><a href="#JSON：" class="headerlink" title="JSON："></a>JSON：</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1. 概念： JavaScript Object Notation		JavaScript对象表示法</span><br><span class="line">	Person p &#x3D; new Person();</span><br><span class="line">	p.setName(&quot;张三&quot;);</span><br><span class="line">	p.setAge(23);</span><br><span class="line">	p.setGender(&quot;男&quot;);</span><br><span class="line"></span><br><span class="line">	var p &#x3D; &#123;&quot;name&quot;:&quot;张三&quot;,&quot;age&quot;:23,&quot;gender&quot;:&quot;男&quot;&#125;;</span><br><span class="line"></span><br><span class="line">	* json现在多用于存储和交换文本信息的语法</span><br><span class="line">	* 进行数据的传输</span><br><span class="line">	* JSON 比 XML 更小、更快，更易解析。</span><br><span class="line"></span><br><span class="line">2. 语法：</span><br><span class="line">	1. 基本规则</span><br><span class="line">		* 数据在名称&#x2F;值对中：json数据是由键值对构成的</span><br><span class="line">			* 键用引号(单双都行)引起来，也可以不使用引号</span><br><span class="line">			* 值得取值类型：</span><br><span class="line">				1. 数字（整数或浮点数）</span><br><span class="line">				2. 字符串（在双引号中）</span><br><span class="line">				3. 逻辑值（true 或 false）</span><br><span class="line">				4. 数组（在方括号中）	&#123;&quot;persons&quot;:[&#123;&#125;,&#123;&#125;]&#125;</span><br><span class="line">				5. 对象（在花括号中） &#123;&quot;address&quot;:&#123;&quot;province&quot;：&quot;陕西&quot;....&#125;&#125;</span><br><span class="line">				6. null</span><br><span class="line">		* 数据由逗号分隔：多个键值对由逗号分隔</span><br><span class="line">		* 花括号保存对象：使用&#123;&#125;定义json 格式</span><br><span class="line">		* 方括号保存数组：[]</span><br><span class="line">	2. 获取数据:</span><br><span class="line">		1. json对象.键名</span><br><span class="line">		2. json对象[&quot;键名&quot;]</span><br><span class="line">		3. 数组对象[索引]</span><br><span class="line">		4. 遍历</span><br><span class="line">				 &#x2F;&#x2F;1.定义基本格式</span><br><span class="line">		        var person &#x3D; &#123;&quot;name&quot;: &quot;张三&quot;, age: 23, &#39;gender&#39;: true&#125;;</span><br><span class="line">		</span><br><span class="line">		        var ps &#x3D; [&#123;&quot;name&quot;: &quot;张三&quot;, &quot;age&quot;: 23, &quot;gender&quot;: true&#125;,</span><br><span class="line">		            &#123;&quot;name&quot;: &quot;李四&quot;, &quot;age&quot;: 24, &quot;gender&quot;: true&#125;,</span><br><span class="line">		            &#123;&quot;name&quot;: &quot;王五&quot;, &quot;age&quot;: 25, &quot;gender&quot;: false&#125;];</span><br><span class="line">		        &#x2F;&#x2F;获取person对象中所有的键和值</span><br><span class="line">		        &#x2F;&#x2F;for in 循环</span><br><span class="line">		       &#x2F;* for(var key in person)&#123;</span><br><span class="line">		            &#x2F;&#x2F;这样的方式获取不行。因为相当于  person.&quot;name&quot;</span><br><span class="line">		            &#x2F;&#x2F;alert(key + &quot;:&quot; + person.key);</span><br><span class="line">		            alert(key+&quot;:&quot;+person[key]);</span><br><span class="line">		        &#125;*&#x2F;</span><br><span class="line">		</span><br><span class="line">		       &#x2F;&#x2F;获取ps中的所有值</span><br><span class="line">		        for (var i &#x3D; 0; i &lt; ps.length; i++) &#123;</span><br><span class="line">		            var p &#x3D; ps[i];</span><br><span class="line">		            for(var key in p)&#123;</span><br><span class="line">		                alert(key+&quot;:&quot;+p[key]);</span><br><span class="line">		            &#125;</span><br><span class="line">		        &#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">3. JSON数据和Java对象的相互转换</span><br><span class="line"></span><br><span class="line">	* JSON解析器：</span><br><span class="line">		* 常见的解析器：Jsonlib，Gson，fastjson，jackson</span><br><span class="line">	</span><br><span class="line">	1. JSON转为Java对象</span><br><span class="line">		1. 导入jackson的相关jar包</span><br><span class="line">		2. 创建Jackson核心对象 ObjectMapper</span><br><span class="line">		3. 调用ObjectMapper的相关方法进行转换</span><br><span class="line">			1. readValue(json字符串数据,Class)</span><br><span class="line">	2. Java对象转换JSON</span><br><span class="line">		1. 使用步骤：</span><br><span class="line">			1. 导入jackson的相关jar包</span><br><span class="line">			2. 创建Jackson核心对象 ObjectMapper</span><br><span class="line">			3. 调用ObjectMapper的相关方法进行转换</span><br><span class="line">				1. 转换方法：</span><br><span class="line">					* writeValue(参数1，obj):</span><br><span class="line">	                    参数1：</span><br><span class="line">	                        File：将obj对象转换为JSON字符串，并保存到指定的文件中</span><br><span class="line">	                        Writer：将obj对象转换为JSON字符串，并将json数据填充到字符输出流中</span><br><span class="line">	                        OutputStream：将obj对象转换为JSON字符串，并将json数据填充到字节输出流中</span><br><span class="line">	                * writeValueAsString(obj):将对象转为json字符串</span><br><span class="line"></span><br><span class="line">				2. 注解：</span><br><span class="line">					1. @JsonIgnore：排除属性。</span><br><span class="line">					2. @JsonFormat：属性值得格式化</span><br><span class="line">						* @JsonFormat(pattern &#x3D; &quot;yyyy-MM-dd&quot;)</span><br><span class="line"></span><br><span class="line">				3. 复杂java对象转换</span><br><span class="line">					1. List：数组</span><br><span class="line">					2. Map：对象格式一致</span><br></pre></td></tr></table></figure>
-
-<h1 id="案例："><a href="#案例：" class="headerlink" title="案例："></a>案例：</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">* 校验用户名是否存在</span><br><span class="line">	1. 服务器响应的数据，在客户端使用时，要想当做json数据格式使用。有两种解决方案：</span><br><span class="line">		1. $.get(type):将最后一个参数type指定为&quot;json&quot;</span><br><span class="line">		2. 在服务器端设置MIME类型</span><br><span class="line">			response.setContentType(&quot;application&#x2F;json;charset&#x3D;utf-8&quot;);</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>Java学习笔记</category>
-        <category>Web</category>
       </categories>
   </entry>
   <entry>
@@ -5000,6 +4845,161 @@
       <categories>
         <category>Java学习笔记</category>
         <category>框架</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>黑阀使用方法</title>
+    <url>/2019/10/23/Server/Android/191023%E9%BB%91%E9%98%80%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/</url>
+    <content><![CDATA[<h3 id="1-安装"><a href="#1-安装" class="headerlink" title="1.安装"></a>1.安装</h3><p>&emsp;&emsp;手机安装“黑阀”APP，电脑下载并解压ADB工具。<br>ADB下载地址:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">https:&#x2F;&#x2F;developer.android.google.cn&#x2F;studio&#x2F;releases&#x2F;platform-tools#downloads</span><br></pre></td></tr></table></figure>
+
+<p>&emsp;&emsp;手机点击向导,在“使用”项目卡中点击“进入黑域”按钮,“开发者选项”打开手机的“USB调试”，手机会弹出一个小窗口点击“允许”按钮即可。</p>
+<a id="more"></a>
+
+<h3 id="2-查看命令"><a href="#2-查看命令" class="headerlink" title="2.查看命令"></a>2.查看命令</h3><p>&emsp;&emsp;打开电脑中ADB文件目录（进入platform-tools），在空白处按着键盘上的“shift键”然后点击鼠标的右键,点击“在此处打开命令窗口”项目,在弹出的命令窗口中输入下边命令，查看我们已经连接到电脑的手机</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">“.\adb devices”</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-授权命令"><a href="#3-授权命令" class="headerlink" title="3.授权命令"></a>3.授权命令</h3><p>&emsp;&emsp;待我们的设备列举出来后，输入下边命令,从而完成我们对黑域手机端的授权。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">“.\adb -d shell sh &#x2F;data&#x2F;data&#x2F;me.piebridge.brevent&#x2F;brevent.sh”</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+]]></content>
+      <categories>
+        <category>Server</category>
+        <category>Android</category>
+      </categories>
+      <tags>
+        <tag>黑阀</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>CentOS7设置防火墙</title>
+    <url>/2019/10/26/Server/Linux/191026CentOS7%E8%AE%BE%E7%BD%AE%E9%98%B2%E7%81%AB%E5%A2%99/</url>
+    <content><![CDATA[<h4 id="1-查看防火墙的状态的命令为："><a href="#1-查看防火墙的状态的命令为：" class="headerlink" title="1.查看防火墙的状态的命令为："></a>1.查看防火墙的状态的命令为：</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo systemctl status firewalld</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-打开防火墙的方式有两种"><a href="#2-打开防火墙的方式有两种" class="headerlink" title="2.打开防火墙的方式有两种:"></a>2.打开防火墙的方式有两种:</h4><h6 id="一种是打开后重启会恢复回原来的状态，命令为："><a href="#一种是打开后重启会恢复回原来的状态，命令为：" class="headerlink" title="一种是打开后重启会恢复回原来的状态，命令为："></a>一种是打开后重启会恢复回原来的状态，命令为：</h6><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo systemctl start firewalld；</span><br></pre></td></tr></table></figure>
+
+<h6 id="另一种是打开后重启不会恢复到原来的状态，命令为："><a href="#另一种是打开后重启不会恢复到原来的状态，命令为：" class="headerlink" title="另一种是打开后重启不会恢复到原来的状态，命令为："></a>另一种是打开后重启不会恢复到原来的状态，命令为：</h6><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo systemctl enable firewalld;</span><br></pre></td></tr></table></figure>
+
+<p>这种方式输入命令后要重启系统才会生效。</p>
+<a id="more"></a>
+
+<h4 id="3-关闭防火墙的方式也有两种"><a href="#3-关闭防火墙的方式也有两种" class="headerlink" title="3.关闭防火墙的方式也有两种:"></a>3.关闭防火墙的方式也有两种:</h4><h6 id="一种是打开后重启会恢复回原来的状态，命令为：-1"><a href="#一种是打开后重启会恢复回原来的状态，命令为：-1" class="headerlink" title="一种是打开后重启会恢复回原来的状态，命令为："></a>一种是打开后重启会恢复回原来的状态，命令为：</h6><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo systemctl stop firewalld;</span><br></pre></td></tr></table></figure>
+
+<h6 id="另一种是打开后重启不会恢复到原来的状态，命令为：-1"><a href="#另一种是打开后重启不会恢复到原来的状态，命令为：-1" class="headerlink" title="另一种是打开后重启不会恢复到原来的状态，命令为："></a>另一种是打开后重启不会恢复到原来的状态，命令为：</h6><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo systemctl disable firewalld;</span><br></pre></td></tr></table></figure>
+
+<p>这种方式输入命令后要重启系统才会生效。</p>
+<h4 id="4-开启某个特定的端口"><a href="#4-开启某个特定的端口" class="headerlink" title="4.开启某个特定的端口:"></a>4.开启某个特定的端口:</h4><p>例如下边代码是开放80端口:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">firewall-cmd --zone&#x3D;public --add-port&#x3D;80&#x2F;tcp --permanent;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+]]></content>
+      <categories>
+        <category>Server</category>
+        <category>Linux</category>
+        <category>CentOS7</category>
+      </categories>
+      <tags>
+        <tag>Linux Firewalld</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Debian允许root用户登录</title>
+    <url>/2019/11/11/Server/Linux/191111Debian%E5%85%81%E8%AE%B8root%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>Server</category>
+        <category>Linux</category>
+        <category>Debian9</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Linux添加root权限</title>
+    <url>/2019/11/16/Server/Linux/191116Linux%E6%B7%BB%E5%8A%A0root%E6%9D%83%E9%99%90/</url>
+    <content><![CDATA[<h3 id="1-添加用户"><a href="#1-添加用户" class="headerlink" title="1.添加用户"></a>1.添加用户</h3><ul>
+<li><p>使用adduser或者useradd添加一个名为ying的用户: <code>adduser ying</code></p>
+</li>
+<li><p>修改密码:输入 <code>passwd ying</code></p>
+</li>
+<li><p>会看到以下提示,按提示输入两次密码:</p>
+<p>Changing password for user ying.<br>New UNIX password:     //在这里输入新密码<br>Retype new UNIX password:  //再次输入新密码</p>
+<p>看到下边这行提示就说明添加成功了:</p>
+<p>passwd: all authentication tokens updated successfully.</p>
+<a id="more"></a>
+
+</li>
+</ul>
+<h3 id="2-删除用户"><a href="#2-删除用户" class="headerlink" title="2.删除用户"></a>2.删除用户</h3><p><code>userdel -r ying</code></p>
+<h3 id="3-给-ying赋予root权限"><a href="#3-给-ying赋予root权限" class="headerlink" title="3.给 ying赋予root权限"></a>3.给 ying赋予root权限</h3><h5 id="1-修改-etc-sudoers-文件，找到"><a href="#1-修改-etc-sudoers-文件，找到" class="headerlink" title="1.修改 /etc/sudoers 文件，找到:"></a>1.修改 /etc/sudoers 文件，找到:</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Allow root to run any commands anywhere</span><br><span class="line"></span><br><span class="line">root    ALL&#x3D;(ALL)     ALL</span><br></pre></td></tr></table></figure>
+
+<h5 id="2-在下边添加"><a href="#2-在下边添加" class="headerlink" title="2.在下边添加:"></a>2.在下边添加:</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ying    ALL&#x3D;(ALL)     ALL</span><br></pre></td></tr></table></figure>
+
+<p><img src="/2019/11/16/Server/Linux/191116Linux%E6%B7%BB%E5%8A%A0root%E6%9D%83%E9%99%90/root%E6%9D%83%E9%99%90.png"></p>
+<h5 id="3-添加完之后按ESC-输入以下命令强制保存并退出"><a href="#3-添加完之后按ESC-输入以下命令强制保存并退出" class="headerlink" title="3.添加完之后按ESC,输入以下命令强制保存并退出"></a>3.添加完之后按ESC,输入以下命令<strong>强制保存</strong>并退出</h5><p><code>:wq!</code></p>
+<p>必须<strong>强制</strong>保存退出,否则会报以下错误:</p>
+<p><img src="/2019/11/16/Server/Linux/191116Linux%E6%B7%BB%E5%8A%A0root%E6%9D%83%E9%99%90/%E4%BF%9D%E5%AD%98%E9%80%80%E5%87%BA%E6%8A%A5%E9%94%99.png"></p>
+<h5 id="4-输入sudo-i就可以切换到root角色"><a href="#4-输入sudo-i就可以切换到root角色" class="headerlink" title="4.输入sudo -i就可以切换到root角色"></a>4.输入<code>sudo -i</code>就可以切换到root角色</h5><p>查看自己所在组用以下命令: <code>id</code></p>
+<p><img src="/2019/11/16/Server/Linux/191116Linux%E6%B7%BB%E5%8A%A0root%E6%9D%83%E9%99%90/id.png"></p>
+<p>查看自己是否是管理员:whoami</p>
+<p><img src="/2019/11/16/Server/Linux/191116Linux%E6%B7%BB%E5%8A%A0root%E6%9D%83%E9%99%90/whoami.png"></p>
+]]></content>
+      <categories>
+        <category>Server</category>
+        <category>Linux</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Ubuntu设置root用户登录</title>
+    <url>/2019/12/02/Server/Linux/191202Ubuntu%E8%AE%BE%E7%BD%AEroot%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>Server</category>
+        <category>Linux</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>搭建个人VPN</title>
+    <url>/2019/11/10/Server/VPS/191110%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BAVPN/</url>
+    <content><![CDATA[<p>如何搭建属于自己的SS服务</p>
+<h3 id="1-准备"><a href="#1-准备" class="headerlink" title="1.准备:"></a>1.准备:</h3><p>&emsp;&emsp;首先要有自己的服务器(国外的),谷歌有免费使用一年活动,不限时间</p>
+<a id="more"></a>
+
+<h3 id="2-搭建"><a href="#2-搭建" class="headerlink" title="2.搭建"></a>2.搭建</h3><p>&emsp;&emsp;在VM实例页面，找到创建好的实例，点击后面的SSH，远程连接到该VPS服务器上。可以理解为在公司远程控制家里的电脑，只不过这里控制的是你的VPS服务器。</p>
+<p><img src="/2019/11/10/Server/VPS/191110%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BAVPN/1.SSH%E8%BF%9E%E6%8E%A5.png" alt="SSH连接"></p>
+<p>&emsp;&emsp;SSH连接成功后，依次输入下面命令：</p>
+<h5 id="1-获取管理员权限"><a href="#1-获取管理员权限" class="headerlink" title="1.获取管理员权限"></a>1.获取管理员权限</h5><p><code>sudo -i</code>  </p>
+<h5 id="2-安装SS服务"><a href="#2-安装SS服务" class="headerlink" title="2.安装SS服务"></a>2.安装SS服务</h5><p><code>wget --no-check-certificatehttps://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocksR.sh &amp;&amp; chmod +x shadowsocksR.sh </code>  </p>
+<h5 id="3-对SS进行配置"><a href="#3-对SS进行配置" class="headerlink" title="3.对SS进行配置"></a>3.对SS进行配置</h5><p><code>./shadowsocksR.sh</code>　</p>
+<h3 id="3-配置"><a href="#3-配置" class="headerlink" title="3.配置"></a>3.配置</h3><p>&emsp;&emsp;执行完步骤2中命令后，会进入下面的配置界面,提示的是设置SS密码，输入后回车；(输入密码的时候不显示,不是没输进去,只是不显示,默认密码为teddysun.com)</p>
+<p><img src="/2019/11/10/Server/VPS/191110%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BAVPN/2.%E8%AE%BE%E7%BD%AE%E5%AF%86%E7%A0%81.png" alt="设置密码"></p>
+<p>&emsp;&emsp;然后是设置SS端口，输入一个1-65536之间的数字后回车，我这里输入8080；(默认为9895)</p>
+<p><img src="/2019/11/10/Server/VPS/191110%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BAVPN/3.%E7%AB%AF%E5%8F%A3.png" alt="端口"></p>
+<p>&emsp;&emsp;加密方式选择aes-256-cfb,输入方式前的序号即可</p>
+<p><img src="/2019/11/10/Server/VPS/191110%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BAVPN/4.%E9%80%89%E6%8B%A9%E5%8A%A0%E5%AF%86%E6%96%B9%E5%BC%8F.png" alt="选择加密方式"></p>
+<p>&emsp;&emsp;剩下的其他配置一直按回车(选择默认方式)就行，直到出现下图所示账号信息就安装成功了,这个过程大概需要2分钟。</p>
+<p><img src="/2019/11/10/Server/VPS/191110%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BAVPN/5.%E6%90%AD%E5%BB%BA%E6%88%90%E5%8A%9F.png" alt="搭建成功"></p>
+<p>账号信息中需要用到的有:</p>
+<p>IP</p>
+<p>Port(端口)</p>
+<p>Password(密码)</p>
+<p>Encryption Method(加密方式)</p>
+<h3 id="4-防火墙设置"><a href="#4-防火墙设置" class="headerlink" title="4.防火墙设置"></a>4.防火墙设置</h3><p>　　由于防火墙的原因，现在你肯定还是连接不上去的，这里就需要设置防火墙。Debian 9的默认防火墙是允许所有端口访问的，但是它上面还有一层谷歌云的防火墙(阿里云管这个叫安全组),所以我们需要设置谷歌云的防火墙。在左侧菜单依次点击“VPC网络–防火墙规则”。</p>
+<p>&emsp;&emsp;进到防火墙规则页面，点击“创建防火墙规则”。设置防火墙规则时，有几个地方需要注意，目标修改为“网络中所有实例”，来源IP地址范围填写“0.0.0.0/0”，协议和端口勾选“指定的协议和端口”。勾选tcp,填入自己在第3步中设置的端口号,我设置的是8080,填入之后点击”创建”,防火墙设置就完成了。</p>
+<p><img src="/2019/11/10/Server/VPS/191110%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BAVPN/6.%E9%98%B2%E7%81%AB%E5%A2%99%E8%A7%84%E5%88%99.png" alt="防火墙规则"></p>
+<h3 id="5-配置Shadowsocks"><a href="#5-配置Shadowsocks" class="headerlink" title="5.配置Shadowsocks"></a>5.配置Shadowsocks</h3><p>&emsp;&emsp;最后在Shadowsocks客户端中配置自己的信息就可以开心的玩耍了</p>
+<p><img src="/2019/11/10/Server/VPS/191110%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BAVPN/7.SS.png" alt="SS"></p>
+]]></content>
+      <categories>
+        <category>Server</category>
+        <category>VPS</category>
       </categories>
   </entry>
   <entry>
@@ -12690,6 +12690,8 @@
 <li>实现方式：AMQP，JMS</li>
 <li>常见产品：activeMQ，zeroMQ，RabbitMQ，RocketMQ，kafka</li>
 </ul>
+<a id="more"></a>
+
 <h2 id="2-安装及配置RabbitMQ"><a href="#2-安装及配置RabbitMQ" class="headerlink" title="2. 安装及配置RabbitMQ"></a>2. 安装及配置RabbitMQ</h2><p><strong>目标</strong>：按照文档在本机安装windows版本RabbitMQ，并配置其用户和Virtual Hosts</p>
 <p><strong>分析</strong>：</p>
 <ol>
@@ -12917,7 +12919,7 @@
 <p><strong>小结</strong>：</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">graph LR;</span><br><span class="line">1[集中式架构] --&gt; 2[垂直拆分]</span><br><span class="line">2 --&gt; 3[分布式服务]</span><br><span class="line">3 --&gt; 4[SOA面向服务架构]</span><br><span class="line">4 --&gt; 5[微服务架构]</span><br></pre></td></tr></table></figure>
 
-
+<a id="more"></a>
 
 <h2 id="2-微服务架构说明"><a href="#2-微服务架构说明" class="headerlink" title="2. 微服务架构说明"></a>2. 微服务架构说明</h2><p><strong>目标</strong>：了解SOA与微服务架构的区别以及说出微服务架构的特点</p>
 <p><strong>分析</strong>：</p>
