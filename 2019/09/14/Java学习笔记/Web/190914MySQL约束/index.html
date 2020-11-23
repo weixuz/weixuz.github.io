@@ -1,0 +1,1244 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+  <link rel="manifest" href="/images/manifest.json">
+
+
+  <meta name="msapplication-config" content="/images/browserconfig.xml" />
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="约束123456789101112131415161718* 概念： 对表中的数据进行限定，保证数据的正确性、有效性和完整性。	* 分类：	1. 主键约束：primary key	2. 非空约束：not null	3. 唯一约束：unique	4. 外键约束：foreign key* 非空约束：not null，值不能为null	1. 创建表时添加约束		CREATE TABLE stu(			i">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MySQL约束">
+<meta property="og:url" content="http://yoursite.com/2019/09/14/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/Web/190914MySQL%E7%BA%A6%E6%9D%9F/index.html">
+<meta property="og:site_name" content="维旭的博客">
+<meta property="og:description" content="约束123456789101112131415161718* 概念： 对表中的数据进行限定，保证数据的正确性、有效性和完整性。	* 分类：	1. 主键约束：primary key	2. 非空约束：not null	3. 唯一约束：unique	4. 外键约束：foreign key* 非空约束：not null，值不能为null	1. 创建表时添加约束		CREATE TABLE stu(			i">
+<meta property="og:locale">
+<meta property="article:published_time" content="2019-09-14T06:30:04.000Z">
+<meta property="article:modified_time" content="2020-11-23T06:54:05.147Z">
+<meta property="article:author" content="维旭">
+<meta name="twitter:card" content="summary">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/09/14/Java学习笔记/Web/190914MySQL约束/"/>
+
+
+
+
+
+  <title>MySQL约束 | 维旭的博客</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">维旭的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/14/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/Web/190914MySQL%E7%BA%A6%E6%9D%9F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="维旭的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">MySQL约束</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-14T14:30:04+08:00">
+                2019-09-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index">
+                    <span itemprop="name">Java学习笔记</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/Web/" itemprop="url" rel="index">
+                    <span itemprop="name">Web</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="约束"><a href="#约束" class="headerlink" title="约束"></a>约束</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">* 概念： 对表中的数据进行限定，保证数据的正确性、有效性和完整性。	</span><br><span class="line">* 分类：</span><br><span class="line">	1. 主键约束：primary key</span><br><span class="line">	2. 非空约束：not null</span><br><span class="line">	3. 唯一约束：unique</span><br><span class="line">	4. 外键约束：foreign key</span><br><span class="line"></span><br><span class="line">* 非空约束：not null，值不能为null</span><br><span class="line">	1. 创建表时添加约束</span><br><span class="line">		CREATE TABLE stu(</span><br><span class="line">			id INT,</span><br><span class="line">			NAME VARCHAR(20) NOT NULL -- name为非空</span><br><span class="line">		);</span><br><span class="line">	2. 创建表完后，添加非空约束</span><br><span class="line">		ALTER TABLE stu MODIFY NAME VARCHAR(20) NOT NULL;</span><br><span class="line"></span><br><span class="line">	3. 删除name的非空约束</span><br><span class="line">		ALTER TABLE stu MODIFY NAME VARCHAR(20);</span><br></pre></td></tr></table></figure>
+
+<p>​    </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">* 唯一约束：unique，值不能重复</span><br><span class="line">	1. 创建表时，添加唯一约束</span><br><span class="line">		CREATE TABLE stu(</span><br><span class="line">			id INT,</span><br><span class="line">			phone_number VARCHAR(20) UNIQUE -- 添加了唯一约束</span><br><span class="line">		</span><br><span class="line">		);</span><br><span class="line">		* 注意mysql中，唯一约束限定的列的值可以有多个null</span><br></pre></td></tr></table></figure>
+
+<p>​        </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">	2. 删除唯一约束</span><br><span class="line">	</span><br><span class="line">		ALTER TABLE stu DROP INDEX phone_number;</span><br><span class="line">	</span><br><span class="line">	3. 在创建表后，添加唯一约束</span><br><span class="line">		ALTER TABLE stu MODIFY phone_number VARCHAR(20) UNIQUE;</span><br><span class="line"></span><br><span class="line">* 主键约束：primary key。</span><br><span class="line">	1. 注意：</span><br><span class="line">		1. 含义：非空且唯一</span><br><span class="line">		2. 一张表只能有一个字段为主键</span><br><span class="line">		3. 主键就是表中记录的唯一标识</span><br><span class="line"></span><br><span class="line">	2. 在创建表时，添加主键约束</span><br><span class="line">		create table stu(</span><br><span class="line">			id int primary key,-- 给id添加主键约束</span><br><span class="line">			name varchar(20)</span><br><span class="line">		);</span><br><span class="line"></span><br><span class="line">	3. 删除主键</span><br><span class="line">		-- 错误 alter table stu modify id int ;</span><br><span class="line">		ALTER TABLE stu DROP PRIMARY KEY;</span><br><span class="line"></span><br><span class="line">	4. 创建完表后，添加主键</span><br><span class="line">		ALTER TABLE stu MODIFY id INT PRIMARY KEY;</span><br><span class="line"></span><br><span class="line">	5. 自动增长：</span><br><span class="line">		1.  概念：如果某一列是数值类型的，使用 auto_increment 可以来完成值得自动增长</span><br><span class="line"></span><br><span class="line">		2. 在创建表时，添加主键约束，并且完成主键自增长</span><br><span class="line">		create table stu(</span><br><span class="line">			id int primary key auto_increment,-- 给id添加主键约束</span><br><span class="line">			name varchar(20)</span><br><span class="line">		);</span><br></pre></td></tr></table></figure>
+
+<p>​            </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">3. 删除自动增长</span><br><span class="line">ALTER TABLE stu MODIFY id INT;</span><br><span class="line">4. 添加自动增长</span><br><span class="line">ALTER TABLE stu MODIFY id INT AUTO_INCREMENT;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">* 外键约束：foreign key,让表于表产生关系，从而保证数据的正确性。</span><br><span class="line">	1. 在创建表时，可以添加外键</span><br><span class="line">		* 语法：</span><br><span class="line">			create table 表名(</span><br><span class="line">				....</span><br><span class="line">				外键列</span><br><span class="line">				constraint 外键名称 foreign key (外键列名称) references 主表名称(主表列名称)</span><br><span class="line">			);</span><br><span class="line"></span><br><span class="line">	2. 删除外键</span><br><span class="line">		ALTER TABLE 表名 DROP FOREIGN KEY 外键名称;</span><br><span class="line"></span><br><span class="line">	3. 创建表之后，添加外键</span><br><span class="line">		ALTER TABLE 表名 ADD CONSTRAINT 外键名称 FOREIGN KEY (外键字段名称) REFERENCES 主表名称(主表列名称);</span><br></pre></td></tr></table></figure>
+
+<p>​        </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">4. 级联操作</span><br><span class="line">	1. 添加级联操作</span><br><span class="line">		语法：ALTER TABLE 表名 ADD CONSTRAINT 外键名称 </span><br><span class="line">				FOREIGN KEY (外键字段名称) REFERENCES 主表名称(主表列名称) ON UPDATE CASCADE ON DELETE CASCADE  ;</span><br><span class="line">	2. 分类：</span><br><span class="line">		1. 级联更新：ON UPDATE CASCADE </span><br><span class="line">		2. 级联删除：ON DELETE CASCADE </span><br></pre></td></tr></table></figure>
+
+<h2 id="数据库的设计"><a href="#数据库的设计" class="headerlink" title="数据库的设计"></a>数据库的设计</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br></pre></td><td class="code"><pre><span class="line">1. 多表之间的关系</span><br><span class="line">	1. 分类：</span><br><span class="line">		1. 一对一(了解)：</span><br><span class="line">			* 如：人和身份证</span><br><span class="line">			* 分析：一个人只有一个身份证，一个身份证只能对应一个人</span><br><span class="line">		2. 一对多(多对一)：</span><br><span class="line">			* 如：部门和员工</span><br><span class="line">			* 分析：一个部门有多个员工，一个员工只能对应一个部门</span><br><span class="line">		3. 多对多：</span><br><span class="line">			* 如：学生和课程</span><br><span class="line">			* 分析：一个学生可以选择很多门课程，一个课程也可以被很多学生选择</span><br><span class="line">	2. 实现关系：</span><br><span class="line">		1. 一对多(多对一)：</span><br><span class="line">			* 如：部门和员工</span><br><span class="line">			* 实现方式：在多的一方建立外键，指向一的一方的主键。</span><br><span class="line">		2. 多对多：</span><br><span class="line">			* 如：学生和课程</span><br><span class="line">			* 实现方式：多对多关系实现需要借助第三张中间表。中间表至少包含两个字段，这两个字段作为第三张表的外键，分别指向两张表的主键</span><br><span class="line">		3. 一对一(了解)：</span><br><span class="line">			* 如：人和身份证</span><br><span class="line">			* 实现方式：一对一关系实现，可以在任意一方添加唯一外键指向另一方的主键。</span><br><span class="line"></span><br><span class="line">	3. 案例</span><br><span class="line">		-- 创建旅游线路分类表 tab_category</span><br><span class="line">		-- cid 旅游线路分类主键，自动增长</span><br><span class="line">		-- cname 旅游线路分类名称非空，唯一，字符串 100</span><br><span class="line">		CREATE TABLE tab_category (</span><br><span class="line">			cid INT PRIMARY KEY AUTO_INCREMENT,</span><br><span class="line">			cname VARCHAR(100) NOT NULL UNIQUE</span><br><span class="line">		);</span><br><span class="line">		</span><br><span class="line">		-- 创建旅游线路表 tab_route</span><br><span class="line">		&#x2F;*</span><br><span class="line">		rid 旅游线路主键，自动增长</span><br><span class="line">		rname 旅游线路名称非空，唯一，字符串 100</span><br><span class="line">		price 价格</span><br><span class="line">		rdate 上架时间，日期类型</span><br><span class="line">		cid 外键，所属分类</span><br><span class="line">		*&#x2F;</span><br><span class="line">		CREATE TABLE tab_route(</span><br><span class="line">			rid INT PRIMARY KEY AUTO_INCREMENT,</span><br><span class="line">			rname VARCHAR(100) NOT NULL UNIQUE,</span><br><span class="line">			price DOUBLE,</span><br><span class="line">			rdate DATE,</span><br><span class="line">			cid INT,</span><br><span class="line">			FOREIGN KEY (cid) REFERENCES tab_category(cid)</span><br><span class="line">		);</span><br><span class="line">		</span><br><span class="line">		&#x2F;*创建用户表 tab_user</span><br><span class="line">		uid 用户主键，自增长</span><br><span class="line">		username 用户名长度 100，唯一，非空</span><br><span class="line">		password 密码长度 30，非空</span><br><span class="line">		name 真实姓名长度 100</span><br><span class="line">		birthday 生日</span><br><span class="line">		sex 性别，定长字符串 1</span><br><span class="line">		telephone 手机号，字符串 11</span><br><span class="line">		email 邮箱，字符串长度 100</span><br><span class="line">		*&#x2F;</span><br><span class="line">		CREATE TABLE tab_user (</span><br><span class="line">			uid INT PRIMARY KEY AUTO_INCREMENT,</span><br><span class="line">			username VARCHAR(100) UNIQUE NOT NULL,</span><br><span class="line">			PASSWORD VARCHAR(30) NOT NULL,</span><br><span class="line">			NAME VARCHAR(100),</span><br><span class="line">			birthday DATE,</span><br><span class="line">			sex CHAR(1) DEFAULT &#39;男&#39;,</span><br><span class="line">			telephone VARCHAR(11),</span><br><span class="line">			email VARCHAR(100)</span><br><span class="line">		);</span><br><span class="line">		</span><br><span class="line">		&#x2F;*</span><br><span class="line">		创建收藏表 tab_favorite</span><br><span class="line">		rid 旅游线路 id，外键</span><br><span class="line">		date 收藏时间</span><br><span class="line">		uid 用户 id，外键</span><br><span class="line">		rid 和 uid 不能重复，设置复合主键，同一个用户不能收藏同一个线路两次</span><br><span class="line">		*&#x2F;</span><br><span class="line">		CREATE TABLE tab_favorite (</span><br><span class="line">			rid INT, -- 线路id</span><br><span class="line">			DATE DATETIME,</span><br><span class="line">			uid INT, -- 用户id</span><br><span class="line">			-- 创建复合主键</span><br><span class="line">			PRIMARY KEY(rid,uid), -- 联合主键</span><br><span class="line">			FOREIGN KEY (rid) REFERENCES tab_route(rid),</span><br><span class="line">			FOREIGN KEY(uid) REFERENCES tab_user(uid)</span><br><span class="line">		);</span><br></pre></td></tr></table></figure>
+
+<p>​        </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">2. 数据库设计的范式</span><br><span class="line">	* 概念：设计数据库时，需要遵循的一些规范。要遵循后边的范式要求，必须先遵循前边的所有范式要求</span><br><span class="line"></span><br><span class="line">		设计关系数据库时，遵从不同的规范要求，设计出合理的关系型数据库，这些不同的规范要求被称为不同的范式，各种范式呈递次规范，越高的范式数据库冗余越小。</span><br><span class="line">		目前关系数据库有六种范式：第一范式（1NF）、第二范式（2NF）、第三范式（3NF）、巴斯-科德范式（BCNF）、第四范式(4NF）和第五范式（5NF，又称完美范式）。</span><br><span class="line"></span><br><span class="line">	* 分类：</span><br><span class="line">		1. 第一范式（1NF）：每一列都是不可分割的原子数据项</span><br><span class="line">		2. 第二范式（2NF）：在1NF的基础上，非码属性必须完全依赖于码（在1NF基础上消除非主属性对主码的部分函数依赖）</span><br><span class="line">			* 几个概念：</span><br><span class="line">				1. 函数依赖：A--&gt;B,如果通过A属性(属性组)的值，可以确定唯一B属性的值。则称B依赖于A</span><br><span class="line">					例如：学号--&gt;姓名。  （学号，课程名称） --&gt; 分数</span><br><span class="line">				2. 完全函数依赖：A--&gt;B， 如果A是一个属性组，则B属性值得确定需要依赖于A属性组中所有的属性值。</span><br><span class="line">					例如：（学号，课程名称） --&gt; 分数</span><br><span class="line">				3. 部分函数依赖：A--&gt;B， 如果A是一个属性组，则B属性值得确定只需要依赖于A属性组中某一些值即可。</span><br><span class="line">					例如：（学号，课程名称） -- &gt; 姓名</span><br><span class="line">				4. 传递函数依赖：A--&gt;B, B -- &gt;C . 如果通过A属性(属性组)的值，可以确定唯一B属性的值，在通过B属性（属性组）的值可以确定唯一C属性的值，则称 C 传递函数依赖于A</span><br><span class="line">					例如：学号--&gt;系名，系名--&gt;系主任</span><br><span class="line">				5. 码：如果在一张表中，一个属性或属性组，被其他所有属性所完全依赖，则称这个属性(属性组)为该表的码</span><br><span class="line">					例如：该表中码为：（学号，课程名称）</span><br><span class="line">					* 主属性：码属性组中的所有属性</span><br><span class="line">					* 非主属性：除过码属性组的属性</span><br><span class="line">					</span><br><span class="line">		3. 第三范式（3NF）：在2NF基础上，任何非主属性不依赖于其它非主属性（在2NF基础上消除传递依赖）</span><br></pre></td></tr></table></figure>
+
+<h2 id="数据库的备份和还原"><a href="#数据库的备份和还原" class="headerlink" title="数据库的备份和还原"></a>数据库的备份和还原</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">1. 命令行：</span><br><span class="line">	* 语法：</span><br><span class="line">		* 备份： mysqldump -u用户名 -p密码 数据库名称 &gt; 保存的路径</span><br><span class="line">		* 还原：</span><br><span class="line">			1. 登录数据库</span><br><span class="line">			2. 创建数据库</span><br><span class="line">			3. 使用数据库</span><br><span class="line">			4. 执行文件。source 文件路径</span><br><span class="line">2. 图形化工具：</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br></pre></td><td class="code"><pre><span class="line">1.约束</span><br><span class="line">非空约束(重要!!!) ---&gt; not null</span><br><span class="line">	1.在创建表时添加</span><br><span class="line">		create table 表名(</span><br><span class="line">			列名 列的类型 not null</span><br><span class="line">		);</span><br><span class="line">	2.表创建完成之后添加非空约束</span><br><span class="line">		alter table 表名 modify 列名 数据类型 not null;</span><br><span class="line">		举例:</span><br><span class="line">			alter table student modify sname varchar(50) not null;</span><br><span class="line">	3.删除非空约束</span><br><span class="line">		alter table 表名 modify 列名 数据类型;</span><br><span class="line">		举例:</span><br><span class="line">			alter table student modify sname varchar(50);</span><br><span class="line">唯一约束(重要!!!) ---&gt;保证一列的值不能重复, 但是不包含null</span><br><span class="line">	1.在创建表的时候添加</span><br><span class="line">		create table 表名(</span><br><span class="line">			列名 列的类型 unique</span><br><span class="line">		);</span><br><span class="line">	2.表创建完成之后添加唯一约束</span><br><span class="line">		alter table 表名 modify 列名 数据类型 unique;</span><br><span class="line">	3.删除唯一约束</span><br><span class="line">		alter table 表名 drop index 列名;</span><br><span class="line">		</span><br><span class="line"></span><br><span class="line">主键约束(重要!!!)</span><br><span class="line">	是一条数据的唯一标识, 要求非空且唯一, 而且一张表只有一个主键,但是主键可以多个或者一个列组成</span><br><span class="line">	1.在创建表时添加</span><br><span class="line">	create table 表名(</span><br><span class="line">			列名 列的类型 primary key</span><br><span class="line">	);</span><br><span class="line">	2.表创建完成之后添加主键约束</span><br><span class="line">		alter table 表名 modify 列名 数据类型 primary key ;</span><br><span class="line">	3.删除主键</span><br><span class="line">		alter table 表名 drop primary key;</span><br><span class="line">	注意:</span><br><span class="line">		主键是每一条数据唯一标识</span><br><span class="line">		整数: </span><br><span class="line">			使用auto_increment,让主键自动增长(不适合企业开发)</span><br><span class="line">		字符串:</span><br><span class="line">			可以采用UUID.randomUUID() ---&gt;可以生成一个不会重复的字符串	</span><br><span class="line">外键约束(重要!!!)</span><br><span class="line">	作用:约束表和表之间的数据,保证数据的有效性和完整性</span><br><span class="line">	1.创建表时进行外键添加</span><br><span class="line">		create table 表名(</span><br><span class="line">				外键列名 列的类型,</span><br><span class="line">				[contraint 外键名] foreign key (外键列名) references 主表表名(主表的主键);</span><br><span class="line">		);</span><br><span class="line">	2.创建表时完成后进行外键添加</span><br><span class="line">		alter table 表名 add [contraint 外键名] foreign key (外键列名) reference 主表表名(主表的主键);</span><br><span class="line">	3.删除外键</span><br><span class="line">		alter table 表名 drop foreign key 外键名;</span><br><span class="line">	注意事项:</span><br><span class="line">		其实外键名可以有,可以没有,如果我们不给, 系统会自动生成一个, 外键名的唯一作用就是在删除外键时要用!!!!!</span><br><span class="line">	如何查询系统默认的给定的外键的名称:</span><br><span class="line">			show create table 表名</span><br><span class="line">	概念:</span><br><span class="line">		主表:被别的表关联的表,例如(分类表被商品表所关联,则分类表我们称为是商品表的&quot;主表&quot;) </span><br><span class="line">		从表:关联别的表的表, 我们成为从表(分类表被商品表所关联,则商品表我们称为是分类表的&quot;从表&quot;) </span><br><span class="line">级联操作:(慎用或者不用!!!!!!!)</span><br><span class="line">	ON UPDATE CASCADE  ----&gt;级联更新</span><br><span class="line">	ON DELETE CASCADE  ----&gt;级联删除</span><br><span class="line">2.数据库的设计</span><br><span class="line">表和表的关系</span><br><span class="line">	一对一:(了解)</span><br><span class="line">		丈夫和妻子</span><br><span class="line">		如何设计:</span><br><span class="line">			搞成一张表就行了</span><br><span class="line">			专业: 在任何一方创建唯一外键指向另外一方的主键</span><br><span class="line">	一对多:</span><br><span class="line">		母亲和孩子</span><br><span class="line">		如何设计:</span><br><span class="line">			在多的一方创建外键,关联一的一方的主键</span><br><span class="line">	多对多:</span><br><span class="line">		餐厅和菜谱</span><br><span class="line">		如何设计:</span><br><span class="line">			需要额外创建一个中间表,这个中间至少有两个字段, 分别作为外键关联主表的主键</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/09/13/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/Web/190913MySQL%E5%9F%BA%E7%A1%80/" rel="next" title="MySQL基础">
+                <i class="fa fa-chevron-left"></i> MySQL基础
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/09/15/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/Web/190915%E5%A4%9A%E8%A1%A8&%E4%BA%8B%E5%8A%A1/" rel="prev" title="多表&事务">
+                多表&事务 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="" />
+            
+              <p class="site-author-name" itemprop="name"></p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">85</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/weixuz" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                查阅链接
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.runoob.com/" title="菜鸟教程" target="_blank">菜鸟教程</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://jingzhunyun.com/" title="精准云工具" target="_blank">精准云工具</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.toolnb.com/" title="爱资料工具" target="_blank">爱资料工具</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.getitfree.cn/" title="正版中国" target="_blank">正版中国</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://bbs.pediy.com/" title="看雪安全论坛" target="_blank">看雪安全论坛</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://24mail.chacuo.net/" title="临时邮箱" target="_blank">临时邮箱</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.w3school.com.cn/" title="w3c在线教程" target="_blank">w3c在线教程</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://developer.mozilla.org/zh-CN/" title="MDN web文档" target="_blank">MDN web文档</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://cn.vuejs.org/v2/guide/" title="Vue.js在线教程" target="_blank">Vue.js在线教程</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.jq22.com/" title="jquery插件库" target="_blank">jquery插件库</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.htmleaf.com/" title="jquery之家" target="_blank">jquery之家</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.nowcoder.com/ta/coding-interviews" title="牛客网-剑指offer编程题" target="_blank">牛客网-剑指offer编程题</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://getbootstrap.com" title="bootstrap" target="_blank">bootstrap</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://v3.bootcss.com/components/" title="bootstrap中文" target="_blank">bootstrap中文</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://icomoon.io/" title="文字图标" target="_blank">文字图标</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BA%A6%E6%9D%9F"><span class="nav-text">约束</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E8%AE%BE%E8%AE%A1"><span class="nav-text">数据库的设计</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%A4%87%E4%BB%BD%E5%92%8C%E8%BF%98%E5%8E%9F"><span class="nav-text">数据库的备份和还原</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%BB%E7%BB%93%EF%BC%9A"><span class="nav-text">总结：</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2019 &mdash; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">weixuz</span>
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three-waves.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  	
+<!-- ҳ����С���� -->
+<script type="text/javascript" src="/js/src/clicklove.js"></script>
+</body>
+</html>

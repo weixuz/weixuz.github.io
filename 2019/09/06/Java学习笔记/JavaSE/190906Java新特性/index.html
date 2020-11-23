@@ -1,0 +1,1584 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+  <link rel="manifest" href="/images/manifest.json">
+
+
+  <meta name="msapplication-config" content="/images/browserconfig.xml" />
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="1.Lambda表达式1.1体验Lambda表达式【理解】 案例需求 启动一个线程，在控制台输出一句话：多线程程序启动了  实现方式一  实现步骤 定义一个类MyRunnable实现Runnable接口，重写run()方法 创建MyRunnable类的对象 创建Thread类的对象，把MyRunnable的对象作为构造参数传递 启动线程     实现方式二  匿名内部类的方式改进   实现方式三">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java新特性">
+<meta property="og:url" content="http://yoursite.com/2019/09/06/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/JavaSE/190906Java%E6%96%B0%E7%89%B9%E6%80%A7/index.html">
+<meta property="og:site_name" content="维旭的博客">
+<meta property="og:description" content="1.Lambda表达式1.1体验Lambda表达式【理解】 案例需求 启动一个线程，在控制台输出一句话：多线程程序启动了  实现方式一  实现步骤 定义一个类MyRunnable实现Runnable接口，重写run()方法 创建MyRunnable类的对象 创建Thread类的对象，把MyRunnable的对象作为构造参数传递 启动线程     实现方式二  匿名内部类的方式改进   实现方式三">
+<meta property="og:locale">
+<meta property="article:published_time" content="2019-09-06T10:18:09.000Z">
+<meta property="article:modified_time" content="2020-11-23T06:12:40.928Z">
+<meta property="article:author" content="维旭">
+<meta name="twitter:card" content="summary">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/09/06/Java学习笔记/JavaSE/190906Java新特性/"/>
+
+
+
+
+
+  <title>Java新特性 | 维旭的博客</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">维旭的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/06/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/JavaSE/190906Java%E6%96%B0%E7%89%B9%E6%80%A7/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="维旭的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Java新特性</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-06T18:18:09+08:00">
+                2019-09-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index">
+                    <span itemprop="name">Java学习笔记</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/JavaSE/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaSE</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="1-Lambda表达式"><a href="#1-Lambda表达式" class="headerlink" title="1.Lambda表达式"></a>1.Lambda表达式</h2><h3 id="1-1体验Lambda表达式【理解】"><a href="#1-1体验Lambda表达式【理解】" class="headerlink" title="1.1体验Lambda表达式【理解】"></a>1.1体验Lambda表达式【理解】</h3><ul>
+<li><p>案例需求</p>
+<p>启动一个线程，在控制台输出一句话：多线程程序启动了</p>
+</li>
+<li><p>实现方式一</p>
+<ul>
+<li>实现步骤<ul>
+<li>定义一个类MyRunnable实现Runnable接口，重写run()方法</li>
+<li>创建MyRunnable类的对象</li>
+<li>创建Thread类的对象，把MyRunnable的对象作为构造参数传递</li>
+<li>启动线程</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>实现方式二</p>
+<ul>
+<li>匿名内部类的方式改进</li>
+</ul>
+</li>
+<li><p>实现方式三</p>
+<ul>
+<li>Lambda表达式的方式改进</li>
+</ul>
+</li>
+<li><p>代码演示</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//方式一的线程类</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyRunnable</span> <span class="keyword">implements</span> <span class="title">Runnable</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;多线程程序启动了&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">LambdaDemo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//方式一</span></span><br><span class="line"><span class="comment">//        MyRunnable my = new MyRunnable();</span></span><br><span class="line"><span class="comment">//        Thread t = new Thread(my);</span></span><br><span class="line"><span class="comment">//        t.start();</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">//方式二</span></span><br><span class="line"><span class="comment">//        new Thread(new Runnable() &#123;</span></span><br><span class="line"><span class="comment">//            @Override</span></span><br><span class="line"><span class="comment">//            public void run() &#123;</span></span><br><span class="line"><span class="comment">//                System.out.println(&quot;多线程程序启动了&quot;);</span></span><br><span class="line"><span class="comment">//            &#125;</span></span><br><span class="line"><span class="comment">//        &#125;).start();</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">//方式三</span></span><br><span class="line">        <span class="keyword">new</span> Thread( () -&gt; &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;多线程程序启动了&quot;</span>);</span><br><span class="line">        &#125; ).start();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>函数式编程思想概述</p>
+<p>函数式思想则尽量忽略面向对象的复杂语法：“强调做什么，而不是以什么形式去做”</p>
+<p>而我们要学习的Lambda表达式就是函数式思想的体现</p>
+</li>
+</ul>
+<h3 id="1-2Lambda表达式的标准格式【理解】"><a href="#1-2Lambda表达式的标准格式【理解】" class="headerlink" title="1.2Lambda表达式的标准格式【理解】"></a>1.2Lambda表达式的标准格式【理解】</h3><ul>
+<li><p>格式：</p>
+<p>​    (形式参数) -&gt; {代码块}</p>
+<ul>
+<li>形式参数：如果有多个参数，参数之间用逗号隔开；如果没有参数，留空即可</li>
+<li>-&gt;：由英文中画线和大于符号组成，固定写法。代表指向动作</li>
+<li>代码块：是我们具体要做的事情，也就是以前我们写的方法体内容</li>
+</ul>
+</li>
+<li><p>组成Lambda表达式的三要素：</p>
+<ul>
+<li>形式参数，箭头，代码块</li>
+</ul>
+</li>
+</ul>
+<h3 id="1-3Lambda表达式练习1【应用】"><a href="#1-3Lambda表达式练习1【应用】" class="headerlink" title="1.3Lambda表达式练习1【应用】"></a>1.3Lambda表达式练习1【应用】</h3><ul>
+<li><p>Lambda表达式的使用前提</p>
+<ul>
+<li>有一个接口</li>
+<li>接口中有且仅有一个抽象方法</li>
+</ul>
+</li>
+<li><p>练习描述</p>
+<p>​    无参无返回值抽象方法的练习</p>
+</li>
+<li><p>操作步骤</p>
+<ul>
+<li>定义一个接口(Eatable)，里面定义一个抽象方法：void eat();</li>
+<li>定义一个测试类(EatableDemo)，在测试类中提供两个方法<ul>
+<li>一个方法是：useEatable(Eatable e)</li>
+<li>一个方法是主方法，在主方法中调用useEatable方法</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>示例代码</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//接口</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Eatable</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">eat</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//实现类</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">EatableImpl</span> <span class="keyword">implements</span> <span class="title">Eatable</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">eat</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;一天一苹果，医生远离我&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//测试类</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">EatableDemo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//在主方法中调用useEatable方法</span></span><br><span class="line">        Eatable e = <span class="keyword">new</span> EatableImpl();</span><br><span class="line">        useEatable(e);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//匿名内部类</span></span><br><span class="line">        useEatable(<span class="keyword">new</span> Eatable() &#123;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">eat</span><span class="params">()</span> </span>&#123;</span><br><span class="line">                System.out.println(<span class="string">&quot;一天一苹果，医生远离我&quot;</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//Lambda表达式</span></span><br><span class="line">        useEatable(() -&gt; &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;一天一苹果，医生远离我&quot;</span>);</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">useEatable</span><span class="params">(Eatable e)</span> </span>&#123;</span><br><span class="line">        e.eat();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="1-4Lambda表达式练习2【应用】"><a href="#1-4Lambda表达式练习2【应用】" class="headerlink" title="1.4Lambda表达式练习2【应用】"></a>1.4Lambda表达式练习2【应用】</h3><ul>
+<li><p>练习描述</p>
+<p>有参无返回值抽象方法的练习</p>
+</li>
+<li><p>操作步骤</p>
+<ul>
+<li>定义一个接口(Flyable)，里面定义一个抽象方法：void fly(String s);</li>
+<li>定义一个测试类(FlyableDemo)，在测试类中提供两个方法<ul>
+<li>一个方法是：useFlyable(Flyable f)</li>
+<li>一个方法是主方法，在主方法中调用useFlyable方法</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>示例代码</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Flyable</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">fly</span><span class="params">(String s)</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">FlyableDemo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//在主方法中调用useFlyable方法</span></span><br><span class="line">        <span class="comment">//匿名内部类</span></span><br><span class="line">        useFlyable(<span class="keyword">new</span> Flyable() &#123;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">fly</span><span class="params">(String s)</span> </span>&#123;</span><br><span class="line">                System.out.println(s);</span><br><span class="line">                System.out.println(<span class="string">&quot;飞机自驾游&quot;</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">        System.out.println(<span class="string">&quot;--------&quot;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//Lambda</span></span><br><span class="line">        useFlyable((String s) -&gt; &#123;</span><br><span class="line">            System.out.println(s);</span><br><span class="line">            System.out.println(<span class="string">&quot;飞机自驾游&quot;</span>);</span><br><span class="line">        &#125;);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">useFlyable</span><span class="params">(Flyable f)</span> </span>&#123;</span><br><span class="line">        f.fly(<span class="string">&quot;风和日丽，晴空万里&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="1-5Lambda表达式练习3【应用】"><a href="#1-5Lambda表达式练习3【应用】" class="headerlink" title="1.5Lambda表达式练习3【应用】"></a>1.5Lambda表达式练习3【应用】</h3><ul>
+<li><p>练习描述</p>
+<p>有参有返回值抽象方法的练习</p>
+</li>
+<li><p>操作步骤</p>
+<ul>
+<li>定义一个接口(Addable)，里面定义一个抽象方法：int add(int x,int y);</li>
+<li>定义一个测试类(AddableDemo)，在测试类中提供两个方法<ul>
+<li>一个方法是：useAddable(Addable a)</li>
+<li>一个方法是主方法，在主方法中调用useAddable方法</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>示例代码</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Addable</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> y)</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AddableDemo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//在主方法中调用useAddable方法</span></span><br><span class="line">        useAddable((<span class="keyword">int</span> x,<span class="keyword">int</span> y) -&gt; &#123;</span><br><span class="line">            <span class="keyword">return</span> x + y;</span><br><span class="line">        &#125;);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">useAddable</span><span class="params">(Addable a)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> sum = a.add(<span class="number">10</span>, <span class="number">20</span>);</span><br><span class="line">        System.out.println(sum);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="1-6Lambda表达式的省略模式【应用】"><a href="#1-6Lambda表达式的省略模式【应用】" class="headerlink" title="1.6Lambda表达式的省略模式【应用】"></a>1.6Lambda表达式的省略模式【应用】</h3><ul>
+<li><p>省略的规则</p>
+<ul>
+<li>参数类型可以省略。但是有多个参数的情况下，不能只省略一个</li>
+<li>如果参数有且仅有一个，那么小括号可以省略</li>
+<li>如果代码块的语句只有一条，可以省略大括号和分号，和return关键字</li>
+</ul>
+</li>
+<li><p>代码演示</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Addable</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Flyable</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">fly</span><span class="params">(String s)</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">LambdaDemo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"><span class="comment">//        useAddable((int x,int y) -&gt; &#123;</span></span><br><span class="line"><span class="comment">//            return x + y;</span></span><br><span class="line"><span class="comment">//        &#125;);</span></span><br><span class="line">        <span class="comment">//参数的类型可以省略</span></span><br><span class="line">        useAddable((x, y) -&gt; &#123;</span><br><span class="line">            <span class="keyword">return</span> x + y;</span><br><span class="line">        &#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">//        useFlyable((String s) -&gt; &#123;</span></span><br><span class="line"><span class="comment">//            System.out.println(s);</span></span><br><span class="line"><span class="comment">//        &#125;);</span></span><br><span class="line">        <span class="comment">//如果参数有且仅有一个，那么小括号可以省略</span></span><br><span class="line"><span class="comment">//        useFlyable(s -&gt; &#123;</span></span><br><span class="line"><span class="comment">//            System.out.println(s);</span></span><br><span class="line"><span class="comment">//        &#125;);</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">//如果代码块的语句只有一条，可以省略大括号和分号</span></span><br><span class="line">        useFlyable(s -&gt; System.out.println(s));</span><br><span class="line"></span><br><span class="line">        <span class="comment">//如果代码块的语句只有一条，可以省略大括号和分号，如果有return，return也要省略掉</span></span><br><span class="line">        useAddable((x, y) -&gt; x + y);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">useFlyable</span><span class="params">(Flyable f)</span> </span>&#123;</span><br><span class="line">        f.fly(<span class="string">&quot;风和日丽，晴空万里&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">useAddable</span><span class="params">(Addable a)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> sum = a.add(<span class="number">10</span>, <span class="number">20</span>);</span><br><span class="line">        System.out.println(sum);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="1-7Lambda表达式的注意事项【理解】"><a href="#1-7Lambda表达式的注意事项【理解】" class="headerlink" title="1.7Lambda表达式的注意事项【理解】"></a>1.7Lambda表达式的注意事项【理解】</h3><ul>
+<li><p>使用Lambda必须要有接口，并且要求接口中有且仅有一个抽象方法</p>
+</li>
+<li><p>必须有上下文环境，才能推导出Lambda对应的接口</p>
+<ul>
+<li><p>根据局部变量的赋值得知Lambda对应的接口</p>
+<p>​    Runnable r = () -&gt; System.out.println(“Lambda表达式”);</p>
+</li>
+<li><p>根据调用方法的参数得知Lambda对应的接口</p>
+<p>​    new Thread(() -&gt; System.out.println(“Lambda表达式”)).start();</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="1-8Lambda表达式和匿名内部类的区别【理解】"><a href="#1-8Lambda表达式和匿名内部类的区别【理解】" class="headerlink" title="1.8Lambda表达式和匿名内部类的区别【理解】"></a>1.8Lambda表达式和匿名内部类的区别【理解】</h3><ul>
+<li>所需类型不同<ul>
+<li>匿名内部类：可以是接口，也可以是抽象类，还可以是具体类</li>
+<li>Lambda表达式：只能是接口</li>
+</ul>
+</li>
+<li>使用限制不同<ul>
+<li>如果接口中有且仅有一个抽象方法，可以使用Lambda表达式，也可以使用匿名内部类</li>
+<li>如果接口中多于一个抽象方法，只能使用匿名内部类，而不能使用Lambda表达式</li>
+</ul>
+</li>
+<li>实现原理不同<ul>
+<li>匿名内部类：编译之后，产生一个单独的.class字节码文件</li>
+<li>Lambda表达式：编译之后，没有一个单独的.class字节码文件。对应的字节码会在运行的时候动态生成</li>
+</ul>
+</li>
+</ul>
+<h2 id="2-接口组成更新"><a href="#2-接口组成更新" class="headerlink" title="2.接口组成更新"></a>2.接口组成更新</h2><h3 id="2-1接口组成更新概述【理解】"><a href="#2-1接口组成更新概述【理解】" class="headerlink" title="2.1接口组成更新概述【理解】"></a>2.1接口组成更新概述【理解】</h3><ul>
+<li><p>常量</p>
+<p>public static final</p>
+</li>
+<li><p>抽象方法</p>
+<p>public abstract</p>
+</li>
+<li><p>默认方法(Java 8)</p>
+</li>
+<li><p>静态方法(Java 8)</p>
+</li>
+<li><p>私有方法(Java 9)</p>
+</li>
+</ul>
+<h3 id="2-2接口中默认方法【应用】"><a href="#2-2接口中默认方法【应用】" class="headerlink" title="2.2接口中默认方法【应用】"></a>2.2接口中默认方法【应用】</h3><ul>
+<li><p>格式</p>
+<p>public default 返回值类型 方法名(参数列表) {   }</p>
+</li>
+<li><p>范例</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">default</span> <span class="keyword">void</span> <span class="title">show3</span><span class="params">()</span> </span>&#123; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>注意事项</p>
+<ul>
+<li>默认方法不是抽象方法，所以不强制被重写。但是可以被重写，重写的时候去掉default关键字</li>
+<li>public可以省略，default不能省略</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-3接口中静态方法【应用】"><a href="#2-3接口中静态方法【应用】" class="headerlink" title="2.3接口中静态方法【应用】"></a>2.3接口中静态方法【应用】</h3><ul>
+<li><p>格式</p>
+<p>public static 返回值类型 方法名(参数列表) {   }</p>
+</li>
+<li><p>范例</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">show</span><span class="params">()</span> </span>&#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>注意事项</p>
+<ul>
+<li>静态方法只能通过接口名调用，不能通过实现类名或者对象名调用</li>
+<li>public可以省略，static不能省略</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-4接口中私有方法【应用】"><a href="#2-4接口中私有方法【应用】" class="headerlink" title="2.4接口中私有方法【应用】"></a>2.4接口中私有方法【应用】</h3><ul>
+<li><p>私有方法产生原因</p>
+<p>Java 9中新增了带方法体的私有方法，这其实在Java 8中就埋下了伏笔：Java 8允许在接口中定义带方法体的默认方法和静态方法。这样可能就会引发一个问题：当两个默认方法或者静态方法中包含一段相同的代码实现时，程序必然考虑将这段实现代码抽取成一个共性方法，而这个共性方法是不需要让别人使用的，因此用私有给隐藏起来，这就是Java 9增加私有方法的必然性</p>
+</li>
+<li><p>定义格式</p>
+<ul>
+<li><p>格式1</p>
+<p>private 返回值类型 方法名(参数列表) {   }</p>
+</li>
+<li><p>范例1</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">show</span><span class="params">()</span> </span>&#123;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>格式2</p>
+<p>private static 返回值类型 方法名(参数列表) {   }</p>
+</li>
+<li><p>范例2</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">method</span><span class="params">()</span> </span>&#123;  </span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>注意事项</p>
+<ul>
+<li>默认方法可以调用私有的静态方法和非静态方法</li>
+<li>静态方法只能调用私有的静态方法</li>
+</ul>
+</li>
+</ul>
+<h2 id="3-方法引用"><a href="#3-方法引用" class="headerlink" title="3.方法引用"></a>3.方法引用</h2><h3 id="3-1体验方法引用【理解】"><a href="#3-1体验方法引用【理解】" class="headerlink" title="3.1体验方法引用【理解】"></a>3.1体验方法引用【理解】</h3><ul>
+<li><p>方法引用的出现原因</p>
+<p>在使用Lambda表达式的时候，我们实际上传递进去的代码就是一种解决方案：拿参数做操作</p>
+<p>那么考虑一种情况：如果我们在Lambda中所指定的操作方案，已经有地方存在相同方案，那是否还有必要再写重复逻辑呢？答案肯定是没有必要</p>
+<p>那我们又是如何使用已经存在的方案的呢？</p>
+<p>这就是我们要讲解的方法引用，我们是通过方法引用来使用已经存在的方案</p>
+</li>
+<li><p>代码演示</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Printable</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">printString</span><span class="params">(String s)</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">PrintableDemo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//在主方法中调用usePrintable方法</span></span><br><span class="line"><span class="comment">//        usePrintable((String s) -&gt; &#123;</span></span><br><span class="line"><span class="comment">//            System.out.println(s);</span></span><br><span class="line"><span class="comment">//        &#125;);</span></span><br><span class="line">	    <span class="comment">//Lambda简化写法</span></span><br><span class="line">        usePrintable(s -&gt; System.out.println(s));</span><br><span class="line"></span><br><span class="line">        <span class="comment">//方法引用</span></span><br><span class="line">        usePrintable(System.out::println);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">usePrintable</span><span class="params">(Printable p)</span> </span>&#123;</span><br><span class="line">        p.printString(<span class="string">&quot;爱生活爱Java&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="3-2方法引用符【理解】"><a href="#3-2方法引用符【理解】" class="headerlink" title="3.2方法引用符【理解】"></a>3.2方法引用符【理解】</h3><ul>
+<li><p>方法引用符</p>
+<p>::  该符号为引用运算符，而它所在的表达式被称为方法引用</p>
+</li>
+<li><p>推导与省略</p>
+<ul>
+<li>如果使用Lambda，那么根据“可推导就是可省略”的原则，无需指定参数类型，也无需指定的重载形式，它们都将被自动推导</li>
+<li>如果使用方法引用，也是同样可以根据上下文进行推导</li>
+<li>方法引用是Lambda的孪生兄弟</li>
+</ul>
+</li>
+</ul>
+<h3 id="3-3引用类方法【应用】"><a href="#3-3引用类方法【应用】" class="headerlink" title="3.3引用类方法【应用】"></a>3.3引用类方法【应用】</h3><p>​    引用类方法，其实就是引用类的静态方法</p>
+<ul>
+<li><p>格式</p>
+<p>类名::静态方法</p>
+</li>
+<li><p>范例</p>
+<p>Integer::parseInt</p>
+<p>Integer类的方法：public static int parseInt(String s) 将此String转换为int类型数据</p>
+</li>
+<li><p>练习描述</p>
+<ul>
+<li>定义一个接口(Converter)，里面定义一个抽象方法 int convert(String s);</li>
+<li>定义一个测试类(ConverterDemo)，在测试类中提供两个方法<ul>
+<li>一个方法是：useConverter(Converter c)</li>
+<li>一个方法是主方法，在主方法中调用useConverter方法</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>代码演示</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Converter</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">convert</span><span class="params">(String s)</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ConverterDemo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">		<span class="comment">//Lambda写法</span></span><br><span class="line">        useConverter(s -&gt; Integer.parseInt(s));</span><br><span class="line"></span><br><span class="line">        <span class="comment">//引用类方法</span></span><br><span class="line">        useConverter(Integer::parseInt);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">useConverter</span><span class="params">(Converter c)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> number = c.convert(<span class="string">&quot;666&quot;</span>);</span><br><span class="line">        System.out.println(number);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用说明</p>
+<p>Lambda表达式被类方法替代的时候，它的形式参数全部传递给静态方法作为参数</p>
+</li>
+</ul>
+<h3 id="3-4引用对象的实例方法【应用】"><a href="#3-4引用对象的实例方法【应用】" class="headerlink" title="3.4引用对象的实例方法【应用】"></a>3.4引用对象的实例方法【应用】</h3><p>​    引用对象的实例方法，其实就引用类中的成员方法</p>
+<ul>
+<li><p>格式</p>
+<p>对象::成员方法</p>
+</li>
+<li><p>范例</p>
+<p>“HelloWorld”::toUpperCase</p>
+<p>  String类中的方法：public String toUpperCase() 将此String所有字符转换为大写</p>
+</li>
+<li><p>练习描述</p>
+<ul>
+<li><p>定义一个类(PrintString)，里面定义一个方法</p>
+<p>public void printUpper(String s)：把字符串参数变成大写的数据，然后在控制台输出</p>
+</li>
+<li><p>定义一个接口(Printer)，里面定义一个抽象方法</p>
+<p>void printUpperCase(String s)</p>
+</li>
+<li><p>定义一个测试类(PrinterDemo)，在测试类中提供两个方法</p>
+<ul>
+<li>一个方法是：usePrinter(Printer p)</li>
+<li>一个方法是主方法，在主方法中调用usePrinter方法</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>代码演示</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">PrintString</span> </span>&#123;</span><br><span class="line">    <span class="comment">//把字符串参数变成大写的数据，然后在控制台输出</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">printUpper</span><span class="params">(String s)</span> </span>&#123;</span><br><span class="line">        String result = s.toUpperCase();</span><br><span class="line">        System.out.println(result);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Printer</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">printUpperCase</span><span class="params">(String s)</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">PrinterDemo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">		<span class="comment">//Lambda简化写法</span></span><br><span class="line">        usePrinter(s -&gt; System.out.println(s.toUpperCase()));</span><br><span class="line"></span><br><span class="line">        <span class="comment">//引用对象的实例方法</span></span><br><span class="line">        PrintString ps = <span class="keyword">new</span> PrintString();</span><br><span class="line">        usePrinter(ps::printUpper);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">usePrinter</span><span class="params">(Printer p)</span> </span>&#123;</span><br><span class="line">        p.printUpperCase(<span class="string">&quot;HelloWorld&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用说明</p>
+<p>Lambda表达式被对象的实例方法替代的时候，它的形式参数全部传递给该方法作为参数</p>
+</li>
+</ul>
+<h3 id="3-5引用类的实例方法【应用】"><a href="#3-5引用类的实例方法【应用】" class="headerlink" title="3.5引用类的实例方法【应用】"></a>3.5引用类的实例方法【应用】</h3><p>​    引用类的实例方法，其实就是引用类中的成员方法</p>
+<ul>
+<li><p>格式</p>
+<p>类名::成员方法</p>
+</li>
+<li><p>范例</p>
+<p>String::substring</p>
+<p>public String substring(int beginIndex,int endIndex) </p>
+<p>从beginIndex开始到endIndex结束，截取字符串。返回一个子串，子串的长度为endIndex-beginIndex</p>
+</li>
+<li><p>练习描述</p>
+<ul>
+<li><p>定义一个接口(MyString)，里面定义一个抽象方法：</p>
+<p>String mySubString(String s,int x,int y);</p>
+</li>
+<li><p>定义一个测试类(MyStringDemo)，在测试类中提供两个方法</p>
+<ul>
+<li>一个方法是：useMyString(MyString my)</li>
+<li>一个方法是主方法，在主方法中调用useMyString方法</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>代码演示</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">MyString</span> </span>&#123;</span><br><span class="line">    <span class="function">String <span class="title">mySubString</span><span class="params">(String s,<span class="keyword">int</span> x,<span class="keyword">int</span> y)</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyStringDemo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="comment">//Lambda简化写法</span></span><br><span class="line">        useMyString((s,x,y) -&gt; s.substring(x,y));</span><br><span class="line"></span><br><span class="line">        <span class="comment">//引用类的实例方法</span></span><br><span class="line">        useMyString(String::substring);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">useMyString</span><span class="params">(MyString my)</span> </span>&#123;</span><br><span class="line">        String s = my.mySubString(<span class="string">&quot;HelloWorld&quot;</span>, <span class="number">2</span>, <span class="number">5</span>);</span><br><span class="line">        System.out.println(s);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用说明</p>
+<p>​    Lambda表达式被类的实例方法替代的时候<br>​    第一个参数作为调用者<br>​    后面的参数全部传递给该方法作为参数</p>
+</li>
+</ul>
+<h3 id="3-6引用构造器【应用】"><a href="#3-6引用构造器【应用】" class="headerlink" title="3.6引用构造器【应用】"></a>3.6引用构造器【应用】</h3><p>​    引用构造器，其实就是引用构造方法</p>
+<ul>
+<li><p>l格式</p>
+<p>类名::new</p>
+</li>
+<li><p>范例</p>
+<p>Student::new</p>
+</li>
+<li><p>练习描述</p>
+<ul>
+<li><p>定义一个类(Student)，里面有两个成员变量(name,age)</p>
+<p>并提供无参构造方法和带参构造方法，以及成员变量对应的get和set方法</p>
+</li>
+<li><p>定义一个接口(StudentBuilder)，里面定义一个抽象方法</p>
+<p>Student build(String name,int age);</p>
+</li>
+<li><p>定义一个测试类(StudentDemo)，在测试类中提供两个方法</p>
+<ul>
+<li>一个方法是：useStudentBuilder(StudentBuilder s)</li>
+<li>一个方法是主方法，在主方法中调用useStudentBuilder方法</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>代码演示</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Student</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> age;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Student</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Student</span><span class="params">(String name, <span class="keyword">int</span> age)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">        <span class="keyword">this</span>.age = age;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setName</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getAge</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> age;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setAge</span><span class="params">(<span class="keyword">int</span> age)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.age = age;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">StudentBuilder</span> </span>&#123;</span><br><span class="line">    <span class="function">Student <span class="title">build</span><span class="params">(String name,<span class="keyword">int</span> age)</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">StudentDemo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">		<span class="comment">//Lambda简化写法</span></span><br><span class="line">        useStudentBuilder((name,age) -&gt; <span class="keyword">new</span> Student(name,age));</span><br><span class="line"></span><br><span class="line">        <span class="comment">//引用构造器</span></span><br><span class="line">        useStudentBuilder(Student::<span class="keyword">new</span>);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">useStudentBuilder</span><span class="params">(StudentBuilder sb)</span> </span>&#123;</span><br><span class="line">        Student s = sb.build(<span class="string">&quot;林青霞&quot;</span>, <span class="number">30</span>);</span><br><span class="line">        System.out.println(s.getName() + <span class="string">&quot;,&quot;</span> + s.getAge());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用说明</p>
+<p>Lambda表达式被构造器替代的时候，它的形式参数全部传递给构造器作为参数</p>
+</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/09/05/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/JavaSE/190905%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/" rel="next" title="网络编程">
+                <i class="fa fa-chevron-left"></i> 网络编程
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/09/09/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/JavaSE/190909%E5%87%BD%E6%95%B0%E5%BC%8F%E6%8E%A5%E5%8F%A3-Stream%E6%B5%81/" rel="prev" title="函数式接口&Stream流">
+                函数式接口&Stream流 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="" />
+            
+              <p class="site-author-name" itemprop="name"></p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">85</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/weixuz" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                查阅链接
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.runoob.com/" title="菜鸟教程" target="_blank">菜鸟教程</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://jingzhunyun.com/" title="精准云工具" target="_blank">精准云工具</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.toolnb.com/" title="爱资料工具" target="_blank">爱资料工具</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.getitfree.cn/" title="正版中国" target="_blank">正版中国</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://bbs.pediy.com/" title="看雪安全论坛" target="_blank">看雪安全论坛</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://24mail.chacuo.net/" title="临时邮箱" target="_blank">临时邮箱</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.w3school.com.cn/" title="w3c在线教程" target="_blank">w3c在线教程</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://developer.mozilla.org/zh-CN/" title="MDN web文档" target="_blank">MDN web文档</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://cn.vuejs.org/v2/guide/" title="Vue.js在线教程" target="_blank">Vue.js在线教程</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.jq22.com/" title="jquery插件库" target="_blank">jquery插件库</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.htmleaf.com/" title="jquery之家" target="_blank">jquery之家</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.nowcoder.com/ta/coding-interviews" title="牛客网-剑指offer编程题" target="_blank">牛客网-剑指offer编程题</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://getbootstrap.com" title="bootstrap" target="_blank">bootstrap</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://v3.bootcss.com/components/" title="bootstrap中文" target="_blank">bootstrap中文</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://icomoon.io/" title="文字图标" target="_blank">文字图标</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-Lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="nav-text">1.Lambda表达式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1%E4%BD%93%E9%AA%8CLambda%E8%A1%A8%E8%BE%BE%E5%BC%8F%E3%80%90%E7%90%86%E8%A7%A3%E3%80%91"><span class="nav-text">1.1体验Lambda表达式【理解】</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2Lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%9A%84%E6%A0%87%E5%87%86%E6%A0%BC%E5%BC%8F%E3%80%90%E7%90%86%E8%A7%A3%E3%80%91"><span class="nav-text">1.2Lambda表达式的标准格式【理解】</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3Lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%BB%83%E4%B9%A01%E3%80%90%E5%BA%94%E7%94%A8%E3%80%91"><span class="nav-text">1.3Lambda表达式练习1【应用】</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-4Lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%BB%83%E4%B9%A02%E3%80%90%E5%BA%94%E7%94%A8%E3%80%91"><span class="nav-text">1.4Lambda表达式练习2【应用】</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-5Lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%BB%83%E4%B9%A03%E3%80%90%E5%BA%94%E7%94%A8%E3%80%91"><span class="nav-text">1.5Lambda表达式练习3【应用】</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-6Lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%9A%84%E7%9C%81%E7%95%A5%E6%A8%A1%E5%BC%8F%E3%80%90%E5%BA%94%E7%94%A8%E3%80%91"><span class="nav-text">1.6Lambda表达式的省略模式【应用】</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-7Lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%9A%84%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9%E3%80%90%E7%90%86%E8%A7%A3%E3%80%91"><span class="nav-text">1.7Lambda表达式的注意事项【理解】</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-8Lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%92%8C%E5%8C%BF%E5%90%8D%E5%86%85%E9%83%A8%E7%B1%BB%E7%9A%84%E5%8C%BA%E5%88%AB%E3%80%90%E7%90%86%E8%A7%A3%E3%80%91"><span class="nav-text">1.8Lambda表达式和匿名内部类的区别【理解】</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E6%8E%A5%E5%8F%A3%E7%BB%84%E6%88%90%E6%9B%B4%E6%96%B0"><span class="nav-text">2.接口组成更新</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1%E6%8E%A5%E5%8F%A3%E7%BB%84%E6%88%90%E6%9B%B4%E6%96%B0%E6%A6%82%E8%BF%B0%E3%80%90%E7%90%86%E8%A7%A3%E3%80%91"><span class="nav-text">2.1接口组成更新概述【理解】</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2%E6%8E%A5%E5%8F%A3%E4%B8%AD%E9%BB%98%E8%AE%A4%E6%96%B9%E6%B3%95%E3%80%90%E5%BA%94%E7%94%A8%E3%80%91"><span class="nav-text">2.2接口中默认方法【应用】</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3%E6%8E%A5%E5%8F%A3%E4%B8%AD%E9%9D%99%E6%80%81%E6%96%B9%E6%B3%95%E3%80%90%E5%BA%94%E7%94%A8%E3%80%91"><span class="nav-text">2.3接口中静态方法【应用】</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-4%E6%8E%A5%E5%8F%A3%E4%B8%AD%E7%A7%81%E6%9C%89%E6%96%B9%E6%B3%95%E3%80%90%E5%BA%94%E7%94%A8%E3%80%91"><span class="nav-text">2.4接口中私有方法【应用】</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E6%96%B9%E6%B3%95%E5%BC%95%E7%94%A8"><span class="nav-text">3.方法引用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1%E4%BD%93%E9%AA%8C%E6%96%B9%E6%B3%95%E5%BC%95%E7%94%A8%E3%80%90%E7%90%86%E8%A7%A3%E3%80%91"><span class="nav-text">3.1体验方法引用【理解】</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2%E6%96%B9%E6%B3%95%E5%BC%95%E7%94%A8%E7%AC%A6%E3%80%90%E7%90%86%E8%A7%A3%E3%80%91"><span class="nav-text">3.2方法引用符【理解】</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-3%E5%BC%95%E7%94%A8%E7%B1%BB%E6%96%B9%E6%B3%95%E3%80%90%E5%BA%94%E7%94%A8%E3%80%91"><span class="nav-text">3.3引用类方法【应用】</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-4%E5%BC%95%E7%94%A8%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%AE%9E%E4%BE%8B%E6%96%B9%E6%B3%95%E3%80%90%E5%BA%94%E7%94%A8%E3%80%91"><span class="nav-text">3.4引用对象的实例方法【应用】</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-5%E5%BC%95%E7%94%A8%E7%B1%BB%E7%9A%84%E5%AE%9E%E4%BE%8B%E6%96%B9%E6%B3%95%E3%80%90%E5%BA%94%E7%94%A8%E3%80%91"><span class="nav-text">3.5引用类的实例方法【应用】</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-6%E5%BC%95%E7%94%A8%E6%9E%84%E9%80%A0%E5%99%A8%E3%80%90%E5%BA%94%E7%94%A8%E3%80%91"><span class="nav-text">3.6引用构造器【应用】</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2019 &mdash; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">weixuz</span>
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three-waves.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  	
+<!-- ҳ����С���� -->
+<script type="text/javascript" src="/js/src/clicklove.js"></script>
+</body>
+</html>

@@ -1,0 +1,1255 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+  <link rel="manifest" href="/images/manifest.json">
+
+
+  <meta name="msapplication-config" content="/images/browserconfig.xml" />
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="数据库的基本概念12345671. 数据库的英文单词： DataBase 简称 ： DB2. 什么是数据库？	* 用于存储和管理数据的仓库。3. 数据库的特点：	1. 持久化存储数据的。其实数据库就是一个文件系统	2. 方便存储和管理数据	3. 使用了统一的方式操作数据库 -- SQL  MySQL数据库软件123456789101112131415161718192021222324252627">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MySQL基础">
+<meta property="og:url" content="http://yoursite.com/2019/09/13/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/Web/190913MySQL%E5%9F%BA%E7%A1%80/index.html">
+<meta property="og:site_name" content="维旭的博客">
+<meta property="og:description" content="数据库的基本概念12345671. 数据库的英文单词： DataBase 简称 ： DB2. 什么是数据库？	* 用于存储和管理数据的仓库。3. 数据库的特点：	1. 持久化存储数据的。其实数据库就是一个文件系统	2. 方便存储和管理数据	3. 使用了统一的方式操作数据库 -- SQL  MySQL数据库软件123456789101112131415161718192021222324252627">
+<meta property="og:locale">
+<meta property="article:published_time" content="2019-09-13T06:27:21.000Z">
+<meta property="article:modified_time" content="2020-11-23T06:51:27.423Z">
+<meta property="article:author" content="维旭">
+<meta name="twitter:card" content="summary">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/09/13/Java学习笔记/Web/190913MySQL基础/"/>
+
+
+
+
+
+  <title>MySQL基础 | 维旭的博客</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">维旭的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/13/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/Web/190913MySQL%E5%9F%BA%E7%A1%80/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="维旭的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">MySQL基础</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-13T14:27:21+08:00">
+                2019-09-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index">
+                    <span itemprop="name">Java学习笔记</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/Web/" itemprop="url" rel="index">
+                    <span itemprop="name">Web</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="数据库的基本概念"><a href="#数据库的基本概念" class="headerlink" title="数据库的基本概念"></a>数据库的基本概念</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">1. 数据库的英文单词： DataBase 简称 ： DB</span><br><span class="line">2. 什么是数据库？</span><br><span class="line">	* 用于存储和管理数据的仓库。</span><br><span class="line">3. 数据库的特点：</span><br><span class="line">	1. 持久化存储数据的。其实数据库就是一个文件系统</span><br><span class="line">	2. 方便存储和管理数据</span><br><span class="line">	3. 使用了统一的方式操作数据库 -- SQL</span><br></pre></td></tr></table></figure>
+
+<h1 id="MySQL数据库软件"><a href="#MySQL数据库软件" class="headerlink" title="MySQL数据库软件"></a>MySQL数据库软件</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">1. 安装</span><br><span class="line">	* 参见《MySQL基础.pdf》</span><br><span class="line">2. 卸载</span><br><span class="line">	1. 去mysql的安装目录找到my.ini文件</span><br><span class="line">		* 复制 datadir&#x3D;&quot;C:&#x2F;ProgramData&#x2F;MySQL&#x2F;MySQL Server 5.5&#x2F;Data&#x2F;&quot;</span><br><span class="line">	2. 卸载MySQL</span><br><span class="line">	3. 删除C:&#x2F;ProgramData目录下的MySQL文件夹。</span><br><span class="line">	</span><br><span class="line">3. 配置</span><br><span class="line">	* MySQL服务启动</span><br><span class="line">		1. 手动。</span><br><span class="line">		2. cmd--&gt; services.msc 打开服务的窗口</span><br><span class="line">		3. 使用管理员打开cmd</span><br><span class="line">			* net start mysql : 启动mysql的服务</span><br><span class="line">			* net stop mysql:关闭mysql服务</span><br><span class="line">	* MySQL登录</span><br><span class="line">		1. mysql -uroot -p密码</span><br><span class="line">		2. mysql -hip -uroot -p连接目标的密码</span><br><span class="line">		3. mysql --host&#x3D;ip --user&#x3D;root --password&#x3D;连接目标的密码</span><br><span class="line">	* MySQL退出</span><br><span class="line">		1. exit</span><br><span class="line">		2. quit</span><br><span class="line"></span><br><span class="line">	* MySQL目录结构</span><br><span class="line">		1. MySQL安装目录：basedir&#x3D;&quot;D:&#x2F;develop&#x2F;MySQL&#x2F;&quot;</span><br><span class="line">			* 配置文件 my.ini</span><br><span class="line">		2. MySQL数据目录：datadir&#x3D;&quot;C:&#x2F;ProgramData&#x2F;MySQL&#x2F;MySQL Server 5.5&#x2F;Data&#x2F;&quot;</span><br><span class="line">			* 几个概念</span><br><span class="line">				* 数据库：文件夹</span><br><span class="line">				* 表：文件</span><br><span class="line">				* 数据：数据</span><br></pre></td></tr></table></figure>
+
+<h1 id="SQL"><a href="#SQL" class="headerlink" title="SQL"></a>SQL</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">1.什么是SQL？</span><br><span class="line">	Structured Query Language：结构化查询语言</span><br><span class="line">	其实就是定义了操作所有关系型数据库的规则。每一种数据库操作的方式存在不一样的地方，称为“方言”。</span><br><span class="line">	</span><br><span class="line">2.SQL通用语法</span><br><span class="line">	1. SQL 语句可以单行或多行书写，以分号结尾。</span><br><span class="line">	2. 可使用空格和缩进来增强语句的可读性。</span><br><span class="line">	3. MySQL 数据库的 SQL 语句不区分大小写，关键字建议使用大写。</span><br><span class="line">	4. 3 种注释</span><br><span class="line">		* 单行注释: -- 注释内容 或 # 注释内容(mysql 特有) </span><br><span class="line">		* 多行注释: &#x2F;* 注释 *&#x2F;</span><br><span class="line">	</span><br><span class="line">3. SQL分类</span><br><span class="line">	1) DDL(Data Definition Language)数据定义语言</span><br><span class="line">		用来定义数据库对象：数据库，表，列等。关键字：create, drop,alter 等</span><br><span class="line">	2) DML(Data Manipulation Language)数据操作语言</span><br><span class="line">		用来对数据库中表的数据进行增删改。关键字：insert, delete, update 等</span><br><span class="line">	3) DQL(Data Query Language)数据查询语言</span><br><span class="line">		用来查询数据库中表的记录(数据)。关键字：select, where 等</span><br><span class="line">	4) DCL(Data Control Language)数据控制语言(了解)</span><br><span class="line">		用来定义数据库的访问权限和安全级别，及创建用户。关键字：GRANT， REVOKE 等</span><br></pre></td></tr></table></figure>
+
+<h2 id="DDL-操作数据库、表"><a href="#DDL-操作数据库、表" class="headerlink" title="DDL:操作数据库、表"></a>DDL:操作数据库、表</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">1. 操作数据库：CRUD</span><br><span class="line">	1. C(Create):创建</span><br><span class="line">		* 创建数据库：</span><br><span class="line">			* create database 数据库名称;</span><br><span class="line">		* 创建数据库，判断不存在，再创建：</span><br><span class="line">			* create database if not exists 数据库名称;</span><br><span class="line">		* 创建数据库，并指定字符集</span><br><span class="line">			* create database 数据库名称 character set 字符集名;</span><br><span class="line"></span><br><span class="line">		* 练习： 创建db4数据库，判断是否存在，并制定字符集为gbk</span><br><span class="line">			* create database if not exists db4 character set gbk;</span><br><span class="line">	2. R(Retrieve)：查询</span><br><span class="line">		* 查询所有数据库的名称:</span><br><span class="line">			* show databases;</span><br><span class="line">		* 查询某个数据库的字符集:查询某个数据库的创建语句</span><br><span class="line">			* show create database 数据库名称;</span><br><span class="line">	3. U(Update):修改</span><br><span class="line">		* 修改数据库的字符集</span><br><span class="line">			* alter database 数据库名称 character set 字符集名称;</span><br><span class="line">	4. D(Delete):删除</span><br><span class="line">		* 删除数据库</span><br><span class="line">			* drop database 数据库名称;</span><br><span class="line">		* 判断数据库存在，存在再删除</span><br><span class="line">			* drop database if exists 数据库名称;</span><br><span class="line">	5. 使用数据库</span><br><span class="line">		* 查询当前正在使用的数据库名称</span><br><span class="line">			* select database();</span><br><span class="line">		* 使用数据库</span><br><span class="line">			* use 数据库名称;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">2. 操作表</span><br><span class="line">	1. C(Create):创建</span><br><span class="line">		1. 语法：</span><br><span class="line">			create table 表名(</span><br><span class="line">				列名1 数据类型1,</span><br><span class="line">				列名2 数据类型2,</span><br><span class="line">				....</span><br><span class="line">				列名n 数据类型n</span><br><span class="line">			);</span><br><span class="line">			* 注意：最后一列，不需要加逗号（,）</span><br><span class="line">			* 数据库类型：</span><br><span class="line">				1. int：整数类型</span><br><span class="line">					* age int,</span><br><span class="line">				2. double:小数类型</span><br><span class="line">					* score double(5,2)</span><br><span class="line">				3. date:日期，只包含年月日，yyyy-MM-dd</span><br><span class="line">				4. datetime:日期，包含年月日时分秒	 yyyy-MM-dd HH:mm:ss</span><br><span class="line">				5. timestamp:时间错类型	包含年月日时分秒	 yyyy-MM-dd HH:mm:ss	</span><br><span class="line">					* 如果将来不给这个字段赋值，或赋值为null，则默认使用当前的系统时间，来自动赋值</span><br><span class="line"></span><br><span class="line">				6. varchar：字符串</span><br><span class="line">					* name varchar(20):姓名最大20个字符</span><br><span class="line">					* zhangsan 8个字符  张三 2个字符</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">	* 创建表</span><br><span class="line">		create table student(</span><br><span class="line">			id int,</span><br><span class="line">			name varchar(32),</span><br><span class="line">			age int ,</span><br><span class="line">			score double(4,1),</span><br><span class="line">			birthday date,</span><br><span class="line">			insert_time timestamp</span><br><span class="line">		);</span><br><span class="line">	* 复制表：</span><br><span class="line">		* create table 表名 like 被复制的表名;	  	</span><br><span class="line">2. R(Retrieve)：查询</span><br><span class="line">	* 查询某个数据库中所有的表名称</span><br><span class="line">		* show tables;</span><br><span class="line">	* 查询表结构</span><br><span class="line">		* desc 表名;</span><br><span class="line">3. U(Update):修改</span><br><span class="line">	1. 修改表名</span><br><span class="line">		alter table 表名 rename to 新的表名;</span><br><span class="line">	2. 修改表的字符集</span><br><span class="line">		alter table 表名 character set 字符集名称;</span><br><span class="line">	3. 添加一列</span><br><span class="line">		alter table 表名 add 列名 数据类型;</span><br><span class="line">	4. 修改列名称 类型</span><br><span class="line">		alter table 表名 change 列名 新列别 新数据类型;</span><br><span class="line">		alter table 表名 modify 列名 新数据类型;</span><br><span class="line">	5. 删除列</span><br><span class="line">		alter table 表名 drop 列名;</span><br><span class="line">4. D(Delete):删除</span><br><span class="line">	* drop table 表名;</span><br><span class="line">	* drop table  if exists 表名 ;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>客户端图形化工具：SQLYog</li>
+</ul>
+<h2 id="DML：增删改表中数据"><a href="#DML：增删改表中数据" class="headerlink" title="DML：增删改表中数据"></a>DML：增删改表中数据</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">1. 添加数据：</span><br><span class="line">	* 语法：</span><br><span class="line">		* insert into 表名(列名1,列名2,...列名n) values(值1,值2,...值n);</span><br><span class="line">	* 注意：</span><br><span class="line">		1. 列名和值要一一对应。</span><br><span class="line">		2. 如果表名后，不定义列名，则默认给所有列添加值</span><br><span class="line">			insert into 表名 values(值1,值2,...值n);</span><br><span class="line">		3. 除了数字类型，其他类型需要使用引号(单双都可以)引起来</span><br><span class="line">2. 删除数据：</span><br><span class="line">	* 语法：</span><br><span class="line">		* delete from 表名 [where 条件]</span><br><span class="line">	* 注意：</span><br><span class="line">		1. 如果不加条件，则删除表中所有记录。</span><br><span class="line">		2. 如果要删除所有记录</span><br><span class="line">			1. delete from 表名; -- 不推荐使用。有多少条记录就会执行多少次删除操作</span><br><span class="line">			2. TRUNCATE TABLE 表名; -- 推荐使用，效率更高 先删除表，然后再创建一张一样的表。</span><br><span class="line">3. 修改数据：</span><br><span class="line">	* 语法：</span><br><span class="line">		* update 表名 set 列名1 &#x3D; 值1, 列名2 &#x3D; 值2,... [where 条件];</span><br><span class="line"></span><br><span class="line">	* 注意：</span><br><span class="line">		1. 如果不加任何条件，则会将表中所有记录全部修改。</span><br></pre></td></tr></table></figure>
+
+<h2 id="DQL：查询表中的记录"><a href="#DQL：查询表中的记录" class="headerlink" title="DQL：查询表中的记录"></a>DQL：查询表中的记录</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">* select * from 表名;</span><br><span class="line"></span><br><span class="line">1. 语法：</span><br><span class="line">	select</span><br><span class="line">		字段列表</span><br><span class="line">	from</span><br><span class="line">		表名列表</span><br><span class="line">	where</span><br><span class="line">		条件列表</span><br><span class="line">	group by</span><br><span class="line">		分组字段</span><br><span class="line">	having</span><br><span class="line">		分组之后的条件</span><br><span class="line">	order by</span><br><span class="line">		排序</span><br><span class="line">	limit</span><br><span class="line">		分页限定</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">2. 基础查询</span><br><span class="line">	1. 多个字段的查询</span><br><span class="line">		select 字段名1，字段名2... from 表名；</span><br><span class="line">		* 注意：</span><br><span class="line">			* 如果查询所有字段，则可以使用*来替代字段列表。</span><br><span class="line">	2. 去除重复：</span><br><span class="line">		* distinct</span><br><span class="line">	3. 计算列</span><br><span class="line">		* 一般可以使用四则运算计算一些列的值。（一般只会进行数值型的计算）</span><br><span class="line">		* ifnull(表达式1,表达式2)：null参与的运算，计算结果都为null</span><br><span class="line">			* 表达式1：哪个字段需要判断是否为null</span><br><span class="line">			* 如果该字段为null后的替换值。</span><br><span class="line">	4. 起别名：</span><br><span class="line">		* as：as也可以省略</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">3. 条件查询</span><br><span class="line">	1. where子句后跟条件</span><br><span class="line">	2. 运算符</span><br><span class="line">		* &gt; 、&lt; 、&lt;&#x3D; 、&gt;&#x3D; 、&#x3D; 、&lt;&gt;</span><br><span class="line">		* BETWEEN...AND  </span><br><span class="line">		* IN( 集合) </span><br><span class="line">		* LIKE：模糊查询</span><br><span class="line">			* 占位符：</span><br><span class="line">				* _:单个任意字符</span><br><span class="line">				* %：多个任意字符</span><br><span class="line">		* IS NULL  </span><br><span class="line">		* and  或 &amp;&amp;</span><br><span class="line">		* or  或 || </span><br><span class="line">		* not  或 !</span><br><span class="line">		</span><br><span class="line">			-- 查询年龄大于20岁</span><br><span class="line"></span><br><span class="line">			SELECT * FROM student WHERE age &gt; 20;</span><br><span class="line">			</span><br><span class="line">			SELECT * FROM student WHERE age &gt;&#x3D; 20;</span><br><span class="line">			</span><br><span class="line">			-- 查询年龄等于20岁</span><br><span class="line">			SELECT * FROM student WHERE age &#x3D; 20;</span><br><span class="line">			</span><br><span class="line">			-- 查询年龄不等于20岁</span><br><span class="line">			SELECT * FROM student WHERE age !&#x3D; 20;</span><br><span class="line">			SELECT * FROM student WHERE age &lt;&gt; 20;</span><br><span class="line">			</span><br><span class="line">			-- 查询年龄大于等于20 小于等于30</span><br><span class="line">			</span><br><span class="line">			SELECT * FROM student WHERE age &gt;&#x3D; 20 &amp;&amp;  age &lt;&#x3D;30;</span><br><span class="line">			SELECT * FROM student WHERE age &gt;&#x3D; 20 AND  age &lt;&#x3D;30;</span><br><span class="line">			SELECT * FROM student WHERE age BETWEEN 20 AND 30;</span><br><span class="line">			</span><br><span class="line">			-- 查询年龄22岁，18岁，25岁的信息</span><br><span class="line">			SELECT * FROM student WHERE age &#x3D; 22 OR age &#x3D; 18 OR age &#x3D; 25</span><br><span class="line">			SELECT * FROM student WHERE age IN (22,18,25);</span><br><span class="line">			</span><br><span class="line">			-- 查询英语成绩为null</span><br><span class="line">			SELECT * FROM student WHERE english &#x3D; NULL; -- 不对的。null值不能使用 &#x3D; （!&#x3D;） 判断</span><br><span class="line">			</span><br><span class="line">			SELECT * FROM student WHERE english IS NULL;</span><br><span class="line">			</span><br><span class="line">			-- 查询英语成绩不为null</span><br><span class="line">			SELECT * FROM student WHERE english  IS NOT NULL;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">-- 查询姓马的有哪些？ like</span><br><span class="line">SELECT * FROM student WHERE NAME LIKE &#39;马%&#39;;</span><br><span class="line">-- 查询姓名第二个字是化的人</span><br><span class="line"></span><br><span class="line">SELECT * FROM student WHERE NAME LIKE &quot;_化%&quot;;</span><br><span class="line"></span><br><span class="line">-- 查询姓名是3个字的人</span><br><span class="line">SELECT * FROM student WHERE NAME LIKE &#39;___&#39;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">-- 查询姓名中包含德的人</span><br><span class="line">SELECT * FROM student WHERE NAME LIKE &#39;%德%&#39;;</span><br></pre></td></tr></table></figure>
+
+<h1 id="DQL-查询语句"><a href="#DQL-查询语句" class="headerlink" title="DQL:查询语句"></a>DQL:查询语句</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">1. 排序查询</span><br><span class="line">	* 语法：order by 子句</span><br><span class="line">		* order by 排序字段1 排序方式1 ，  排序字段2 排序方式2...</span><br><span class="line"></span><br><span class="line">	* 排序方式：</span><br><span class="line">		* ASC：升序，默认的。</span><br><span class="line">		* DESC：降序。</span><br><span class="line"></span><br><span class="line">	* 注意：</span><br><span class="line">		* 如果有多个排序条件，则当前边的条件值一样时，才会判断第二条件。</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">2. 聚合函数：将一列数据作为一个整体，进行纵向的计算。</span><br><span class="line">	1. count：计算个数</span><br><span class="line">		1. 一般选择非空的列：主键</span><br><span class="line">		2. count(*)</span><br><span class="line">	2. max：计算最大值</span><br><span class="line">	3. min：计算最小值</span><br><span class="line">	4. sum：计算和</span><br><span class="line">	5. avg：计算平均值</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">	* 注意：聚合函数的计算，排除null值。</span><br><span class="line">		解决方案：</span><br><span class="line">			1. 选择不包含非空的列进行计算</span><br><span class="line">			2. IFNULL函数</span><br><span class="line"></span><br><span class="line">3. 分组查询:</span><br><span class="line">	1. 语法：group by 分组字段；</span><br><span class="line">	2. 注意：</span><br><span class="line">		1. 分组之后查询的字段：分组字段、聚合函数</span><br><span class="line">		2. where 和 having 的区别？</span><br><span class="line">			1. where 在分组之前进行限定，如果不满足条件，则不参与分组。having在分组之后进行限定，如果不满足结果，则不会被查询出来</span><br><span class="line">			2. where 后不可以跟聚合函数，having可以进行聚合函数的判断。</span><br><span class="line"></span><br><span class="line">		-- 按照性别分组。分别查询男、女同学的平均分</span><br><span class="line"></span><br><span class="line">		SELECT sex , AVG(math) FROM student GROUP BY sex;</span><br><span class="line">		</span><br><span class="line">		-- 按照性别分组。分别查询男、女同学的平均分,人数</span><br><span class="line">		</span><br><span class="line">		SELECT sex , AVG(math),COUNT(id) FROM student GROUP BY sex;</span><br><span class="line">		</span><br><span class="line">		--  按照性别分组。分别查询男、女同学的平均分,人数 要求：分数低于70分的人，不参与分组</span><br><span class="line">		SELECT sex , AVG(math),COUNT(id) FROM student WHERE math &gt; 70 GROUP BY sex;</span><br><span class="line">		</span><br><span class="line">		--  按照性别分组。分别查询男、女同学的平均分,人数 要求：分数低于70分的人，不参与分组,分组之后。人数要大于2个人</span><br><span class="line">		SELECT sex , AVG(math),COUNT(id) FROM student WHERE math &gt; 70 GROUP BY sex HAVING COUNT(id) &gt; 2;</span><br><span class="line">		</span><br><span class="line">		SELECT sex , AVG(math),COUNT(id) 人数 FROM student WHERE math &gt; 70 GROUP BY sex HAVING 人数 &gt; 2;</span><br></pre></td></tr></table></figure>
+
+<p>​            </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">4. 分页查询</span><br><span class="line">	1. 语法：limit 开始的索引,每页查询的条数;</span><br><span class="line">	2. 公式：开始的索引 &#x3D; （当前的页码 - 1） * 每页显示的条数</span><br><span class="line">		-- 每页显示3条记录 </span><br><span class="line"></span><br><span class="line">		SELECT * FROM student LIMIT 0,3; -- 第1页</span><br><span class="line">		</span><br><span class="line">		SELECT * FROM student LIMIT 3,3; -- 第2页</span><br><span class="line">		</span><br><span class="line">		SELECT * FROM student LIMIT 6,3; -- 第3页</span><br><span class="line"></span><br><span class="line">	3. limit 是一个MySQL&quot;方言&quot;</span><br></pre></td></tr></table></figure>
+
+<h3 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br></pre></td><td class="code"><pre><span class="line">1.数据库</span><br><span class="line">	数据库类似文件夹 </span><br><span class="line">	表 ---&gt;文件</span><br><span class="line">	数据 ---&gt;保存在文件夹中的文件中的!!!!!</span><br><span class="line">2.SQL</span><br><span class="line">	本质:就是一套规则, 规定所有关系型数据库的操作方式</span><br><span class="line">3.sql的语法</span><br><span class="line">	1.以;结尾</span><br><span class="line">	2.关键字建议大写,其实不区分大小写</span><br><span class="line">	3.注释:  单行:--空格  #(mysql特有的)  多行: &#x2F;**&#x2F;</span><br><span class="line">4.sql语句的分类</span><br><span class="line">	DDL: ----&gt;对数据库,表的操作(create,alter,drop,show)</span><br><span class="line">		数据库的操作</span><br><span class="line">			增:</span><br><span class="line">				1.创建数据库(掌握)</span><br><span class="line">					create database 数据库名称;</span><br><span class="line">				2.创建数据库指定编码(了解)</span><br><span class="line">					create database 数据库名称 character set utf8;	</span><br><span class="line">				3.判断是否存在,在创建(了解)</span><br><span class="line">					create database if not exists 数据库名字</span><br><span class="line">				</span><br><span class="line">			删:</span><br><span class="line">				删除数据库</span><br><span class="line">				drop database 数据库的名称  </span><br><span class="line">				判断存在删除数据库</span><br><span class="line">				drop database if exists 数据库的名称</span><br><span class="line">			改:</span><br><span class="line">				alter database 数据库名字 character set 字符集名称</span><br><span class="line">			查:</span><br><span class="line">				1.查询所有数据库(了解)</span><br><span class="line">					show databases; </span><br><span class="line">				2.查询单个数据库的创建语句(了解)</span><br><span class="line">					show create database 数据库的名字</span><br><span class="line">			使用数据库</span><br><span class="line">				use 数据库名字</span><br><span class="line">		数据库表的操作</span><br><span class="line">			增:(死了都要会!!!!!!!!!!!!!!!!!)</span><br><span class="line">				语法格式:</span><br><span class="line">					create table 表名(</span><br><span class="line">						列名 数据类型 [约束],</span><br><span class="line">						列名 数据类型 [约束],</span><br><span class="line">						...</span><br><span class="line">						列名 数据类型 [约束]</span><br><span class="line">					);</span><br><span class="line">				数据类型:</span><br><span class="line">					int ---&gt;整数</span><br><span class="line">					double(总位数,小数位数) ---&gt;小数</span><br><span class="line">					date  ----&gt;年月日</span><br><span class="line">					datatime ----&gt; 年月日时分秒, 如果不给值,默认是null</span><br><span class="line">					TIMESTAMP ----&gt;年月日时分秒,如果不给值,或者给null,默认是系统当前时间</span><br><span class="line">					varchar(长度) ----&gt;字符串,代表可变字符串</span><br><span class="line">					char(长度)----&gt;字符串, 代表固定字符串</span><br><span class="line">						举例:</span><br><span class="line">							varchar(20) ----&gt;最长20个字符,如果不够20个,有几个占用多大空间</span><br><span class="line">							char(20) ---&gt;固定占20个字符的空间,如果不够也占20个,浪费空间</span><br><span class="line">				举例:</span><br><span class="line">					create table students(</span><br><span class="line">						sid varchar(20),</span><br><span class="line">						name varchar(20),</span><br><span class="line">						gender varchar(10),</span><br><span class="line">						age int,</span><br><span class="line">						address varchar(30),</span><br><span class="line">						birthday date</span><br><span class="line">					);</span><br><span class="line">				创建表和另外一张表的结构一样</span><br><span class="line">					create table 表名 like 另外一张表;</span><br><span class="line">			删:</span><br><span class="line">				drop table 表名;</span><br><span class="line">				drop table if exists 表名;</span><br><span class="line">			改:</span><br><span class="line">				修改表名</span><br><span class="line">				alter table 表名 rename to 新表名(了解)</span><br><span class="line">				修改字符集</span><br><span class="line">				alter table 表名 character set 字符集名称(了解)</span><br><span class="line">				修改表添加一列(掌握)</span><br><span class="line">				alter table 表名 add 列名 数据类型 [约束];</span><br><span class="line">				修改表删除一列(掌握)</span><br><span class="line">				alter table 表名 drop 列名</span><br><span class="line">				修改表修改一列(掌握)</span><br><span class="line">					改列名和类的类型:</span><br><span class="line">					alter table 表名 change 旧列名 新列明 新的数据类型 [约束];</span><br><span class="line">					改列的类型</span><br><span class="line">					alter table 表名 modify 列名 新的数据类型 [约束];</span><br><span class="line">					</span><br><span class="line">			查:</span><br><span class="line">				show tables ----&gt;查询当前数据库中所有的表(了解)</span><br><span class="line">				desc 表名 ----&gt;查询表的结构(了解)</span><br><span class="line">		</span><br><span class="line">	DML: ----&gt;对表中数据的增删改(insert into, delete , update)</span><br><span class="line">		增:(死了都要会!!!!!)</span><br><span class="line">			完整格式:</span><br><span class="line">				insert into 表名 (列名列表,多个列名用,隔开) values(值得列表,值和列要一一对应);</span><br><span class="line">			简化格式: (注意简化格式, 必须对所有列进行值得添加)</span><br><span class="line">				insert into 表名 values(所有值得列表);</span><br><span class="line">			批量插入格式:</span><br><span class="line">				insert into 表名 (列名列表,多个列名用,隔开) values(值得列表,值和列要一一对应),(值得列表,值和列要一一对应)</span><br><span class="line">				insert into 表名 values(所有值得列表),(所有值得列表),(所有值得列表);</span><br><span class="line">			注意:</span><br><span class="line">				1.列名和列值要一一对应</span><br><span class="line">				2.列值如果不是数字,要使用引号引起来</span><br><span class="line">				</span><br><span class="line">		删:(死了都要会!!!!!)</span><br><span class="line">			delete from 表名 where 条件</span><br><span class="line">			注意:</span><br><span class="line">				一定要加条件,不然全删了!!!!!</span><br><span class="line">				如果真的全删,建议使用:  truncate 表名</span><br><span class="line">				&quot;truncate 表名&quot; 和 &quot;delete from 表名&quot; 的区别:</span><br><span class="line">				1.&quot;truncate 表名&quot;不管数据有多少, 只会执行两条语句, &quot;delete from 表名&quot; 有多少数据,就操作多少次</span><br><span class="line">				2.&quot;truncate 表名&quot;属于DDL语句, &quot;delete from 表&quot;属于DML语句,DML语句支持事务会更好点</span><br><span class="line">				</span><br><span class="line">		改:(死了都要会!!!!!)</span><br><span class="line">			update 表名 set 列名1 &#x3D; 列值1,列名2 &#x3D; 列值2..... where 条件;</span><br><span class="line">			</span><br><span class="line">			注意: </span><br><span class="line">				千万不要忘了条件,不然就全改了</span><br><span class="line">			</span><br><span class="line">			</span><br><span class="line">			</span><br><span class="line">	DQL: ----&gt;对表中数据的查询操作</span><br><span class="line">		完整格式:</span><br><span class="line">			select</span><br><span class="line">				列名列表(多个列用,隔开)</span><br><span class="line">			from	</span><br><span class="line">				表名列表(多个表名用,隔开)</span><br><span class="line">			where</span><br><span class="line">				分组前过滤条件</span><br><span class="line">			group by</span><br><span class="line">				分组</span><br><span class="line">			having</span><br><span class="line">				分组后过滤的条件</span><br><span class="line">			order by</span><br><span class="line">				排序</span><br><span class="line">			limit</span><br><span class="line">				开始的位置,要多少条数据</span><br><span class="line">		基础查询:</span><br><span class="line">			查询某几列:</span><br><span class="line">				select	</span><br><span class="line">					列名1,列名2...</span><br><span class="line">				from</span><br><span class="line">					表名;</span><br><span class="line">			去重查询:</span><br><span class="line">				select	distinct</span><br><span class="line">					列名1,列名2....</span><br><span class="line">				from</span><br><span class="line">					表名;</span><br><span class="line">				注意: 如果有多个列的话,必须所有的列的值都一样才算重复</span><br><span class="line">				</span><br><span class="line">			给查询的列起别名:</span><br><span class="line">				通过as关键字,而且as还可以省略</span><br><span class="line">				例如:</span><br><span class="line">					select math as 数学 from students; ---&gt;从students表中查math这一列,将列名改成&quot;数学&quot;</span><br><span class="line">					select math 数学 from students; ---&gt;从students表中查math这一列,将列名改成&quot;数学&quot;</span><br><span class="line">					</span><br><span class="line">		条件:</span><br><span class="line">			&gt;,&lt;,&gt;&#x3D;,&lt;&#x3D;,&#x3D;,!&#x3D;(&lt;&gt;)</span><br><span class="line">			&amp;&amp;(and),||(or),!(not)</span><br><span class="line">			&gt;&#x3D; ,&lt;&#x3D; 可以被between and替代,  between and,小的值只能放到前面,大的的值只能放到后面</span><br><span class="line">			多个or可以用in(值1,值2,值3)</span><br><span class="line">			null是非常特殊的东西, null的判断用is或者is not来判断</span><br><span class="line">			like ----&gt;模糊查询</span><br><span class="line">				_:匹配单个字符</span><br><span class="line">				%:匹配多个字符</span><br><span class="line">			举例:</span><br><span class="line">				select * from students where name like &quot;%梅&quot; &#x2F;&#x2F; 最后一个字是&quot;梅&quot;</span><br><span class="line">				select * from students where name like &quot;梅%&quot; &#x2F;&#x2F; 第一个字是&quot;梅&quot;</span><br><span class="line">				</span><br><span class="line">					</span><br><span class="line">	DCL: ----&gt;对用户的授权,撤权,创建用户,删除用户</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/09/10/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/JavaSE/190910.3%E6%A8%A1%E5%9D%97%E5%8C%96/" rel="next" title="模块化">
+                <i class="fa fa-chevron-left"></i> 模块化
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/09/14/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/Web/190914MySQL%E7%BA%A6%E6%9D%9F/" rel="prev" title="MySQL约束">
+                MySQL约束 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="" />
+            
+              <p class="site-author-name" itemprop="name"></p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">85</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/weixuz" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                查阅链接
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.runoob.com/" title="菜鸟教程" target="_blank">菜鸟教程</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://jingzhunyun.com/" title="精准云工具" target="_blank">精准云工具</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.toolnb.com/" title="爱资料工具" target="_blank">爱资料工具</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.getitfree.cn/" title="正版中国" target="_blank">正版中国</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://bbs.pediy.com/" title="看雪安全论坛" target="_blank">看雪安全论坛</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://24mail.chacuo.net/" title="临时邮箱" target="_blank">临时邮箱</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.w3school.com.cn/" title="w3c在线教程" target="_blank">w3c在线教程</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://developer.mozilla.org/zh-CN/" title="MDN web文档" target="_blank">MDN web文档</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://cn.vuejs.org/v2/guide/" title="Vue.js在线教程" target="_blank">Vue.js在线教程</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.jq22.com/" title="jquery插件库" target="_blank">jquery插件库</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.htmleaf.com/" title="jquery之家" target="_blank">jquery之家</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.nowcoder.com/ta/coding-interviews" title="牛客网-剑指offer编程题" target="_blank">牛客网-剑指offer编程题</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://getbootstrap.com" title="bootstrap" target="_blank">bootstrap</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://v3.bootcss.com/components/" title="bootstrap中文" target="_blank">bootstrap中文</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://icomoon.io/" title="文字图标" target="_blank">文字图标</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="nav-text">数据库的基本概念</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#MySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BD%AF%E4%BB%B6"><span class="nav-text">MySQL数据库软件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SQL"><span class="nav-text">SQL</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#DDL-%E6%93%8D%E4%BD%9C%E6%95%B0%E6%8D%AE%E5%BA%93%E3%80%81%E8%A1%A8"><span class="nav-text">DDL:操作数据库、表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DML%EF%BC%9A%E5%A2%9E%E5%88%A0%E6%94%B9%E8%A1%A8%E4%B8%AD%E6%95%B0%E6%8D%AE"><span class="nav-text">DML：增删改表中数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DQL%EF%BC%9A%E6%9F%A5%E8%AF%A2%E8%A1%A8%E4%B8%AD%E7%9A%84%E8%AE%B0%E5%BD%95"><span class="nav-text">DQL：查询表中的记录</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#DQL-%E6%9F%A5%E8%AF%A2%E8%AF%AD%E5%8F%A5"><span class="nav-text">DQL:查询语句</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%BB%E7%BB%93%EF%BC%9A"><span class="nav-text">总结：</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2019 &mdash; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">weixuz</span>
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three-waves.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  	
+<!-- ҳ����С���� -->
+<script type="text/javascript" src="/js/src/clicklove.js"></script>
+</body>
+</html>
