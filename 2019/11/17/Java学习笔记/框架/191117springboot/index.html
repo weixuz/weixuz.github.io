@@ -83,17 +83,21 @@
 
 
 
-<meta name="description" content="言必信，行必果。">
+<meta name="description" content="1. Spring Boot概述目标：了解Spring Boot是什么，有什么作用 小结： Spring Boot是一个便捷搭建 基于spring工程的脚手架；作用是帮助开发人员快速搭建大型的spring 项目。简化工程的配置，依赖管理；实现开发人员把时间都集中在业务开发上。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="springboot">
-<meta property="og:url" content="http://yoursite.com/2019/11/17/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%A1%86%E6%9E%B6/191117springboot/index.html">
+<meta property="og:title" content="SpringBoot">
+<meta property="og:url" content="http://yoursite.com/2019/11/17/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%A1%86%E6%9E%B6/191117SpringBoot/index.html">
 <meta property="og:site_name" content="维旭的博客">
-<meta property="og:description" content="言必信，行必果。">
+<meta property="og:description" content="1. Spring Boot概述目标：了解Spring Boot是什么，有什么作用 小结： Spring Boot是一个便捷搭建 基于spring工程的脚手架；作用是帮助开发人员快速搭建大型的spring 项目。简化工程的配置，依赖管理；实现开发人员把时间都集中在业务开发上。">
 <meta property="og:locale">
+<meta property="og:image" content="http://yoursite.com/2019/11/17/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%A1%86%E6%9E%B6/191117SpringBoot/Java%E8%B5%84%E6%96%99/4.%E6%A1%86%E6%9E%B6/07.springboot/%E7%AC%94%E8%AE%B0/assets/1560091228494.png">
+<meta property="og:image" content="http://yoursite.com/2019/11/17/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%A1%86%E6%9E%B6/191117SpringBoot/Java%E8%B5%84%E6%96%99/4.%E6%A1%86%E6%9E%B6/07.springboot/%E7%AC%94%E8%AE%B0/assets/1560096384799.png">
+<meta property="og:image" content="http://yoursite.com/2019/11/17/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%A1%86%E6%9E%B6/191117SpringBoot/Java%E8%B5%84%E6%96%99/4.%E6%A1%86%E6%9E%B6/07.springboot/%E7%AC%94%E8%AE%B0/assets/1560178298122.png">
 <meta property="article:published_time" content="2019-11-17T07:22:49.000Z">
-<meta property="article:modified_time" content="2020-11-23T07:43:13.740Z">
+<meta property="article:modified_time" content="2020-11-23T12:33:15.430Z">
 <meta property="article:author" content="维旭">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/2019/11/17/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%A1%86%E6%9E%B6/191117SpringBoot/Java%E8%B5%84%E6%96%99/4.%E6%A1%86%E6%9E%B6/07.springboot/%E7%AC%94%E8%AE%B0/assets/1560091228494.png">
 
 
 
@@ -123,13 +127,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/11/17/Java学习笔记/框架/191117springboot/"/>
+  <link rel="canonical" href="http://yoursite.com/2019/11/17/Java学习笔记/框架/191117SpringBoot/"/>
 
 
 
 
 
-  <title>springboot | 维旭的博客</title>
+  <title>SpringBoot | 维旭的博客</title>
   
 
 
@@ -290,7 +294,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/17/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%A1%86%E6%9E%B6/191117springboot/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/17/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%A1%86%E6%9E%B6/191117SpringBoot/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="">
@@ -307,7 +311,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">springboot</h1>
+          <h1 class="post-title" itemprop="name headline">SpringBoot</h1>
         
 
         <div class="post-meta">
@@ -395,7 +399,272 @@
       
 
       
-        
+        <h2 id="1-Spring-Boot概述"><a href="#1-Spring-Boot概述" class="headerlink" title="1. Spring Boot概述"></a>1. Spring Boot概述</h2><p><strong>目标</strong>：了解Spring Boot是什么，有什么作用</p>
+<p><strong>小结</strong>：</p>
+<p>Spring Boot是一个便捷搭建 基于spring工程的脚手架；作用是帮助开发人员快速搭建大型的spring 项目。简化工程的配置，依赖管理；实现开发人员把时间都集中在业务开发上。</p>
+<a id="more"></a>
+
+<h2 id="2-Spring-Boot入门"><a href="#2-Spring-Boot入门" class="headerlink" title="2. Spring Boot入门"></a>2. Spring Boot入门</h2><p><strong>目标</strong>：能够使用Spring Boot搭建项目</p>
+<p><strong>分析</strong>：</p>
+<p>需求：可以在浏览器中访问<a target="_blank" rel="noopener" href="http://localhost:8080/hello%E8%BE%93%E5%87%BA%E4%B8%80%E4%B8%B2%E5%AD%97%E7%AC%A6">http://localhost:8080/hello输出一串字符</a></p>
+<p>实现步骤：</p>
+<ol>
+<li>创建工程；</li>
+<li>添加依赖（启动器依赖，spring-boot-starter-web）；</li>
+<li>创建启动类；</li>
+<li>创建处理器Controller；</li>
+<li>测试</li>
+</ol>
+<p><strong>小结</strong>：</p>
+<p>Spring Boot工程可以通过添加启动器依赖和创建启动引导类实现快速创建web工程。</p>
+<blockquote>
+<p>spring-boot-starter-web默认的应用服务器端口是8080</p>
+</blockquote>
+<h2 id="3-Java代码方式配置"><a href="#3-Java代码方式配置" class="headerlink" title="3. Java代码方式配置"></a>3. Java代码方式配置</h2><p><strong>目标</strong>：可以使用@Value获取配置文件配置项并结合@Bean注册组件到Spring</p>
+<p><strong>分析</strong>：</p>
+<p>需求：使用Java代码配置数据库连接池，并可以在处理器中注入并使用</p>
+<p>步骤：</p>
+<ol>
+<li>添加依赖；</li>
+<li>创建数据库；</li>
+<li>创建数据库连接参数的配置文件jdbc.properties；</li>
+<li>创建配置类；</li>
+<li>改造处理器类注入数据源并使用</li>
+</ol>
+<p><strong>小结</strong>：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.itheima.config;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.alibaba.druid.pool.DruidDataSource;</span><br><span class="line"><span class="keyword">import</span> org.springframework.beans.factory.annotation.Value;</span><br><span class="line"><span class="keyword">import</span> org.springframework.context.annotation.Bean;</span><br><span class="line"><span class="keyword">import</span> org.springframework.context.annotation.Configuration;</span><br><span class="line"><span class="keyword">import</span> org.springframework.context.annotation.PropertySource;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> javax.sql.DataSource;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="meta">@PropertySource(&quot;classpath:jdbc.properties&quot;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">JdbcConfig</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Value(&quot;$&#123;jdbc.url&#125;&quot;)</span></span><br><span class="line">    String url;</span><br><span class="line">    <span class="meta">@Value(&quot;$&#123;jdbc.driverClassName&#125;&quot;)</span></span><br><span class="line">    String driverClassName;</span><br><span class="line">    <span class="meta">@Value(&quot;$&#123;jdbc.username&#125;&quot;)</span></span><br><span class="line">    String username;</span><br><span class="line">    <span class="meta">@Value(&quot;$&#123;jdbc.password&#125;&quot;)</span></span><br><span class="line">    String password;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> DataSource <span class="title">dataSource</span><span class="params">()</span></span>&#123;</span><br><span class="line">        DruidDataSource dataSource = <span class="keyword">new</span> DruidDataSource();</span><br><span class="line">        dataSource.setDriverClassName(driverClassName);</span><br><span class="line">        dataSource.setUrl(url);</span><br><span class="line">        dataSource.setUsername(username);</span><br><span class="line">        dataSource.setPassword(password);</span><br><span class="line">        <span class="keyword">return</span> dataSource;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="4-Spring-Boot属性注入方式"><a href="#4-Spring-Boot属性注入方式" class="headerlink" title="4. Spring Boot属性注入方式"></a>4. Spring Boot属性注入方式</h2><p><strong>目标</strong>：能够使用@ConfigurationProperties实现Spring Boot配置文件配置项读取和应用</p>
+<p><strong>分析</strong>：</p>
+<p>需求：将配置文件中的配置项读取到一个对象中；</p>
+<p>实现：可以使用Spring Boot提供的注解@ConfigurationProperties，该注解可以将Spring Boot的配置文件（默认必须为application.properties或application.yml）中的配置项读取到一个对象中。</p>
+<p>实现步骤：</p>
+<ol>
+<li>创建配置项类JdbcProperties类，在该类名上面添加@ConfigurationProperties；</li>
+<li>将jdbc.properties修改名称为application.properties；</li>
+<li>将JdbcProperties对象注入到JdbcConfig；</li>
+<li>测试</li>
+</ol>
+<p><strong>小结</strong>：</p>
+<ul>
+<li>使用@ConfigurationProperties编写配置项类将配置文件中的配置项设置到对象中</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@ConfigurationProperties(prefix = &quot;jdbc&quot;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">JdbcProperties</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> String url;</span><br><span class="line">    <span class="keyword">private</span> String driverClassName;</span><br><span class="line">    <span class="keyword">private</span> String username;</span><br><span class="line">    <span class="keyword">private</span> String password;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getUrl</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> url;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setUrl</span><span class="params">(String url)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.url = url;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getDriverClassName</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> driverClassName;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setDriverClassName</span><span class="params">(String driverClassName)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.driverClassName = driverClassName;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getUsername</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> username;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setUsername</span><span class="params">(String username)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.username = username;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getPassword</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> password;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setPassword</span><span class="params">(String password)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.password = password;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<ul>
+<li>使用@ConfigurationProperties在方法上面使用</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Bean</span></span><br><span class="line"><span class="meta">@ConfigurationProperties(prefix = &quot;jdbc&quot;)</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> DataSource <span class="title">dataSource</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> DruidDataSource();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="5-多个yml文件配置"><a href="#5-多个yml文件配置" class="headerlink" title="5. 多个yml文件配置"></a>5. 多个yml文件配置</h2><p><strong>目标</strong>：可以将多个yml文件在application.yml文件中配置激活</p>
+<p><strong>分析</strong>：</p>
+<p>yaml与properties配置文件除了展示形式不相同以外，其它功能和作用都是一样的；在项目中原路的读取方式不需要改变。</p>
+<p>1）yml配置文件的特征：</p>
+<ol>
+<li>树状层级结构展示配置项；</li>
+<li>配置项之间如果有关系的话需要分行空两格；</li>
+<li>配置项如果有值的话，那么需要在 <code>:</code>之后空一格再写配置项值；</li>
+</ol>
+<p>将application.properties配置文件修改为application.yml的话：</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">jdbc:</span></span><br><span class="line">  <span class="attr">driverClassName:</span> <span class="string">com.mysql.jdbc.Driver</span></span><br><span class="line">  <span class="attr">url:</span> <span class="string">jdbc:mysql://127.0.0.1:3306/heima</span></span><br><span class="line">  <span class="attr">username:</span> <span class="string">root</span></span><br><span class="line">  <span class="attr">password:</span> <span class="string">root</span></span><br><span class="line"></span><br><span class="line"><span class="attr">key:</span></span><br><span class="line">  <span class="attr">abc:</span> <span class="string">cba</span></span><br><span class="line">  <span class="attr">def:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">g</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">h</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">j</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p>2）多个yml配置文件；在spring boot中是被允许的。这些配置文件的名称必须为application-***.yml，并且这些配置文件必须要在application.yml配置文件中激活之后才可以使用。</p>
+<p>3）如果properties和yml配置文件同时存在在spring boot项目中；那么这两类配置文件都有效。在两个配置文件中如果存在同名的配置项的话会以properties文件的为主。</p>
+<p><strong>小结</strong>：</p>
+<p>在多个配置文件时，需要将这些文件在application.yml文件中进行激活：</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#激活配置文件;需要指定其它的配置文件名称</span></span><br><span class="line"><span class="attr">spring:</span></span><br><span class="line">  <span class="attr">profiles:</span></span><br><span class="line">    <span class="attr">active:</span> <span class="string">abc,def</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="6-自动配置原理"><a href="#6-自动配置原理" class="headerlink" title="6. 自动配置原理"></a>6. 自动配置原理</h2><p><strong>目标</strong>：了解Spring Boot项目的配置加载流程</p>
+<p><strong>小结</strong>：</p>
+<ul>
+<li>在 <code>META-INF\spring.fatories</code>文件中定义了很多自动配置类；可以根据在pom.xml文件中添加的 启动器依赖自动配置组件</li>
+<li>通过如下流程可以去修改application配置文件，改变自动配置的组件默认参数</li>
+</ul>
+<p><img src="/2019/11/17/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%A1%86%E6%9E%B6/191117SpringBoot/Java%E8%B5%84%E6%96%99/4.%E6%A1%86%E6%9E%B6/07.springboot/%E7%AC%94%E8%AE%B0/assets/1560091228494.png" alt="1560091228494"></p>
+<h2 id="7-lombok应用"><a href="#7-lombok应用" class="headerlink" title="7. lombok应用"></a>7. lombok应用</h2><p><strong>目标</strong>：使用lombok的注解实现pojo类的简化</p>
+<p><strong>分析</strong>：</p>
+<p>使用Spring Boot整合SSM工程；需要使用到数据库数据。</p>
+<ul>
+<li><p>将数据库表数据导入到数据库中（springboot_test）；</p>
+</li>
+<li><p>编写数据库表对应的实体类；一般情况下需要编写get/set/toString等这些方法会耗时并且会让实体类看起来比较臃肿。可以使用lombok插件对实体类进行简化。</p>
+<p>lombok是一个插件工具类包；提供了一些注解@Data、@Getter等这些注解去简化实体类中的构造方法、get/set等方法的编写。</p>
+<ol>
+<li>在IDEA中安装lombok插件；</li>
+<li>添加lombok对应的依赖到项目pom.xml文件；</li>
+<li>改造实体类使用lombok注解</li>
+</ol>
+</li>
+</ul>
+<p><strong>小结</strong>：</p>
+<p>在Bean上使用：<br>@Data ：自动提供getter和setter、hashCode、equals、toString等方法<br>@Getter：自动提供getter方法<br>@Setter：自动提供setter方法<br>@Slf4j：自动在bean中提供log变量，其实用的是slf4j的日志功能。</p>
+<h2 id="8-Spring-Boot整合-SpringMVC端口和静态资源"><a href="#8-Spring-Boot整合-SpringMVC端口和静态资源" class="headerlink" title="8. Spring Boot整合-SpringMVC端口和静态资源"></a>8. Spring Boot整合-SpringMVC端口和静态资源</h2><p><strong>目标</strong>：可以修改tomcat的端口和访问项目中的静态资源</p>
+<p><strong>分析</strong>：</p>
+<ul>
+<li><p>修改tomcat端口</p>
+<p>查询**Properties，设置配置项（前缀+类变量名）到application配置文件中</p>
+</li>
+<li><p>访问项目中的静态资源</p>
+<p>静态资源放置的位置；放置静态资源并访问这些资源</p>
+</li>
+</ul>
+<p><strong>小结</strong>：</p>
+<ul>
+<li>修改项目tomcat端口：</li>
+</ul>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#tomcat端口</span></span><br><span class="line"><span class="attr">server:</span></span><br><span class="line">  <span class="attr">port:</span> <span class="number">80</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>在spring boot项目中静态资源可以放置在如下目录：</p>
+<p><img src="/2019/11/17/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%A1%86%E6%9E%B6/191117SpringBoot/Java%E8%B5%84%E6%96%99/4.%E6%A1%86%E6%9E%B6/07.springboot/%E7%AC%94%E8%AE%B0/assets/1560096384799.png" alt="1560096384799"> </p>
+</li>
+</ul>
+<h2 id="9-Spring-Boot整合-SpringMVC拦截器"><a href="#9-Spring-Boot整合-SpringMVC拦截器" class="headerlink" title="9.Spring Boot整合-SpringMVC拦截器"></a>9.Spring Boot整合-SpringMVC拦截器</h2><p><strong>目标</strong>：可以在Spring Boot项目中配置自定义SpringMVC拦截器</p>
+<p><strong>分析</strong>：</p>
+<ol>
+<li>编写拦截器（实现HandlerInterceptor）；</li>
+<li>编写配置类实现 WebMvcConfigurer，在该类中添加各种组件；</li>
+<li>测试</li>
+</ol>
+<p><strong>小结</strong>：</p>
+<p>可以在spring boot项目中通过配置类添加各种组件；如果要添加拦截器的话：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.itheima.config;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.itheima.interceptor.MyInterceptor;</span><br><span class="line"><span class="keyword">import</span> org.springframework.context.annotation.Bean;</span><br><span class="line"><span class="keyword">import</span> org.springframework.context.annotation.Configuration;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.servlet.config.annotation.InterceptorRegistry;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.servlet.config.annotation.WebMvcConfigurer;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MvcConfig</span> <span class="keyword">implements</span> <span class="title">WebMvcConfigurer</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//注册拦截器</span></span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> MyInterceptor <span class="title">myInterceptor</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> MyInterceptor();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//添加拦截器到spring mvc拦截器链</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">addInterceptors</span><span class="params">(InterceptorRegistry registry)</span> </span>&#123;</span><br><span class="line">        registry.addInterceptor(myInterceptor()).addPathPatterns(<span class="string">&quot;/*&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="10-Spring-Boot整合-事务和连接池"><a href="#10-Spring-Boot整合-事务和连接池" class="headerlink" title="10. Spring Boot整合-事务和连接池"></a>10. Spring Boot整合-事务和连接池</h2><p><strong>目标</strong>：配置Spring Boot自带默认的hikari数据库连接池和使用@Transactional注解进行事务配置</p>
+<p><strong>分析</strong>：</p>
+<ul>
+<li><p>事务配置</p>
+<ol>
+<li>添加事务相关的启动器依赖，mysql相关依赖；</li>
+<li>编写业务类UserService使用事务注解@Transactional</li>
+</ol>
+</li>
+<li><p>数据库连接池hikari配置</p>
+<p>只需要在application配置文件中指定数据库相关参数</p>
+</li>
+</ul>
+<p><strong>小结</strong>：</p>
+<ul>
+<li>事务配置；只需要添加jdbc启动器依赖</li>
+<li>数据库连接池使用默认的hikari，在配置文件中配置如下：</li>
+</ul>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">spring:</span></span><br><span class="line">  <span class="attr">datasource:</span></span><br><span class="line">    <span class="attr">driver-class-name:</span> <span class="string">com.mysql.jdbc.Driver</span></span><br><span class="line">    <span class="attr">url:</span> <span class="string">jdbc:mysql://127.0.0.1:3306/springboot_test</span></span><br><span class="line">    <span class="attr">username:</span> <span class="string">root</span></span><br><span class="line">    <span class="attr">password:</span> <span class="string">root</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="11-Spring-Boot整合-Mybatis"><a href="#11-Spring-Boot整合-Mybatis" class="headerlink" title="11. Spring Boot整合-Mybatis"></a>11. Spring Boot整合-Mybatis</h2><p><strong>目标</strong>：配置Mybatis在Spring Boot工程中的整合包，设置mybatis的实体类别名，输出执行sql语句配置项</p>
+<p><strong>分析</strong>：</p>
+<ol>
+<li>添加启动器依赖；</li>
+<li>配置Mybatis：实体类别名包，日志，映射文件等；</li>
+<li>配置MapperScan</li>
+</ol>
+<p><strong>小结</strong>：</p>
+<ul>
+<li><p>添加mybatis官方对于spring boot的一个启动器</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--mybatis --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.mybatis.spring.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mybatis-spring-boot-starter<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.0.1<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">  </span><br><span class="line">  </span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ul>
+<ul>
+<li><p>配置mybatis</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">mybatis:</span></span><br><span class="line">  <span class="comment"># 实体类别名包路径</span></span><br><span class="line">  <span class="attr">type-aliases-package:</span> <span class="string">com.itheima.pojo</span></span><br><span class="line">  <span class="comment"># 映射文件路径</span></span><br><span class="line">  <span class="comment"># mapper-locations: classpath:mappers/*.xml</span></span><br><span class="line">  <span class="attr">configuration:</span></span><br><span class="line">    <span class="attr">log-impl:</span> <span class="string">org.apache.ibatis.logging.stdout.StdOutImpl</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ul>
+<ul>
+<li><p>设置启动器类中的mapper扫描</p>
+<p><img src="/2019/11/17/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%A1%86%E6%9E%B6/191117SpringBoot/Java%E8%B5%84%E6%96%99/4.%E6%A1%86%E6%9E%B6/07.springboot/%E7%AC%94%E8%AE%B0/assets/1560178298122.png" alt="1560178298122"> </p>
+</li>
+</ul>
+<h2 id="12-Spring-Boot整合-通用Mapper"><a href="#12-Spring-Boot整合-通用Mapper" class="headerlink" title="12. Spring Boot整合-通用Mapper"></a>12. Spring Boot整合-通用Mapper</h2><p><strong>目标</strong>：配置通用Mapper组件到Spring Boot项目中并使用Mapper<T>接口</T></p>
+<p><strong>分析</strong>：</p>
+<p>通用Mapper：可以实现自动拼接sql语句；所有的mapper都不需要编写任何方法也就是不用编写sql语句。可以提高开发效率。</p>
+<ol>
+<li>添加启动器依赖；</li>
+<li>改造UserMapper继承Mapper<User>；</User></li>
+<li>修改启动引导类Application中的Mapper扫描注解；</li>
+<li>修改User实体类添加jpa注解；</li>
+<li>改造UserService实现业务功能；</li>
+</ol>
+<p><strong>小结</strong>：</p>
+<blockquote>
+<p>在启动引导类上面的mapper扫描注解 一定要修改为 通用mapper的扫描注解</p>
+</blockquote>
+<h2 id="13-Spring-Boot整合测试"><a href="#13-Spring-Boot整合测试" class="headerlink" title="13. Spring Boot整合测试"></a>13. Spring Boot整合测试</h2><p><strong>目标</strong>：可以访问处理器对应路径将数据库中的数据根据id查询</p>
+<p><strong>分析</strong>：</p>
+<ol>
+<li>改造HelloController，注入UserService利用其方法实现查询；</li>
+<li>启动项目进行测试 <a target="_blank" rel="noopener" href="http://localhost/user/%E7%94%A8%E6%88%B7id">http://localhost/user/用户id</a> –&gt; <a target="_blank" rel="noopener" href="http://localhost/user/8">http://localhost/user/8</a></li>
+</ol>
+<p><strong>小结</strong>：</p>
+<p>修改了HelloController：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Autowired</span></span><br><span class="line"><span class="keyword">private</span> UserService userService;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 根据用户id查询用户</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> id 用户id</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return</span> 用户</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@GetMapping(&quot;/user/&#123;id&#125;&quot;)</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> User <span class="title">queryById</span><span class="params">(<span class="meta">@PathVariable</span> Long id)</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> userService.queryById(id);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="14-Spring-Boot整合-Junit"><a href="#14-Spring-Boot整合-Junit" class="headerlink" title="14. Spring Boot整合-Junit"></a>14. Spring Boot整合-Junit</h2><p><strong>目标</strong>：在Spring Boot项目中使用Junit进行单元测试UserService的方法</p>
+<p><strong>分析</strong>：</p>
+<ol>
+<li>添加启动器依赖spring-boot-starter-test；</li>
+<li>编写测试类</li>
+</ol>
+<p><strong>小结</strong>：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RunWith(SpringRunner.class)</span></span><br><span class="line"><span class="meta">@SpringBootTest</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">UserServiceTest</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> UserService userService;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">queryById</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        User user = userService.queryById(<span class="number">8L</span>);</span><br><span class="line">        System.out.println(<span class="string">&quot;user = &quot;</span> + user);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">saveUser</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        User user = <span class="keyword">new</span> User();</span><br><span class="line">        user.setUserName(<span class="string">&quot;test2&quot;</span>);</span><br><span class="line">        user.setName(<span class="string">&quot;test2&quot;</span>);</span><br><span class="line">        user.setAge(<span class="number">13</span>);</span><br><span class="line">        user.setPassword(<span class="string">&quot;123456&quot;</span>);</span><br><span class="line">        user.setSex(<span class="number">1</span>);</span><br><span class="line">        user.setCreated(<span class="keyword">new</span> Date());</span><br><span class="line">        userService.saveUser(user);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>在Spring Boot项目中如果编写测试类则必须要在类上面添加@SpringBootTest</p>
+</blockquote>
+<h2 id="15-Spring-Boot整合-redis"><a href="#15-Spring-Boot整合-redis" class="headerlink" title="15. Spring Boot整合-redis"></a>15. Spring Boot整合-redis</h2><p><strong>目标</strong>：在Spring Boot项目中使用Junit测试RedisTemplate的使用</p>
+<p><strong>分析</strong>：</p>
+<ol>
+<li>添加启动器依赖；spring-boot-starter-data-redis</li>
+<li>配置application.yml中修改redis的连接参数；（redis需要启动）</li>
+<li>编写测试类应用RedisTemplate操作redis中的5种数据类型（string/hash/list/set/sorted set）</li>
+</ol>
+<p><strong>小结</strong>：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RunWith(SpringRunner.class)</span></span><br><span class="line"><span class="meta">@SpringBootTest</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">RedisTest</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> RedisTemplate redisTemplate;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="comment">//string 字符串</span></span><br><span class="line">        <span class="comment">//redisTemplate.opsForValue().set(&quot;str&quot;, &quot;heima&quot;);</span></span><br><span class="line">        redisTemplate.boundValueOps(<span class="string">&quot;str&quot;</span>).set(<span class="string">&quot;heima&quot;</span>);</span><br><span class="line">        System.out.println(<span class="string">&quot;str = &quot;</span> + redisTemplate.opsForValue().get(<span class="string">&quot;str&quot;</span>));</span><br><span class="line"></span><br><span class="line">        <span class="comment">//hash 散列</span></span><br><span class="line">        redisTemplate.boundHashOps(<span class="string">&quot;h_key&quot;</span>).put(<span class="string">&quot;name&quot;</span>, <span class="string">&quot;heima&quot;</span>);</span><br><span class="line">        redisTemplate.boundHashOps(<span class="string">&quot;h_key&quot;</span>).put(<span class="string">&quot;age&quot;</span>, <span class="number">13</span>);</span><br><span class="line">        <span class="comment">//获取所有域</span></span><br><span class="line">        Set set = redisTemplate.boundHashOps(<span class="string">&quot;h_key&quot;</span>).keys();</span><br><span class="line">        System.out.println(<span class="string">&quot; hash散列的所有域：&quot;</span> + set);</span><br><span class="line">        <span class="comment">//获取所有值</span></span><br><span class="line">        List list = redisTemplate.boundHashOps(<span class="string">&quot;h_key&quot;</span>).values();</span><br><span class="line">        System.out.println(<span class="string">&quot; hash散列的所有域的值：&quot;</span> + list);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//list 列表</span></span><br><span class="line">        redisTemplate.boundListOps(<span class="string">&quot;l_key&quot;</span>).leftPush(<span class="string">&quot;c&quot;</span>);</span><br><span class="line">        redisTemplate.boundListOps(<span class="string">&quot;l_key&quot;</span>).leftPush(<span class="string">&quot;b&quot;</span>);</span><br><span class="line">        redisTemplate.boundListOps(<span class="string">&quot;l_key&quot;</span>).leftPush(<span class="string">&quot;a&quot;</span>);</span><br><span class="line">        <span class="comment">//获取全部元素</span></span><br><span class="line">        list = redisTemplate.boundListOps(<span class="string">&quot;l_key&quot;</span>).range(<span class="number">0</span>, -<span class="number">1</span>);</span><br><span class="line">        System.out.println(<span class="string">&quot; list列表中的所有元素：&quot;</span> + list);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// set 集合</span></span><br><span class="line">        redisTemplate.boundSetOps(<span class="string">&quot;s_key&quot;</span>).add(<span class="string">&quot;a&quot;</span>, <span class="string">&quot;b&quot;</span>, <span class="string">&quot;c&quot;</span>);</span><br><span class="line">        set = redisTemplate.boundSetOps(<span class="string">&quot;s_key&quot;</span>).members();</span><br><span class="line">        System.out.println(<span class="string">&quot; set集合中的所有元素：&quot;</span> + set);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// sorted set 有序集合</span></span><br><span class="line">        redisTemplate.boundZSetOps(<span class="string">&quot;z_key&quot;</span>).add(<span class="string">&quot;a&quot;</span>, <span class="number">30</span>);</span><br><span class="line">        redisTemplate.boundZSetOps(<span class="string">&quot;z_key&quot;</span>).add(<span class="string">&quot;b&quot;</span>, <span class="number">20</span>);</span><br><span class="line">        redisTemplate.boundZSetOps(<span class="string">&quot;z_key&quot;</span>).add(<span class="string">&quot;c&quot;</span>, <span class="number">10</span>);</span><br><span class="line">        set = redisTemplate.boundZSetOps(<span class="string">&quot;z_key&quot;</span>).range(<span class="number">0</span>, -<span class="number">1</span>);</span><br><span class="line">        System.out.println(<span class="string">&quot; zset有序集合中的所有元素：&quot;</span> + set);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="16-Spring-Boot项目部署"><a href="#16-Spring-Boot项目部署" class="headerlink" title="16. Spring Boot项目部署"></a>16. Spring Boot项目部署</h2><p><strong>目标</strong>：将Spring Boot项目使用maven指令打成jar包并运行测试</p>
+<p><strong>分析</strong>：</p>
+<ol>
+<li>需要添加打包组件将项目中的资源、配置、依赖包打到一个jar包中；可以使用maven的<code>package</code>；</li>
+<li>部署：java -jar 包名</li>
+</ol>
+<p><strong>小结</strong>：</p>
+<ul>
+<li><p>添加打包组件</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">build</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">plugins</span>&gt;</span></span><br><span class="line">       <span class="comment">&lt;!-- 打jar包时如果不配置该插件，打出来的jar包没有清单文件 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">plugin</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-maven-plugin<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">plugin</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">plugins</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">build</span>&gt;</span></span><br><span class="line">  </span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ul>
+<ul>
+<li><p>部署运行</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">java -jar 包名</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+
       
     </div>
     
@@ -483,8 +752,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -503,7 +781,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">85</span>
+                  <span class="site-state-item-count">94</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -628,6 +906,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-Spring-Boot%E6%A6%82%E8%BF%B0"><span class="nav-text">1. Spring Boot概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-Spring-Boot%E5%85%A5%E9%97%A8"><span class="nav-text">2. Spring Boot入门</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-Java%E4%BB%A3%E7%A0%81%E6%96%B9%E5%BC%8F%E9%85%8D%E7%BD%AE"><span class="nav-text">3. Java代码方式配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-Spring-Boot%E5%B1%9E%E6%80%A7%E6%B3%A8%E5%85%A5%E6%96%B9%E5%BC%8F"><span class="nav-text">4. Spring Boot属性注入方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-%E5%A4%9A%E4%B8%AAyml%E6%96%87%E4%BB%B6%E9%85%8D%E7%BD%AE"><span class="nav-text">5. 多个yml文件配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-%E8%87%AA%E5%8A%A8%E9%85%8D%E7%BD%AE%E5%8E%9F%E7%90%86"><span class="nav-text">6. 自动配置原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-lombok%E5%BA%94%E7%94%A8"><span class="nav-text">7. lombok应用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-Spring-Boot%E6%95%B4%E5%90%88-SpringMVC%E7%AB%AF%E5%8F%A3%E5%92%8C%E9%9D%99%E6%80%81%E8%B5%84%E6%BA%90"><span class="nav-text">8. Spring Boot整合-SpringMVC端口和静态资源</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-Spring-Boot%E6%95%B4%E5%90%88-SpringMVC%E6%8B%A6%E6%88%AA%E5%99%A8"><span class="nav-text">9.Spring Boot整合-SpringMVC拦截器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#10-Spring-Boot%E6%95%B4%E5%90%88-%E4%BA%8B%E5%8A%A1%E5%92%8C%E8%BF%9E%E6%8E%A5%E6%B1%A0"><span class="nav-text">10. Spring Boot整合-事务和连接池</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#11-Spring-Boot%E6%95%B4%E5%90%88-Mybatis"><span class="nav-text">11. Spring Boot整合-Mybatis</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#12-Spring-Boot%E6%95%B4%E5%90%88-%E9%80%9A%E7%94%A8Mapper"><span class="nav-text">12. Spring Boot整合-通用Mapper</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#13-Spring-Boot%E6%95%B4%E5%90%88%E6%B5%8B%E8%AF%95"><span class="nav-text">13. Spring Boot整合测试</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#14-Spring-Boot%E6%95%B4%E5%90%88-Junit"><span class="nav-text">14. Spring Boot整合-Junit</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#15-Spring-Boot%E6%95%B4%E5%90%88-redis"><span class="nav-text">15. Spring Boot整合-redis</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#16-Spring-Boot%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2"><span class="nav-text">16. Spring Boot项目部署</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

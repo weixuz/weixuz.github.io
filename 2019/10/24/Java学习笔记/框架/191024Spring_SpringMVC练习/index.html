@@ -1,0 +1,1392 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+  <link rel="manifest" href="/images/manifest.json">
+
+
+  <meta name="msapplication-config" content="/images/browserconfig.xml" />
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="Spring练习01-Spring练习-环境搭建步骤分析(理解)案例环境搭建步骤： ①创建工程（Project&amp;Module） ②导入静态页面（见资料jsp页面） ③导入需要坐标（见资料中的pom.xml） ④创建包结构（controller、service、dao、domain、utils） ⑤导入数据库脚本（见资料test.sql） ⑥创建POJO类（见资料User.java和Role">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Spring+SpringMVC练习">
+<meta property="og:url" content="http://yoursite.com/2019/10/24/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%A1%86%E6%9E%B6/191024Spring_SpringMVC%E7%BB%83%E4%B9%A0/index.html">
+<meta property="og:site_name" content="维旭的博客">
+<meta property="og:description" content="Spring练习01-Spring练习-环境搭建步骤分析(理解)案例环境搭建步骤： ①创建工程（Project&amp;Module） ②导入静态页面（见资料jsp页面） ③导入需要坐标（见资料中的pom.xml） ④创建包结构（controller、service、dao、domain、utils） ⑤导入数据库脚本（见资料test.sql） ⑥创建POJO类（见资料User.java和Role">
+<meta property="og:locale">
+<meta property="og:image" content="http://yoursite.com/2019/10/24/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%A1%86%E6%9E%B6/191024Spring_SpringMVC%E7%BB%83%E4%B9%A0/Java%E8%B5%84%E6%96%99/4.%E6%A1%86%E6%9E%B6/01.JavaSSM/08spring+springmvc%E7%BB%BC%E5%90%88%E7%BB%83%E4%B9%A0/%E7%AC%94%E8%AE%B0/img/1.png">
+<meta property="og:image" content="http://yoursite.com/2019/10/24/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%A1%86%E6%9E%B6/191024Spring_SpringMVC%E7%BB%83%E4%B9%A0/Java%E8%B5%84%E6%96%99/4.%E6%A1%86%E6%9E%B6/01.JavaSSM/08spring+springmvc%E7%BB%BC%E5%90%88%E7%BB%83%E4%B9%A0/%E7%AC%94%E8%AE%B0/img/2.png">
+<meta property="og:image" content="http://yoursite.com/2019/10/24/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%A1%86%E6%9E%B6/191024Spring_SpringMVC%E7%BB%83%E4%B9%A0/Java%E8%B5%84%E6%96%99/4.%E6%A1%86%E6%9E%B6/01.JavaSSM/08spring+springmvc%E7%BB%BC%E5%90%88%E7%BB%83%E4%B9%A0/%E7%AC%94%E8%AE%B0/img/3.png">
+<meta property="og:image" content="http://yoursite.com/2019/10/24/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%A1%86%E6%9E%B6/191024Spring_SpringMVC%E7%BB%83%E4%B9%A0/Java%E8%B5%84%E6%96%99/4.%E6%A1%86%E6%9E%B6/01.JavaSSM/08spring+springmvc%E7%BB%BC%E5%90%88%E7%BB%83%E4%B9%A0/%E7%AC%94%E8%AE%B0/img/4.png">
+<meta property="og:image" content="http://yoursite.com/2019/10/24/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%A1%86%E6%9E%B6/191024Spring_SpringMVC%E7%BB%83%E4%B9%A0/Java%E8%B5%84%E6%96%99/4.%E6%A1%86%E6%9E%B6/01.JavaSSM/08spring+springmvc%E7%BB%BC%E5%90%88%E7%BB%83%E4%B9%A0/%E7%AC%94%E8%AE%B0/img/5.png">
+<meta property="og:image" content="http://yoursite.com/2019/10/24/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%A1%86%E6%9E%B6/191024Spring_SpringMVC%E7%BB%83%E4%B9%A0/Java%E8%B5%84%E6%96%99/4.%E6%A1%86%E6%9E%B6/01.JavaSSM/08spring+springmvc%E7%BB%BC%E5%90%88%E7%BB%83%E4%B9%A0/%E7%AC%94%E8%AE%B0/img/6.png">
+<meta property="article:published_time" content="2019-10-24T14:45:08.000Z">
+<meta property="article:modified_time" content="2020-11-23T12:13:45.459Z">
+<meta property="article:author" content="维旭">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/2019/10/24/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%A1%86%E6%9E%B6/191024Spring_SpringMVC%E7%BB%83%E4%B9%A0/Java%E8%B5%84%E6%96%99/4.%E6%A1%86%E6%9E%B6/01.JavaSSM/08spring+springmvc%E7%BB%BC%E5%90%88%E7%BB%83%E4%B9%A0/%E7%AC%94%E8%AE%B0/img/1.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/10/24/Java学习笔记/框架/191024Spring_SpringMVC练习/"/>
+
+
+
+
+
+  <title>Spring+SpringMVC练习 | 维旭的博客</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">维旭的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/24/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%A1%86%E6%9E%B6/191024Spring_SpringMVC%E7%BB%83%E4%B9%A0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="维旭的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Spring+SpringMVC练习</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-24T22:45:08+08:00">
+                2019-10-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index">
+                    <span itemprop="name">Java学习笔记</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%A1%86%E6%9E%B6/" itemprop="url" rel="index">
+                    <span itemprop="name">框架</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="Spring练习"><a href="#Spring练习" class="headerlink" title="Spring练习"></a>Spring练习</h1><h2 id="01-Spring练习-环境搭建步骤分析-理解"><a href="#01-Spring练习-环境搭建步骤分析-理解" class="headerlink" title="01-Spring练习-环境搭建步骤分析(理解)"></a>01-Spring练习-环境搭建步骤分析(理解)</h2><p>案例环境搭建步骤：</p>
+<p>①创建工程（Project&amp;Module）</p>
+<p>②导入静态页面（见资料jsp页面）</p>
+<p>③导入需要坐标（见资料中的pom.xml）</p>
+<p>④创建包结构（controller、service、dao、domain、utils）</p>
+<p>⑤导入数据库脚本（见资料test.sql）</p>
+<p>⑥创建POJO类（见资料User.java和Role.java）</p>
+<p>创建配置文件（applicationContext.xml,spring-mvc.xml,jdbc.properties,log4j.properties）</p>
+<a id="more"></a>
+
+<h2 id="02-Spring练习-环境搭建实现1-应用"><a href="#02-Spring练习-环境搭建实现1-应用" class="headerlink" title="02-Spring练习-环境搭建实现1(应用)"></a>02-Spring练习-环境搭建实现1(应用)</h2><p>创建工程,导入jsp，添加项目依赖</p>
+<p>创建包结构，导入数据库脚本，导入POJO</p>
+<h2 id="03-Spring练习-环境搭建实现2-应用"><a href="#03-Spring练习-环境搭建实现2-应用" class="headerlink" title="03-Spring练习-环境搭建实现2(应用)"></a>03-Spring练习-环境搭建实现2(应用)</h2><p>创建Spring的核心配置文件applicationContext.xml</p>
+<p>创建SpringMVC核心配置文件spring-mvc.xml</p>
+<p>创建数据库配置文件jdbc.properties</p>
+<p>拷贝日志配置文件log4j.properties</p>
+<p>配置web.xml如下：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--全局的初始化参数--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">context-param</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">param-name</span>&gt;</span>contextConfigLocation<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">param-value</span>&gt;</span>classpath:applicationContext.xml<span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">context-param</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--Spring的监听器--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">listener</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">listener-class</span>&gt;</span>org.springframework.web.context.ContextLoaderListener<span class="tag">&lt;/<span class="name">listener-class</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">listener</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--SpringMVC的前端控制器--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>DispatcherServlet<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">servlet-class</span>&gt;</span>org.springframework.web.servlet.DispatcherServlet<span class="tag">&lt;/<span class="name">servlet-class</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">init-param</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">param-name</span>&gt;</span>contextConfigLocation<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">param-value</span>&gt;</span>classpath:spring-mvc.xml<span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">init-param</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">load-on-startup</span>&gt;</span>2<span class="tag">&lt;/<span class="name">load-on-startup</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">servlet</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet-mapping</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>DispatcherServlet<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">url-pattern</span>&gt;</span>/<span class="tag">&lt;/<span class="name">url-pattern</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">servlet-mapping</span>&gt;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="04-Spring练习-环境搭建实现3-应用"><a href="#04-Spring练习-环境搭建实现3-应用" class="headerlink" title="04-Spring练习-环境搭建实现3(应用)"></a>04-Spring练习-环境搭建实现3(应用)</h2><p>配置springm-mvc.xml：注解驱动，视图解析器，静态资源的开放</p>
+<p>配置如下：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--1、mvc注解驱动--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">mvc:annotation-driven</span>/&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!--2、配置视图解析器--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">bean</span> <span class="attr">class</span>=<span class="string">&quot;org.springframework.web.servlet.view.InternalResourceViewResolver&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;prefix&quot;</span> <span class="attr">value</span>=<span class="string">&quot;/pages/&quot;</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;suffix&quot;</span> <span class="attr">value</span>=<span class="string">&quot;.jsp&quot;</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!--3、静态资源权限开放--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">mvc:default-servlet-handler</span>/&gt;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="05-Spring练习-环境搭建实现4-应用"><a href="#05-Spring练习-环境搭建实现4-应用" class="headerlink" title="05-Spring练习-环境搭建实现4(应用)"></a>05-Spring练习-环境搭建实现4(应用)</h2><p>配置applicationContext.xml：加载propertiest,配置数据源对象，配置JdbcTemplate对象</p>
+<p>配置如下：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">beans</span> <span class="attr">xmlns</span>=<span class="string">&quot;http://www.springframework.org/schema/beans&quot;</span></span></span><br><span class="line"><span class="tag">       <span class="attr">xmlns:xsi</span>=<span class="string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span></span></span><br><span class="line"><span class="tag">       <span class="attr">xmlns:context</span>=<span class="string">&quot;http://www.springframework.org/schema/context&quot;</span></span></span><br><span class="line"><span class="tag">       <span class="attr">xsi:schemaLocation</span>=<span class="string">&quot;</span></span></span><br><span class="line"><span class="tag"><span class="string">       http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd</span></span></span><br><span class="line"><span class="tag"><span class="string">       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd</span></span></span><br><span class="line"><span class="tag"><span class="string">&quot;</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--1、加载jdbc.properties--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">context:property-placeholder</span> <span class="attr">location</span>=<span class="string">&quot;classpath:jdbc.properties&quot;</span>/&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!--2、配置数据源对象--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">&quot;dataSource&quot;</span> <span class="attr">class</span>=<span class="string">&quot;com.mchange.v2.c3p0.ComboPooledDataSource&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;driverClass&quot;</span> <span class="attr">value</span>=<span class="string">&quot;$&#123;jdbc.driver&#125;&quot;</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;jdbcUrl&quot;</span> <span class="attr">value</span>=<span class="string">&quot;$&#123;jdbc.url&#125;&quot;</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;user&quot;</span> <span class="attr">value</span>=<span class="string">&quot;$&#123;jdbc.username&#125;&quot;</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;password&quot;</span> <span class="attr">value</span>=<span class="string">&quot;$&#123;jdbc.password&#125;&quot;</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!--3、配置JdbcTemplate对象--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">&quot;jdbcTemplate&quot;</span> <span class="attr">class</span>=<span class="string">&quot;org.springframework.jdbc.core.JdbcTemplate&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;dataSource&quot;</span> <span class="attr">ref</span>=<span class="string">&quot;dataSource&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">beans</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="06-Spring练习-用户表和角色表的分析-理解"><a href="#06-Spring练习-用户表和角色表的分析-理解" class="headerlink" title="06-Spring练习-用户表和角色表的分析(理解)"></a>06-Spring练习-用户表和角色表的分析(理解)</h2><p>分析用户和角色在数据库设计中的表关系：多对多关系，关系如图所示：</p>
+<p><img src="/2019/10/24/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%A1%86%E6%9E%B6/191024Spring_SpringMVC%E7%BB%83%E4%B9%A0/Java%E8%B5%84%E6%96%99/4.%E6%A1%86%E6%9E%B6/01.JavaSSM/08spring+springmvc%E7%BB%BC%E5%90%88%E7%BB%83%E4%B9%A0/%E7%AC%94%E8%AE%B0/img/1.png"></p>
+<h2 id="07-Spring练习-角色列表展示分析-理解"><a href="#07-Spring练习-角色列表展示分析-理解" class="headerlink" title="07-Spring练习-角色列表展示分析(理解)"></a>07-Spring练习-角色列表展示分析(理解)</h2><p>需求：角色列表展示，需求如图所示：</p>
+<p><img src="/2019/10/24/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%A1%86%E6%9E%B6/191024Spring_SpringMVC%E7%BB%83%E4%B9%A0/Java%E8%B5%84%E6%96%99/4.%E6%A1%86%E6%9E%B6/01.JavaSSM/08spring+springmvc%E7%BB%BC%E5%90%88%E7%BB%83%E4%B9%A0/%E7%AC%94%E8%AE%B0/img/2.png"></p>
+<p>完成该功能的思路和步骤为：</p>
+<p>①点击角色管理菜单发送请求到服务器端（修改角色管理菜单的url地址）</p>
+<p>②创建RoleController和list()方法</p>
+<p>③创建RoleService和list()方法</p>
+<p>④创建RoleDao和findAll()方法</p>
+<p>⑤使用JdbcTemplate完成查询操作</p>
+<p>⑥将查询数据存储到modelAndView中</p>
+<p>⑦转发到role-list.jsp页面进行展示</p>
+<h2 id="08-Spring练习-角色列表展示-controller层实现-应用"><a href="#08-Spring练习-角色列表展示-controller层实现-应用" class="headerlink" title="08-Spring练习-角色列表展示-controller层实现(应用)"></a>08-Spring练习-角色列表展示-controller层实现(应用)</h2><p>1：修改左侧菜单链接地址</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;ul <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;treeview-menu&quot;</span>&gt;</span><br><span class="line"></span><br><span class="line">					&lt;li&gt;&lt;a</span><br><span class="line">						href=<span class="string">&quot;$&#123;pageContext.request.contextPath&#125;/user/list&quot;</span>&gt; &lt;i</span><br><span class="line">							class=&quot;fa fa-circle-o&quot;&gt;&lt;/i&gt; 用户管理</span><br><span class="line">					&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">					&lt;li&gt;&lt;a</span><br><span class="line">						href=<span class="string">&quot;$&#123;pageContext.request.contextPath&#125;/role/list&quot;</span>&gt; &lt;i</span><br><span class="line">							class=&quot;fa fa-circle-o&quot;&gt;&lt;/i&gt; 角色管理</span><br><span class="line">					&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">					&lt;li&gt;&lt;a</span><br><span class="line">						href=<span class="string">&quot;$&#123;pageContext.request.contextPath&#125;/pages/syslog-list.jsp&quot;</span>&gt; &lt;i</span><br><span class="line">							class=&quot;fa fa-circle-o&quot;&gt;&lt;/i&gt; 访问日志</span><br><span class="line">					&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">				&lt;/ul&gt;</span><br></pre></td></tr></table></figure>
+
+<p>Controller层代码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RequestMapping(&quot;/role&quot;)</span></span><br><span class="line"><span class="meta">@Controller</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">RoleController</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> RoleService roleService;</span><br><span class="line">    </span><br><span class="line">    <span class="meta">@RequestMapping(&quot;/list&quot;)</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> ModelAndView <span class="title">list</span><span class="params">()</span></span>&#123;</span><br><span class="line">        ModelAndView modelAndView = <span class="keyword">new</span> ModelAndView();</span><br><span class="line">        List&lt;Role&gt; roleList = roleService.list();</span><br><span class="line">        <span class="comment">//设置模型</span></span><br><span class="line">        modelAndView.addObject(<span class="string">&quot;roleList&quot;</span>,roleList);</span><br><span class="line">        <span class="comment">//设置视图</span></span><br><span class="line">        modelAndView.setViewName(<span class="string">&quot;role-list&quot;</span>);</span><br><span class="line">        System.out.println(roleList);</span><br><span class="line">        <span class="keyword">return</span> modelAndView;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="09-Spring练习-角色列表展示-service和dao层实现-应用"><a href="#09-Spring练习-角色列表展示-service和dao层实现-应用" class="headerlink" title="09-Spring练习-角色列表展示-service和dao层实现(应用)"></a>09-Spring练习-角色列表展示-service和dao层实现(应用)</h2><p>service层代码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">RoleServiceImpl</span> <span class="keyword">implements</span> <span class="title">RoleService</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> RoleDao roleDao;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setRoleDao</span><span class="params">(RoleDao roleDao)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.roleDao = roleDao;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> List&lt;Role&gt; <span class="title">list</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        List&lt;Role&gt; roleList = roleDao.findAll();</span><br><span class="line">        <span class="keyword">return</span> roleList;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>dao层代码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">RoleDaoImpl</span> <span class="keyword">implements</span> <span class="title">RoleDao</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> JdbcTemplate jdbcTemplate;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setJdbcTemplate</span><span class="params">(JdbcTemplate jdbcTemplate)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.jdbcTemplate = jdbcTemplate;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> List&lt;Role&gt; <span class="title">findAll</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        List&lt;Role&gt; roleList = jdbcTemplate.query(<span class="string">&quot;select * from sys_role&quot;</span>, <span class="keyword">new</span> BeanPropertyRowMapper&lt;Role&gt;(Role.class));</span><br><span class="line">        <span class="keyword">return</span> roleList;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="10-Spring练习-角色列表展示-配置实现-应用"><a href="#10-Spring练习-角色列表展示-配置实现-应用" class="headerlink" title="10-Spring练习-角色列表展示-配置实现(应用)"></a>10-Spring练习-角色列表展示-配置实现(应用)</h2><p>配置spring-mvc.xml</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--4、组件扫描  扫描Controller--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">context:component-scan</span> <span class="attr">base-package</span>=<span class="string">&quot;com.itheima.controller&quot;</span>/&gt;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>配置applicationContext.xml</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--配置RoleService--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">&quot;roleService&quot;</span> <span class="attr">class</span>=<span class="string">&quot;com.itheima.service.impl.RoleServiceImpl&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;roleDao&quot;</span> <span class="attr">ref</span>=<span class="string">&quot;roleDao&quot;</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--配置RoleDao--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">&quot;roleDao&quot;</span> <span class="attr">class</span>=<span class="string">&quot;com.itheima.dao.impl.RoleDaoImpl&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;jdbcTemplate&quot;</span> <span class="attr">ref</span>=<span class="string">&quot;jdbcTemplate&quot;</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="11-Spring练习-角色列表展示-页面展示-应用"><a href="#11-Spring练习-角色列表展示-页面展示-应用" class="headerlink" title="11-Spring练习-角色列表展示-页面展示(应用)"></a>11-Spring练习-角色列表展示-页面展示(应用)</h2><p>在role-list.jsp中将数据取出来并展示,核心代码如下：</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;c:forEach items=<span class="string">&quot;$&#123;roleList&#125;&quot;</span> <span class="keyword">var</span>=<span class="string">&quot;role&quot;</span>&gt;</span><br><span class="line">&lt;tr&gt;</span><br><span class="line">	&lt;td&gt;&lt;input name=&quot;ids&quot; type=&quot;checkbox&quot;&gt;&lt;/td&gt;</span><br><span class="line">	&lt;td&gt;$&#123;role.id&#125;&lt;/td&gt;</span><br><span class="line">	&lt;td&gt;$&#123;role.roleName&#125;&lt;/td&gt;</span><br><span class="line">	&lt;td&gt;$&#123;role.roleDesc&#125;&lt;/td&gt;</span><br><span class="line">	&lt;td <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;text-center&quot;</span>&gt;</span><br><span class="line">	&lt;a href=&quot;javascript:void(0);&quot; class=&quot;btn bg-olive btn-xs&quot;&gt;删除&lt;/a&gt;</span><br><span class="line">	&lt;/td&gt;</span><br><span class="line">&lt;/tr&gt;</span><br><span class="line">&lt;/c:forEach&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="12-Spring练习-角色的添加操作-应用"><a href="#12-Spring练习-角色的添加操作-应用" class="headerlink" title="12-Spring练习-角色的添加操作(应用)"></a>12-Spring练习-角色的添加操作(应用)</h2><p>需求：添加角色，需求图如下：</p>
+<p><img src="/2019/10/24/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%A1%86%E6%9E%B6/191024Spring_SpringMVC%E7%BB%83%E4%B9%A0/Java%E8%B5%84%E6%96%99/4.%E6%A1%86%E6%9E%B6/01.JavaSSM/08spring+springmvc%E7%BB%BC%E5%90%88%E7%BB%83%E4%B9%A0/%E7%AC%94%E8%AE%B0/img/3.png"></p>
+<p>操作步骤如下：</p>
+<p>①点击列表页面新建按钮跳转到角色添加页面</p>
+<p>②输入角色信息，点击保存按钮，表单数据提交服务器</p>
+<p>③编写RoleController的save()方法</p>
+<p>④编写RoleService的save()方法</p>
+<p>⑤编写RoleDao的save()方法</p>
+<p>⑥使用JdbcTemplate保存Role数据到sys_role</p>
+<p>⑦跳转回角色列表页面</p>
+<p>controller代码如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RequestMapping(&quot;/save&quot;)</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">save</span><span class="params">(Role role)</span></span>&#123;</span><br><span class="line">        roleService.save(role);</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;redirect:/role/list&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>service代码如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">save</span><span class="params">(Role role)</span> </span>&#123;</span><br><span class="line">        roleDao.save(role);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>dao代码如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">save</span><span class="params">(Role role)</span> </span>&#123;</span><br><span class="line">        jdbcTemplate.update(<span class="string">&quot;insert into sys_role values(?,?,?)&quot;</span>,<span class="keyword">null</span>,role.getRoleName(),role.getRoleDesc());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>为了解决post提交中文乱码问题，需要在web.xml中配置全局乱码过滤器</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--解决乱码的过滤器--&gt;</span>    </span><br><span class="line"><span class="tag">&lt;<span class="name">filter</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">filter-name</span>&gt;</span>CharacterEncodingFilter<span class="tag">&lt;/<span class="name">filter-name</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">filter-class</span>&gt;</span>org.springframework.web.filter.CharacterEncodingFilter<span class="tag">&lt;/<span class="name">filter-class</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">init-param</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">param-name</span>&gt;</span>encoding<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">param-value</span>&gt;</span>UTF-8<span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">init-param</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">filter</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">filter-mapping</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">filter-name</span>&gt;</span>CharacterEncodingFilter<span class="tag">&lt;/<span class="name">filter-name</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">url-pattern</span>&gt;</span>/*<span class="tag">&lt;/<span class="name">url-pattern</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">filter-mapping</span>&gt;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>测试，完成该功能。</p>
+<h2 id="13-Spring练习-用户列表展示1-应用"><a href="#13-Spring练习-用户列表展示1-应用" class="headerlink" title="13-Spring练习-用户列表展示1(应用)"></a>13-Spring练习-用户列表展示1(应用)</h2><p>需求：查询用户列表，需求图如下：</p>
+<p><img src="/2019/10/24/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%A1%86%E6%9E%B6/191024Spring_SpringMVC%E7%BB%83%E4%B9%A0/Java%E8%B5%84%E6%96%99/4.%E6%A1%86%E6%9E%B6/01.JavaSSM/08spring+springmvc%E7%BB%BC%E5%90%88%E7%BB%83%E4%B9%A0/%E7%AC%94%E8%AE%B0/img/4.png"></p>
+<p>完成该功能的操作步骤：</p>
+<p>①点击用户管理菜单发送请求到服务器端（修改用户管理菜单的url地址）</p>
+<p>②创建UserController和list()方法</p>
+<p>③创建UserService和list()方法</p>
+<p>④创建UserDao和findAll()方法</p>
+<p>⑤使用JdbcTemplate完成查询操作</p>
+<p>⑥将查询数据存储到modelAndView中</p>
+<p>⑦转发到user-list.jsp页面进行展示</p>
+<p>跟查询角色列表一样，查询用户列表，创建UserController,UserService,UserDao,User实体等结构，编写各层代码并配置</p>
+<p>用户列表Controller,service,dao层代码如下：</p>
+<p>controller</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RequestMapping(&quot;/list&quot;)</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> ModelAndView <span class="title">list</span><span class="params">()</span></span>&#123;</span><br><span class="line">        List&lt;User&gt; userList = userService.list();</span><br><span class="line">        ModelAndView modelAndView = <span class="keyword">new</span> ModelAndView();</span><br><span class="line">        modelAndView.addObject(<span class="string">&quot;userList&quot;</span>,userList);</span><br><span class="line">        modelAndView.setViewName(<span class="string">&quot;user-list&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span> modelAndView;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>service:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> List&lt;User&gt; <span class="title">list</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        List&lt;User&gt; userList = userDao.findAll();</span><br><span class="line">        <span class="comment">//封装userList中的每一个User的roles数据</span></span><br><span class="line">        <span class="keyword">return</span> userList;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>dao:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> List&lt;User&gt; <span class="title">findAll</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        List&lt;User&gt; userList = jdbcTemplate.query(<span class="string">&quot;select * from sys_user&quot;</span>, <span class="keyword">new</span> BeanPropertyRowMapper&lt;User&gt;(User.class));</span><br><span class="line">        <span class="keyword">return</span> userList;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="14-Spring练习-用户列表展示2-应用"><a href="#14-Spring练习-用户列表展示2-应用" class="headerlink" title="14-Spring练习-用户列表展示2(应用)"></a>14-Spring练习-用户列表展示2(应用)</h2><p>查询用户的时候关联查询出该用户所具有的所有角色信息,需要完善查询用户的service层代码</p>
+<p>1，在角色的dao中添加方法，根据用户id查询角色列表</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//在角色dao中根据用户id查询用户具有的角色信息</span></span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">public</span> List&lt;Role&gt; <span class="title">findRoleByUserId</span><span class="params">(Long id)</span> </span>&#123;</span><br><span class="line">        List&lt;Role&gt; roles = jdbcTemplate.query(<span class="string">&quot;select * from sys_user_role ur,sys_role r where ur.roleId=r.id and ur.userId=?&quot;</span>, <span class="keyword">new</span> BeanPropertyRowMapper&lt;Role&gt;(Role.class), id);</span><br><span class="line">        <span class="keyword">return</span> roles;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>完善userservcie层代码如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//在查询用户的service中关联查询用户具有的角色</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> List&lt;User&gt; <span class="title">list</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        List&lt;User&gt; userList = userDao.findAll();</span><br><span class="line">        <span class="comment">//封装userList中的每一个User的roles数据</span></span><br><span class="line">        <span class="keyword">for</span> (User user : userList) &#123;</span><br><span class="line">            <span class="comment">//获得user的id</span></span><br><span class="line">            Long id = user.getId();</span><br><span class="line">            <span class="comment">//将id作为参数 查询当前userId对应的Role集合数据</span></span><br><span class="line">            List&lt;Role&gt; roles = roleDao.findRoleByUserId(id);</span><br><span class="line">            user.setRoles(roles);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> userList;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>查询用户的时候关联查询出该用户所具有的所有角色信息，前端jsp页面核心代码</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;c:forEach items=<span class="string">&quot;$&#123;userList&#125;&quot;</span> <span class="keyword">var</span>=<span class="string">&quot;user&quot;</span>&gt;</span><br><span class="line">&lt;tr&gt;</span><br><span class="line">	&lt;td&gt;&lt;input name=&quot;ids&quot; type=&quot;checkbox&quot;&gt;&lt;/td&gt;</span><br><span class="line">	&lt;td&gt;$&#123;user.id&#125;&lt;/td&gt;</span><br><span class="line">	&lt;td&gt;$&#123;user.username&#125;&lt;/td&gt;</span><br><span class="line">	&lt;td&gt;$&#123;user.email&#125;&lt;/td&gt;</span><br><span class="line">	&lt;td&gt;$&#123;user.phoneNum&#125;&lt;/td&gt;</span><br><span class="line">	&lt;td <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;text-center&quot;</span>&gt;</span><br><span class="line">		&lt;c:forEach items=<span class="string">&quot;$&#123;user.roles&#125;&quot;</span> <span class="keyword">var</span>=<span class="string">&quot;role&quot;</span>&gt;</span><br><span class="line">		&amp;nbsp;&amp;nbsp;$&#123;role.roleName&#125;</span><br><span class="line">		&lt;/c:forEach&gt;</span><br><span class="line">	&lt;/td&gt;</span><br><span class="line">	&lt;td <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;text-center&quot;</span>&gt;</span><br><span class="line">		&lt;a href=&quot;javascript:void(0);&quot; onclick=&quot;delUser(&#x27;$&#123;user.id&#125;&#x27;)&quot; class=&quot;btn bg-olive btn-xs&quot;&gt;删除&lt;/a&gt;</span><br><span class="line">	&lt;/td&gt;</span><br><span class="line">&lt;/tr&gt;</span><br><span class="line">&lt;/c:forEach&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="15-Spring练习-用户添加操作-添加页面展示-应用"><a href="#15-Spring练习-用户添加操作-添加页面展示-应用" class="headerlink" title="15-Spring练习-用户添加操作-添加页面展示(应用)"></a>15-Spring练习-用户添加操作-添加页面展示(应用)</h2><p>需求：添加用户，需求图如下：</p>
+<p><img src="/2019/10/24/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%A1%86%E6%9E%B6/191024Spring_SpringMVC%E7%BB%83%E4%B9%A0/Java%E8%B5%84%E6%96%99/4.%E6%A1%86%E6%9E%B6/01.JavaSSM/08spring+springmvc%E7%BB%BC%E5%90%88%E7%BB%83%E4%B9%A0/%E7%AC%94%E8%AE%B0/img/5.png"></p>
+<p>新建用户时，点击新建按钮先去到添加用户的页面user-add.jsp,在添加用户页面需要展示可供选择的角色信息，因此来到添加页面时需要查询所有的角色信息并展示</p>
+<p>去到user-add.jsp页面时先查询所有角色信息的controller代码</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RequestMapping(&quot;/saveUI&quot;)</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> ModelAndView <span class="title">saveUI</span><span class="params">()</span></span>&#123;</span><br><span class="line">        ModelAndView modelAndView = <span class="keyword">new</span> ModelAndView();</span><br><span class="line">        List&lt;Role&gt; roleList = roleService.list();</span><br><span class="line">        modelAndView.addObject(<span class="string">&quot;roleList&quot;</span>,roleList);</span><br><span class="line">        modelAndView.setViewName(<span class="string">&quot;user-add&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span> modelAndView;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p>因为查询所有角色信息的service层和dao层代码在之前角色列表展示功能的时候已经写了，因此只需调用即可，</p>
+<p>在user-add.jsp页面展示所有角色信息的核心代码</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;col-md-10 data&quot;</span>&gt;</span><br><span class="line">	&lt;c:forEach items=<span class="string">&quot;$&#123;roleList&#125;&quot;</span> <span class="keyword">var</span>=<span class="string">&quot;role&quot;</span>&gt;</span><br><span class="line">	&lt;input <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;&quot;</span> type=<span class="string">&quot;checkbox&quot;</span> name=<span class="string">&quot;roleIds&quot;</span> value=<span class="string">&quot;$&#123;role.id&#125;&quot;</span>&gt;$&#123;role.roleName&#125;</span><br><span class="line">&lt;/c:forEach&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="16-Spring练习-用户添加操作-添加数据到数据库-应用"><a href="#16-Spring练习-用户添加操作-添加数据到数据库-应用" class="headerlink" title="16-Spring练习-用户添加操作-添加数据到数据库(应用)"></a>16-Spring练习-用户添加操作-添加数据到数据库(应用)</h2><p>添加用户页面有两部分数据，一部分属于用户基础数据需要插入到用户表user中，另一部分是用户的角色数据，需要插入到中间表sys_user_role中</p>
+<p>user-add.jsp页面提交数据到controller完成数据添加操作的controller层和service层代码分别如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//controller层代码</span></span><br><span class="line"><span class="meta">@RequestMapping(&quot;/save&quot;)</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">save</span><span class="params">(User user,Long[] roleIds)</span></span>&#123;</span><br><span class="line">        userService.save(user,roleIds);</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;redirect:/user/list&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//service层代码</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">save</span><span class="params">(User user, Long[] roleIds)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//第一步 向sys_user表中存储数据</span></span><br><span class="line">        Long userId = userDao.save(user);</span><br><span class="line">        <span class="comment">//第二步 向sys_user_role 关系表中存储多条数据</span></span><br><span class="line">        userDao.saveUserRoleRel(userId,roleIds);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>dao层代码因为还需要重新构建，因此学完下一个章节后重新编写，因为这里留下了一个问题，在dao层操作后如何获得自增的主键id值呢?</p>
+<h2 id="17-Spring练习-用户添加操作-添加数据到数据库2-应用"><a href="#17-Spring练习-用户添加操作-添加数据到数据库2-应用" class="headerlink" title="17-Spring练习-用户添加操作-添加数据到数据库2(应用)"></a>17-Spring练习-用户添加操作-添加数据到数据库2(应用)</h2><p>添加用户时用户分配的角色信息应存储到中间表sys_user_role表中，需要用户的id，角色的id，而角色的id由前台页面点选的，用户的id应该是在保存操作由mysql主键自动生成的，那如何获取mysql自增的主键值呢？</p>
+<p>使用JdbcTemplate执行插入操作时获取mysql自增的主键值：</p>
+<p>添加操作的dao层代码如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">saveUserRoleRel</span><span class="params">(Long userId, Long[] roleIds)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">for</span> (Long roleId : roleIds) &#123;</span><br><span class="line">            jdbcTemplate.update(<span class="string">&quot;insert into sys_user_role values(?,?)&quot;</span>,userId,roleId);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="18-Spring练习-删除用户操作-应用"><a href="#18-Spring练习-删除用户操作-应用" class="headerlink" title="18-Spring练习-删除用户操作(应用)"></a>18-Spring练习-删除用户操作(应用)</h2><p>删除用户功能的需求如图所示:</p>
+<p><img src="/2019/10/24/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%A1%86%E6%9E%B6/191024Spring_SpringMVC%E7%BB%83%E4%B9%A0/Java%E8%B5%84%E6%96%99/4.%E6%A1%86%E6%9E%B6/01.JavaSSM/08spring+springmvc%E7%BB%BC%E5%90%88%E7%BB%83%E4%B9%A0/%E7%AC%94%E8%AE%B0/img/6.png"></p>
+<p>操作步骤如下：</p>
+<p>①点击用户列表的删除按钮，发送请求到服务器端</p>
+<p>②编写UserController的del()方法</p>
+<p>③编写UserService的del()方法</p>
+<p>⑤编写UserDao的delUserRoleRel()方法</p>
+<p>⑥跳回当前用户列表页面</p>
+<p>完成用户的删除操作，不仅要删除用户表数据，同时需要将用户和角色的关联表数据进行删除：</p>
+<p>controller代码</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RequestMapping(&quot;/del/&#123;userId&#125;&quot;)</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">del</span><span class="params">(<span class="meta">@PathVariable(&quot;userId&quot;)</span> Long userId)</span></span>&#123;</span><br><span class="line">        userService.del(userId);</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;redirect:/user/list&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>service代码</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">del</span><span class="params">(Long userId)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//1、删除sys_user_role关系表</span></span><br><span class="line">        userDao.delUserRoleRel(userId);</span><br><span class="line">        <span class="comment">//2、删除sys_user表</span></span><br><span class="line">        userDao.del(userId);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>dao代码:不仅要删除用户表数据，同时需要将用户和角色的关联表数据进行删除</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">delUserRoleRel</span><span class="params">(Long userId)</span> </span>&#123;</span><br><span class="line">        jdbcTemplate.update(<span class="string">&quot;delete from sys_user_role where userId=?&quot;</span>,userId);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">del</span><span class="params">(Long userId)</span> </span>&#123;</span><br><span class="line">        jdbcTemplate.update(<span class="string">&quot;delete from sys_user where id=?&quot;</span>,userId);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/10/23/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%A1%86%E6%9E%B6/191023SpringMVC%E6%80%BB%E7%BB%93/" rel="next" title="SpringMVC总结">
+                <i class="fa fa-chevron-left"></i> SpringMVC总结
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/10/26/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%A1%86%E6%9E%B6/191026mybatis/" rel="prev" title="mybatis">
+                mybatis <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="" />
+            
+              <p class="site-author-name" itemprop="name"></p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">94</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/weixuz" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                查阅链接
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.runoob.com/" title="菜鸟教程" target="_blank">菜鸟教程</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://jingzhunyun.com/" title="精准云工具" target="_blank">精准云工具</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.toolnb.com/" title="爱资料工具" target="_blank">爱资料工具</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.getitfree.cn/" title="正版中国" target="_blank">正版中国</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://bbs.pediy.com/" title="看雪安全论坛" target="_blank">看雪安全论坛</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://24mail.chacuo.net/" title="临时邮箱" target="_blank">临时邮箱</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.w3school.com.cn/" title="w3c在线教程" target="_blank">w3c在线教程</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://developer.mozilla.org/zh-CN/" title="MDN web文档" target="_blank">MDN web文档</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://cn.vuejs.org/v2/guide/" title="Vue.js在线教程" target="_blank">Vue.js在线教程</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.jq22.com/" title="jquery插件库" target="_blank">jquery插件库</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.htmleaf.com/" title="jquery之家" target="_blank">jquery之家</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.nowcoder.com/ta/coding-interviews" title="牛客网-剑指offer编程题" target="_blank">牛客网-剑指offer编程题</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://getbootstrap.com" title="bootstrap" target="_blank">bootstrap</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://v3.bootcss.com/components/" title="bootstrap中文" target="_blank">bootstrap中文</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://icomoon.io/" title="文字图标" target="_blank">文字图标</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Spring%E7%BB%83%E4%B9%A0"><span class="nav-text">Spring练习</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#01-Spring%E7%BB%83%E4%B9%A0-%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%E6%AD%A5%E9%AA%A4%E5%88%86%E6%9E%90-%E7%90%86%E8%A7%A3"><span class="nav-text">01-Spring练习-环境搭建步骤分析(理解)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#02-Spring%E7%BB%83%E4%B9%A0-%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%E5%AE%9E%E7%8E%B01-%E5%BA%94%E7%94%A8"><span class="nav-text">02-Spring练习-环境搭建实现1(应用)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#03-Spring%E7%BB%83%E4%B9%A0-%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%E5%AE%9E%E7%8E%B02-%E5%BA%94%E7%94%A8"><span class="nav-text">03-Spring练习-环境搭建实现2(应用)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#04-Spring%E7%BB%83%E4%B9%A0-%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%E5%AE%9E%E7%8E%B03-%E5%BA%94%E7%94%A8"><span class="nav-text">04-Spring练习-环境搭建实现3(应用)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#05-Spring%E7%BB%83%E4%B9%A0-%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%E5%AE%9E%E7%8E%B04-%E5%BA%94%E7%94%A8"><span class="nav-text">05-Spring练习-环境搭建实现4(应用)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#06-Spring%E7%BB%83%E4%B9%A0-%E7%94%A8%E6%88%B7%E8%A1%A8%E5%92%8C%E8%A7%92%E8%89%B2%E8%A1%A8%E7%9A%84%E5%88%86%E6%9E%90-%E7%90%86%E8%A7%A3"><span class="nav-text">06-Spring练习-用户表和角色表的分析(理解)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#07-Spring%E7%BB%83%E4%B9%A0-%E8%A7%92%E8%89%B2%E5%88%97%E8%A1%A8%E5%B1%95%E7%A4%BA%E5%88%86%E6%9E%90-%E7%90%86%E8%A7%A3"><span class="nav-text">07-Spring练习-角色列表展示分析(理解)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#08-Spring%E7%BB%83%E4%B9%A0-%E8%A7%92%E8%89%B2%E5%88%97%E8%A1%A8%E5%B1%95%E7%A4%BA-controller%E5%B1%82%E5%AE%9E%E7%8E%B0-%E5%BA%94%E7%94%A8"><span class="nav-text">08-Spring练习-角色列表展示-controller层实现(应用)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#09-Spring%E7%BB%83%E4%B9%A0-%E8%A7%92%E8%89%B2%E5%88%97%E8%A1%A8%E5%B1%95%E7%A4%BA-service%E5%92%8Cdao%E5%B1%82%E5%AE%9E%E7%8E%B0-%E5%BA%94%E7%94%A8"><span class="nav-text">09-Spring练习-角色列表展示-service和dao层实现(应用)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#10-Spring%E7%BB%83%E4%B9%A0-%E8%A7%92%E8%89%B2%E5%88%97%E8%A1%A8%E5%B1%95%E7%A4%BA-%E9%85%8D%E7%BD%AE%E5%AE%9E%E7%8E%B0-%E5%BA%94%E7%94%A8"><span class="nav-text">10-Spring练习-角色列表展示-配置实现(应用)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#11-Spring%E7%BB%83%E4%B9%A0-%E8%A7%92%E8%89%B2%E5%88%97%E8%A1%A8%E5%B1%95%E7%A4%BA-%E9%A1%B5%E9%9D%A2%E5%B1%95%E7%A4%BA-%E5%BA%94%E7%94%A8"><span class="nav-text">11-Spring练习-角色列表展示-页面展示(应用)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#12-Spring%E7%BB%83%E4%B9%A0-%E8%A7%92%E8%89%B2%E7%9A%84%E6%B7%BB%E5%8A%A0%E6%93%8D%E4%BD%9C-%E5%BA%94%E7%94%A8"><span class="nav-text">12-Spring练习-角色的添加操作(应用)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#13-Spring%E7%BB%83%E4%B9%A0-%E7%94%A8%E6%88%B7%E5%88%97%E8%A1%A8%E5%B1%95%E7%A4%BA1-%E5%BA%94%E7%94%A8"><span class="nav-text">13-Spring练习-用户列表展示1(应用)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#14-Spring%E7%BB%83%E4%B9%A0-%E7%94%A8%E6%88%B7%E5%88%97%E8%A1%A8%E5%B1%95%E7%A4%BA2-%E5%BA%94%E7%94%A8"><span class="nav-text">14-Spring练习-用户列表展示2(应用)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#15-Spring%E7%BB%83%E4%B9%A0-%E7%94%A8%E6%88%B7%E6%B7%BB%E5%8A%A0%E6%93%8D%E4%BD%9C-%E6%B7%BB%E5%8A%A0%E9%A1%B5%E9%9D%A2%E5%B1%95%E7%A4%BA-%E5%BA%94%E7%94%A8"><span class="nav-text">15-Spring练习-用户添加操作-添加页面展示(应用)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#16-Spring%E7%BB%83%E4%B9%A0-%E7%94%A8%E6%88%B7%E6%B7%BB%E5%8A%A0%E6%93%8D%E4%BD%9C-%E6%B7%BB%E5%8A%A0%E6%95%B0%E6%8D%AE%E5%88%B0%E6%95%B0%E6%8D%AE%E5%BA%93-%E5%BA%94%E7%94%A8"><span class="nav-text">16-Spring练习-用户添加操作-添加数据到数据库(应用)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#17-Spring%E7%BB%83%E4%B9%A0-%E7%94%A8%E6%88%B7%E6%B7%BB%E5%8A%A0%E6%93%8D%E4%BD%9C-%E6%B7%BB%E5%8A%A0%E6%95%B0%E6%8D%AE%E5%88%B0%E6%95%B0%E6%8D%AE%E5%BA%932-%E5%BA%94%E7%94%A8"><span class="nav-text">17-Spring练习-用户添加操作-添加数据到数据库2(应用)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#18-Spring%E7%BB%83%E4%B9%A0-%E5%88%A0%E9%99%A4%E7%94%A8%E6%88%B7%E6%93%8D%E4%BD%9C-%E5%BA%94%E7%94%A8"><span class="nav-text">18-Spring练习-删除用户操作(应用)</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2019 &mdash; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">weixuz</span>
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three-waves.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  	
+<!-- ҳ����С���� -->
+<script type="text/javascript" src="/js/src/clicklove.js"></script>
+</body>
+</html>

@@ -83,17 +83,25 @@
 
 
 
-<meta name="description" content="1.API1.1 Math（应用） 1、Math类概述  Math 包含执行基本数字运算的方法   2、Math中方法的调用方式  Math类中无构造方法，但内部的方法都是静态的，则可以通过   类名.进行调用">
+<meta name="description" content="1.API1.1API概述 什么是API ​    API (Application Programming Interface) ：应用程序编程接口  java中的API ​    指的就是 JDK 中提供的各种功能的 Java类，这些类将底层的实现封装了起来，我们不需要关心这些类是如何实现的，只需要学习这些类如何使用即可，我们可以通过帮助文档来学习这些API如何使用。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="API">
 <meta property="og:url" content="http://yoursite.com/2019/08/22/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/JavaSE/190822.2API/index.html">
 <meta property="og:site_name" content="维旭的博客">
-<meta property="og:description" content="1.API1.1 Math（应用） 1、Math类概述  Math 包含执行基本数字运算的方法   2、Math中方法的调用方式  Math类中无构造方法，但内部的方法都是静态的，则可以通过   类名.进行调用">
+<meta property="og:description" content="1.API1.1API概述 什么是API ​    API (Application Programming Interface) ：应用程序编程接口  java中的API ​    指的就是 JDK 中提供的各种功能的 Java类，这些类将底层的实现封装了起来，我们不需要关心这些类是如何实现的，只需要学习这些类如何使用即可，我们可以通过帮助文档来学习这些API如何使用。">
 <meta property="og:locale">
+<meta property="og:image" content="http://yoursite.com/2019/08/22/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/JavaSE/190822.2API/Java%E8%B5%84%E6%96%99/1.JavaSE/day08(%E5%AD%97%E7%AC%A6%E4%B8%B2)/%E7%AC%94%E8%AE%B0/img/01.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/22/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/JavaSE/190822.2API/Java%E8%B5%84%E6%96%99/1.JavaSE/day08(%E5%AD%97%E7%AC%A6%E4%B8%B2)/%E7%AC%94%E8%AE%B0/img/02.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/22/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/JavaSE/190822.2API/Java%E8%B5%84%E6%96%99/1.JavaSE/day08(%E5%AD%97%E7%AC%A6%E4%B8%B2)/%E7%AC%94%E8%AE%B0/img/03.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/22/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/JavaSE/190822.2API/Java%E8%B5%84%E6%96%99/1.JavaSE/day08(%E5%AD%97%E7%AC%A6%E4%B8%B2)/%E7%AC%94%E8%AE%B0/img/04.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/22/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/JavaSE/190822.2API/Java%E8%B5%84%E6%96%99/1.JavaSE/day08(%E5%AD%97%E7%AC%A6%E4%B8%B2)/%E7%AC%94%E8%AE%B0/img/05.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/22/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/JavaSE/190822.2API/Java%E8%B5%84%E6%96%99/1.JavaSE/day08(%E5%AD%97%E7%AC%A6%E4%B8%B2)/%E7%AC%94%E8%AE%B0/img/06.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/22/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/JavaSE/190822.2API/Java%E8%B5%84%E6%96%99/1.JavaSE/day08(%E5%AD%97%E7%AC%A6%E4%B8%B2)/%E7%AC%94%E8%AE%B0/img/07.png">
 <meta property="article:published_time" content="2019-08-22T12:26:21.000Z">
-<meta property="article:modified_time" content="2020-11-23T05:59:56.980Z">
+<meta property="article:modified_time" content="2020-11-23T08:01:46.182Z">
 <meta property="article:author" content="维旭">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/2019/08/22/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/JavaSE/190822.2API/Java%E8%B5%84%E6%96%99/1.JavaSE/day08(%E5%AD%97%E7%AC%A6%E4%B8%B2)/%E7%AC%94%E8%AE%B0/img/01.png">
 
 
 
@@ -395,7 +403,45 @@
       
 
       
-        <h2 id="1-API"><a href="#1-API" class="headerlink" title="1.API"></a>1.API</h2><h3 id="1-1-Math（应用）"><a href="#1-1-Math（应用）" class="headerlink" title="1.1 Math（应用）"></a>1.1 Math（应用）</h3><ul>
+        <h2 id="1-API"><a href="#1-API" class="headerlink" title="1.API"></a>1.API</h2><h3 id="1-1API概述"><a href="#1-1API概述" class="headerlink" title="1.1API概述"></a>1.1API概述</h3><ul>
+<li><p>什么是API</p>
+<p>​    API (Application Programming Interface) ：应用程序编程接口</p>
+</li>
+<li><p>java中的API</p>
+<p>​    指的就是 JDK 中提供的各种功能的 Java类，这些类将底层的实现封装了起来，我们不需要关心这些类是如何实现的，只需要学习这些类如何使用即可，我们可以通过帮助文档来学习这些API如何使用。</p>
+</li>
+</ul>
+<a id="more"></a>
+
+<h3 id="1-2如何使用API帮助文档"><a href="#1-2如何使用API帮助文档" class="headerlink" title="1.2如何使用API帮助文档"></a>1.2如何使用API帮助文档</h3><ul>
+<li>打开帮助文档</li>
+</ul>
+<p><img src="/2019/08/22/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/JavaSE/190822.2API/Java%E8%B5%84%E6%96%99/1.JavaSE/day08(%E5%AD%97%E7%AC%A6%E4%B8%B2)/%E7%AC%94%E8%AE%B0/img/01.png" alt="01"></p>
+<ul>
+<li>找到索引选项卡中的输入框</li>
+</ul>
+<p><img src="/2019/08/22/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/JavaSE/190822.2API/Java%E8%B5%84%E6%96%99/1.JavaSE/day08(%E5%AD%97%E7%AC%A6%E4%B8%B2)/%E7%AC%94%E8%AE%B0/img/02.png" alt="02"></p>
+<ul>
+<li>在输入框中输入Random</li>
+</ul>
+<p><img src="/2019/08/22/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/JavaSE/190822.2API/Java%E8%B5%84%E6%96%99/1.JavaSE/day08(%E5%AD%97%E7%AC%A6%E4%B8%B2)/%E7%AC%94%E8%AE%B0/img/03.png" alt="03"></p>
+<ul>
+<li>看类在哪个包下</li>
+</ul>
+<p><img src="/2019/08/22/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/JavaSE/190822.2API/Java%E8%B5%84%E6%96%99/1.JavaSE/day08(%E5%AD%97%E7%AC%A6%E4%B8%B2)/%E7%AC%94%E8%AE%B0/img/04.png" alt="04"></p>
+<ul>
+<li>看类的描述</li>
+</ul>
+<p><img src="/2019/08/22/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/JavaSE/190822.2API/Java%E8%B5%84%E6%96%99/1.JavaSE/day08(%E5%AD%97%E7%AC%A6%E4%B8%B2)/%E7%AC%94%E8%AE%B0/img/05.png" alt="05"></p>
+<ul>
+<li>看构造方法</li>
+</ul>
+<p><img src="/2019/08/22/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/JavaSE/190822.2API/Java%E8%B5%84%E6%96%99/1.JavaSE/day08(%E5%AD%97%E7%AC%A6%E4%B8%B2)/%E7%AC%94%E8%AE%B0/img/06.png" alt="06"></p>
+<ul>
+<li>看成员方法</li>
+</ul>
+<p><img src="/2019/08/22/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/JavaSE/190822.2API/Java%E8%B5%84%E6%96%99/1.JavaSE/day08(%E5%AD%97%E7%AC%A6%E4%B8%B2)/%E7%AC%94%E8%AE%B0/img/07.png" alt="07"></p>
+<h3 id="2-1-Math"><a href="#2-1-Math" class="headerlink" title="2.1 Math"></a>2.1 Math</h3><ul>
 <li><p>1、Math类概述</p>
 <ul>
 <li>Math 包含执行基本数字运算的方法</li>
@@ -404,7 +450,7 @@
 <li><p>2、Math中方法的调用方式</p>
 <ul>
 <li><p>Math类中无构造方法，但内部的方法都是静态的，则可以通过   <strong>类名.进行调用</strong></p>
-<a id="more"></a>
+<!-- more -->
 </li>
 </ul>
 </li>
@@ -451,7 +497,7 @@
 </tbody></table>
 </li>
 </ul>
-<h3 id="1-2-System（应用）"><a href="#1-2-System（应用）" class="headerlink" title="1.2 System（应用）"></a>1.2 System（应用）</h3><ul>
+<h3 id="2-2-System"><a href="#2-2-System" class="headerlink" title="2.2 System"></a>2.2 System</h3><ul>
 <li>System类的常用方法 </li>
 </ul>
 <table>
@@ -479,7 +525,7 @@
 
 </li>
 </ul>
-<h3 id="1-3-Object类的toString方法（应用）"><a href="#1-3-Object类的toString方法（应用）" class="headerlink" title="1.3 Object类的toString方法（应用）"></a>1.3 Object类的toString方法（应用）</h3><ul>
+<h3 id="2-3-Object类的toString方法"><a href="#2-3-Object类的toString方法" class="headerlink" title="2.3 Object类的toString方法"></a>2.3 Object类的toString方法</h3><ul>
 <li><p>Object类概述</p>
 <ul>
 <li>Object 是类层次结构的根，每个类都可以将 Object 作为超类。所有类都直接或者间接的继承自该类，换句话说，该类所具备的方法，所有类都会有一份</li>
@@ -515,7 +561,7 @@
 
 </li>
 </ul>
-<h3 id="1-4-Object类的equals方法（应用）"><a href="#1-4-Object类的equals方法（应用）" class="headerlink" title="1.4 Object类的equals方法（应用）"></a>1.4 Object类的equals方法（应用）</h3><ul>
+<h3 id="2-4-Object类的equals方法"><a href="#2-4-Object类的equals方法" class="headerlink" title="2.4 Object类的equals方法"></a>2.4 Object类的equals方法</h3><ul>
 <li><p>equals方法的作用</p>
 <ul>
 <li>用于对象之间的比较，返回true和false的结果</li>
@@ -544,7 +590,7 @@
 
 </li>
 </ul>
-<h3 id="1-5-冒泡排序原理（理解）"><a href="#1-5-冒泡排序原理（理解）" class="headerlink" title="1.5 冒泡排序原理（理解）"></a>1.5 冒泡排序原理（理解）</h3><ul>
+<h3 id="2-5-冒泡排序原理"><a href="#2-5-冒泡排序原理" class="headerlink" title="2.5 冒泡排序原理"></a>2.5 冒泡排序原理</h3><ul>
 <li>冒泡排序概述<ul>
 <li>一种排序的方式，对要进行排序的数据中相邻的数据进行两两比较，将较大的数据放在后面，依次对所有的数据进行操作，直至所有数据按要求完成排序</li>
 </ul>
@@ -552,12 +598,12 @@
 <li>如果有n个数据进行排序，总共需要比较n-1次</li>
 <li>每一次比较完毕，下一次的比较就会少一个数据参与</li>
 </ul>
-<h3 id="1-6-冒泡排序代码实现（理解）"><a href="#1-6-冒泡排序代码实现（理解）" class="headerlink" title="1.6 冒泡排序代码实现（理解）"></a>1.6 冒泡排序代码实现（理解）</h3><ul>
+<h3 id="2-6-冒泡排序代码实现"><a href="#2-6-冒泡排序代码实现" class="headerlink" title="2.6 冒泡排序代码实现"></a>2.6 冒泡排序代码实现</h3><ul>
 <li>代码实现</li>
 </ul>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">    冒泡排序：</span></span><br><span class="line"><span class="comment">        一种排序的方式，对要进行排序的数据中相邻的数据进行两两比较，将较大的数据放在后面，</span></span><br><span class="line"><span class="comment">        依次对所有的数据进行操作，直至所有数据按要求完成排序</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ArrayDemo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//定义一个数组</span></span><br><span class="line">        <span class="keyword">int</span>[] arr = &#123;<span class="number">24</span>, <span class="number">69</span>, <span class="number">80</span>, <span class="number">57</span>, <span class="number">13</span>&#125;;</span><br><span class="line">        System.out.println(<span class="string">&quot;排序前：&quot;</span> + arrayToString(arr));</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 这里减1，是控制每轮比较的次数</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> x = <span class="number">0</span>; x &lt; arr.length - <span class="number">1</span>; x++) &#123;</span><br><span class="line">            <span class="comment">// -1是为了避免索引越界，-x是为了调高比较效率</span></span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; arr.length - <span class="number">1</span> - x; i++) &#123;</span><br><span class="line">                <span class="keyword">if</span> (arr[i] &gt; arr[i + <span class="number">1</span>]) &#123;</span><br><span class="line">                    <span class="keyword">int</span> temp = arr[i];</span><br><span class="line">                    arr[i] = arr[i + <span class="number">1</span>];</span><br><span class="line">                    arr[i + <span class="number">1</span>] = temp;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(<span class="string">&quot;排序后：&quot;</span> + arrayToString(arr));</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//把数组中的元素按照指定的规则组成一个字符串：[元素1, 元素2, ...]</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">arrayToString</span><span class="params">(<span class="keyword">int</span>[] arr)</span> </span>&#123;</span><br><span class="line">        StringBuilder sb = <span class="keyword">new</span> StringBuilder();</span><br><span class="line">        sb.append(<span class="string">&quot;[&quot;</span>);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; arr.length; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (i == arr.length - <span class="number">1</span>) &#123;</span><br><span class="line">                sb.append(arr[i]);</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                sb.append(arr[i]).append(<span class="string">&quot;, &quot;</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        sb.append(<span class="string">&quot;]&quot;</span>);</span><br><span class="line">        String s = sb.toString();</span><br><span class="line">        <span class="keyword">return</span> s;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h3 id="1-7-Arrays（应用）"><a href="#1-7-Arrays（应用）" class="headerlink" title="1.7 Arrays（应用）"></a>1.7 Arrays（应用）</h3><ul>
+<h3 id="2-7-Arrays"><a href="#2-7-Arrays" class="headerlink" title="2.7 Arrays"></a>2.7 Arrays</h3><ul>
 <li><p>Arrays的常用方法</p>
 <table>
 <thead>
@@ -581,7 +627,7 @@
 <p>2、成员用 public static 修饰</p>
 </li>
 </ul>
-<h1 id="2-常用API"><a href="#2-常用API" class="headerlink" title="2.常用API"></a>2.常用API</h1><h2 id="2-1-包装类"><a href="#2-1-包装类" class="headerlink" title="2.1.包装类"></a>2.1.包装类</h2><h3 id="2-1-1基本类型包装类（记忆）"><a href="#2-1-1基本类型包装类（记忆）" class="headerlink" title="2.1.1基本类型包装类（记忆）"></a>2.1.1基本类型包装类（记忆）</h3><ul>
+<h1 id="3-常用API"><a href="#3-常用API" class="headerlink" title="3.常用API"></a>3.常用API</h1><h2 id="3-1-包装类"><a href="#3-1-包装类" class="headerlink" title="3.1.包装类"></a>3.1.包装类</h2><h3 id="3-1-1基本类型包装类"><a href="#3-1-1基本类型包装类" class="headerlink" title="3.1.1基本类型包装类"></a>3.1.1基本类型包装类</h3><ul>
 <li><p>基本类型包装类的作用</p>
 <p>​    将基本数据类型封装成对象的好处在于可以在对象中定义更多的功能方法操作该数据</p>
 <p>​    常用的操作之一：用于基本数据类型与字符串之间的转换</p>
@@ -629,7 +675,7 @@
 </tbody></table>
 </li>
 </ul>
-<h3 id="2-1-2Integer类（应用）"><a href="#2-1-2Integer类（应用）" class="headerlink" title="2.1.2Integer类（应用）"></a>2.1.2Integer类（应用）</h3><ul>
+<h3 id="3-1-2Integer类"><a href="#3-1-2Integer类" class="headerlink" title="3.1.2Integer类"></a>3.1.2Integer类</h3><ul>
 <li><p>Integer类概述</p>
 <p>​    包装一个对象中的原始类型 int 的值</p>
 </li>
@@ -664,7 +710,7 @@
 
 </li>
 </ul>
-<h3 id="2-1-3int和String类型的相互转换（记忆）"><a href="#2-1-3int和String类型的相互转换（记忆）" class="headerlink" title="2.1.3int和String类型的相互转换（记忆）"></a>2.1.3int和String类型的相互转换（记忆）</h3><ul>
+<h3 id="3-1-3int和String类型的相互转换"><a href="#3-1-3int和String类型的相互转换" class="headerlink" title="3.1.3int和String类型的相互转换"></a>3.1.3int和String类型的相互转换</h3><ul>
 <li><p>int转换为String</p>
 <ul>
 <li><p>转换方式</p>
@@ -693,7 +739,7 @@
 </ul>
 </li>
 </ul>
-<h3 id="2-1-4字符串数据排序案例（应用）"><a href="#2-1-4字符串数据排序案例（应用）" class="headerlink" title="2.1.4字符串数据排序案例（应用）"></a>2.1.4字符串数据排序案例（应用）</h3><ul>
+<h3 id="3-1-4字符串数据排序案例"><a href="#3-1-4字符串数据排序案例" class="headerlink" title="3.1.4字符串数据排序案例"></a>3.1.4字符串数据排序案例</h3><ul>
 <li><p>案例需求</p>
 <p>​    有一个字符串：“91 27 46 38 50”，请写程序实现最终输出结果是：“27 38 46 50 91”</p>
 </li>
@@ -702,7 +748,7 @@
 
 </li>
 </ul>
-<h3 id="2-1-5自动拆箱和自动装箱（理解）"><a href="#2-1-5自动拆箱和自动装箱（理解）" class="headerlink" title="2.1.5自动拆箱和自动装箱（理解）"></a>2.1.5自动拆箱和自动装箱（理解）</h3><ul>
+<h3 id="3-1-5自动拆箱和自动装箱"><a href="#3-1-5自动拆箱和自动装箱" class="headerlink" title="3.1.5自动拆箱和自动装箱"></a>3.1.5自动拆箱和自动装箱</h3><ul>
 <li><p>自动装箱</p>
 <p>​    把基本数据类型转换为对应的包装类类型</p>
 </li>
@@ -714,7 +760,7 @@
 
 </li>
 </ul>
-<h2 id="2-2-时间日期类"><a href="#2-2-时间日期类" class="headerlink" title="2.2.时间日期类"></a>2.2.时间日期类</h2><h3 id="2-2-1Date类（应用）"><a href="#2-2-1Date类（应用）" class="headerlink" title="2.2.1Date类（应用）"></a>2.2.1Date类（应用）</h3><ul>
+<h2 id="3-2-时间日期类"><a href="#3-2-时间日期类" class="headerlink" title="3.2.时间日期类"></a>3.2.时间日期类</h2><h3 id="3-2-1Date类"><a href="#3-2-1Date类" class="headerlink" title="3.2.1Date类"></a>3.2.1Date类</h3><ul>
 <li><p>Date类概述</p>
 <p>​    Date 代表了一个特定的时间，精确到毫秒</p>
 </li>
@@ -741,7 +787,7 @@
 
 </li>
 </ul>
-<h3 id="2-2-2Date类常用方法（应用）"><a href="#2-2-2Date类常用方法（应用）" class="headerlink" title="2.2.2Date类常用方法（应用）"></a>2.2.2Date类常用方法（应用）</h3><ul>
+<h3 id="3-2-2Date类常用方法"><a href="#3-2-2Date类常用方法" class="headerlink" title="3.2.2Date类常用方法"></a>3.2.2Date类常用方法</h3><ul>
 <li><p>常用方法</p>
 <table>
 <thead>
@@ -765,7 +811,7 @@
 
 </li>
 </ul>
-<h3 id="2-2-3SimpleDateFormat类（应用）"><a href="#2-2-3SimpleDateFormat类（应用）" class="headerlink" title="2.2.3SimpleDateFormat类（应用）"></a>2.2.3SimpleDateFormat类（应用）</h3><ul>
+<h3 id="3-2-3SimpleDateFormat类"><a href="#3-2-3SimpleDateFormat类" class="headerlink" title="3.2.3SimpleDateFormat类"></a>3.2.3SimpleDateFormat类</h3><ul>
 <li><p>SimpleDateFormat类概述</p>
 <p>​    SimpleDateFormat是一个具体的类，用于以区域设置敏感的方式格式化和解析日期。</p>
 <p>​    我们重点学习日期格式化和解析</p>
@@ -805,7 +851,7 @@
 
 </li>
 </ul>
-<h3 id="2-2-4日期工具类案例（应用）"><a href="#2-2-4日期工具类案例（应用）" class="headerlink" title="2.2.4日期工具类案例（应用）"></a>2.2.4日期工具类案例（应用）</h3><ul>
+<h3 id="3-2-4日期工具类案例"><a href="#3-2-4日期工具类案例" class="headerlink" title="3.2.4日期工具类案例"></a>3.2.4日期工具类案例</h3><ul>
 <li><p>案例需求</p>
 <p>​    定义一个日期工具类(DateUtils)，包含两个方法：把日期转换为指定格式的字符串；把字符串解析为指定格式的日期，然后定义一个测试类(DateDemo)，测试日期工具类的方法</p>
 </li>
@@ -822,7 +868,7 @@
 
 </li>
 </ul>
-<h3 id="2-2-5Calendar类（应用）"><a href="#2-2-5Calendar类（应用）" class="headerlink" title="2.2.5Calendar类（应用）"></a>2.2.5Calendar类（应用）</h3><ul>
+<h3 id="3-2-5Calendar类"><a href="#3-2-5Calendar类" class="headerlink" title="3.2.5Calendar类"></a>3.2.5Calendar类</h3><ul>
 <li><p>Calendar类概述</p>
 <p>​    Calendar 为特定瞬间与一组日历字段之间的转换提供了一些方法，并为操作日历字段提供了一些方法</p>
 <p>​    Calendar 提供了一个类方法 getInstance 用于获取这种类型的一般有用的对象。</p>
@@ -856,7 +902,7 @@
 
 </li>
 </ul>
-<h3 id="2-2-6二月天案例（应用）"><a href="#2-2-6二月天案例（应用）" class="headerlink" title="2.2.6二月天案例（应用）"></a>2.2.6二月天案例（应用）</h3><ul>
+<h3 id="3-2-6二月天案例"><a href="#3-2-6二月天案例" class="headerlink" title="3.2.6二月天案例"></a>3.2.6二月天案例</h3><ul>
 <li><p>案例需求</p>
 <p>​    获取任意一年的二月有多少天</p>
 </li>
@@ -980,7 +1026,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">85</span>
+                  <span class="site-state-item-count">94</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1115,7 +1161,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-API"><span class="nav-text">1.API</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-Math%EF%BC%88%E5%BA%94%E7%94%A8%EF%BC%89"><span class="nav-text">1.1 Math（应用）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-System%EF%BC%88%E5%BA%94%E7%94%A8%EF%BC%89"><span class="nav-text">1.2 System（应用）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-Object%E7%B1%BB%E7%9A%84toString%E6%96%B9%E6%B3%95%EF%BC%88%E5%BA%94%E7%94%A8%EF%BC%89"><span class="nav-text">1.3 Object类的toString方法（应用）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-4-Object%E7%B1%BB%E7%9A%84equals%E6%96%B9%E6%B3%95%EF%BC%88%E5%BA%94%E7%94%A8%EF%BC%89"><span class="nav-text">1.4 Object类的equals方法（应用）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-5-%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F%E5%8E%9F%E7%90%86%EF%BC%88%E7%90%86%E8%A7%A3%EF%BC%89"><span class="nav-text">1.5 冒泡排序原理（理解）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-6-%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0%EF%BC%88%E7%90%86%E8%A7%A3%EF%BC%89"><span class="nav-text">1.6 冒泡排序代码实现（理解）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-7-Arrays%EF%BC%88%E5%BA%94%E7%94%A8%EF%BC%89"><span class="nav-text">1.7 Arrays（应用）</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-%E5%B8%B8%E7%94%A8API"><span class="nav-text">2.常用API</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-%E5%8C%85%E8%A3%85%E7%B1%BB"><span class="nav-text">2.1.包装类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-1%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B%E5%8C%85%E8%A3%85%E7%B1%BB%EF%BC%88%E8%AE%B0%E5%BF%86%EF%BC%89"><span class="nav-text">2.1.1基本类型包装类（记忆）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-2Integer%E7%B1%BB%EF%BC%88%E5%BA%94%E7%94%A8%EF%BC%89"><span class="nav-text">2.1.2Integer类（应用）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-3int%E5%92%8CString%E7%B1%BB%E5%9E%8B%E7%9A%84%E7%9B%B8%E4%BA%92%E8%BD%AC%E6%8D%A2%EF%BC%88%E8%AE%B0%E5%BF%86%EF%BC%89"><span class="nav-text">2.1.3int和String类型的相互转换（记忆）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-4%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%95%B0%E6%8D%AE%E6%8E%92%E5%BA%8F%E6%A1%88%E4%BE%8B%EF%BC%88%E5%BA%94%E7%94%A8%EF%BC%89"><span class="nav-text">2.1.4字符串数据排序案例（应用）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-5%E8%87%AA%E5%8A%A8%E6%8B%86%E7%AE%B1%E5%92%8C%E8%87%AA%E5%8A%A8%E8%A3%85%E7%AE%B1%EF%BC%88%E7%90%86%E8%A7%A3%EF%BC%89"><span class="nav-text">2.1.5自动拆箱和自动装箱（理解）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-%E6%97%B6%E9%97%B4%E6%97%A5%E6%9C%9F%E7%B1%BB"><span class="nav-text">2.2.时间日期类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-1Date%E7%B1%BB%EF%BC%88%E5%BA%94%E7%94%A8%EF%BC%89"><span class="nav-text">2.2.1Date类（应用）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-2Date%E7%B1%BB%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95%EF%BC%88%E5%BA%94%E7%94%A8%EF%BC%89"><span class="nav-text">2.2.2Date类常用方法（应用）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-3SimpleDateFormat%E7%B1%BB%EF%BC%88%E5%BA%94%E7%94%A8%EF%BC%89"><span class="nav-text">2.2.3SimpleDateFormat类（应用）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-4%E6%97%A5%E6%9C%9F%E5%B7%A5%E5%85%B7%E7%B1%BB%E6%A1%88%E4%BE%8B%EF%BC%88%E5%BA%94%E7%94%A8%EF%BC%89"><span class="nav-text">2.2.4日期工具类案例（应用）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-5Calendar%E7%B1%BB%EF%BC%88%E5%BA%94%E7%94%A8%EF%BC%89"><span class="nav-text">2.2.5Calendar类（应用）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-6%E4%BA%8C%E6%9C%88%E5%A4%A9%E6%A1%88%E4%BE%8B%EF%BC%88%E5%BA%94%E7%94%A8%EF%BC%89"><span class="nav-text">2.2.6二月天案例（应用）</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-API"><span class="nav-text">1.API</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1API%E6%A6%82%E8%BF%B0"><span class="nav-text">1.1API概述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8API%E5%B8%AE%E5%8A%A9%E6%96%87%E6%A1%A3"><span class="nav-text">1.2如何使用API帮助文档</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-Math"><span class="nav-text">2.1 Math</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-System"><span class="nav-text">2.2 System</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-Object%E7%B1%BB%E7%9A%84toString%E6%96%B9%E6%B3%95"><span class="nav-text">2.3 Object类的toString方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-4-Object%E7%B1%BB%E7%9A%84equals%E6%96%B9%E6%B3%95"><span class="nav-text">2.4 Object类的equals方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-5-%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F%E5%8E%9F%E7%90%86"><span class="nav-text">2.5 冒泡排序原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-6-%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0"><span class="nav-text">2.6 冒泡排序代码实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-7-Arrays"><span class="nav-text">2.7 Arrays</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-%E5%B8%B8%E7%94%A8API"><span class="nav-text">3.常用API</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-%E5%8C%85%E8%A3%85%E7%B1%BB"><span class="nav-text">3.1.包装类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-1%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B%E5%8C%85%E8%A3%85%E7%B1%BB"><span class="nav-text">3.1.1基本类型包装类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-2Integer%E7%B1%BB"><span class="nav-text">3.1.2Integer类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-3int%E5%92%8CString%E7%B1%BB%E5%9E%8B%E7%9A%84%E7%9B%B8%E4%BA%92%E8%BD%AC%E6%8D%A2"><span class="nav-text">3.1.3int和String类型的相互转换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-4%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%95%B0%E6%8D%AE%E6%8E%92%E5%BA%8F%E6%A1%88%E4%BE%8B"><span class="nav-text">3.1.4字符串数据排序案例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-5%E8%87%AA%E5%8A%A8%E6%8B%86%E7%AE%B1%E5%92%8C%E8%87%AA%E5%8A%A8%E8%A3%85%E7%AE%B1"><span class="nav-text">3.1.5自动拆箱和自动装箱</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-%E6%97%B6%E9%97%B4%E6%97%A5%E6%9C%9F%E7%B1%BB"><span class="nav-text">3.2.时间日期类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-1Date%E7%B1%BB"><span class="nav-text">3.2.1Date类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-2Date%E7%B1%BB%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95"><span class="nav-text">3.2.2Date类常用方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-3SimpleDateFormat%E7%B1%BB"><span class="nav-text">3.2.3SimpleDateFormat类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-4%E6%97%A5%E6%9C%9F%E5%B7%A5%E5%85%B7%E7%B1%BB%E6%A1%88%E4%BE%8B"><span class="nav-text">3.2.4日期工具类案例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-5Calendar%E7%B1%BB"><span class="nav-text">3.2.5Calendar类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-6%E4%BA%8C%E6%9C%88%E5%A4%A9%E6%A1%88%E4%BE%8B"><span class="nav-text">3.2.6二月天案例</span></a></li></ol></li></ol></div>
             
 
           </div>

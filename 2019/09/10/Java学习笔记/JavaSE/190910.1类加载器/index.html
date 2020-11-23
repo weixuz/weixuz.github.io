@@ -83,15 +83,15 @@
 
 
 
-<meta name="description" content="类加载器1.1类加载【理解】 类加载的描述 当程序要使用某个类时，如果该类还未被加载到内存中，则系统会通过类的加载，类的连接，类的初始化这三个步骤来对类进行初始化。如果不出现意外情况，JVM将会连续完成这三个步骤，所以有时也把这三个步骤统称为类加载或者类初始化   类的加载 就是指将class文件读入内存，并为之创建一个 java.lang.Class 对象 任何类被使用时，系统都会为之建立一个">
+<meta name="description" content="类加载器1.1类加载【理解】 类加载的描述  当程序要使用某个类时，如果该类还未被加载到内存中，则系统会通过类的加载，类的连接，类的初始化这三个步骤来对类进行初始化。如果不出现意外情况，JVM将会连续完成这三个步骤，所以有时也把这三个步骤统称为类加载或者类初始化   类的加载  就是指将class文件读入内存，并为之创建一个 java.lang.Class 对象 任何类被使用时，系统都会为之建立一">
 <meta property="og:type" content="article">
 <meta property="og:title" content="类加载器">
 <meta property="og:url" content="http://yoursite.com/2019/09/10/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/JavaSE/190910.1%E7%B1%BB%E5%8A%A0%E8%BD%BD%E5%99%A8/index.html">
 <meta property="og:site_name" content="维旭的博客">
-<meta property="og:description" content="类加载器1.1类加载【理解】 类加载的描述 当程序要使用某个类时，如果该类还未被加载到内存中，则系统会通过类的加载，类的连接，类的初始化这三个步骤来对类进行初始化。如果不出现意外情况，JVM将会连续完成这三个步骤，所以有时也把这三个步骤统称为类加载或者类初始化   类的加载 就是指将class文件读入内存，并为之创建一个 java.lang.Class 对象 任何类被使用时，系统都会为之建立一个">
+<meta property="og:description" content="类加载器1.1类加载【理解】 类加载的描述  当程序要使用某个类时，如果该类还未被加载到内存中，则系统会通过类的加载，类的连接，类的初始化这三个步骤来对类进行初始化。如果不出现意外情况，JVM将会连续完成这三个步骤，所以有时也把这三个步骤统称为类加载或者类初始化   类的加载  就是指将class文件读入内存，并为之创建一个 java.lang.Class 对象 任何类被使用时，系统都会为之建立一">
 <meta property="og:locale">
 <meta property="article:published_time" content="2019-09-10T06:16:28.000Z">
-<meta property="article:modified_time" content="2020-11-23T06:23:16.623Z">
+<meta property="article:modified_time" content="2020-11-23T08:10:03.069Z">
 <meta property="article:author" content="维旭">
 <meta name="twitter:card" content="summary">
 
@@ -396,33 +396,39 @@
 
       
         <h2 id="类加载器"><a href="#类加载器" class="headerlink" title="类加载器"></a>类加载器</h2><h3 id="1-1类加载【理解】"><a href="#1-1类加载【理解】" class="headerlink" title="1.1类加载【理解】"></a>1.1类加载【理解】</h3><ul>
-<li>类加载的描述<ul>
+<li><p>类加载的描述</p>
+<ul>
 <li>当程序要使用某个类时，如果该类还未被加载到内存中，则系统会通过类的加载，类的连接，类的初始化这三个步骤来对类进行初始化。如果不出现意外情况，JVM将会连续完成这三个步骤，所以有时也把这三个步骤统称为类加载或者类初始化</li>
 </ul>
 </li>
-<li>类的加载<ul>
+<li><p>类的加载</p>
+<ul>
 <li>就是指将class文件读入内存，并为之创建一个 java.lang.Class 对象</li>
 <li>任何类被使用时，系统都会为之建立一个 java.lang.Class 对象</li>
 </ul>
-</li>
-<li>类的连接<ul>
+<a id="more"></a></li>
+<li><p>类的连接</p>
+<ul>
 <li>验证阶段：用于检验被加载的类是否有正确的内部结构，并和其他类协调一致</li>
 <li>准备阶段：负责为类的类变量分配内存，并设置默认初始化值</li>
 <li>解析阶段：将类的二进制数据中的符号引用替换为直接引用</li>
 </ul>
 </li>
-<li>类的初始化<ul>
+<li><p>类的初始化</p>
+<ul>
 <li>在该阶段，主要就是对类变量进行初始化</li>
 </ul>
 </li>
-<li>类的初始化步骤<ul>
+<li><p>类的初始化步骤</p>
+<ul>
 <li>假如类还未被加载和连接，则程序先加载并连接该类</li>
 <li>假如该类的直接父类还未被初始化，则先初始化其直接父类</li>
 <li>假如类中有初始化语句，则系统依次执行这些初始化语句</li>
 <li>注意：在执行第2个步骤的时候，系统对直接父类的初始化步骤也遵循初始化步骤1-3</li>
 </ul>
 </li>
-<li>类的初始化时机<ul>
+<li><p>类的初始化时机</p>
+<ul>
 <li>创建类的实例</li>
 <li>调用类的类方法</li>
 <li>访问类或者接口的类变量，或者为该类变量赋值</li>
@@ -585,7 +591,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">85</span>
+                  <span class="site-state-item-count">94</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

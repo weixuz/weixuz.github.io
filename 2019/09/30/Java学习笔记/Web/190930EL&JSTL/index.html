@@ -83,15 +83,15 @@
 
 
 
-<meta name="description" content="言必信，行必果。">
+<meta name="description" content="1234567891. JSP:	1. 指令	2. 注释	3. 内置对象2. MVC开发模式3. EL表达式4. JSTL标签5. 三层架构">
 <meta property="og:type" content="article">
 <meta property="og:title" content="EL&amp;JSTL">
 <meta property="og:url" content="http://yoursite.com/2019/09/30/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/Web/190930EL&JSTL/index.html">
 <meta property="og:site_name" content="维旭的博客">
-<meta property="og:description" content="言必信，行必果。">
+<meta property="og:description" content="1234567891. JSP:	1. 指令	2. 注释	3. 内置对象2. MVC开发模式3. EL表达式4. JSTL标签5. 三层架构">
 <meta property="og:locale">
 <meta property="article:published_time" content="2019-09-30T11:13:33.000Z">
-<meta property="article:modified_time" content="2020-11-23T07:34:18.799Z">
+<meta property="article:modified_time" content="2020-11-23T09:30:46.397Z">
 <meta property="article:author" content="维旭">
 <meta name="twitter:card" content="summary">
 
@@ -395,7 +395,40 @@
       
 
       
-        
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">1. JSP:</span><br><span class="line">	1. 指令</span><br><span class="line">	2. 注释</span><br><span class="line">	3. 内置对象</span><br><span class="line"></span><br><span class="line">2. MVC开发模式</span><br><span class="line">3. EL表达式</span><br><span class="line">4. JSTL标签</span><br><span class="line">5. 三层架构</span><br></pre></td></tr></table></figure>
+
+<a id="more"></a>
+
+<h2 id="JSP"><a href="#JSP" class="headerlink" title="JSP:"></a>JSP:</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">1. 指令</span><br><span class="line">	* 作用：用于配置JSP页面，导入资源文件</span><br><span class="line">	* 格式：</span><br><span class="line">		&lt;%@ 指令名称 属性名1&#x3D;属性值1 属性名2&#x3D;属性值2 ... %&gt;</span><br><span class="line">	* 分类：</span><br><span class="line">		1. page		： 配置JSP页面的</span><br><span class="line">			* contentType：等同于response.setContentType()</span><br><span class="line">				1. 设置响应体的mime类型以及字符集</span><br><span class="line">				2. 设置当前jsp页面的编码（只能是高级的IDE才能生效，如果使用低级工具，则需要设置pageEncoding属性设置当前页面的字符集）</span><br><span class="line">			* import：导包</span><br><span class="line">			* errorPage：当前页面发生异常后，会自动跳转到指定的错误页面</span><br><span class="line">			* isErrorPage：标识当前也是是否是错误页面。</span><br><span class="line">				* true：是，可以使用内置对象exception</span><br><span class="line">				* false：否。默认值。不可以使用内置对象exception</span><br><span class="line">		2. include	： 页面包含的。导入页面的资源文件</span><br><span class="line">			* &lt;%@include file&#x3D;&quot;top.jsp&quot;%&gt;</span><br><span class="line">		3. taglib	： 导入资源</span><br><span class="line">			* &lt;%@ taglib prefix&#x3D;&quot;c&quot; uri&#x3D;&quot;http:&#x2F;&#x2F;java.sun.com&#x2F;jsp&#x2F;jstl&#x2F;core&quot; %&gt;</span><br><span class="line">				* prefix：前缀，自定义的</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">2. 注释:</span><br><span class="line">	1. html注释：</span><br><span class="line">		&lt;!-- --&gt;:只能注释html代码片段</span><br><span class="line">	2. jsp注释：推荐使用</span><br><span class="line">		&lt;%-- --%&gt;：可以注释所有</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">3. 内置对象</span><br><span class="line">	* 在jsp页面中不需要创建，直接使用的对象</span><br><span class="line">	* 一共有9个：</span><br><span class="line">			变量名					真实类型						作用</span><br><span class="line">		* pageContext				PageContext					当前页面共享数据，还可以获取其他八个内置对象</span><br><span class="line">		* request					HttpServletRequest			一次请求访问的多个资源(转发)</span><br><span class="line">		* session					HttpSession					一次会话的多个请求间</span><br><span class="line">		* application				ServletContext				所有用户间共享数据</span><br><span class="line">		* response					HttpServletResponse			响应对象</span><br><span class="line">		* page						Object						当前页面(Servlet)的对象  this</span><br><span class="line">		* out						JspWriter					输出对象，数据输出到页面上</span><br><span class="line">		* config					ServletConfig				Servlet的配置对象</span><br><span class="line">		* exception					Throwable					异常对象</span><br></pre></td></tr></table></figure>
+
+<p>​    </p>
+<h2 id="MVC：开发模式"><a href="#MVC：开发模式" class="headerlink" title="MVC：开发模式"></a>MVC：开发模式</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">1. jsp演变历史</span><br><span class="line">	1. 早期只有servlet，只能使用response输出标签数据，非常麻烦</span><br><span class="line">	2. 后来又jsp，简化了Servlet的开发，如果过度使用jsp，在jsp中即写大量的java代码，有写html表，造成难于维护，难于分工协作</span><br><span class="line">	3. 再后来，java的web开发，借鉴mvc开发模式，使得程序的设计更加合理性</span><br><span class="line"></span><br><span class="line">2. MVC：</span><br><span class="line">	1. M：Model，模型。JavaBean</span><br><span class="line">		* 完成具体的业务操作，如：查询数据库，封装对象</span><br><span class="line">	2. V：View，视图。JSP</span><br><span class="line">		* 展示数据</span><br><span class="line">	3. C：Controller，控制器。Servlet</span><br><span class="line">		* 获取用户的输入</span><br><span class="line">		* 调用模型</span><br><span class="line">		* 将数据交给视图进行展示</span><br><span class="line">	* 优缺点：</span><br><span class="line">		1. 优点：</span><br><span class="line">			1. 耦合性低，方便维护，可以利于分工协作</span><br><span class="line">			2. 重用性高</span><br><span class="line"></span><br><span class="line">		2. 缺点：</span><br><span class="line">			1. 使得项目架构变得复杂，对开发人员要求高</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="EL表达式"><a href="#EL表达式" class="headerlink" title="EL表达式"></a>EL表达式</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">1. 概念：Expression Language 表达式语言</span><br><span class="line">2. 作用：替换和简化jsp页面中java代码的编写</span><br><span class="line">3. 语法：$&#123;表达式&#125;</span><br><span class="line">4. 注意：</span><br><span class="line">	* jsp默认支持el表达式的。如果要忽略el表达式</span><br><span class="line">		1. 设置jsp中page指令中：isELIgnored&#x3D;&quot;true&quot; 忽略当前jsp页面中所有的el表达式</span><br><span class="line">		2. \$&#123;表达式&#125; ：忽略当前这个el表达式</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">5. 使用：</span><br><span class="line">	1. 运算：</span><br><span class="line">		* 运算符：</span><br><span class="line">			1. 算数运算符： + - * &#x2F;(div) %(mod)</span><br><span class="line">			2. 比较运算符： &gt; &lt; &gt;&#x3D; &lt;&#x3D; &#x3D;&#x3D; !&#x3D;</span><br><span class="line">			3. 逻辑运算符： &amp;&amp;(and) ||(or) !(not)</span><br><span class="line">			4. 空运算符： empty</span><br><span class="line">				* 功能：用于判断字符串、集合、数组对象是否为null或者长度是否为0</span><br><span class="line">				* $&#123;empty list&#125;:判断字符串、集合、数组对象是否为null或者长度为0</span><br><span class="line">				* $&#123;not empty str&#125;:表示判断字符串、集合、数组对象是否不为null 并且 长度&gt;0</span><br><span class="line">	2. 获取值</span><br><span class="line">		1. el表达式只能从域对象中获取值</span><br><span class="line">		2. 语法：</span><br><span class="line">			1. $&#123;域名称.键名&#125;：从指定域中获取指定键的值</span><br><span class="line">				* 域名称：</span><br><span class="line">					1. pageScope		--&gt; pageContext</span><br><span class="line">					2. requestScope 	--&gt; request</span><br><span class="line">					3. sessionScope 	--&gt; session</span><br><span class="line">					4. applicationScope --&gt; application（ServletContext）</span><br><span class="line">				* 举例：在request域中存储了name&#x3D;张三</span><br><span class="line">				* 获取：$&#123;requestScope.name&#125;</span><br><span class="line"></span><br><span class="line">			2. $&#123;键名&#125;：表示依次从最小的域中查找是否有该键对应的值，直到找到为止。</span><br></pre></td></tr></table></figure>
+
+<p>​<br>​                </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">3. 获取对象、List集合、Map集合的值</span><br><span class="line">	1. 对象：$&#123;域名称.键名.属性名&#125;</span><br><span class="line">		* 本质上会去调用对象的getter方法</span><br><span class="line"></span><br><span class="line">	2. List集合：$&#123;域名称.键名[索引]&#125;</span><br><span class="line"></span><br><span class="line">	3. Map集合：</span><br><span class="line">		* $&#123;域名称.键名.key名称&#125;</span><br><span class="line">		* $&#123;域名称.键名[&quot;key名称&quot;]&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">3. 隐式对象：</span><br><span class="line">	* el表达式中有11个隐式对象</span><br><span class="line">	* pageContext：</span><br><span class="line">		* 获取jsp其他八个内置对象</span><br><span class="line">			* $&#123;pageContext.request.contextPath&#125;：动态获取虚拟目录</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>​    </p>
+<h2 id="JSTL"><a href="#JSTL" class="headerlink" title="JSTL"></a>JSTL</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">1. 概念：JavaServer Pages Tag Library  JSP标准标签库</span><br><span class="line">	* 是由Apache组织提供的开源的免费的jsp标签		&lt;标签&gt;</span><br><span class="line"></span><br><span class="line">2. 作用：用于简化和替换jsp页面上的java代码		</span><br><span class="line"></span><br><span class="line">3. 使用步骤：</span><br><span class="line">	1. 导入jstl相关jar包</span><br><span class="line">	2. 引入标签库：taglib指令：  &lt;%@ taglib %&gt;</span><br><span class="line">	3. 使用标签</span><br><span class="line"></span><br><span class="line">4. 常用的JSTL标签</span><br><span class="line">	1. if:相当于java代码的if语句</span><br><span class="line">		1. 属性：</span><br><span class="line">            * test 必须属性，接受boolean表达式</span><br><span class="line">                * 如果表达式为true，则显示if标签体内容，如果为false，则不显示标签体内容</span><br><span class="line">                * 一般情况下，test属性值会结合el表达式一起使用</span><br><span class="line">   		 2. 注意：</span><br><span class="line">       		 * c:if标签没有else情况，想要else情况，则可以在定义一个c:if标签</span><br><span class="line">	2. choose:相当于java代码的switch语句</span><br><span class="line">		1. 使用choose标签声明         			相当于switch声明</span><br><span class="line">        2. 使用when标签做判断         			相当于case</span><br><span class="line">        3. 使用otherwise标签做其他情况的声明    	相当于default</span><br><span class="line"></span><br><span class="line">	3. foreach:相当于java代码的for语句</span><br><span class="line"></span><br><span class="line">5. 练习：</span><br><span class="line">	* 需求：在request域中有一个存有User对象的List集合。需要使用jstl+el将list集合数据展示到jsp页面的表格table中</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="三层架构：软件设计架构"><a href="#三层架构：软件设计架构" class="headerlink" title="三层架构：软件设计架构"></a>三层架构：软件设计架构</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1. 界面层(表示层)：用户看的得界面。用户可以通过界面上的组件和服务器进行交互</span><br><span class="line">2. 业务逻辑层：处理业务逻辑的。</span><br><span class="line">3. 数据访问层：操作数据存储文件。</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="案例：用户信息列表展示"><a href="#案例：用户信息列表展示" class="headerlink" title="案例：用户信息列表展示"></a>案例：用户信息列表展示</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">1. 需求：用户信息的增删改查操作</span><br><span class="line">2. 设计：</span><br><span class="line">	1. 技术选型：Servlet+JSP+MySQL+JDBCTempleat+Duird+BeanUtilS+tomcat</span><br><span class="line">	2. 数据库设计：</span><br><span class="line">		create database day17; -- 创建数据库</span><br><span class="line">		use day17; 			   -- 使用数据库</span><br><span class="line">		create table user(   -- 创建表</span><br><span class="line">			id int primary key auto_increment,</span><br><span class="line">			name varchar(20) not null,</span><br><span class="line">			gender varchar(5),</span><br><span class="line">			age int,</span><br><span class="line">			address varchar(32),</span><br><span class="line">			qq	varchar(20),</span><br><span class="line">			email varchar(50)</span><br><span class="line">		);</span><br><span class="line"></span><br><span class="line">3. 开发：</span><br><span class="line">	1. 环境搭建</span><br><span class="line">		1. 创建数据库环境</span><br><span class="line">		2. 创建项目，导入需要的jar包</span><br><span class="line"></span><br><span class="line">	2. 编码</span><br><span class="line">	</span><br><span class="line">4. 测试</span><br><span class="line">5. 部署运维</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -429,8 +462,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/10/01/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/Web/191001filter&listener/" rel="prev" title="filter&listener">
-                filter&listener <i class="fa fa-chevron-right"></i>
+              <a href="/2019/10/01/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/Web/191001Filter&Listener/" rel="prev" title="Filter&Listener">
+                Filter&Listener <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -483,8 +516,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -503,7 +545,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">85</span>
+                  <span class="site-state-item-count">94</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -628,6 +670,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#JSP"><span class="nav-text">JSP:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MVC%EF%BC%9A%E5%BC%80%E5%8F%91%E6%A8%A1%E5%BC%8F"><span class="nav-text">MVC：开发模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#EL%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="nav-text">EL表达式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JSTL"><span class="nav-text">JSTL</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89%E5%B1%82%E6%9E%B6%E6%9E%84%EF%BC%9A%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E6%9E%B6%E6%9E%84"><span class="nav-text">三层架构：软件设计架构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A1%88%E4%BE%8B%EF%BC%9A%E7%94%A8%E6%88%B7%E4%BF%A1%E6%81%AF%E5%88%97%E8%A1%A8%E5%B1%95%E7%A4%BA"><span class="nav-text">案例：用户信息列表展示</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

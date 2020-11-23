@@ -289,6 +289,1410 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/19/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%A1%86%E6%9E%B6/191019Spring%E6%80%BB%E7%BB%93/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="维旭的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/10/19/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%A1%86%E6%9E%B6/191019Spring%E6%80%BB%E7%BB%93/" itemprop="url">Spring总结</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-19T19:18:41+08:00">
+                2019-10-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index">
+                    <span itemprop="name">Java学习笔记</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%A1%86%E6%9E%B6/" itemprop="url" rel="index">
+                    <span itemprop="name">框架</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h1 id="Spring-知识总结"><a href="#Spring-知识总结" class="headerlink" title="Spring 知识总结"></a>Spring 知识总结</h1><h2 id="day01"><a href="#day01" class="headerlink" title="day01"></a>day01</h2><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">1) 耦合,解耦(降低依赖)</span><br><span class="line">2) 工厂模式,解耦</span><br><span class="line">3) IOC (把创建对象的权力交给了beanFactory 或者框架)   [重点,重点,重点]</span><br><span class="line">4) Spring 项目搭建的过程 (掌握)</span><br><span class="line">	1)  导入jar</span><br><span class="line">	2)  配置(掌握)</span><br><span class="line">		1) 传统方式 </span><br><span class="line">	 <span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">&quot;accountService&quot;</span> <span class="attr">class</span>=<span class="string">&quot;com.itheima.service.impl.AccountServiceImpl&quot;</span>/&gt;</span></span><br><span class="line">		2) 普通工厂模式</span><br><span class="line">		<span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">&quot;instanceFactory&quot;</span> <span class="attr">class</span>=<span class="string">&quot;com.itheima.factory.InstanceFactory&quot;</span>/&gt;</span></span><br><span class="line">    	<span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">&quot;accountService1&quot;</span> <span class="attr">factory-bean</span>=<span class="string">&quot;instanceFactory&quot;</span> </span></span><br><span class="line"><span class="tag">              <span class="attr">factory-method</span>=<span class="string">&quot;getAccountService&quot;</span>&gt;</span></span><br><span class="line">		3) 静态工厂模式</span><br><span class="line">			<span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">&quot;accountService&quot;</span> <span class="attr">class</span>=<span class="string">&quot;com.itheima.factory.StaticFactory&quot;</span> <span class="attr">factory-method</span>=<span class="string">&quot;getAccountService&quot;</span>&gt;</span></span><br><span class="line">		scope</span><br><span class="line">		单利:</span><br><span class="line">			生命周期:</span><br><span class="line">				随着容器的创建而创建,随着容器的销毁而消亡</span><br><span class="line">		多例:</span><br><span class="line">			使用的时候创建,JVM 垃圾回收机制负责销毁对象</span><br><span class="line">5) DI (依赖注入) [重点,重点,重点]</span><br><span class="line">	1)构造函数</span><br><span class="line">	2)set方法</span><br><span class="line">    3)注解注入</span><br><span class="line">                </span><br><span class="line">	4)复杂类型的注入</span><br><span class="line">		list,set(去重),array</span><br><span class="line">		map,prop</span><br><span class="line">3) ApplicationContext </span><br><span class="line">		1) ClasspathXmlApplicationContext</span><br><span class="line">		2) FilesystemXmlApplicationContext</span><br><span class="line">		3) AnnotationConfigApplicationContext</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/10/19/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%A1%86%E6%9E%B6/191019Spring%E6%80%BB%E7%BB%93/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/18/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%A1%86%E6%9E%B6/191018JdbcTemplate%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8-%E5%A3%B0%E6%98%8E%E5%BC%8F%E4%BA%8B%E5%8A%A1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="维旭的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/10/18/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%A1%86%E6%9E%B6/191018JdbcTemplate%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8-%E5%A3%B0%E6%98%8E%E5%BC%8F%E4%BA%8B%E5%8A%A1/" itemprop="url">JdbcTemplate基本使用&声明式事务</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-18T18:04:00+08:00">
+                2019-10-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index">
+                    <span itemprop="name">Java学习笔记</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%A1%86%E6%9E%B6/" itemprop="url" rel="index">
+                    <span itemprop="name">框架</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h1 id="JdbcTemplate基本使用"><a href="#JdbcTemplate基本使用" class="headerlink" title="JdbcTemplate基本使用"></a>JdbcTemplate基本使用</h1><h2 id="01-JdbcTemplate基本使用-概述-了解"><a href="#01-JdbcTemplate基本使用-概述-了解" class="headerlink" title="01-JdbcTemplate基本使用-概述(了解)"></a>01-JdbcTemplate基本使用-概述(了解)</h2><p>JdbcTemplate是spring框架中提供的一个对象，是对原始繁琐的Jdbc API对象的简单封装。spring框架为我们提供了很多的操作模板类。例如：操作关系型数据的JdbcTemplate和HibernateTemplate，操作nosql数据库的RedisTemplate，操作消息队列的JmsTemplate等等。</p>
+<h2 id="02-JdbcTemplate基本使用-开发步骤-理解"><a href="#02-JdbcTemplate基本使用-开发步骤-理解" class="headerlink" title="02-JdbcTemplate基本使用-开发步骤(理解)"></a>02-JdbcTemplate基本使用-开发步骤(理解)</h2><p>①导入spring-jdbc和spring-tx坐标</p>
+<p>②创建数据库表和实体</p>
+<p>③创建JdbcTemplate对象</p>
+<p>④执行数据库操作</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/10/18/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%A1%86%E6%9E%B6/191018JdbcTemplate%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8-%E5%A3%B0%E6%98%8E%E5%BC%8F%E4%BA%8B%E5%8A%A1/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/17/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%A1%86%E6%9E%B6/191017AOP/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="维旭的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/10/17/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%A1%86%E6%9E%B6/191017AOP/" itemprop="url">AOP</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-17T18:03:04+08:00">
+                2019-10-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index">
+                    <span itemprop="name">Java学习笔记</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%A1%86%E6%9E%B6/" itemprop="url" rel="index">
+                    <span itemprop="name">框架</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h3 id="1-Spring-的-AOP-简介"><a href="#1-Spring-的-AOP-简介" class="headerlink" title="1.Spring 的 AOP 简介"></a>1.Spring 的 AOP 简介</h3><h4 id="1-1-什么是-AOP"><a href="#1-1-什么是-AOP" class="headerlink" title="1.1 什么是 AOP"></a>1.1 什么是 AOP</h4><p>AOP 为 Aspect Oriented Programming 的缩写，意思为面向切面编程，是通过预编译方式和运行期动态代理实现程序功能的统一维护的一种技术。</p>
+<p>AOP 是 OOP 的延续，是软件开发中的一个热点，也是Spring框架中的一个重要内容，是函数式编程的一种衍生范型。利用AOP可以对业务逻辑的各个部分进行隔离，从而使得业务逻辑各部分之间的耦合度降低，提高程序的可重用性，同时提高了开发的效率。</p>
+<h4 id="1-2-AOP-的作用及其优势"><a href="#1-2-AOP-的作用及其优势" class="headerlink" title="1.2 AOP 的作用及其优势"></a>1.2 AOP 的作用及其优势</h4><p>作用：在程序运行期间，在不修改源码的情况下对方法进行功能增强(动态代理)</p>
+<p>优势：减少重复代码，提高开发效率，并且便于维护</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/10/17/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%A1%86%E6%9E%B6/191017AOP/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/17/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/Web/191017Web_tomcat/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="维旭的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/10/17/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/Web/191017Web_tomcat/" itemprop="url">Tomcat</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-17T11:10:52+08:00">
+                2019-10-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index">
+                    <span itemprop="name">Java学习笔记</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/Web/" itemprop="url" rel="index">
+                    <span itemprop="name">Web</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="Tomcat：Web服务器软件"><a href="#Tomcat：Web服务器软件" class="headerlink" title="Tomcat：Web服务器软件"></a>Tomcat：Web服务器软件</h3><h4 id="1-下载-http-tomcat-apache-org"><a href="#1-下载-http-tomcat-apache-org" class="headerlink" title="1.下载:http://tomcat.apache.org/"></a>1.下载:<a target="_blank" rel="noopener" href="http://tomcat.apache.org/">http://tomcat.apache.org/</a></h4>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/16/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%A1%86%E6%9E%B6/191016SpringIoC%E5%92%8CDI%E6%B3%A8%E8%A7%A3%E5%BC%80%E5%8F%91/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="维旭的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/10/16/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%A1%86%E6%9E%B6/191016SpringIoC%E5%92%8CDI%E6%B3%A8%E8%A7%A3%E5%BC%80%E5%8F%91/" itemprop="url">SpringIoC和DI注解开发</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-16T18:01:31+08:00">
+                2019-10-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index">
+                    <span itemprop="name">Java学习笔记</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%A1%86%E6%9E%B6/" itemprop="url" rel="index">
+                    <span itemprop="name">框架</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h2 id="1-Spring配置数据源"><a href="#1-Spring配置数据源" class="headerlink" title="1.Spring配置数据源"></a>1.Spring配置数据源</h2><h3 id="1-1-数据源（连接池）的作用"><a href="#1-1-数据源（连接池）的作用" class="headerlink" title="1.1 数据源（连接池）的作用"></a>1.1 数据源（连接池）的作用</h3><p>数据源(连接池)是提高程序性能如出现的</p>
+<p>事先实例化数据源，初始化部分连接资源</p>
+<p>使用连接资源时从数据源中获取</p>
+<p>使用完毕后将连接资源归还给数据源</p>
+<p>常见的数据源(连接池)：DBCP、C3P0、BoneCP、Druid等</p>
+<p><strong>开发步骤</strong></p>
+<p>①导入数据源的坐标和数据库驱动坐标</p>
+<p>②创建数据源对象</p>
+<p>③设置数据源的基本连接数据</p>
+<p>④使用数据源获取连接资源和归还连接资源</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/10/16/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%A1%86%E6%9E%B6/191016SpringIoC%E5%92%8CDI%E6%B3%A8%E8%A7%A3%E5%BC%80%E5%8F%91/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/15/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%A1%86%E6%9E%B6/191015SpringIoC&DI/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="维旭的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/10/15/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%A1%86%E6%9E%B6/191015SpringIoC&DI/" itemprop="url">SpringIoC&DI</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-15T20:28:59+08:00">
+                2019-10-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index">
+                    <span itemprop="name">Java学习笔记</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%A1%86%E6%9E%B6/" itemprop="url" rel="index">
+                    <span itemprop="name">框架</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h2 id="1-spring概述"><a href="#1-spring概述" class="headerlink" title="1. spring概述"></a>1. spring概述</h2><h3 id="1-1-Spring是什么（理解）"><a href="#1-1-Spring是什么（理解）" class="headerlink" title="1.1 Spring是什么（理解）"></a>1.1 Spring是什么（理解）</h3><p>Spring是分层的 Java SE/EE应用 full-stack 轻量级开源框架，以 IoC（Inverse Of Control：反转控制）和 AOP（Aspect Oriented Programming：面向切面编程）为内核。</p>
+<p>提供了展现层 SpringMVC和持久层 Spring JDBCTemplate以及业务层事务管理等众多的企业级应用技术，还能整合开源世界众多著名的第三方框架和类库，逐渐成为使用最多的Java EE 企业应用开源框架</p>
+<h3 id="1-2-Spring发展历程-（了解）"><a href="#1-2-Spring发展历程-（了解）" class="headerlink" title="1.2 Spring发展历程 （了解）"></a>1.2 Spring发展历程 （了解）</h3><p>Rod Johnson （ Spring 之父）</p>
+<p>2017  年<br>9 月份发布了 Spring 的最新版本 Spring5.0<br>通用版（GA）</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/10/15/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%A1%86%E6%9E%B6/191015SpringIoC&DI/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/11/Hexo/191011hexo%E6%96%87%E7%AB%A0%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="维旭的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/10/11/Hexo/191011hexo%E6%96%87%E7%AB%A0%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87/" itemprop="url">Hexo文章插入图片</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-11T20:57:18+08:00">
+                2019-10-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Server/" itemprop="url" rel="index">
+                    <span itemprop="name">Server</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Server/Hexo/" itemprop="url" rel="index">
+                    <span itemprop="name">Hexo</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h2 id="方法一"><a href="#方法一" class="headerlink" title="方法一:"></a>方法一:</h2><h4 id="images文件夹"><a href="#images文件夹" class="headerlink" title="images文件夹"></a>images文件夹</h4><p>如果你的Hexo项目中只有少量图片，那最简单的方法就是将它们放在 <code>source/images</code> 文件夹中,然后通过类似于 <code>![](/images/image.jpg)</code> 的方法访问它们。</p>
+<p>例如:</p>
+<p><code>![1.png](/images/1.png)</code></p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/10/11/Hexo/191011hexo%E6%96%87%E7%AB%A0%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/10/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/Web/191010Linux&Nginx/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="维旭的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/10/10/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/Web/191010Linux&Nginx/" itemprop="url">Linux&Nginx</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-10T15:18:07+08:00">
+                2019-10-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index">
+                    <span itemprop="name">Java学习笔记</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/Web/" itemprop="url" rel="index">
+                    <span itemprop="name">Web</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h1><p>linux 教程</p>
+<p><a target="_blank" rel="noopener" href="https://www.runoob.com/linux/linux-command-manual.html">https://www.runoob.com/linux/linux-command-manual.html</a></p>
+<h2 id="1-1-目标"><a href="#1-1-目标" class="headerlink" title="1.1 目标"></a>1.1 目标</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">•	能够说出Linux操作系统的优势及用途</span><br><span class="line">•	进行成功配置CentOS</span><br><span class="line">•	能够成功完成CentOS初始化配置</span><br><span class="line">•	记住使用cd命令</span><br><span class="line">•	熟练使用ls命令的使用</span><br><span class="line">•	能够使用linux进行目录操作</span><br><span class="line">•	能够独立完成文件压缩和解压缩操作</span><br><span class="line">•	能够独立完成文件的浏览</span><br><span class="line">•	熟练使用vi或者vim操作文件</span><br></pre></td></tr></table></figure>
+
+<h2 id="1-2课程内容"><a href="#1-2课程内容" class="headerlink" title="1.2课程内容"></a>1.2课程内容</h2><h3 id="1-2-1-今日内容"><a href="#1-2-1-今日内容" class="headerlink" title="1.2.1 -今日内容"></a>1.2.1 -今日内容</h3><p><strong>小节内容</strong></p>
+<p><img src="/2019/10/10/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/Web/191010Linux&Nginx/1.png"></p>
+<h3 id="1-2-2-Linux概述"><a href="#1-2-2-Linux概述" class="headerlink" title="1.2.2 -Linux概述"></a>1.2.2 -Linux概述</h3><p><strong>小节内容</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1) Unix 是贝尔实验室开发的,收费 macOS</span><br><span class="line">2) Linux 是仿照unix 开发的但是没有抄袭unix的源代码,而是借鉴了他的方式</span><br><span class="line">3) windows 也是仿照unix 的思维开发的 收费</span><br><span class="line">4) 苹果的操作系统OS 也是基于unix 开发的</span><br></pre></td></tr></table></figure>
+
+<p>我们为啥要放弃windows</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1) windows 收费</span><br><span class="line">2) windows 不稳定</span><br><span class="line">3) windows 浪费系统资源</span><br><span class="line">4) windows 用的人多,系统漏洞被发现的多,病毒多,不安全</span><br></pre></td></tr></table></figure>
+
+<p> <a target="_blank" rel="noopener" href="https://www.cnblogs.com/wxxjianchi/p/9424854.html">linux 内核版本和发行版本区别</a></p>
+<p>内核: 是系统的心脏，是linux中最基层的代码</p>
+<p>发行版本：在内核的基础上，开发不同应用程序，组成的一个完整的操作系统。</p>
+<p><strong>Linux系统的应用</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">服务器系统Web应用服务器、数据库服务器、接口服务器、DNS、FTP等等； </span><br><span class="line">嵌入式系统路由器、防火墙、手机、PDA、IP 分享器、交换器、家电用品的微电脑控制器等等，</span><br><span class="line">高性能运算、计算密集型应用Linux有强大的运算能力。</span><br><span class="line">桌面应用系统</span><br><span class="line">移动手持系统</span><br></pre></td></tr></table></figure>
+
+<h3 id="1-2-3-虚拟机软件-VMware"><a href="#1-2-3-虚拟机软件-VMware" class="headerlink" title="1.2.3 -虚拟机软件-VMware"></a>1.2.3 -虚拟机软件-VMware</h3><p><strong>小节内容</strong></p>
+<p>虚拟化技术：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">在计算机中，虚拟化（英语：Virtualization）是一种资源管理技术，是将计算机的各种实体资源，如服务器、网络、内存及存储等，予以抽象、转换后呈现出来，打破实体结构间的不可切割的障碍，使用户可以比原本的组态更好的方式来应用这些资源。这些资源的新虚拟部份是不受现有资源的架设方式，地域或物理组态所限制。一般所指的虚拟化资源包括计算能力和资料存储。</span><br><span class="line"></span><br><span class="line"> 在实际的生产环境中，虚拟化技术主要用来解决高性能的物理硬件产能过剩和老的旧的硬件产能过低的重组重用，透明化底层物理硬件，从而最大化的利用物理硬件对资源充分利用</span><br><span class="line"></span><br><span class="line"> 虚拟化技术种类很多，例如：软件虚拟化、硬件虚拟化、内存虚拟化、网络虚拟化(vip)、桌面虚拟化、服务虚拟化、虚拟机等等。</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>一个错误</p>
+<p><img src="/2019/10/10/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/Web/191010Linux&Nginx/2.png"></p>
+<p>之前装过没卸载干净。在C盘的驱动文件夹也就是“C:\Windows\System32\drivers”下 把hcmon.sys驱动文件删除，随后重启了一下电脑，就行了</p>
+<h3 id="1-2-4-Linux安装"><a href="#1-2-4-Linux安装" class="headerlink" title="1.2.4 -Linux安装"></a>1.2.4 -Linux安装</h3><p><strong>小节内容</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1)参考文档即可安装即可</span><br></pre></td></tr></table></figure>
+
+<p><img src="/2019/10/10/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/Web/191010Linux&Nginx/3.png" alt="1556979289806"></p>
+<p>nat  能出去,别人进不来</p>
+<p>仅主机模式  (单机模式 不能上网</p>
+<p>桥接模式: 能访问外网, 外边也能进来</p>
+<h3 id="1-2-5-CRT使用"><a href="#1-2-5-CRT使用" class="headerlink" title="1.2.5 -CRT使用"></a>1.2.5 -CRT使用</h3><p><strong>小节内容</strong></p>
+<p>查看ip 命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ifconfig</span><br></pre></td></tr></table></figure>
+
+<p>修改字体大小</p>
+<p><img src="/2019/10/10/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/Web/191010Linux&Nginx/4.png" alt="1563955250035"></p>
+<h3 id="1-2-6-Linux目录结构"><a href="#1-2-6-Linux目录结构" class="headerlink" title="1.2.6 -Linux目录结构"></a>1.2.6 -Linux目录结构</h3><p><strong>小节内容</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Linux每个用户都有一个自己专属的目录：</span><br><span class="line">root:系统管理员，系统根目录下有一个root目录，此目录只能root访问</span><br><span class="line">home&#x2F;用户:普通用户在home目录下都有一个自己专属的目录</span><br><span class="line">usr:主要用于安装应用软件</span><br></pre></td></tr></table></figure>
+
+<p><img src="/2019/10/10/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/Web/191010Linux&Nginx/191010Linux&Nginx%5C5.png" alt="1556980503410"></p>
+<h3 id="1-2-7-Linux命令-文件列表"><a href="#1-2-7-Linux命令-文件列表" class="headerlink" title="1.2.7 -Linux命令-文件列表"></a>1.2.7 -Linux命令-文件列表</h3><p><strong>小节内容</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ls  列出当前文件夹下文件名称</span><br><span class="line">ls -l  列出当前文件夹下文件名称和详细信息</span><br><span class="line">ll     列出当前文件夹下文件名称和详细信息( ls -l 的简写) 注意此命令属于扩展命令, 有些linux版本不支持</span><br></pre></td></tr></table></figure>
+
+<h3 id="1-2-8-Linux命令-目录切换"><a href="#1-2-8-Linux命令-目录切换" class="headerlink" title="1.2.8 -Linux命令-目录切换"></a>1.2.8 -Linux命令-目录切换</h3><p><strong>小节内容</strong></p>
+<p> cd:   change directory</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">cd ~  : 切换至当前用户的跟目录</span><br><span class="line">cd &#x2F;  : 切换至跟目录</span><br><span class="line">cd ..  : 切换至上一级 (注意空格)</span><br><span class="line">cd app	切换到app</span><br></pre></td></tr></table></figure>
+
+<p>pwd</p>
+<p><code>    pwd</code>是<code>Print Working Directory</code>的缩写</p>
+<p>显示当前工作目录</p>
+<h3 id="1-2-9-Linux命令-目录创建和删除"><a href="#1-2-9-Linux命令-目录创建和删除" class="headerlink" title="1.2.9 -Linux命令-目录创建和删除"></a>1.2.9 -Linux命令-目录创建和删除</h3><p><strong>小节内容</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">创建mkdir(make directory)命令可用来创建子目录。</span><br><span class="line">	mkdir app  当前目录下创建 app 目录</span><br><span class="line">	mkdir -p a&#x2F;b&#x2F;c 级联创建目录</span><br><span class="line">rmdir(remove directory)命令可用来删除“空”的子目录：</span><br><span class="line">	rmdir app   删除app目录</span><br></pre></td></tr></table></figure>
+
+<h3 id="1-2-10-Linux命令-文件查看"><a href="#1-2-10-Linux命令-文件查看" class="headerlink" title="1.2.10 -Linux命令-文件查看"></a>1.2.10 -Linux命令-文件查看</h3><p><strong>小节内容</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">cat :  查看文件，会将文件内容在屏幕上全部罗列</span><br><span class="line">cat -n a.txt    会将文件内容在屏幕上全部罗列(显示行号)</span><br><span class="line">more: 查看文件   分页查看，只能向下翻，不能向上翻</span><br><span class="line">more +100 a.txt 从a.txt 的第100行开始查看</span><br><span class="line">less: 查看文件  分页查看，能向上也能向下 (上下箭头翻看)</span><br><span class="line">tail -10 &#x2F;etc&#x2F;passwd  :  查看后10行数据</span><br><span class="line">tail -f catalina.log  :  动态实时监控日志()   ctrl+c 结束查看</span><br></pre></td></tr></table></figure>
+
+<h3 id="1-2-11-Linux命令-文件删除、拷贝"><a href="#1-2-11-Linux命令-文件删除、拷贝" class="headerlink" title="1.2.11 -Linux命令-文件删除、拷贝"></a>1.2.11 -Linux命令-文件删除、拷贝</h3><p><strong>小节内容</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">cp(copy)命令可以将文件从一处复制到另一处。一般在使用cp命令时将一个文件复制成另一个文件或复制到某目录时，需要指定源文件名与目标文件名或目录。</span><br><span class="line">    cp a.txt b.txt    将a.txt复制为b.txt文件</span><br><span class="line">    cp a.txt ..&#x2F;    将a.txt文件复制到上一层目录中</span><br><span class="line"></span><br><span class="line">mv 移动或者重命名</span><br><span class="line">    mv a.txt ..&#x2F;    将a.txt文件移动到上一层目录中</span><br><span class="line">    mv a.txt b.txt    将a.txt文件重命名为b.txt</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">rm a.txt    删除a.txt文件  (需要确认,输入yes 或y)</span><br><span class="line">	rm -f a.txt    不询问，直接删除 a.txt</span><br><span class="line">	rm -r app    删除app目录(需要确认,输入yes 或y,递归)</span><br><span class="line">	rmdir app 删除app目录(必须为空否则无法删除)</span><br><span class="line">	rm -rf  a    不询问递归删除a 及其子目录下的东西</span><br><span class="line">	rm -rf  *     删除当前文件夹及其自目录</span><br><span class="line">	rm -rf  &#x2F;       格式化磁盘 (一些大型的公司为了避免程序员错误输入该命令,回将该命令重新,放置错误删除)</span><br></pre></td></tr></table></figure>
+
+<h3 id="1-2-12-Linux命令-压缩、解压缩"><a href="#1-2-12-Linux命令-压缩、解压缩" class="headerlink" title="1.2.12 -Linux命令-压缩、解压缩"></a>1.2.12 -Linux命令-压缩、解压缩</h3><p><strong>小节内容</strong></p>
+<p>tar</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">tar命令位于&#x2F;bin目录下，它能够将用户所指定的文件或目录打包成一个文件，但不做压缩。一般Linux上常用的压缩方式是选用tar将许多文件打包成一个文件，再以gzip压缩命令压缩成xxx.tar.gz(或称为xxx.tgz)的文件。常用参数：</span><br><span class="line">-c：创建一个新tar文件</span><br><span class="line">-v：显示运行过程的信息</span><br><span class="line">-f：指定文件名</span><br><span class="line">-z：调用gzip压缩命令进行压缩&#x2F;解压缩</span><br><span class="line">-t：查看压缩文件的内容</span><br><span class="line">-x：解开tar文件</span><br><span class="line">打包：</span><br><span class="line">	tar –cvf xxx.tar .&#x2F;*</span><br><span class="line">打包并且压缩：</span><br><span class="line">	tar –zcvf xxx.tar.gz .&#x2F;* </span><br><span class="line"></span><br><span class="line">解压 </span><br><span class="line">     tar –xvf xxx.tar</span><br><span class="line">	tar -zxvf xxx.tar.gz -C &#x2F;usr&#x2F;aaa</span><br></pre></td></tr></table></figure>
+
+<h3 id="1-2-13-Linux命令-查找文件、内容"><a href="#1-2-13-Linux命令-查找文件、内容" class="headerlink" title="1.2.13 -Linux命令-查找文件、内容"></a>1.2.13 -Linux命令-查找文件、内容</h3><p><strong>小节内容</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">find &#x2F; -name &quot;ins*&quot; 从根目录查找文件名称是以ins开头的文件</span><br><span class="line">find &#x2F;root -name &quot;ins*&quot; 从&#x2F;root 目录查找文件名称是以ins开头的文件</span><br><span class="line">find &#x2F; -name “ins*” –ls </span><br><span class="line">find &#x2F; –user itcast –ls 查找用户itcast的文件</span><br><span class="line">find &#x2F; –user itcast –type d –ls 查找用户itcast的目录</span><br><span class="line">find &#x2F;-perm -777 –type d-ls 查找权限是777的文件</span><br></pre></td></tr></table></figure>
+
+<p>find详解</p>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/bbox/p/9655776.html">https://www.cnblogs.com/bbox/p/9655776.html</a></p>
+<p>grep </p>
+<p>​    grep [选项]… PATTERN  [FILE]…</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">grep lang anaconda-ks.cfg  在文件中查找lang</span><br><span class="line">grep lang anaconda-ks.cfg –color 高亮显示</span><br><span class="line">grep lang anaconda-ks.cfg –color -A1 -B1 高亮显示 ,并向前一行和向后一行</span><br><span class="line">grep -rn  lang anaconda-ks.cfg  在文件中查找lang 并显示行号</span><br></pre></td></tr></table></figure>
+
+<h3 id="1-2-14-Linux命令-其他常见命令"><a href="#1-2-14-Linux命令-其他常见命令" class="headerlink" title="1.2.14 -Linux命令-其他常见命令"></a>1.2.14 -Linux命令-其他常见命令</h3><p><strong>小节内容</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">【pwd】</span><br><span class="line">	显示当前所在目录</span><br><span class="line">【touch】</span><br><span class="line">    创建一个空文件</span><br><span class="line">    * touch a.txt</span><br><span class="line">【clear&#x2F; crtl + L】</span><br><span class="line">	清屏</span><br></pre></td></tr></table></figure>
+
+<h3 id="1-2-15-Linux命令-VIM编辑器"><a href="#1-2-15-Linux命令-VIM编辑器" class="headerlink" title="1.2.15 -Linux命令-VIM编辑器"></a>1.2.15 -Linux命令-VIM编辑器</h3><p><strong>小节内容</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"> vi.vim:</span><br><span class="line">       vi  文件名</span><br><span class="line">      进入后默认是命令行模式，</span><br><span class="line">      按I,a可以进入可编辑模式，按esc转换为命令行模式。</span><br><span class="line">     切换到底行模式：按 :（冒号）进行底行模式，可以输入wq保存并退出，q 退出  q!表示强制退出.</span><br><span class="line"></span><br><span class="line">打开文件：vim file</span><br><span class="line">退出：esc  :q</span><br><span class="line">修改文件：输入i进入插入模式</span><br><span class="line">保存并退出：esc:wq</span><br><span class="line"></span><br><span class="line">不保存退出：esc:q!</span><br><span class="line"></span><br><span class="line">三种进入插入模式：</span><br><span class="line">i:在当前的光标所在处插入</span><br><span class="line">o:在当前光标所在的行的下一行插入</span><br><span class="line">a:在光标所在的下一个字符插入</span><br><span class="line"></span><br><span class="line">快捷键：</span><br><span class="line">dd – 快速删除一行</span><br><span class="line">yy - 复制当前行</span><br><span class="line">nyy - 从当前行向后复制几行</span><br><span class="line">p - 粘贴</span><br><span class="line">R – 替换</span><br><span class="line"></span><br><span class="line">:&#x2F;8080   底行模式下搜索</span><br></pre></td></tr></table></figure>
+
+<h3 id="1-2-16-Linux命令-重定向输出-amp-系统命令"><a href="#1-2-16-Linux命令-重定向输出-amp-系统命令" class="headerlink" title="1.2.16 -Linux命令-重定向输出&amp;系统命令"></a>1.2.16 -Linux命令-重定向输出&amp;系统命令</h3><p><strong>小节内容</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">cat &#x2F;etc&#x2F;passwd &gt; a.txt  将输出定向到a.txt中</span><br><span class="line">cat &#x2F;etc&#x2F;passwd &gt;&gt; a.txt  输出并且追加</span><br><span class="line">-----------------------------------</span><br><span class="line">ps –ef  查看所有进程</span><br><span class="line">ps –ef | grep ssh 查找某一进程</span><br><span class="line">kill 2868  杀掉2868编号的进程</span><br><span class="line">kill -9 2868  强制杀死进程</span><br></pre></td></tr></table></figure>
+
+<h3 id="1-2-17-Linux命令-管道"><a href="#1-2-17-Linux命令-管道" class="headerlink" title="1.2.17 -Linux命令-管道"></a>1.2.17 -Linux命令-管道</h3><p><strong>小节内容</strong>[ | ]</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">管道是Linux命令中重要的一个概念，其作用是将一个命令的输出用作另一个命令的输入。示例</span><br><span class="line">ls --help | more  分页查询帮助信息</span><br><span class="line">ps –ef | grep java  查询名称中包含java的进程</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="1-2-18-Linux权限"><a href="#1-2-18-Linux权限" class="headerlink" title="1.2.18 -Linux权限"></a>1.2.18 -Linux权限</h3><p><strong>小节内容</strong></p>
+<p><img src="/2019/10/10/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/Web/191010Linux&Nginx/6.png" alt="1556983960716"></p>
+<p><img src="/2019/10/10/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/Web/191010Linux&Nginx/7.png" alt="1556984099328"></p>
+<p>r:对文件是指可读取内容 对目录是可以ls   </p>
+<p>w:对文件是指可修改文件内容，对目录 是指可以在其中创建或删除子节点(目录或文件) </p>
+<p>x:对文件是指是否可以运行这个文件，对目录是指是否可以cd进入这个目录 </p>
+<p> u: user表示当前用户对此文件（文件夹）的操作权限</p>
+<p>  g:  group 指的当前用户所在的组的权限</p>
+<p>o: other 其它组的用户所拥有的权限</p>
+<p>权限的表示：</p>
+<p>​     A，字母表示权限：   r ;read  表示有查看文件的权限   w:write 表示有对文件进行修秘诀的权限   x; execute 表示有对此文件执行的权限 </p>
+<p>​     B,数字表示方式：  4  表示的是读的权限（r）  2  表示的是写的权限(w)  1表示执行的权限（x）</p>
+<p>chmod权限 文件:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">chmod 755 a.txt </span><br><span class="line">chmod u&#x3D;rwx,g&#x3D;rx,o&#x3D;rx a.txt</span><br></pre></td></tr></table></figure>
+
+<h3 id="1-2-19-Linux修改ip"><a href="#1-2-19-Linux修改ip" class="headerlink" title="1.2.19 -Linux修改ip"></a>1.2.19 -Linux修改ip</h3><p><strong>小节内容</strong></p>
+<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">1)</span> <span class="string">进入目录/etc/udev/rules.d/ 修改文件70-persitent-net.rules:</span></span><br><span class="line"><span class="meta">将eth0</span> <span class="string">和mac 地址绑定</span></span><br><span class="line"></span><br><span class="line"><span class="meta">2)</span> <span class="string">修改 /etc/sysconfig/network-scripts/ifcfg-eth0文件</span></span><br><span class="line"><span class="attr">DEVICE</span>=<span class="string">eth0 #网卡名称 </span></span><br><span class="line"><span class="attr">BOOTPROTO</span>=<span class="string">static #获取ip的方式(static/dhcp/bootp/none)</span></span><br><span class="line"><span class="attr">HWADDR</span>=<span class="string">00:0C:29:B5:B2:69 #MAC地址</span></span><br><span class="line"><span class="attr">IPADDR</span>=<span class="string">192.168.25.129 #IP地址</span></span><br><span class="line"><span class="attr">NETMASK</span>=<span class="string">255.255.255.0 #子网掩码</span></span><br><span class="line"><span class="attr">NETWORK</span>=<span class="string">192.168.177.0 #网络地址</span></span><br><span class="line"><span class="attr">BROADCAST</span>=<span class="string">192.168.0.255 #广播地址</span></span><br><span class="line"><span class="attr">NBOOT</span>=<span class="string">yes #  系统启动时是否设置此网络接口，设置为yes时，系统启动时激活此设备。</span></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><img src="/2019/10/10/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/Web/191010Linux&Nginx/8.png" alt="1563952314902"></p>
+<h3 id="1-2-20-Linux域名映射"><a href="#1-2-20-Linux域名映射" class="headerlink" title="1.2.20 -Linux域名映射"></a>1.2.20 -Linux域名映射</h3><p><strong>小节内容</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;etc&#x2F;hosts   注意不是host</span><br></pre></td></tr></table></figure>
+
+<h1 id="2-命令"><a href="#2-命令" class="headerlink" title="2.命令"></a>2.命令</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1) 查看操作系统版本</span><br><span class="line">	getconf LONG_BIT </span><br><span class="line">2) alt +P 进入 sftp 窗口可以 上传文件</span><br></pre></td></tr></table></figure>
+
+<h1 id="jdk"><a href="#jdk" class="headerlink" title="jdk"></a>jdk</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">1) 查看java 版本</span><br><span class="line">	java -version</span><br><span class="line">2) 查看已安装jdk 版本</span><br><span class="line">	rpm -qa | grep java</span><br><span class="line">3) 删除opendjdk </span><br><span class="line">	rpm -e --nodeps java-1.6.0-openjdk-1.6.0.35-1.13.7.1.el6_6.i686</span><br><span class="line">	rpm -e --nodeps java-1.7.0-openjdk-1.7.0.79-2.5.5.4.el6.i686</span><br><span class="line">4) 解压 jdk (将jdk压缩包 上传至 &#x2F;usr&#x2F;local&#x2F;jdk)</span><br><span class="line">	tar -zxvf  jdk-7u71-linux-i586.tar.gz</span><br><span class="line">5) 修改配置文件</span><br><span class="line">  	vim &#x2F;etc&#x2F;profile</span><br><span class="line">  	在末尾行添加</span><br><span class="line">	#set java environment</span><br><span class="line">	JAVA_HOME&#x3D;&#x2F;usr&#x2F;local&#x2F;jdk&#x2F;jdk1.7.0_71</span><br><span class="line">	CLASSPATH&#x3D;.:$JAVA_HOME&#x2F;lib.tools.jar</span><br><span class="line">	PATH&#x3D;$JAVA_HOME&#x2F;bin:$PATH</span><br><span class="line">	export JAVA_HOME CLASSPATH PATH</span><br><span class="line">6) source &#x2F;etc&#x2F;profile  使更改的配置立即生效</span><br></pre></td></tr></table></figure>
+
+<p>openjdk和oraclejdk有什么区别</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">1.授权协议的不同：OpenJDK采用GPL V2协议放出，而SUN JDK则采用JRL放出。两者协议虽然都是开放源代码的，但是在使用上的不同在于GPL V2允许在商业上使用，而JRL只允许个人研究使用。</span><br><span class="line"></span><br><span class="line">2.OpenJDK不包含Deployment（部署）功能：部署的功能包括：Browser Plugin、Java Web Start、以及Java控制面板，这些功能在OpenJDK中是找不到的。</span><br><span class="line"></span><br><span class="line">3.OpenJDK源代码不完整：这个很容易想到，在采用GPL协议的OpenJDK中，SUN JDK的一部分源代码因为产权的问题无法开放给OpenJDK使用，其中最主要的部份就是JMX中的可选元件SNMP部份的代码。</span><br><span class="line"></span><br><span class="line">4.部分源代码用开源代码替换：由于产权的问题，很多产权不是SUN的源代码被替换成一些功能相同的开源代码，比如说字体栅格化引擎，使用Free Type代替.</span><br></pre></td></tr></table></figure>
+
+<h1 id="mysql"><a href="#mysql" class="headerlink" title="mysql"></a>mysql</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">1) 新建文件夹 mysql</span><br><span class="line">   cd &#x2F;usr&#x2F;local</span><br><span class="line">   mkdir mysql</span><br><span class="line">2) 上传mysql 安装包至 新建文件夹</span><br><span class="line">3) 解压 (注意: 这里的包没有压缩 所以无需-z 参数)</span><br><span class="line">	tar -xvf MySQL-5.6.22-1.el6.i686.rpm-bundle.tar</span><br><span class="line">4) 将系统自带的mysql卸载</span><br><span class="line">    rpm -qa | grep mysql</span><br><span class="line">    rpm -e --nodeps mysql-libs-5.1.73-5.el6_6.i686</span><br><span class="line">5) 安装mysql 服务器端</span><br><span class="line">	rpm -ivh MySQL-server-5.6.22-1.el6.i686.rpm</span><br><span class="line">6) 	安装MYSQL客户端</span><br><span class="line">     rpm -ivh MySQL-client-5.6.22-1.el6.i686.rpm </span><br><span class="line">7) 显示随机密码</span><br><span class="line">	more &#x2F;root&#x2F;.mysql_secret</span><br><span class="line">8) 启动服务</span><br><span class="line"> service mysql start</span><br><span class="line">9) 连接</span><br><span class="line">	mysql -uroot -pxxxxx</span><br><span class="line">10) 修改密码</span><br><span class="line">	set password &#x3D;password(&#39;root&#39;);</span><br><span class="line">11) 开启允许远程登陆</span><br><span class="line">   grant all privileges on *.* to &#39;root&#39; @&#39;%&#39; identified by &#39;root&#39;;</span><br><span class="line">   flush privileges;</span><br><span class="line">12) 关闭防火墙(先退出MySQL 登陆 exit )</span><br><span class="line">	service iptables stop</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ps -ef |grep mysql</span><br><span class="line">kill -9  xxxx</span><br></pre></td></tr></table></figure>
+
+
+
+<p><img src="/2019/10/10/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/Web/191010Linux&Nginx/9.png" alt="1567392191969"></p>
+<h1 id="tomcat"><a href="#tomcat" class="headerlink" title="tomcat"></a>tomcat</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; 创建文件夹 &#x2F;usr&#x2F;local&#x2F;tomcat</span><br><span class="line">1.Tomcat上传到linux上</span><br><span class="line">2.将上传的tomcat解压</span><br><span class="line">	tar -zxvf apache-tomcat-7.0.57.tar.gz </span><br><span class="line">3.在tomcat&#x2F;bin目录下执行 startup.sh（注意防火墙）</span><br><span class="line">  </span><br><span class="line">4.查看目标 tomcat&#x2F;logs&#x2F;catalina.out</span><br><span class="line"></span><br><span class="line">查看进程</span><br><span class="line">ps -ef | grep java</span><br></pre></td></tr></table></figure>
+
+<h1 id="部署应用"><a href="#部署应用" class="headerlink" title="部署应用"></a>部署应用</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">将项目打包成war 上传即可,不多提及</span><br><span class="line">1) mysql 配置中文乱码</span><br><span class="line">2) 绝对路径</span><br></pre></td></tr></table></figure>
+
+<h1 id="redis"><a href="#redis" class="headerlink" title="redis"></a>redis</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">1) 安装 c 语言编译环境</span><br><span class="line">	yum install gcc-c++</span><br><span class="line">2) 下载redis</span><br><span class="line">wget http:&#x2F;&#x2F;download.redis.io&#x2F;releases&#x2F;redis-3.0.4.tar.gz</span><br><span class="line"></span><br><span class="line">3) 解压</span><br><span class="line">tar -xzvf redis-3.0.4.tar.gz</span><br><span class="line">4) 编译安装、</span><br><span class="line">	切换至程序目录，并执行make命令编译：</span><br><span class="line">	cd redis-3.0.4</span><br><span class="line">	make</span><br><span class="line">5) 执行安装命令</span><br><span class="line">	make PREFIX&#x3D;&#x2F;usr&#x2F;local&#x2F;redis install </span><br><span class="line">6) 配置redis</span><br><span class="line">   1.	复制配置文件到&#x2F;usr&#x2F;local&#x2F;redis&#x2F;bin目录</span><br><span class="line">	cd redis-3.0.4  </span><br><span class="line">	cp redis.conf &#x2F;usr&#x2F;local&#x2F;redis&#x2F;bin</span><br><span class="line">7) 启动redis</span><br><span class="line"> cd &#x2F;usr&#x2F;local&#x2F;redis&#x2F;bin</span><br><span class="line">	7.1)启动redis服务端</span><br><span class="line">	.&#x2F;redis-server redis.conf</span><br><span class="line">	7.2)复制窗口 启动客户端</span><br><span class="line">	.&#x2F;redis-cli</span><br></pre></td></tr></table></figure>
+
+<p>后台运行 redis.conf</p>
+<p><img src="/2019/10/10/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/Web/191010Linux&Nginx/10.png" alt="1564298238345"></p>
+<h1 id="3-nginx"><a href="#3-nginx" class="headerlink" title="3.nginx"></a>3.nginx</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">1) 安装gcc (略)</span><br><span class="line">	yum install gcc-c++</span><br><span class="line">2) 安装第三方开发包</span><br><span class="line">	yum install -y pcre pcre-devel</span><br><span class="line">	yum install -y zlib zlib-devel</span><br><span class="line">	yum install -y openssl openssl-devel</span><br><span class="line">3) 上传压缩包</span><br><span class="line">4) 解压</span><br><span class="line">	tar -zxvf nginx-1.8.0.tar.gz</span><br><span class="line">5) 进入nginx-1.8.0目录   使用 configure 命令创建一 makeFile 文件</span><br><span class="line">.&#x2F;configure \</span><br><span class="line">--prefix&#x3D;&#x2F;usr&#x2F;local&#x2F;nginx \</span><br><span class="line">--pid-path&#x3D;&#x2F;var&#x2F;run&#x2F;nginx&#x2F;nginx.pid \</span><br><span class="line">--lock-path&#x3D;&#x2F;var&#x2F;lock&#x2F;nginx.lock \</span><br><span class="line">--error-log-path&#x3D;&#x2F;var&#x2F;log&#x2F;nginx&#x2F;error.log \</span><br><span class="line">--http-log-path&#x3D;&#x2F;var&#x2F;log&#x2F;nginx&#x2F;access.log \</span><br><span class="line">--with-http_gzip_static_module \</span><br><span class="line">--http-client-body-temp-path&#x3D;&#x2F;var&#x2F;temp&#x2F;nginx&#x2F;client \</span><br><span class="line">--http-proxy-temp-path&#x3D;&#x2F;var&#x2F;temp&#x2F;nginx&#x2F;proxy \</span><br><span class="line">--http-fastcgi-temp-path&#x3D;&#x2F;var&#x2F;temp&#x2F;nginx&#x2F;fastcgi \</span><br><span class="line">--http-uwsgi-temp-path&#x3D;&#x2F;var&#x2F;temp&#x2F;nginx&#x2F;uwsgi \</span><br><span class="line">--http-scgi-temp-path&#x3D;&#x2F;var&#x2F;temp&#x2F;nginx&#x2F;scgi</span><br><span class="line">6) 编译</span><br><span class="line">make</span><br><span class="line">7) 安装</span><br><span class="line">make install</span><br><span class="line">8) 创建目录</span><br><span class="line">	mkdir &#x2F;var&#x2F;temp&#x2F;nginx&#x2F;client -p</span><br><span class="line">9) 启动</span><br><span class="line">  cd &#x2F;usr&#x2F;local&#x2F;nginx&#x2F;sbin</span><br><span class="line">  .&#x2F;nginx</span><br><span class="line">-----</span><br><span class="line">1)启动后查看进程</span><br><span class="line">ps aux|grep nginx</span><br><span class="line">2)关闭 nginx：</span><br><span class="line">.&#x2F;nginx -s stop</span><br><span class="line">	或者</span><br><span class="line">.&#x2F;nginx -s quit</span><br><span class="line">3) 重启 nginx：</span><br><span class="line">&#x2F;nginx -s reload</span><br></pre></td></tr></table></figure>
+
+<p>– 需要关闭防火墙,否则无法访问</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">1)linux 可以安装开发相关软件</span><br><span class="line">	怎么安装?</span><br><span class="line">2) nginx 是什么? 是一个服务器</span><br><span class="line">    能干什么? </span><br><span class="line">		1) 部署静态资源</span><br><span class="line">		2) 虚拟主机(了解)</span><br><span class="line">		3) 反向代理&#x2F;负载均衡</span><br><span class="line">3) 什么是反向代理?</span><br><span class="line">	什么是负载均衡?</span><br><span class="line">	什么是集群?</span><br></pre></td></tr></table></figure>
+
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/08/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/Web/191008Maven%E9%AB%98%E7%BA%A7/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -591,1227 +1995,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/07/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/Web/191007Maven%E5%9F%BA%E7%A1%80/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="维旭的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/10/07/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/Web/191007Maven%E5%9F%BA%E7%A1%80/" itemprop="url">Maven基础</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-07T15:15:17+08:00">
-                2019-10-07
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index">
-                    <span itemprop="name">Java学习笔记</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/Web/" itemprop="url" rel="index">
-                    <span itemprop="name">Web</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/06/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/Web/191006redis/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="维旭的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/10/06/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/Web/191006redis/" itemprop="url">redis</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-06T15:14:57+08:00">
-                2019-10-06
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index">
-                    <span itemprop="name">Java学习笔记</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/Web/" itemprop="url" rel="index">
-                    <span itemprop="name">Web</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/05/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/Web/191005Ajax&Json/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="维旭的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/10/05/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/Web/191005Ajax&Json/" itemprop="url">Ajax&Json</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-05T15:14:42+08:00">
-                2019-10-05
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index">
-                    <span itemprop="name">Java学习笔记</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/Web/" itemprop="url" rel="index">
-                    <span itemprop="name">Web</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/03/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/Web/191003JQuery%E9%AB%98%E7%BA%A7/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="维旭的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/10/03/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/Web/191003JQuery%E9%AB%98%E7%BA%A7/" itemprop="url">JQuery高级</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-03T15:14:27+08:00">
-                2019-10-03
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index">
-                    <span itemprop="name">Java学习笔记</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/Web/" itemprop="url" rel="index">
-                    <span itemprop="name">Web</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/02/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/Web/191002JQuery%E5%9F%BA%E7%A1%80/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="维旭的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/10/02/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/Web/191002JQuery%E5%9F%BA%E7%A1%80/" itemprop="url">JQuery基础</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-02T15:14:07+08:00">
-                2019-10-02
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index">
-                    <span itemprop="name">Java学习笔记</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/Web/" itemprop="url" rel="index">
-                    <span itemprop="name">Web</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/01/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/Web/191001filter&listener/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="维旭的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/10/01/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/Web/191001filter&listener/" itemprop="url">filter&listener</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-01T15:13:53+08:00">
-                2019-10-01
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index">
-                    <span itemprop="name">Java学习笔记</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/Web/" itemprop="url" rel="index">
-                    <span itemprop="name">Web</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/30/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/Web/190930EL&JSTL/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="维旭的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/09/30/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/Web/190930EL&JSTL/" itemprop="url">EL&JSTL</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-30T19:13:33+08:00">
-                2019-09-30
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index">
-                    <span itemprop="name">Java学习笔记</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/Web/" itemprop="url" rel="index">
-                    <span itemprop="name">Web</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/29/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/Web/190929Cookie&Session/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="维旭的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/09/29/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/Web/190929Cookie&Session/" itemprop="url">Cookie&Session</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-29T15:13:14+08:00">
-                2019-09-29
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index">
-                    <span itemprop="name">Java学习笔记</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/Web/" itemprop="url" rel="index">
-                    <span itemprop="name">Web</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/3/">&lt;</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/5/">&gt;</a>
+    <a class="extend prev" rel="prev" href="/page/3/">&lt;</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/5/">&gt;</a>
   </nav>
 
 
@@ -1861,7 +2049,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">85</span>
+                  <span class="site-state-item-count">94</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

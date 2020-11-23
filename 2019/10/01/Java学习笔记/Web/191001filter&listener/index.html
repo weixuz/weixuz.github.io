@@ -83,15 +83,15 @@
 
 
 
-<meta name="description" content="言必信，行必果。">
+<meta name="description" content="121. Filter：过滤器2. Listener：监听器">
 <meta property="og:type" content="article">
-<meta property="og:title" content="filter&amp;listener">
-<meta property="og:url" content="http://yoursite.com/2019/10/01/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/Web/191001filter&listener/index.html">
+<meta property="og:title" content="Filter&amp;Listener">
+<meta property="og:url" content="http://yoursite.com/2019/10/01/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/Web/191001Filter&Listener/index.html">
 <meta property="og:site_name" content="维旭的博客">
-<meta property="og:description" content="言必信，行必果。">
+<meta property="og:description" content="121. Filter：过滤器2. Listener：监听器">
 <meta property="og:locale">
 <meta property="article:published_time" content="2019-10-01T07:13:53.000Z">
-<meta property="article:modified_time" content="2020-11-23T07:34:42.721Z">
+<meta property="article:modified_time" content="2020-11-23T09:32:37.793Z">
 <meta property="article:author" content="维旭">
 <meta name="twitter:card" content="summary">
 
@@ -123,13 +123,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/10/01/Java学习笔记/Web/191001filter&listener/"/>
+  <link rel="canonical" href="http://yoursite.com/2019/10/01/Java学习笔记/Web/191001Filter&Listener/"/>
 
 
 
 
 
-  <title>filter&listener | 维旭的博客</title>
+  <title>Filter&Listener | 维旭的博客</title>
   
 
 
@@ -290,7 +290,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/01/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/Web/191001filter&listener/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/01/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/Web/191001Filter&Listener/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="">
@@ -307,7 +307,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">filter&listener</h1>
+          <h1 class="post-title" itemprop="name headline">Filter&Listener</h1>
         
 
         <div class="post-meta">
@@ -395,7 +395,24 @@
       
 
       
-        
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1. Filter：过滤器</span><br><span class="line">2. Listener：监听器</span><br></pre></td></tr></table></figure>
+
+<a id="more"></a>
+
+<h1 id="Filter：过滤器"><a href="#Filter：过滤器" class="headerlink" title="Filter：过滤器"></a>Filter：过滤器</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">1. 概念：</span><br><span class="line">	* 生活中的过滤器：净水器,空气净化器，土匪、</span><br><span class="line">	* web中的过滤器：当访问服务器的资源时，过滤器可以将请求拦截下来，完成一些特殊的功能。</span><br><span class="line">	* 过滤器的作用：</span><br><span class="line">		* 一般用于完成通用的操作。如：登录验证、统一编码处理、敏感字符过滤...</span><br><span class="line"></span><br><span class="line">2. 快速入门：</span><br><span class="line">	1. 步骤：</span><br><span class="line">		1. 定义一个类，实现接口Filter</span><br><span class="line">		2. 复写方法</span><br><span class="line">		3. 配置拦截路径</span><br><span class="line">			1. web.xml</span><br><span class="line">			2. 注解</span><br><span class="line">	2. 代码：</span><br><span class="line">		@WebFilter(&quot;&#x2F;*&quot;)&#x2F;&#x2F;访问所有资源之前，都会执行该过滤器</span><br><span class="line">		public class FilterDemo1 implements Filter &#123;</span><br><span class="line">		    @Override</span><br><span class="line">		    public void init(FilterConfig filterConfig) throws ServletException &#123;</span><br><span class="line">		</span><br><span class="line">		    &#125;</span><br><span class="line">		</span><br><span class="line">		    @Override</span><br><span class="line">		    public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException &#123;</span><br><span class="line">		        System.out.println(&quot;filterDemo1被执行了....&quot;);</span><br><span class="line">		        &#x2F;&#x2F;放行</span><br><span class="line">		        filterChain.doFilter(servletRequest,servletResponse);</span><br><span class="line">		</span><br><span class="line">		    &#125;</span><br><span class="line">		</span><br><span class="line">		    @Override</span><br><span class="line">		    public void destroy() &#123;</span><br><span class="line">		</span><br><span class="line">		    &#125;</span><br><span class="line">		&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line">3. 过滤器细节：</span><br><span class="line">	1. web.xml配置	</span><br><span class="line">		&lt;filter&gt;</span><br><span class="line">	        &lt;filter-name&gt;demo1&lt;&#x2F;filter-name&gt;</span><br><span class="line">	        &lt;filter-class&gt;cn.itcast.web.filter.FilterDemo1&lt;&#x2F;filter-class&gt;</span><br><span class="line">	    &lt;&#x2F;filter&gt;</span><br><span class="line">	    &lt;filter-mapping&gt;</span><br><span class="line">	        &lt;filter-name&gt;demo1&lt;&#x2F;filter-name&gt;</span><br><span class="line">			&lt;!-- 拦截路径 --&gt;</span><br><span class="line">	        &lt;url-pattern&gt;&#x2F;*&lt;&#x2F;url-pattern&gt;</span><br><span class="line">	    &lt;&#x2F;filter-mapping&gt;</span><br><span class="line">	2. 过滤器执行流程</span><br><span class="line">		1. 执行过滤器</span><br><span class="line">		2. 执行放行后的资源</span><br><span class="line">		3. 回来执行过滤器放行代码下边的代码</span><br><span class="line">	3. 过滤器生命周期方法</span><br><span class="line">		1. init:在服务器启动后，会创建Filter对象，然后调用init方法。只执行一次。用于加载资源</span><br><span class="line">		2. doFilter:每一次请求被拦截资源时，会执行。执行多次</span><br><span class="line">		3. destroy:在服务器关闭后，Filter对象被销毁。如果服务器是正常关闭，则会执行destroy方法。只执行一次。用于释放资源</span><br><span class="line">	4. 过滤器配置详解</span><br><span class="line">		* 拦截路径配置：</span><br><span class="line">			1. 具体资源路径： &#x2F;index.jsp   只有访问index.jsp资源时，过滤器才会被执行</span><br><span class="line">			2. 拦截目录： &#x2F;user&#x2F;*	访问&#x2F;user下的所有资源时，过滤器都会被执行</span><br><span class="line">			3. 后缀名拦截： *.jsp		访问所有后缀名为jsp资源时，过滤器都会被执行</span><br><span class="line">			4. 拦截所有资源：&#x2F;*		访问所有资源时，过滤器都会被执行</span><br><span class="line">		* 拦截方式配置：资源被访问的方式</span><br><span class="line">			* 注解配置：</span><br><span class="line">				* 设置dispatcherTypes属性</span><br><span class="line">					1. REQUEST：默认值。浏览器直接请求资源</span><br><span class="line">					2. FORWARD：转发访问资源</span><br><span class="line">					3. INCLUDE：包含访问资源</span><br><span class="line">					4. ERROR：错误跳转资源</span><br><span class="line">					5. ASYNC：异步访问资源</span><br><span class="line">			* web.xml配置</span><br><span class="line">				* 设置&lt;dispatcher&gt;&lt;&#x2F;dispatcher&gt;标签即可</span><br><span class="line">			</span><br><span class="line">	5. 过滤器链(配置多个过滤器)</span><br><span class="line">		* 执行顺序：如果有两个过滤器：过滤器1和过滤器2</span><br><span class="line">			1. 过滤器1</span><br><span class="line">			2. 过滤器2</span><br><span class="line">			3. 资源执行</span><br><span class="line">			4. 过滤器2</span><br><span class="line">			5. 过滤器1 </span><br><span class="line"></span><br><span class="line">		* 过滤器先后顺序问题：</span><br><span class="line">			1. 注解配置：按照类名的字符串比较规则比较，值小的先执行</span><br><span class="line">				* 如： AFilter 和 BFilter，AFilter就先执行了。</span><br><span class="line">			2. web.xml配置： &lt;filter-mapping&gt;谁定义在上边，谁先执行</span><br><span class="line">4. 案例：</span><br><span class="line">	1. 案例1_登录验证</span><br><span class="line">		* 需求：</span><br><span class="line">			1. 访问day17_case案例的资源。验证其是否登录</span><br><span class="line">			2. 如果登录了，则直接放行。</span><br><span class="line">			3. 如果没有登录，则跳转到登录页面，提示&quot;您尚未登录，请先登录&quot;。</span><br></pre></td></tr></table></figure>
+
+<p>​    </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">2. 案例2_敏感词汇过滤</span><br><span class="line">	* 需求：</span><br><span class="line">		1. 对day17_case案例录入的数据进行敏感词汇过滤</span><br><span class="line">		2. 敏感词汇参考《敏感词汇.txt》</span><br><span class="line">		3. 如果是敏感词汇，替换为 *** </span><br><span class="line"></span><br><span class="line">	* 分析：</span><br><span class="line">		1. 对request对象进行增强。增强获取参数相关方法</span><br><span class="line">		2. 放行。传递代理对象</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">* 增强对象的功能：</span><br><span class="line">	* 设计模式：一些通用的解决固定问题的方式</span><br><span class="line">	1. 装饰模式</span><br><span class="line">	2. 代理模式</span><br><span class="line">		* 概念：</span><br><span class="line">			1. 真实对象：被代理的对象</span><br><span class="line">			2. 代理对象：</span><br><span class="line">			3. 代理模式：代理对象代理真实对象，达到增强真实对象功能的目的</span><br><span class="line">	 	* 实现方式：</span><br><span class="line">		 	1. 静态代理：有一个类文件描述代理模式</span><br><span class="line">		 	2. 动态代理：在内存中形成代理类</span><br><span class="line">				* 实现步骤：</span><br><span class="line">					1. 代理对象和真实对象实现相同的接口</span><br><span class="line">					2. 代理对象 &#x3D; Proxy.newProxyInstance();</span><br><span class="line">					3. 使用代理对象调用方法。</span><br><span class="line">					4. 增强方法</span><br><span class="line"></span><br><span class="line">				* 增强方式：</span><br><span class="line">					1. 增强参数列表</span><br><span class="line">					2. 增强返回值类型</span><br><span class="line">					3. 增强方法体执行逻辑	</span><br></pre></td></tr></table></figure>
+
+<h2 id="Listener：监听器"><a href="#Listener：监听器" class="headerlink" title="Listener：监听器"></a>Listener：监听器</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">* 概念：web的三大组件之一。</span><br><span class="line">	* 事件监听机制</span><br><span class="line">		* 事件	：一件事情</span><br><span class="line">		* 事件源 ：事件发生的地方</span><br><span class="line">		* 监听器 ：一个对象</span><br><span class="line">		* 注册监听：将事件、事件源、监听器绑定在一起。 当事件源上发生某个事件后，执行监听器代码</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">* ServletContextListener:监听ServletContext对象的创建和销毁</span><br><span class="line">	* 方法：</span><br><span class="line">		* void contextDestroyed(ServletContextEvent sce) ：ServletContext对象被销毁之前会调用该方法</span><br><span class="line">		* void contextInitialized(ServletContextEvent sce) ：ServletContext对象创建后会调用该方法</span><br><span class="line">	* 步骤：</span><br><span class="line">		1. 定义一个类，实现ServletContextListener接口</span><br><span class="line">		2. 复写方法</span><br><span class="line">		3. 配置</span><br><span class="line">			1. web.xml</span><br><span class="line">					&lt;listener&gt;</span><br><span class="line"> 					 &lt;listener-class&gt;cn.itcast.web.listener.ContextLoaderListener&lt;&#x2F;listener-class&gt;</span><br><span class="line"> 					 &lt;&#x2F;listener&gt;</span><br><span class="line">					* 指定初始化参数&lt;context-param&gt;</span><br><span class="line">			2. 注解：</span><br><span class="line">				* @WebListener</span><br></pre></td></tr></table></figure>
+
+
       
     </div>
     
@@ -483,8 +500,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -503,7 +529,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">85</span>
+                  <span class="site-state-item-count">94</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -628,6 +654,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Filter%EF%BC%9A%E8%BF%87%E6%BB%A4%E5%99%A8"><span class="nav-text">Filter：过滤器</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Listener%EF%BC%9A%E7%9B%91%E5%90%AC%E5%99%A8"><span class="nav-text">Listener：监听器</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

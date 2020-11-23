@@ -83,17 +83,19 @@
 
 
 
-<meta name="description" content="言必信，行必果。">
+<meta name="description" content="1. Docker概述目标：了解Docker是什么、应用场景及其组成部分 小结：  Docker是一个应用容器引起；  应用场景：web的自动化打包发布，自动化测试、可持续集成，安装各种组件；  与传统虚拟机比较：docker启动速度比较快，占用体积较小；  组成：docker守护进程，仓库，镜像，容器，docker客户端">
 <meta property="og:type" content="article">
-<meta property="og:title" content="docker">
-<meta property="og:url" content="http://yoursite.com/2019/12/03/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%A1%86%E6%9E%B6/191203docker/index.html">
+<meta property="og:title" content="Docker">
+<meta property="og:url" content="http://yoursite.com/2019/12/03/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%A1%86%E6%9E%B6/191203Docker/index.html">
 <meta property="og:site_name" content="维旭的博客">
-<meta property="og:description" content="言必信，行必果。">
+<meta property="og:description" content="1. Docker概述目标：了解Docker是什么、应用场景及其组成部分 小结：  Docker是一个应用容器引起；  应用场景：web的自动化打包发布，自动化测试、可持续集成，安装各种组件；  与传统虚拟机比较：docker启动速度比较快，占用体积较小；  组成：docker守护进程，仓库，镜像，容器，docker客户端">
 <meta property="og:locale">
+<meta property="og:image" content="http://yoursite.com/2019/12/03/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%A1%86%E6%9E%B6/191203Docker/Java%E8%B5%84%E6%96%99/4.%E6%A1%86%E6%9E%B6/10.docker/%E7%AC%94%E8%AE%B0/assets/1559728403934.png">
 <meta property="article:published_time" content="2019-12-03T07:23:40.000Z">
-<meta property="article:modified_time" content="2020-11-23T07:44:24.907Z">
+<meta property="article:modified_time" content="2020-11-23T12:31:48.102Z">
 <meta property="article:author" content="维旭">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/2019/12/03/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%A1%86%E6%9E%B6/191203Docker/Java%E8%B5%84%E6%96%99/4.%E6%A1%86%E6%9E%B6/10.docker/%E7%AC%94%E8%AE%B0/assets/1559728403934.png">
 
 
 
@@ -123,13 +125,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/12/03/Java学习笔记/框架/191203docker/"/>
+  <link rel="canonical" href="http://yoursite.com/2019/12/03/Java学习笔记/框架/191203Docker/"/>
 
 
 
 
 
-  <title>docker | 维旭的博客</title>
+  <title>Docker | 维旭的博客</title>
   
 
 
@@ -290,7 +292,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/03/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%A1%86%E6%9E%B6/191203docker/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/03/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%A1%86%E6%9E%B6/191203Docker/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="">
@@ -307,7 +309,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">docker</h1>
+          <h1 class="post-title" itemprop="name headline">Docker</h1>
         
 
         <div class="post-meta">
@@ -395,7 +397,207 @@
       
 
       
-        
+        <h2 id="1-Docker概述"><a href="#1-Docker概述" class="headerlink" title="1. Docker概述"></a>1. Docker概述</h2><p><strong>目标</strong>：了解Docker是什么、应用场景及其组成部分</p>
+<p><strong>小结</strong>：</p>
+<ul>
+<li><p>Docker是一个应用容器引起；</p>
+</li>
+<li><p>应用场景：web的自动化打包发布，自动化测试、可持续集成，安装各种组件；</p>
+</li>
+<li><p>与传统虚拟机比较：docker启动速度比较快，占用体积较小；</p>
+</li>
+<li><p>组成：docker守护进程，仓库，镜像，容器，docker客户端</p>
+<a id="more"></a>
+
+</li>
+</ul>
+<h2 id="2-Docker安装与启动"><a href="#2-Docker安装与启动" class="headerlink" title="2. Docker安装与启动"></a>2. Docker安装与启动</h2><p><strong>目标</strong>：在线安装docker并使用命令启动、停止docker</p>
+<p><strong>分析</strong>：</p>
+<ol>
+<li>更新yum源为ustc；</li>
+<li>安装docker;</li>
+<li>更新docker的镜像源为ustc；</li>
+<li>使用docker命令操作docker</li>
+</ol>
+<p><strong>小结</strong>：</p>
+<p>需求更新yum源和镜像源安装docker；安装之后可以使用 <code>docker -v</code></p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 启动</span></span><br><span class="line">systemctl start docker</span><br><span class="line"><span class="comment"># 停止</span></span><br><span class="line">systemctl stop docker</span><br><span class="line"></span><br><span class="line"><span class="comment">#查看docker启动状态</span></span><br><span class="line">systemctl status docker</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="3-镜像相关命令"><a href="#3-镜像相关命令" class="headerlink" title="3. 镜像相关命令"></a>3. 镜像相关命令</h2><p><strong>目标</strong>：能够使用镜像的查看、搜索、拉取、删除命令</p>
+<p><strong>小结</strong>：</p>
+<blockquote>
+<p>拉取：docker pull 镜像名称:版本号（若不指定则会拉取最新的版本）</p>
+<p>删除全部镜像：docker rmi ` docker images -q ` （慎用）</p>
+</blockquote>
+<h2 id="4-查看-amp-创建并启动交互式容器"><a href="#4-查看-amp-创建并启动交互式容器" class="headerlink" title="4. 查看&amp;创建并启动交互式容器"></a>4. 查看&amp;创建并启动交互式容器</h2><p><strong>目标</strong>：使用查看容器命令；拉取centos:7的镜像之后结合容器启动命令和选项 -it 启动交互式容器</p>
+<p><strong>分析</strong>：</p>
+<ol>
+<li>拉取镜像（容器是基于镜像运行）；</li>
+<li>创建并启动交互式容器，docker交互式容器（启动容器之后会直接进入容器的命令行终端，如果退出则容器停止运行）</li>
+</ol>
+<p><strong>小结</strong>：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看容器</span></span><br><span class="line">docker ps -a</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建并启动交互式容器</span></span><br><span class="line">docker run -it --name=mycentos7 centos:7 /bin/bash</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>启动交互式容器之后是直接进入容器终端；可以查看容器的文件结构；使用exit命令则会退出终端并且停止容器。</p>
+</blockquote>
+<h2 id="5-创建并启动守护式容器"><a href="#5-创建并启动守护式容器" class="headerlink" title="5. 创建并启动守护式容器"></a>5. 创建并启动守护式容器</h2><p><strong>目标</strong>：结合容器启动命令和选项 -di 启动守护式容器</p>
+<p><strong>分析</strong>：</p>
+<p>创建并启动docker容器，可以在后台运行；</p>
+<p>在创建交互式容器之后如果退出的话，容器处于停止状态，可以使用命令再次启动容器，使用命令进入容器并操作。</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 创建并启动守护式容器</span></span><br><span class="line">docker run -di --name=mycentos2 centos:7</span><br><span class="line"></span><br><span class="line"><span class="comment"># 启动容器后再进入容器</span></span><br><span class="line">docker <span class="built_in">exec</span> -it mycentos2 /bin/bash</span><br></pre></td></tr></table></figure>
+
+<p><strong>小结</strong>：</p>
+<blockquote>
+<p>守护式容器在启动之后会一直在后台运行，即使进入容器之后执行exit命令也不会停止容器；</p>
+<p>适用于需要长期运行容器的情况</p>
+</blockquote>
+<h2 id="6-停止-amp-拷贝-amp-挂载-amp-查看ip-amp-删除容器"><a href="#6-停止-amp-拷贝-amp-挂载-amp-查看ip-amp-删除容器" class="headerlink" title="6. 停止&amp;拷贝&amp;挂载&amp;查看ip&amp;删除容器"></a>6. 停止&amp;拷贝&amp;挂载&amp;查看ip&amp;删除容器</h2><p><strong>目标</strong>：能够使用容器的停止、拷贝文件、目录挂载、查看IP、删除命令</p>
+<p><strong>小结</strong>：</p>
+<ul>
+<li><p>容器停止、启动</p>
+</li>
+<li><p>拷贝文件：容器与宿主机之间的文件互拷</p>
+</li>
+<li><p>目录挂载：将宿主机的目录映射到容器对于目录</p>
+</li>
+<li><p>查看容器IP</p>
+<p><img src="/2019/12/03/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%A1%86%E6%9E%B6/191203Docker/Java%E8%B5%84%E6%96%99/4.%E6%A1%86%E6%9E%B6/10.docker/%E7%AC%94%E8%AE%B0/assets/1559728403934.png" alt="1559728403934"></p>
+</li>
+<li><p>容器删除：只能删除停止状态的容器；docker rm `docker ps -a -q`</p>
+</li>
+</ul>
+<h2 id="7-MySQL容器部署"><a href="#7-MySQL容器部署" class="headerlink" title="7. MySQL容器部署"></a>7. MySQL容器部署</h2><p><strong>目标</strong>：拉取mysql镜像，启动容器，操作容器中的mysql</p>
+<p><strong>分析</strong>：</p>
+<ol>
+<li><p>拉取mysql镜像；</p>
+</li>
+<li><p>创建并启动守护式容器；</p>
+</li>
+<li><p>在容器中操作mysql；</p>
+</li>
+<li><p>使用图形界面工具（windows）操作在docker中安装的mysql；在创建mysql容器的时候使用-p指定端口映射实现连接</p>
+<p>在创建容器的时候mysql的root用户可以指定远程访问的密码。</p>
+</li>
+</ol>
+<p><strong>小结</strong>：</p>
+<blockquote>
+<p>在创建容器的时候指定环境变量MYSQL_ROOT_PASSWORD表示使用root进行远程连接时候的密码。如果需要进行远程连接的话可以使用-p进行端口映射。</p>
+</blockquote>
+<h2 id="8-Tomcat容器部署"><a href="#8-Tomcat容器部署" class="headerlink" title="8. Tomcat容器部署"></a>8. Tomcat容器部署</h2><p><strong>目标</strong>：拉取tomcat镜像，启动容器，操作容器中的tomcat</p>
+<p><strong>分析</strong>：</p>
+<ul>
+<li><p>将项目文件上传到容器中的tomcat目录（webapps）</p>
+<p>创建容器的时候可以指定-v进行目录挂载，tomcat在容器中的目录（/usr/local/tomcat/webapps）</p>
+</li>
+<li><p>可以通过外部浏览器访问容器中的项目</p>
+<p>创建容器的时候可以指定-p进行端口映射</p>
+</li>
+</ul>
+<ol>
+<li>拉取tomcat镜像；<code>docker pull tomcat</code></li>
+<li>创建并启动tomcat容器；</li>
+</ol>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -di --name=mytomcat -p 9000:8080 -v /usr/<span class="built_in">local</span>/tomcat/webapps:/usr/<span class="built_in">local</span>/tomcat/webapps tomcat</span><br></pre></td></tr></table></figure>
+
+
+
+<ol start="3">
+<li><p>访问容器中tomcat</p>
+<p><a target="_blank" rel="noopener" href="http://192.168.76.128:9000/">http://192.168.76.128:9000</a></p>
+</li>
+</ol>
+<p><strong>小结</strong>：</p>
+<blockquote>
+<p>上传项目文件可以使用容器的目录挂载功能，外部访问可以使用端口映射</p>
+</blockquote>
+<h2 id="9-Nginx容器部署"><a href="#9-Nginx容器部署" class="headerlink" title="9. Nginx容器部署"></a>9. Nginx容器部署</h2><p><strong>目标</strong>：拉取nginx镜像，启动容器，访问nginx</p>
+<p><strong>分析</strong>：</p>
+<p>nginx的默认访问端口是：80</p>
+<p>在创建容器的时候需要进行端口映射，指定-p，映射的端口80</p>
+<ol>
+<li>拉取nginx镜像；</li>
+<li>创建并启动nginx容器；</li>
+<li>在浏览器上访问容器中nginx，<a target="_blank" rel="noopener" href="http://192.168.76.128/">http://192.168.76.128</a></li>
+</ol>
+<p><strong>小结</strong>：</p>
+<blockquote>
+<p>如果被占用了80端口，那么在指定映射的时候可以改变宿主机的端口映射，在访问时也需要带上端口号。</p>
+</blockquote>
+<h2 id="10-Redis容器部署"><a href="#10-Redis容器部署" class="headerlink" title="10. Redis容器部署"></a>10. Redis容器部署</h2><p><strong>目标</strong>：拉取redis镜像，启动容器，操作容器中的redis</p>
+<p><strong>分析</strong>：</p>
+<ol>
+<li>拉取redis镜像；</li>
+<li>创建并启动redis容器；默认端口是6379，如果需要外部访问则可以使用端口映射；</li>
+<li>连接redis: ①使用命令行客户端 ②使用图形界面工具</li>
+</ol>
+<p><strong>小结</strong>：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 创建容器</span></span><br><span class="line">docker run -di --name=myredis -p 6379:6379 redis</span><br><span class="line"></span><br><span class="line"><span class="comment"># 进入容器</span></span><br><span class="line">docker <span class="built_in">exec</span> -it myredis /bin/bash</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="11-docker-compose简介-amp-安装"><a href="#11-docker-compose简介-amp-安装" class="headerlink" title="11. docker-compose简介&amp;安装"></a>11. docker-compose简介&amp;安装</h2><p><strong>目标</strong>：docker-compose的作用；能够安装docker-compose</p>
+<p><strong>小结</strong>：</p>
+<p>docker-compose是一个应用工具；可以通过配置docker-compose.yml文件同时启动多个容器。</p>
+<blockquote>
+<p>部署项目时可以编写一个docker-compose.yml文件作为启动项目单位，同时启动项目相关的那些容器。</p>
+</blockquote>
+<h2 id="12-docker-compose应用"><a href="#12-docker-compose应用" class="headerlink" title="12. docker-compose应用"></a>12. docker-compose应用</h2><p><strong>目标</strong>：编写模版文件同时启动docker容器</p>
+<p><strong>分析</strong>：</p>
+<p>docker-compose可以实现一次启动多个容器；通过配置docker-compose模板文件（docker-compose.yml）,在这个配置文件中去配置各个容器及其相关的依赖。</p>
+<ol>
+<li>编写模板文件；</li>
+<li>创建并启动docker-compose项目（模板文件所在的目录，docker-compose.yml）</li>
+<li>测试</li>
+</ol>
+<p><strong>小结</strong>：</p>
+<p>docker-compose可以配置一个模板文件实现一次可以启动多个容器，运行时候可以执行一个up则会创建并启动模板文件中的各个服务。</p>
+<blockquote>
+<p>模板文件是yml格式的；编写的时候需要注意其格式。</p>
+</blockquote>
+<h2 id="13-迁移与备份"><a href="#13-迁移与备份" class="headerlink" title="13. 迁移与备份"></a>13. 迁移与备份</h2><p><strong>目标</strong>：能够将容器保存为镜像，备份，恢复镜像再启动以恢复的镜像作为基础的容器</p>
+<p><strong>分析</strong>：</p>
+<p>在当前的容器中安装了各种组件；期望在其他服务器上也能快速拥有该容器的一切环境；可以将当前的容器制作为一个镜像，再将该奖项复制到其他服务器，其他服务器再基于镜像运行容器。</p>
+<ol>
+<li>将容器保存为一个镜像；</li>
+<li>备份镜像；</li>
+<li>恢复镜像；</li>
+<li>基于镜像运行容器</li>
+</ol>
+<p><strong>小结</strong>：</p>
+<p>docker容器可以保存为一个镜像；备份为一个镜像包（*.tar）可以复制迁移到其他服务器，再恢复该tar包中的镜像，基于镜像运行容器实现环境的一致。</p>
+<h2 id="14-使用Dockerfile创建镜像"><a href="#14-使用Dockerfile创建镜像" class="headerlink" title="14. 使用Dockerfile创建镜像"></a>14. 使用Dockerfile创建镜像</h2><p><strong>目标</strong>：使用Dockerfile创建一个自定义jdk1.8的镜像</p>
+<p><strong>分析</strong>：</p>
+<p>假设在centos7作为基础镜像上；添加jdk1.8并构建一个包含jdk1.8的centos7新镜像。</p>
+<p>– Dockerfile可以实现；Dockerfile是由一系列命令和参数构成的文本文件，在文件中可以指定各个组件资源和运行命令等。</p>
+<p>实现步骤：</p>
+<ol>
+<li>拉取centos7镜像；</li>
+<li>上传jdk1.8；</li>
+<li>编写Dockerfile文件；</li>
+<li>构建镜像；</li>
+<li>测试（基于新镜像创建并运行容器，运行java -version）</li>
+</ol>
+<p><strong>小结</strong>：</p>
+<p>Dockerfile可以基于镜像制作镜像；<code>docker build -t=&#39;jdk1.8&#39; . </code></p>
+<h2 id="15-私有仓库搭建与配置"><a href="#15-私有仓库搭建与配置" class="headerlink" title="15. 私有仓库搭建与配置"></a>15. 私有仓库搭建与配置</h2><p><strong>目标</strong>：拉取、启动私有仓库镜像并可以访问私有仓库</p>
+<p><strong>小结</strong>：</p>
+<p>拉取registry镜像；基于镜像创建私有仓库容器；需要去修改docker的一个配置文件指定私有仓库地址；再访问私有仓库：<a target="_blank" rel="noopener" href="http://ip:5000/v2/_catalog">http://ip:5000/v2/_catalog</a></p>
+<h2 id="16-将镜像上传至私有仓库"><a href="#16-将镜像上传至私有仓库" class="headerlink" title="16. 将镜像上传至私有仓库"></a>16. 将镜像上传至私有仓库</h2><p><strong>目标</strong>：将制作的jdk1.8的镜像上传到私有仓库</p>
+<p><strong>小结</strong>：</p>
+<p>将本地镜像打标签（标记本地镜像为一个私有仓库中的镜像）；将打了标签的镜像推送到私有仓库。</p>
+<h2 id="17-从私有仓库拉取镜像"><a href="#17-从私有仓库拉取镜像" class="headerlink" title="17. 从私有仓库拉取镜像"></a>17. 从私有仓库拉取镜像</h2><p><strong>目标</strong>：将私有仓库中的jdk1.8镜像拉取到本地</p>
+<p><strong>小结</strong>：</p>
+<ul>
+<li>私有仓库与拉取镜像的服务器是在同一台机器上：直接拉取镜像； <code>docker pull 私有仓库地址/镜像名称</code></li>
+<li>私有仓库与拉取镜像的服务器是不在同一台机器上：需要去修改docker的配置文件，指定私有仓库地址；再执行拉取镜像的命令。</li>
+</ul>
+<blockquote>
+<p>如果本地存在同名的镜像需要先删除镜像后拉取</p>
+</blockquote>
+
       
     </div>
     
@@ -483,8 +685,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -503,7 +714,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">85</span>
+                  <span class="site-state-item-count">94</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -628,6 +839,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-Docker%E6%A6%82%E8%BF%B0"><span class="nav-text">1. Docker概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-Docker%E5%AE%89%E8%A3%85%E4%B8%8E%E5%90%AF%E5%8A%A8"><span class="nav-text">2. Docker安装与启动</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E9%95%9C%E5%83%8F%E7%9B%B8%E5%85%B3%E5%91%BD%E4%BB%A4"><span class="nav-text">3. 镜像相关命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-%E6%9F%A5%E7%9C%8B-amp-%E5%88%9B%E5%BB%BA%E5%B9%B6%E5%90%AF%E5%8A%A8%E4%BA%A4%E4%BA%92%E5%BC%8F%E5%AE%B9%E5%99%A8"><span class="nav-text">4. 查看&amp;创建并启动交互式容器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-%E5%88%9B%E5%BB%BA%E5%B9%B6%E5%90%AF%E5%8A%A8%E5%AE%88%E6%8A%A4%E5%BC%8F%E5%AE%B9%E5%99%A8"><span class="nav-text">5. 创建并启动守护式容器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-%E5%81%9C%E6%AD%A2-amp-%E6%8B%B7%E8%B4%9D-amp-%E6%8C%82%E8%BD%BD-amp-%E6%9F%A5%E7%9C%8Bip-amp-%E5%88%A0%E9%99%A4%E5%AE%B9%E5%99%A8"><span class="nav-text">6. 停止&amp;拷贝&amp;挂载&amp;查看ip&amp;删除容器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-MySQL%E5%AE%B9%E5%99%A8%E9%83%A8%E7%BD%B2"><span class="nav-text">7. MySQL容器部署</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-Tomcat%E5%AE%B9%E5%99%A8%E9%83%A8%E7%BD%B2"><span class="nav-text">8. Tomcat容器部署</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-Nginx%E5%AE%B9%E5%99%A8%E9%83%A8%E7%BD%B2"><span class="nav-text">9. Nginx容器部署</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#10-Redis%E5%AE%B9%E5%99%A8%E9%83%A8%E7%BD%B2"><span class="nav-text">10. Redis容器部署</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#11-docker-compose%E7%AE%80%E4%BB%8B-amp-%E5%AE%89%E8%A3%85"><span class="nav-text">11. docker-compose简介&amp;安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#12-docker-compose%E5%BA%94%E7%94%A8"><span class="nav-text">12. docker-compose应用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#13-%E8%BF%81%E7%A7%BB%E4%B8%8E%E5%A4%87%E4%BB%BD"><span class="nav-text">13. 迁移与备份</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#14-%E4%BD%BF%E7%94%A8Dockerfile%E5%88%9B%E5%BB%BA%E9%95%9C%E5%83%8F"><span class="nav-text">14. 使用Dockerfile创建镜像</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#15-%E7%A7%81%E6%9C%89%E4%BB%93%E5%BA%93%E6%90%AD%E5%BB%BA%E4%B8%8E%E9%85%8D%E7%BD%AE"><span class="nav-text">15. 私有仓库搭建与配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#16-%E5%B0%86%E9%95%9C%E5%83%8F%E4%B8%8A%E4%BC%A0%E8%87%B3%E7%A7%81%E6%9C%89%E4%BB%93%E5%BA%93"><span class="nav-text">16. 将镜像上传至私有仓库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#17-%E4%BB%8E%E7%A7%81%E6%9C%89%E4%BB%93%E5%BA%93%E6%8B%89%E5%8F%96%E9%95%9C%E5%83%8F"><span class="nav-text">17. 从私有仓库拉取镜像</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
