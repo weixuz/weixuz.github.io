@@ -425,6 +425,269 @@
       </categories>
   </entry>
   <entry>
+    <title>Java基础入门</title>
+    <url>/2019/08/02/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/JavaSE/190802Java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/</url>
+    <content><![CDATA[<h2 id="1-Java概述"><a href="#1-Java概述" class="headerlink" title="1. Java概述"></a>1. Java概述</h2><h3 id="1-1-Java语言发展史"><a href="#1-1-Java语言发展史" class="headerlink" title="1.1 Java语言发展史"></a>1.1 Java语言发展史</h3><p>语言：人与人交流沟通的表达方式</p>
+<p>计算机语言：人与计算机之间进行信息交流沟通的一种特殊语言</p>
+<p>Java语言是美国Sun公司（Stanford University Network）在1995年推出的计算机语言</p>
+<p>Java之父：詹姆斯·高斯林（James Gosling）</p>
+<p>2009年，Sun公司被甲骨文公司收购，所以现在访问oracle官网即可：<a href="https://www.oracle.com/">https://www.oracle.com</a> </p>
+<a id="more"></a>
+
+<h3 id="1-2-Java语言跨平台原理"><a href="#1-2-Java语言跨平台原理" class="headerlink" title="1.2 Java语言跨平台原理"></a>1.2 Java语言跨平台原理</h3><p>Java程序并非是直接运行的，Java编译器将Java源程序编译成与平台无关的字节码文件(class文件)，然后由Java虚拟机（JVM）对字节码文件解释执行。所以在不同的操作系统下，只需安装不同的Java虚拟机即可实现java程序的跨平台。</p>
+<h3 id="1-3-JRE和JDK"><a href="#1-3-JRE和JDK" class="headerlink" title="1.3 JRE和JDK"></a>1.3 JRE和JDK</h3><p>JVM（Java Virtual Machine），Java虚拟机</p>
+<p>JRE（Java Runtime Environment），Java运行环境，包含了JVM和Java的核心类库（Java API）</p>
+<p>JDK（Java Development Kit）称为Java开发工具，包含了JRE和开发工具</p>
+<p>总结：我们只需安装JDK即可，它包含了java的运行环境和虚拟机。</p>
+<h3 id="1-4-JDK的下载和安装"><a href="#1-4-JDK的下载和安装" class="headerlink" title="1.4 JDK的下载和安装"></a>1.4 JDK的下载和安装</h3><h4 id="1-4-1-下载"><a href="#1-4-1-下载" class="headerlink" title="1.4.1 下载"></a>1.4.1 下载</h4><p><a href="http://www.oracle.com/">Oracle官网</a></p>
+<p><strong>注意</strong>：针对不同的操作系统，需要下载对应版本的JDK。</p>
+<h4 id="1-4-2-安装"><a href="#1-4-2-安装" class="headerlink" title="1.4.2 安装"></a>1.4.2 安装</h4><p><strong>注意</strong>：安装路径不要包含中文或者空格等特殊字符（使用纯英文目录）。</p>
+<h4 id="1-4-3-JDK的安装目录介绍"><a href="#1-4-3-JDK的安装目录介绍" class="headerlink" title="1.4.3 JDK的安装目录介绍"></a>1.4.3 JDK的安装目录介绍</h4><table>
+<thead>
+<tr>
+<th>目录名称</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>bin</td>
+<td>该路径下存放了JDK的各种工具命令。javac和java就放在这个目录。</td>
+</tr>
+<tr>
+<td>conf</td>
+<td>该路径下存放了JDK的相关配置文件。</td>
+</tr>
+<tr>
+<td>include</td>
+<td>该路径下存放了一些平台特定的头文件。</td>
+</tr>
+<tr>
+<td>jmods</td>
+<td>该路径下存放了JDK的各种模块。</td>
+</tr>
+<tr>
+<td>legal</td>
+<td>该路径下存放了JDK各模块的授权文档。</td>
+</tr>
+<tr>
+<td>lib</td>
+<td>该路径下存放了JDK工具的一些补充JAR包。</td>
+</tr>
+</tbody></table>
+<h3 id="1-5-常用DOS命令"><a href="#1-5-常用DOS命令" class="headerlink" title="1.5 常用DOS命令"></a>1.5 常用DOS命令</h3><p>在接触集成开发环境之前，我们需要使用命令行窗口对java程序进行编译和运行，所以需要知道一些常用DOS命令。</p>
+<p>1、打开命令行窗口的方式：win + r打开运行窗口，输入cmd，回车。</p>
+<p>2、常用命令及其作用</p>
+<table>
+<thead>
+<tr>
+<th>操作</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>盘符名称:</td>
+<td>盘符切换。E:回车，表示切换到E盘。</td>
+</tr>
+<tr>
+<td>dir</td>
+<td>查看当前路径下的内容。</td>
+</tr>
+<tr>
+<td>cd 目录</td>
+<td>进入单级目录。cd itheima</td>
+</tr>
+<tr>
+<td>cd ..</td>
+<td>回退到上一级目录。</td>
+</tr>
+<tr>
+<td>cd 目录1\目录2...</td>
+<td>进入多级目录。cd itheima\JavaSE</td>
+</tr>
+<tr>
+<td>cd \</td>
+<td>回退到盘符目录。</td>
+</tr>
+<tr>
+<td>cls</td>
+<td>清屏。</td>
+</tr>
+<tr>
+<td>exit</td>
+<td>退出命令提示符窗口。</td>
+</tr>
+</tbody></table>
+<h3 id="1-6-为什么配置环境变量"><a href="#1-6-为什么配置环境变量" class="headerlink" title="1.6 为什么配置环境变量"></a>1.6 为什么配置环境变量</h3><p>开发Java程序，需要使用JDK提供的开发工具（比如javac.exe、java.exe等命令），而这些工具在JDK的安装目录的bin目录下，如果不配置环境变量，那么这些命令只可以在该目录下执行。我们不可能把所有的java文件都放到JDK的bin目录下，所以配置环境变量的作用就是可以使bin目录下的java相关命令可以在任意目录下使用。  </p>
+<h2 id="2-Java基础语法"><a href="#2-Java基础语法" class="headerlink" title="2. Java基础语法"></a>2. Java基础语法</h2><h4 id="2-1-注释"><a href="#2-1-注释" class="headerlink" title="2.1 注释"></a>2.1 注释</h4><p>注释是对代码的解释和说明文字，可以提高程序的可读性，因此在程序中添加必要的注释文字十分重要。Java中的注释分为三种：</p>
+<p>单行注释。单行注释的格式是使用//，从//开始至本行结尾的文字将作为注释文字。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 这是单行注释文字</span></span><br></pre></td></tr></table></figure>
+
+<p>多行注释。多行注释的格式是使用/* 和 */将一段较长的注释括起来。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">这是多行注释文字</span></span><br><span class="line"><span class="comment">这是多行注释文字</span></span><br><span class="line"><span class="comment">这是多行注释文字</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line">注意：多行注释不能嵌套使用。</span><br></pre></td></tr></table></figure>
+
+<p>文档注释。文档注释以<code>/**</code>开始，以<code>*/</code>结束。（以后讲）</p>
+<h4 id="2-2-关键字"><a href="#2-2-关键字" class="headerlink" title="2.2 关键字"></a>2.2 关键字</h4><p>关键字是指被java语言赋予了特殊含义的单词。</p>
+<p>关键字的特点：</p>
+<p>&emsp;&emsp;关键字的字母全部小写。</p>
+<p>&emsp;&emsp;常用的代码编辑器对关键字都有高亮显示，比如现在我们能看到的public、class、static等。</p>
+<h4 id="2-3-常量"><a href="#2-3-常量" class="headerlink" title="2.3 常量"></a>2.3 常量</h4><p>常量：在程序运行过程中，其值不可以发生改变的量。</p>
+<p>Java中的常量分类：</p>
+<ul>
+<li><p>字符串常量  用双引号括起来的多个字符（可以包含0个、一个或多个），例如”a”、”abc”、”中国”等</p>
+</li>
+<li><p>整数常量  整数，例如：-10、0、88等</p>
+</li>
+<li><p>小数常量  小数，例如：-5.5、1.0、88.88等</p>
+</li>
+<li><p>字符常量  用单引号括起来的一个字符，例如：’a’、’5’、’B’、’中’等</p>
+</li>
+<li><p>布尔常量  布尔值，表示真假，只有两个值true和false</p>
+</li>
+<li><p>空常量  一个特殊的值，空值，值为null</p>
+</li>
+</ul>
+<p>除空常量外，其他常量均可使用输出语句直接输出。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="number">10</span>); <span class="comment">// 输出一个整数</span></span><br><span class="line">        System.out.println(<span class="number">5.5</span>); <span class="comment">// 输出一个小数</span></span><br><span class="line">        System.out.println(<span class="string">&#x27;a&#x27;</span>); <span class="comment">// 输出一个字符</span></span><br><span class="line">        System.out.println(<span class="keyword">true</span>); <span class="comment">// 输出boolean值true</span></span><br><span class="line">        System.out.println(<span class="string">&quot;你好&quot;</span>); <span class="comment">// 输出字符串</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-4-数据类型"><a href="#2-4-数据类型" class="headerlink" title="2.4 数据类型"></a>2.4 数据类型</h4><h5 id="2-4-1-计算机存储单元"><a href="#2-4-1-计算机存储单元" class="headerlink" title="2.4.1 计算机存储单元"></a>2.4.1 计算机存储单元</h5><p>&emsp;&emsp;我们知道计算机是可以用来存储数据的，但是无论是内存还是硬盘，计算机存储设备的最小信息单元叫“位（bit）”，我们又称之为“比特位”，通常用小写的字母”b”表示。而计算机中最基本的存储单元叫“字节（byte）”，</p>
+<p>通常用大写字母”””B”表示，字节是由连续的8个位组成。</p>
+<p>除了字节外还有一些常用的存储单位，其换算单位如下：</p>
+<p>1B（字节） = 8bit</p>
+<p>1KB = 1024B</p>
+<p>1MB = 1024KB</p>
+<p>1GB = 1024MB</p>
+<p>1TB = 1024GB</p>
+<h5 id="2-4-2-Java中的数据类型"><a href="#2-4-2-Java中的数据类型" class="headerlink" title="2.4.2 Java中的数据类型"></a>2.4.2 Java中的数据类型</h5><p>&emsp;&emsp;Java是一个强类型语言，Java中的数据必须明确数据类型。在Java中的数据类型包括基本数据类型和引用数据类型两种。</p>
+<p>Java中的基本数据类型：</p>
+<table>
+<thead>
+<tr>
+<th align="left">数据类型</th>
+<th>关键字</th>
+<th>内存占用</th>
+<th align="left">取值范围</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">整数类型</td>
+<td>byte</td>
+<td>1</td>
+<td align="left">-128~127</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td>short</td>
+<td>2</td>
+<td align="left">-32768~32767</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td>int(默认)</td>
+<td>4</td>
+<td align="left">-2的31次方到2的31次方-1</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td>long</td>
+<td>8</td>
+<td align="left">-2的63次方到2的63次方-1</td>
+</tr>
+<tr>
+<td align="left">浮点类型</td>
+<td>float</td>
+<td>4</td>
+<td align="left">负数：-3.402823E+38到-1.401298E-45                                                             正数：   1.401298E-45到3.402823E+38</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td>double(默认)</td>
+<td>8</td>
+<td align="left">负数：-1.797693E+308到-4.9000000E-324                                              正数：4.9000000E-324   到1.797693E+308</td>
+</tr>
+<tr>
+<td align="left">字符类型</td>
+<td>char</td>
+<td>2</td>
+<td align="left">0-65535</td>
+</tr>
+<tr>
+<td align="left">布尔类型</td>
+<td>boolean</td>
+<td>1</td>
+<td align="left">true，false</td>
+</tr>
+</tbody></table>
+<p>说明：</p>
+<p>&emsp;&emsp;e+38表示是乘以10的38次方，同样，e-45表示乘以10的负45次方。</p>
+<p>&emsp;&emsp;在java中整数默认是int类型，浮点数默认是double类型。</p>
+<h4 id="2-5-变量"><a href="#2-5-变量" class="headerlink" title="2.5 变量"></a>2.5 变量</h4><h5 id="2-5-1-变量的定义"><a href="#2-5-1-变量的定义" class="headerlink" title="2.5.1 变量的定义"></a>2.5.1 变量的定义</h5><p>变量：在程序运行过程中，其值可以发生改变的量。</p>
+<p>从本质上讲，变量是内存中的一小块区域，其值可以在一定范围内变化。</p>
+<p>变量的定义格式：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">数据类型 变量名 = 初始化值; <span class="comment">// 声明变量并赋值</span></span><br><span class="line"><span class="keyword">int</span> age = <span class="number">18</span>;</span><br><span class="line">System.out.println(age);</span><br></pre></td></tr></table></figure>
+
+<p>或者</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 先声明，后赋值（使用前赋值即可）</span></span><br><span class="line">数据类型 变量名;</span><br><span class="line">变量名 = 初始化值;</span><br><span class="line"><span class="keyword">double</span> money;</span><br><span class="line">money = <span class="number">55.5</span>;</span><br><span class="line">System.out.println(money);</span><br></pre></td></tr></table></figure>
+
+<p>还可以在同一行定义多个同一种数据类型的变量，中间使用逗号隔开。但不建议使用这种方式，降低程序的可读性。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> a = <span class="number">10</span>, b = <span class="number">20</span>; <span class="comment">// 定义int类型的变量a和b，中间使用逗号隔开</span></span><br><span class="line">System.out.println(a);</span><br><span class="line">System.out.println(b);</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> c,d; <span class="comment">// 声明int类型的变量c和d，中间使用逗号隔开</span></span><br><span class="line">c = <span class="number">30</span>;</span><br><span class="line">d = <span class="number">40</span>;</span><br><span class="line">System.out.println(c);</span><br><span class="line">System.out.println(d);</span><br></pre></td></tr></table></figure>
+
+<p>变量的使用：通过变量名访问即可。</p>
+<h5 id="2-5-2-使用变量时的注意事项"><a href="#2-5-2-使用变量时的注意事项" class="headerlink" title="2.5.2 使用变量时的注意事项"></a>2.5.2 使用变量时的注意事项</h5><ol>
+<li>在同一对花括号中，变量名不能重复。</li>
+<li>变量在使用之前，必须初始化（赋值）。</li>
+<li>定义long类型的变量时，需要在整数的后面加L（大小写均可，建议大写）。因为整数默认是int类型，整数太大可能超出int范围。</li>
+<li>定义float类型的变量时，需要在小数的后面加F（大小写均可，建议大写）。因为浮点数的默认类型是double， double的取值范围是大于float的，类型不兼容。</li>
+</ol>
+<h4 id="2-6-标识符"><a href="#2-6-标识符" class="headerlink" title="2.6 标识符"></a>2.6 标识符</h4><p>标识符是用户编程时使用的名字，用于给类、方法、变量、常量等命名。</p>
+<p>Java中标识符的组成规则：</p>
+<ul>
+<li><p>由字母、数字、下划线“_”、美元符号“$”组成，第一个字符不能是数字。</p>
+</li>
+<li><p>不能使用java中的关键字作为标识符。    </p>
+</li>
+<li><p>标识符对大小写敏感（区分大小写）。</p>
+</li>
+</ul>
+<p>Java中标识符的命名约定：</p>
+<ul>
+<li><p>小驼峰式命名：变量名、方法名 &emsp;(首字母小写，从第二个单词开始每个单词的首字母大写)</p>
+</li>
+<li><p>大驼峰式命名：类名&emsp;(每个单词的首字母都大写)</p>
+</li>
+<li><p>标识符的命名最好可以做到见名知意。例如：username、studentNumber等。</p>
+</li>
+</ul>
+<h4 id="2-7-类型转换"><a href="#2-7-类型转换" class="headerlink" title="2.7 类型转换"></a>2.7 类型转换</h4><p>在Java中，一些数据类型之间是可以相互转换的。分为两种情况：自动类型转换和强制类型转换。</p>
+<p>自动类型转换：</p>
+<p>&emsp;&emsp;把一个表示数据范围小的数值或者变量赋值给另一个表示数据范围大的变量。这种转换方式是自动的，直接书写即可。例如：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">double</span> num = <span class="number">10</span>; <span class="comment">// 将int类型的10直接赋值给double类型</span></span><br><span class="line">System.out.println(num); <span class="comment">// 输出10.0</span></span><br></pre></td></tr></table></figure>
+
+<p>强制类型转换：把一个表示数据范围大的数值或者变量赋值给另一个表示数据范围小的变量。</p>
+<p>强制类型转换格式：目标数据类型 变量名 = (目标数据类型)值或者变量;</p>
+<p>&emsp;&emsp;例如：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">double</span> num1 = <span class="number">5.5</span>;</span><br><span class="line"><span class="keyword">int</span> num2 = (<span class="keyword">int</span>) num1; <span class="comment">// 将double类型的num1强制转换为int类型</span></span><br><span class="line">System.out.println(num2); <span class="comment">// 输出5（小数位直接舍弃）</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="/2019/08/02/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/JavaSE/190802Java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/1.png">说明：</p>
+<ol>
+<li>char类型的数据转换为int类型是按照码表中对应的int值进行计算的。比如在ASCII码表中，‘a’对应97。</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> a = <span class="string">&#x27;a&#x27;</span>;</span><br><span class="line">System.out.println(a); <span class="comment">// 将输出97</span></span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>整数默认是int类型，byte、short和char类型数据参与运算均会自动转换为int类型。</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">byte</span> b1 = <span class="number">10</span>;</span><br><span class="line"><span class="keyword">byte</span> b2 = <span class="number">20</span>;</span><br><span class="line"><span class="keyword">byte</span> b3 = b1 + b2; </span><br><span class="line"><span class="comment">// 第三行代码会报错，b1和b2会自动转换为int类型，计算结果为int，int赋值给byte需要强制类型转换。</span></span><br><span class="line"><span class="comment">// 修改为:</span></span><br><span class="line"><span class="keyword">int</span> num = b1 + b2;</span><br><span class="line"><span class="comment">// 或者：</span></span><br><span class="line"><span class="keyword">byte</span> b3 = (<span class="keyword">byte</span>) (b1 + b2);</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>boolean类型不能与其他基本数据类型相互转换。</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Java学习笔记</category>
+        <category>JavaSE</category>
+      </categories>
+  </entry>
+  <entry>
     <title>运算符</title>
     <url>/2019/08/03/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/JavaSE/190803.1%E8%BF%90%E7%AE%97%E7%AC%A6/</url>
     <content><![CDATA[<h2 id="1-运算符"><a href="#1-运算符" class="headerlink" title="1. 运算符"></a>1. 运算符</h2><h3 id="1-1-算术运算符（理解）"><a href="#1-1-算术运算符（理解）" class="headerlink" title="1.1 算术运算符（理解）"></a>1.1 算术运算符（理解）</h3><h4 id="1-1-1-运算符和表达式"><a href="#1-1-1-运算符和表达式" class="headerlink" title="1.1.1 运算符和表达式"></a>1.1.1 运算符和表达式</h4><p>运算符：对常量或者变量进行操作的符号</p>
@@ -682,269 +945,6 @@
 
 <p>2、需求：一座寺庙里住着三个和尚，已知他们的身高分别为150cm、210cm、165cm，请用程序实现获取这三个和尚的最高身高。</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">OperatorTest02</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="comment">//1：定义三个变量用于保存和尚的身高，单位为cm，这里仅仅体现数值即可。</span></span><br><span class="line">		<span class="keyword">int</span> height1 = <span class="number">150</span>;</span><br><span class="line">		<span class="keyword">int</span> height2 = <span class="number">210</span>;</span><br><span class="line">		<span class="keyword">int</span> height3 = <span class="number">165</span>;	</span><br><span class="line">		<span class="comment">//2：用三元运算符获取前两个和尚的较高身高值，并用临时身高变量保存起来。</span></span><br><span class="line">		<span class="keyword">int</span> tempHeight = height1 &gt; height2 ? height1 : height2;		</span><br><span class="line">		<span class="comment">//3：用三元运算符获取临时身高值和第三个和尚身高较高值，并用最大身高变量保存。</span></span><br><span class="line">		<span class="keyword">int</span> maxHeight = tempHeight &gt; height3 ? tempHeight : height3;	</span><br><span class="line">		<span class="comment">//4：输出结果</span></span><br><span class="line">		System.out.println(<span class="string">&quot;maxHeight:&quot;</span> + maxHeight);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>Java学习笔记</category>
-        <category>JavaSE</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Java基础入门</title>
-    <url>/2019/08/02/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/JavaSE/190802Java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/</url>
-    <content><![CDATA[<h2 id="1-Java概述"><a href="#1-Java概述" class="headerlink" title="1. Java概述"></a>1. Java概述</h2><h3 id="1-1-Java语言发展史"><a href="#1-1-Java语言发展史" class="headerlink" title="1.1 Java语言发展史"></a>1.1 Java语言发展史</h3><p>语言：人与人交流沟通的表达方式</p>
-<p>计算机语言：人与计算机之间进行信息交流沟通的一种特殊语言</p>
-<p>Java语言是美国Sun公司（Stanford University Network）在1995年推出的计算机语言</p>
-<p>Java之父：詹姆斯·高斯林（James Gosling）</p>
-<p>2009年，Sun公司被甲骨文公司收购，所以现在访问oracle官网即可：<a href="https://www.oracle.com/">https://www.oracle.com</a> </p>
-<a id="more"></a>
-
-<h3 id="1-2-Java语言跨平台原理"><a href="#1-2-Java语言跨平台原理" class="headerlink" title="1.2 Java语言跨平台原理"></a>1.2 Java语言跨平台原理</h3><p>Java程序并非是直接运行的，Java编译器将Java源程序编译成与平台无关的字节码文件(class文件)，然后由Java虚拟机（JVM）对字节码文件解释执行。所以在不同的操作系统下，只需安装不同的Java虚拟机即可实现java程序的跨平台。</p>
-<h3 id="1-3-JRE和JDK"><a href="#1-3-JRE和JDK" class="headerlink" title="1.3 JRE和JDK"></a>1.3 JRE和JDK</h3><p>JVM（Java Virtual Machine），Java虚拟机</p>
-<p>JRE（Java Runtime Environment），Java运行环境，包含了JVM和Java的核心类库（Java API）</p>
-<p>JDK（Java Development Kit）称为Java开发工具，包含了JRE和开发工具</p>
-<p>总结：我们只需安装JDK即可，它包含了java的运行环境和虚拟机。</p>
-<h3 id="1-4-JDK的下载和安装"><a href="#1-4-JDK的下载和安装" class="headerlink" title="1.4 JDK的下载和安装"></a>1.4 JDK的下载和安装</h3><h4 id="1-4-1-下载"><a href="#1-4-1-下载" class="headerlink" title="1.4.1 下载"></a>1.4.1 下载</h4><p><a href="http://www.oracle.com/">Oracle官网</a></p>
-<p><strong>注意</strong>：针对不同的操作系统，需要下载对应版本的JDK。</p>
-<h4 id="1-4-2-安装"><a href="#1-4-2-安装" class="headerlink" title="1.4.2 安装"></a>1.4.2 安装</h4><p><strong>注意</strong>：安装路径不要包含中文或者空格等特殊字符（使用纯英文目录）。</p>
-<h4 id="1-4-3-JDK的安装目录介绍"><a href="#1-4-3-JDK的安装目录介绍" class="headerlink" title="1.4.3 JDK的安装目录介绍"></a>1.4.3 JDK的安装目录介绍</h4><table>
-<thead>
-<tr>
-<th>目录名称</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>bin</td>
-<td>该路径下存放了JDK的各种工具命令。javac和java就放在这个目录。</td>
-</tr>
-<tr>
-<td>conf</td>
-<td>该路径下存放了JDK的相关配置文件。</td>
-</tr>
-<tr>
-<td>include</td>
-<td>该路径下存放了一些平台特定的头文件。</td>
-</tr>
-<tr>
-<td>jmods</td>
-<td>该路径下存放了JDK的各种模块。</td>
-</tr>
-<tr>
-<td>legal</td>
-<td>该路径下存放了JDK各模块的授权文档。</td>
-</tr>
-<tr>
-<td>lib</td>
-<td>该路径下存放了JDK工具的一些补充JAR包。</td>
-</tr>
-</tbody></table>
-<h3 id="1-5-常用DOS命令"><a href="#1-5-常用DOS命令" class="headerlink" title="1.5 常用DOS命令"></a>1.5 常用DOS命令</h3><p>在接触集成开发环境之前，我们需要使用命令行窗口对java程序进行编译和运行，所以需要知道一些常用DOS命令。</p>
-<p>1、打开命令行窗口的方式：win + r打开运行窗口，输入cmd，回车。</p>
-<p>2、常用命令及其作用</p>
-<table>
-<thead>
-<tr>
-<th>操作</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>盘符名称:</td>
-<td>盘符切换。E:回车，表示切换到E盘。</td>
-</tr>
-<tr>
-<td>dir</td>
-<td>查看当前路径下的内容。</td>
-</tr>
-<tr>
-<td>cd 目录</td>
-<td>进入单级目录。cd itheima</td>
-</tr>
-<tr>
-<td>cd ..</td>
-<td>回退到上一级目录。</td>
-</tr>
-<tr>
-<td>cd 目录1\目录2...</td>
-<td>进入多级目录。cd itheima\JavaSE</td>
-</tr>
-<tr>
-<td>cd \</td>
-<td>回退到盘符目录。</td>
-</tr>
-<tr>
-<td>cls</td>
-<td>清屏。</td>
-</tr>
-<tr>
-<td>exit</td>
-<td>退出命令提示符窗口。</td>
-</tr>
-</tbody></table>
-<h3 id="1-6-为什么配置环境变量"><a href="#1-6-为什么配置环境变量" class="headerlink" title="1.6 为什么配置环境变量"></a>1.6 为什么配置环境变量</h3><p>开发Java程序，需要使用JDK提供的开发工具（比如javac.exe、java.exe等命令），而这些工具在JDK的安装目录的bin目录下，如果不配置环境变量，那么这些命令只可以在该目录下执行。我们不可能把所有的java文件都放到JDK的bin目录下，所以配置环境变量的作用就是可以使bin目录下的java相关命令可以在任意目录下使用。  </p>
-<h2 id="2-Java基础语法"><a href="#2-Java基础语法" class="headerlink" title="2. Java基础语法"></a>2. Java基础语法</h2><h4 id="2-1-注释"><a href="#2-1-注释" class="headerlink" title="2.1 注释"></a>2.1 注释</h4><p>注释是对代码的解释和说明文字，可以提高程序的可读性，因此在程序中添加必要的注释文字十分重要。Java中的注释分为三种：</p>
-<p>单行注释。单行注释的格式是使用//，从//开始至本行结尾的文字将作为注释文字。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 这是单行注释文字</span></span><br></pre></td></tr></table></figure>
-
-<p>多行注释。多行注释的格式是使用/* 和 */将一段较长的注释括起来。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">这是多行注释文字</span></span><br><span class="line"><span class="comment">这是多行注释文字</span></span><br><span class="line"><span class="comment">这是多行注释文字</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line">注意：多行注释不能嵌套使用。</span><br></pre></td></tr></table></figure>
-
-<p>文档注释。文档注释以<code>/**</code>开始，以<code>*/</code>结束。（以后讲）</p>
-<h4 id="2-2-关键字"><a href="#2-2-关键字" class="headerlink" title="2.2 关键字"></a>2.2 关键字</h4><p>关键字是指被java语言赋予了特殊含义的单词。</p>
-<p>关键字的特点：</p>
-<p>&emsp;&emsp;关键字的字母全部小写。</p>
-<p>&emsp;&emsp;常用的代码编辑器对关键字都有高亮显示，比如现在我们能看到的public、class、static等。</p>
-<h4 id="2-3-常量"><a href="#2-3-常量" class="headerlink" title="2.3 常量"></a>2.3 常量</h4><p>常量：在程序运行过程中，其值不可以发生改变的量。</p>
-<p>Java中的常量分类：</p>
-<ul>
-<li><p>字符串常量  用双引号括起来的多个字符（可以包含0个、一个或多个），例如”a”、”abc”、”中国”等</p>
-</li>
-<li><p>整数常量  整数，例如：-10、0、88等</p>
-</li>
-<li><p>小数常量  小数，例如：-5.5、1.0、88.88等</p>
-</li>
-<li><p>字符常量  用单引号括起来的一个字符，例如：’a’、’5’、’B’、’中’等</p>
-</li>
-<li><p>布尔常量  布尔值，表示真假，只有两个值true和false</p>
-</li>
-<li><p>空常量  一个特殊的值，空值，值为null</p>
-</li>
-</ul>
-<p>除空常量外，其他常量均可使用输出语句直接输出。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="number">10</span>); <span class="comment">// 输出一个整数</span></span><br><span class="line">        System.out.println(<span class="number">5.5</span>); <span class="comment">// 输出一个小数</span></span><br><span class="line">        System.out.println(<span class="string">&#x27;a&#x27;</span>); <span class="comment">// 输出一个字符</span></span><br><span class="line">        System.out.println(<span class="keyword">true</span>); <span class="comment">// 输出boolean值true</span></span><br><span class="line">        System.out.println(<span class="string">&quot;你好&quot;</span>); <span class="comment">// 输出字符串</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="2-4-数据类型"><a href="#2-4-数据类型" class="headerlink" title="2.4 数据类型"></a>2.4 数据类型</h4><h5 id="2-4-1-计算机存储单元"><a href="#2-4-1-计算机存储单元" class="headerlink" title="2.4.1 计算机存储单元"></a>2.4.1 计算机存储单元</h5><p>&emsp;&emsp;我们知道计算机是可以用来存储数据的，但是无论是内存还是硬盘，计算机存储设备的最小信息单元叫“位（bit）”，我们又称之为“比特位”，通常用小写的字母”b”表示。而计算机中最基本的存储单元叫“字节（byte）”，</p>
-<p>通常用大写字母”””B”表示，字节是由连续的8个位组成。</p>
-<p>除了字节外还有一些常用的存储单位，其换算单位如下：</p>
-<p>1B（字节） = 8bit</p>
-<p>1KB = 1024B</p>
-<p>1MB = 1024KB</p>
-<p>1GB = 1024MB</p>
-<p>1TB = 1024GB</p>
-<h5 id="2-4-2-Java中的数据类型"><a href="#2-4-2-Java中的数据类型" class="headerlink" title="2.4.2 Java中的数据类型"></a>2.4.2 Java中的数据类型</h5><p>&emsp;&emsp;Java是一个强类型语言，Java中的数据必须明确数据类型。在Java中的数据类型包括基本数据类型和引用数据类型两种。</p>
-<p>Java中的基本数据类型：</p>
-<table>
-<thead>
-<tr>
-<th align="left">数据类型</th>
-<th>关键字</th>
-<th>内存占用</th>
-<th align="left">取值范围</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">整数类型</td>
-<td>byte</td>
-<td>1</td>
-<td align="left">-128~127</td>
-</tr>
-<tr>
-<td align="left"></td>
-<td>short</td>
-<td>2</td>
-<td align="left">-32768~32767</td>
-</tr>
-<tr>
-<td align="left"></td>
-<td>int(默认)</td>
-<td>4</td>
-<td align="left">-2的31次方到2的31次方-1</td>
-</tr>
-<tr>
-<td align="left"></td>
-<td>long</td>
-<td>8</td>
-<td align="left">-2的63次方到2的63次方-1</td>
-</tr>
-<tr>
-<td align="left">浮点类型</td>
-<td>float</td>
-<td>4</td>
-<td align="left">负数：-3.402823E+38到-1.401298E-45                                                             正数：   1.401298E-45到3.402823E+38</td>
-</tr>
-<tr>
-<td align="left"></td>
-<td>double(默认)</td>
-<td>8</td>
-<td align="left">负数：-1.797693E+308到-4.9000000E-324                                              正数：4.9000000E-324   到1.797693E+308</td>
-</tr>
-<tr>
-<td align="left">字符类型</td>
-<td>char</td>
-<td>2</td>
-<td align="left">0-65535</td>
-</tr>
-<tr>
-<td align="left">布尔类型</td>
-<td>boolean</td>
-<td>1</td>
-<td align="left">true，false</td>
-</tr>
-</tbody></table>
-<p>说明：</p>
-<p>&emsp;&emsp;e+38表示是乘以10的38次方，同样，e-45表示乘以10的负45次方。</p>
-<p>&emsp;&emsp;在java中整数默认是int类型，浮点数默认是double类型。</p>
-<h4 id="2-5-变量"><a href="#2-5-变量" class="headerlink" title="2.5 变量"></a>2.5 变量</h4><h5 id="2-5-1-变量的定义"><a href="#2-5-1-变量的定义" class="headerlink" title="2.5.1 变量的定义"></a>2.5.1 变量的定义</h5><p>变量：在程序运行过程中，其值可以发生改变的量。</p>
-<p>从本质上讲，变量是内存中的一小块区域，其值可以在一定范围内变化。</p>
-<p>变量的定义格式：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">数据类型 变量名 = 初始化值; <span class="comment">// 声明变量并赋值</span></span><br><span class="line"><span class="keyword">int</span> age = <span class="number">18</span>;</span><br><span class="line">System.out.println(age);</span><br></pre></td></tr></table></figure>
-
-<p>或者</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 先声明，后赋值（使用前赋值即可）</span></span><br><span class="line">数据类型 变量名;</span><br><span class="line">变量名 = 初始化值;</span><br><span class="line"><span class="keyword">double</span> money;</span><br><span class="line">money = <span class="number">55.5</span>;</span><br><span class="line">System.out.println(money);</span><br></pre></td></tr></table></figure>
-
-<p>还可以在同一行定义多个同一种数据类型的变量，中间使用逗号隔开。但不建议使用这种方式，降低程序的可读性。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> a = <span class="number">10</span>, b = <span class="number">20</span>; <span class="comment">// 定义int类型的变量a和b，中间使用逗号隔开</span></span><br><span class="line">System.out.println(a);</span><br><span class="line">System.out.println(b);</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> c,d; <span class="comment">// 声明int类型的变量c和d，中间使用逗号隔开</span></span><br><span class="line">c = <span class="number">30</span>;</span><br><span class="line">d = <span class="number">40</span>;</span><br><span class="line">System.out.println(c);</span><br><span class="line">System.out.println(d);</span><br></pre></td></tr></table></figure>
-
-<p>变量的使用：通过变量名访问即可。</p>
-<h5 id="2-5-2-使用变量时的注意事项"><a href="#2-5-2-使用变量时的注意事项" class="headerlink" title="2.5.2 使用变量时的注意事项"></a>2.5.2 使用变量时的注意事项</h5><ol>
-<li>在同一对花括号中，变量名不能重复。</li>
-<li>变量在使用之前，必须初始化（赋值）。</li>
-<li>定义long类型的变量时，需要在整数的后面加L（大小写均可，建议大写）。因为整数默认是int类型，整数太大可能超出int范围。</li>
-<li>定义float类型的变量时，需要在小数的后面加F（大小写均可，建议大写）。因为浮点数的默认类型是double， double的取值范围是大于float的，类型不兼容。</li>
-</ol>
-<h4 id="2-6-标识符"><a href="#2-6-标识符" class="headerlink" title="2.6 标识符"></a>2.6 标识符</h4><p>标识符是用户编程时使用的名字，用于给类、方法、变量、常量等命名。</p>
-<p>Java中标识符的组成规则：</p>
-<ul>
-<li><p>由字母、数字、下划线“_”、美元符号“$”组成，第一个字符不能是数字。</p>
-</li>
-<li><p>不能使用java中的关键字作为标识符。    </p>
-</li>
-<li><p>标识符对大小写敏感（区分大小写）。</p>
-</li>
-</ul>
-<p>Java中标识符的命名约定：</p>
-<ul>
-<li><p>小驼峰式命名：变量名、方法名 &emsp;(首字母小写，从第二个单词开始每个单词的首字母大写)</p>
-</li>
-<li><p>大驼峰式命名：类名&emsp;(每个单词的首字母都大写)</p>
-</li>
-<li><p>标识符的命名最好可以做到见名知意。例如：username、studentNumber等。</p>
-</li>
-</ul>
-<h4 id="2-7-类型转换"><a href="#2-7-类型转换" class="headerlink" title="2.7 类型转换"></a>2.7 类型转换</h4><p>在Java中，一些数据类型之间是可以相互转换的。分为两种情况：自动类型转换和强制类型转换。</p>
-<p>自动类型转换：</p>
-<p>&emsp;&emsp;把一个表示数据范围小的数值或者变量赋值给另一个表示数据范围大的变量。这种转换方式是自动的，直接书写即可。例如：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">double</span> num = <span class="number">10</span>; <span class="comment">// 将int类型的10直接赋值给double类型</span></span><br><span class="line">System.out.println(num); <span class="comment">// 输出10.0</span></span><br></pre></td></tr></table></figure>
-
-<p>强制类型转换：把一个表示数据范围大的数值或者变量赋值给另一个表示数据范围小的变量。</p>
-<p>强制类型转换格式：目标数据类型 变量名 = (目标数据类型)值或者变量;</p>
-<p>&emsp;&emsp;例如：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">double</span> num1 = <span class="number">5.5</span>;</span><br><span class="line"><span class="keyword">int</span> num2 = (<span class="keyword">int</span>) num1; <span class="comment">// 将double类型的num1强制转换为int类型</span></span><br><span class="line">System.out.println(num2); <span class="comment">// 输出5（小数位直接舍弃）</span></span><br></pre></td></tr></table></figure>
-
-<p><img src="/2019/08/02/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/JavaSE/190802Java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/1.png">说明：</p>
-<ol>
-<li>char类型的数据转换为int类型是按照码表中对应的int值进行计算的。比如在ASCII码表中，‘a’对应97。</li>
-</ol>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> a = <span class="string">&#x27;a&#x27;</span>;</span><br><span class="line">System.out.println(a); <span class="comment">// 将输出97</span></span><br></pre></td></tr></table></figure>
-
-<ol start="2">
-<li>整数默认是int类型，byte、short和char类型数据参与运算均会自动转换为int类型。</li>
-</ol>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">byte</span> b1 = <span class="number">10</span>;</span><br><span class="line"><span class="keyword">byte</span> b2 = <span class="number">20</span>;</span><br><span class="line"><span class="keyword">byte</span> b3 = b1 + b2; </span><br><span class="line"><span class="comment">// 第三行代码会报错，b1和b2会自动转换为int类型，计算结果为int，int赋值给byte需要强制类型转换。</span></span><br><span class="line"><span class="comment">// 修改为:</span></span><br><span class="line"><span class="keyword">int</span> num = b1 + b2;</span><br><span class="line"><span class="comment">// 或者：</span></span><br><span class="line"><span class="keyword">byte</span> b3 = (<span class="keyword">byte</span>) (b1 + b2);</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>boolean类型不能与其他基本数据类型相互转换。</li>
-</ul>
 ]]></content>
       <categories>
         <category>Java学习笔记</category>
@@ -5218,7 +5218,7 @@
     <url>/2019/11/29/191129SpringCloud/</url>
     <content><![CDATA[<h2 id="1-系统架构演变概述"><a href="#1-系统架构演变概述" class="headerlink" title="1. 系统架构演变概述"></a>1. 系统架构演变概述</h2><p><strong>目标</strong>：了解项目架构的演变历程</p>
 <p><strong>小结</strong>：</p>
-<p><img src="/2019/11/29/191129SpringCloud/Users/WeiXu/Desktop/191129SpringCloud/1.png"></p>
+<p><img src="/2019/11/29/191129SpringCloud/1.png"></p>
 <a id="more"></a>
 
 <h2 id="2-微服务架构说明"><a href="#2-微服务架构说明" class="headerlink" title="2. 微服务架构说明"></a>2. 微服务架构说明</h2><p><strong>目标</strong>：了解SOA与微服务架构的区别以及说出微服务架构的特点</p>
@@ -5319,7 +5319,7 @@
 <h2 id="9-Eureka注册中心说明"><a href="#9-Eureka注册中心说明" class="headerlink" title="9. Eureka注册中心说明"></a>9. Eureka注册中心说明</h2><p><strong>目标</strong>：说出Eureka的主要功能</p>
 <p><strong>小结</strong>：</p>
 <p>Eureka的主要功能是进行服务管理，定期检查服务状态，返回服务地址列表。</p>
-<p><img src="/2019/11/29/191129SpringCloud/Users/WeiXu/Desktop/191129SpringCloud/2.png" alt="1560439174201"></p>
+<p><img src="/2019/11/29/191129SpringCloud/2.png" alt="1560439174201"></p>
 <h2 id="10-搭建eureka-server工程"><a href="#10-搭建eureka-server工程" class="headerlink" title="10. 搭建eureka-server工程"></a>10. 搭建eureka-server工程</h2><p><strong>目标</strong>：添加eureka对应依赖和编写引导类搭建eureka服务并可访问eureka服务界面</p>
 <p><strong>分析</strong>：</p>
 <p>Eureka是服务注册中心，只做服务注册；自身并不提供服务也不消费服务。可以搭建web工程使用Eureka，可以使用Spring Boot方式搭建。</p>
@@ -5371,7 +5371,7 @@
 
 <ul>
 <li><p>添加启动引导类注解；</p>
-<p><img src="/2019/11/29/191129SpringCloud/Users/WeiXu/Desktop/191129SpringCloud/3.png" alt="1560519608668"></p>
+<p><img src="/2019/11/29/191129SpringCloud/3.png" alt="1560519608668"></p>
 </li>
 <li><p>修改配置</p>
 </li>
@@ -5465,7 +5465,7 @@
 
 <ul>
 <li><p>开启熔断</p>
-<p><img src="/2019/11/29/191129SpringCloud/Users/WeiXu/Desktop/191129SpringCloud/4.png" alt="1560662674993"> </p>
+<p><img src="/2019/11/29/191129SpringCloud/4.png" alt="1560662674993"> </p>
 </li>
 <li><p>降级逻辑</p>
 </li>
@@ -5483,7 +5483,7 @@
 
 <h2 id="18-服务熔断演示"><a href="#18-服务熔断演示" class="headerlink" title="18. 服务熔断演示"></a>18. 服务熔断演示</h2><p><strong>目标</strong>：了解熔断器工作原理</p>
 <p><strong>小结</strong>：</p>
-<p><img src="/2019/11/29/191129SpringCloud/Users/WeiXu/Desktop/191129SpringCloud/5.png" alt="1560682028169"></p>
+<p><img src="/2019/11/29/191129SpringCloud/5.png" alt="1560682028169"></p>
 <p>可以通过配置服务熔断参数修改默认：</p>
 <figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">hystrix:</span></span><br><span class="line">  <span class="attr">command:</span></span><br><span class="line">    <span class="attr">default:</span></span><br><span class="line">      <span class="attr">execution:</span></span><br><span class="line">        <span class="attr">isolation:</span></span><br><span class="line">          <span class="attr">thread:</span></span><br><span class="line">            <span class="attr">timeoutInMilliseconds:</span> <span class="number">2000</span></span><br><span class="line">      <span class="attr">circuitBreaker:</span></span><br><span class="line">        <span class="attr">errorThresholdPercentage:</span> <span class="number">50</span> <span class="comment"># 触发熔断错误比例阈值，默认值50%</span></span><br><span class="line">        <span class="attr">sleepWindowInMilliseconds:</span> <span class="number">10000</span> <span class="comment"># 熔断后休眠时长，默认值5秒</span></span><br><span class="line">        <span class="attr">requestVolumeThreshold:</span> <span class="number">10</span> <span class="comment"># 熔断触发最小请求次数，默认值是20</span></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
@@ -5622,7 +5622,7 @@
 <p>Gateway网关一般直接给终端请求使用；Feign一般用在微服务之间调用。</p>
 <h2 id="29-Spring-Cloud-Config分布式配置中心简介"><a href="#29-Spring-Cloud-Config分布式配置中心简介" class="headerlink" title="29. Spring Cloud Config分布式配置中心简介"></a>29. Spring Cloud Config分布式配置中心简介</h2><p><strong>目标</strong>：分布式配置中心的作用</p>
 <p><strong>小结</strong>：</p>
-<p><img src="/2019/11/29/191129SpringCloud/Users/WeiXu/Desktop/191129SpringCloud/6.png" alt="1560919656472"></p>
+<p><img src="/2019/11/29/191129SpringCloud/6.png"></p>
 <p>spring cloud config作用：可以通过修改在git仓库中的配置文件实现其它所有微服务的配置文件的修改。</p>
 <h2 id="30-搭建配置中心微服务"><a href="#30-搭建配置中心微服务" class="headerlink" title="30. 搭建配置中心微服务"></a>30. 搭建配置中心微服务</h2><p><strong>目标</strong>：创建码云的远程公开git仓库，搭建配置中心微服务config-server</p>
 <p><strong>分析</strong>：</p>
@@ -5716,10 +5716,10 @@
 <ul>
 <li>UserController的修改</li>
 </ul>
-<p><img src="/2019/11/29/191129SpringCloud/Users/WeiXu/Desktop/191129SpringCloud/7.png" alt="1561003475491"> </p>
+<p><img src="/2019/11/29/191129SpringCloud/7.png"> </p>
 <h2 id="34-Spring-Cloud-体系技术综合应用说明"><a href="#34-Spring-Cloud-体系技术综合应用说明" class="headerlink" title="34. Spring Cloud 体系技术综合应用说明"></a>34. Spring Cloud 体系技术综合应用说明</h2><p><strong>目标</strong>：了解Spring Cloud中的Eureka、GateWay、Config、Bus、Feign等技术的综合应用</p>
 <p><strong>小结</strong>：</p>
-<p><img src="/2019/11/29/191129SpringCloud/Users/WeiXu/Desktop/191129SpringCloud/8.png" alt="1561004983897"></p>
+<p><img src="/2019/11/29/191129SpringCloud/8.png"></p>
 ]]></content>
       <categories>
         <category>Java学习笔记</category>
